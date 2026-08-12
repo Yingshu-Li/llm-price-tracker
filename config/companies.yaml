@@ -1,0 +1,397 @@
+# 28 家公司的追踪源清单
+#
+# 用途：(1) 定期发现新模型发布  (2) 记录各家官方定价页出处
+#
+# 字段说明
+#   company     必须与 raw.csv 的 Company 列**完全一致**，这是关联键
+#   rss         已实测可用的 feed。null = 已确认不存在，不必再排查
+#   hf_org      HuggingFace 组织 slug。★ 大小写敏感 ★ 写错会静默返回空列表
+#   pricing_machine_readable
+#               official_md = 官方 markdown 表格（最稳）
+#               server_html = 服务端渲染 HTML，可抓但每年要修选择器
+#               js_spa      = 前端渲染，需无头浏览器，不建议做
+#               none        = 不售卖推理服务 / 未找到定价页
+#
+# 全部条目于 2026-08-12 实测。⚠️ 标记的是会让脚本静默出错的坑。
+
+companies:
+  # ── 美国 / 欧洲 ────────────────────────────────────────────
+
+  - company: OpenAI
+    homepage: https://openai.com
+    blog: https://openai.com/news/
+    rss: https://openai.com/news/rss.xml
+    hf_org: openai
+    api_docs: https://platform.openai.com/docs/models
+    changelog: https://platform.openai.com/docs/changelog
+    pricing_page: https://platform.openai.com/docs/pricing
+    pricing_md: https://platform.openai.com/docs/pricing.md
+    pricing_machine_readable: official_md
+    openrouter_prefixes: [openai]
+    notes: >-
+      pricing.md 会 301 跳到 developers.openai.com/api/docs/pricing.md。
+      openai.com/api/pricing/ 是 Cloudflare 403，别用。HF org 无前沿权重。
+
+  - company: Anthropic
+    homepage: https://www.anthropic.com
+    blog: https://www.anthropic.com/news
+    rss: null            # ⚠️ 已确认无 RSS：/rss.xml /news/rss.xml /feed.xml 均 404
+    hf_org: null         # ⚠️ Anthropic org 存在但 numModels=0，对发布监测无用
+    api_docs: https://platform.claude.com/docs/en/api/models-list
+    changelog: https://platform.claude.com/docs/en/release-notes/api
+    pricing_page: https://www.anthropic.com/pricing
+    pricing_md: https://platform.claude.com/docs/en/about-claude/pricing.md
+    pricing_machine_readable: official_md
+    openrouter_prefixes: [anthropic]
+    notes: >-
+      docs.claude.com 会 302 到 platform.claude.com。models-list 接口返回
+      max_input_tokens/max_tokens 但**不含任何价格字段**。
+
+  - company: Google
+    homepage: https://deepmind.google
+    blog: https://deepmind.google/blog/
+    rss: https://deepmind.google/blog/rss.xml     # 最佳信号，Gemini 发布都在这
+    rss_extra:
+      - https://blog.google/rss/
+      - https://developers.googleblog.com/feed/
+    hf_org: google
+    hf_org_extra: [deepmind]                     # google-deepmind 是 404，别用
+    api_docs: https://ai.google.dev/gemini-api/docs/models
+    changelog: https://ai.google.dev/gemini-api/docs/changelog
+    pricing_page: https://ai.google.dev/gemini-api/docs/pricing
+    pricing_md: null                             # 加 .md 返回的还是 HTML
+    pricing_machine_readable: server_html
+    openrouter_prefixes: [google]
+    notes: 定价页服务端渲染，价格确在 HTML 字节里；页面无任何机器可读价格文件。
+
+  - company: Meta
+    homepage: https://ai.meta.com
+    blog: https://ai.meta.com/blog/
+    rss: null            # ⚠️ 已确认无 RSS
+    hf_org: meta-models  # ⚠️ Meta 的**新**活跃 org
+    hf_org_extra: [meta-llama, facebook]   # meta-llama 自 2025-04 起已停更
+    api_docs: null
+    pricing_page: null
+    pricing_machine_readable: none
+    openrouter_prefixes: [meta, meta-llama]
+    notes: 只发开源权重，不自营付费推理，故无官方价格；价格来自各托管方。
+
+  - company: xAI
+    homepage: https://x.ai
+    blog: https://x.ai/news
+    rss: null            # ⚠️ x.ai 主站被 Cloudflare 403（docs 子域正常）
+    hf_org: xai-org
+    api_docs: https://docs.x.ai/docs/models
+    pricing_page: https://docs.x.ai/developers/models
+    pricing_md: https://docs.x.ai/docs/models.md
+    pricing_machine_readable: official_md
+    openrouter_prefixes: [x-ai]
+    notes: >-
+      models.md 会 308 跳到 docs.x.ai/developers/models.md，是五家里最干净的表。
+      待验证：api.x.ai/v1/language-models 可能含 prompt_text_token_price
+      字段——若属实是市面唯一的厂商原生价格 API，需要 key 才能测。
+
+  - company: Mistral AI
+    homepage: https://mistral.ai
+    blog: https://mistral.ai/news
+    rss: https://mistral.ai/rss.xml    # ⚠️ Content-Type 是 text/plain，仍需按 XML 解析
+    hf_org: mistralai
+    api_docs: https://docs.mistral.ai/getting-started/models/models_overview/
+    changelog: https://docs.mistral.ai/getting-started/changelog/
+    pricing_page: https://mistral.ai/pricing
+    pricing_md: null                   # docs 站的 .md 路径全部 404
+    pricing_machine_readable: server_html
+    openrouter_prefixes: [mistralai]
+
+  - company: Microsoft
+    homepage: https://azure.microsoft.com
+    blog: https://azure.microsoft.com/en-us/blog/
+    rss: https://azure.microsoft.com/en-us/blog/feed/
+    hf_org: microsoft
+    api_docs: https://learn.microsoft.com/en-us/azure/ai-foundry/whats-new-azure-ai-foundry
+    pricing_page: https://prices.azure.com/api/retail/prices
+    pricing_machine_readable: official_api
+    openrouter_prefixes: [microsoft]
+    notes: >-
+      Azure Retail Prices API 无需认证。⚠️ 过滤条件是
+      serviceName eq 'Foundry Models'（不是 'Cognitive Services' 也不是
+      'Azure OpenAI'，那两个都返回 0，微软改过名）。
+
+  - company: Cohere
+    homepage: https://cohere.com
+    blog: https://cohere.com/blog
+    rss: null            # ⚠️ /blog/rss.xml 是 soft-404：返回 HTTP 200 + HTML
+    hf_org: CohereLabs   # ⚠️ 原 CohereForAI 已改名，旧 slug 返回 0
+    api_docs: https://docs.cohere.com/docs/models
+    pricing_page: https://cohere.com/pricing
+    pricing_md: null     # docs 支持 .md 但 models.md 里没有价格；cohere.com/pricing.md 是 404
+    pricing_machine_readable: server_html
+    openrouter_prefixes: [cohere]
+
+  - company: NVIDIA
+    homepage: https://www.nvidia.com
+    blog: https://blogs.nvidia.com
+    rss: https://blogs.nvidia.com/feed/
+    rss_extra: [https://developer.nvidia.com/blog/feed/]
+    hf_org: nvidia
+    api_docs: https://integrate.api.nvidia.com/v1/models   # 公开，无需认证，102 模型
+    pricing_page: null
+    pricing_machine_readable: none
+    openrouter_prefixes: [nvidia]
+
+  - company: IBM
+    homepage: https://www.ibm.com/products/watsonx-ai
+    blog: https://research.ibm.com/blog
+    rss: https://research.ibm.com/rss
+    hf_org: ibm-granite
+    api_docs: https://www.ibm.com/products/watsonx-ai/foundation-models
+    pricing_page: https://www.ibm.com/products/watsonx-ai/pricing
+    pricing_machine_readable: server_html
+    openrouter_prefixes: [ibm-granite]
+
+  - company: AI21 Labs
+    homepage: https://www.ai21.com
+    blog: https://www.ai21.com/blog/
+    rss: null            # ⚠️ /feed 是 soft-404：返回 HTTP 200 + HTML
+    hf_org: ai21labs
+    api_docs: https://docs.ai21.com
+    pricing_page: https://www.ai21.com/pricing
+    pricing_machine_readable: server_html
+    openrouter_prefixes: [ai21]
+    notes: ⚠️ 旧接口 api.ai21.com/studio/v1/models 已返回 410，迁到 app.ai21.com。
+
+  - company: Amazon / Nova
+    homepage: https://aws.amazon.com/ai/generative-ai/nova/
+    blog: https://aws.amazon.com/blogs/machine-learning/
+    rss: https://aws.amazon.com/about-aws/whats-new/recent/feed/
+    rss_extra: [https://aws.amazon.com/blogs/machine-learning/feed/]
+    hf_org: amazon
+    api_docs: https://docs.aws.amazon.com/bedrock/latest/userguide/models-supported.html
+    pricing_page: https://pricing.us-east-1.amazonaws.com/offers/v1.0/aws/AmazonBedrock/current/region_index.json
+    pricing_machine_readable: official_api
+    openrouter_prefixes: [amazon]
+    notes: >-
+      AWS Price List 无需认证。两个 offer 都要拉：AmazonBedrock（含第三方开源模型，
+      有 Model/Provider/service_tier 结构化列）和 AmazonBedrockFoundationModels
+      （含 Claude/Cohere/Jamba）。⚠️ 用 regional CSV，别下 15MB 全量 JSON。
+
+  - company: TII / Falcon
+    homepage: https://falconllm.tii.ae
+    blog: https://falconllm.tii.ae
+    rss: null            # ⚠️ 已确认无 RSS，/blog.html 是 404
+    hf_org: tiiuae
+    api_docs: https://falconllm.tii.ae/falcon-models.html
+    pricing_page: null
+    pricing_machine_readable: none
+    openrouter_prefixes: []
+    notes: >-
+      ⚠️ 不售卖推理服务，没有价格可抓——这是伪需求，不要为它写抓取器。
+      也不在 OpenRouter 上，HF 是唯一的发布信号。
+
+  - company: Upstage
+    homepage: https://www.upstage.ai
+    blog: https://www.upstage.ai/blog
+    rss: null            # ⚠️ 已确认无 RSS（Webflow 站，/feed 404）
+    hf_org: upstage
+    api_docs: https://console.upstage.ai/docs/getting-started/models
+    pricing_page: https://www.upstage.ai/pricing
+    pricing_machine_readable: server_html
+    openrouter_prefixes: [upstage]
+
+  - company: NAVER
+    homepage: https://clova.ai
+    blog: https://clova.ai/en/tech-blog
+    rss: null            # ⚠️ 已确认无 RSS
+    hf_org: naver-hyperclovax
+    api_docs: https://www.ncloud.com/product/aiService/clovaStudio
+    pricing_page: https://www.ncloud.com/product/aiService/clovaStudio
+    pricing_machine_readable: server_html
+    openrouter_prefixes: []
+    notes: >-
+      ⚠️ 所有价格聚合器均零覆盖。定价页 2.47MB HTML，抓取成本高收益低。
+      不在 OpenRouter 上。HF org 自 2025-12 起未更新。
+
+  # ── 中国 ──────────────────────────────────────────────────
+  # 共性：均可从境外访问（非 GFW 问题），但**全部没有 RSS**，
+  # 且 /v1/models 接口都需要付费 key。
+
+  - company: Alibaba / Qwen
+    homepage: https://qwen.ai
+    blog: https://qwen.ai/blog
+    rss: https://qwenlm.github.io/blog/index.xml   # 中文厂商里最好的 feed，英文，GitHub 托管
+    hf_org: Qwen
+    api_docs: https://help.aliyun.com/zh/model-studio/models
+    pricing_page: https://help.aliyun.com/zh/model-studio/billing-for-model-studio
+    pricing_machine_readable: js_spa
+    openrouter_prefixes: [qwen]
+    notes: 帮助中心的 .md 只是导航索引，没有价格表；真实价格在 JS 控制台的分模型详情页。
+
+  - company: DeepSeek
+    homepage: https://www.deepseek.com
+    blog: https://www.deepseek.com/en
+    rss: null
+    hf_org: deepseek-ai
+    api_docs: https://api-docs.deepseek.com
+    pricing_page: https://api-docs.deepseek.com/quick_start/pricing
+    pricing_machine_readable: server_html
+    openrouter_prefixes: [deepseek]
+    notes: >-
+      ⚠️ 本机被 Zscaler 企业代理拦截 *.deepseek.com（学校网络策略，非站点问题）。
+      换网络后应可正常抓取（Docusaurus 站，表格服务端渲染）。
+      靠 HF + OpenRouter 已能覆盖发布监测。
+
+  - company: Zhipu AI / GLM
+    homepage: https://z.ai
+    blog: https://www.zhipuai.cn/en
+    rss: null
+    hf_org: zai-org      # ⚠️ 原 THUDM 已迁移，旧 slug 返回 0
+    api_docs: https://z.ai/model-api
+    pricing_page: https://docs.z.ai/guides/overview/pricing
+    pricing_md: https://docs.z.ai/guides/overview/pricing.md
+    pricing_machine_readable: official_md
+    openrouter_prefixes: [z-ai]
+    notes: ⚠️ z.ai/blog 是 404；价格数字在 md 里是 \$ 转义，需 unescape。
+
+  - company: Moonshot AI / Kimi
+    homepage: https://www.moonshot.ai
+    blog: null           # ⚠️ moonshot.ai/blog 返回裸 "Welcome to nginx!"
+    rss: null
+    hf_org: moonshotai
+    api_docs: https://platform.moonshot.ai/docs/introduction
+    pricing_page: https://platform.moonshot.ai/docs/pricing/chat
+    pricing_md: https://platform.moonshot.ai/docs/pricing/chat.md
+    pricing_machine_readable: official_md
+    openrouter_prefixes: [moonshotai]
+    notes: >-
+      ⚠️ chat.md 本身没有价格表，只是指向子页的索引。真实价格在
+      chat-k3.md / chat-k27-code.md / chat-k26.md / chat-v1.md，
+      且用的是 MDX <DocTable> 组件而非 markdown 管道表。301 跳到 platform.kimi.ai。
+
+  - company: MiniMax
+    homepage: https://www.minimax.io
+    blog: https://www.minimax.io/news
+    rss: null
+    hf_org: MiniMaxAI    # ⚠️ 注意大小写
+    api_docs: https://platform.minimaxi.com/document/platform
+    pricing_page: https://platform.minimaxi.com/document/price
+    pricing_machine_readable: server_html
+    openrouter_prefixes: [minimax]
+    notes: ⚠️ platform.minimax.io/docs/price 是 404，.com 域名才是活的。
+
+  - company: ByteDance / Doubao-Seed
+    homepage: https://seed.bytedance.com
+    blog: https://seed.bytedance.com/en/blog
+    rss: null
+    hf_org: ByteDance-Seed
+    api_docs: https://www.volcengine.com/docs/82379/1330310
+    pricing_page: https://www.volcengine.com/docs/82379/1099320
+    pricing_machine_readable: js_spa
+    openrouter_prefixes: [bytedance-seed, bytedance]
+    notes: OpenRouter 上的 bytedance-seed/ 比 HF 更新更快。
+
+  - company: Tencent / Hunyuan
+    homepage: https://hunyuan.tencent.com
+    blog: https://hunyuan.tencent.com
+    rss: null
+    hf_org: tencent
+    api_docs: https://cloud.tencent.com/document/product/1729/104753
+    pricing_page: https://cloud.tencent.com/document/product/1729/97731
+    pricing_machine_readable: js_spa
+    openrouter_prefixes: [tencent]
+    notes: ⚠️ 定价页是纯 SPA 壳（50KB，0 个 table，全文搜不到 "hunyuan"）。
+
+  - company: Baidu / ERNIE
+    homepage: https://yiyan.baidu.com
+    blog: null
+    rss: null
+    hf_org: baidu
+    api_docs: https://cloud.baidu.com/product/wenxinworkshop
+    pricing_page: null   # ⚠️ 尝试过的 qianfan-docs 路径全部 404，未找到稳定地址
+    pricing_machine_readable: js_spa
+    openrouter_prefixes: [baidu]
+    notes: ⚠️ 28 家里覆盖最差的。OpenRouter 上仅 1 条。HF baidu org 是最好的信号。
+
+  - company: StepFun
+    homepage: https://www.stepfun.com
+    blog: https://www.stepfun.com
+    rss: null
+    hf_org: stepfun-ai
+    api_docs: https://platform.stepfun.com
+    pricing_page: null   # platform.stepfun.com/docs/llm/text 是 404
+    pricing_machine_readable: js_spa
+    openrouter_prefixes: [stepfun]
+
+  - company: Baichuan AI
+    homepage: https://www.baichuan-ai.com
+    blog: https://www.baichuan-ai.com/home
+    rss: null
+    hf_org: baichuan-inc   # ⚠️ 必须小写，Baichuan-Inc 返回 0
+    api_docs: https://platform.baichuan-ai.com/docs/api
+    pricing_page: null     # ⚠️ /price 和 /pricing 都是 Next.js 404 壳
+    pricing_machine_readable: none
+    openrouter_prefixes: []
+    notes: ⚠️ 所有价格聚合器均零覆盖，且不在 OpenRouter 上。HF 是唯一信号。
+
+  - company: iFLYTEK
+    homepage: https://www.xfyun.cn
+    blog: null
+    rss: null
+    hf_org: iFlytekOpenSource   # ⚠️ iFLYTEK org 存在但 numModels=0，真实活动在这个
+    api_docs: https://www.xfyun.cn/doc/spark/Web.html
+    pricing_page: https://www.xfyun.cn/doc/spark/Web.html
+    pricing_machine_readable: server_html
+    openrouter_prefixes: []
+    notes: >-
+      ⚠️ 28 家里最难的：不在 OpenRouter、HF 几乎无内容、文档仅中文。
+      ⚠️⚠️ 严禁用 `spark` 子串匹配——会误命中 OpenAI 的 gpt-5.3-codex-spark。
+      xfyun.cn/services/spark 返回 HTTP 500。
+
+  - company: SenseTime
+    homepage: https://www.sensetime.com
+    blog: null
+    rss: null
+    hf_org: sensenova     # ⚠️ SenseTime org 停在 2022 年，真实活动在 sensenova
+    api_docs: https://platform.sensenova.cn
+    pricing_page: null    # ⚠️ platform.sensenova.cn/doc 与 /price 均 404
+    pricing_machine_readable: none
+    openrouter_prefixes: []
+    notes: ⚠️ 所有价格聚合器均零覆盖，不在 OpenRouter 上。
+
+  - company: Xiaomi / MiMo
+    homepage: https://xiaomi.com
+    blog: null
+    rss: null
+    hf_org: XiaomiMiMo    # ⚠️ 注意大小写
+    api_docs: null
+    pricing_page: null
+    pricing_machine_readable: none
+    openrouter_prefixes: [xiaomi]
+    notes: HF + OpenRouter 已完全覆盖发布监测。
+
+# ── 跨公司的兜底源 ────────────────────────────────────────────
+# 单个 API 覆盖多家，比 28 个易碎的 RSS 更可靠，这才是主力信号。
+
+catch_all:
+  - id: openrouter_models
+    url: https://openrouter.ai/api/v1/models
+    covers: 23 of 28 companies
+    auth: none
+    notes: ⚠️ 过滤 `~` 前缀的浮动别名和 `:free`/`:extended` 变体后缀。
+
+  - id: huggingface_org
+    url_template: https://huggingface.co/api/models?author={org}&sort=createdAt&direction=-1&limit=20
+    covers: 全部开源权重厂商，含 OpenRouter 缺的 5 家
+    auth: none
+    notes: >-
+      ⚠️ author 参数大小写敏感，写错静默返回 []。
+      规范 slug 可用 huggingface.co/api/organizations/{任意大小写}/overview 查（该接口不敏感）。
+      需过滤量化/导出仓库噪声：GGUF|AWQ|GPTQ|FP8|INT4|W4A16|eagle|draft|ExecuTorch|MLX|onnx
+
+  - id: hf_blog
+    url: https://huggingface.co/blog/feed.xml
+    auth: none
+
+  - id: simonwillison
+    url: https://simonwillison.net/atom/everything/
+    auth: none
+    notes: 高信号的人工策展，能补上没有 feed 的前沿发布。

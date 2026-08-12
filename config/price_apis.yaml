@@ -1,0 +1,176 @@
+# 可自行直连的价格 API（Tier 2/3）
+#
+# 这些都是**根源 API**——我们直接调用服务方自己的接口，不经过任何中间聚合站。
+# models.dev 挂掉不影响这里任何一条。
+#
+# ⚠️ unit 字段绝不能猜。每一项都用「已知官方价做锚」实测确定：
+#    拿 Claude Sonnet(≈$3/1M)、Qwen3-32B(≈$0.1/1M) 等去比对，
+#    看原始值 ×1 还是 ×1e6 更接近真实价。猜错就是 1000 倍的静默错误。
+#
+# 字段路径用点号表示嵌套；nested_list 表示价格在一个数组里（每个托管方一条）。
+
+apis:
+  - id: openrouter
+    name: OpenRouter
+    url: https://openrouter.ai/api/v1/models
+    weblink: https://openrouter.ai/models
+    list_path: data
+    id_fields: [id, canonical_slug, hugging_face_id]
+    unit: per_token
+    tier: 3
+    fields:
+      input_per_1m: pricing.prompt
+      output_per_1m: pricing.completion
+      cache_read_per_1m: pricing.input_cache_read
+      per_image: pricing.image
+      context_length: context_length
+    # `~` 前缀是浮动别名，`:free`/`:extended` 是同一模型的变体后缀
+    skip_id_prefixes: ["~"]
+
+  - id: deepinfra
+    name: DeepInfra
+    url: https://api.deepinfra.com/models/list
+    weblink: https://deepinfra.com/models
+    id_fields: [model_name]
+    unit: cents_per_token          # 注意是「美分/token」，换算要 ×1e6÷100
+    tier: 3
+    fields:
+      input_per_1m: pricing.cents_per_input_token
+      output_per_1m: pricing.cents_per_output_token
+      context_length: max_tokens
+    skip_if_true: [deprecated, private]
+
+  - id: hf_router
+    name: HuggingFace Router
+    url: https://router.huggingface.co/v1/models
+    weblink: https://huggingface.co/models?inference_provider=all
+    list_path: data
+    id_fields: [id]
+    nested_list: providers          # 每个模型下挂多个托管方，各有各的价
+    unit: per_1m
+    tier: 3
+    fields:
+      input_per_1m: pricing.input
+      output_per_1m: pricing.output
+      context_length: context_length
+
+  - id: vercel
+    name: Vercel AI Gateway
+    url: https://ai-gateway.vercel.sh/v1/models
+    weblink: https://vercel.com/ai-gateway/models
+    list_path: data
+    id_fields: [id, name]
+    unit: per_token
+    tier: 3
+    fields:
+      input_per_1m: pricing.input
+      output_per_1m: pricing.output
+
+  - id: pioneer
+    name: Pioneer
+    url: https://api.pioneer.ai/v1/models
+    weblink: https://pioneer.ai
+    list_path: data
+    id_fields: [id]
+    unit: per_1m
+    tier: 3
+    fields:
+      input_per_1m: input_price_per_million
+      output_per_1m: output_price_per_million
+      cache_read_per_1m: cache_read_price_per_million
+      cache_write_per_1m: cache_write_price_per_million
+
+  - id: ofox
+    name: ofox
+    url: https://api.ofox.ai/v2/models/catalog?include=provider_price&limit=1000
+    weblink: https://ofox.ai
+    list_path: data
+    id_fields: [id]
+    unit: per_token
+    tier: 3
+    fields:
+      input_per_1m: pricing.input
+      output_per_1m: pricing.output
+      per_second: pricing.output_video_per_second
+
+  - id: empiriolabs
+    name: Empirio Labs
+    url: https://api.empiriolabs.ai/v1/models
+    weblink: https://empiriolabs.ai
+    list_path: data
+    id_fields: [id]
+    unit: per_token
+    tier: 3
+    fields:
+      input_per_1m: pricing.prompt
+      output_per_1m: pricing.completion
+      cache_read_per_1m: pricing.input_cache_read
+      per_image: pricing.image
+
+  - id: ovhcloud
+    name: OVHcloud AI Endpoints
+    url: https://catalog.endpoints.ai.ovh.net/rest/v2/openrouter
+    weblink: https://endpoints.ai.cloud.ovh.net
+    list_path: data
+    id_fields: [id, name]
+    unit: per_token
+    tier: 3
+    fields:
+      input_per_1m: pricing.prompt
+      output_per_1m: pricing.completion
+
+  - id: chutes
+    name: Chutes
+    url: https://llm.chutes.ai/v1/models
+    weblink: https://chutes.ai
+    list_path: data
+    id_fields: [id]
+    unit: per_1m
+    tier: 3
+    fields:
+      input_per_1m: pricing.prompt
+      output_per_1m: pricing.completion
+      cache_read_per_1m: pricing.input_cache_read
+
+  - id: tinfoil
+    name: Tinfoil
+    url: https://inference.tinfoil.sh/v1/models
+    weblink: https://tinfoil.sh
+    list_path: data
+    id_fields: [id, name]
+    unit: per_1m
+    tier: 3
+    fields:
+      input_per_1m: pricing.inputTokenPricePer1M
+      output_per_1m: pricing.outputTokenPricePer1M
+      cache_read_per_1m: pricing.cachedInputTokenPricePer1M
+
+  # ⚠️ cortecs 报价是**欧元**。保留但标注币种，导出选价时只用 USD，
+  #    把欧元当美元用是实打实的错误，不是舍入误差。
+  - id: cortecs
+    name: Cortecs
+    url: https://api.cortecs.ai/v1/models
+    weblink: https://cortecs.ai
+    list_path: data
+    id_fields: [id]
+    unit: per_1m
+    currency: EUR
+    tier: 3
+    fields:
+      input_per_1m: pricing.input_token
+      output_per_1m: pricing.output_token
+      cache_read_per_1m: pricing.cache_read_cost
+
+  - id: requesty
+    name: Requesty
+    url: https://router.requesty.ai/v1/models/managed
+    weblink: https://requesty.ai
+    list_path: data
+    id_fields: [id]
+    unit: per_token
+    tier: 3
+    fields:
+      input_per_1m: input_price
+      output_per_1m: output_price
+      cache_read_per_1m: cached_price
+      cache_write_per_1m: caching_price

@@ -1,0 +1,4 @@
+# 刻意保持最小依赖：这两个在你的 anaconda 环境里已经有了，
+# 模糊匹配用标准库 difflib 而不是 rapidfuzz，少一个需要过代理安装的包。
+httpx>=0.27
+PyYAML>=6.0

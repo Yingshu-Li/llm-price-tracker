@@ -1,0 +1,53 @@
+# Tier 1a：厂商官方 markdown 定价文档
+#
+# 这些 URL 在厂商文档地址后加 .md 得到，返回给 agent 读的 markdown。
+# 比抓 HTML 稳定：没有 DOM、没有 class 名、没有 JS 渲染。
+#
+# url 写我们请求的地址；实际记入溯源的是跟随重定向后的最终地址
+# （5 个里有 3 个会跳转，见下方 note）。
+
+sources:
+  - id: openai_md
+    company: OpenAI              # 必须与 raw.csv 的 Company 列一致
+    provider: openai
+    format: pipe_table
+    urls:
+      - https://platform.openai.com/docs/pricing.md
+    note: 301 跳到 developers.openai.com/api/docs/pricing.md；分 Standard/Batch/Flex/Fast 四档
+
+  - id: anthropic_md
+    company: Anthropic
+    provider: anthropic
+    format: pipe_table
+    urls:
+      - https://platform.claude.com/docs/en/about-claude/pricing.md
+    note: 价格单元格是 "$10 / MTok"；模型名里嵌 [retired](...) 链接
+
+  - id: xai_md
+    company: xAI
+    provider: xai
+    format: pipe_table
+    urls:
+      - https://docs.x.ai/docs/models.md
+    note: 308 跳到 docs.x.ai/developers/models.md；含 image/video/voice 非 token 计价表
+
+  - id: zhipu_md
+    company: Zhipu AI / GLM
+    provider: zhipu
+    format: pipe_table
+    urls:
+      - https://docs.z.ai/guides/overview/pricing.md
+    note: 价格是 \$ 转义；有 Free / Limited-time Free / \\ 等特殊值
+
+  - id: moonshot_md
+    company: Moonshot AI / Kimi
+    provider: moonshot
+    format: mdx_doctable
+    urls:
+      # 注意：/docs/pricing/chat.md 本身没有价格表，只是指向子页的索引。
+      # 真正的价格在下面这些子页，用的是 MDX <DocTable> 组件而非管道表。
+      - https://platform.moonshot.ai/docs/pricing/chat-k3.md
+      - https://platform.moonshot.ai/docs/pricing/chat-k27-code.md
+      - https://platform.moonshot.ai/docs/pricing/chat-k26.md
+      - https://platform.moonshot.ai/docs/pricing/chat-v1.md
+    note: 301 跳到 platform.kimi.ai；价格包在 JSX 片段 <>{"$"}0.30</> 里

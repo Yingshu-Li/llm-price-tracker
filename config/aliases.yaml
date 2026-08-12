@@ -1,0 +1,25 @@
+# 人工确认过的模型名映射。优先级最高，一旦写在这里就永久生效。
+#
+# 工作流：
+#   1. 跑 `python update_prices.py`
+#   2. 打开 out/unmatched.csv，里面是自动匹配失败的模型 + 相似度候选
+#   3. 确认无误的写到下面，格式：
+#
+#        aliases:
+#          "<raw.csv 里的 Model 原值>":
+#            <源 id>: <该源里的模型 id>
+#
+#   4. 重跑，这些就会以 method=alias、confidence=1.0 命中
+#
+# ⚠️ 只在你确认两者**确实是同一个模型**时才写。相似度高不等于同一个模型：
+#    `GPT-5.6 Sol Pro` 与 `gpt-5.6-sol` 相似度 0.846，但它们是不同的模型，
+#    官方定价表里根本没有 sol-pro，正确处理是留空而不是硬套一个价格。
+#
+# 示例（注释掉的，按需取用）：
+#   aliases:
+#     "GPT-5.5 Thinking":
+#       openai_md: gpt-5.5
+#     "Spark Pro / generalv3":
+#       iflytek_html: generalv3
+
+aliases: {}

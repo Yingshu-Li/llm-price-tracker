@@ -1,0 +1,493 @@
+Model,Company,Function,Total Para,Activate Para,On/Off Line,Reasoning
+gpt-5,OpenAI,General-Purpose,Undisclosed,Undisclosed,Online: API,Yes
+gpt-5-mini,OpenAI,General-Purpose,Undisclosed,Undisclosed,Online: API,Yes
+gpt-5-nano,OpenAI,General-Purpose,Undisclosed,Undisclosed,Online: API,Yes
+gpt-5-pro,OpenAI,General-Purpose,Undisclosed,Undisclosed,Online: API,Yes
+gpt-5.1,OpenAI,General-Purpose,Undisclosed,Undisclosed,Online: API,Yes
+gpt-5.2,OpenAI,General-Purpose,Undisclosed,Undisclosed,Online: API,Yes
+gpt-5.2-pro,OpenAI,General-Purpose,Undisclosed,Undisclosed,Online: API,Yes
+gpt-5.4,OpenAI,General-Purpose,Undisclosed,Undisclosed,Online: API,Yes
+gpt-5.4-mini,OpenAI,General-Purpose,Undisclosed,Undisclosed,Online: API,Yes
+gpt-5.4-nano,OpenAI,General-Purpose,Undisclosed,Undisclosed,Online: API,Yes
+gpt-5.4-pro,OpenAI,General-Purpose,Undisclosed,Undisclosed,Online: API,Yes
+gpt-5.5,OpenAI,General-Purpose,Undisclosed,Undisclosed,Online: API,Yes
+GPT-5.5 Instant,OpenAI,General-Purpose,Undisclosed,Undisclosed,Online: ChatGPT,No
+GPT-5.5 Thinking,OpenAI,General-Purpose,Undisclosed,Undisclosed,Online: ChatGPT / API,Yes
+gpt-5.5-pro,OpenAI,General-Purpose,Undisclosed,Undisclosed,Online: API,Yes
+GPT-5.6 Sol,OpenAI,General-Purpose,Undisclosed,Undisclosed,Online: ChatGPT,Yes
+GPT-5.6 Sol Pro,OpenAI,General-Purpose,Undisclosed,Undisclosed,Online: ChatGPT,Yes
+gpt-5.6-luna,OpenAI,General-Purpose,Undisclosed,Undisclosed,Online: API,Yes
+gpt-5.6-sol,OpenAI,General-Purpose,Undisclosed,Undisclosed,Online: API,Yes
+gpt-5.6-terra,OpenAI,General-Purpose,Undisclosed,Undisclosed,Online: API,Yes
+gpt-oss-120b,OpenAI,General-Purpose,117B,5.1B/token,Offline: Open Weight,Yes
+gpt-oss-20b,OpenAI,General-Purpose,21B,3.6B/token,Offline: Open Weight,Yes
+gpt-5.3-codex,OpenAI,Coding,Undisclosed,Undisclosed,Online: Codex / API,Yes
+gpt-image-2,OpenAI,Image Generation,Undisclosed,Undisclosed,Online: ChatGPT / API,No
+gpt-audio-1.5,OpenAI,Speech & Audio,Undisclosed,Undisclosed,Online: API,No
+gpt-live-transcribe,OpenAI,Speech & Audio,Undisclosed,Undisclosed,Online: Realtime API,No
+gpt-realtime-1.5,OpenAI,Speech & Audio,Undisclosed,Undisclosed,Online: Realtime API,No
+gpt-realtime-2,OpenAI,Speech & Audio,Undisclosed,Undisclosed,Online: Realtime API,Yes
+gpt-realtime-2.1,OpenAI,Speech & Audio,Undisclosed,Undisclosed,Online: Realtime API,Yes
+gpt-realtime-2.1-mini,OpenAI,Speech & Audio,Undisclosed,Undisclosed,Online: Realtime API,Yes
+gpt-realtime-translate,OpenAI,Speech & Audio,Undisclosed,Undisclosed,Online: Realtime API,No
+gpt-realtime-whisper,OpenAI,Speech & Audio,Undisclosed,Undisclosed,Online: Realtime API,No
+whisper-base,OpenAI,Speech & Audio,74M,74M,Offline: Open Weight,No
+whisper-base.en,OpenAI,Speech & Audio,74M,74M,Offline: Open Weight,No
+whisper-large-v1,OpenAI,Speech & Audio,1.55B,1.55B,Offline: Open Weight,No
+whisper-large-v2,OpenAI,Speech & Audio,1.55B,1.55B,Offline: Open Weight,No
+whisper-large-v3,OpenAI,Speech & Audio,1.55B,1.55B,Offline: Open Weight,No
+whisper-medium,OpenAI,Speech & Audio,769M,769M,Offline: Open Weight,No
+whisper-medium.en,OpenAI,Speech & Audio,769M,769M,Offline: Open Weight,No
+whisper-small,OpenAI,Speech & Audio,244M,244M,Offline: Open Weight,No
+whisper-small.en,OpenAI,Speech & Audio,244M,244M,Offline: Open Weight,No
+whisper-tiny,OpenAI,Speech & Audio,39M,39M,Offline: Open Weight,No
+whisper-tiny.en,OpenAI,Speech & Audio,39M,39M,Offline: Open Weight,No
+whisper-turbo,OpenAI,Speech & Audio,798M,798M,Offline: Open Weight,No
+text-embedding-3-large,OpenAI,Embedding,Undisclosed,Undisclosed,Online: API,No
+text-embedding-3-small,OpenAI,Embedding,Undisclosed,Undisclosed,Online: API,No
+text-embedding-ada-002,OpenAI,Embedding,Undisclosed,Undisclosed,Online: API,No
+omni-moderation-latest,OpenAI,Safety & Moderation,Undisclosed,Undisclosed,Online: API,No
+claude-fable-5,Anthropic,General-Purpose,Undisclosed,Undisclosed,Online: Claude.ai / API (Active),Yes
+claude-haiku-4-5-20251001,Anthropic,General-Purpose,Undisclosed,Undisclosed,Online: API (Active),Yes
+claude-opus-4-5-20251101,Anthropic,General-Purpose,Undisclosed,Undisclosed,Online: API (Active),Yes
+claude-opus-4-6,Anthropic,General-Purpose,Undisclosed,Undisclosed,Online: API (Active),Yes
+claude-opus-4-7,Anthropic,General-Purpose,Undisclosed,Undisclosed,Online: API (Active),Yes
+claude-opus-4-8,Anthropic,General-Purpose,Undisclosed,Undisclosed,Online: API (Active),Yes
+claude-opus-5,Anthropic,General-Purpose,Undisclosed,Undisclosed,Online: Claude.ai / API (Active),Yes
+claude-sonnet-4-5-20250929,Anthropic,General-Purpose,Undisclosed,Undisclosed,Online: API (Active),Yes
+claude-sonnet-4-6,Anthropic,General-Purpose,Undisclosed,Undisclosed,Online: API (Active),Yes
+claude-sonnet-5,Anthropic,General-Purpose,Undisclosed,Undisclosed,Online: Claude.ai / API (Active),Yes
+antigravity-preview-05-2026,Google,General-Purpose,Undisclosed,Undisclosed,Online: Gemini API (Preview),Yes
+deep-research-max-preview-04-2026,Google,General-Purpose,Undisclosed,Undisclosed,Online: Gemini API (Preview),Yes
+deep-research-preview-04-2026,Google,General-Purpose,Undisclosed,Undisclosed,Online: Gemini API (Preview),Yes
+gemini-2.5-computer-use-preview-10-2025,Google,General-Purpose,Undisclosed,Undisclosed,Online: Gemini API (Preview),Yes
+gemini-2.5-flash,Google,General-Purpose,Undisclosed,Undisclosed,Online: Gemini API (Stable),Yes
+gemini-2.5-flash-lite,Google,General-Purpose,Undisclosed,Undisclosed,Online: Gemini API (Stable),Yes
+gemini-2.5-pro,Google,General-Purpose,Undisclosed,Undisclosed,Online: Gemini API (Stable),Yes
+gemini-3-flash-preview,Google,General-Purpose,Undisclosed,Undisclosed,Online: Gemini API (Preview),Yes
+gemini-3.1-flash-lite,Google,General-Purpose,Undisclosed,Undisclosed,Online: Gemini API (Stable),Yes
+gemini-3.1-pro-preview,Google,General-Purpose,Undisclosed,Undisclosed,Online: Gemini API (Preview),Yes
+gemini-3.5-flash,Google,General-Purpose,Undisclosed,Undisclosed,Online: Gemini API (Stable),Yes
+gemini-3.5-flash-lite,Google,General-Purpose,Undisclosed,Undisclosed,Online: Gemini API (Stable),Yes
+gemini-3.6-flash,Google,General-Purpose,Undisclosed,Undisclosed,Online: Gemini API (Stable),Yes
+gemini-robotics-er-1.6-preview,Google,General-Purpose,Undisclosed,Undisclosed,Online: Gemini API (Preview),Yes
+gemini-robotics-er-2-preview,Google,General-Purpose,Undisclosed,Undisclosed,Online: Gemini API (Preview),Yes
+google/functiongemma-270m-it,Google,General-Purpose,270M,270M,Offline: Open Weight,No
+google/gemma-1-2b-it,Google,General-Purpose,2B,2B,Offline: Open Weight,No
+google/gemma-1-7b-it,Google,General-Purpose,7B,7B,Offline: Open Weight,No
+google/gemma-2-27b-it,Google,General-Purpose,27B,27B,Offline: Open Weight,No
+google/gemma-2-2b-it,Google,General-Purpose,2B,2B,Offline: Open Weight,No
+google/gemma-2-9b-it,Google,General-Purpose,9B,9B,Offline: Open Weight,No
+google/gemma-3-12b-it,Google,General-Purpose,12B,12B,Offline: Open Weight,No
+google/gemma-3-1b-it,Google,General-Purpose,1B,1B,Offline: Open Weight,No
+google/gemma-3-270m-it,Google,General-Purpose,270M,270M,Offline: Open Weight,No
+google/gemma-3-27b-it,Google,General-Purpose,27B,27B,Offline: Open Weight,No
+google/gemma-3-4b-it,Google,General-Purpose,4B,4B,Offline: Open Weight,No
+google/gemma-3n-E2B-it,Google,General-Purpose,Undisclosed total,2B effective,Offline: Open Weight,No
+google/gemma-3n-E4B-it,Google,General-Purpose,Undisclosed total,4B effective,Offline: Open Weight,No
+google/gemma-4-12B-it,Google,General-Purpose,11.95B,11.95B,Offline: Open Weight,Yes
+google/gemma-4-26B-A4B-it,Google,General-Purpose,25.2B,3.8B,Both: Open Weight / Gemini API,Yes
+google/gemma-4-31B-it,Google,General-Purpose,30.7B,30.7B,Both: Open Weight / Gemini API,Yes
+google/gemma-4-E2B-it,Google,General-Purpose,5.1B incl. embeddings,2.3B effective,Offline: Open Weight,Yes
+google/gemma-4-E4B-it,Google,General-Purpose,8B incl. embeddings,4.5B effective,Offline: Open Weight,Yes
+google/paligemma2-10b,Google,General-Purpose,10B,10B,Offline: Open Weight,No
+google/paligemma2-28b,Google,General-Purpose,28B,28B,Offline: Open Weight,No
+google/paligemma2-3b,Google,General-Purpose,3B,3B,Offline: Open Weight,No
+MedGemma-1.5-4B,Google,General-Purpose,4B,4B,Offline: Open Weight,No
+MedGemma-27B,Google,General-Purpose,27B,27B,Offline: Open Weight,No
+TranslateGemma-12B,Google,General-Purpose,12B,12B,Offline: Open Weight,No
+TranslateGemma-27B,Google,General-Purpose,27B,27B,Offline: Open Weight,No
+TranslateGemma-4B,Google,General-Purpose,4B,4B,Offline: Open Weight,No
+google/codegemma-2b,Google,Coding,2B,2B,Offline: Open Weight,No
+google/codegemma-7b-it,Google,Coding,7B,7B,Offline: Open Weight,No
+gemini-2.5-flash-image,Google,Image Generation,Undisclosed,Undisclosed,Online: Gemini API,No
+gemini-3-pro-image,Google,Image Generation,Undisclosed,Undisclosed,Online: Gemini API (Stable),Yes
+gemini-3.1-flash-image,Google,Image Generation,Undisclosed,Undisclosed,Online: Gemini API (Stable),No
+gemini-3.1-flash-lite-image,Google,Image Generation,Undisclosed,Undisclosed,Online: Gemini API (Stable),No
+imagen-4.0-generate,Google,Image Generation,Undisclosed,Undisclosed,"Online: Gemini API (Deprecated, still available)",No
+gemini-omni-flash-preview,Google,Video Generation,Undisclosed,Undisclosed,Online: Gemini API (Preview),No
+veo-3.1-generate-preview,Google,Video Generation,Undisclosed,Undisclosed,Online: Gemini API (Preview),No
+veo-3.1-lite-generate-preview,Google,Video Generation,Undisclosed,Undisclosed,Online: Gemini API (Preview),No
+gemini-2.5-flash-native-audio-preview-12-2025,Google,Speech & Audio,Undisclosed,Undisclosed,Online: Gemini Live API (Preview),Yes
+gemini-2.5-flash-preview-tts,Google,Speech & Audio,Undisclosed,Undisclosed,Online: Gemini API (Preview),No
+gemini-2.5-pro-preview-tts,Google,Speech & Audio,Undisclosed,Undisclosed,Online: Gemini API (Preview),No
+gemini-3.1-flash-live-preview,Google,Speech & Audio,Undisclosed,Undisclosed,Online: Gemini Live API (Preview),Yes
+gemini-3.1-flash-tts-preview,Google,Speech & Audio,Undisclosed,Undisclosed,Online: Gemini API (Preview),No
+gemini-3.5-live-translate-preview,Google,Speech & Audio,Undisclosed,Undisclosed,Online: Gemini Live API (Preview),No
+lyria-3-clip-preview,Google,Speech & Audio,Undisclosed,Undisclosed,Online: Gemini API (Preview),No
+lyria-3-pro-preview,Google,Speech & Audio,Undisclosed,Undisclosed,Online: Gemini API (Preview),No
+lyria-realtime-exp,Google,Speech & Audio,Undisclosed,Undisclosed,Online: Gemini API (Experimental),No
+EmbeddingGemma,Google,Embedding,308M,308M,Offline: Open Weight,No
+gemini-embedding-001,Google,Embedding,Undisclosed,Undisclosed,Online: Gemini API,No
+gemini-embedding-2-preview,Google,Embedding,Undisclosed,Undisclosed,Online: Gemini API (Preview),No
+ShieldGemma-27B,Google,Safety & Moderation,27B,27B,Offline: Open Weight,No
+ShieldGemma-2B,Google,Safety & Moderation,2B,2B,Offline: Open Weight,No
+ShieldGemma-9B,Google,Safety & Moderation,9B,9B,Offline: Open Weight,No
+Llama 3.2 11B Vision Instruct,Meta,General-Purpose,11B,11B,Offline: Open Weight,No
+Llama 3.2 1B Instruct,Meta,General-Purpose,1B,1B,Offline: Open Weight,No
+Llama 3.2 3B Instruct,Meta,General-Purpose,3B,3B,Offline: Open Weight,No
+Llama 3.2 90B Vision Instruct,Meta,General-Purpose,90B,90B,Offline: Open Weight,No
+Llama 3.3 70B Instruct,Meta,General-Purpose,70B,70B,Offline: Open Weight,No
+Llama 4 Maverick,Meta,General-Purpose,≈400B,17B/token,Offline: Open Weight,No
+Llama 4 Scout,Meta,General-Purpose,109B,17B/token,Offline: Open Weight,No
+meta-llama/Llama-3.1-405B-Instruct,Meta,General-Purpose,405B,405B,Offline: Official Hugging Face / Open Weight,No
+meta-llama/Llama-3.1-70B-Instruct,Meta,General-Purpose,70B,70B,Offline: Official Hugging Face / Open Weight,No
+meta-llama/Llama-3.1-8B-Instruct,Meta,General-Purpose,8B,8B,Offline: Official Hugging Face / Open Weight,No
+meta-llama/Llama-Guard-4-12B,Meta,Safety & Moderation,12B,12B,Offline: Official Hugging Face / Open Weight,No
+meta-llama/Llama-Prompt-Guard-2-86M,Meta,Safety & Moderation,86M,86M,Offline: Official Hugging Face / Open Weight,No
+grok-4.20-0309-non-reasoning,xAI,General-Purpose,Undisclosed,Undisclosed,Online: Grok / API,No
+grok-4.20-0309-reasoning,xAI,General-Purpose,Undisclosed,Undisclosed,Online: API,Yes
+grok-4.20-multi-agent-0309,xAI,General-Purpose,Undisclosed,Undisclosed,Online: API,Yes
+grok-4.3,xAI,General-Purpose,Undisclosed,Undisclosed,Online: Grok / API,Yes
+grok-4.5,xAI,General-Purpose,Undisclosed,Undisclosed,Online: Grok / API,Yes
+grok-build-0.1,xAI,Coding,Undisclosed,Undisclosed,Online: API,Yes
+grok-imagine-image,xAI,Image Generation,Undisclosed,Undisclosed,Online: API,No
+grok-imagine-image-quality,xAI,Image Generation,Undisclosed,Undisclosed,Online: API,No
+grok-imagine-video,xAI,Video Generation,Undisclosed,Undisclosed,Online: API,No
+grok-imagine-video-1.5,xAI,Video Generation,Undisclosed,Undisclosed,Online: API,No
+grok-voice-think-fast-1.0,xAI,Speech & Audio,Undisclosed,Undisclosed,Online: API,Yes
+grok-voice-think-fast-2.0,xAI,Speech & Audio,Undisclosed,Undisclosed,Online: API,Yes
+Ministral 3 14B (v25.12),Mistral AI,General-Purpose,14B,14B,Both: API / Open Weight,No
+Ministral 3 3B (v25.12),Mistral AI,General-Purpose,3B,3B,Both: API / Open Weight,No
+Ministral 3 8B (v25.12),Mistral AI,General-Purpose,8B,8B,Both: API / Open Weight,No
+Mistral Medium 3.5 (v26.04),Mistral AI,General-Purpose,Undisclosed,Undisclosed,Online: API,Yes
+Mistral Small 4 (v26.03),Mistral AI,General-Purpose,Undisclosed,Undisclosed,Both: API / Open Weight,Yes
+mistral-large-2512 (Mistral Large 3),Mistral AI,General-Purpose,675B,41B/token,Both: API / Open Weight,No
+mistralai/Mistral-7B-Instruct-v0.3,Mistral AI,General-Purpose,7B,7B,Offline: Official Hugging Face / Open Weight,No
+mistralai/Mistral-Medium-3.5-128B,Mistral AI,General-Purpose,128B,128B,Both: API / Official Hugging Face Open Weight,Yes
+Codestral (v25.08),Mistral AI,Coding,Undisclosed,Undisclosed,Online: API,No
+Leanstral 1.5,Mistral AI,Coding,Undisclosed,Undisclosed,Both: API / Open Weight,Yes
+Voxtral Mini Transcribe 2,Mistral AI,Speech & Audio,Undisclosed,Undisclosed,Online: API,No
+Voxtral Mini Transcribe Realtime,Mistral AI,Speech & Audio,Undisclosed,Undisclosed,Both: API / Open Weight,No
+Voxtral Small (v25.07),Mistral AI,Speech & Audio,Undisclosed,Undisclosed,Both: API / Open Weight,No
+Voxtral TTS,Mistral AI,Speech & Audio,Undisclosed,Undisclosed,Online: API,No
+Codestral Embed,Mistral AI,Embedding,Undisclosed,Undisclosed,Online: API,No
+Mistral Embed,Mistral AI,Embedding,Undisclosed,Undisclosed,Online: API,No
+Mistral Moderation 2,Mistral AI,Safety & Moderation,Undisclosed,Undisclosed,Online: API,No
+Shieldstral 1.0,Mistral AI,Safety & Moderation,Undisclosed,Undisclosed,Both: API / Open Weight,No
+Qwen/Qwen2.5-0.5B-Instruct,Alibaba / Qwen,General-Purpose,0.5B,0.5B,Offline: Official Hugging Face / Open Weight,No
+Qwen/Qwen2.5-1.5B-Instruct,Alibaba / Qwen,General-Purpose,1.5B,1.5B,Offline: Official Hugging Face / Open Weight,No
+Qwen/Qwen2.5-14B-Instruct,Alibaba / Qwen,General-Purpose,14B,14B,Offline: Official Hugging Face / Open Weight,No
+Qwen/Qwen2.5-32B-Instruct,Alibaba / Qwen,General-Purpose,32B,32B,Offline: Official Hugging Face / Open Weight,No
+Qwen/Qwen2.5-3B-Instruct,Alibaba / Qwen,General-Purpose,3B,3B,Offline: Official Hugging Face / Open Weight,No
+Qwen/Qwen2.5-72B-Instruct,Alibaba / Qwen,General-Purpose,72B,72B,Offline: Official Hugging Face / Open Weight,No
+Qwen/Qwen2.5-7B-Instruct,Alibaba / Qwen,General-Purpose,7B,7B,Offline: Official Hugging Face / Open Weight,No
+Qwen/Qwen2.5-Omni-3B,Alibaba / Qwen,General-Purpose,3B,3B,Offline: Official Hugging Face / Open Weight,No
+Qwen/Qwen2.5-Omni-7B,Alibaba / Qwen,General-Purpose,7B,7B,Offline: Official Hugging Face / Open Weight,No
+Qwen/Qwen2.5-VL-3B-Instruct,Alibaba / Qwen,General-Purpose,3B,3B,Offline: Official Hugging Face / Open Weight,No
+Qwen/Qwen2.5-VL-72B-Instruct,Alibaba / Qwen,General-Purpose,72B,72B,Offline: Official Hugging Face / Open Weight,No
+Qwen/Qwen2.5-VL-7B-Instruct,Alibaba / Qwen,General-Purpose,7B,7B,Offline: Official Hugging Face / Open Weight,No
+Qwen/Qwen3-0.6B,Alibaba / Qwen,General-Purpose,0.6B,0.6B,Offline: Official Hugging Face / Open Weight,Yes
+Qwen/Qwen3-1.7B,Alibaba / Qwen,General-Purpose,1.7B,1.7B,Offline: Official Hugging Face / Open Weight,Yes
+Qwen/Qwen3-14B,Alibaba / Qwen,General-Purpose,14B,14B,Offline: Official Hugging Face / Open Weight,Yes
+Qwen/Qwen3-235B-A22B,Alibaba / Qwen,General-Purpose,235B,22B/token,Offline: Official Hugging Face / Open Weight,Yes
+Qwen/Qwen3-30B-A3B,Alibaba / Qwen,General-Purpose,30B,3B/token,Offline: Official Hugging Face / Open Weight,Yes
+Qwen/Qwen3-32B,Alibaba / Qwen,General-Purpose,32B,32B,Offline: Official Hugging Face / Open Weight,Yes
+Qwen/Qwen3-4B,Alibaba / Qwen,General-Purpose,4B,4B,Offline: Official Hugging Face / Open Weight,Yes
+Qwen/Qwen3-8B,Alibaba / Qwen,General-Purpose,8B,8B,Offline: Official Hugging Face / Open Weight,Yes
+Qwen/Qwen3-Omni-30B-A3B-Captioner,Alibaba / Qwen,General-Purpose,30B,3B/token,Offline: Official Hugging Face / Open Weight,No
+Qwen/Qwen3-Omni-30B-A3B-Instruct,Alibaba / Qwen,General-Purpose,30B,3B/token,Offline: Official Hugging Face / Open Weight,No
+Qwen/Qwen3-VL-235B-A22B-Instruct,Alibaba / Qwen,General-Purpose,235B,22B/token,Offline: Official Hugging Face / Open Weight,No
+Qwen/Qwen3-VL-235B-A22B-Thinking,Alibaba / Qwen,General-Purpose,235B,22B/token,Offline: Official Hugging Face / Open Weight,Yes
+Qwen/Qwen3-VL-30B-A3B-Instruct,Alibaba / Qwen,General-Purpose,30B,3B/token,Offline: Official Hugging Face / Open Weight,No
+Qwen/Qwen3-VL-30B-A3B-Thinking,Alibaba / Qwen,General-Purpose,30B,3B/token,Offline: Official Hugging Face / Open Weight,Yes
+Qwen/Qwen3-VL-32B-Instruct,Alibaba / Qwen,General-Purpose,32B,32B,Offline: Official Hugging Face / Open Weight,No
+Qwen/Qwen3-VL-8B-Instruct,Alibaba / Qwen,General-Purpose,8B,8B,Offline: Official Hugging Face / Open Weight,No
+Qwen/Qwen3-VL-8B-Thinking,Alibaba / Qwen,General-Purpose,8B,8B,Offline: Official Hugging Face / Open Weight,Yes
+Qwen/Qwen3.5-122B-A10B,Alibaba / Qwen,General-Purpose,122B,10B/token,Offline: Official Hugging Face / Open Weight,Yes
+Qwen/Qwen3.5-27B,Alibaba / Qwen,General-Purpose,27B,27B,Offline: Official Hugging Face / Open Weight,Yes
+Qwen/Qwen3.5-2B,Alibaba / Qwen,General-Purpose,2B,2B,Offline: Official Hugging Face / Open Weight,Yes
+Qwen/Qwen3.5-35B-A3B,Alibaba / Qwen,General-Purpose,35B,3B/token,Offline: Official Hugging Face / Open Weight,Yes
+Qwen/Qwen3.5-397B-A17B,Alibaba / Qwen,General-Purpose,397B,17B/token,Offline: Official Hugging Face / Open Weight,Yes
+Qwen/Qwen3.5-4B,Alibaba / Qwen,General-Purpose,4B,4B,Offline: Official Hugging Face / Open Weight,Yes
+Qwen/Qwen3.5-9B,Alibaba / Qwen,General-Purpose,9B,9B,Offline: Official Hugging Face / Open Weight,Yes
+Qwen/Qwen3.6-35B-A3B,Alibaba / Qwen,General-Purpose,35B,3B/token,Offline: Official Hugging Face / Open Weight,Yes
+qwen3.5-flash,Alibaba / Qwen,General-Purpose,Undisclosed,Undisclosed,Online: Model Studio API,Yes
+qwen3.5-omni-flash,Alibaba / Qwen,General-Purpose,Undisclosed,Undisclosed,Online: Model Studio API,Yes
+qwen3.5-omni-plus,Alibaba / Qwen,General-Purpose,Undisclosed,Undisclosed,Online: Model Studio API,Yes
+qwen3.5-plus,Alibaba / Qwen,General-Purpose,Undisclosed,Undisclosed,Online: Model Studio API,Yes
+qwen3.6-flash,Alibaba / Qwen,General-Purpose,Undisclosed,Undisclosed,Online: Model Studio API,Yes
+qwen3.6-plus,Alibaba / Qwen,General-Purpose,Undisclosed,Undisclosed,Online: Model Studio API,Yes
+qwen3.7-flash,Alibaba / Qwen,General-Purpose,Undisclosed,Undisclosed,Online: Model Studio API,Yes
+qwen3.7-max,Alibaba / Qwen,General-Purpose,Undisclosed,Undisclosed,Online: Model Studio API,Yes
+qwen3.7-plus,Alibaba / Qwen,General-Purpose,Undisclosed,Undisclosed,Online: Model Studio API,Yes
+qwen3.8-max,Alibaba / Qwen,General-Purpose,Undisclosed,Undisclosed,Online: Model Studio API,Yes
+Qwen/Qwen2.5-Coder-0.5B-Instruct,Alibaba / Qwen,Coding,0.5B,0.5B,Offline: Official Hugging Face / Open Weight,No
+Qwen/Qwen2.5-Coder-1.5B-Instruct,Alibaba / Qwen,Coding,1.5B,1.5B,Offline: Official Hugging Face / Open Weight,No
+Qwen/Qwen2.5-Coder-14B-Instruct,Alibaba / Qwen,Coding,14B,14B,Offline: Official Hugging Face / Open Weight,No
+Qwen/Qwen2.5-Coder-32B-Instruct,Alibaba / Qwen,Coding,32B,32B,Offline: Official Hugging Face / Open Weight,No
+Qwen/Qwen2.5-Coder-3B-Instruct,Alibaba / Qwen,Coding,3B,3B,Offline: Official Hugging Face / Open Weight,No
+Qwen/Qwen2.5-Coder-7B-Instruct,Alibaba / Qwen,Coding,7B,7B,Offline: Official Hugging Face / Open Weight,No
+Qwen/Qwen3-Coder-30B-A3B-Instruct,Alibaba / Qwen,Coding,30.5B,3.3B/token,Offline: Official Hugging Face / Open Weight,Yes
+Qwen/Qwen3-Coder-480B-A35B-Instruct,Alibaba / Qwen,Coding,480B,35B/token,Offline: Official Hugging Face / Open Weight,Yes
+Qwen/Qwen3-Coder-Next,Alibaba / Qwen,Coding,80B,3B/token,Offline: Official Hugging Face / Open Weight,Yes
+Qwen/Qwen-Image,Alibaba / Qwen,Image Generation,20B,20B,Offline: Official Hugging Face / Open Weight,No
+Qwen/Qwen-Image-2512,Alibaba / Qwen,Image Generation,20B,20B,Offline: Official Hugging Face / Open Weight,No
+Qwen/Qwen-Image-Edit,Alibaba / Qwen,Image Generation,20B,20B,Offline: Official Hugging Face / Open Weight,No
+Qwen/Qwen-Image-Edit-2509,Alibaba / Qwen,Image Generation,20B,20B,Offline: Official Hugging Face / Open Weight,No
+Qwen/Qwen-Image-Edit-2511,Alibaba / Qwen,Image Generation,20B,20B,Offline: Official Hugging Face / Open Weight,No
+qwen-audio-3.0-asr-flash-filetrans,Alibaba / Qwen,Speech & Audio,Undisclosed,Undisclosed,Online: Model Studio API,No
+qwen-audio-3.0-asr-flash-streaming,Alibaba / Qwen,Speech & Audio,Undisclosed,Undisclosed,Online: Model Studio API,No
+Qwen/Qwen3-ASR-0.6B,Alibaba / Qwen,Speech & Audio,0.6B,0.6B,Offline: Official Hugging Face / Open Weight,No
+Qwen/Qwen3-ASR-1.7B,Alibaba / Qwen,Speech & Audio,1.7B,1.7B,Offline: Official Hugging Face / Open Weight,No
+Qwen/Qwen3-ForcedAligner-0.6B,Alibaba / Qwen,Speech & Audio,0.6B,0.6B,Offline: Official Hugging Face / Open Weight,No
+Qwen/Qwen3-TTS-12Hz-0.6B-Base,Alibaba / Qwen,Speech & Audio,0.6B,0.6B,Offline: Official Hugging Face / Open Weight,No
+Qwen/Qwen3-TTS-12Hz-0.6B-CustomVoice,Alibaba / Qwen,Speech & Audio,0.6B,0.6B,Offline: Official Hugging Face / Open Weight,No
+Qwen/Qwen3-TTS-12Hz-1.7B-Base,Alibaba / Qwen,Speech & Audio,1.7B,1.7B,Offline: Official Hugging Face / Open Weight,No
+Qwen/Qwen3-TTS-12Hz-1.7B-CustomVoice,Alibaba / Qwen,Speech & Audio,1.7B,1.7B,Offline: Official Hugging Face / Open Weight,No
+Qwen/Qwen3-TTS-12Hz-1.7B-VoiceDesign,Alibaba / Qwen,Speech & Audio,1.7B,1.7B,Offline: Official Hugging Face / Open Weight,No
+qwen3.5-omni-flash-realtime,Alibaba / Qwen,Speech & Audio,Undisclosed,Undisclosed,Online: Model Studio API,Yes
+qwen3.5-omni-plus-realtime,Alibaba / Qwen,Speech & Audio,Undisclosed,Undisclosed,Online: Model Studio API,Yes
+Qwen/Qwen3-Embedding-0.6B,Alibaba / Qwen,Embedding,0.6B,0.6B,Offline: Official Hugging Face / Open Weight,No
+Qwen/Qwen3-Embedding-4B,Alibaba / Qwen,Embedding,4B,4B,Offline: Official Hugging Face / Open Weight,No
+Qwen/Qwen3-Embedding-8B,Alibaba / Qwen,Embedding,8B,8B,Offline: Official Hugging Face / Open Weight,No
+Qwen/Qwen3-Reranker-0.6B,Alibaba / Qwen,Embedding,0.6B,0.6B,Offline: Official Hugging Face / Open Weight,No
+Qwen/Qwen3-Reranker-4B,Alibaba / Qwen,Embedding,4B,4B,Offline: Official Hugging Face / Open Weight,No
+Qwen/Qwen3-Reranker-8B,Alibaba / Qwen,Embedding,8B,8B,Offline: Official Hugging Face / Open Weight,No
+Qwen/Qwen3-VL-Embedding-2B,Alibaba / Qwen,Embedding,2B,2B,Offline: Official Hugging Face / Open Weight,No
+Qwen/Qwen3-VL-Embedding-8B,Alibaba / Qwen,Embedding,8B,8B,Offline: Official Hugging Face / Open Weight,No
+Qwen/Qwen3-VL-Reranker-2B,Alibaba / Qwen,Embedding,2B,2B,Offline: Official Hugging Face / Open Weight,No
+Qwen/Qwen3-VL-Reranker-8B,Alibaba / Qwen,Embedding,8B,8B,Offline: Official Hugging Face / Open Weight,No
+Qwen/Qwen3Guard-Gen-0.6B,Alibaba / Qwen,Safety & Moderation,0.6B,0.6B,Offline: Official Hugging Face / Open Weight,No
+Qwen/Qwen3Guard-Gen-4B,Alibaba / Qwen,Safety & Moderation,4B,4B,Offline: Official Hugging Face / Open Weight,No
+Qwen/Qwen3Guard-Gen-8B,Alibaba / Qwen,Safety & Moderation,8B,8B,Offline: Official Hugging Face / Open Weight,No
+Qwen/Qwen3Guard-Stream-0.6B,Alibaba / Qwen,Safety & Moderation,0.6B,0.6B,Offline: Official Hugging Face / Open Weight,No
+Qwen/Qwen3Guard-Stream-4B,Alibaba / Qwen,Safety & Moderation,4B,4B,Offline: Official Hugging Face / Open Weight,No
+Qwen/Qwen3Guard-Stream-8B,Alibaba / Qwen,Safety & Moderation,8B,8B,Offline: Official Hugging Face / Open Weight,No
+deepseek-ai/DeepSeek-V3.2-Exp,DeepSeek,General-Purpose,Undisclosed,Undisclosed,Offline: Official Hugging Face / Open Weight,Yes
+DeepSeek-R1,DeepSeek,General-Purpose,671B,37B/token,Offline: Open Weight,Yes
+DeepSeek-R1-Distill-Llama-70B,DeepSeek,General-Purpose,70B,70B,Offline: Open Weight,Yes
+DeepSeek-R1-Distill-Llama-8B,DeepSeek,General-Purpose,8B,8B,Offline: Open Weight,Yes
+DeepSeek-R1-Distill-Qwen-1.5B,DeepSeek,General-Purpose,1.5B,1.5B,Offline: Open Weight,Yes
+DeepSeek-R1-Distill-Qwen-14B,DeepSeek,General-Purpose,14B,14B,Offline: Open Weight,Yes
+DeepSeek-R1-Distill-Qwen-32B,DeepSeek,General-Purpose,32B,32B,Offline: Open Weight,Yes
+DeepSeek-R1-Distill-Qwen-7B,DeepSeek,General-Purpose,7B,7B,Offline: Open Weight,Yes
+deepseek-v4-flash,DeepSeek,General-Purpose,284B,13B/token,Both: Chat / API / Open Weight,Yes
+deepseek-v4-pro,DeepSeek,General-Purpose,1.6T,49B/token,Both: Chat / API / Open Weight,Yes
+kimi-k2.6,Moonshot AI / Kimi,General-Purpose,Undisclosed,Undisclosed,Online: Kimi / API,Yes
+kimi-k3,Moonshot AI / Kimi,General-Purpose,2.8T,Undisclosed,Online: Kimi / API,Yes
+kimi-k2.7-code,Moonshot AI / Kimi,Coding,Undisclosed,Undisclosed,Online: API,Yes
+kimi-k2.7-code-highspeed,Moonshot AI / Kimi,Coding,Undisclosed,Undisclosed,Online: API,Yes
+GLM-4.1V-Thinking-Flash,Zhipu AI / GLM,General-Purpose,Undisclosed,Undisclosed,Online: BigModel API,Yes
+GLM-4.1V-Thinking-FlashX,Zhipu AI / GLM,General-Purpose,Undisclosed,Undisclosed,Online: BigModel API,Yes
+GLM-4.5-Air,Zhipu AI / GLM,General-Purpose,Undisclosed,Undisclosed,Online: BigModel API,Yes
+GLM-4.5-AirX,Zhipu AI / GLM,General-Purpose,Undisclosed,Undisclosed,Online: BigModel API,Yes
+GLM-4.6,Zhipu AI / GLM,General-Purpose,Undisclosed,Undisclosed,Online: BigModel API,Yes
+GLM-4.6V,Zhipu AI / GLM,General-Purpose,Undisclosed,Undisclosed,Online: BigModel API,Yes
+GLM-4.6V-Flash,Zhipu AI / GLM,General-Purpose,Undisclosed,Undisclosed,Online: BigModel API,Yes
+GLM-4.7,Zhipu AI / GLM,General-Purpose,Undisclosed,Undisclosed,Online: BigModel API,Yes
+GLM-4.7-Flash,Zhipu AI / GLM,General-Purpose,Undisclosed,Undisclosed,Online: BigModel API,Yes
+GLM-4.7-FlashX,Zhipu AI / GLM,General-Purpose,Undisclosed,Undisclosed,Online: BigModel API,Yes
+GLM-5,Zhipu AI / GLM,General-Purpose,Undisclosed,Undisclosed,Online: BigModel API,Yes
+GLM-5-Turbo,Zhipu AI / GLM,General-Purpose,Undisclosed,Undisclosed,Online: BigModel API,Yes
+GLM-5.1,Zhipu AI / GLM,General-Purpose,Undisclosed,Undisclosed,Online: BigModel API,Yes
+GLM-5.2,Zhipu AI / GLM,General-Purpose,Undisclosed,Undisclosed,Online: BigModel API,Yes
+GLM-5.2 (open weight),Zhipu AI / GLM,General-Purpose,Undisclosed,Undisclosed,Offline: Open Weight,Yes
+GLM-5V-Turbo,Zhipu AI / GLM,General-Purpose,Undisclosed,Undisclosed,Online: BigModel API,Yes
+GLM-OCR,Zhipu AI / GLM,General-Purpose,0.9B,0.9B,Both: API / Open Weight,No
+zai-org/GLM-4.5,Zhipu AI / GLM,General-Purpose,355B,32B/token,Offline: Official Hugging Face / Open Weight,Yes
+zai-org/GLM-4.5-Air,Zhipu AI / GLM,General-Purpose,106B,12B/token,Offline: Official Hugging Face / Open Weight,Yes
+zai-org/GLM-5,Zhipu AI / GLM,General-Purpose,Undisclosed,Undisclosed,Both: API / Official Hugging Face Open Weight,Yes
+zai-org/GLM-5.1,Zhipu AI / GLM,General-Purpose,Undisclosed,Undisclosed,Both: API / Official Hugging Face Open Weight,Yes
+zai-org/GLM-5.2,Zhipu AI / GLM,General-Purpose,Undisclosed,Undisclosed,Both: API / Official Hugging Face Open Weight,Yes
+CogView-3-Flash,Zhipu AI / GLM,Image Generation,Undisclosed,Undisclosed,Online: BigModel API,No
+CogView-4,Zhipu AI / GLM,Image Generation,Undisclosed,Undisclosed,Online: BigModel API,No
+GLM-Image,Zhipu AI / GLM,Image Generation,Undisclosed,Undisclosed,Online: BigModel API,No
+CogVideoX-3,Zhipu AI / GLM,Video Generation,Undisclosed,Undisclosed,Online: BigModel API,No
+GLM-4-Voice,Zhipu AI / GLM,Speech & Audio,Undisclosed,Undisclosed,Online: BigModel API,No
+GLM-ASR-2512,Zhipu AI / GLM,Speech & Audio,Undisclosed,Undisclosed,Online: BigModel API,No
+GLM-Realtime,Zhipu AI / GLM,Speech & Audio,Undisclosed,Undisclosed,Online: BigModel API,No
+GLM-TTS,Zhipu AI / GLM,Speech & Audio,Undisclosed,Undisclosed,Online: BigModel API,No
+GLM-TTS-Clone,Zhipu AI / GLM,Speech & Audio,Undisclosed,Undisclosed,Online: BigModel API,No
+M2-her,MiniMax,General-Purpose,Undisclosed,Undisclosed,Online: API,No
+MiniMax-M2,MiniMax,General-Purpose,Undisclosed,Undisclosed,Online: API,Yes
+MiniMax-M2.1,MiniMax,General-Purpose,Undisclosed,Undisclosed,Online: API,Yes
+MiniMax-M2.1-highspeed,MiniMax,General-Purpose,Undisclosed,Undisclosed,Online: API,Yes
+MiniMax-M2.5,MiniMax,General-Purpose,Undisclosed,Undisclosed,Online: API,Yes
+MiniMax-M2.5-highspeed,MiniMax,General-Purpose,Undisclosed,Undisclosed,Online: API,Yes
+MiniMax-M2.7,MiniMax,General-Purpose,Undisclosed,Undisclosed,Online: API,Yes
+MiniMax-M2.7-highspeed,MiniMax,General-Purpose,Undisclosed,Undisclosed,Online: API,Yes
+MiniMax-M3,MiniMax,General-Purpose,Undisclosed,Undisclosed,Online: API,Yes
+MiniMaxAI/MiniMax-M1-40k,MiniMax,General-Purpose,456B,Undisclosed,Offline: Official Hugging Face / Open Weight,Yes
+MiniMaxAI/MiniMax-M1-80k,MiniMax,General-Purpose,456B,Undisclosed,Offline: Official Hugging Face / Open Weight,Yes
+MiniMaxAI/MiniMax-M2,MiniMax,General-Purpose,229B,Undisclosed,Offline: Official Hugging Face / Open Weight,Yes
+MiniMaxAI/MiniMax-M2.1,MiniMax,General-Purpose,229B,Undisclosed,Offline: Official Hugging Face / Open Weight,Yes
+MiniMaxAI/MiniMax-M2.5,MiniMax,General-Purpose,229B,Undisclosed,Offline: Official Hugging Face / Open Weight,Yes
+MiniMaxAI/MiniMax-M2.7,MiniMax,General-Purpose,229B,Undisclosed,Offline: Official Hugging Face / Open Weight,Yes
+MiniMaxAI/MiniMax-M3,MiniMax,General-Purpose,428B,23B/token,Offline: Official Hugging Face / Open Weight,Yes
+MiniMaxAI/MiniMax-Text-01,MiniMax,General-Purpose,456B,45.9B/token,Offline: Official Hugging Face / Open Weight,No
+MiniMaxAI/MiniMax-VL-01,MiniMax,General-Purpose,456B,45.9B/token,Offline: Official Hugging Face / Open Weight,No
+MiniMax Image,MiniMax,Image Generation,Undisclosed,Undisclosed,Online: API,No
+MiniMax Video,MiniMax,Video Generation,Undisclosed,Undisclosed,Online: API,No
+MiniMaxAI/MiniMax-H3,MiniMax,Video Generation,33B,Undisclosed,Offline: Official Hugging Face / Open Weight,Yes
+MiniMax Music,MiniMax,Speech & Audio,Undisclosed,Undisclosed,Online: API,No
+MiniMax Speech,MiniMax,Speech & Audio,Undisclosed,Undisclosed,Online: API,No
+doubao-seed-1.8,ByteDance / Doubao-Seed,General-Purpose,Undisclosed,Undisclosed,Online: Volcano Ark API,Yes
+doubao-seed-2-0-lite-260428,ByteDance / Doubao-Seed,General-Purpose,Undisclosed,Undisclosed,Online: Volcano Ark API,Yes
+doubao-seed-2-0-mini-260428,ByteDance / Doubao-Seed,General-Purpose,Undisclosed,Undisclosed,Online: Volcano Ark API,Yes
+doubao-seed-2.1-pro,ByteDance / Doubao-Seed,General-Purpose,Undisclosed,Undisclosed,Online: Volcano Ark API,Yes
+doubao-seed-2.1-turbo,ByteDance / Doubao-Seed,General-Purpose,Undisclosed,Undisclosed,Online: Volcano Ark API,Yes
+Doubao Seedream 5.0 lite,ByteDance / Doubao-Seed,Image Generation,Undisclosed,Undisclosed,Online: Volcano Ark API,No
+Doubao Seedream 5.0 pro,ByteDance / Doubao-Seed,Image Generation,Undisclosed,Undisclosed,Online: Volcano Ark API,No
+Doubao Seedance 2.0,ByteDance / Doubao-Seed,Video Generation,Undisclosed,Undisclosed,Online: Volcano Ark API,No
+Doubao Seedance 2.5,ByteDance / Doubao-Seed,Video Generation,Undisclosed,Undisclosed,Online: Volcano Ark API,No
+ERNIE 5.0,Baidu / ERNIE,General-Purpose,2.4T,Undisclosed,Online: Qianfan / ERNIE,Yes
+ERNIE 5.1,Baidu / ERNIE,General-Purpose,Undisclosed,Undisclosed,Online: Qianfan / ERNIE,Yes
+ERNIE-Image,Baidu / ERNIE,Image Generation,8B,8B,Offline: Open Weight,No
+Hunyuan-A13B-Instruct,Tencent / Hunyuan,General-Purpose,80B,13B/token,Offline: Open Weight,Yes
+Hunyuan-T1,Tencent / Hunyuan,General-Purpose,Undisclosed,Undisclosed,Offline: Open Weight,Yes
+hunyuan-turbos-latest,Tencent / Hunyuan,General-Purpose,Undisclosed,Undisclosed,Online: Tencent Cloud API,Yes
+hunyuan-vision,Tencent / Hunyuan,General-Purpose,Undisclosed,Undisclosed,Online: Tencent Cloud API,No
+tencent/Hunyuan-0.5B-Instruct,Tencent / Hunyuan,General-Purpose,0.5B,0.5B,Offline: Official Hugging Face / Open Weight,No
+tencent/Hunyuan-1.8B-Instruct,Tencent / Hunyuan,General-Purpose,1.8B,1.8B,Offline: Official Hugging Face / Open Weight,No
+tencent/Hunyuan-4B-Instruct,Tencent / Hunyuan,General-Purpose,4B,4B,Offline: Official Hugging Face / Open Weight,No
+tencent/Hunyuan-7B-Instruct,Tencent / Hunyuan,General-Purpose,7B,7B,Offline: Official Hugging Face / Open Weight,No
+tencent/Hunyuan-MT-7B,Tencent / Hunyuan,General-Purpose,7B,7B,Offline: Official Hugging Face / Open Weight,No
+tencent/Tencent-Hunyuan-Large,Tencent / Hunyuan,General-Purpose,389B,52B/token,Offline: Official Hugging Face / Open Weight,No
+Hunyuan3D,Tencent / Hunyuan,Image Generation,Undisclosed,Undisclosed,Online: Tencent Cloud API,No
+HunyuanImage,Tencent / Hunyuan,Image Generation,Undisclosed,Undisclosed,Online / Open Weight,No
+tencent/Hunyuan3D-2,Tencent / Hunyuan,Image Generation,Undisclosed,Undisclosed,Offline: Official Hugging Face / Open Weight,No
+tencent/HunyuanImage-3.0,Tencent / Hunyuan,Image Generation,Undisclosed,Undisclosed,Offline: Official Hugging Face / Open Weight,No
+HunyuanVideo,Tencent / Hunyuan,Video Generation,Undisclosed,Undisclosed,Online / Open Weight,No
+tencent/HunyuanVideo-1.5,Tencent / Hunyuan,Video Generation,8.3B,8.3B,Offline: Official Hugging Face / Open Weight,No
+microsoft/Phi-3.5-mini-instruct,Microsoft,General-Purpose,3.8B,3.8B,Offline: Official Hugging Face / Open Weight,No
+microsoft/Phi-Ground-Any,Microsoft,General-Purpose,4B-class,4B-class,Offline: Official Hugging Face / Open Weight,No
+Phi-4,Microsoft,General-Purpose,14B,14B,Both: Foundry / Open Weight,No
+Phi-4-mini-instruct,Microsoft,General-Purpose,3.8B,3.8B,Both: Foundry / Open Weight,No
+Phi-4-mini-reasoning,Microsoft,General-Purpose,3.8B,3.8B,Both: Foundry / Open Weight,Yes
+Phi-4-multimodal-instruct,Microsoft,General-Purpose,5.6B,5.6B,Both: Foundry / Open Weight,No
+Phi-4-reasoning,Microsoft,General-Purpose,14B,14B,Both: Foundry / Open Weight,Yes
+Phi-4-reasoning-plus,Microsoft,General-Purpose,14B,14B,Offline: Open Weight,Yes
+MAI-Image-2,Microsoft,Image Generation,Undisclosed,Undisclosed,Online: Microsoft Foundry,No
+MAI-Image-2-Efficient,Microsoft,Image Generation,Undisclosed,Undisclosed,Online: Microsoft Foundry,No
+Amazon Nova 2 Lite,Amazon / Nova,General-Purpose,Undisclosed,Undisclosed,Online: Amazon Bedrock,Yes
+amazon.nova-lite-v1:0,Amazon / Nova,General-Purpose,Undisclosed,Undisclosed,Online: Amazon Bedrock,No
+amazon.nova-micro-v1:0,Amazon / Nova,General-Purpose,Undisclosed,Undisclosed,Online: Amazon Bedrock,No
+amazon.nova-premier-v1:0,Amazon / Nova,General-Purpose,Undisclosed,Undisclosed,Online: Amazon Bedrock,No
+amazon.nova-pro-v1:0,Amazon / Nova,General-Purpose,Undisclosed,Undisclosed,Online: Amazon Bedrock,No
+nova-act-latest,Amazon / Nova,General-Purpose,Undisclosed,Undisclosed,Online: Nova Act,Yes
+nova-act-preview,Amazon / Nova,General-Purpose,Undisclosed,Undisclosed,Online: Nova Act,Yes
+nova-act-v1.0,Amazon / Nova,General-Purpose,Undisclosed,Undisclosed,Online: Nova Act,Yes
+amazon.nova-canvas-v1:0,Amazon / Nova,Image Generation,Undisclosed,Undisclosed,Online: Amazon Bedrock (Legacy; EOL 2026-09-30),No
+amazon.nova-reel-v1:1,Amazon / Nova,Video Generation,Undisclosed,Undisclosed,Online: Amazon Bedrock,No
+Amazon Nova 2 Sonic,Amazon / Nova,Speech & Audio,Undisclosed,Undisclosed,Online: Amazon Bedrock,No
+Amazon Nova Multimodal Embeddings,Amazon / Nova,Embedding,Undisclosed,Undisclosed,Online: Amazon Bedrock,No
+CohereLabs/c4ai-command-a-03-2025,Cohere,General-Purpose,111B,111B,Both: API / Official Hugging Face Open Weight,No
+CohereLabs/c4ai-command-r-plus,Cohere,General-Purpose,104B,104B,Both: API / Official Hugging Face Open Weight,No
+CohereLabs/c4ai-command-r-v01,Cohere,General-Purpose,35B,35B,Both: API / Official Hugging Face Open Weight,No
+CohereLabs/tiny-aya-global,Cohere,General-Purpose,3.35B,3.35B,Offline: Official Hugging Face / Open Weight,No
+Command A Reasoning,Cohere,General-Purpose,Undisclosed,Undisclosed,Online: API,Yes
+Command A Translate,Cohere,General-Purpose,Undisclosed,Undisclosed,Online: API,No
+Command A Vision,Cohere,General-Purpose,Undisclosed,Undisclosed,Online: API,No
+Command R,Cohere,General-Purpose,Undisclosed,Undisclosed,Online: API,No
+Command R+,Cohere,General-Purpose,Undisclosed,Undisclosed,Online: API,No
+Command R7B,Cohere,General-Purpose,Undisclosed,Undisclosed,Online: API,No
+command-a-03-2025,Cohere,General-Purpose,111B,111B,Online: API,No
+command-a-plus-05-2026,Cohere,General-Purpose,218B,25B/token,Online: API,Yes
+north-mini-code-1-0,Cohere,Coding,30B,3B/token,Offline: Open Weight,Yes
+CohereLabs/cohere-transcribe-03-2026,Cohere,Speech & Audio,2B,2B,Offline: Official Hugging Face / Open Weight,No
+embed-english-light-v3.0,Cohere,Embedding,Undisclosed,Undisclosed,Online: API,No
+embed-english-v3.0,Cohere,Embedding,Undisclosed,Undisclosed,Online: API,No
+embed-multilingual-light-v3.0,Cohere,Embedding,Undisclosed,Undisclosed,Online: API,No
+embed-multilingual-v3.0,Cohere,Embedding,Undisclosed,Undisclosed,Online: API,No
+embed-v4.0,Cohere,Embedding,Undisclosed,Undisclosed,Online: API,No
+rerank-v4.0,Cohere,Embedding,Undisclosed,Undisclosed,Online: API,No
+Llama-3.1-Nemotron-Nano-8B-v1,NVIDIA,General-Purpose,8B,8B,Both: NIM / Open Weight,Yes
+Nemotron 3 Nano 30B-A3B,NVIDIA,General-Purpose,30B,3B/token,Both: NIM / Open Weight,Yes
+Nemotron 3 Nano Omni,NVIDIA,General-Purpose,Undisclosed,Undisclosed,Both: NIM / Open Weight,Yes
+Nemotron 3 Super 120B-A12B,NVIDIA,General-Purpose,120B,12B/token,Both: NIM / Open Weight,Yes
+Nemotron 3 Ultra 550B-A55B,NVIDIA,General-Purpose,550B,55B/token,Both: NIM / Open Weight,Yes
+NVIDIA-Nemotron-Nano-9B-v2,NVIDIA,General-Purpose,9B,9B,Both: NIM / Open Weight,Yes
+nvidia/nemotron-3-8b-chat-4k-sft,NVIDIA,General-Purpose,8B,8B,Offline: Official Hugging Face / Open Weight,No
+nvidia/NVIDIA-Nemotron-3-Nano-30B-A3B-FP8,NVIDIA,General-Purpose,30B,3B/token,Both: NIM / Official Hugging Face Open Weight,Yes
+nvidia/NVIDIA-Nemotron-3-Ultra-550B-A55B-BF16,NVIDIA,General-Purpose,550B,55B/token,Both: NIM / Official Hugging Face Open Weight,Yes
+nvidia/llama-nemotron-embed-vl-1b-v2,NVIDIA,Embedding,1B,1B,Both: NIM / Official Hugging Face Open Weight,No
+nvidia/Nemotron-3.5-Content-Safety,NVIDIA,Safety & Moderation,4B-class,4B-class,Offline: Official Hugging Face / Open Weight,No
+MiMo-7B-RL,Xiaomi / MiMo,General-Purpose,7B,7B,Offline: Open Weight,Yes
+MiMo-V2-Flash,Xiaomi / MiMo,General-Purpose,309B,15B/token,Both: API / Open Weight,Yes
+MiMo-V2-Pro,Xiaomi / MiMo,General-Purpose,Undisclosed,Undisclosed,Online: MiMo / API,Yes
+MiMo-V2.5,Xiaomi / MiMo,General-Purpose,Undisclosed,Undisclosed,Offline: Open Weight,Yes
+MiMo-VL-7B-RL,Xiaomi / MiMo,General-Purpose,7B,7B,Offline: Open Weight,Yes
+XiaomiMiMo/MiMo-V2.5,Xiaomi / MiMo,General-Purpose,Undisclosed,Undisclosed,Offline: Official Hugging Face / Open Weight,Yes
+XiaomiMiMo/MiMo-V2.5-Pro,Xiaomi / MiMo,General-Purpose,Undisclosed,Undisclosed,Offline: Official Hugging Face / Open Weight,Yes
+MiMo-Audio-7B,Xiaomi / MiMo,Speech & Audio,7B,7B,Offline: Open Weight,Yes
+XiaomiMiMo/MiMo-Audio-7B-Instruct,Xiaomi / MiMo,Speech & Audio,7B,7B,Offline: Official Hugging Face / Open Weight,Yes
+XiaomiMiMo/MiMo-V2.5-ASR,Xiaomi / MiMo,Speech & Audio,Undisclosed,Undisclosed,Offline: Official Hugging Face / Open Weight,No
+step-3.5-flash,StepFun,General-Purpose,196B,11B/token,Both: API / Open Weight,Yes
+step-3.5-flash-2603,StepFun,General-Purpose,196B,11B/token,Both: API / Open Weight,Yes
+step-3.7-flash,StepFun,General-Purpose,Undisclosed,Undisclosed,Both: API / Open Weight,Yes
+stepfun-ai/Step-3.5-Flash,StepFun,General-Purpose,196B,11B/token,Both: API / Official Hugging Face Open Weight,Yes
+stepfun-ai/Step-3.7-Flash,StepFun,General-Purpose,198B,~11B/token,Both: API / Official Hugging Face Open Weight,Yes
+stepfun-ai/Step-Audio-2-mini,StepFun,Speech & Audio,Undisclosed,Undisclosed,Offline: Official Hugging Face / Open Weight,No
+Granite Docling,IBM,General-Purpose,258M,258M,Both: watsonx / Open Weight,No
+Granite Vision 4.1,IBM,General-Purpose,Undisclosed,Undisclosed,Both: watsonx / Open Weight,No
+granite-4.1-30b-instruct,IBM,General-Purpose,30B,30B,Both: watsonx / Open Weight,No
+granite-4.1-3b-instruct,IBM,General-Purpose,3B,3B,Both: watsonx / Open Weight,No
+granite-4.1-8b-instruct,IBM,General-Purpose,8B,8B,Both: watsonx / Open Weight,No
+ibm-granite/granite-3.3-8b-instruct,IBM,General-Purpose,8B,8B,Offline: Official Hugging Face / Open Weight,Yes
+ibm-granite/granite-vision-3.2-2b,IBM,General-Purpose,2B,2B,Offline: Official Hugging Face / Open Weight,No
+Granite Speech 4.1,IBM,Speech & Audio,Undisclosed,Undisclosed,Offline: Open Weight,No
+Granite Embedding,IBM,Embedding,Undisclosed,Undisclosed,Both: watsonx / Open Weight,No
+ibm-granite/granite-embedding-english-r2,IBM,Embedding,149M,149M,Offline: Official Hugging Face / Open Weight,No
+Granite Guardian 4.1,IBM,Safety & Moderation,Undisclosed,Undisclosed,Both: watsonx / Open Weight,No
+ai21labs/AI21-Jamba-Mini-1.7-FP8,AI21 Labs,General-Purpose,52B,12B/token,Offline: Official Hugging Face / Open Weight,No
+ai21labs/AI21-Jamba-Reasoning-3B,AI21 Labs,General-Purpose,3B,3B,Offline: Official Hugging Face / Open Weight,Yes
+ai21labs/AI21-Jamba2-Mini-FP8,AI21 Labs,General-Purpose,52B,12B/token,Offline: Official Hugging Face / Open Weight,No
+jamba-large,AI21 Labs,General-Purpose,398B,94B/token,Both: API / Open Weight / Private,No
+jamba-mini,AI21 Labs,General-Purpose,52B,12B/token,Both: API / Open Weight / Private,No
+Jamba2 3B,AI21 Labs,General-Purpose,3B,3B,Offline: Open Weight / Private,No
+Document OCR,Upstage,General-Purpose,Undisclosed,Undisclosed,Online: Upstage API,No
+Document Parse,Upstage,General-Purpose,Undisclosed,Undisclosed,Online: Upstage API,No
+Solar Mini,Upstage,General-Purpose,Undisclosed,Undisclosed,Online: Upstage API,No
+Solar Open 2,Upstage,General-Purpose,250B,15B/token,Offline: Open Weight,Yes
+Solar Pro 2,Upstage,General-Purpose,31B,31B,Online: Upstage API,Yes
+upstage/SOLAR-10.7B-Instruct-v1.0,Upstage,General-Purpose,10.7B,10.7B,Offline: Official Hugging Face / Open Weight,No
+upstage/Solar-Open-100B,Upstage,General-Purpose,102B,Undisclosed,Offline: Official Hugging Face / Open Weight,Yes
+Upstage Embed,Upstage,Embedding,Undisclosed,Undisclosed,Online: Upstage API,No
+HCX-005,NAVER,General-Purpose,Undisclosed,Undisclosed,Online: CLOVA Studio / API,No
+HCX-007,NAVER,General-Purpose,Undisclosed,Undisclosed,Online: CLOVA Studio / API,Yes
+HCX-DASH-002,NAVER,General-Purpose,Undisclosed,Undisclosed,Online: CLOVA Studio / API,No
+HyperCLOVA X 32B Think,NAVER,General-Purpose,32B,32B,Offline: Open Weight,Yes
+naver-hyperclovax/HyperCLOVAX-SEED-Omni-8B,NAVER,General-Purpose,11B,Undisclosed,Offline: Official Hugging Face / Open Weight,No
+naver-hyperclovax/HyperCLOVAX-SEED-Text-Instruct-1.5B,NAVER,General-Purpose,1.5B,1.5B,Offline: Official Hugging Face / Open Weight,No
+naver-hyperclovax/HyperCLOVAX-SEED-Think-14B,NAVER,General-Purpose,14.74B,14.74B,Offline: Official Hugging Face / Open Weight,Yes
+naver-hyperclovax/HyperCLOVAX-SEED-Think-32B,NAVER,General-Purpose,33B,33B,Offline: Official Hugging Face / Open Weight,Yes
+naver-hyperclovax/HyperCLOVAX-SEED-Vision-Instruct-3B,NAVER,General-Purpose,4B-class,4B-class,Offline: Official Hugging Face / Open Weight,No
+baichuan-inc/Baichuan-M1-14B-Instruct,Baichuan AI,General-Purpose,14B,14B,Offline: Official Hugging Face / Open Weight,No
+baichuan-inc/Baichuan-M2-32B,Baichuan AI,General-Purpose,32B,32B,Offline: Official Hugging Face / Open Weight,Yes
+baichuan-inc/Baichuan-M3-235B,Baichuan AI,General-Purpose,235B,Undisclosed,Offline: Official Hugging Face / Open Weight,Yes
+baichuan-inc/Baichuan-Omni-1d5,Baichuan AI,General-Purpose,Undisclosed,Undisclosed,Offline: Official Hugging Face / Open Weight,No
+baichuan-inc/BaichuanMed-OCR-7B,Baichuan AI,General-Purpose,7B-class,7B-class,Offline: Official Hugging Face / Open Weight,No
+Baichuan2-Turbo,Baichuan AI,General-Purpose,Undisclosed,Undisclosed,Online: API,No
+Baichuan2-Turbo-192k,Baichuan AI,General-Purpose,Undisclosed,Undisclosed,Online: API,No
+baichuan-inc/Baichuan-Audio-Instruct,Baichuan AI,Speech & Audio,10B-class,10B-class,Offline: Official Hugging Face / Open Weight,No
+Spark 4.0 Ultra / 4.0Ultra,iFLYTEK,General-Purpose,Undisclosed,Undisclosed,Online: Spark API,No
+Spark Lite / lite,iFLYTEK,General-Purpose,Undisclosed,Undisclosed,Online: Spark API,No
+Spark Pro / generalv3,iFLYTEK,General-Purpose,Undisclosed,Undisclosed,Online: Spark API,No
+Spark Pro-128K / pro-128k,iFLYTEK,General-Purpose,Undisclosed,Undisclosed,Online: Spark API,No
+Spark-X2 / model=spark-x,iFLYTEK,General-Purpose,Undisclosed,Undisclosed,Online: Spark API,Yes
+Spark-X2 / xsparkx2,iFLYTEK,General-Purpose,Undisclosed,Undisclosed,Online: Astron MaaS,Yes
+Spark-X2-Agent / xsparkx2agent,iFLYTEK,General-Purpose,Undisclosed,Undisclosed,Online: Astron MaaS,Yes
+Spark-X2-Flash / xsparkx2flash,iFLYTEK,General-Purpose,Undisclosed,Undisclosed,Online: Astron MaaS,Yes
+SenseNova 6.7 Flash-Lite,SenseTime,General-Purpose,Undisclosed,Undisclosed,Online: SenseNova,Yes
+SenseNova U1-8B-MoT,SenseTime,General-Purpose,8B,8B,Offline: Open Weight,Yes
+SenseNova U1-A3B-MoT,SenseTime,General-Purpose,30B,3B/token,Offline: Open Weight,Yes
+SenseNova-MARS-32B,SenseTime,General-Purpose,32B,32B,Offline: Open Weight,Yes
+SenseNova-MARS-8B,SenseTime,General-Purpose,8B,8B,Offline: Open Weight,Yes
+SenseNova U1 Fast,SenseTime,Image Generation,Undisclosed,Undisclosed,Online: SenseNova,Yes
+Falcon Arabic,TII / Falcon,General-Purpose,Undisclosed,Undisclosed,Offline: Open Weight,No
+Falcon H1 Tiny R 0.09B,TII / Falcon,General-Purpose,90M,90M,Offline: Open Weight,Yes
+Falcon H1 Tiny R 0.6B,TII / Falcon,General-Purpose,0.6B,0.6B,Offline: Open Weight,Yes
+Falcon H1R 7B,TII / Falcon,General-Purpose,7B,7B,Offline: Open Weight,Yes
+Falcon Mamba 7B,TII / Falcon,General-Purpose,7B,7B,Offline: Open Weight,No
+Falcon Perception 0.6B,TII / Falcon,General-Purpose,0.6B,0.6B,Offline: Open Weight,No
+Falcon-E,TII / Falcon,General-Purpose,Undisclosed,Undisclosed,Offline: Open Weight,No
+Falcon-H1,TII / Falcon,General-Purpose,Undisclosed,Undisclosed,Offline: Open Weight,Yes
+Falcon-H1-Arabic,TII / Falcon,General-Purpose,Undisclosed,Undisclosed,Offline: Open Weight,Yes
+tiiuae/falcon-11B,TII / Falcon,General-Purpose,11B,11B,Offline: Official Hugging Face / Open Weight,No
+tiiuae/Falcon-H1-0.5B-Instruct,TII / Falcon,General-Purpose,0.5B,0.5B,Offline: Official Hugging Face / Open Weight,No
+tiiuae/Falcon-H1-1.5B-Instruct,TII / Falcon,General-Purpose,1.5B,1.5B,Offline: Official Hugging Face / Open Weight,No
+tiiuae/Falcon-H1-34B-Instruct,TII / Falcon,General-Purpose,34B,34B,Offline: Official Hugging Face / Open Weight,No
+tiiuae/Falcon-H1-3B-Instruct,TII / Falcon,General-Purpose,3B,3B,Offline: Official Hugging Face / Open Weight,No
+tiiuae/Falcon-H1-7B-Instruct,TII / Falcon,General-Purpose,7B,7B,Offline: Official Hugging Face / Open Weight,No
+Falcon H1 Tiny Coder 90M,TII / Falcon,Coding,90M,90M,Offline: Open Weight,No
