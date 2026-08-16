@@ -81,12 +81,21 @@ def parse_modelsdev(
             if not company:
                 continue
 
+            # models.dev 的 key 是 `卖家/模型路径`，provider_id 段就是**实际报价方**。
+            # 卖家正是模型厂商自己时（`google/gemini-2.5-pro`），这条就是厂商牌价，
+            # 不是转售价。一律 is_official=False 会把约 25 个官方价误标成 hosted，
+            # 而判据其实就在 key 里——丢掉它才是信息损失。
+            # 推断不出卖家归属时保持 False：宁可把官方价谦称为 hosted，
+            # 也不能把转售价谎报成牌价。
+            seller_company = infer_company(provider_id)
+            is_first_party = seller_company == company
+
             limit = model.get("limit") or {}
             records.append(
                 PriceRecord(
                     source="modelsdev",
                     source_tier=TIER_VENDORED,
-                    is_official=False,
+                    is_official=is_first_party,
                     source_url=source_url,
                     fetched_at=fetched_at,
                     source_snippet=f"{provider_id}/{model_id} cost={json.dumps(cost)}",
@@ -101,6 +110,7 @@ def parse_modelsdev(
                         "weblink": MODELSDEV_WEBLINK,
                         "provider_name": "models.dev",
                         "open_weights": model.get("open_weights"),
+                        "seller": provider_id,
                     },
                     **prices,
                 )
@@ -139,11 +149,18 @@ def parse_litellm(
         if not company:
             continue
 
+        # 同 models.dev：key 按服务方命名，首段是卖家。`litellm_provider` 更可靠
+        # 时优先用它。卖家 == 厂商本人即为牌价。
+        seller = entry.get("litellm_provider") or (
+            key.split("/")[0] if "/" in key else ""
+        )
+        is_first_party = bool(seller) and infer_company(seller) == company
+
         records.append(
             PriceRecord(
                 source="litellm",
                 source_tier=TIER_VENDORED,
-                is_official=False,
+                is_official=is_first_party,
                 source_url=source_url,
                 fetched_at=fetched_at,
                 source_snippet=(
@@ -162,6 +179,7 @@ def parse_litellm(
                     "provider_name": "LiteLLM",
                     "mode": entry.get("mode"),
                     "litellm_key": key,
+                    "seller": seller,
                 },
                 **prices,
             )

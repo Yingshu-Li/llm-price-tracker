@@ -22,8 +22,11 @@ apis:
       input_per_1m: pricing.prompt
       output_per_1m: pricing.completion
       cache_read_per_1m: pricing.input_cache_read
-      per_image: pricing.image
       context_length: context_length
+    # ⚠️ 不要映射 pricing.image 到 per_image：实测 OpenRouter 的 `image` 字段
+    #    与 `prompt` 同值同量级（gemini-2.5-pro 两者都是 0.00000125），
+    #    是**图像输入 token 的每 token 价**，不是"每张图多少钱"。
+    #    当成按张价会产出 1e-6 量级的假 per_image，且不参与单位换算。
     # `~` 前缀是浮动别名，`:free`/`:extended` 是同一模型的变体后缀
     skip_id_prefixes: ["~"]
 
@@ -105,6 +108,9 @@ apis:
       input_per_1m: pricing.prompt
       output_per_1m: pricing.completion
       cache_read_per_1m: pricing.input_cache_read
+      # ⚠️ 与 OpenRouter 同名不同义：Empirio 的 `image` 确实是**每张**美元
+      #    （seedream-lite=0.035、gpt-image-2=0.012，都是真实刀数量级），
+      #    而 OpenRouter 的 `image` 是每 token 价。同名字段必须逐源实测。
       per_image: pricing.image
 
   - id: ovhcloud

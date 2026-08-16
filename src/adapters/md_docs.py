@@ -139,6 +139,10 @@ _HEADER_MAP: dict[str, tuple[str, str | None]] = {
     "input price (cache miss)": ("input_per_1m", None),
     "input price": ("input_per_1m", None),
     "output price": ("output_per_1m", None),
+    # OpenAI 多模态分组表（`| Model | Modality | Input | Cached input | Output / cost |`）
+    # 的输出列。不映射的话音频/图像档只有输入价没有输出价——表面完全正常，
+    # 靠 out/sources.md 的"未识别列头"告警才发现。
+    "output / cost": ("output_per_1m", None),
     "5m cache writes": ("cache_write_per_1m", None),
     "1h cache writes": ("cache_write_1h_per_1m", None),
     # Anthropic 的批处理表（层级由章节标题 "Batch processing" 给出）
@@ -418,9 +422,11 @@ def parse_pricing_doc(
                     continue
                 group_qualifier = qualifier
                 if group == "long":
-                    group_qualifier = (
-                        f"{qualifier}; long context" if qualifier else "long context"
-                    )
+                    # 列头原文就是 "Long context"，直接用它。
+                    # ⚠️ 不能拼成 `<272K context length; long context`：括号里的
+                    # `<272K` 是**短档**的界限（写在模型名后），长档恰恰是
+                    # 272K 以上。拼在一起会把两档的描述混成一句自相矛盾的话。
+                    group_qualifier = "Long context"
                 elif group == "short" and qualifier is None:
                     group_qualifier = None
 

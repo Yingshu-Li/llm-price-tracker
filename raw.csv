@@ -140,6 +140,7 @@ grok-4.20-0309-reasoning,xAI,General-Purpose,Undisclosed,Undisclosed,Online: API
 grok-4.20-multi-agent-0309,xAI,General-Purpose,Undisclosed,Undisclosed,Online: API,Yes
 grok-4.3,xAI,General-Purpose,Undisclosed,Undisclosed,Online: Grok / API,Yes
 grok-4.5,xAI,General-Purpose,Undisclosed,Undisclosed,Online: Grok / API,Yes
+grok-4.6,xAI,General-Purpose,Undisclosed,Undisclosed,,
 grok-build-0.1,xAI,Coding,Undisclosed,Undisclosed,Online: API,Yes
 grok-imagine-image,xAI,Image Generation,Undisclosed,Undisclosed,Online: API,No
 grok-imagine-image-quality,xAI,Image Generation,Undisclosed,Undisclosed,Online: API,No

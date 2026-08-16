@@ -1,6 +1,7 @@
 # 项目状态
 
-> 最后更新：2026-08-12 · 覆盖 **282/492**（官方牌价 82 · 托管价 200）
+> 最后更新：2026-08-14 · 覆盖 **282/492**（官方牌价 118 · 托管价 164）
+> 其余 210 = **139 权重免费无报价**（价格不存在）+ **71 真缺口**（闭源却没拿到价）
 
 ## 一句话
 
@@ -33,9 +34,16 @@ python update_prices.py --refresh-vendor # 顺便刷新本地 MIT 数据副本
 
 - **溯源到原文**：每个价格都带 `data_provider` / `provider_weblink` / `source_url` /
   `source_snippet`（产出该数字的原始行）。构造期断言强制，缺出处直接报错。
-- **官方价 vs 托管价**：`price_kind` 列区分厂商牌价与平台转售价
+- **官方价 vs 托管价**：`price_kind` 列区分厂商牌价与第三方转售价
   （实测 Bedrock 上的 Claude 普遍比 Anthropic 官方贵约 10%）。
-- **未获取标注**：`price_status = got / not_found`。
+  聚合器 key 里的卖家段（`gemini/gemini-2.5-pro`）会被识别为厂商自营，
+  不再一律算作转售——这一项让官方价从 82 升到 118。
+- **权重成本 vs 服务价**：`weights` 列（`free` / `proprietary`）与 `price_kind`
+  正交。开源权重模型的 API 价是**别人替你部署的服务费**，不是权重的价。
+- **卖家可见**：`hosted_seller` 列给出实际报价方。同款开源模型跨平台价差
+  可达十几倍（gemma-3：\$0.05 ~ \$0.65），一个 hosted 价只代表那个卖家。
+- **未获取标注**：`price_status = got / weights_free / not_found`，
+  把"价格不存在"与"没抓到"分开。
 - **离线可用**：`vendor/` 有 models.dev 与 LiteLLM 的本地 MIT 副本。
 - **解析告警**：认不出的列头、跳过的表格全部写进 `out/sources.md`。
 - **单源失败隔离**：任一源 404 / DNS 失败 / 被企业代理拦截都不影响其他源。
@@ -55,32 +63,38 @@ python update_prices.py --refresh-vendor # 顺便刷新本地 MIT 数据副本
 
 | 数据 Provider | 数量 |
 | --- | ---: |
-| models.dev | 137 |
-| LiteLLM | 38 |
+| models.dev | 112 |
+| LiteLLM | 59 |
 | OpenAI 官方文档 | 28 |
 | Zhipu 官方文档 | 22 |
-| AWS Bedrock | 19 |
+| AWS Bedrock | 21 |
 | xAI 官方文档 | 10 |
 | Anthropic 官方文档 | 10 |
 | Azure AI Foundry | 7 |
-| 其余（DeepInfra / HF Router / Vercel / Empirio…） | 11 |
+| 其余（DeepInfra / Empirio / Moonshot / Vercel） | 13 |
 
-### 未获取 210 —— 大部分是客观上没有价格
+### 未获取 210 = 139 价格不存在 + 71 真缺口
 
-| 公司 | 未获取 | 其中纯开源权重 |
-| --- | ---: | ---: |
-| Alibaba / Qwen | 35/89 | 31 |
-| Google | 28/66 | 19 |
-| TII / Falcon | 16/16 | 16 |
-| Tencent / Hunyuan | 13/16 | 11 |
-| OpenAI | 12/48 | 9 |
-| Cohere | 12/20 | 6 |
-| IBM | 9/11 | 9 |
-| NAVER | 9/9 | 6 |
-| iFLYTEK | 8/8 | 0 |
+拆开看才有意义，这两类的性质完全不同：
 
-小众开源变体没有任何托管方在跑，厂商也不作为服务售卖——**价格不存在，不是抓不到**。
-TII/Falcon 全部 16 个都属此类，他们根本不卖推理服务。
+**139 `weights_free`**——开源权重、没有任何托管方在跑。**价格不存在，不是抓不到**；
+想用直接下权重自己跑，成本是算力不是订阅。TII/Falcon 全部 16 个都属此类，
+他们根本不卖推理服务。主要分布：Qwen 31 · Google 19 · TII 16 · Tencent 11 · IBM 9。
+
+**71 `not_found`**——闭源且只能在线用，却没拿到价。这才是要补的。
+
+| 公司 | 缺口 | | 能力类型 | 缺口 |
+| --- | ---: | --- | --- | ---: |
+| Google | 9 | | General-Purpose | 27 |
+| iFLYTEK | 8 | | **Speech & Audio** | **20** |
+| Amazon / Nova | 6 | | Image Generation | 9 |
+| Cohere | 6 | | Embedding | 8 |
+| Zhipu / MiniMax | 5 / 5 | | Video Generation | 6 |
+
+⚠️ **44/71（62%）是非文本模型**（语音/图像/视频/嵌入）。这是结构性原因：
+models.dev、LiteLLM、OpenRouter 这些聚合器主要收 chat 模型，按秒/按次计费的
+语音视频几乎不收录。所以这批缺口不是"抓取器写得不够多"，而是**整个聚合器
+生态就不覆盖这类模型**，只能走厂商首方源。
 
 ---
 
@@ -110,9 +124,9 @@ TII/Falcon 全部 16 个都属此类，他们根本不卖推理服务。
 - [ ] **历史与趋势**
       当前只导出最新快照。要看降价趋势需要落 SQLite 追加观测。
       原计划有 schema 设计，本轮未实现。
-- [ ] **定时运行**
-      本机 `sudo` 被 BeyondTrust EPM 拦截，只能用用户级 launchd agent
-      （`~/Library/LaunchAgents/`）或 `crontab -e`，装不了系统级 LaunchDaemon。
+- [x] **定时运行** —— 已用 GitHub Actions 实现（每天 UTC 00:00），
+      见 `.github/workflows/update-prices.yml`。绕开了本机 `sudo` 被
+      BeyondTrust EPM 拦截、装不了系统级 LaunchDaemon 的限制。
 
 ### 已明确放弃
 
@@ -153,3 +167,40 @@ TII/Falcon 全部 16 个都属此类，他们根本不卖推理服务。
    `infer_company()` 归属，推断不出就丢弃。⚠️ 严禁用 `spark` 子串匹配
    （会命中 OpenAI 的 `gpt-5.3-codex-spark`）。
 8. **macOS 文件系统大小写不敏感**。删 `SOURCES.md` 会连 `sources.md` 一起删。
+9. **两个正交维度压成一列**。`price_kind` 曾同时承担"权重能否自取"和"这个价
+   是谁报的"，结果 139 个开源权重模型被标成 `not_found`，读起来像抓取失败，
+   实际是**价格根本不存在**。拆成 `weights` + `price_status` 三值后才对得上现实。
+10. **同名字段在不同源里含义不同**。OpenRouter 的 `pricing.image` 与 `prompt`
+   同值同量级（gemini-2.5-pro 都是 `0.00000125`），是**图像输入 token 的每
+   token 价**；Empirio 的 `pricing.image` 才是真·每张美元（`0.035`）。
+   我们曾把 OpenRouter 的映射到 `per_image` 且跳过单位换算，产出一批
+   1e-6 量级的假"按张价"。**同名字段必须逐源实测**，不能照抄。
+11. **非文本模型的计价单位必须按 Function 定死**。图像按张、视频按秒，
+   源里塞进 token 字段的值差几万倍（Seedance 2.0 显示 `$4.7/1M token`，
+   实际 `$0.07/秒`）。单位不符的源保留但值不参与统计——按张价和按 token 价
+   之间没有换算关系。
+12. **多模态表的输出列曾整列丢失**。OpenAI 分组表列头是 `Output / cost`，
+   不在映射表里，导致音频/图像档**只有输入价没有输出价**（audio \$32 有、
+   \$64 没有），表面完全正常。是 `out/sources.md` 的"未识别列头"告警
+   暴露的——这条告警机制救回了一整列数据。
+13. **分层标签不能自己拼接**。OpenAI 把长上下文价放在并列列组里，列头写
+   `Long context`；模型名后括号里的 `<272K context length` 描述的是**短档**。
+   解析器曾把两者拼成 `<272K context length; long context`——自相矛盾（长档
+   恰恰是 272K 以上），而且那句话官网根本没写过。照抄列头原文即可。
+   ⚠️ 按上下文分档时只收 standard 服务档：batch/flex/fast 是"怎么跑"，
+   与上下文分层正交，混进来会让同一个上下文档冒出好几个价。
+11. **多模态表按模态分行,不对齐就会比出假价差**。OpenAI 的表里
+   `gpt-audio-1.5` 有 Text \$2.50 和 Audio \$32.00 两行,**都落进 input_per_1m**。
+   不按 modality 收窄,"最低价"会拿 Text 价去比 Audio 官方价,得出 13 倍价差——
+   那不是哪个卖家更便宜,只是换了个模态。`pick_official` 与比价池都必须
+   优先/限定文本行。影响 6 个 OpenAI 多模态模型。
+11. **产品线前缀也要剥,不只是公司名**。`_COMPANY_PREFIXES` 原本只收公司名,
+   但 raw.csv 写 `Doubao Seedream 5.0 pro` / `CohereLabs/c4ai-command-r-plus`,
+   而源里叫 `seedream-5-0-pro` / `command-r-plus`——`doubao` 和 `c4ai` 是
+   产品线/仓库前缀,不剥就整批对不上。补上后 Cohere 从 8 涨到 11、
+   ByteDance 补齐到 9/9。**症状同样是"匹配率莫名偏低",没有任何报错。**
+11. **聚合器 key 里的卖家段不能丢**。models.dev 的 key 是 `卖家/模型路径`，
+   `gemini/gemini-2.5-pro` 的卖家就是 Google 自己。一律 `is_official=False`
+   把 36 个厂商牌价误标成转售价。判据一直在 key 里，丢掉它才是信息损失。
+   反向仍保持保守：推断不出卖家归属时维持 False——宁可把官方价谦称为托管价，
+   也不能把转售价谎报成牌价。

@@ -311,15 +311,29 @@ def main() -> int:
 
     print("\n== 5. 导出 ==")
     OUT.mkdir(exist_ok=True)
-    stats = export_mod.write_table(OUT / "models_with_prices.csv", raw_models, best)
+    stats = export_mod.write_table(
+        OUT / "models_with_prices.csv", raw_models, best, by_model
+    )
     counts = defaultdict(int)
     for rec in records:
         counts[rec.source] += 1
     export_mod.write_sources_md(OUT / "sources.md", fetches, counts, warnings)
 
-    print(f"   out/models_with_prices.csv   {len(raw_models)} 行")
+    hidden = stats.get("hidden_by_function", 0)
+    shown = len(raw_models) - hidden
+    print(f"   out/models_with_prices.csv   {stats.get('rows', 0)} 行"
+          f"（{shown} 个模型，其中 {stats.get('multi_tier_models', 0)} 个有多档官方价）")
+    if hidden:
+        print(f"      ⚠️ 另有 {hidden} 个模型已抓取但未导出"
+              f"（仅显示 {'/'.join(sorted(export_mod.EXPORT_FUNCTIONS))}）")
+    if stats.get("columns_dropped"):
+        print(f"      {stats.get('columns', 0)} 列"
+              f"（另有 {stats['columns_dropped']} 列全空已省略）")
     print(f"      有价格 {stats.get('got', 0)}（官方 {stats.get('official', 0)} / "
-          f"托管 {stats.get('hosted', 0)}）· 未获取 {stats.get('not_found', 0)}")
+          f"托管 {stats.get('hosted', 0)}）")
+    print(f"      权重免费无报价 {stats.get('weights_free', 0)}（价格不存在，非抓取失败）"
+          f" · 真缺口 {stats.get('not_found', 0)}（闭源却没拿到价）")
+    print(f"      权重：开源 {stats.get('w_free', 0)} / 闭源 {stats.get('w_proprietary', 0)}")
     print(f"   out/sources.md               {len(fetches)} 个源")
     return 0
 

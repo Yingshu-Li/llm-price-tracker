@@ -152,7 +152,9 @@ _COMPANY_PREFIXES = {
     "DeepSeek": ["deepseek-ai", "deepseek"],
     "MiniMax": ["minimaxai", "minimax"],
     "Microsoft": ["microsoft"],
-    "Cohere": ["coherelabs", "cohereforai", "cohere"],
+    # `c4ai` 是 Cohere For AI 的 HF 仓库前缀（`CohereLabs/c4ai-command-r-plus`），
+    # 厂商自己的 API 里就叫 `command-r-plus`。
+    "Cohere": ["coherelabs", "cohereforai", "cohere", "c4ai"],
     "NVIDIA": ["nvidia"],
     "StepFun": ["stepfun-ai", "stepfun"],
     "IBM": ["ibm-granite", "ibm"],
@@ -166,7 +168,9 @@ _COMPANY_PREFIXES = {
     "Alibaba / Qwen": ["qwen", "alibaba"],
     "Amazon / Nova": ["amazon", "aws"],
     "Baidu / ERNIE": ["baidu"],
-    "ByteDance / Doubao-Seed": ["bytedance-seed", "bytedance"],
+    # `doubao` 是产品线前缀而非公司名，但 raw.csv 写 `Doubao Seedream 5.0 pro`
+    # 而源里叫 `seedream-5-0-pro`——不剥就永远对不上。
+    "ByteDance / Doubao-Seed": ["bytedance-seed", "bytedance", "doubao"],
     "Moonshot AI / Kimi": ["moonshotai", "moonshot"],
     "Tencent / Hunyuan": ["tencent"],
     "Xiaomi / MiMo": ["xiaomimimo", "xiaomi"],

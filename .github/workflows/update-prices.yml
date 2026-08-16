@@ -1,0 +1,86 @@
+name: 更新价格
+
+# 每天 UTC 00:00（悉尼 11:00）跑一次，另可手动触发。
+# 单次全量约 95 秒 / 22 个源，全部无需 API key。
+on:
+  schedule:
+    - cron: "0 0 * * *"
+  workflow_dispatch:
+    inputs:
+      refresh_vendor:
+        description: "刷新 models.dev / LiteLLM 本地副本"
+        type: boolean
+        default: true
+
+permissions:
+  # 只需要写回 out/，不要给多余权限
+  contents: write
+
+concurrency:
+  # 上一次还没跑完就别开第二个——两个进程同时写 out/ 会互相覆盖
+  group: update-prices
+  cancel-in-progress: false
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    # 正常 95 秒；给足余量，卡死时不至于耗满额度
+    timeout-minutes: 20
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.13"
+          cache: pip
+
+      - name: 安装依赖
+        run: pip install -r requirements.txt
+
+      - name: 抓取并导出
+        # --refresh-vendor 拿上游最新价格：最低价有 8 成来自 models.dev/LiteLLM，
+        # 不刷新的话这两个源永远停在仓库里那份快照。
+        # 刷新下来的 vendor/ 不提交（见下一步），只用于本次运行。
+        run: python update_prices.py --refresh-vendor
+
+      - name: 提交产物
+        run: |
+          set -euo pipefail
+
+          # 只提交 out/。vendor/ 是 5.2MB 的上游副本，每天提交会让仓库迅速膨胀；
+          # raw.csv 是只读的人工清单，脚本本来就不该动它——真被改了要让流程失败，
+          # 而不是悄悄提交上去。
+          if ! git diff --quiet -- raw.csv; then
+            echo "::error::raw.csv 被修改了。它是只读的人工清单，脚本不应该写它。"
+            git --no-pager diff --stat -- raw.csv
+            exit 1
+          fi
+
+          # vendor/*.json 是被 git 跟踪的，--refresh-vendor 会把它们改脏。
+          # 丢弃这些改动：本次运行已经用过刷新后的数据，副本本身不入库
+          # （5.2MB × 每天 = 仓库迅速膨胀）。放着不管会让下面的 rebase
+          # 反复 stash/restore 一个几 MB 的 diff。
+          git checkout -- vendor/ 2>/dev/null || true
+
+          if git diff --quiet -- out/; then
+            echo "价格无变化，跳过提交。"
+            exit 0
+          fi
+
+          git config user.name  "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add out/
+          git commit -m "chore: 更新价格数据 ($(date -u +%Y-%m-%d))"
+
+          # 定时任务之间可能有人推过东西，先 rebase 再推，避免 non-fast-forward
+          git pull --rebase --autostash origin "${GITHUB_REF_NAME}"
+          git push origin "HEAD:${GITHUB_REF_NAME}"
+
+      - name: 上传产物（失败时也能拿到）
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: models-with-prices
+          path: out/
+          retention-days: 14
