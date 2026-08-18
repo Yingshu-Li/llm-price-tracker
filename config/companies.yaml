@@ -1,4 +1,4 @@
-# 28 家公司的追踪源清单
+# 33 家公司的追踪源清单
 #
 # 用途：(1) 定期发现新模型发布  (2) 记录各家官方定价页出处
 #
@@ -70,11 +70,11 @@ companies:
     rss: null            # ⚠️ 已确认无 RSS
     hf_org: meta-models  # ⚠️ Meta 的**新**活跃 org
     hf_org_extra: [meta-llama, facebook]   # meta-llama 自 2025-04 起已停更
-    api_docs: null
-    pricing_page: null
+    api_docs: https://developer.meta.com/ai/docs/
+    pricing_page: https://developer.meta.com/ai/resources/blog/build-with-muse-code/
     pricing_machine_readable: none
     openrouter_prefixes: [meta, meta-llama]
-    notes: 只发开源权重，不自营付费推理，故无官方价格；价格来自各托管方。
+    notes: 同时维护开放权重 Llama/Muse Glimmer 与闭源 Muse 系列；Muse Spark 1.1 起通过 Meta Model API 自营付费推理。
 
   - company: xAI
     homepage: https://x.ai
@@ -368,13 +368,69 @@ companies:
     openrouter_prefixes: [xiaomi]
     notes: HF + OpenRouter 已完全覆盖发布监测。
 
+
+  - company: Motif Technologies
+    homepage: https://motiftech.io
+    blog: null
+    rss: null
+    hf_org: Motif-Technologies
+    api_docs: null
+    pricing_page: null
+    pricing_machine_readable: none
+    openrouter_prefixes: []
+    notes: Motif 文本、图像、视频和音频模型均有官方权重；部分许可证限制商业使用。
+
+  - company: Meituan / LongCat
+    homepage: https://longcat.ai
+    blog: https://longcat.ai/blog/
+    rss: null
+    hf_org: meituan-longcat
+    api_docs: https://longcat.ai/platform/docs/zh/
+    pricing_page: https://longcat.chat/platform/docs/Pricing/LongCat-2.0.html
+    pricing_machine_readable: server_html
+    openrouter_prefixes: [meituan]
+    notes: LongCat-2.0 提供第一方 API；Flash、Next、Image、Video 和 AudioDiT 系列提供官方权重。
+
+  - company: Nex-AGI
+    homepage: https://nex-agi.com
+    blog: null
+    rss: null
+    hf_org: nex-agi
+    api_docs: null
+    pricing_page: null
+    pricing_machine_readable: none
+    openrouter_prefixes: [nex-agi]
+    notes: Nex-N2 系列与 Nex-N1 系列均提供官方权重；Nex-N2 另有在线托管入口。
+
+  - company: Celeris
+    homepage: https://celeris.ai
+    blog: https://celeris.ai/blog-benchmarks
+    rss: null
+    hf_org: null
+    api_docs: https://docs.celeris.ai/
+    pricing_page: https://docs.celeris.ai/pricing
+    pricing_machine_readable: server_html
+    openrouter_prefixes: []
+    notes: Celeris-1 是闭源 diffusion LLM，通过第一方 OpenAI-compatible API 提供。
+
+  - company: Inception Labs
+    homepage: https://www.inceptionlabs.ai
+    blog: null
+    rss: null
+    hf_org: null
+    api_docs: https://docs.inceptionlabs.ai/get-started/get-started
+    pricing_page: https://docs.inceptionlabs.ai/get-started/models
+    pricing_machine_readable: server_html
+    openrouter_prefixes: [inception]
+    notes: Mercury 2 与 Mercury Edit 2 均为闭源 diffusion LLM，通过第一方 API 提供。
+
 # ── 跨公司的兜底源 ────────────────────────────────────────────
 # 单个 API 覆盖多家，比 28 个易碎的 RSS 更可靠，这才是主力信号。
 
 catch_all:
   - id: openrouter_models
     url: https://openrouter.ai/api/v1/models
-    covers: 23 of 28 companies
+    covers: 多数已配置公司
     auth: none
     notes: ⚠️ 过滤 `~` 前缀的浮动别名和 `:free`/`:extended` 变体后缀。
 

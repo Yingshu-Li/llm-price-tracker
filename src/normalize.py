@@ -107,11 +107,11 @@ def parse_availability(value: str) -> Availability:
 
 # ── 参数量 ──────────────────────────────────────────────────────
 
-_PARAM = re.compile(r"^\s*([0-9]*\.?[0-9]+)\s*([BbMmKk])\b")
+_PARAM = re.compile(r"^\s*([0-9]*\.?[0-9]+)\s*([BbMmKkTt])\b")
 
 
 def parse_params(value: str) -> float | None:
-    """`8B` → 8.0，`90M` → 0.09，`3B/token` → 3.0（剥掉 MoE 后缀）。
+    """`8B` → 8.0，`2.4T` → 2400.0，`90M` → 0.09，`3B/token` → 3.0（剥掉 MoE 后缀）。
 
     统一以 B（十亿）为单位。`Undisclosed` 和空值返回 None。
     """
@@ -123,7 +123,9 @@ def parse_params(value: str) -> float | None:
         return None
     number = float(match.group(1))
     suffix = match.group(2).lower()
-    if suffix == "m":
+    if suffix == "t":
+        number *= 1_000
+    elif suffix == "m":
         number /= 1_000
     elif suffix == "k":
         number /= 1_000_000
@@ -140,6 +142,9 @@ _SEPARATORS = re.compile(r"[\s_.]+")
 _MULTI_DASH = re.compile(r"-{2,}")
 # 托管平台的版本尾巴：`amazon.nova-lite-v1:0` 在 Bedrock 上就叫 `Nova Lite`
 _PLATFORM_VERSION_SUFFIX = re.compile(r"-v\d+(?::\d+)?$", re.I)
+# 版本号前的连字符：`solar-pro-4` ↔ `solar-pro4`。只匹配字母后紧跟的 `-数字`，
+# 避免把 `llama-3-70b` 的两处都吞掉变成 `llama370b`。
+_HYPHEN_BEFORE_DIGIT = re.compile(r"(?<=[a-z])-(\d)")
 
 # 公司名到可能出现在模型名开头的前缀，用于剥掉冗余前缀
 _COMPANY_PREFIXES = {
@@ -175,6 +180,11 @@ _COMPANY_PREFIXES = {
     "Tencent / Hunyuan": ["tencent"],
     "Xiaomi / MiMo": ["xiaomimimo", "xiaomi"],
     "Zhipu AI / GLM": ["zai-org", "zhipuai", "zhipu", "thudm"],
+    "Motif Technologies": ["motif-technologies", "motif"],
+    "Meituan / LongCat": ["meituan-longcat", "longcat"],
+    "Nex-AGI": ["nex-agi", "nex"],
+    "Celeris": ["celeris"],
+    "Inception Labs": ["inceptionlabs", "inception"],
 }
 
 
@@ -242,6 +252,11 @@ def name_candidates(model: str, company: str | None = None) -> list[str]:
 
         for variant in variants:
             _add(variant)
+            # 版本号前的连字符各家写法不一：raw.csv 写 `Solar Pro 4`（规范化成
+            # `solar-pro-4`），而 Upstage 自己的 id 是 `solar-pro4`。两种都生成。
+            # ⚠️ 只去掉**数字前**的连字符，不碰字母之间的——`gpt-oss` 不能变
+            # `gptoss`，那会把不同模型的名字压到一起。
+            _add(_HYPHEN_BEFORE_DIGIT.sub(r"\1", variant))
             # 托管平台常把版本尾巴去掉：`nova-lite-v1:0` 在 Bedrock 上是 `nova-lite`
             _add(_PLATFORM_VERSION_SUFFIX.sub("", variant))
             # 厂商官方文档写的是不带日期的名字（`Claude Opus 4.5`），而聚合器用
@@ -310,6 +325,7 @@ _COMPANY_MARKERS: tuple[tuple[str, str], ...] = (
     ("anthropic/", "Anthropic"),
     ("x-ai/", "xAI"),
     ("xai/", "xAI"),
+    ("meta/", "Meta"),
     ("microsoft/", "Microsoft"),
     ("amazon/", "Amazon / Nova"),
     ("alibaba/", "Alibaba / Qwen"),
@@ -318,6 +334,9 @@ _COMPANY_MARKERS: tuple[tuple[str, str], ...] = (
     ("z-ai/", "Zhipu AI / GLM"),
     ("zhipu", "Zhipu AI / GLM"),
     ("minimax", "MiniMax"),
+    ("motif-technologies/", "Motif Technologies"),
+    ("meituan-longcat/", "Meituan / LongCat"),
+    ("nex-agi/", "Nex-AGI"),
     # 再按模型名关键词
     ("claude", "Anthropic"),
     ("gpt-oss", "OpenAI"),
@@ -334,6 +353,7 @@ _COMPANY_MARKERS: tuple[tuple[str, str], ...] = (
     ("imagen", "Google"),
     ("veo-", "Google"),
     ("grok", "xAI"),
+    ("muse-", "Meta"),
     ("llama", "Meta"),
     ("qwen", "Alibaba / Qwen"),
     ("deepseek", "DeepSeek"),
@@ -362,12 +382,18 @@ _COMPANY_MARKERS: tuple[tuple[str, str], ...] = (
     ("hyperclova", "NAVER"),
     ("baichuan", "Baichuan AI"),
     ("hunyuan", "Tencent / Hunyuan"),
+    ("hy3", "Tencent / Hunyuan"),
     ("ernie", "Baidu / ERNIE"),
     ("doubao", "ByteDance / Doubao-Seed"),
     ("seedance", "ByteDance / Doubao-Seed"),
     ("seedream", "ByteDance / Doubao-Seed"),
     ("step-", "StepFun"),
     ("mimo", "Xiaomi / MiMo"),
+    ("motif-", "Motif Technologies"),
+    ("longcat", "Meituan / LongCat"),
+    ("nex-n2", "Nex-AGI"),
+    ("celeris", "Celeris"),
+    ("mercury", "Inception Labs"),
     ("sensenova", "SenseTime"),
     ("spark", None),  # ⚠️ 有意置空：`spark` 会误命中 OpenAI 的 codex-spark
 )
@@ -382,6 +408,10 @@ def infer_company(model_id: str) -> str | None:
     low = (model_id or "").strip().lower()
     if not low:
         return None
+    # models.dev 用裸 provider id 表示首方卖家。不能把 `meta` 做成通用
+    # 子串 marker（会误命中 metadata 等词），所以在这里精确处理。
+    if low == "meta":
+        return "Meta"
     for marker, company in _COMPANY_MARKERS:
         if marker in low:
             return company

@@ -1,6 +1,6 @@
 # LLM 模型价格追踪器
 
-给 `raw.csv`（492 个模型 / 28 家公司的人工清单）自动补上价格，并标注哪些拿不到。
+给 `raw.csv`（547 个模型 / 33 家公司的人工清单）自动补上价格，并标注哪些拿不到。
 
 ```bash
 pip install -r requirements.txt     # httpx + PyYAML
@@ -28,7 +28,7 @@ python update_prices.py             # 抓取全部源并导出
 
 | 文件 | 内容 |
 | --- | --- |
-| `out/models_with_prices.csv` | 总表，340 行 / 326 个模型（**当前只导出 General-Purpose**），31 列 |
+| `out/models_with_prices.csv` | 总表，379 行 / 365 个模型（**当前只导出 General-Purpose**），31 列 |
 | `out/sources.md` | 数据源清单 + 许可 + 解析告警 |
 
 总表关键列：
@@ -64,7 +64,7 @@ API id，`google/gemma-2-27b-it` 是真实 HF 路径（大小写敏感，改了�
 <code>google/gemini-3.7-flash</code>           <!-- Model，等宽+浅色 -->
 ```
 
-⚠️ `display_name` **不唯一**（当前 13 组重名）。raw.csv 里同一模型会分别以
+⚠️ `display_name` **不唯一**（当前 25 组重名）。raw.csv 里同一模型会分别以
 API 形态和权重形态各列一行（`MiniMax-M2` / `MiniMaxAI/MiniMax-M2`），展示名
 自然相同。所以 React 的 `key`、去重、路由一律用 `Model`，不要用 `display_name`。
 
@@ -74,21 +74,21 @@ API 形态和权重形态各列一行（`MiniMax-M2` / `MiniMaxAI/MiniMax-M2`）
 
 | 取值 | 数量 | 含义 |
 | --- | ---: | --- |
-| `got` | 110 | 拿到了厂商牌价，数字见 `text_official_*` 等列 |
-| `weight open source` | 170 | 开源权重，厂商只放权重不卖服务——**官方价客观不存在** |
-| `None` | 60 | 闭源在售却没拿到牌价——**这是真缺口** |
+| `got` | 116 | 拿到了厂商牌价，数字见 `text_official_*` 等列 |
+| `weight open source` | 200 | 开源权重，厂商只放权重不卖服务——**官方价客观不存在** |
+| `None` | 63 | 闭源在售却没拿到牌价——**这是真缺口** |
 
 ⚠️ 判据是"有任意一种价格"，不是只看 token 价：`grok-imagine-image` 按张
 （\$0.02/张）、`CogVideoX-3` 按秒计价，只查 input/output 会把这些**已有官方价**
 的模型误判成缺失（曾因此把缺口从 38 错报成 48）。
 
-`None` 的 60 个里，闭源真缺口主要在 Qwen 商用版、ByteDance doubao——
+`None` 的 63 个里，闭源真缺口主要在 Qwen 商用版、ByteDance doubao——
 定价页是 SPA 或未写抓取器，详见 [STATUS.md](STATUS.md)。
 
 ### 当前只导出 General-Purpose
 
-总表暂时只显示 `Function = General-Purpose` 的模型（326 个），其余 167 个
-（语音 62 · 嵌入 29 · 图像 28 · 编程 20 · 安全 16 · 视频 13）**照常抓取、
+总表暂时只显示 `Function = General-Purpose` 的模型（365 个），其余 182 个
+（语音 65 · 嵌入 29 · 图像 34 · 编程 20 · 安全 16 · 视频 18）**照常抓取、
 照常计入 `out/sources.md`，只是不进总表**。
 
 改回全量：把 [src/export.py](src/export.py) 里的 `EXPORT_FUNCTIONS` 设成 `None`，
@@ -172,7 +172,7 @@ gpt-5      400000                       $1.25          $10.00
 得从聚合器拿；不同卖家可能报不同值（某些平台限流到更短上下文），多数派更接近
 模型的真实规格。
 
-总表因此是 **340 行 / 326 个模型**（14 个模型有多档），⚠️ **`Model` 列不再唯一**。
+总表因此是 **379 行 / 365 个模型**（14 个模型有多档），⚠️ **`Model` 列不再唯一**。
 
 实测官方价与最低价的差距：
 
@@ -189,9 +189,9 @@ Gemini 3.5 Flash  官方 $1.50  ->  最低 $0.1857   (8x)  via unorouter   q=34
 
 | `price_status` | 数量 | 含义 |
 | --- | ---: | --- |
-| `got` | 221 | 拿到了推理服务价 |
+| `got` | 238 | 拿到了推理服务价 |
 | `weights_free` | 78 | 开源权重、无人转售——**价格不存在，不是抓漏了**，下权重自己跑即可 |
-| `not_found` | 27 | 闭源且只能在线用，却没拿到价——**这才是真缺口** |
+| `not_found` | 28 | 闭源且只能在线用，却没拿到价——**这才是真缺口** |
 
 ⚠️ 同一个开源模型在不同平台价差可达十几倍（gemma-3 从 \$0.05 到 \$0.65），
 一个最低价只代表**那个卖家**，不代表"这个模型值多少钱"。看 `cheapest_*_seller`
@@ -203,7 +203,7 @@ Gemini 3.5 Flash  官方 $1.50  ->  最低 $0.1857   (8x)  via unorouter   q=34
 config/
   price_apis.yaml        12 个可直连价格 API 的配置（加源改这里，通常不用写代码）
   official_sources.yaml  厂商官方 .md 文档端点
-  companies.yaml         28 家公司的官网/博客/RSS/HF org/定价页（参考资料，暂未被代码消费）
+  companies.yaml         33 家公司的官网/博客/RSS/HF org/定价页（参考资料，暂未被代码消费）
   aliases.yaml           人工确认的模型名映射（最高优先级）
 src/
   records.py             PriceRecord 溯源契约（构造期断言，缺出处即报错）

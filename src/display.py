@@ -13,7 +13,7 @@
 派生是有损的（`gpt-4o` → `GPT-4o`），所以只用于展示，任何匹配、去重、
 调用都必须继续用 `Model`。
 
-⚠️ **display_name 不唯一**，当前有 13 组重名。这不是 bug：raw.csv 里同一个
+⚠️ **display_name 不唯一**，当前有 25 组重名。这不是 bug：raw.csv 里同一个
 模型会分别以 API 形态和权重形态各列一行（`MiniMax-M2` 与
 `MiniMaxAI/MiniMax-M2`），两者的展示名本就相同，但可用性、价格来源都不同。
 所以网页上**不能拿 display_name 当 key 或做去重**，那是 `Model` 的职责。
@@ -34,6 +34,7 @@ _ACRONYMS = {
     "v1": "V1", "v2": "V2", "v3": "V3", "glm": "GLM", "vlm": "VLM",
     "mm": "MM", "kv": "KV", "e4b": "E4B", "e2b": "E2B",
     "oss": "OSS", "vlm": "VLM", "omni": "Omni", "sota": "SOTA",
+    "bf16": "BF16", "fp8": "FP8",
 }
 
 # 厂商官方写法里保留连字符的系列名。`gpt-5` 官方就写 GPT-5 而不是 GPT 5，
@@ -44,6 +45,8 @@ _HYPHENATED_FAMILIES = {
     "ernie": "-", "hunyuan": "-", "minimax": "-", "command": " ",
     "granite": " ", "jamba": " ", "falcon": " ", "solar": " ",
     "nemotron": " ", "mimo": "-", "step": "-", "doubao": "-",
+    "muse": " ",
+    "motif": " ", "celeris": "-",
 }
 
 # `A4B` / `A3B` 这类 MoE 激活参数标记
@@ -98,7 +101,18 @@ def _word(token: str) -> str:
 # 派生规则做不出来的固有写法，直接覆盖。只放**厂商官方明确如此写**的，
 # 不放个人偏好——这张表越小越好，它的每一条都是派生规则的一个缺口。
 _OVERRIDES = {
+    "motif-2-12.7b": "Motif 2 12.7B",
+    "motif-2.6b": "Motif 2.6B",
+    "nex-n2-mini": "Nex-N2-Mini",
+    "longcat": "LongCat",
+    "heavymode": "HeavyMode",
+    "zigzag": "ZigZag",
+    "internlm3": "InternLM3",
     "gpt-oss": "GPT-OSS",
+    "qwen3.8": "Qwen3.8",
+    "2.4t": "2.4T",
+    "longcat-2.0": "LongCat-2.0",
+    "nex-n2-pro": "Nex-N2-Pro",
     "minimax": "MiniMax",
     "sensenova": "SenseNova",
     "hyperclovax": "HyperCLOVAX",

@@ -70,6 +70,7 @@ gemini-3.1-pro-preview,Google,General-Purpose,Undisclosed,Undisclosed,Online: Ge
 gemini-3.5-flash,Google,General-Purpose,Undisclosed,Undisclosed,Online: Gemini API (Stable),Yes
 gemini-3.5-flash-lite,Google,General-Purpose,Undisclosed,Undisclosed,Online: Gemini API (Stable),Yes
 gemini-3.6-flash,Google,General-Purpose,Undisclosed,Undisclosed,Online: Gemini API (Stable),Yes
+gemini-3.7-flash,Google,General-Purpose,Undisclosed,Undisclosed,Online: Gemini API (Stable),Yes
 gemini-robotics-er-1.6-preview,Google,General-Purpose,Undisclosed,Undisclosed,Online: Gemini API (Preview),Yes
 gemini-robotics-er-2-preview,Google,General-Purpose,Undisclosed,Undisclosed,Online: Gemini API (Preview),Yes
 google/functiongemma-270m-it,Google,General-Purpose,270M,270M,Offline: Open Weight,No
@@ -123,6 +124,13 @@ gemini-embedding-2-preview,Google,Embedding,Undisclosed,Undisclosed,Online: Gemi
 ShieldGemma-27B,Google,Safety & Moderation,27B,27B,Offline: Open Weight,No
 ShieldGemma-2B,Google,Safety & Moderation,2B,2B,Offline: Open Weight,No
 ShieldGemma-9B,Google,Safety & Moderation,9B,9B,Offline: Open Weight,No
+Muse Spark,Meta,General-Purpose,Undisclosed,Undisclosed,Online: Meta AI / Private API Preview,Yes
+muse-spark-1.1,Meta,General-Purpose,Undisclosed,Undisclosed,Online: Meta AI / Meta Model API (Preview),Yes
+muse-spark-1.2,Meta,General-Purpose,Undisclosed,Undisclosed,Online: Muse Code / Meta Model API,Yes
+muse-spark-1.2-contributor,Meta,General-Purpose,Undisclosed,Undisclosed,Online: Meta Model API,Yes
+meta-models/Muse-Glimmer-30B,Meta,General-Purpose,30B,30B,Offline: Official Hugging Face / Open Weight,Yes
+Muse Image,Meta,Image Generation,Undisclosed,Undisclosed,Online: Meta AI,Yes
+Muse Video,Meta,Video Generation,Undisclosed,Undisclosed,Online: Meta AI (Preview),No
 Llama 3.2 11B Vision Instruct,Meta,General-Purpose,11B,11B,Offline: Open Weight,No
 Llama 3.2 1B Instruct,Meta,General-Purpose,1B,1B,Offline: Open Weight,No
 Llama 3.2 3B Instruct,Meta,General-Purpose,3B,3B,Offline: Open Weight,No
@@ -213,6 +221,8 @@ qwen3.7-flash,Alibaba / Qwen,General-Purpose,Undisclosed,Undisclosed,Online: Mod
 qwen3.7-max,Alibaba / Qwen,General-Purpose,Undisclosed,Undisclosed,Online: Model Studio API,Yes
 qwen3.7-plus,Alibaba / Qwen,General-Purpose,Undisclosed,Undisclosed,Online: Model Studio API,Yes
 qwen3.8-max,Alibaba / Qwen,General-Purpose,Undisclosed,Undisclosed,Online: Model Studio API,Yes
+Qwen/Qwen3.8-2.4T-A95B,Alibaba / Qwen,General-Purpose,2.4T,95B/token,Offline: Official Hugging Face / Open Weight,Yes
+Qwen/Qwen3.8-27B,Alibaba / Qwen,General-Purpose,27B,27B,Offline: Official Hugging Face / Open Weight,Yes
 Qwen/Qwen2.5-Coder-0.5B-Instruct,Alibaba / Qwen,Coding,0.5B,0.5B,Offline: Official Hugging Face / Open Weight,No
 Qwen/Qwen2.5-Coder-1.5B-Instruct,Alibaba / Qwen,Coding,1.5B,1.5B,Offline: Official Hugging Face / Open Weight,No
 Qwen/Qwen2.5-Coder-14B-Instruct,Alibaba / Qwen,Coding,14B,14B,Offline: Official Hugging Face / Open Weight,No
@@ -345,6 +355,7 @@ tencent/Hunyuan-4B-Instruct,Tencent / Hunyuan,General-Purpose,4B,4B,Offline: Off
 tencent/Hunyuan-7B-Instruct,Tencent / Hunyuan,General-Purpose,7B,7B,Offline: Official Hugging Face / Open Weight,No
 tencent/Hunyuan-MT-7B,Tencent / Hunyuan,General-Purpose,7B,7B,Offline: Official Hugging Face / Open Weight,No
 tencent/Tencent-Hunyuan-Large,Tencent / Hunyuan,General-Purpose,389B,52B/token,Offline: Official Hugging Face / Open Weight,No
+tencent/Hy3,Tencent / Hunyuan,General-Purpose,299B,21B/token,Offline: Official Hugging Face / Open Weight,Yes
 Hunyuan3D,Tencent / Hunyuan,Image Generation,Undisclosed,Undisclosed,Online: Tencent Cloud API,No
 HunyuanImage,Tencent / Hunyuan,Image Generation,Undisclosed,Undisclosed,Online / Open Weight,No
 tencent/Hunyuan3D-2,Tencent / Hunyuan,Image Generation,Undisclosed,Undisclosed,Offline: Official Hugging Face / Open Weight,No
@@ -399,6 +410,7 @@ Nemotron 3 Nano Omni,NVIDIA,General-Purpose,Undisclosed,Undisclosed,Both: NIM / 
 Nemotron 3 Super 120B-A12B,NVIDIA,General-Purpose,120B,12B/token,Both: NIM / Open Weight,Yes
 Nemotron 3 Ultra 550B-A55B,NVIDIA,General-Purpose,550B,55B/token,Both: NIM / Open Weight,Yes
 NVIDIA-Nemotron-Nano-9B-v2,NVIDIA,General-Purpose,9B,9B,Both: NIM / Open Weight,Yes
+nvidia/NVIDIA-Nemotron-3.5-Lightning-30B-A3B-BF16,NVIDIA,General-Purpose,30B,3B/token,Offline: Official Hugging Face / Open Weight,Yes
 nvidia/nemotron-3-8b-chat-4k-sft,NVIDIA,General-Purpose,8B,8B,Offline: Official Hugging Face / Open Weight,No
 nvidia/NVIDIA-Nemotron-3-Nano-30B-A3B-FP8,NVIDIA,General-Purpose,30B,3B/token,Both: NIM / Official Hugging Face Open Weight,Yes
 nvidia/NVIDIA-Nemotron-3-Ultra-550B-A55B-BF16,NVIDIA,General-Purpose,550B,55B/token,Both: NIM / Official Hugging Face Open Weight,Yes
@@ -442,6 +454,7 @@ Document Parse,Upstage,General-Purpose,Undisclosed,Undisclosed,Online: Upstage A
 Solar Mini,Upstage,General-Purpose,Undisclosed,Undisclosed,Online: Upstage API,No
 Solar Open 2,Upstage,General-Purpose,250B,15B/token,Offline: Open Weight,Yes
 Solar Pro 2,Upstage,General-Purpose,31B,31B,Online: Upstage API,Yes
+Solar Pro 4,Upstage,General-Purpose,Undisclosed,Undisclosed,Online: Upstage API,Yes
 upstage/SOLAR-10.7B-Instruct-v1.0,Upstage,General-Purpose,10.7B,10.7B,Offline: Official Hugging Face / Open Weight,No
 upstage/Solar-Open-100B,Upstage,General-Purpose,102B,Undisclosed,Offline: Official Hugging Face / Open Weight,Yes
 Upstage Embed,Upstage,Embedding,Undisclosed,Undisclosed,Online: Upstage API,No
@@ -492,3 +505,44 @@ tiiuae/Falcon-H1-34B-Instruct,TII / Falcon,General-Purpose,34B,34B,Offline: Offi
 tiiuae/Falcon-H1-3B-Instruct,TII / Falcon,General-Purpose,3B,3B,Offline: Official Hugging Face / Open Weight,No
 tiiuae/Falcon-H1-7B-Instruct,TII / Falcon,General-Purpose,7B,7B,Offline: Official Hugging Face / Open Weight,No
 Falcon H1 Tiny Coder 90M,TII / Falcon,Coding,90M,90M,Offline: Open Weight,No
+Motif-Technologies/Motif-3-Beta,Motif Technologies,General-Purpose,314B,13.2B/token,Offline: Official Hugging Face / Open Weight,Yes
+meituan-longcat/LongCat-2.0,Meituan / LongCat,General-Purpose,1.6T,48B/token,Both: LongCat API / Official Hugging Face Open Weight,Yes
+nex-agi/Nex-N2-Pro,Nex-AGI,General-Purpose,397B,17B/token,Both: OpenRouter / Official Hugging Face Open Weight,Yes
+celeris-1,Celeris,General-Purpose,Undisclosed,Undisclosed,Online: Celeris API,No
+mercury-2,Inception Labs,General-Purpose,Undisclosed,Undisclosed,Online: Inception API,Yes
+Motif-Technologies/Motif-Audio,Motif Technologies,Speech & Audio,0.8B,0.8B,Offline: Official Hugging Face / Open Weight,No
+Motif-Technologies/Motif-Video-2B,Motif Technologies,Video Generation,2B,2B,Offline: Official Hugging Face / Open Weight,No
+Motif-Technologies/Motif-2-12.7B-Reasoning,Motif Technologies,General-Purpose,12.7B,12.7B,Offline: Official Hugging Face / Open Weight,Yes
+Motif-Technologies/Motif-2-12.7B-Instruct,Motif Technologies,General-Purpose,12.7B,12.7B,Offline: Official Hugging Face / Open Weight,No
+Motif-Technologies/Motif-2-12.7B-Base,Motif Technologies,General-Purpose,12.7B,12.7B,Offline: Official Hugging Face / Open Weight,No
+Motif-Technologies/Motif-2.6B,Motif Technologies,General-Purpose,2.6B,2.6B,Offline: Official Hugging Face / Open Weight,No
+Motif-Technologies/Motif-2.6b-v1.1-LC,Motif Technologies,General-Purpose,2.6B,2.6B,Offline: Official Hugging Face / Open Weight,No
+Motif-Technologies/Motif-Image-6B-Preview,Motif Technologies,Image Generation,6B,6B,Offline: Official Hugging Face / Open Weight,No
+meituan-longcat/LongCat-Video-Avatar-1.5,Meituan / LongCat,Video Generation,Undisclosed,Undisclosed,Offline: Official Hugging Face / Open Weight,No
+meituan-longcat/LongCat-Next,Meituan / LongCat,General-Purpose,74B,3B/token,Offline: Official Hugging Face / Open Weight,No
+meituan-longcat/LongCat-AudioDiT-1B,Meituan / LongCat,Speech & Audio,1B,1B,Offline: Official Hugging Face / Open Weight,No
+meituan-longcat/LongCat-AudioDiT-3.5B,Meituan / LongCat,Speech & Audio,3.5B,3.5B,Offline: Official Hugging Face / Open Weight,No
+meituan-longcat/LongCat-Flash-Prover,Meituan / LongCat,General-Purpose,560B,27B/token,Offline: Official Hugging Face / Open Weight,Yes
+meituan-longcat/LongCat-Flash-Lite,Meituan / LongCat,General-Purpose,68.5B,3B/token,Offline: Official Hugging Face / Open Weight,No
+meituan-longcat/LongCat-Image-Edit-Turbo,Meituan / LongCat,Image Generation,Undisclosed,Undisclosed,Offline: Official Hugging Face / Open Weight,No
+meituan-longcat/LongCat-Flash-Thinking-ZigZag,Meituan / LongCat,General-Purpose,560B,27B/token,Offline: Official Hugging Face / Open Weight,Yes
+meituan-longcat/LongCat-Flash-Thinking-2601,Meituan / LongCat,General-Purpose,560B,27B/token,Offline: Official Hugging Face / Open Weight,Yes
+meituan-longcat/LongCat-HeavyMode-Summary,Meituan / LongCat,General-Purpose,560B,27B/token,Offline: Official Hugging Face / Open Weight,Yes
+meituan-longcat/LongCat-Video-Avatar,Meituan / LongCat,Video Generation,Undisclosed,Undisclosed,Offline: Official Hugging Face / Open Weight,No
+meituan-longcat/LongCat-Image,Meituan / LongCat,Image Generation,Undisclosed,Undisclosed,Offline: Official Hugging Face / Open Weight,No
+meituan-longcat/LongCat-Image-Edit,Meituan / LongCat,Image Generation,Undisclosed,Undisclosed,Offline: Official Hugging Face / Open Weight,No
+meituan-longcat/LongCat-Image-Dev,Meituan / LongCat,Image Generation,Undisclosed,Undisclosed,Offline: Official Hugging Face / Open Weight,No
+meituan-longcat/LongCat-Flash-Omni,Meituan / LongCat,General-Purpose,560B,27B/token,Offline: Official Hugging Face / Open Weight,No
+meituan-longcat/LongCat-Video,Meituan / LongCat,Video Generation,Undisclosed,Undisclosed,Offline: Official Hugging Face / Open Weight,No
+meituan-longcat/LongCat-Flash-Thinking,Meituan / LongCat,General-Purpose,560B,27B/token,Offline: Official Hugging Face / Open Weight,Yes
+meituan-longcat/LongCat-Flash-Chat,Meituan / LongCat,General-Purpose,560B,27B/token,Offline: Official Hugging Face / Open Weight,No
+nex-agi/Nex-N2-mini,Nex-AGI,General-Purpose,35B,3B/token,Both: OpenRouter / Official Hugging Face Open Weight,Yes
+nex-agi/DeepSeek-V3.1-Nex-N1,Nex-AGI,General-Purpose,671B,37B/token,Offline: Official Hugging Face / Open Weight,Yes
+nex-agi/DeepSeek-V3.1-Nex-N1.1,Nex-AGI,General-Purpose,683B,37B/token,Offline: Official Hugging Face / Open Weight,Yes
+nex-agi/internlm3-8B-Nex-N1,Nex-AGI,General-Purpose,9B,9B,Offline: Official Hugging Face / Open Weight,Yes
+nex-agi/Qwen3-32B-Nex-N1,Nex-AGI,General-Purpose,33B,33B,Offline: Official Hugging Face / Open Weight,Yes
+nex-agi/Qwen3-30B-A3B-Nex-N1,Nex-AGI,General-Purpose,31B,3B/token,Offline: Official Hugging Face / Open Weight,Yes
+mercury-edit-2,Inception Labs,Coding,Undisclosed,Undisclosed,Online: Inception API,No
+Motif-Technologies/Motif-3,Motif Technologies,General-Purpose,314B,13.2B/token,Offline: Official Hugging Face / Open Weight,Yes
+Motif-Technologies/Motif-3-Base,Motif Technologies,General-Purpose,314B,13.2B/token,Offline: Official Hugging Face / Open Weight,No
+meituan-longcat/LongCat-Flash-Lite-Sparse,Meituan / LongCat,General-Purpose,69B,3B/token,Offline: Official Hugging Face / Open Weight,No
