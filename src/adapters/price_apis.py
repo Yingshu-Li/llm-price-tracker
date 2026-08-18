@@ -74,10 +74,10 @@ def parse_api(
     source_url: str,
     fetched_at: str,
     source_version: str | None,
-) -> tuple[list[PriceRecord], list[str]]:
+) -> tuple[list[PriceRecord], list[str], dict[str, tuple[str, str]]]:
     """按一份 YAML spec 解析一个价格 API 的响应。
 
-    返回 (记录, 告警)。告警不是致命错误，但要能被看见——静默少解析比报错更危险。
+    返回 (记录, 告警, 免费额度层)。告警不是致命错误，但要能被看见——静默少解析比报错更危险。
     """
     unit = spec.get("unit")
     if unit not in UNIT_MULTIPLIER:
@@ -96,6 +96,10 @@ def parse_api(
     records: list[PriceRecord] = []
     warnings: list[str] = []
     seen_any_price = False
+    # {规范化后的 model_id: (卖家, 该模型在该平台的页面)}
+    # 免费层条目价格全为 0，构造不出 PriceRecord（构造期断言要求至少有一个
+    # 价格），所以单独收集，不走记录那条路。
+    free_tiers: dict[str, tuple[str, str]] = {}
 
     for item in _extract_list(payload, spec.get("list_path")):
         model_id = next(
@@ -107,9 +111,21 @@ def parse_api(
             continue
         if any(item.get(flag) is True for flag in skip_if_true):
             continue
+        # `:free` 是**免费额度层**，不是"这个模型免费"——有每日请求数上限、
+        # 速率限制，高峰期可能排不上。把它当最低价报出去会让人以为能零成本
+        # 无限用，所以后缀照剥、不参与比价；但"存在免费层"这个事实有价值，
+        # 在剥掉之前先记下来（剥完就分辨不出是哪个变体了）。
+        free_tier = model_id.endswith(":free")
+        raw_id = model_id
         for suffix in _VARIANT_SUFFIXES:
             if model_id.endswith(suffix):
                 model_id = model_id[: -len(suffix)]
+
+        if free_tier:
+            # 免费层的落地页：能拼出该平台的模型页就用它，否则退回站点首页
+            link = spec.get("model_url_template")
+            link = link.format(id=raw_id) if link else (spec.get("weblink") or "")
+            free_tiers.setdefault(model_id, (spec.get("name") or spec["id"], link))
 
         # hf_router 这类把价格挂在 providers[] 数组里，每个托管方一条记录
         containers = item.get(nested) if nested else None
@@ -144,6 +160,13 @@ def parse_api(
             if nested and bucket.get("provider"):
                 provider = f"{spec['id']}/{bucket['provider']}"
 
+            model_url = spec.get("model_url_template")
+            seller_url = (
+                model_url.format(id=raw_id)
+                if model_url
+                else (spec.get("weblink") or "")
+            )
+
             snippet_parts = [f"{k}={_dig(bucket, v) or _dig(item, v)!r}" for k, v in fields.items()]
             snippet = f"{model_id} | " + " ".join(snippet_parts)
 
@@ -168,6 +191,8 @@ def parse_api(
                             "api": spec["id"],
                             "weblink": spec.get("weblink"),
                             "provider_name": spec.get("name"),
+                            "seller": provider,
+                            "seller_url": seller_url,
                             # HF Router 顺带给了速度，先存着不用
                             "throughput": bucket.get("throughput"),
                             "ttft_ms": bucket.get("first_token_latency_ms"),
@@ -183,4 +208,6 @@ def parse_api(
             f"{spec['id']}: 响应解析成功但**一条价格都没取到**，"
             "多半是字段路径变了——这是静默失效，必须查"
         )
-    return records, warnings
+    # 免费层挂在返回值上而不是塞进 records：它不是一条价格观测，
+    # 不该参与比价，只是"该模型在此平台另有免费额度"这个事实。
+    return records, warnings, free_tiers

@@ -28,7 +28,7 @@ python update_prices.py             # 抓取全部源并导出
 
 | 文件 | 内容 |
 | --- | --- |
-| `out/models_with_prices.csv` | 总表，379 行 / 365 个模型（**当前只导出 General-Purpose**），31 列 |
+| `out/models_with_prices.csv` | 总表，379 行 / 365 个模型（**当前只导出 General-Purpose**），35 列 |
 | `out/sources.md` | 数据源清单 + 许可 + 解析告警 |
 
 总表关键列：
@@ -40,6 +40,10 @@ python update_prices.py             # 抓取全部源并导出
 | `weights` | `free`（权重公开可自取）/ `proprietary`（只能买 API） |
 | `price_status` | `got` / `weights_free` / `not_found` —— **见下方三值说明** |
 | `price_kind` | `official`（拿到厂商牌价）/ `hosted`（**只有第三方转售价**） |
+| `text_cheapest_input_seller_url` | 当前最低输入价卖家的模型目录/模型详情页；每日比价后随 seller 同步切换 |
+| `text_cheapest_input_source_url` | 得出最低输入价的数据证据链接（API、JSON 或官方价格表），不是商家入口 |
+| `text_cheapest_output_seller_url` | 当前最低输出价卖家的模型目录/模型详情页；每日比价后随 seller 同步切换 |
+| `text_cheapest_output_source_url` | 得出该价格的数据证据链接（API、JSON 或官方价格表），不是商家入口 |
 | `text_*` `audio_*` `image_*` `video_*` | 四组模态价，每组含官方价+最低价 —— 见下 |
 | `context_tier` | 上下文长度；厂商分档定价时按官网原文，一档一行 —— 见下 |
 | `official_price` | `got` / `weight open source` / `None` —— 见下 |
@@ -95,7 +99,7 @@ API 形态和权重形态各列一行（`MiniMax-M2` / `MiniMaxAI/MiniMax-M2`）
 或加入想显示的 Function 名。抓取层完全不受这个开关影响。
 
 **全空的列不导出**：当前 audio / image / video 三组共 25 列必然全空（那些价格
-属于被过滤掉的 Function），已自动省略，总表从 56 列降到 31 列。
+属于被过滤掉的 Function），已自动省略，总表从 60 列降到 35 列。
 
 ⚠️ 因此**列集合会随 `EXPORT_FUNCTIONS` 变化** —— 前端不能假定某列一定存在，
 读表时先看表头。放开过滤后那 25 列会自动回来。

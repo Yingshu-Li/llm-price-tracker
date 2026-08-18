@@ -17,6 +17,7 @@ from pathlib import Path
 
 from .display import display_name
 from .records import PriceRecord
+from .seller_urls import seller_url_of
 
 PRICE_FIELDS = [
     "input_per_1m",
@@ -68,13 +69,19 @@ COLUMNS = [
     "text_official_source_url",
     "text_cheapest_input_per_1m_usd",
     "text_cheapest_input_seller",
+    "text_cheapest_input_seller_url",
     "text_cheapest_input_provider",
     "text_cheapest_input_source_url",
     "text_cheapest_output_per_1m_usd",
     "text_cheapest_output_seller",
+    "text_cheapest_output_seller_url",
     "text_cheapest_output_provider",
     "text_cheapest_output_source_url",
     "text_quote_count",
+    # 免费额度层：某平台对该模型提供 $0 调用，但有每日请求数/速率上限。
+    # **不参与最低价比较**——当成 $0 报出去会让人以为能零成本无限用。
+    "free_limited_provider",
+    "free_limited_url",
     # audio：同样按 token 计（OpenAI 的 audio token 与 text token 分开计价）
     "audio_official_input_per_1m_usd",
     "audio_official_output_per_1m_usd",
@@ -427,6 +434,7 @@ def write_table(
     raw_models: list,
     best_by_model: dict[str, PriceRecord],
     records_by_model: dict[str, list[PriceRecord]] | None = None,
+    free_tiers: dict[str, tuple[str, str]] | None = None,
 ) -> dict:
     """records_by_model 是该模型的**全部**观测（未收敛成一条）。
 
@@ -434,9 +442,17 @@ def write_table(
     最权威的一条，但"最权威"经常就是转售价（开源模型压根没有官方价可选）。
     """
     records_by_model = records_by_model or {}
+    free_tiers = free_tiers or {}
+    # 源里的 id 与 raw.csv 的写法不同（`google/gemma-4-31b-it` vs
+    # `google/gemma-4-31B-it`），按候选形式建索引才对得上
+    from .normalize import name_candidates
+    free_index: dict[str, tuple[str, str]] = {}
+    for mid, info in free_tiers.items():
+        for cand in name_candidates(mid):
+            free_index.setdefault(cand, info)
     stats = defaultdict(int)
     # 先攒在内存里：全空的列要等所有行都生成完才能判定，不能边写边判。
-    # 492 行 × 56 列的规模，攒下来毫无压力。
+    # 492 行 × 60 列的规模，攒下来毫无压力。
     buffered: list[list[str]] = []
     with open(path, "w", encoding="utf-8", newline="") as handle:
         writer = csv.writer(handle)
@@ -495,16 +511,27 @@ def write_table(
             cheap_in = cheapest_by(pool, "input_per_1m")
             cheap_out = cheapest_by(pool, "output_per_1m")
             quotes = count_quotes(pool)
+            # 免费额度层按该模型的任一候选形式查（源里的 id 与 raw.csv 不同名）
+            ft = ("", "")
+            for cand in raw.candidates:
+                if cand in free_index:
+                    ft = free_index[cand]
+                    stats["free_tier"] += 1
+                    break
+
             text_cheapest = [
                 _fmt(cheap_in.input_per_1m) if cheap_in else "",
                 _seller_of(cheap_in) if cheap_in else "",
+                seller_url_of(cheap_in),
                 _provider_of(cheap_in) if cheap_in else "",
                 cheap_in.source_url if cheap_in else "",
                 _fmt(cheap_out.output_per_1m) if cheap_out else "",
                 _seller_of(cheap_out) if cheap_out else "",
+                seller_url_of(cheap_out),
                 _provider_of(cheap_out) if cheap_out else "",
                 cheap_out.source_url if cheap_out else "",
                 str(quotes) if quotes else "",
+                ft[0], ft[1],
             ]
             if quotes == 1:
                 stats["cheapest_single_quote"] += 1

@@ -156,10 +156,12 @@ def collect_azure() -> tuple[list, list[dict]]:
     return records, fetches
 
 
-def collect_price_apis() -> tuple[list, list[dict], list[str]]:
+def collect_price_apis() -> tuple[list, list[dict], list[str], dict]:
     """Tier 2/3：可直连的根源价格 API，全部由 config/price_apis.yaml 驱动。"""
     cfg = yaml.safe_load((CONFIG / "price_apis.yaml").read_text("utf-8"))
     records, fetches, warnings = [], [], []
+    # {model_id: (平台名, 链接)}——哪些模型在某平台另有免费额度层
+    free_tiers: dict[str, tuple[str, str]] = {}
     for spec in cfg["apis"]:
         r = fetch(spec["url"], use_cache=True)
         entry = _fetch_entry(
@@ -177,10 +179,11 @@ def collect_price_apis() -> tuple[list, list[dict], list[str]]:
         except json.JSONDecodeError as exc:
             warnings.append(f"{spec['id']}: JSON 解析失败 {exc}")
             continue
-        recs, warns = price_apis.parse_api(
+        recs, warns, frees = price_apis.parse_api(
             payload, spec, source_url=r.url,
             fetched_at=r.fetched_at, source_version=r.version,
         )
+        free_tiers.update(frees)
         # 归属公司；推断不出的丢弃，绝不硬塞——归错公司等于拆掉跨公司误配防线
         kept = []
         for rec in recs:
@@ -193,7 +196,9 @@ def collect_price_apis() -> tuple[list, list[dict], list[str]]:
         entry["n_records"] = len(kept)
         print(f"  ✓ {spec.get('name', spec['id']):22} {len(kept):5} 条"
               f"（原始 {len(recs)}，{len(recs)-len(kept)} 条无法归属公司已丢弃）")
-    return records, fetches, warnings
+    if free_tiers:
+        print(f"  ℹ️ {len(free_tiers)} 个模型另有免费额度层（不参与比价）")
+    return records, fetches, warnings, free_tiers
 
 
 def collect_vendored(refresh: bool) -> tuple[list, list[dict]]:
@@ -270,7 +275,7 @@ def main() -> int:
     for collector in (collect_aws, collect_azure):
         recs, fs = collector()
         records += recs; fetches += fs
-    recs, fs, warns = collect_price_apis()
+    recs, fs, warns, free_tiers = collect_price_apis()
     records += recs; fetches += fs; warnings += warns
     recs, fs = collect_vendored(args.refresh_vendor)
     records += recs
@@ -312,7 +317,7 @@ def main() -> int:
     print("\n== 5. 导出 ==")
     OUT.mkdir(exist_ok=True)
     stats = export_mod.write_table(
-        OUT / "models_with_prices.csv", raw_models, best, by_model
+        OUT / "models_with_prices.csv", raw_models, best, by_model, free_tiers
     )
     counts = defaultdict(int)
     for rec in records:

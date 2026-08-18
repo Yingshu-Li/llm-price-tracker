@@ -17,6 +17,7 @@ from typing import Any
 
 from ..normalize import infer_company
 from ..records import TIER_VENDORED, PriceRecord
+from ..seller_urls import catalog_url_for
 
 VENDOR_DIR = Path(__file__).resolve().parent.parent.parent / "vendor"
 
@@ -111,6 +112,13 @@ def parse_modelsdev(
                         "provider_name": "models.dev",
                         "open_weights": model.get("open_weights"),
                         "seller": provider_id,
+                        # 商家自己的模型目录；source_url 仍保留价格数据证据。
+                        "seller_url": (
+                            catalog_url_for(provider_id)
+                            or provider.get("doc")
+                            or provider.get("api")
+                            or ""
+                        ),
                     },
                     **prices,
                 )
@@ -180,6 +188,7 @@ def parse_litellm(
                     "mode": entry.get("mode"),
                     "litellm_key": key,
                     "seller": seller,
+                    "seller_url": catalog_url_for(seller),
                 },
                 **prices,
             )
