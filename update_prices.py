@@ -26,6 +26,7 @@ from src.adapters import (
     iflytek,
     nonusd_official,
     price_apis,
+    upstage,
     vendored,
 )
 from src.adapters.md_docs import parse_doctable_doc, parse_pricing_doc
@@ -208,6 +209,30 @@ def collect_iflytek() -> tuple[list, list[dict], list[str]]:
     return records, [entry], warnings
 
 
+def collect_upstage() -> tuple[list, list[dict], list[str]]:
+    """Tier 1：Upstage 官方 API 定价页。"""
+    r = fetch(upstage.PRICE_URL, use_cache=True)
+    entry = _fetch_entry(
+        "upstage_official_html", r.url, r.ok, r,
+        provider_name="Upstage 官方价格",
+        weblink=upstage.WEBLINK,
+        license="厂商官方价格页",
+    )
+    if not r.ok:
+        print(f"  ✗ upstage_official_html {r.error}", file=sys.stderr)
+        return [], [entry], []
+    records, warnings = upstage.parse_prices(
+        r.text, source_url=r.url, fetched_at=r.fetched_at,
+        source_version=r.version,
+    )
+    for rec in records:
+        rec.raw["provider_name"] = "Upstage 官方价格"
+        rec.raw["weblink"] = upstage.WEBLINK
+    entry["n_records"] = len(records)
+    print(f"  ✓ Upstage 官方价     {len(records):4} 条")
+    return records, [entry], warnings
+
+
 def collect_azure() -> tuple[list, list[dict]]:
     records, fetches = [], []
     url, pages, first = azure_retail.query_url(), 0, None
@@ -365,6 +390,8 @@ def main() -> int:
     recs, fs, warns = collect_iflytek()
     records += recs; fetches += fs; warnings += warns
     recs, fs, warns = collect_ai302()
+    records += recs; fetches += fs; warnings += warns
+    recs, fs, warns = collect_upstage()
     records += recs; fetches += fs; warnings += warns
     for collector in (collect_aws, collect_azure):
         recs, fs = collector()

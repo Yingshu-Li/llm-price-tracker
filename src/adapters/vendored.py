@@ -29,6 +29,13 @@ LITELLM_URL = (
 )
 LITELLM_WEBLINK = "https://github.com/BerriAI/litellm"
 
+# 有些 LiteLLM 第一方记录的 key 是裸模型名，唯一的厂商字段只有 provider。
+# 这里只列不会产生歧义的模型厂商自营 provider；云平台（bedrock/azure/oci）
+# 不能映射成模型公司。
+_LITELLM_PROVIDER_COMPANIES = {
+    "cohere": "Cohere",
+}
+
 
 def local_path(name: str) -> Path:
     return VENDOR_DIR / f"{name}.json"
@@ -138,6 +145,14 @@ def parse_litellm(
     for key, entry in payload.items():
         if key == "sample_spec" or not isinstance(entry, dict):
             continue
+        # LiteLLM 这条直连 Cohere 记录把 0.10/1M 错写成了 0.0001/token
+        #（即 100/1M）。同一数据集里的 OCI 四个区域记录均为 0.10/1M。
+        # 仅在异常量级仍存在时跳过；上游修正后会自动恢复使用。
+        if (
+            key == "embed-multilingual-light-v3.0"
+            and (entry.get("input_cost_per_token") or 0) >= 0.00001
+        ):
+            continue
         prices = {
             "input_per_1m": entry.get("input_cost_per_token"),
             "output_per_1m": entry.get("output_cost_per_token"),
@@ -153,16 +168,33 @@ def parse_litellm(
             continue
 
         model_id = key.split("/")[-1]
-        company = infer_company(key) or infer_company(model_id)
+        seller = entry.get("litellm_provider") or (
+            key.split("/")[0] if "/" in key else ""
+        )
+        # 部分第一方 key 只有裸模型名（如 embed-english-v3.0），公司信息
+        # 只存在于 litellm_provider。此前没检查 seller，导致整组 Cohere
+        # Embedding 价格在构造 PriceRecord 之前就被丢弃。
+        company = (
+            infer_company(key)
+            or infer_company(model_id)
+            or infer_company(seller)
+            or _LITELLM_PROVIDER_COMPANIES.get(str(seller).lower())
+            or (
+                "Cohere"
+                if model_id.lower().startswith("cohere.")
+                else None
+            )
+        )
         if not company:
             continue
 
         # 同 models.dev：key 按服务方命名，首段是卖家。`litellm_provider` 更可靠
         # 时优先用它。卖家 == 厂商本人即为牌价。
-        seller = entry.get("litellm_provider") or (
-            key.split("/")[0] if "/" in key else ""
+        seller_company = (
+            infer_company(seller)
+            or _LITELLM_PROVIDER_COMPANIES.get(str(seller).lower())
         )
-        is_first_party = bool(seller) and infer_company(seller) == company
+        is_first_party = bool(seller) and seller_company == company
 
         records.append(
             PriceRecord(

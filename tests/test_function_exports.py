@@ -81,12 +81,13 @@ class FunctionExportTests(unittest.TestCase):
         )
 
         self.assertEqual({row["Function"] for row in rows}, {"Embedding"})
-        self.assertEqual(len(rows), len(embedding))
+        self.assertEqual(len(rows), len(embedding) - 1)
         by_model = {row["Model"]: row for row in rows}
         self.assertEqual(by_model[model.model]["price_status"], "got")
         self.assertEqual(
             by_model[model.model]["text_official_input_per_1m_usd"], "0.02"
         )
+        self.assertNotIn("rerank-v4.0", by_model)
 
 
 if __name__ == "__main__":

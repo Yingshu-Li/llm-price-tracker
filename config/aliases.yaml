@@ -33,3 +33,5 @@ aliases:
     iflytek_maas_api: xsparkx2
   "Spark-X2-Flash / xsparkx2flash":
     iflytek_maas_api: xsparkx2flash
+  "Amazon Nova Multimodal Embeddings":
+    litellm: amazon.nova-2-multimodal-embeddings-v1:0

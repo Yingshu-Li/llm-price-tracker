@@ -463,6 +463,7 @@ EXPORT_HIDDEN_MODELS = {
     "MiniMax-M2.1-highspeed",
     "ERNIE 5.0",
     "Baichuan2-Turbo-192k",
+    "rerank-v4.0",
 }
 EXPORT_HIDDEN_COMPANIES = {"NAVER"}
 
