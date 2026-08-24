@@ -31,7 +31,9 @@ class FunctionExportTests(unittest.TestCase):
     def setUpClass(cls):
         cls.raw_models = load_raw(ROOT / "raw.csv")
 
-    def _export(self, function: str, records_by_model):
+    def _export(
+        self, function: str, records_by_model, *, include_text_output_prices=True
+    ):
         with tempfile.TemporaryDirectory() as tmp:
             path = Path(tmp) / "result.csv"
             write_table(
@@ -41,6 +43,7 @@ class FunctionExportTests(unittest.TestCase):
                 records_by_model,
                 export_functions={function},
                 token_prices_only=True,
+                include_text_output_prices=include_text_output_prices,
             )
             with path.open(encoding="utf-8", newline="") as handle:
                 reader = csv.DictReader(handle)
@@ -88,6 +91,30 @@ class FunctionExportTests(unittest.TestCase):
             by_model[model.model]["text_official_input_per_1m_usd"], "0.02"
         )
         self.assertNotIn("rerank-v4.0", by_model)
+
+    def test_embedding_drops_generic_output_prices_and_sources(self):
+        embedding = [
+            row
+            for row in self.raw_models
+            if row.function == "Embedding" and row.model != "rerank-v4.0"
+        ]
+        model = embedding[0]
+        fields, rows = self._export(
+            "Embedding",
+            {
+                model.model: [
+                    _record(model.model, input_per_1m=0.02, output_per_1m=0.10)
+                ]
+            },
+            include_text_output_prices=False,
+        )
+
+        row = next(item for item in rows if item["Model"] == model.model)
+        self.assertEqual(row["text_official_input_per_1m_usd"], "0.02")
+        self.assertEqual(row["text_cheapest_input_per_1m_usd"], "0.02")
+        self.assertNotIn("text_official_output_per_1m_usd", fields)
+        self.assertNotIn("text_cheapest_output_per_1m_usd", fields)
+        self.assertNotIn("text_cheapest_output_source_url", fields)
 
 
 if __name__ == "__main__":

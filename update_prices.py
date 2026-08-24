@@ -462,11 +462,13 @@ def main() -> int:
         OUT / "models_with_prices.csv", raw_models, best, by_model, free_tiers
     )
     function_exports = (
-        ("coding_models_with_prices.csv", {"Coding"}),
-        ("embedding_models_with_prices.csv", {"Embedding"}),
+        ("coding_models_with_prices.csv", {"Coding"}, True),
+        # Embedding 表也包含 Rerank；两者都不生成文本 token，输出价只保留在
+        # 底层观测中，不进入成品 CSV 和网页。
+        ("embedding_models_with_prices.csv", {"Embedding"}, False),
     )
     function_stats = {}
-    for filename, functions in function_exports:
+    for filename, functions, include_output in function_exports:
         function_stats[filename] = export_mod.write_table(
             OUT / filename,
             raw_models,
@@ -475,6 +477,7 @@ def main() -> int:
             free_tiers,
             export_functions=functions,
             token_prices_only=True,
+            include_text_output_prices=include_output,
         )
     counts = defaultdict(int)
     for rec in records:
@@ -502,7 +505,7 @@ def main() -> int:
     print(f"      权重免费无报价 {stats.get('weights_free', 0)}（价格不存在，非抓取失败）"
           f" · 真缺口 {stats.get('not_found', 0)}（闭源却没拿到价）")
     print(f"      权重：开源 {stats.get('w_free', 0)} / 闭源 {stats.get('w_proprietary', 0)}")
-    for filename, functions in function_exports:
+    for filename, functions, _include_output in function_exports:
         item = function_stats[filename]
         print(
             f"   out/{filename:<31} {item.get('rows', 0)} 行"

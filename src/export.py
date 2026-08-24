@@ -477,6 +477,7 @@ def write_table(
     *,
     export_functions: set[str] | None = EXPORT_FUNCTIONS,
     token_prices_only: bool = False,
+    include_text_output_prices: bool = True,
 ) -> dict:
     """records_by_model 是该模型的**全部**观测（未收敛成一条）。
 
@@ -569,7 +570,14 @@ def write_table(
 
             # ── text 组：输入、输出各自取最低（常来自不同卖家）──
             cheap_in = cheapest_by(pool, "input_per_1m")
-            cheap_out = cheapest_by(pool, "output_per_1m")
+            # Embedding / Rerank 的响应是向量或相关性分数，不是生成文本。
+            # 部分聚合源为了适配通用 LLM schema 会填 output_per_1m；能力表不能
+            # 将它展示成“输出 token 价”，但原始观测仍完整保留在抓取结果中。
+            cheap_out = (
+                cheapest_by(pool, "output_per_1m")
+                if include_text_output_prices
+                else None
+            )
             quotes = count_quotes(pool)
             # 免费额度层按该模型的任一候选形式查（源里的 id 与 raw.csv 不同名）
             ft = ("", "")
@@ -616,12 +624,19 @@ def write_table(
             def _official_cells(tier: PriceRecord | None) -> list[str]:
                 """official_price 哨兵 + text 组的官方价四列。"""
                 if tier is not None:
+                    output_price = (
+                        tier.output_per_1m if include_text_output_prices else None
+                    )
                     return [
                         "got",
                         _fmt(tier.input_per_1m),
                         *fx_cells(tier, "input_per_1m"),
-                        _fmt(tier.output_per_1m),
-                        *fx_cells(tier, "output_per_1m"),
+                        _fmt(output_price),
+                        *(
+                            fx_cells(tier, "output_per_1m")
+                            if include_text_output_prices
+                            else ["", "", ""]
+                        ),
                         _provider_of(tier),
                         tier.source_url,
                     ]

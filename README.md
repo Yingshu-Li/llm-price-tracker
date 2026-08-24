@@ -100,7 +100,7 @@ API 形态和权重形态各列一行（`MiniMax-M2` / `MiniMaxAI/MiniMax-M2`）
 | 文件 | Function | 价格口径 |
 | --- | --- | --- |
 | `out/coding_models_with_prices.csv` | Coding | 只展示每 100 万 token 价格 |
-| `out/embedding_models_with_prices.csv` | Embedding | 只展示每 100 万 token 价格 |
+| `out/embedding_models_with_prices.csv` | Embedding（含 Rerank） | 只展示每 100 万输入/处理 token 价格；不展示输出价 |
 
 能力分表保留对应 Function 的全部模型行。若某模型目前只有按次、按秒、按图片等
 非 token 报价，价格列留空，不把不同结算单位强行换算或放进表格；原始报价仍照常
@@ -113,6 +113,8 @@ API 形态和权重形态各列一行（`MiniMax-M2` / `MiniMaxAI/MiniMax-M2`）
 
 **全空的列不导出**：每张分表只保留实际有值的列。Coding 与 Embedding 分表明确
 排除按张、按秒、按次等非 token 价格，因此不会出现对应价格列。
+Embedding 与 Rerank 的响应分别是向量和相关性分数，不是生成文本；聚合源通用
+schema 中即使带有 `output_per_1m`，也只保留在底层观测，不导出为文本输出价。
 
 ⚠️ 因此**列集合会随 `EXPORT_FUNCTIONS` 变化** —— 前端不能假定某列一定存在，
 读表时先看表头。放开过滤后那 25 列会自动回来。
