@@ -1,6 +1,6 @@
 # 数据源清单
 
-由 `update_prices.py` 于 2026-08-23T01:39:15 自动生成。
+由 `update_prices.py` 于 2026-08-24T01:37:18 自动生成。
 
 | 数据 Provider | 网页 | 抓取地址 | 许可 | 状态 | 记录数 |
 | --- | --- | --- | --- | --- | --- |
@@ -13,8 +13,8 @@
 | DeepInfra | https://deepinfra.com/models | `https://api.deepinfra.com/models/list` | 公开 API | ✅ | 207 |
 | Empirio Labs | https://empiriolabs.ai | `https://api.empiriolabs.ai/v1/models` | 公开 API | ✅ | 69 |
 | HuggingFace Router | https://huggingface.co/models?inference_provider=all | `https://router.huggingface.co/v1/models` | 公开 API | ✅ | 187 |
-| LiteLLM | https://github.com/BerriAI/litellm | `https://cdn.jsdelivr.net/gh/BerriAI/litellm@main/model_prices_and_cont` | MIT | ✅ | 2241 |
-| models.dev | https://models.dev | `https://models.dev/api.json` | MIT | ✅ | 5852 |
+| LiteLLM | https://github.com/BerriAI/litellm | `https://cdn.jsdelivr.net/gh/BerriAI/litellm@main/model_prices_and_cont` | MIT | ✅ | 2251 |
+| models.dev | https://models.dev | `https://models.dev/api.json` | MIT | ✅ | 5890 |
 | Moonshot AI / Kimi 官方文档 | https://platform.moonshot.ai/docs/pricing/chat-k3 | `https://platform.kimi.ai/docs/pricing/chat-k3.md` | 厂商官方文档 | ✅ | 10 |
 | Moonshot AI / Kimi 官方文档 | https://platform.moonshot.ai/docs/pricing/chat-k3 | `https://platform.kimi.ai/docs/pricing/chat-k27-code.md` | 厂商官方文档 | ✅ | 10 |
 | Moonshot AI / Kimi 官方文档 | https://platform.moonshot.ai/docs/pricing/chat-k3 | `https://platform.kimi.ai/docs/pricing/chat-k26.md` | 厂商官方文档 | ✅ | 10 |
@@ -56,18 +56,18 @@ models.dev 的 `google.ts` 里写着 `cost: existing.cost`（价格取自手工�
 厂商改一个列头就会静默丢掉一个价格维度，所以认不出的东西必须报出来。
 
 - openai_md: 未识别的列头 `pricing`
-- openai_md: 未识别的列头 `category`
-- openai_md: 未识别的列头 `training`
 - openai_md: 未识别的列头 `size`
-- openai_md: 未识别的列头 `estimated cost`
-- openai_md: 未识别的列头 `details`
 - openai_md: 未识别的列头 `landscape`
+- openai_md: 未识别的列头 `training`
+- openai_md: 未识别的列头 `details`
 - openai_md: 未识别的列头 `use case`
+- openai_md: 未识别的列头 `estimated cost`
+- openai_md: 未识别的列头 `category`
 - openai_md: 未识别的列头 `portrait`
 - openai_md: 跳过表格「Grouped Pricing Table data」— 没有可识别的价格列
-- anthropic_md: 未识别的列头 `tool choice`
 - anthropic_md: 未识别的列头 `tool use system prompt token count`
 - anthropic_md: 未识别的列头 `additional input tokens`
+- anthropic_md: 未识别的列头 `tool choice`
 - anthropic_md: 跳过表格「Claude Platform on AWS pricing」— 找不到模型/工具名列
 - anthropic_md: 跳过表格「Claude in Microsoft Foundry pricing」— 找不到模型/工具名列
 - anthropic_md: 跳过表格「Prompt caching」— 找不到模型/工具名列
