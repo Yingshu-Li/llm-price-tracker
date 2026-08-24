@@ -441,6 +441,17 @@ def _fmt(value) -> str:
 # 只是暂不进总表。
 EXPORT_FUNCTIONS: set[str] | None = {"General-Purpose"}
 
+# 单独能力表只接受真正按 token 结算的报价。字段名本身就是统一单位契约：
+# 所有 ``*_per_1m`` 都表示每 100 万 token；按张/按秒/按次等字段不在这里。
+TOKEN_PRICE_FIELDS = tuple(
+    field for field in PriceRecord.PRICE_FIELDS if field.endswith("_per_1m")
+)
+
+
+def has_token_price(record: PriceRecord) -> bool:
+    """这条观测是否至少包含一个每 100 万 token 的价格。"""
+    return any(getattr(record, field) is not None for field in TOKEN_PRICE_FIELDS)
+
 # 仅从最终展示表隐藏；raw.csv、价格抓取、匹配和 sources.md 均继续保留。
 # 这里使用 raw.csv 的精确 Model / Company 值，避免相似名称被误伤。
 EXPORT_HIDDEN_MODELS = {
@@ -462,6 +473,9 @@ def write_table(
     best_by_model: dict[str, PriceRecord],
     records_by_model: dict[str, list[PriceRecord]] | None = None,
     free_tiers: dict[str, tuple[str, str]] | None = None,
+    *,
+    export_functions: set[str] | None = EXPORT_FUNCTIONS,
+    token_prices_only: bool = False,
 ) -> dict:
     """records_by_model 是该模型的**全部**观测（未收敛成一条）。
 
@@ -487,7 +501,7 @@ def write_table(
         for raw in raw_models:
             # 显示过滤：只导出指定 Function。被跳过的模型仍然完成了抓取与匹配，
             # 其价格照常计入 out/sources.md 的源统计，只是不进总表。
-            if EXPORT_FUNCTIONS is not None and raw.function not in EXPORT_FUNCTIONS:
+            if export_functions is not None and raw.function not in export_functions:
                 stats["hidden_by_function"] += 1
                 continue
             if (
@@ -497,9 +511,15 @@ def write_table(
                 stats["hidden_by_display_rule"] += 1
                 continue
 
-            best = best_by_model.get(raw.model)
             av = raw.availability
-            pool = records_by_model.get(raw.model, [])
+            all_records = records_by_model.get(raw.model, [])
+            pool = (
+                [record for record in all_records if has_token_price(record)]
+                if token_prices_only
+                else all_records
+            )
+            # 单位过滤会改变可选集合，不能沿用全量数据预先算好的 best。
+            best = pick_best(pool) if token_prices_only else best_by_model.get(raw.model)
             official = pick_official(pool)
 
             # ── audio / image / video 三组：与 text 同样是「官方价 + 最低价」，
@@ -540,6 +560,11 @@ def write_table(
                 image_cells = _group("text", "per_image", with_output=False)
             if not any(video_cells[:1] + video_cells[3:4]):
                 video_cells = _group("text", "per_second", with_output=False)
+            if token_prices_only:
+                # 即便同一条观测同时带 token 与按张/按秒价格，能力表也只展示
+                # token 部分；非 token 计费继续保留在源数据，不进入这两个 CSV。
+                image_cells = [""] * 8
+                video_cells = [""] * 8
 
             # ── text 组：输入、输出各自取最低（常来自不同卖家）──
             cheap_in = cheapest_by(pool, "input_per_1m")
@@ -683,9 +708,8 @@ def write_table(
                 buffered.append(row)
                 stats["rows"] += 1
 
-        # 全空的列不导出。当前只显示 General-Purpose，audio/image/video 三组
-        # 25 列必然全空（那些价格属于被过滤掉的 Function），留着纯占位。
-        # ⚠️ 列集合会随 EXPORT_FUNCTIONS 变化，前端不能假定列固定存在。
+        # 全空的列不导出。不同能力表会自然保留自己实际用到的列。
+        # ⚠️ 列集合会随 export_functions 变化，前端不能假定列固定存在。
         keep = [
             i
             for i, _ in enumerate(COLUMNS)

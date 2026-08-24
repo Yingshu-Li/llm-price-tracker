@@ -54,10 +54,6 @@ def parse_prices(
         if service_id in seen:
             warnings.append(f"iflytek_maas_api: {service_id} 重复出现，保留首次")
             continue
-        if row.get("showPrice") is not True:
-            warnings.append(f"iflytek_maas_api: {service_id} 当前未公开展示价格")
-            continue
-
         price = row.get("price")
         inference = price.get("inferencePrice") if isinstance(price, dict) else None
         if not isinstance(inference, dict):

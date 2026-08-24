@@ -16,7 +16,9 @@ class IflytekParserTests(unittest.TestCase):
                     {
                         "name": "Spark X2",
                         "serviceId": "xsparkx2",
-                        "showPrice": True,
+                        # 讯飞当前接口即使官网公开展示价格，也可能把此 UI 标志
+                        # 返回为 false；价格有效性应由价格字段和单位判断。
+                        "showPrice": False,
                         "updateTime": "2026-08-14 10:01:30",
                         "price": {"inferencePrice": {
                             "inTokensPrice": 3,

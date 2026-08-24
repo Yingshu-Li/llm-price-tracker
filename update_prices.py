@@ -434,6 +434,21 @@ def main() -> int:
     stats = export_mod.write_table(
         OUT / "models_with_prices.csv", raw_models, best, by_model, free_tiers
     )
+    function_exports = (
+        ("coding_models_with_prices.csv", {"Coding"}),
+        ("embedding_models_with_prices.csv", {"Embedding"}),
+    )
+    function_stats = {}
+    for filename, functions in function_exports:
+        function_stats[filename] = export_mod.write_table(
+            OUT / filename,
+            raw_models,
+            best,
+            by_model,
+            free_tiers,
+            export_functions=functions,
+            token_prices_only=True,
+        )
     counts = defaultdict(int)
     for rec in records:
         counts[rec.source] += 1
@@ -460,6 +475,13 @@ def main() -> int:
     print(f"      权重免费无报价 {stats.get('weights_free', 0)}（价格不存在，非抓取失败）"
           f" · 真缺口 {stats.get('not_found', 0)}（闭源却没拿到价）")
     print(f"      权重：开源 {stats.get('w_free', 0)} / 闭源 {stats.get('w_proprietary', 0)}")
+    for filename, functions in function_exports:
+        item = function_stats[filename]
+        print(
+            f"   out/{filename:<31} {item.get('rows', 0)} 行"
+            f"（{'/'.join(sorted(functions))}；仅展示按 token 计费报价；"
+            f"有价格 {item.get('got', 0)}）"
+        )
     print(f"   out/sources.md               {len(fetches)} 个源")
     return 0
 

@@ -92,19 +92,27 @@ API 形态和权重形态各列一行（`MiniMax-M2` / `MiniMaxAI/MiniMax-M2`）
 `None` 的 63 个里，闭源真缺口主要在 Qwen 商用版、ByteDance doubao——
 定价页是 SPA 或未写抓取器，详见 [STATUS.md](STATUS.md)。
 
-### 当前只导出 General-Purpose
+### 按 Function 分表导出
 
-总表暂时只显示 `Function = General-Purpose` 的模型（366 个候选中另有 16 个按
-展示规则隐藏，实际显示 350 个），其余 182 个
-（语音 65 · 嵌入 29 · 图像 34 · 编程 20 · 安全 16 · 视频 18）**照常抓取、
-照常计入 `out/sources.md`，只是不进总表**。
+`out/models_with_prices.csv` 仍只显示 `Function = General-Purpose`。此外，同一次
+更新会生成两张能力分表：
+
+| 文件 | Function | 价格口径 |
+| --- | --- | --- |
+| `out/coding_models_with_prices.csv` | Coding | 只展示每 100 万 token 价格 |
+| `out/embedding_models_with_prices.csv` | Embedding | 只展示每 100 万 token 价格 |
+
+能力分表保留对应 Function 的全部模型行。若某模型目前只有按次、按秒、按图片等
+非 token 报价，价格列留空，不把不同结算单位强行换算或放进表格；原始报价仍照常
+抓取并计入 `out/sources.md`。
+
+其余 Function 的模型也照常抓取、照常计入 `out/sources.md`，只是暂不单独导出。
 
 改回全量：把 [src/export.py](src/export.py) 里的 `EXPORT_FUNCTIONS` 设成 `None`，
 或加入想显示的 Function 名。抓取层完全不受这个开关影响。
 
-**全空的列不导出**：当前 audio / image / video 三组共 25 列必然全空（那些价格
-属于被过滤掉的 Function），已自动省略；非美元换算溯源列因百川人民币价格而保留，
-当前总表为 47 列。
+**全空的列不导出**：每张分表只保留实际有值的列。Coding 与 Embedding 分表明确
+排除按张、按秒、按次等非 token 价格，因此不会出现对应价格列。
 
 ⚠️ 因此**列集合会随 `EXPORT_FUNCTIONS` 变化** —— 前端不能假定某列一定存在，
 读表时先看表头。放开过滤后那 25 列会自动回来。
