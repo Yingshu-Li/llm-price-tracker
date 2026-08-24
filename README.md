@@ -1,6 +1,6 @@
 # LLM 模型价格追踪器
 
-给 `raw.csv`（547 个模型 / 33 家公司的人工清单）自动补上价格，并标注哪些拿不到。
+给 `raw.csv`（548 个模型 / 33 家公司的人工清单）自动补上价格，并标注哪些拿不到。
 
 ```bash
 pip install -r requirements.txt     # httpx + PyYAML
@@ -15,7 +15,7 @@ python update_prices.py             # 抓取全部源并导出
 
 [.github/workflows/update-prices.yml](.github/workflows/update-prices.yml) 每天
 **UTC 00:00**（悉尼 11:00）跑一次，也可在 Actions 页手动触发。单次约 95 秒，
-22 个源全部无需 API key。
+25 个源全部无需 API key（含百川人民币官网价、302.AI 讯飞转售价与 ECB 每日参考汇率）。
 
 - 用 `--refresh-vendor` 拉取 models.dev / LiteLLM 最新数据（最低价约八成靠这两个源），
   但**刷新下来的 `vendor/` 不提交** —— 5.2MB × 每天会让仓库迅速膨胀。
@@ -28,8 +28,9 @@ python update_prices.py             # 抓取全部源并导出
 
 | 文件 | 内容 |
 | --- | --- |
-| `out/models_with_prices.csv` | 总表，379 行 / 365 个模型（**当前只导出 General-Purpose**），35 列 |
+| `out/models_with_prices.csv` | 总表，364 行 / 350 个模型（**当前只导出 General-Purpose，并隐藏指定模型**），47 列 |
 | `out/sources.md` | 数据源清单 + 许可 + 解析告警 |
+| `out/exchange_rates.json` | ECB 最近一次成功的每日参考汇率；周末和短时故障回退使用 |
 
 总表关键列：
 
@@ -44,6 +45,8 @@ python update_prices.py             # 抓取全部源并导出
 | `text_cheapest_input_source_url` | 得出最低输入价的数据证据链接（API、JSON 或官方价格表），不是商家入口 |
 | `text_cheapest_output_seller_url` | 当前最低输出价卖家的模型目录/模型详情页；每日比价后随 seller 同步切换 |
 | `text_cheapest_output_source_url` | 得出该价格的数据证据链接（API、JSON 或官方价格表），不是商家入口 |
+| `text_*_fx_marker` | `⇄` 表示该价格由非美元原始报价换算而来 |
+| `text_*_fx_note` / `text_*_fx_source_url` | 原币金额、换算率、汇率日期与 ECB 出处 |
 | `text_*` `audio_*` `image_*` `video_*` | 四组模态价，每组含官方价+最低价 —— 见下 |
 | `context_tier` | 上下文长度；厂商分档定价时按官网原文，一档一行 —— 见下 |
 | `official_price` | `got` / `weight open source` / `None` —— 见下 |
@@ -91,7 +94,8 @@ API 形态和权重形态各列一行（`MiniMax-M2` / `MiniMaxAI/MiniMax-M2`）
 
 ### 当前只导出 General-Purpose
 
-总表暂时只显示 `Function = General-Purpose` 的模型（365 个），其余 182 个
+总表暂时只显示 `Function = General-Purpose` 的模型（366 个候选中另有 16 个按
+展示规则隐藏，实际显示 350 个），其余 182 个
 （语音 65 · 嵌入 29 · 图像 34 · 编程 20 · 安全 16 · 视频 18）**照常抓取、
 照常计入 `out/sources.md`，只是不进总表**。
 
@@ -99,7 +103,8 @@ API 形态和权重形态各列一行（`MiniMax-M2` / `MiniMaxAI/MiniMax-M2`）
 或加入想显示的 Function 名。抓取层完全不受这个开关影响。
 
 **全空的列不导出**：当前 audio / image / video 三组共 25 列必然全空（那些价格
-属于被过滤掉的 Function），已自动省略，总表从 60 列降到 35 列。
+属于被过滤掉的 Function），已自动省略；非美元换算溯源列因百川人民币价格而保留，
+当前总表为 47 列。
 
 ⚠️ 因此**列集合会随 `EXPORT_FUNCTIONS` 变化** —— 前端不能假定某列一定存在，
 读表时先看表头。放开过滤后那 25 列会自动回来。

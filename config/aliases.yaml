@@ -22,4 +22,14 @@
 #     "Spark Pro / generalv3":
 #       iflytek_html: generalv3
 
-aliases: {}
+aliases:
+  "Spark 4.0 Ultra / 4.0Ultra":
+    ai302_html: 4.0Ultra
+  "Spark Lite / lite":
+    ai302_html: general
+  "Spark-X2 / model=spark-x":
+    iflytek_maas_api: xsparkx2
+  "Spark-X2 / xsparkx2":
+    iflytek_maas_api: xsparkx2
+  "Spark-X2-Flash / xsparkx2flash":
+    iflytek_maas_api: xsparkx2flash

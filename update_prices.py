@@ -19,8 +19,17 @@ from pathlib import Path
 import yaml
 
 from src import export as export_mod
-from src.adapters import aws_bedrock, azure_retail, price_apis, vendored
+from src.adapters import (
+    ai302,
+    aws_bedrock,
+    azure_retail,
+    iflytek,
+    nonusd_official,
+    price_apis,
+    vendored,
+)
 from src.adapters.md_docs import parse_doctable_doc, parse_pricing_doc
+from src.fx import convert_records_to_usd, load_ecb_rates
 from src.http import fetch
 from src.match import load_aliases, match_all
 from src.normalize import infer_company, load_raw
@@ -118,6 +127,85 @@ def collect_aws() -> tuple[list, list[dict]]:
         entry["n_records"] = len(parsed)
     print(f"  ✓ AWS Bedrock    {sum(f['n_records'] for f in fetches):4} 条")
     return records, fetches
+
+
+def collect_nonusd_official() -> tuple[list, list[dict], list[str]]:
+    """Tier 1b：官网 HTML 中以本币计价的价格。"""
+    r = fetch(nonusd_official.BAICHUAN_URL, use_cache=True)
+    entry = _fetch_entry(
+        "baichuan_official_html", r.url, r.ok, r,
+        provider_name="Baichuan AI 官方价格",
+        weblink=nonusd_official.BAICHUAN_URL,
+        license="厂商官方价格页",
+    )
+    if not r.ok:
+        print(f"  ✗ baichuan_official_html {r.error}", file=sys.stderr)
+        return [], [entry], []
+    records, warnings = nonusd_official.parse_baichuan(
+        r.text, source_url=r.url, fetched_at=r.fetched_at,
+        source_version=r.version,
+    )
+    for rec in records:
+        rec.raw["company"] = "Baichuan AI"
+        rec.raw["provider_name"] = "Baichuan AI 官方价格"
+        rec.raw["weblink"] = nonusd_official.BAICHUAN_URL
+    entry["n_records"] = len(records)
+    print(f"  ✓ 百川人民币官网价 {len(records):4} 条")
+    return records, [entry], warnings
+
+
+def collect_ai302() -> tuple[list, list[dict], list[str]]:
+    """Tier 3：302.AI 公开价格表中的讯飞转售价。"""
+    r = fetch(ai302.PRICE_URL, use_cache=True, timeout=60)
+    entry = _fetch_entry(
+        "ai302_html", r.url, r.ok, r,
+        provider_name="302.AI",
+        weblink=ai302.WEBLINK,
+        license="公开价格表",
+    )
+    if not r.ok:
+        print(f"  ✗ ai302_html      {r.error}", file=sys.stderr)
+        return [], [entry], []
+    records, warnings = ai302.parse_prices(
+        r.text, source_url=r.url, fetched_at=r.fetched_at,
+        source_version=r.version,
+    )
+    entry["n_records"] = len(records)
+    print(f"  ✓ 302.AI 讯飞转售价 {len(records):4} 条")
+    return records, [entry], warnings
+
+
+def collect_iflytek() -> tuple[list, list[dict], list[str]]:
+    """Tier 1：讯飞星火 MaaS 官方公开 JSON 价格。"""
+    r = fetch(
+        iflytek.API_URL,
+        use_cache=True,
+        expect_content_type="application/json",
+    )
+    entry = _fetch_entry(
+        "iflytek_maas_api", r.url, r.ok, r,
+        provider_name="iFLYTEK 星火 MaaS 官方价格",
+        weblink=iflytek.WEBLINK,
+        license="厂商官方公开接口",
+    )
+    if not r.ok:
+        print(f"  ✗ iflytek_maas_api {r.error}", file=sys.stderr)
+        return [], [entry], []
+    try:
+        payload = json.loads(r.text)
+    except json.JSONDecodeError as exc:
+        return [], [entry], [f"iflytek_maas_api: JSON 解析失败：{exc}"]
+    records, warnings = iflytek.parse_prices(
+        payload, source_url=r.url, fetched_at=r.fetched_at,
+        source_version=r.version,
+    )
+    for rec in records:
+        rec.raw["company"] = "iFLYTEK"
+        rec.raw["provider_name"] = "iFLYTEK 星火 MaaS 官方价格"
+        rec.raw["weblink"] = iflytek.WEBLINK
+    entry["n_records"] = len(records)
+    print(f"  ✓ 讯飞人民币官方价 {len(records):4} 条")
+    return records, [entry], warnings
 
 
 def collect_azure() -> tuple[list, list[dict]]:
@@ -272,6 +360,12 @@ def main() -> int:
     records, fetches, warnings = [], [], []
     recs, fs, warns = collect_official_md()
     records += recs; fetches += fs; warnings += warns
+    recs, fs, warns = collect_nonusd_official()
+    records += recs; fetches += fs; warnings += warns
+    recs, fs, warns = collect_iflytek()
+    records += recs; fetches += fs; warnings += warns
+    recs, fs, warns = collect_ai302()
+    records += recs; fetches += fs; warnings += warns
     for collector in (collect_aws, collect_azure):
         recs, fs = collector()
         records += recs; fetches += fs
@@ -281,11 +375,32 @@ def main() -> int:
     records += recs
     fetches += fs
 
+    print("\n== 3. 获取 ECB 汇率并换算非美元报价 ==")
+    fx_snapshot, fx_entry, fx_warnings = load_ecb_rates(
+        OUT / "exchange_rates.json", save=not args.dry_run
+    )
+    converted, unsupported = convert_records_to_usd(records, fx_snapshot)
+    fx_entry["n_records"] = converted
+    fetches.append(fx_entry)
+    warnings += fx_warnings
+    if unsupported:
+        warnings.append(
+            "ecb_fx: ECB 当前没有以下币种的参考汇率，相关报价未换算："
+            + ", ".join(sorted(unsupported))
+        )
+    if fx_snapshot:
+        print(
+            f"   ✓ ECB {fx_snapshot.as_of}：换算 {converted} 条非美元报价"
+            + (f"；未支持 {', '.join(sorted(unsupported))}" if unsupported else "")
+        )
+    else:
+        print("   ⚠️ ECB 汇率不可用；非美元报价保持原币种且不参与美元比价")
+
     print(f"\n   共 {len(records)} 条价格观测，来自 {len({r.source for r in records})} 个源")
     if warnings:
         print(f"   ⚠️ {len(warnings)} 条解析告警，详见 out/sources.md")
 
-    print("\n== 3. 溯源完整性检查 ==")
+    print("\n== 4. 溯源完整性检查 ==")
     missing = [r for r in records
                if not r.source_url or not r.source_snippet or not r.unit_original]
     print(f"   缺溯源字段：{len(missing)} 条（必须为 0）")
@@ -294,7 +409,7 @@ def main() -> int:
         return 1
     print(f"   ✓ 全部 {len(records)} 条均可追溯到 URL + 原文片段")
 
-    print("\n== 4. 匹配到 raw.csv ==")
+    print("\n== 5. 匹配到 raw.csv ==")
     report = match_all(raw_models, records, load_aliases(CONFIG / "aliases.yaml"))
     index = defaultdict(list)
     for rec in records:
@@ -314,7 +429,7 @@ def main() -> int:
         print("\n[--dry-run] 未写任何文件。")
         return 0
 
-    print("\n== 5. 导出 ==")
+    print("\n== 6. 导出 ==")
     OUT.mkdir(exist_ok=True)
     stats = export_mod.write_table(
         OUT / "models_with_prices.csv", raw_models, best, by_model, free_tiers
@@ -322,15 +437,21 @@ def main() -> int:
     counts = defaultdict(int)
     for rec in records:
         counts[rec.source] += 1
+    # 汇率本身不是 PriceRecord，但“记录数”应显示本次实际换算了多少条报价。
+    counts["ecb_fx"] = fx_entry["n_records"]
     export_mod.write_sources_md(OUT / "sources.md", fetches, counts, warnings)
 
     hidden = stats.get("hidden_by_function", 0)
-    shown = len(raw_models) - hidden
+    hidden_display = stats.get("hidden_by_display_rule", 0)
+    shown = len(raw_models) - hidden - hidden_display
     print(f"   out/models_with_prices.csv   {stats.get('rows', 0)} 行"
           f"（{shown} 个模型，其中 {stats.get('multi_tier_models', 0)} 个有多档官方价）")
     if hidden:
         print(f"      ⚠️ 另有 {hidden} 个模型已抓取但未导出"
               f"（仅显示 {'/'.join(sorted(export_mod.EXPORT_FUNCTIONS))}）")
+    if hidden_display:
+        print(f"      ℹ️ 另有 {hidden_display} 个模型按展示规则隐藏"
+              "（原始清单、抓取、匹配和数据源仍保留）")
     if stats.get("columns_dropped"):
         print(f"      {stats.get('columns', 0)} 列"
               f"（另有 {stats['columns_dropped']} 列全空已省略）")

@@ -16,6 +16,7 @@ from collections import defaultdict
 from pathlib import Path
 
 from .display import display_name
+from .fx import fx_cells
 from .records import PriceRecord
 from .seller_urls import seller_url_of
 
@@ -64,15 +65,27 @@ COLUMNS = [
     #
     # text：每 100 万 token 美元
     "text_official_input_per_1m_usd",
+    "text_official_input_fx_marker",
+    "text_official_input_fx_note",
+    "text_official_input_fx_source_url",
     "text_official_output_per_1m_usd",
+    "text_official_output_fx_marker",
+    "text_official_output_fx_note",
+    "text_official_output_fx_source_url",
     "text_official_provider",
     "text_official_source_url",
     "text_cheapest_input_per_1m_usd",
+    "text_cheapest_input_fx_marker",
+    "text_cheapest_input_fx_note",
+    "text_cheapest_input_fx_source_url",
     "text_cheapest_input_seller",
     "text_cheapest_input_seller_url",
     "text_cheapest_input_provider",
     "text_cheapest_input_source_url",
     "text_cheapest_output_per_1m_usd",
+    "text_cheapest_output_fx_marker",
+    "text_cheapest_output_fx_note",
+    "text_cheapest_output_fx_source_url",
     "text_cheapest_output_seller",
     "text_cheapest_output_seller_url",
     "text_cheapest_output_provider",
@@ -428,6 +441,20 @@ def _fmt(value) -> str:
 # 只是暂不进总表。
 EXPORT_FUNCTIONS: set[str] | None = {"General-Purpose"}
 
+# 仅从最终展示表隐藏；raw.csv、价格抓取、匹配和 sources.md 均继续保留。
+# 这里使用 raw.csv 的精确 Model / Company 值，避免相似名称被误伤。
+EXPORT_HIDDEN_MODELS = {
+    "GPT-5.5 Thinking",
+    "antigravity-preview-05-2026",
+    "deep-research-max-preview-04-2026",
+    "deep-research-preview-04-2026",
+    "Muse Spark",
+    "MiniMax-M2.1-highspeed",
+    "ERNIE 5.0",
+    "Baichuan2-Turbo-192k",
+}
+EXPORT_HIDDEN_COMPANIES = {"NAVER"}
+
 
 def write_table(
     path: Path,
@@ -455,12 +482,19 @@ def write_table(
     # 492 行 × 60 列的规模，攒下来毫无压力。
     buffered: list[list[str]] = []
     with open(path, "w", encoding="utf-8", newline="") as handle:
-        writer = csv.writer(handle)
+        # 固定 LF，避免 csv 模块默认的 CRLF 让 Git 在不同 runner 上产生整表噪声。
+        writer = csv.writer(handle, lineterminator="\n")
         for raw in raw_models:
             # 显示过滤：只导出指定 Function。被跳过的模型仍然完成了抓取与匹配，
             # 其价格照常计入 out/sources.md 的源统计，只是不进总表。
             if EXPORT_FUNCTIONS is not None and raw.function not in EXPORT_FUNCTIONS:
                 stats["hidden_by_function"] += 1
+                continue
+            if (
+                raw.model in EXPORT_HIDDEN_MODELS
+                or raw.company in EXPORT_HIDDEN_COMPANIES
+            ):
+                stats["hidden_by_display_rule"] += 1
                 continue
 
             best = best_by_model.get(raw.model)
@@ -521,11 +555,13 @@ def write_table(
 
             text_cheapest = [
                 _fmt(cheap_in.input_per_1m) if cheap_in else "",
+                *fx_cells(cheap_in, "input_per_1m"),
                 _seller_of(cheap_in) if cheap_in else "",
                 seller_url_of(cheap_in),
                 _provider_of(cheap_in) if cheap_in else "",
                 cheap_in.source_url if cheap_in else "",
                 _fmt(cheap_out.output_per_1m) if cheap_out else "",
+                *fx_cells(cheap_out, "output_per_1m"),
                 _seller_of(cheap_out) if cheap_out else "",
                 seller_url_of(cheap_out),
                 _provider_of(cheap_out) if cheap_out else "",
@@ -557,14 +593,16 @@ def write_table(
                     return [
                         "got",
                         _fmt(tier.input_per_1m),
+                        *fx_cells(tier, "input_per_1m"),
                         _fmt(tier.output_per_1m),
+                        *fx_cells(tier, "output_per_1m"),
                         _provider_of(tier),
                         tier.source_url,
                     ]
                 sentinel = (
                     OFFICIAL_OPEN_WEIGHT if av.is_open_weight else OFFICIAL_NONE
                 )
-                return [sentinel, "", "", "", ""]
+                return [sentinel] + [""] * 10
 
             def _context_tier(tier: PriceRecord | None) -> list[str]:
                 """上下文长度这一格。
@@ -702,9 +740,10 @@ def write_sources_md(
         "（实测 Bedrock 上的 Claude 普遍比 Anthropic 官方贵约 10%）。",
         "- **`hosted_seller`**：实际报这个价的卖家。同一个开源模型在不同平台"
         "价差可达十几倍（gemma-3 从 $0.05 到 $0.65），不看卖家无法判断代表性。",
-        "- 价格统一换算为**每 100 万 token 美元**；图像/视频/秒按次计价另列。",
-        "  `source_snippet` 保留产出该数字的原文，任何数字存疑可直接核对。",
-        "- ⚠️ Cortecs 报价为**欧元**，选价时已排除，不与美元混用。",
+        "- 价格统一为**每 100 万 token 美元**；图像/视频/秒按次计价另列。",
+        "  原始报价不是美元时，按 European Central Bank 每日参考汇率换算，",
+        "  CSV 以 `⇄` 标记并保留原币金额、汇率日期与 ECB 出处。",
+        "  `source_snippet` 仍保留厂商原文，任何数字存疑可直接核对。",
         "",
         "## 关于 models.dev 与 LiteLLM",
         "",
