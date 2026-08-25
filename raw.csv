@@ -484,6 +484,21 @@ Spark-X2 / model=spark-x,iFLYTEK,General-Purpose,Undisclosed,Undisclosed,Online:
 Spark-X2 / xsparkx2,iFLYTEK,General-Purpose,Undisclosed,Undisclosed,Online: Astron MaaS,Yes
 Spark-X2-Agent / xsparkx2agent,iFLYTEK,General-Purpose,Undisclosed,Undisclosed,Online: Astron MaaS,Yes
 Spark-X2-Flash / xsparkx2flash,iFLYTEK,General-Purpose,Undisclosed,Undisclosed,Online: Astron MaaS,Yes
+SenseNova 6.8 Flash Lite,SenseTime,General-Purpose,Undisclosed,Undisclosed,Online: SenseNova Token Plan,Yes
+SenseNova-V6.5-Pro,SenseTime,General-Purpose,Undisclosed,Undisclosed,Online: SenseNova API,Yes
+SenseNova-V6.5-Turbo,SenseTime,General-Purpose,Undisclosed,Undisclosed,Online: SenseNova API,Yes
+SenseNova-V6-Pro,SenseTime,General-Purpose,Undisclosed,Undisclosed,Online: SenseNova API,Yes
+SenseNova-V6-Turbo,SenseTime,General-Purpose,Undisclosed,Undisclosed,Online: SenseNova API,Yes
+SenseNova-V6-Reasoner,SenseTime,General-Purpose,Undisclosed,Undisclosed,Online: SenseNova API,Yes
+SenseNova-V6-Omni,SenseTime,Speech & Audio,Undisclosed,Undisclosed,Online: SenseNova Realtime API,Yes
+SenseNova-V6.5-Omni,SenseTime,Speech & Audio,Undisclosed,Undisclosed,Online: SenseNova Realtime API,Yes
+SenseChat-Vision,SenseTime,General-Purpose,Undisclosed,Undisclosed,Online: SenseNova API,No
+SenseChat-Character-Pro,SenseTime,General-Purpose,Undisclosed,Undisclosed,Online: SenseNova API,No
+SenseChat-Character,SenseTime,General-Purpose,Undisclosed,Undisclosed,Online: SenseNova API,No
+SenseChat-5,SenseTime,General-Purpose,Undisclosed,Undisclosed,Online: SenseNova API,No
+SenseChat,SenseTime,General-Purpose,Undisclosed,Undisclosed,Online: SenseNova API,No
+SenseChat-Turbo,SenseTime,General-Purpose,Undisclosed,Undisclosed,Online: SenseNova API,No
+SenseChat-5-Cantonese,SenseTime,General-Purpose,Undisclosed,Undisclosed,Online: SenseNova API,No
 SenseNova 6.7 Flash-Lite,SenseTime,General-Purpose,Undisclosed,Undisclosed,Online: SenseNova,Yes
 SenseNova U1-8B-MoT,SenseTime,General-Purpose,8B,8B,Offline: Open Weight,Yes
 SenseNova U1-A3B-MoT,SenseTime,General-Purpose,30B,3B/token,Offline: Open Weight,Yes

@@ -26,6 +26,7 @@ from src.adapters import (
     iflytek,
     nonusd_official,
     price_apis,
+    sensenova,
     upstage,
     vendored,
 )
@@ -153,6 +154,96 @@ def collect_nonusd_official() -> tuple[list, list[dict], list[str]]:
     entry["n_records"] = len(records)
     print(f"  ✓ 百川人民币官网价 {len(records):4} 条")
     return records, [entry], warnings
+
+
+def collect_sensenova() -> tuple[
+    list, list[dict], list[str], dict[str, tuple[str, str]]
+]:
+    """Tier 1：商汤官方人民币价及 Token Plan 有限免费额度。"""
+    records, fetches, warnings = [], [], []
+
+    price_result = fetch(sensenova.PRICE_URL, use_cache=True, timeout=60)
+    price_entry = _fetch_entry(
+        "sensenova_official_html",
+        price_result.url,
+        price_result.ok,
+        price_result,
+        provider_name="SenseNova 官方价格",
+        weblink=sensenova.PRICE_URL,
+        license="厂商官方价格页",
+    )
+    fetches.append(price_entry)
+    if price_result.ok:
+        parsed, parsed_warnings = sensenova.parse_prices(
+            price_result.text,
+            source_url=price_result.url,
+            fetched_at=price_result.fetched_at,
+            source_version=price_result.version,
+        )
+        for rec in parsed:
+            rec.raw["company"] = "SenseTime"
+            rec.raw["provider_name"] = "SenseNova 官方价格"
+            rec.raw["weblink"] = sensenova.PRICE_URL
+        records += parsed
+        warnings += parsed_warnings
+        price_entry["n_records"] = len(parsed)
+    else:
+        print(f"  ✗ sensenova_official_html {price_result.error}", file=sys.stderr)
+
+    model_result = fetch(sensenova.MODEL_LIST_URL, use_cache=True, timeout=60)
+    model_entry = _fetch_entry(
+        "sensenova_model_list_html",
+        model_result.url,
+        model_result.ok,
+        model_result,
+        provider_name="SenseNova 官方模型列表",
+        weblink=sensenova.MODEL_LIST_URL,
+        license="厂商官方模型文档",
+    )
+    fetches.append(model_entry)
+    if model_result.ok:
+        parsed, parsed_warnings = sensenova.parse_model_list_prices(
+            model_result.text,
+            source_url=model_result.url,
+            fetched_at=model_result.fetched_at,
+            source_version=model_result.version,
+        )
+        for rec in parsed:
+            rec.raw["company"] = "SenseTime"
+            rec.raw["provider_name"] = "SenseNova 官方模型列表"
+            rec.raw["weblink"] = sensenova.MODEL_LIST_URL
+        records += parsed
+        warnings += parsed_warnings
+        model_entry["n_records"] = len(parsed)
+    else:
+        print(f"  ✗ sensenova_model_list_html {model_result.error}", file=sys.stderr)
+
+    plan_result = fetch(sensenova.TOKEN_PLAN_URL, use_cache=True, timeout=60)
+    plan_entry = _fetch_entry(
+        "sensenova_token_plan",
+        plan_result.url,
+        plan_result.ok,
+        plan_result,
+        provider_name="SenseNova Token Plan",
+        weblink=sensenova.TOKEN_PLAN_URL,
+        license="厂商官方套餐页",
+    )
+    fetches.append(plan_entry)
+    free_tiers: dict[str, tuple[str, str]] = {}
+    if plan_result.ok:
+        free_tiers, plan_warnings = sensenova.parse_token_plan(
+            plan_result.text, source_url=plan_result.url
+        )
+        warnings += plan_warnings
+        plan_entry["n_records"] = len(free_tiers)
+    else:
+        print(f"  ✗ sensenova_token_plan {plan_result.error}", file=sys.stderr)
+
+    print(
+        f"  ✓ 商汤人民币官方价 {len(records):4} 条"
+        f"；有限免费额度 {len(free_tiers):2} 个模型"
+    )
+    return records, fetches, warnings, free_tiers
 
 
 def collect_ai302() -> tuple[list, list[dict], list[str]]:
@@ -387,6 +478,8 @@ def main() -> int:
     records += recs; fetches += fs; warnings += warns
     recs, fs, warns = collect_nonusd_official()
     records += recs; fetches += fs; warnings += warns
+    recs, fs, warns, official_free_tiers = collect_sensenova()
+    records += recs; fetches += fs; warnings += warns
     recs, fs, warns = collect_iflytek()
     records += recs; fetches += fs; warnings += warns
     recs, fs, warns = collect_ai302()
@@ -398,6 +491,8 @@ def main() -> int:
         records += recs; fetches += fs
     recs, fs, warns, free_tiers = collect_price_apis()
     records += recs; fetches += fs; warnings += warns
+    # 官方 Token Plan 比第三方免费变体更接近模型原厂，存在同名时优先展示。
+    free_tiers.update(official_free_tiers)
     recs, fs = collect_vendored(args.refresh_vendor)
     records += recs
     fetches += fs
@@ -482,6 +577,7 @@ def main() -> int:
     counts = defaultdict(int)
     for rec in records:
         counts[rec.source] += 1
+    counts["sensenova_token_plan"] = len(official_free_tiers)
     # 汇率本身不是 PriceRecord，但“记录数”应显示本次实际换算了多少条报价。
     counts["ecb_fx"] = fx_entry["n_records"]
     export_mod.write_sources_md(OUT / "sources.md", fetches, counts, warnings)

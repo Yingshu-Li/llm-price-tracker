@@ -352,10 +352,10 @@ companies:
     rss: null
     hf_org: sensenova     # ⚠️ SenseTime org 停在 2022 年，真实活动在 sensenova
     api_docs: https://platform.sensenova.cn
-    pricing_page: null    # ⚠️ platform.sensenova.cn/doc 与 /price 均 404
-    pricing_machine_readable: none
+    pricing_page: https://www.sensecore.cn/help/docs/model-as-a-service/nova/pricing
+    pricing_machine_readable: html
     openrouter_prefixes: []
-    notes: ⚠️ 所有价格聚合器均零覆盖，不在 OpenRouter 上。
+    notes: 官方 HTML 定价页已接入；所有第三方价格聚合器仍为零覆盖。
 
   - company: Xiaomi / MiMo
     homepage: https://xiaomi.com

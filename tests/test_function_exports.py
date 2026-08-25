@@ -116,6 +116,28 @@ class FunctionExportTests(unittest.TestCase):
         self.assertNotIn("text_cheapest_output_per_1m_usd", fields)
         self.assertNotIn("text_cheapest_output_source_url", fields)
 
+    def test_general_purpose_export_excludes_per_minute_omni_model(self):
+        _, rows = self._export(
+            "General-Purpose",
+            {
+                "SenseNova-V6.5-Pro": [
+                    _record(
+                        "SenseNova-V6.5-Pro",
+                        input_per_1m=0.45,
+                        output_per_1m=1.35,
+                    )
+                ],
+                "SenseNova-V6-Omni": [
+                    _record("SenseNova-V6-Omni", per_second=0.0005)
+                ],
+            },
+        )
+
+        by_model = {row["Model"]: row for row in rows}
+        self.assertIn("SenseNova-V6.5-Pro", by_model)
+        self.assertNotIn("SenseNova-V6-Omni", by_model)
+        self.assertNotIn("SenseNova-V6.5-Omni", by_model)
+
 
 if __name__ == "__main__":
     unittest.main()
