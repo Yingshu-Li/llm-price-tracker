@@ -17,6 +17,7 @@ from pathlib import Path
 
 from .display import display_name
 from .fx import fx_cells
+from .modalities import InputCapability
 from .records import PriceRecord
 from .seller_urls import seller_url_of
 
@@ -36,6 +37,10 @@ COLUMNS = [
     "Model",
     "Company",
     "Function",
+    # 模型可接受的输入类型；与后面的 audio/image/video 计费列不是一回事。
+    "input_modalities",
+    "input_modalities_source",
+    "input_modalities_source_url",
     "Total Para",
     "Activate Para",
     "On/Off Line",
@@ -442,7 +447,7 @@ def _fmt(value) -> str:
 # 这纯粹是导出层的显示过滤，改回全量只需把它设成 None。
 # 其他能力的模型（语音/图像/视频/嵌入…）的价格照常抓取并计入 out/sources.md，
 # 只是暂不进总表。
-EXPORT_FUNCTIONS: set[str] | None = {"General-Purpose"}
+EXPORT_FUNCTIONS: set[str] | None = {"General-Purpose", "Image Generation"}
 
 # 单独能力表只接受真正按 token 结算的报价。字段名本身就是统一单位契约：
 # 所有 ``*_per_1m`` 都表示每 100 万 token；按张/按秒/按次等字段不在这里。
@@ -454,6 +459,45 @@ TOKEN_PRICE_FIELDS = tuple(
 def has_token_price(record: PriceRecord) -> bool:
     """这条观测是否至少包含一个每 100 万 token 的价格。"""
     return any(getattr(record, field) is not None for field in TOKEN_PRICE_FIELDS)
+
+
+# ── 按结算单位拆表 ──────────────────────────────────────────────
+# 图像模型的计费单位不统一：有的按 token（Gemini 系）、有的按张（DALL·E 系），
+# 少数两种都有。混在一张表里，"最低价"那一列会拿按张价去比按 token 价，
+# 得出的数字没有意义。所以按单位拆表，每张表内**官方价与最低价同单位**。
+#
+#   token     —— 至少有一个 *_per_1m 报价；表内只展示 token 列
+#   per_image —— 至少有一个 per_image 报价；表内只展示按张列
+#   unpriced  —— **开源权重**且一条带价观测都没有：权重可自取，价格客观不存在。
+#                闭源却没拿到价的（not_found）是**真缺口**，性质完全不同，
+#                不并入此表——混在一起会让"本来就免费"看起来像抓取失败。
+#
+# 两种单位都有的模型会**同时进** token 表和 per_image 表，各自取对应单位的价。
+PRICE_MODE_TOKEN = "token"
+PRICE_MODE_IMAGE = "per_image"
+PRICE_MODE_UNPRICED = "unpriced"
+
+
+def _pool_for_price_mode(
+    all_records: list[PriceRecord], price_mode: str, *, is_open_weight: bool
+) -> list[PriceRecord] | None:
+    """按结算单位筛出该表可用的观测；返回 None 表示这一行不属于这张表。
+
+    筛选同时作用于**行**和**取价池**——这正是"最低价与官方价同单位"的
+    保证：池子里只剩该单位的观测，cheapest 就不可能落到别的单位上。
+    """
+    if price_mode == PRICE_MODE_TOKEN:
+        pool = [r for r in all_records if has_token_price(r)]
+        return pool or None
+    if price_mode == PRICE_MODE_IMAGE:
+        pool = [r for r in all_records if r.per_image is not None]
+        return pool or None
+    if price_mode == PRICE_MODE_UNPRICED:
+        # 有任何一条带价观测就不属于这张表；闭源无价属于 not_found，也不进
+        if any(r.has_any_price() for r in all_records) or not is_open_weight:
+            return None
+        return []
+    raise ValueError(f"未知 price_mode={price_mode!r}")
 
 # 仅从最终展示表隐藏；raw.csv、价格抓取、匹配和 sources.md 均继续保留。
 # 这里使用 raw.csv 的精确 Model / Company 值，避免相似名称被误伤。
@@ -490,10 +534,12 @@ def write_table(
     best_by_model: dict[str, PriceRecord],
     records_by_model: dict[str, list[PriceRecord]] | None = None,
     free_tiers: dict[str, tuple[str, str]] | None = None,
+    input_capabilities: dict[str, InputCapability] | None = None,
     *,
     export_functions: set[str] | None = EXPORT_FUNCTIONS,
     token_prices_only: bool = False,
     include_text_output_prices: bool = True,
+    price_mode: str | None = None,
 ) -> dict:
     """records_by_model 是该模型的**全部**观测（未收敛成一条）。
 
@@ -502,6 +548,7 @@ def write_table(
     """
     records_by_model = records_by_model or {}
     free_tiers = free_tiers or {}
+    input_capabilities = input_capabilities or {}
     # 源里的 id 与 raw.csv 的写法不同（`google/gemma-4-31b-it` vs
     # `google/gemma-4-31B-it`），按候选形式建索引才对得上
     from .normalize import name_candidates
@@ -531,13 +578,28 @@ def write_table(
 
             av = raw.availability
             all_records = records_by_model.get(raw.model, [])
-            pool = (
-                [record for record in all_records if has_token_price(record)]
-                if token_prices_only
-                else all_records
-            )
+            if price_mode is not None:
+                # 按结算单位拆表：不属于本表的行直接跳过，
+                # 池子也只保留该单位的观测（保证官方价与最低价同单位）
+                mode_pool = _pool_for_price_mode(
+                    all_records, price_mode, is_open_weight=av.is_open_weight
+                )
+                if mode_pool is None:
+                    stats[f"skipped_not_{price_mode}"] += 1
+                    continue
+                pool = mode_pool
+            else:
+                pool = (
+                    [record for record in all_records if has_token_price(record)]
+                    if token_prices_only
+                    else all_records
+                )
             # 单位过滤会改变可选集合，不能沿用全量数据预先算好的 best。
-            best = pick_best(pool) if token_prices_only else best_by_model.get(raw.model)
+            best = (
+                pick_best(pool)
+                if (token_prices_only or price_mode is not None)
+                else best_by_model.get(raw.model)
+            )
             official = pick_official(pool)
 
             # ── audio / image / video 三组：与 text 同样是「官方价 + 最低价」，
@@ -578,7 +640,7 @@ def write_table(
                 image_cells = _group("text", "per_image", with_output=False)
             if not any(video_cells[:1] + video_cells[3:4]):
                 video_cells = _group("text", "per_second", with_output=False)
-            if token_prices_only:
+            if token_prices_only or price_mode == PRICE_MODE_TOKEN:
                 # 即便同一条观测同时带 token 与按张/按秒价格，能力表也只展示
                 # token 部分；非 token 计费继续保留在源数据，不进入这两个 CSV。
                 image_cells = [""] * 8
@@ -595,6 +657,13 @@ def write_table(
                 else None
             )
             quotes = count_quotes(pool)
+            if price_mode == PRICE_MODE_IMAGE:
+                # 同上：按张表只保留按张列。池子里的观测可能同时带 token 价，
+                # 展示出来就等于把两种单位并排放，最低价也会落到错的单位上。
+                cheap_in = cheap_out = None
+                quotes = 0
+                audio_cells = [""] * 9
+                video_cells = [""] * 8
             # 免费额度层按该模型的任一候选形式查（源里的 id 与 raw.csv 不同名）
             ft = ("", "")
             for cand in raw.candidates:
@@ -640,6 +709,11 @@ def write_table(
             def _official_cells(tier: PriceRecord | None) -> list[str]:
                 """official_price 哨兵 + text 组的官方价四列。"""
                 if tier is not None:
+                    if price_mode == PRICE_MODE_IMAGE:
+                        # 按张表的官方价展示在 image_* 列。这里的 text 列必须
+                        # 留空——同时有两种计价的模型（litellm 的 gemini-*-image）
+                        # 否则会在同一行并排出现两个单位不同的"官方价"。
+                        return ["got"] + [""] * 10
                     output_price = (
                         tier.output_per_1m if include_text_output_prices else None
                     )
@@ -685,6 +759,12 @@ def write_table(
             common = [
                 display_name(raw.model, raw.company),
                 raw.model, raw.company, raw.function,
+                input_capabilities[raw.model].modalities_cell
+                if raw.model in input_capabilities else "",
+                input_capabilities[raw.model].sources_cell
+                if raw.model in input_capabilities else "",
+                input_capabilities[raw.model].source_urls_cell
+                if raw.model in input_capabilities else "",
                 _fmt(raw.total_params_b), _fmt(raw.active_params_b),
                 av.raw, "Yes" if raw.reasoning else "No",
                 av.access_mode, av.lifecycle,

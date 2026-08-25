@@ -1,0 +1,222 @@
+# 输入能力与价格分开维护。models.dev / LiteLLM 的结构化规格优先；
+# company_defaults 只补齐目录尚未收录的新型号，默认值是这些模型族共同的
+# 文本输入能力。真正的多模态型号必须在 models 中显式覆盖并附官方证据。
+
+company_defaults:
+  Google:
+    input_modalities: [text]
+    source_url: https://huggingface.co/google/models
+  xAI:
+    input_modalities: [text]
+    source_url: https://docs.x.ai/developers/models
+  Mistral AI:
+    input_modalities: [text]
+    source_url: https://docs.mistral.ai/getting-started/models/models_overview/
+  Alibaba / Qwen:
+    input_modalities: [text]
+    source_url: https://huggingface.co/Qwen/models
+  DeepSeek:
+    input_modalities: [text]
+    source_url: https://api-docs.deepseek.com/quick_start/pricing
+  Zhipu AI / GLM:
+    input_modalities: [text]
+    source_url: https://docs.z.ai/guides/llm/glm-5
+  MiniMax:
+    input_modalities: [text]
+    source_url: https://platform.minimax.io/docs/api-reference/api-overview
+  ByteDance / Doubao-Seed:
+    input_modalities: [text]
+    source_url: https://www.volcengine.com/docs/82379/1330310
+  Baidu / ERNIE:
+    input_modalities: [text]
+    source_url: https://cloud.baidu.com/product/wenxinworkshop.html
+  Tencent / Hunyuan:
+    input_modalities: [text]
+    source_url: https://cloud.tencent.com/document/product/1823
+  Microsoft:
+    input_modalities: [text]
+    source_url: https://huggingface.co/microsoft/models
+  Cohere:
+    input_modalities: [text]
+    source_url: https://docs.cohere.com/docs/models
+  NVIDIA:
+    input_modalities: [text]
+    source_url: https://huggingface.co/nvidia/models
+  Xiaomi / MiMo:
+    input_modalities: [text]
+    source_url: https://huggingface.co/XiaomiMiMo/models
+  StepFun:
+    input_modalities: [text]
+    source_url: https://platform.stepfun.com/docs/llm/modeloverview
+  IBM:
+    input_modalities: [text]
+    source_url: https://huggingface.co/ibm-granite/models
+  AI21 Labs:
+    input_modalities: [text]
+    source_url: https://docs.ai21.com/docs/models
+  Upstage:
+    input_modalities: [text]
+    source_url: https://console.upstage.ai/docs/capabilities
+  Baichuan AI:
+    input_modalities: [text]
+    source_url: https://huggingface.co/baichuan-inc/models
+  iFLYTEK:
+    input_modalities: [text]
+    source_url: https://www.xfyun.cn/doc/spark/Web.html
+  SenseTime:
+    input_modalities: [text]
+    source_url: https://platform.sensenova.cn/pricing
+  TII / Falcon:
+    input_modalities: [text]
+    source_url: https://huggingface.co/tiiuae/models
+  Motif Technologies:
+    input_modalities: [text]
+    source_url: https://huggingface.co/Motif-Technologies/models
+  Meituan / LongCat:
+    input_modalities: [text]
+    source_url: https://huggingface.co/meituan-longcat/models
+  Nex-AGI:
+    input_modalities: [text]
+    source_url: https://huggingface.co/nex-agi/models
+
+models:
+  - model_id: gemini-3.7-flash
+    company: Google
+    input_modalities: [text, image, audio, video, pdf]
+    source_url: https://ai.google.dev/gemini-api/docs/models
+  - model_id: google/paligemma2-10b
+    company: Google
+    input_modalities: [text, image]
+    source_url: https://huggingface.co/google/paligemma2-10b-mix-224
+  - model_id: google/paligemma2-28b
+    company: Google
+    input_modalities: [text, image]
+    source_url: https://huggingface.co/google/paligemma2-28b-mix-224
+  - model_id: google/paligemma2-3b
+    company: Google
+    input_modalities: [text, image]
+    source_url: https://huggingface.co/google/paligemma2-3b-mix-224
+  - model_id: MedGemma-1.5-4B
+    company: Google
+    input_modalities: [text, image]
+    source_url: https://huggingface.co/google/medgemma-1.5-4b-it
+  - model_id: MedGemma-27B
+    company: Google
+    input_modalities: [text, image]
+    source_url: https://huggingface.co/google/medgemma-27b-it
+  - model_id: grok-4.6
+    company: xAI
+    input_modalities: [text, image]
+    source_url: https://docs.x.ai/developers/model-capabilities/images/understanding
+  - model_id: Qwen/Qwen2.5-Omni-3B
+    company: Alibaba / Qwen
+    input_modalities: [text, image, audio, video]
+    source_url: https://huggingface.co/Qwen/Qwen2.5-Omni-3B
+  - model_id: Qwen/Qwen2.5-VL-3B-Instruct
+    company: Alibaba / Qwen
+    input_modalities: [text, image, video]
+    source_url: https://huggingface.co/Qwen/Qwen2.5-VL-3B-Instruct
+  - model_id: Qwen/Qwen3-Omni-30B-A3B-Captioner
+    company: Alibaba / Qwen
+    input_modalities: [text, image, audio, video]
+    source_url: https://huggingface.co/Qwen/Qwen3-Omni-30B-A3B-Captioner
+  - model_id: Qwen/Qwen3-VL-Embedding-2B
+    company: Alibaba / Qwen
+    input_modalities: [text, image, video]
+    source_url: https://huggingface.co/Qwen/Qwen3-VL-Embedding-2B
+  - model_id: Qwen/Qwen3-VL-Reranker-2B
+    company: Alibaba / Qwen
+    input_modalities: [text, image, video]
+    source_url: https://huggingface.co/Qwen/Qwen3-VL-Reranker-2B
+  - model_id: Qwen/Qwen3-VL-Reranker-8B
+    company: Alibaba / Qwen
+    input_modalities: [text, image, video]
+    source_url: https://huggingface.co/Qwen/Qwen3-VL-Reranker-8B
+  - model_id: deepseek-v4-flash-vision-exp
+    company: DeepSeek
+    input_modalities: [text, image]
+    source_url: https://huggingface.co/deepseek-ai
+  - model_id: GLM-OCR
+    company: Zhipu AI / GLM
+    input_modalities: [image, pdf]
+    source_url: https://docs.z.ai/guides/vlm/glm-ocr
+  - model_id: MiniMaxAI/MiniMax-VL-01
+    company: MiniMax
+    input_modalities: [text, image]
+    source_url: https://huggingface.co/MiniMaxAI/MiniMax-VL-01
+  - model_id: doubao-embedding-vision
+    company: ByteDance / Doubao-Seed
+    input_modalities: [text, image]
+    source_url: https://www.volcengine.com/docs/82379/1330626
+  - model_id: ERNIE-5.0-Thinking-Latest
+    company: Baidu / ERNIE
+    input_modalities: [text, image]
+    source_url: https://cloud.baidu.com/product/wenxinworkshop.html
+  - model_id: ERNIE-5.0-Thinking-Exp
+    company: Baidu / ERNIE
+    input_modalities: [text, image]
+    source_url: https://cloud.baidu.com/product/wenxinworkshop.html
+  - model_id: ERNIE-4.5-Turbo-VL
+    company: Baidu / ERNIE
+    input_modalities: [text, image]
+    source_url: https://cloud.baidu.com/doc/qianfan-docs/s/fm8r1ndsm
+  - model_id: ERNIE-4.5-Turbo-VL-32K
+    company: Baidu / ERNIE
+    input_modalities: [text, image]
+    source_url: https://cloud.baidu.com/doc/qianfan-docs/s/fm8r1ndsm
+  - model_id: hy-vision-2.0-instruct
+    company: Tencent / Hunyuan
+    input_modalities: [text, image]
+    source_url: https://cloud.tencent.com/document/product/1823/130988
+  - model_id: hunyuan-t1-vision-20250916
+    company: Tencent / Hunyuan
+    input_modalities: [text, image]
+    source_url: https://cloud.tencent.com/document/product/1823/130988
+  - model_id: hunyuan-turbos-vision-video-20250728
+    company: Tencent / Hunyuan
+    input_modalities: [text, video]
+    source_url: https://cloud.tencent.com/document/product/1823/130988
+  - model_id: microsoft/Phi-Ground-Any
+    company: Microsoft
+    input_modalities: [text, image]
+    source_url: https://huggingface.co/microsoft/Phi-Ground-Any
+  - model_id: MiMo-VL-7B-RL
+    company: Xiaomi / MiMo
+    input_modalities: [text, image]
+    source_url: https://huggingface.co/XiaomiMiMo/MiMo-VL-7B-RL
+  - model_id: step-1o-turbo-vision
+    company: StepFun
+    input_modalities: [text, image]
+    source_url: https://platform.stepfun.com/docs/llm/modeloverview
+  - model_id: Granite Docling
+    company: IBM
+    input_modalities: [image, pdf]
+    source_url: https://huggingface.co/ibm-granite/granite-docling-258M
+  - model_id: Granite Vision 4.1
+    company: IBM
+    input_modalities: [text, image]
+    source_url: https://huggingface.co/ibm-granite/granite-vision-4.1-4b
+  - model_id: baichuan-inc/Baichuan-Omni-1d5
+    company: Baichuan AI
+    input_modalities: [text, image, audio, video]
+    source_url: https://huggingface.co/baichuan-inc/Baichuan-Omni-1d5
+  - model_id: baichuan-inc/BaichuanMed-OCR-7B
+    company: Baichuan AI
+    input_modalities: [text, image]
+    source_url: https://huggingface.co/baichuan-inc/BaichuanMed-OCR-7B
+  - model_id: SenseChat-Vision
+    company: SenseTime
+    input_modalities: [text, image]
+    source_url: https://platform.sensenova.cn/doc?path=/chat/vision
+  - model_id: Falcon Perception 0.6B
+    company: TII / Falcon
+    input_modalities: [text, image]
+    source_url: https://huggingface.co/tiiuae/Falcon-Perception
+  - model_id: meituan-longcat/LongCat-Next
+    company: Meituan / LongCat
+    input_modalities: [text, image, audio, video]
+    source_url: https://huggingface.co/meituan-longcat/LongCat-Next
+  - model_id: meituan-longcat/LongCat-Flash-Omni
+    company: Meituan / LongCat
+    input_modalities: [text, image, audio, video]
+    source_url: https://huggingface.co/meituan-longcat/LongCat-Flash-Omni

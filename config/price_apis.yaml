@@ -39,11 +39,18 @@ apis:
     weblink: https://deepinfra.com/models
     id_fields: [model_name]
     unit: cents_per_token          # 注意是「美分/token」，换算要 ×1e6÷100
+    # 按张/按秒价同样以美分计：cents_per_image_unit=2.5 表示 $0.025/张。
+    # 不声明就会得到 100 倍高价，而 2.5 本身看不出异常。
+    flat_unit: cents
     tier: 3
     fields:
       input_per_1m: pricing.cents_per_input_token
       output_per_1m: pricing.cents_per_output_token
       context_length: max_tokens
+      # 文生图按「图像单元」计价（默认 1024x1024 / 25 步为一个单元）
+      per_image: pricing.cents_per_image_unit
+      # 文生视频按输出秒计价
+      per_second: pricing.cents_per_output_sec
     skip_if_true: [deprecated, private]
 
   - id: hf_router
@@ -71,6 +78,11 @@ apis:
     fields:
       input_per_1m: pricing.input
       output_per_1m: pricing.output
+      # ⚠️ 与 OpenRouter 的同名字段不同义。实测锚点：
+      #    seedream-5.0-lite 只有 image=0.035，与官方 ¥0.035/张 一致；
+      #    纯文本模型（gpt-5 / gemini-2.5-pro / claude-sonnet-4.5）根本
+      #    没有 image 字段——不存在 OpenRouter 那种"图像输入 token 价"污染。
+      per_image: pricing.image
 
   - id: pioneer
     name: Pioneer
@@ -98,6 +110,10 @@ apis:
       input_per_1m: pricing.input
       output_per_1m: pricing.output
       per_second: pricing.output_video_per_second
+      # 字段名自带单位语义（per_num = 每张），无歧义。
+      # 锚点：doubao-seedream-5.0-pro=0.05、qwen-image-3.0=0.03，
+      # 与各自官方牌价同量级。
+      per_image: pricing.output_image_per_num
 
   - id: empiriolabs
     name: Empirio Labs

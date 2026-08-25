@@ -164,8 +164,35 @@ def parse_litellm(
             for k, v in prices.items()
             if isinstance(v, (int, float)) and v > 0
         }
+        # 按张/按秒计价与 token 无关，**绝不能** ×1e6——那会把 $0.04/张
+        # 变成 $40000/张。这类字段原值即最终值，单独取。
+        #
+        # 视频的每秒价上游有两套字段名：Google 系用 output_cost_per_second，
+        # OpenAI/Runway 系用 output_cost_per_video_per_second，语义相同，
+        # 这里归一到 per_second。
+        flat = {
+            "per_image": entry.get("output_cost_per_image"),
+            "per_second": (
+                entry.get("output_cost_per_second")
+                or entry.get("output_cost_per_video_per_second")
+            ),
+        }
+        flat = {
+            k: float(v)
+            for k, v in flat.items()
+            if isinstance(v, (int, float)) and v > 0
+        }
+        prices.update(flat)
         if not prices:
             continue
+
+        # 这里**故意不设 modality**。导出层按模态分组比价，而聚合器
+        # （empiriolabs / vercel / ofox…）都不给这个字段、一律落在默认的
+        # Text 组。若只给 litellm 标上 Image，两边就进了不同的池子：
+        # 图像组非空 → 导出层的回退分支不触发 → 聚合器的报价被排除在
+        # 「最低价」之外（实测 gpt-image-2 会漏掉 empiriolabs 的 $0.012，
+        # 错报成 litellm 的 $0.054）。
+        # 按张价靠 per_image 字段本身即可识别，无需 modality。
 
         model_id = key.split("/")[-1]
         seller = entry.get("litellm_provider") or (
@@ -206,8 +233,20 @@ def parse_litellm(
                 source_snippet=(
                     f"{key} input={entry.get('input_cost_per_token')} "
                     f"output={entry.get('output_cost_per_token')}"
+                    + (f" image={entry.get('output_cost_per_image')}"
+                       if "per_image" in flat else "")
+                    + (f" second={flat['per_second']}"
+                       if "per_second" in flat else "")
                 ),
-                unit_original="per token (USD)",
+                # 溯源要求单位描述与实际取到的字段一致，不能一律写 per token
+                unit_original=" + ".join(
+                    filter(None, [
+                        "per token (USD)" if any(
+                            k.endswith("_per_1m") for k in prices) else "",
+                        "per image (USD)" if "per_image" in flat else "",
+                        "per second (USD)" if "per_second" in flat else "",
+                    ])
+                ),
                 source_version=source_version,
                 model_id=model_id,
                 provider=f"litellm/{entry.get('litellm_provider') or '?'}",

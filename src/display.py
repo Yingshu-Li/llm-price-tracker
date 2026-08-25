@@ -179,32 +179,23 @@ def display_name(model: str, company: str | None = None) -> str:
     if " " in raw and raw[0].isupper():
         return _unmask(raw, masks)
 
-    tokens = [t for t in re.split(r"[-_.\s]+", raw) if t]
+    # 连字符、下划线和空白始终是分隔符；点号只有在不处于两个数字之间时
+    # 才是分隔符。这样规格和版本中的小数可以原样进入 `_word`：
+    #   `Qwen3-0.6B` → [`Qwen3`, `0.6B`]
+    #   `gpt-5.1`     → [`gpt`, `5.1`]
+    # 而不是先切成 `0`/`6B` 或 `5`/`1`，再靠上下文猜测如何拼回去。
+    tokens = [
+        t for t in re.split(r"[-_\s]+|(?<!\d)\.|\.(?!\d)", raw) if t
+    ]
     if not tokens:
         return raw
 
-    # 小数版本号会被上面的 `.` 切开，先合回来。两种形态都要还原：
-    #   `gpt-5.1`      → [gpt, 5, 1]   前一段是纯数字
-    #   `MiniMax-M2.7` → [MiniMax, M2, 7]  前一段是 `M2` 这类字母数字混合
-    # 只在前一段确实以数字结尾时合并，避免把 `Llama-3` + `70b` 接成 `3.70b`。
-    merged: list[str] = []
-    for token in tokens:
-        if (
-            merged
-            and _NUMERIC.match(token)
-            and "." not in merged[-1]
-            and merged[-1][-1].isdigit()
-        ):
-            merged[-1] = f"{merged[-1]}.{token}"
-        else:
-            merged.append(token)
-
-    words = [_word(t) for t in merged]
+    words = [_word(t) for t in tokens]
 
     # 系列名与紧随其后的版本号按厂商官方写法连接：
     # `gpt-5-mini` → `GPT-5 Mini`（不是 `GPT 5 Mini`），`qwen3-32b` → `Qwen3 32B`
-    joiner = _HYPHENATED_FAMILIES.get(merged[0].lower())
-    if joiner is not None and len(words) >= 2 and _NUMERIC.match(merged[1]):
+    joiner = _HYPHENATED_FAMILIES.get(tokens[0].lower())
+    if joiner is not None and len(words) >= 2 and _NUMERIC.match(tokens[1]):
         head = f"{words[0]}{joiner}{words[1]}"
         words = [head] + words[2:]
 

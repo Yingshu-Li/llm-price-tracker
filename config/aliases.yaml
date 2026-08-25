@@ -35,3 +35,18 @@ aliases:
     iflytek_maas_api: xsparkx2flash
   "Amazon Nova Multimodal Embeddings":
     litellm: amazon.nova-2-multimodal-embeddings-v1:0
+
+  # ── 图像生成 ──
+  # raw.csv 用不带版本号的名字，上游只发布带版本号的 id。
+  # 核对依据：litellm 的 imagen-4.0-generate-001 = $0.04/张，与 Google 官方
+  # Imagen 4 标准档 $0.04 一致（Fast $0.02 / Ultra $0.06 是另外两个型号，
+  # 已分别对应 -fast- / -ultra- 的 id，不能混用）。
+  "imagen-4.0-generate":
+    litellm: imagen-4.0-generate-001
+
+  # MAI-Image-2e 的 e = Efficient。核对依据：litellm 里该条
+  # input_cost_per_token=5e-06（即 $5/1M 文本输入），与微软 Foundry 公布的
+  # MAI-Image-2-Efficient 口径一致；同源的 MAI-Image-2.5 / 2.5-Flash 是
+  # 更新的独立型号，**不是**本模型的别名。
+  "MAI-Image-2-Efficient":
+    litellm: MAI-Image-2e

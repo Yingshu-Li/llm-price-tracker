@@ -9,6 +9,12 @@
   per_1m          每 100 万 token    ×1
   cents_per_token 每 token 美分      ×1e6 ÷ 100
 未知单位直接抛错而不是猜——猜错是 1000 倍的静默错误，且数字看起来完全合理。
+
+`unit` 只管 token 类价格。按张/按秒/按次是**另一套量纲**，不参与 token 换算，
+由 `flat_unit` 单独声明（缺省 `usd`，即原值就是美元）：
+  usd    $0.025/张 直接可用
+  cents  DeepInfra 的 cents_per_image_unit=2.5 表示 $0.025/张，需 ÷100
+漏声明 cents 会得到 100 倍高价，而 2.5 这个数字本身看不出异常。
 """
 
 from __future__ import annotations
@@ -22,6 +28,15 @@ UNIT_MULTIPLIER = {
     "per_1m": 1.0,
     "cents_per_token": 1_000_000.0 / 100.0,
 }
+
+# 按张/按秒/按次这类扁平价的量纲
+FLAT_UNIT_MULTIPLIER = {
+    "usd": 1.0,
+    "cents": 1.0 / 100.0,
+}
+
+# 与 token 无关、不参与 UNIT_MULTIPLIER 换算的价格字段
+FLAT_PRICE_FIELDS = ("per_image", "per_second", "per_video", "per_call")
 
 # 同一模型的变体后缀，不是独立模型
 _VARIANT_SUFFIXES = (":free", ":extended", ":thinking", ":online", ":nitro")
@@ -86,6 +101,13 @@ def parse_api(
             "不做猜测是有意的——单位猜错会产出差几个数量级但看起来合理的价格。"
         )
     multiplier = UNIT_MULTIPLIER[unit]
+    flat_unit = spec.get("flat_unit", "usd")
+    if flat_unit not in FLAT_UNIT_MULTIPLIER:
+        raise ValueError(
+            f"源 {spec['id']!r} 的 flat_unit={flat_unit!r} 未知。"
+            f"已知：{sorted(FLAT_UNIT_MULTIPLIER)}。"
+        )
+    flat_multiplier = FLAT_UNIT_MULTIPLIER[flat_unit]
     currency = spec.get("currency", "USD")
     fields: dict[str, str] = spec.get("fields") or {}
     id_fields: list[str] = spec.get("id_fields") or ["id"]
@@ -148,8 +170,12 @@ def parse_api(
                 value = _to_float(raw_value)
                 if value is None or value <= 0:
                     continue
-                # per_image / per_second 是按次计价，不参与 token 单位换算
-                factor = 1.0 if target in ("per_image", "per_second", "per_video") else multiplier
+                # 按张/按秒/按次是另一套量纲，走 flat_unit 而非 token 单位换算
+                factor = (
+                    flat_multiplier
+                    if target in FLAT_PRICE_FIELDS
+                    else multiplier
+                )
                 prices[target] = value * factor
 
             if not prices:

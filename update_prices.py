@@ -35,6 +35,12 @@ from src.adapters.md_docs import parse_doctable_doc, parse_pricing_doc
 from src.fx import convert_records_to_usd, load_ecb_rates
 from src.http import fetch
 from src.match import load_aliases, match_all
+from src.modalities import (
+    load_manual_modalities,
+    parse_litellm_modalities,
+    parse_modelsdev_modalities,
+    select_capability,
+)
 from src.normalize import infer_company, load_raw
 
 ROOT = Path(__file__).resolve().parent
@@ -523,6 +529,45 @@ def _now() -> str:
     return datetime.now(timezone.utc).isoformat(timespec="seconds")
 
 
+def collect_input_capabilities(raw_models: list) -> dict:
+    """从规格目录 + 官方核验表聚合三个 token 表所需的输入模态。"""
+    target_functions = {"General-Purpose", "Coding", "Embedding"}
+    targets = [
+        raw for raw in raw_models
+        if raw.function in target_functions
+        and raw.model not in export_mod.EXPORT_HIDDEN_MODELS
+        and raw.company not in export_mod.EXPORT_HIDDEN_COMPANIES
+    ]
+    records = load_manual_modalities(CONFIG / "input_modalities.yaml", targets)
+    modelsdev_payload = vendored.load_local("modelsdev")
+    litellm_payload = vendored.load_local("litellm")
+    if isinstance(modelsdev_payload, dict):
+        records += parse_modelsdev_modalities(modelsdev_payload)
+    if isinstance(litellm_payload, dict):
+        records += parse_litellm_modalities(litellm_payload)
+
+    report = match_all(targets, records, load_aliases(CONFIG / "aliases.yaml"))
+    index = defaultdict(list)
+    for record in records:
+        index[(record.source, record.model_id)].append(record)
+    by_model = defaultdict(list)
+    for match in report.matches:
+        by_model[match.raw_model] += index.get(
+            (match.source, match.source_model_id), []
+        )
+    capabilities = {
+        model: capability
+        for model, matched in by_model.items()
+        if (capability := select_capability(matched)) is not None
+    }
+    missing = [raw.model for raw in targets if raw.model not in capabilities]
+    if missing:
+        raise ValueError(
+            "输入模态目录未覆盖以下模型：" + ", ".join(missing)
+        )
+    return capabilities
+
+
 def main() -> int:
     ap = argparse.ArgumentParser(description=__doc__)
     ap.add_argument("--dry-run", action="store_true", help="只打印统计，不写文件")
@@ -595,7 +640,17 @@ def main() -> int:
         return 1
     print(f"   ✓ 全部 {len(records)} 条均可追溯到 URL + 原文片段")
 
-    print("\n== 5. 匹配到 raw.csv ==")
+    print("\n== 5. 聚合输入模态 ==")
+    input_capabilities = collect_input_capabilities(raw_models)
+    modality_counts = defaultdict(int)
+    for capability in input_capabilities.values():
+        modality_counts[capability.modalities_cell] += 1
+    print(
+        f"   ✓ General-Purpose / Coding / Embedding 共 "
+        f"{len(input_capabilities)} 个模型全部覆盖；组合分布 {dict(modality_counts)}"
+    )
+
+    print("\n== 6. 匹配价格到 raw.csv ==")
     report = match_all(raw_models, records, load_aliases(CONFIG / "aliases.yaml"))
     index = defaultdict(list)
     for rec in records:
@@ -615,10 +670,11 @@ def main() -> int:
         print("\n[--dry-run] 未写任何文件。")
         return 0
 
-    print("\n== 6. 导出 ==")
+    print("\n== 7. 导出 ==")
     OUT.mkdir(exist_ok=True)
     stats = export_mod.write_table(
-        OUT / "models_with_prices.csv", raw_models, best, by_model, free_tiers
+        OUT / "models_with_prices.csv", raw_models, best, by_model, free_tiers,
+        input_capabilities,
     )
     function_exports = (
         ("coding_models_with_prices.csv", {"Coding"}, True),
@@ -634,9 +690,33 @@ def main() -> int:
             best,
             by_model,
             free_tiers,
+            input_capabilities,
             export_functions=functions,
             token_prices_only=True,
             include_text_output_prices=include_output,
+        )
+
+    # ── 图像模型按结算单位拆三张表 ──
+    # 图像生成的计价单位不统一（Gemini 系按 token、DALL·E 系按张），
+    # 混在一张表里"最低价"会拿按张价去比按 token 价。拆表后每张表内
+    # 官方价与最低价必定同单位。两种都有的模型同时进前两张表。
+    image_exports = (
+        ("image_token_models_with_prices.csv", export_mod.PRICE_MODE_TOKEN),
+        ("image_per_image_models_with_prices.csv", export_mod.PRICE_MODE_IMAGE),
+        # 开源权重且无任何官方/第三方报价——价格客观不存在，不是抓取失败
+        ("image_unpriced_open_weight_models.csv", export_mod.PRICE_MODE_UNPRICED),
+    )
+    image_stats = {}
+    for filename, mode in image_exports:
+        image_stats[filename] = export_mod.write_table(
+            OUT / filename,
+            raw_models,
+            best,
+            by_model,
+            free_tiers,
+            input_capabilities,
+            export_functions={"Image Generation"},
+            price_mode=mode,
         )
     counts = defaultdict(int)
     for rec in records:
@@ -671,6 +751,22 @@ def main() -> int:
             f"   out/{filename:<31} {item.get('rows', 0)} 行"
             f"（{'/'.join(sorted(functions))}；仅展示按 token 计费报价；"
             f"有价格 {item.get('got', 0)}）"
+        )
+    labels = {
+        export_mod.PRICE_MODE_TOKEN: "按 token 结算",
+        export_mod.PRICE_MODE_IMAGE: "按张结算",
+        export_mod.PRICE_MODE_UNPRICED: "开源权重且无任何报价",
+    }
+    for filename, mode in image_exports:
+        item = image_stats[filename]
+        detail = (
+            f"有价格 {item.get('got', 0)}"
+            if mode != export_mod.PRICE_MODE_UNPRICED
+            else "价格客观不存在"
+        )
+        print(
+            f"   out/{filename:<40} {item.get('rows', 0)} 行"
+            f"（图像模型 · {labels[mode]}；{detail}）"
         )
     print(f"   out/sources.md               {len(fetches)} 个源")
     return 0

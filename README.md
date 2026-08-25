@@ -1,6 +1,6 @@
 # LLM 模型价格追踪器
 
-给 `raw.csv`（548 个模型 / 33 家公司的人工清单）自动补上价格，并标注哪些拿不到。
+给 `raw.csv`（589 个模型 / 33 家公司的人工清单）自动补上价格与输入模态，并标注哪些拿不到。
 
 ```bash
 pip install -r requirements.txt     # httpx + PyYAML
@@ -15,7 +15,7 @@ python update_prices.py             # 抓取全部源并导出
 
 [.github/workflows/update-prices.yml](.github/workflows/update-prices.yml) 每天
 **UTC 00:00**（悉尼 11:00）跑一次，也可在 Actions 页手动触发。单次约 95 秒，
-25 个源全部无需 API key（含百川人民币官网价、302.AI 讯飞转售价与 ECB 每日参考汇率）。
+38 个源全部无需 API key（含百川人民币官网价、302.AI 讯飞转售价与 ECB 每日参考汇率）。
 
 - 用 `--refresh-vendor` 拉取 models.dev / LiteLLM 最新数据（最低价约八成靠这两个源），
   但**刷新下来的 `vendor/` 不提交** —— 5.2MB × 每天会让仓库迅速膨胀。
@@ -28,7 +28,9 @@ python update_prices.py             # 抓取全部源并导出
 
 | 文件 | 内容 |
 | --- | --- |
-| `out/models_with_prices.csv` | 总表，364 行 / 350 个模型（**当前只导出 General-Purpose，并隐藏指定模型**），47 列 |
+| `out/models_with_prices.csv` | 总表，427 行 / 409 个模型（当前导出 General-Purpose 与 Image Generation，并隐藏指定模型） |
+| `out/coding_models_with_prices.csv` | Coding 分表，22 行；仅保留 token 计费列 |
+| `out/embedding_models_with_prices.csv` | Embedding / Rerank 分表，30 行；仅保留输入/处理 token 计费列 |
 | `out/sources.md` | 数据源清单 + 许可 + 解析告警 |
 | `out/exchange_rates.json` | ECB 最近一次成功的每日参考汇率；周末和短时故障回退使用 |
 
@@ -38,6 +40,8 @@ python update_prices.py             # 抓取全部源并导出
 | --- | --- |
 | `display_name` | 网页展示用可读名（`Gemini 3.7 Flash`）。**派生自 `Model`，不是 key** |
 | `Model` | 规范标识符：可直接调用的 API id 或可直接拉取的 HF 路径 |
+| `input_modalities` | 模型支持的输入：`text / image / audio / video / pdf`，多项用 ` \| ` 分隔 |
+| `input_modalities_source` / `input_modalities_source_url` | 能力规格的来源及核验链接；与价格来源相互独立 |
 | `weights` | `free`（权重公开可自取）/ `proprietary`（只能买 API） |
 | `price_status` | `got` / `weights_free` / `not_found` —— **见下方三值说明** |
 | `price_kind` | `official`（拿到厂商牌价）/ `hosted`（**只有第三方转售价**） |
@@ -94,7 +98,7 @@ API 形态和权重形态各列一行（`MiniMax-M2` / `MiniMaxAI/MiniMax-M2`）
 
 ### 按 Function 分表导出
 
-`out/models_with_prices.csv` 仍只显示 `Function = General-Purpose`。此外，同一次
+`out/models_with_prices.csv` 显示 `General-Purpose` 与现有的图像模型分组。此外，同一次
 更新会生成两张能力分表：
 
 | 文件 | Function | 价格口径 |
@@ -115,6 +119,20 @@ API 形态和权重形态各列一行（`MiniMax-M2` / `MiniMaxAI/MiniMax-M2`）
 排除按张、按秒、按次等非 token 价格，因此不会出现对应价格列。
 Embedding 与 Rerank 的响应分别是向量和相关性分数，不是生成文本；聚合源通用
 schema 中即使带有 `output_per_1m`，也只保留在底层观测，不导出为文本输出价。
+
+### 输入模态
+
+General-Purpose、Coding、Embedding 三类模型均导出以下三列：
+
+- `input_modalities`：标准化为 `text | image | audio | video | pdf` 的有序组合；
+- `input_modalities_source`：`modelsdev`、`litellm` 或经人工核验的官方模型文档；
+- `input_modalities_source_url`：可直接复核的规格页面。
+
+输入能力不复用价格记录里的 `modality`：后者表示 Text/Audio/Image 等计费通道，
+并不能证明模型能接受何种输入。聚合时优先使用厂商自己的目录，其次使用
+LiteLLM；第三方托管商额外提供的 PDF 解析封装不会覆盖原厂规格。结构化目录尚未
+收录的新型号由 `config/input_modalities.yaml` 补齐，并在每次更新时执行 100% 覆盖
+检查；缺任何一个展示模型都会中止导出，避免悄悄产生空值。
 
 ⚠️ 因此**列集合会随 `EXPORT_FUNCTIONS` 变化** —— 前端不能假定某列一定存在，
 读表时先看表头。放开过滤后那 25 列会自动回来。

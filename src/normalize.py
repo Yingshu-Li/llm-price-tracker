@@ -395,6 +395,10 @@ _COMPANY_MARKERS: tuple[tuple[str, str], ...] = (
     ("celeris", "Celeris"),
     ("mercury", "Inception Labs"),
     ("sensenova", "SenseTime"),
+    # 微软 MAI 自研系列在聚合器里是 `azure_ai/MAI-Image-2e` 这类 id，
+    # 既不含 microsoft/ 前缀也不是 phi-，此前整组被判为归属不明而丢弃。
+    # ⚠️ 只收窄到 `mai-image`：裸 `mai-` 作子串会命中 domain- 之类的词。
+    ("mai-image", "Microsoft"),
     ("spark", None),  # ⚠️ 有意置空：`spark` 会误命中 OpenAI 的 codex-spark
 )
 
