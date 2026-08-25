@@ -1,0 +1,110 @@
+# 官方价格页无法在 GitHub Action 中稳定服务端渲染时使用的人工核验快照。
+# 每条必须保留官方 URL、核验日期和可人工复核的原文摘录；不得填推测价。
+
+sources:
+  - id: volcengine_official_verified
+    name: 火山方舟官方价格（人工核验）
+    provider: volcengine-ark
+    url: https://www.volcengine.com/product/doubao
+    verified_at: "2026-08-25T00:00:00+10:00"
+
+  - id: deepseek_official_verified
+    name: DeepSeek API 官方价格（人工核验）
+    provider: deepseek
+    url: https://api-docs.deepseek.com/quick_start/pricing/
+    verified_at: "2026-08-25T00:00:00+10:00"
+
+prices:
+  - source: volcengine_official_verified
+    model_id: doubao-seed-evolving
+    currency: CNY
+    unit: CNY per 1M tokens
+    input_per_1m: 6
+    output_per_1m: 30
+    cache_read_per_1m: 1.2
+    snippet: "Doubao-Seed-Evolving | 6元/百万输入tokens | 30元/百万输出tokens | 1.2元/百万命中tokens"
+
+  - source: volcengine_official_verified
+    model_id: doubao-seed-2.1-pro
+    currency: CNY
+    unit: CNY per 1M tokens
+    input_per_1m: 6
+    output_per_1m: 30
+    cache_read_per_1m: 1.2
+    snippet: "Doubao-Seed-2.1-pro | 6元/百万输入tokens | 30元/百万输出tokens | 1.2元/百万命中tokens"
+
+  - source: volcengine_official_verified
+    model_id: doubao-seed-2.1-turbo
+    currency: CNY
+    unit: CNY per 1M tokens
+    input_per_1m: 3
+    output_per_1m: 15
+    cache_read_per_1m: 0.6
+    snippet: "Doubao-Seed-2.1-turbo | 3元/百万输入tokens | 15元/百万输出tokens | 0.6元/百万命中tokens"
+
+  - source: volcengine_official_verified
+    model_id: doubao-seed-character
+    currency: CNY
+    unit: CNY per 1M tokens
+    input_per_1m: 0.8
+    output_per_1m: 2
+    cache_read_per_1m: 0.16
+    qualifier: 官方页面标注“起”
+    snippet: "Doubao-Seed-Character | 0.8元起/百万输入tokens | 2元起/百万输出tokens | 0.16元/百万命中tokens"
+
+  - source: volcengine_official_verified
+    model_id: doubao-seed-2-0-pro-260215
+    currency: CNY
+    unit: CNY per 1M tokens
+    input_per_1m: 3.2
+    output_per_1m: 16
+    cache_read_per_1m: 0.64
+    qualifier: 官方页面标注“起”
+    snippet: "Doubao-Seed-2.0-pro | 3.2元起/百万输入tokens | 16元起/百万输出tokens | 0.64元/百万命中tokens"
+
+  - source: volcengine_official_verified
+    model_id: doubao-seed-2-0-code-preview-260215
+    currency: CNY
+    unit: CNY per 1M tokens
+    input_per_1m: 3.2
+    output_per_1m: 16
+    cache_read_per_1m: 0.64
+    qualifier: 官方页面标注“起”；API 文档当前调用名
+    snippet: "Doubao-Seed-2.0-Code | 3.2元起/百万输入tokens | 16元起/百万输出tokens | 0.64元/百万命中tokens"
+
+  - source: volcengine_official_verified
+    model_id: doubao-embedding-vision
+    currency: CNY
+    unit: CNY per 1M text-input tokens
+    input_per_1m: 0.7
+    snippet: "Doubao-embedding-vision | 0.7元/百万tokens(文本) | 1.8元/百万tokens(图像)"
+
+  - source: deepseek_official_verified
+    model_id: deepseek-v4-flash
+    currency: USD
+    unit: USD per 1M tokens
+    input_per_1m: 0.22
+    output_per_1m: 0.66
+    cache_read_per_1m: 0.007
+    qualifier: Off-peak（官方最低时段价）
+    snippet: "deepseek-v4-flash | cache hit $0.007 | cache miss $0.22 | output $0.66 per 1M tokens | OFF-PEAK"
+
+  - source: deepseek_official_verified
+    model_id: deepseek-v4-pro
+    currency: USD
+    unit: USD per 1M tokens
+    input_per_1m: 0.66
+    output_per_1m: 1.98
+    cache_read_per_1m: 0.022
+    qualifier: Off-peak（官方最低时段价）
+    snippet: "deepseek-v4-pro | cache hit $0.022 | cache miss $0.66 | output $1.98 per 1M tokens | OFF-PEAK"
+
+  - source: deepseek_official_verified
+    model_id: deepseek-v4-flash-vision-exp
+    currency: USD
+    unit: USD per 1M tokens
+    input_per_1m: 0.22
+    output_per_1m: 0.66
+    cache_read_per_1m: 0.007
+    qualifier: Off-peak（官方最低时段价）
+    snippet: "deepseek-v4-flash-vision-exp | cache hit $0.007 | cache miss $0.22 | output $0.66 per 1M tokens | OFF-PEAK"

@@ -222,9 +222,11 @@ Gemini 3.5 Flash  官方 $1.50  ->  最低 $0.1857   (8x)  via unorouter   q=34
 config/
   price_apis.yaml        12 个可直连价格 API 的配置（加源改这里，通常不用写代码）
   official_sources.yaml  厂商官方 .md 文档端点
+  verified_official_prices.yaml  无法稳定服务端渲染的官方页人工核验快照（含日期、URL、原文）
   companies.yaml         33 家公司的官网/博客/RSS/HF org/定价页（参考资料，暂未被代码消费）
   aliases.yaml           人工确认的模型名映射（最高优先级）
 src/
+  adapters/china_official.py  StepFun/百度/腾讯官方 HTML 价目表与可审计快照
   records.py             PriceRecord 溯源契约（构造期断言，缺出处即报错）
   http.py                ETag 条件请求、重试、失败隔离、企业代理拦截识别
   normalize.py           可用性/参数量解析、名字候选、公司推断

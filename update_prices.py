@@ -23,6 +23,7 @@ from src.adapters import (
     ai302,
     aws_bedrock,
     azure_retail,
+    china_official,
     iflytek,
     nonusd_official,
     price_apis,
@@ -154,6 +155,67 @@ def collect_nonusd_official() -> tuple[list, list[dict], list[str]]:
     entry["n_records"] = len(records)
     print(f"  ✓ 百川人民币官网价 {len(records):4} 条")
     return records, [entry], warnings
+
+
+def collect_china_official() -> tuple[list, list[dict], list[str]]:
+    """Tier 1：中国厂商当前 HTML 价目表与可审计人工快照。"""
+    records, fetches, warnings = [], [], []
+    specs = [
+        (
+            "stepfun_official_html", "StepFun", china_official.STEPFUN_URL,
+            china_official.parse_stepfun, "StepFun 官方价格",
+        ),
+        (
+            "baidu_qianfan_official_html", "Baidu / ERNIE", china_official.BAIDU_URL,
+            china_official.parse_baidu, "百度千帆官方价格",
+        ),
+        (
+            "tencent_tokenhub_official_html", "Tencent / Hunyuan", china_official.TENCENT_URL,
+            china_official.parse_tencent, "腾讯 TokenHub 官方价格",
+        ),
+    ]
+    for source_id, company, url, parser, pretty in specs:
+        result = fetch(url, use_cache=True, timeout=60)
+        entry = _fetch_entry(
+            source_id, result.url, result.ok, result,
+            provider_name=pretty, weblink=url, license="厂商官方价格页",
+        )
+        fetches.append(entry)
+        if not result.ok:
+            print(f"  ✗ {source_id:32} {result.error}", file=sys.stderr)
+            continue
+        parsed, parsed_warnings = parser(
+            result.text, source_url=result.url, fetched_at=result.fetched_at,
+            source_version=result.version,
+        )
+        for rec in parsed:
+            rec.raw["company"] = company
+            rec.raw["provider_name"] = pretty
+            rec.raw["weblink"] = url
+        records += parsed
+        warnings += parsed_warnings
+        entry["n_records"] = len(parsed)
+        print(f"  ✓ {pretty:22} {len(parsed):4} 条")
+
+    snapshots, snapshot_warnings, snapshot_fetches = china_official.load_verified_snapshots(
+        CONFIG / "verified_official_prices.yaml"
+    )
+    snapshot_companies = {
+        "volcengine_official_verified": "ByteDance / Doubao-Seed",
+        "deepseek_official_verified": "DeepSeek",
+    }
+    for rec in snapshots:
+        rec.raw["company"] = snapshot_companies[rec.source]
+        rec.raw["provider_name"] = next(
+            item["provider_name"] for item in snapshot_fetches
+            if item["source"] == rec.source
+        )
+        rec.raw["weblink"] = rec.source_url
+    records += snapshots
+    warnings += snapshot_warnings
+    fetches += snapshot_fetches
+    print(f"  ✓ 官方人工核验快照       {len(snapshots):4} 条")
+    return records, fetches, warnings
 
 
 def collect_sensenova() -> tuple[
@@ -477,6 +539,8 @@ def main() -> int:
     recs, fs, warns = collect_official_md()
     records += recs; fetches += fs; warnings += warns
     recs, fs, warns = collect_nonusd_official()
+    records += recs; fetches += fs; warnings += warns
+    recs, fs, warns = collect_china_official()
     records += recs; fetches += fs; warnings += warns
     recs, fs, warns, official_free_tiers = collect_sensenova()
     records += recs; fetches += fs; warnings += warns
