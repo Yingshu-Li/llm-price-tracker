@@ -170,12 +170,21 @@ def parse_litellm(
         # 视频的每秒价上游有两套字段名：Google 系用 output_cost_per_second，
         # OpenAI/Runway 系用 output_cost_per_video_per_second，语义相同，
         # 这里归一到 per_second。
+        #
+        # ⚠️ 只在 mode 确实是生成类模型时才取这些字段。聊天模型不按张/按秒
+        # 卖，它们身上出现的 output_cost_per_image 是上游标错的：实测
+        # `gemini-3.1-pro-preview`(mode=chat) 的 output_cost_per_image=0.00012，
+        # 而同族 `gemini-3-pro-image` 的按张价是 0.134、0.00012 恰是它的
+        # output_cost_per_image_token —— 即图像 token 价被塞进了按张字段。
+        # 不设这道门禁，$0.00012/张 会当成真实按张价流进通用表。
+        mode = str(entry.get("mode") or "")
+        GEN_MODES = {"image_generation", "image_edit", "video_generation"}
         flat = {
-            "per_image": entry.get("output_cost_per_image"),
+            "per_image": entry.get("output_cost_per_image") if mode in GEN_MODES else None,
             "per_second": (
                 entry.get("output_cost_per_second")
                 or entry.get("output_cost_per_video_per_second")
-            ),
+            ) if mode in GEN_MODES else None,
         }
         flat = {
             k: float(v)

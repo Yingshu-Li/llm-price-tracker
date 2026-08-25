@@ -447,7 +447,7 @@ def _fmt(value) -> str:
 # 这纯粹是导出层的显示过滤，改回全量只需把它设成 None。
 # 其他能力的模型（语音/图像/视频/嵌入…）的价格照常抓取并计入 out/sources.md，
 # 只是暂不进总表。
-EXPORT_FUNCTIONS: set[str] | None = {"General-Purpose", "Image Generation"}
+EXPORT_FUNCTIONS: set[str] | None = {"General-Purpose"}
 
 # 单独能力表只接受真正按 token 结算的报价。字段名本身就是统一单位契约：
 # 所有 ``*_per_1m`` 都表示每 100 万 token；按张/按秒/按次等字段不在这里。
