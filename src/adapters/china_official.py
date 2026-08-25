@@ -183,7 +183,6 @@ def parse_baidu(
             input_price=input_price,
             output_price=output_price,
             cache_price=cache_price,
-            qualifier="官方按量后付费第一档（短上下文/常规档）",
         )
         for model_id, (input_price, output_price, cache_price, snippet) in merged.items()
     ]

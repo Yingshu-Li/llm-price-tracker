@@ -49,7 +49,6 @@ prices:
     input_per_1m: 0.8
     output_per_1m: 2
     cache_read_per_1m: 0.16
-    qualifier: 官方页面标注“起”
     snippet: "Doubao-Seed-Character | 0.8元起/百万输入tokens | 2元起/百万输出tokens | 0.16元/百万命中tokens"
 
   - source: volcengine_official_verified
@@ -59,7 +58,6 @@ prices:
     input_per_1m: 3.2
     output_per_1m: 16
     cache_read_per_1m: 0.64
-    qualifier: 官方页面标注“起”
     snippet: "Doubao-Seed-2.0-pro | 3.2元起/百万输入tokens | 16元起/百万输出tokens | 0.64元/百万命中tokens"
 
   - source: volcengine_official_verified
@@ -69,7 +67,6 @@ prices:
     input_per_1m: 3.2
     output_per_1m: 16
     cache_read_per_1m: 0.64
-    qualifier: 官方页面标注“起”；API 文档当前调用名
     snippet: "Doubao-Seed-2.0-Code | 3.2元起/百万输入tokens | 16元起/百万输出tokens | 0.64元/百万命中tokens"
 
   - source: volcengine_official_verified
@@ -86,7 +83,6 @@ prices:
     input_per_1m: 0.22
     output_per_1m: 0.66
     cache_read_per_1m: 0.007
-    qualifier: Off-peak（官方最低时段价）
     snippet: "deepseek-v4-flash | cache hit $0.007 | cache miss $0.22 | output $0.66 per 1M tokens | OFF-PEAK"
 
   - source: deepseek_official_verified
@@ -96,7 +92,6 @@ prices:
     input_per_1m: 0.66
     output_per_1m: 1.98
     cache_read_per_1m: 0.022
-    qualifier: Off-peak（官方最低时段价）
     snippet: "deepseek-v4-pro | cache hit $0.022 | cache miss $0.66 | output $1.98 per 1M tokens | OFF-PEAK"
 
   - source: deepseek_official_verified
@@ -106,5 +101,4 @@ prices:
     input_per_1m: 0.22
     output_per_1m: 0.66
     cache_read_per_1m: 0.007
-    qualifier: Off-peak（官方最低时段价）
     snippet: "deepseek-v4-flash-vision-exp | cache hit $0.007 | cache miss $0.22 | output $0.66 per 1M tokens | OFF-PEAK"
