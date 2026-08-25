@@ -372,6 +372,9 @@ Hunyuan-A13B-Instruct,Tencent / Hunyuan,General-Purpose,80B,13B/token,Offline: O
 Hunyuan-T1,Tencent / Hunyuan,General-Purpose,Undisclosed,Undisclosed,Offline: Open Weight,Yes
 hunyuan-turbos-latest,Tencent / Hunyuan,General-Purpose,Undisclosed,Undisclosed,Online: Tencent Cloud API,Yes
 hunyuan-vision,Tencent / Hunyuan,General-Purpose,Undisclosed,Undisclosed,Online: Tencent Cloud API,No
+hy-vision-2.0-instruct,Tencent / Hunyuan,General-Purpose,Undisclosed,Undisclosed,Online: Tencent TokenHub API,Yes
+hunyuan-t1-vision-20250916,Tencent / Hunyuan,General-Purpose,Undisclosed,Undisclosed,Online: Tencent TokenHub API,Yes
+hunyuan-turbos-vision-video-20250728,Tencent / Hunyuan,General-Purpose,Undisclosed,Undisclosed,Online: Tencent TokenHub API,No
 tencent/Hunyuan-0.5B-Instruct,Tencent / Hunyuan,General-Purpose,0.5B,0.5B,Offline: Official Hugging Face / Open Weight,No
 tencent/Hunyuan-1.8B-Instruct,Tencent / Hunyuan,General-Purpose,1.8B,1.8B,Offline: Official Hugging Face / Open Weight,No
 tencent/Hunyuan-4B-Instruct,Tencent / Hunyuan,General-Purpose,4B,4B,Offline: Official Hugging Face / Open Weight,No

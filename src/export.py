@@ -420,7 +420,10 @@ def official_tiers(records: list[PriceRecord]) -> list[PriceRecord]:
         best_of.values(),
         key=lambda r: (
             1 if r.qualifier else 0,
-            1 if "long" in (r.qualifier or "").lower() else 0,
+            1 if (
+                "long" in (r.qualifier or "").lower()
+                or re.match(r"^\s*\d+(?:\.\d+)?[km]?\s*<", r.qualifier or "", re.I)
+            ) else 0,
             parse_tier_tokens(r.qualifier) or 0,
             r.qualifier or "",
         ),
@@ -464,6 +467,19 @@ EXPORT_HIDDEN_MODELS = {
     "ERNIE 5.0",
     "Baichuan2-Turbo-192k",
     "rerank-v4.0",
+    # 用户界面不展示的非 token / 工具型条目；原始数据与来源继续保留。
+    "nova-act-latest",
+    "nova-act-preview",
+    "nova-act-v1.0",
+    "Document Parse",
+    "Document OCR",
+    "Spark-X2-Agent / xsparkx2agent",
+    # 同一模型的 Hugging Face 路径与 API id 重复时，仅展示可调用 API 行。
+    "stepfun-ai/Step-3.5-Flash",
+    "stepfun-ai/Step-3.7-Flash",
+    "XiaomiMiMo/MiMo-V2.5",
+    # 旧版混元视觉 API 仅保留作数据源记录，展示当前 TokenHub 2.0 型号。
+    "hunyuan-vision",
 }
 EXPORT_HIDDEN_COMPANIES = {"NAVER"}
 

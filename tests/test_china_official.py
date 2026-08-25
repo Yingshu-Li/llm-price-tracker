@@ -53,11 +53,14 @@ class ChinaOfficialParserTests(unittest.TestCase):
         self.assertEqual(0.5, by_model["Embedding-V1"].input_per_1m)
         self.assertIsNone(by_model["Embedding-V1"].output_per_1m)
 
-    def test_tencent_ignores_preview_and_keeps_stable_hy3(self):
+    def test_tencent_keeps_stable_hy3_and_hy_vision_2(self):
         html = """
         <table>
         <tr><td>Hy3 preview<br>（2026-08-31 下线）</td><td>0-16k</td><td>-</td><td>1.2</td><td>4</td><td>0.4</td></tr>
         <tr><td>Hy3</td><td>-</td><td>-</td><td>1</td><td>4</td><td>0.25</td></tr>
+        <tr><td>HY-Vision-2.0-Instruct</td><td>7.5</td><td>17.5</td></tr>
+        <tr><td>HY-Vision-1.5-Thinking</td><td>3</td><td>9</td></tr>
+        <tr><td>HY-Vision-Video</td><td>3</td><td>9</td></tr>
         </table>
         """
         records, warnings = parse_tencent(
@@ -65,11 +68,47 @@ class ChinaOfficialParserTests(unittest.TestCase):
             fetched_at="2026-08-25T00:00:00+00:00", source_version=None,
         )
         self.assertEqual([], warnings)
-        self.assertEqual(["Hy3"], [record.model_id for record in records])
+        self.assertEqual(
+            [
+                "Hy3", "hy-vision-2.0-instruct",
+                "hunyuan-t1-vision-20250916",
+                "hunyuan-turbos-vision-video-20250728",
+            ],
+            [record.model_id for record in records],
+        )
         self.assertEqual((1.0, 4.0, 0.25), (
             records[0].input_per_1m, records[0].output_per_1m,
             records[0].cache_read_per_1m,
         ))
+        self.assertEqual((7.5, 17.5), (
+            records[1].input_per_1m, records[1].output_per_1m,
+        ))
+        self.assertEqual([44_000, 40_000, 32_000], [
+            record.context_length for record in records[1:]
+        ])
+
+    def test_baidu_keeps_each_context_price_tier(self):
+        html = """
+        <h4 id="按量后付费"></h4><table>
+        <tr><td>ERNIE 5.1</td><td>ERNIE-5.1</td><td>推理服务</td>
+        <td>输入（输入&lt;=32k）</td><td>0.004</td><td>-</td><td>元/千tokens</td></tr>
+        <tr><td>输出（输入&lt;=32k）</td><td>0.018</td><td>-</td></tr>
+        <tr><td>输入（32k&lt;输入&lt;=128k）</td><td>0.006</td><td>-</td></tr>
+        <tr><td>输出（32k&lt;输入&lt;=128k）</td><td>0.022</td><td>-</td></tr>
+        </table>
+        """
+        records, warnings = parse_baidu(
+            html, source_url="https://example.test/baidu",
+            fetched_at="2026-08-25T00:00:00+00:00", source_version=None,
+        )
+        self.assertEqual([], warnings)
+        self.assertEqual(
+            ["input tokens ≤ 32K", "32K < input tokens ≤ 128K"],
+            [record.qualifier for record in records],
+        )
+        self.assertEqual([(4.0, 18.0), (6.0, 22.0)], [
+            (record.input_per_1m, record.output_per_1m) for record in records
+        ])
 
     def test_verified_snapshot_retains_audit_fields(self):
         content = """

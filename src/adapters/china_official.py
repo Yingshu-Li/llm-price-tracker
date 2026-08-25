@@ -50,6 +50,7 @@ def _record(
     provider: str, unit: str, currency: str = "CNY",
     input_price: float | None = None, output_price: float | None = None,
     cache_price: float | None = None, qualifier: str | None = None,
+    context_length: int | None = None,
 ) -> PriceRecord:
     return PriceRecord(
         source=source,
@@ -65,6 +66,7 @@ def _record(
         output_per_1m=output_price,
         cache_read_per_1m=cache_price,
         qualifier=qualifier,
+        context_length=context_length,
         currency=currency,
         source_version=source_version,
     )
@@ -114,10 +116,36 @@ def _first_table_after(text: str, marker: str) -> str:
 _BAIDU_MODEL = re.compile(r"\b(?:ERNIE-[A-Za-z0-9.]+(?:-[A-Za-z0-9.]+)*|Embedding-V1)\b")
 
 
-def _parse_baidu_table(table: str) -> list[tuple[str, float | None, float | None, float | None, str]]:
+def _baidu_qualifier(label: str) -> str | None:
+    """把官网括号内的输入长度条件规范成与 GPT/Grok 相同的一档一行标签。"""
+    match = re.search(r"[（(]([^）)]+)[）)]", label)
+    if not match:
+        return None
+    condition = re.sub(r"\s+", "", match.group(1)).lower()
+    if match := re.fullmatch(r"输入(?:<=|=<)(\d+)k", condition):
+        return f"input tokens ≤ {match.group(1)}K"
+    if match := re.fullmatch(r"(\d+)k<输入(?:<=|=<)(\d+)k", condition):
+        return f"{match.group(1)}K < input tokens ≤ {match.group(2)}K"
+    return None
+
+
+def _baidu_context_length(model_id: str) -> int | None:
+    suffix = re.search(r"-(32|128)K(?:-|$)", model_id, re.I)
+    if suffix:
+        return int(suffix.group(1)) * 1_000
+    if model_id.startswith(("ERNIE-5.1", "ERNIE-5.0")):
+        return 128_000
+    if model_id in {"ERNIE-4.5-Turbo-20260402", "ERNIE-4.5-Turbo-VL"}:
+        return 128_000
+    return None
+
+
+def _parse_baidu_table(
+    table: str,
+) -> list[tuple[str, float | None, float | None, float | None, str | None, int | None, str]]:
     current: list[str] = []
-    prices: dict[str, dict[str, float]] = {}
-    snippets: dict[str, list[str]] = {}
+    prices: dict[tuple[str, str | None], dict[str, float]] = {}
+    snippets: dict[tuple[str, str | None], list[str]] = {}
     for cells in _rows(table):
         found: list[str] = []
         for cell in cells:
@@ -136,21 +164,23 @@ def _parse_baidu_table(table: str) -> list[tuple[str, float | None, float | None
         if price is None:
             continue
         label = cells[label_idx]
+        qualifier = _baidu_qualifier(label)
         field = "cache" if label.startswith("命中缓存") else (
             "input" if label.startswith("输入") else "output"
         )
-        # 分段价默认保留表中第一档（最短上下文/常规档）；qualifier 明确标注。
         for model_id in current:
-            prices.setdefault(model_id, {}).setdefault(field, price * 1_000)
-            snippets.setdefault(model_id, []).append(" | ".join(cells))
+            key = (model_id, qualifier)
+            prices.setdefault(key, {}).setdefault(field, price * 1_000)
+            snippets.setdefault(key, []).append(" | ".join(cells))
 
     out = []
-    for model_id, values in prices.items():
+    for (model_id, qualifier), values in prices.items():
         if not (values.get("input") is not None or values.get("output") is not None):
             continue
         out.append((
             model_id, values.get("input"), values.get("output"), values.get("cache"),
-            " ; ".join(snippets[model_id]),
+            qualifier, _baidu_context_length(model_id),
+            " ; ".join(snippets[(model_id, qualifier)]),
         ))
     return out
 
@@ -165,10 +195,19 @@ def parse_baidu(
         _first_table_after(text, '<h4 id="按量后付费-2">'),
         _first_table_after(text, '<h3 id="文本向量">'),
     ]
-    merged: dict[str, tuple[float | None, float | None, float | None, str]] = {}
+    merged: dict[
+        tuple[str, str | None],
+        tuple[float | None, float | None, float | None, int | None, str],
+    ] = {}
     for table in tables:
-        for model_id, input_price, output_price, cache_price, snippet in _parse_baidu_table(table):
-            merged.setdefault(model_id, (input_price, output_price, cache_price, snippet))
+        for (
+            model_id, input_price, output_price, cache_price,
+            qualifier, context_length, snippet,
+        ) in _parse_baidu_table(table):
+            merged.setdefault(
+                (model_id, qualifier),
+                (input_price, output_price, cache_price, context_length, snippet),
+            )
 
     records = [
         _record(
@@ -183,8 +222,12 @@ def parse_baidu(
             input_price=input_price,
             output_price=output_price,
             cache_price=cache_price,
+            qualifier=qualifier,
+            context_length=context_length,
         )
-        for model_id, (input_price, output_price, cache_price, snippet) in merged.items()
+        for (model_id, qualifier), (
+            input_price, output_price, cache_price, context_length, snippet,
+        ) in merged.items()
     ]
     warnings = [] if records else ["baidu_qianfan_official_html: 未找到按量 token 定价"]
     return records, warnings
@@ -193,30 +236,65 @@ def parse_baidu(
 def parse_tencent(
     text: str, *, source_url: str, fetched_at: str, source_version: str | None
 ) -> tuple[list[PriceRecord], list[str]]:
-    """解析 TokenHub 当前稳定 Hy3；明确忽略带下线日期的 preview 行。"""
+    """解析 TokenHub 当前稳定 Hy3 与全部在售 HY 多模态理解模型。"""
+    multimodal = {
+        "hy-vision-2.0-instruct": ("hy-vision-2.0-instruct", 44_000),
+        "hy-vision-1.5-thinking": ("hunyuan-t1-vision-20250916", 40_000),
+        "hy-vision-video": ("hunyuan-turbos-vision-video-20250728", 32_000),
+    }
     records: list[PriceRecord] = []
+    seen: set[str] = set()
     for cells in _rows(text):
-        if len(cells) < 6 or cells[0].strip().lower() != "hy3":
-            continue
-        # 模型、条件、峰谷、输入、输出、缓存。
-        values = [_number(cell) for cell in cells[3:6]]
-        if values[0] is None or values[1] is None:
-            continue
-        records.append(_record(
-            source="tencent_tokenhub_official_html",
-            source_url=source_url,
-            fetched_at=fetched_at,
-            source_version=source_version,
-            snippet=" | ".join(cells),
-            model_id="Hy3",
-            provider="tencent-tokenhub",
-            unit="CNY per 1M tokens",
-            input_price=values[0],
-            output_price=values[1],
-            cache_price=values[2],
-        ))
-        break
-    warnings = [] if records else ["tencent_tokenhub_official_html: 未找到稳定版 Hy3 定价"]
+        model = cells[0].strip().lower() if cells else ""
+        if len(cells) >= 6 and model == "hy3" and "Hy3" not in seen:
+            # 模型、条件、峰谷、输入、输出、缓存。
+            values = [_number(cell) for cell in cells[3:6]]
+            if values[0] is not None and values[1] is not None:
+                records.append(_record(
+                    source="tencent_tokenhub_official_html",
+                    source_url=source_url,
+                    fetched_at=fetched_at,
+                    source_version=source_version,
+                    snippet=" | ".join(cells),
+                    model_id="Hy3",
+                    provider="tencent-tokenhub",
+                    unit="CNY per 1M tokens",
+                    input_price=values[0],
+                    output_price=values[1],
+                    cache_price=values[2],
+                ))
+                seen.add("Hy3")
+        elif len(cells) >= 3 and model in multimodal:
+            # 多模态理解表：模型、输入、输出。
+            model_id, context_length = multimodal[model]
+            if model_id in seen:
+                continue
+            values = [_number(cell) for cell in cells[1:3]]
+            if values[0] is not None and values[1] is not None:
+                records.append(_record(
+                    source="tencent_tokenhub_official_html",
+                    source_url=source_url,
+                    fetched_at=fetched_at,
+                    source_version=source_version,
+                    snippet=" | ".join(cells),
+                    model_id=model_id,
+                    provider="tencent-tokenhub",
+                    unit="CNY per 1M tokens",
+                    input_price=values[0],
+                    output_price=values[1],
+                    context_length=context_length,
+                ))
+                seen.add(model_id)
+    found = {record.model_id for record in records}
+    warnings = []
+    if "Hy3" not in found:
+        warnings.append("tencent_tokenhub_official_html: 未找到稳定版 Hy3 定价")
+    for label, (model_id, _context_length) in multimodal.items():
+        if model_id not in found:
+            warnings.append(
+                "tencent_tokenhub_official_html: 未找到 "
+                f"{label.upper()} 定价"
+            )
     return records, warnings
 
 
