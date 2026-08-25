@@ -1,0 +1,10 @@
+display_name,Model,Company,Function,Total Para,Activate Para,On/Off Line,Reasoning,access_mode,lifecycle,is_open_weight,weights,price_status,official_price
+ERNIE Image,ERNIE-Image,Baidu / ERNIE,Image Generation,8,8,Offline: Open Weight,No,offline,stable,1,free,weights_free,weight open source
+HunyuanImage,HunyuanImage,Tencent / Hunyuan,Image Generation,,,Online / Open Weight,No,both,stable,1,free,weights_free,weight open source
+Hunyuan3d 2,tencent/Hunyuan3D-2,Tencent / Hunyuan,Image Generation,,,Offline: Official Hugging Face / Open Weight,No,offline,stable,1,free,weights_free,weight open source
+HunyuanImage 3.0,tencent/HunyuanImage-3.0,Tencent / Hunyuan,Image Generation,,,Offline: Official Hugging Face / Open Weight,No,offline,stable,1,free,weights_free,weight open source
+Motif Image 6B Preview,Motif-Technologies/Motif-Image-6B-Preview,Motif Technologies,Image Generation,6,6,Offline: Official Hugging Face / Open Weight,No,offline,stable,1,free,weights_free,weight open source
+LongCat Image Edit Turbo,meituan-longcat/LongCat-Image-Edit-Turbo,Meituan / LongCat,Image Generation,,,Offline: Official Hugging Face / Open Weight,No,offline,stable,1,free,weights_free,weight open source
+LongCat Image,meituan-longcat/LongCat-Image,Meituan / LongCat,Image Generation,,,Offline: Official Hugging Face / Open Weight,No,offline,stable,1,free,weights_free,weight open source
+LongCat Image Edit,meituan-longcat/LongCat-Image-Edit,Meituan / LongCat,Image Generation,,,Offline: Official Hugging Face / Open Weight,No,offline,stable,1,free,weights_free,weight open source
+LongCat Image Dev,meituan-longcat/LongCat-Image-Dev,Meituan / LongCat,Image Generation,,,Offline: Official Hugging Face / Open Weight,No,offline,stable,1,free,weights_free,weight open source
