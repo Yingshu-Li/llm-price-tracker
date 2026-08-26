@@ -526,3 +526,35 @@ models:
     company: NVIDIA
     input_modalities: [text]
     source_url: https://build.nvidia.com/nvidia
+
+  # ── 补登记：这批原本靠 models.dev/LiteLLM 恰好覆盖，
+  #    但 CI 用 --refresh-vendor 拉最新数据，上游改名后覆盖会消失导致流程崩。
+  #    人工清单里的模型必须自带模态证据，不能指望上游。
+  - model_id: gpt-image-1
+    company: OpenAI
+    input_modalities: [text, image]
+    source_url: https://platform.openai.com/docs/models/gpt-image-1
+  - model_id: gpt-image-1-mini
+    company: OpenAI
+    input_modalities: [text, image]
+    source_url: https://platform.openai.com/docs/models/gpt-image-1-mini
+  - model_id: gpt-image-1.5
+    company: OpenAI
+    input_modalities: [text, image]
+    source_url: https://platform.openai.com/docs/models
+  - model_id: dall-e-3
+    company: OpenAI
+    input_modalities: [text]
+    source_url: https://platform.openai.com/docs/models/dall-e-3
+  - model_id: imagen-4.0-fast-generate-001
+    company: Google
+    input_modalities: [text]
+    source_url: https://ai.google.dev/gemini-api/docs/imagen
+  - model_id: imagen-4.0-ultra-generate-001
+    company: Google
+    input_modalities: [text]
+    source_url: https://ai.google.dev/gemini-api/docs/imagen
+  - model_id: ByteDance/Seedream-4.5
+    company: ByteDance / Doubao-Seed
+    input_modalities: [text, image]
+    source_url: https://www.volcengine.com/docs/82379/1330310
