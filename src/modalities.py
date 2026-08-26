@@ -176,6 +176,11 @@ def load_manual_modalities(
     records: list[ModalityRecord] = []
     defaults = data.get("company_defaults", {}) or {}
     for raw_model in raw_models or []:
+        # 图像生成模型不能套用公司 LLM 家族的“默认文本输入”：同一家公司的
+        # generation / edit / 3D 型号可能分别支持 text、image 或两者。它们必须
+        # 由结构化模型目录或下方 models 的型号级官方证据明确给出。
+        if raw_model.function == "Image Generation":
+            continue
         item = defaults.get(raw_model.company)
         if not item:
             continue

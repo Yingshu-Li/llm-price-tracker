@@ -530,8 +530,10 @@ def _now() -> str:
 
 
 def collect_input_capabilities(raw_models: list) -> dict:
-    """从规格目录 + 官方核验表聚合三个 token 表所需的输入模态。"""
-    target_functions = {"General-Purpose", "Coding", "Embedding"}
+    """从规格目录 + 官方核验表聚合全部已导出能力表的输入模态。"""
+    target_functions = {
+        "General-Purpose", "Coding", "Embedding", "Image Generation"
+    }
     targets = [
         raw for raw in raw_models
         if raw.function in target_functions
@@ -646,7 +648,7 @@ def main() -> int:
     for capability in input_capabilities.values():
         modality_counts[capability.modalities_cell] += 1
     print(
-        f"   ✓ General-Purpose / Coding / Embedding 共 "
+        f"   ✓ General-Purpose / Coding / Embedding / Image Generation 共 "
         f"{len(input_capabilities)} 个模型全部覆盖；组合分布 {dict(modality_counts)}"
     )
 

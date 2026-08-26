@@ -28,9 +28,12 @@ python update_prices.py             # 抓取全部源并导出
 
 | 文件 | 内容 |
 | --- | --- |
-| `out/models_with_prices.csv` | 总表，427 行 / 409 个模型（当前导出 General-Purpose 与 Image Generation，并隐藏指定模型） |
+| `out/models_with_prices.csv` | General-Purpose 主表（隐藏规则只影响展示，不删除原始数据） |
 | `out/coding_models_with_prices.csv` | Coding 分表，22 行；仅保留 token 计费列 |
 | `out/embedding_models_with_prices.csv` | Embedding / Rerank 分表，30 行；仅保留输入/处理 token 计费列 |
+| `out/image_token_models_with_prices.csv` | Image Generation：按 token 计费的模型 |
+| `out/image_per_image_models_with_prices.csv` | Image Generation：按张计费的模型 |
+| `out/image_unpriced_open_weight_models.csv` | Image Generation：开源权重且没有 API 报价的模型 |
 | `out/sources.md` | 数据源清单 + 许可 + 解析告警 |
 | `out/exchange_rates.json` | ECB 最近一次成功的每日参考汇率；周末和短时故障回退使用 |
 
@@ -98,13 +101,16 @@ API 形态和权重形态各列一行（`MiniMax-M2` / `MiniMaxAI/MiniMax-M2`）
 
 ### 按 Function 分表导出
 
-`out/models_with_prices.csv` 显示 `General-Purpose` 与现有的图像模型分组。此外，同一次
-更新会生成两张能力分表：
+`out/models_with_prices.csv` 显示 `General-Purpose`。同一次更新还会生成 Coding、
+Embedding 和三张按计费口径拆分的 Image Generation 分表：
 
 | 文件 | Function | 价格口径 |
 | --- | --- | --- |
 | `out/coding_models_with_prices.csv` | Coding | 只展示每 100 万 token 价格 |
 | `out/embedding_models_with_prices.csv` | Embedding（含 Rerank） | 只展示每 100 万输入/处理 token 价格；不展示输出价 |
+| `out/image_token_models_with_prices.csv` | Image Generation | 只展示按 token 计费的价格 |
+| `out/image_per_image_models_with_prices.csv` | Image Generation | 只展示按张计费的价格 |
+| `out/image_unpriced_open_weight_models.csv` | Image Generation | 只展示开源权重且没有 API 报价的模型 |
 
 能力分表保留对应 Function 的全部模型行。若某模型目前只有按次、按秒、按图片等
 非 token 报价，价格列留空，不把不同结算单位强行换算或放进表格；原始报价仍照常
@@ -122,7 +128,7 @@ schema 中即使带有 `output_per_1m`，也只保留在底层观测，不导出
 
 ### 输入模态
 
-General-Purpose、Coding、Embedding 三类模型均导出以下三列：
+General-Purpose、Coding、Embedding、Image Generation 四类模型均导出以下三列：
 
 - `input_modalities`：标准化为 `text | image | audio | video | pdf` 的有序组合；
 - `input_modalities_source`：`modelsdev`、`litellm` 或经人工核验的官方模型文档；

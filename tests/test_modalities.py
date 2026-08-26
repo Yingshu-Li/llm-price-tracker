@@ -1,11 +1,17 @@
 import unittest
+from pathlib import Path
 
 from src.modalities import (
     ModalityRecord,
     parse_litellm_modalities,
     parse_modelsdev_modalities,
+    load_manual_modalities,
     select_capability,
 )
+from src.normalize import load_raw
+
+
+ROOT = Path(__file__).resolve().parents[1]
 
 
 class InputModalityTests(unittest.TestCase):
@@ -72,6 +78,26 @@ class InputModalityTests(unittest.TestCase):
 
         self.assertEqual(capability.modalities_cell, "text | image")
         self.assertEqual(capability.source_urls_cell, "https://official")
+
+    def test_image_generation_overrides_distinguish_generation_and_editing(self):
+        raw = load_raw(ROOT / "raw.csv")
+        records = load_manual_modalities(
+            ROOT / "config" / "input_modalities.yaml", raw
+        )
+        by_id = {record.model_id: record for record in records if record.priority == 0}
+
+        self.assertEqual(
+            by_id["meituan-longcat/LongCat-Image"].input_modalities,
+            ("text",),
+        )
+        self.assertEqual(
+            by_id["meituan-longcat/LongCat-Image-Edit"].input_modalities,
+            ("text", "image"),
+        )
+        self.assertEqual(
+            by_id["amazon.nova-canvas-v1:0"].input_modalities,
+            ("text", "image"),
+        )
 
 
 if __name__ == "__main__":

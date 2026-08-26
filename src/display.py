@@ -132,6 +132,25 @@ _OVERRIDES = {
     "pixtral": "Pixtral",
     "voxtral": "Voxtral",
     "ministral": "Ministral",
+    # ── 图像模型：官方写法里连字符/点号是名字的一部分，不能当分隔符切开 ──
+    # `FLUX.1` 的点号夹在字母和数字之间，会被 `(?<!\d)\.` 判成分隔符切成 `FLUX 1`
+    "flux.1": "FLUX.1",
+    "flux.2": "FLUX.2",
+    "flux": "FLUX",          # 裸 flux（如 flux-2-pro）也要大写，长键先匹配不受影响
+    "dall-e": "DALL·E",
+    "z-image": "Z-Image",
+    "p-image": "P-Image",
+    "step1x": "Step1X",
+    "hunyuan3d": "Hunyuan3D",
+    "mai-image": "MAI-Image",
+    "hidream-o1": "HiDream-O1",
+    "hidream-i1": "HiDream-I1",
+    "hidream-e1": "HiDream-E1",
+    "qwen-image": "Qwen-Image",
+    "janus-pro": "Janus-Pro",
+    "t2i": "T2I",
+    "srpo": "SRPO",
+    "fibo": "FIBO",
 }
 
 

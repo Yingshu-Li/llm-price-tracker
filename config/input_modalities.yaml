@@ -80,6 +80,89 @@ company_defaults:
     source_url: https://huggingface.co/nex-agi/models
 
 models:
+  # ── Image Generation：不得使用公司文本模型的默认值 ──
+  - model_id: imagen-4.0-generate
+    company: Google
+    input_modalities: [text]
+    source_url: https://ai.google.dev/gemini-api/docs/imagen
+  - model_id: Muse Image
+    company: Meta
+    input_modalities: [text, image]
+    source_url: https://www.meta.ai/
+  - model_id: CogView-3-Flash
+    company: Zhipu AI / GLM
+    input_modalities: [text]
+    source_url: https://docs.z.ai/guides/image/cogview-3-flash
+  - model_id: CogView-4
+    company: Zhipu AI / GLM
+    input_modalities: [text]
+    source_url: https://docs.z.ai/guides/image/cogview-4
+  - model_id: GLM-Image
+    company: Zhipu AI / GLM
+    input_modalities: [text, image]
+    source_url: https://huggingface.co/zai-org/GLM-Image
+  - model_id: MiniMax Image
+    company: MiniMax
+    input_modalities: [text, image]
+    source_url: https://platform.minimax.io/docs/api-reference/image-generation-t2i
+  - model_id: ERNIE-Image
+    company: Baidu / ERNIE
+    input_modalities: [text]
+    source_url: https://huggingface.co/baidu/ERNIE-Image
+  - model_id: Hunyuan3D
+    company: Tencent / Hunyuan
+    input_modalities: [text, image]
+    source_url: https://cloud.tencent.com/document/product/1804
+  - model_id: HunyuanImage
+    company: Tencent / Hunyuan
+    input_modalities: [text]
+    source_url: https://huggingface.co/Tencent-Hunyuan/HunyuanDiT
+  - model_id: tencent/Hunyuan3D-2
+    company: Tencent / Hunyuan
+    input_modalities: [text, image]
+    source_url: https://huggingface.co/tencent/Hunyuan3D-2
+  - model_id: tencent/HunyuanImage-3.0
+    company: Tencent / Hunyuan
+    input_modalities: [text]
+    source_url: https://huggingface.co/tencent/HunyuanImage-3.0
+  - model_id: MAI-Image-2
+    company: Microsoft
+    input_modalities: [text]
+    source_url: https://learn.microsoft.com/azure/foundry/foundry-models/how-to/use-foundry-models-mai-image
+  - model_id: MAI-Image-2-Efficient
+    company: Microsoft
+    input_modalities: [text]
+    source_url: https://learn.microsoft.com/azure/foundry/foundry-models/how-to/use-foundry-models-mai-image
+  - model_id: amazon.nova-canvas-v1:0
+    company: Amazon / Nova
+    input_modalities: [text, image]
+    source_url: https://docs.aws.amazon.com/nova/latest/userguide/image-generation.html
+  - model_id: SenseNova U1 Fast
+    company: SenseTime
+    input_modalities: [text]
+    source_url: https://github.com/OpenSenseNova/SenseNova-Skills/blob/main/skills/sn-image-base/README.md
+  - model_id: Motif-Technologies/Motif-Image-6B-Preview
+    company: Motif Technologies
+    input_modalities: [text]
+    source_url: https://huggingface.co/Motif-Technologies/Motif-Image-6B-Preview
+  - model_id: meituan-longcat/LongCat-Image-Edit-Turbo
+    company: Meituan / LongCat
+    input_modalities: [text, image]
+    source_url: https://huggingface.co/meituan-longcat/LongCat-Image-Edit-Turbo
+  - model_id: meituan-longcat/LongCat-Image
+    company: Meituan / LongCat
+    input_modalities: [text]
+    source_url: https://huggingface.co/meituan-longcat/LongCat-Image
+  - model_id: meituan-longcat/LongCat-Image-Edit
+    company: Meituan / LongCat
+    input_modalities: [text, image]
+    source_url: https://huggingface.co/meituan-longcat/LongCat-Image-Edit
+  - model_id: meituan-longcat/LongCat-Image-Dev
+    company: Meituan / LongCat
+    input_modalities: [text]
+    source_url: https://huggingface.co/meituan-longcat/LongCat-Image-Dev
+
+  # ── General-Purpose / Coding / Embedding ──
   - model_id: gemini-3.7-flash
     company: Google
     input_modalities: [text, image, audio, video, pdf]
@@ -220,3 +303,226 @@ models:
     company: Meituan / LongCat
     input_modalities: [text, image, audio, video]
     source_url: https://huggingface.co/meituan-longcat/LongCat-Flash-Omni
+
+  # ── 图像生成模型（批量补登记）──
+  # 开源权重的模态取自 HF pipeline_tag；闭源 API 依厂商文档，编辑类收图。
+  - model_id: black-forest-labs/FLUX.1-dev
+    company: Black Forest Labs
+    input_modalities: [text]
+    source_url: https://huggingface.co/black-forest-labs/FLUX.1-dev
+  - model_id: black-forest-labs/FLUX.1-schnell
+    company: Black Forest Labs
+    input_modalities: [text]
+    source_url: https://huggingface.co/black-forest-labs/FLUX.1-schnell
+  - model_id: black-forest-labs/FLUX.1-Kontext-dev
+    company: Black Forest Labs
+    input_modalities: [text, image]
+    source_url: https://huggingface.co/black-forest-labs/FLUX.1-Kontext-dev
+  - model_id: black-forest-labs/FLUX.1-Krea-dev
+    company: Black Forest Labs
+    input_modalities: [text]
+    source_url: https://huggingface.co/black-forest-labs/FLUX.1-Krea-dev
+  - model_id: black-forest-labs/FLUX.2-dev
+    company: Black Forest Labs
+    input_modalities: [text, image]
+    source_url: https://huggingface.co/black-forest-labs/FLUX.2-dev
+  - model_id: black-forest-labs/FLUX.2-klein-4B
+    company: Black Forest Labs
+    input_modalities: [text, image]
+    source_url: https://huggingface.co/black-forest-labs/FLUX.2-klein-4B
+  - model_id: black-forest-labs/FLUX.2-klein-9B
+    company: Black Forest Labs
+    input_modalities: [text, image]
+    source_url: https://huggingface.co/black-forest-labs/FLUX.2-klein-9B
+  - model_id: stabilityai/stable-diffusion-3.5-large
+    company: Stability AI
+    input_modalities: [text]
+    source_url: https://huggingface.co/stabilityai/stable-diffusion-3.5-large
+  - model_id: stabilityai/stable-diffusion-3.5-large-turbo
+    company: Stability AI
+    input_modalities: [text]
+    source_url: https://huggingface.co/stabilityai/stable-diffusion-3.5-large-turbo
+  - model_id: stabilityai/stable-diffusion-3.5-medium
+    company: Stability AI
+    input_modalities: [text]
+    source_url: https://huggingface.co/stabilityai/stable-diffusion-3.5-medium
+  - model_id: stabilityai/stable-diffusion-3-medium
+    company: Stability AI
+    input_modalities: [text]
+    source_url: https://huggingface.co/stabilityai/stable-diffusion-3-medium
+  - model_id: stabilityai/stable-diffusion-xl-base-1.0
+    company: Stability AI
+    input_modalities: [text]
+    source_url: https://huggingface.co/stabilityai/stable-diffusion-xl-base-1.0
+  - model_id: runwayml/stable-diffusion-v1-5
+    company: Stability AI
+    input_modalities: [text]
+    source_url: https://huggingface.co/runwayml/stable-diffusion-v1-5
+  - model_id: HiDream-ai/HiDream-O1-Image
+    company: HiDream
+    input_modalities: [text, image]
+    source_url: https://huggingface.co/HiDream-ai/HiDream-O1-Image
+  - model_id: HiDream-ai/HiDream-O1-Image-Dev
+    company: HiDream
+    input_modalities: [text, image]
+    source_url: https://huggingface.co/HiDream-ai/HiDream-O1-Image-Dev
+  - model_id: HiDream-ai/HiDream-I1-Dev
+    company: HiDream
+    input_modalities: [text]
+    source_url: https://huggingface.co/HiDream-ai/HiDream-I1-Dev
+  - model_id: HiDream-ai/HiDream-I1-Fast
+    company: HiDream
+    input_modalities: [text]
+    source_url: https://huggingface.co/HiDream-ai/HiDream-I1-Fast
+  - model_id: HiDream-ai/HiDream-E1-Full
+    company: HiDream
+    input_modalities: [text, image]
+    source_url: https://huggingface.co/HiDream-ai/HiDream-E1-Full
+  - model_id: HiDream-ai/HiDream-E1-1
+    company: HiDream
+    input_modalities: [text, image]
+    source_url: https://huggingface.co/HiDream-ai/HiDream-E1-1
+  - model_id: deepseek-ai/Janus-Pro-7B
+    company: DeepSeek
+    input_modalities: [text, image]
+    source_url: https://huggingface.co/deepseek-ai/Janus-Pro-7B
+  - model_id: deepseek-ai/Janus-Pro-1B
+    company: DeepSeek
+    input_modalities: [text, image]
+    source_url: https://huggingface.co/deepseek-ai/Janus-Pro-1B
+  - model_id: Efficient-Large-Model/Sana_Sprint_1.6B_1024px_diffusers
+    company: NVIDIA
+    input_modalities: [text]
+    source_url: https://huggingface.co/Efficient-Large-Model/Sana_Sprint_1.6B_1024px_diffusers
+  - model_id: Alpha-VLLM/Lumina-Image-2.0
+    company: OpenGVLab
+    input_modalities: [text]
+    source_url: https://huggingface.co/Alpha-VLLM/Lumina-Image-2.0
+  - model_id: ByteDance-Seed/BAGEL-7B-MoT
+    company: ByteDance / Doubao-Seed
+    input_modalities: [text, image]
+    source_url: https://huggingface.co/ByteDance-Seed/BAGEL-7B-MoT
+  - model_id: FoundationVision/Infinity
+    company: ByteDance / Doubao-Seed
+    input_modalities: [text]
+    source_url: https://huggingface.co/FoundationVision/Infinity
+  - model_id: Kwai-Kolors/Kolors
+    company: Kuaishou / Kling
+    input_modalities: [text]
+    source_url: https://huggingface.co/Kwai-Kolors/Kolors
+  - model_id: briaai/FIBO
+    company: Bria
+    input_modalities: [text]
+    source_url: https://huggingface.co/briaai/FIBO
+  - model_id: playgroundai/playground-v2.5-1024px-aesthetic
+    company: Playground AI
+    input_modalities: [text]
+    source_url: https://huggingface.co/playgroundai/playground-v2.5-1024px-aesthetic
+  - model_id: tencent/SRPO
+    company: Tencent / Hunyuan
+    input_modalities: [text]
+    source_url: https://huggingface.co/tencent/SRPO
+  - model_id: stepfun-ai/Step1X-Edit
+    company: StepFun
+    input_modalities: [text, image]
+    source_url: https://huggingface.co/stepfun-ai/Step1X-Edit
+  - model_id: Tongyi-MAI/Z-Image-Turbo
+    company: Alibaba / Qwen
+    input_modalities: [text]
+    source_url: https://huggingface.co/Tongyi-MAI/Z-Image-Turbo
+  - model_id: flux-pro-1.1
+    company: Black Forest Labs
+    input_modalities: [text]
+    source_url: https://docs.bfl.ai/
+  - model_id: flux-pro-1.1-ultra
+    company: Black Forest Labs
+    input_modalities: [text]
+    source_url: https://docs.bfl.ai/
+  - model_id: flux-kontext-pro
+    company: Black Forest Labs
+    input_modalities: [text, image]
+    source_url: https://docs.bfl.ai/
+  - model_id: flux-kontext-max
+    company: Black Forest Labs
+    input_modalities: [text, image]
+    source_url: https://docs.bfl.ai/
+  - model_id: flux-2-pro
+    company: Black Forest Labs
+    input_modalities: [text, image]
+    source_url: https://docs.bfl.ai/
+  - model_id: flux-2-flex
+    company: Black Forest Labs
+    input_modalities: [text, image]
+    source_url: https://docs.bfl.ai/
+  - model_id: flux-2-max
+    company: Black Forest Labs
+    input_modalities: [text, image]
+    source_url: https://docs.bfl.ai/
+  - model_id: dall-e-2
+    company: OpenAI
+    input_modalities: [text]
+    source_url: https://platform.openai.com/docs/models/dall-e-2
+  - model_id: MAI-Image-2.5
+    company: Microsoft
+    input_modalities: [text, image]
+    source_url: https://ai.azure.com/catalog
+  - model_id: MAI-Image-2.5-Pro
+    company: Microsoft
+    input_modalities: [text, image]
+    source_url: https://ai.azure.com/catalog
+  - model_id: MAI-Image-2.5-Flash
+    company: Microsoft
+    input_modalities: [text, image]
+    source_url: https://ai.azure.com/catalog
+  - model_id: imagen-3.0-generate-002
+    company: Google
+    input_modalities: [text]
+    source_url: https://ai.google.dev/gemini-api/docs/imagen
+  - model_id: Qwen/Qwen-Image-Max
+    company: Alibaba / Qwen
+    input_modalities: [text]
+    source_url: https://help.aliyun.com/zh/model-studio/
+  - model_id: Qwen/Qwen-Image-Edit-Max
+    company: Alibaba / Qwen
+    input_modalities: [text, image]
+    source_url: https://help.aliyun.com/zh/model-studio/
+  - model_id: Wan-AI/Wan2.6-T2I
+    company: Alibaba / Qwen
+    input_modalities: [text]
+    source_url: https://help.aliyun.com/zh/model-studio/
+  - model_id: Wan-AI/Wan2.6-Image-Edit
+    company: Alibaba / Qwen
+    input_modalities: [text, image]
+    source_url: https://help.aliyun.com/zh/model-studio/
+  - model_id: Wan-AI/Wan2.7-Image-Edit
+    company: Alibaba / Qwen
+    input_modalities: [text, image]
+    source_url: https://help.aliyun.com/zh/model-studio/
+  - model_id: ByteDance/Seedream-4
+    company: ByteDance / Doubao-Seed
+    input_modalities: [text]
+    source_url: https://www.volcengine.com/docs/82379/1330310
+  - model_id: Bria/Bria-3.2
+    company: Bria
+    input_modalities: [text]
+    source_url: https://docs.bria.ai/
+  - model_id: Bria/fibo_edit
+    company: Bria
+    input_modalities: [text, image]
+    source_url: https://docs.bria.ai/
+  - model_id: PrunaAI/p-image
+    company: Pruna AI
+    input_modalities: [text]
+    source_url: https://docs.pruna.ai/
+  - model_id: PrunaAI/p-image-Edit
+    company: Pruna AI
+    input_modalities: [text, image]
+    source_url: https://docs.pruna.ai/
+  - model_id: nvidia/Cosmos3-Super
+    company: NVIDIA
+    input_modalities: [text]
+    source_url: https://build.nvidia.com/nvidia
+  - model_id: nvidia/Cosmos3-Nano
+    company: NVIDIA
+    input_modalities: [text]
+    source_url: https://build.nvidia.com/nvidia

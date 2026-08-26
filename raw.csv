@@ -588,3 +588,65 @@ mercury-edit-2,Inception Labs,Coding,Undisclosed,Undisclosed,Online: Inception A
 Motif-Technologies/Motif-3,Motif Technologies,General-Purpose,314B,13.2B/token,Offline: Official Hugging Face / Open Weight,Yes
 Motif-Technologies/Motif-3-Base,Motif Technologies,General-Purpose,314B,13.2B/token,Offline: Official Hugging Face / Open Weight,No
 meituan-longcat/LongCat-Flash-Lite-Sparse,Meituan / LongCat,General-Purpose,69B,3B/token,Offline: Official Hugging Face / Open Weight,No
+black-forest-labs/FLUX.1-dev,Black Forest Labs,Image Generation,12B,12B,Offline: Official Hugging Face / Open Weight,No
+black-forest-labs/FLUX.1-schnell,Black Forest Labs,Image Generation,12B,12B,Offline: Official Hugging Face / Open Weight,No
+black-forest-labs/FLUX.1-Kontext-dev,Black Forest Labs,Image Generation,12B,12B,Offline: Official Hugging Face / Open Weight,No
+black-forest-labs/FLUX.1-Krea-dev,Black Forest Labs,Image Generation,12B,12B,Offline: Official Hugging Face / Open Weight,No
+black-forest-labs/FLUX.2-dev,Black Forest Labs,Image Generation,32B,32B,Offline: Official Hugging Face / Open Weight,No
+black-forest-labs/FLUX.2-klein-4B,Black Forest Labs,Image Generation,4B,4B,Offline: Official Hugging Face / Open Weight,No
+black-forest-labs/FLUX.2-klein-9B,Black Forest Labs,Image Generation,9B,9B,Offline: Official Hugging Face / Open Weight,No
+flux-pro-1.1,Black Forest Labs,Image Generation,,,Online: API,No
+flux-pro-1.1-ultra,Black Forest Labs,Image Generation,,,Online: API,No
+flux-kontext-pro,Black Forest Labs,Image Generation,,,Online: API,No
+flux-kontext-max,Black Forest Labs,Image Generation,,,Online: API,No
+flux-2-pro,Black Forest Labs,Image Generation,,,Online: API,No
+flux-2-flex,Black Forest Labs,Image Generation,,,Online: API,No
+flux-2-max,Black Forest Labs,Image Generation,,,Online: API,No
+stabilityai/stable-diffusion-3.5-large,Stability AI,Image Generation,8B,8B,Offline: Official Hugging Face / Open Weight,No
+stabilityai/stable-diffusion-3.5-large-turbo,Stability AI,Image Generation,8B,8B,Offline: Official Hugging Face / Open Weight,No
+stabilityai/stable-diffusion-3.5-medium,Stability AI,Image Generation,2.5B,2.5B,Offline: Official Hugging Face / Open Weight,No
+stabilityai/stable-diffusion-3-medium,Stability AI,Image Generation,2B,2B,Offline: Official Hugging Face / Open Weight,No
+stabilityai/stable-diffusion-xl-base-1.0,Stability AI,Image Generation,3.5B,3.5B,Offline: Official Hugging Face / Open Weight,No
+runwayml/stable-diffusion-v1-5,Stability AI,Image Generation,0.86B,0.86B,Offline: Official Hugging Face / Open Weight,No
+HiDream-ai/HiDream-O1-Image,HiDream,Image Generation,8B,8B,Offline: Official Hugging Face / Open Weight,No
+HiDream-ai/HiDream-O1-Image-Dev,HiDream,Image Generation,8B,8B,Offline: Official Hugging Face / Open Weight,No
+HiDream-ai/HiDream-I1-Dev,HiDream,Image Generation,17B,17B,Offline: Official Hugging Face / Open Weight,No
+HiDream-ai/HiDream-I1-Fast,HiDream,Image Generation,17B,17B,Offline: Official Hugging Face / Open Weight,No
+HiDream-ai/HiDream-E1-Full,HiDream,Image Generation,17B,17B,Offline: Official Hugging Face / Open Weight,No
+HiDream-ai/HiDream-E1-1,HiDream,Image Generation,17B,17B,Offline: Official Hugging Face / Open Weight,No
+deepseek-ai/Janus-Pro-7B,DeepSeek,Image Generation,7B,7B,Offline: Official Hugging Face / Open Weight,No
+deepseek-ai/Janus-Pro-1B,DeepSeek,Image Generation,1B,1B,Offline: Official Hugging Face / Open Weight,No
+Efficient-Large-Model/Sana_Sprint_1.6B_1024px_diffusers,NVIDIA,Image Generation,1.6B,1.6B,Offline: Official Hugging Face / Open Weight,No
+Alpha-VLLM/Lumina-Image-2.0,OpenGVLab,Image Generation,2.6B,2.6B,Offline: Official Hugging Face / Open Weight,No
+ByteDance-Seed/BAGEL-7B-MoT,ByteDance / Doubao-Seed,Image Generation,7B,7B,Offline: Official Hugging Face / Open Weight,No
+FoundationVision/Infinity,ByteDance / Doubao-Seed,Image Generation,8B,8B,Offline: Official Hugging Face / Open Weight,No
+Kwai-Kolors/Kolors,Kuaishou / Kling,Image Generation,2.6B,2.6B,Offline: Official Hugging Face / Open Weight,No
+briaai/FIBO,Bria,Image Generation,8B,8B,Offline: Official Hugging Face / Open Weight,No
+playgroundai/playground-v2.5-1024px-aesthetic,Playground AI,Image Generation,2.6B,2.6B,Offline: Official Hugging Face / Open Weight,No
+tencent/SRPO,Tencent / Hunyuan,Image Generation,,,Offline: Official Hugging Face / Open Weight,No
+stepfun-ai/Step1X-Edit,StepFun,Image Generation,,,Offline: Official Hugging Face / Open Weight,No
+Tongyi-MAI/Z-Image-Turbo,Alibaba / Qwen,Image Generation,6B,6B,Offline: Official Hugging Face / Open Weight,No
+gpt-image-1,OpenAI,Image Generation,,,Online: ChatGPT / API,No
+gpt-image-1-mini,OpenAI,Image Generation,,,Online: ChatGPT / API,No
+gpt-image-1.5,OpenAI,Image Generation,,,Online: ChatGPT / API,No
+dall-e-3,OpenAI,Image Generation,,,Online: ChatGPT / API (Legacy),No
+dall-e-2,OpenAI,Image Generation,,,Online: ChatGPT / API (Legacy),No
+MAI-Image-2.5,Microsoft,Image Generation,,,Online: Microsoft Foundry,No
+MAI-Image-2.5-Pro,Microsoft,Image Generation,,,Online: Microsoft Foundry,No
+MAI-Image-2.5-Flash,Microsoft,Image Generation,,,Online: Microsoft Foundry,No
+imagen-3.0-generate-002,Google,Image Generation,,,Online: Gemini API (Legacy),No
+imagen-4.0-fast-generate-001,Google,Image Generation,,,Online: Gemini API,No
+imagen-4.0-ultra-generate-001,Google,Image Generation,,,Online: Gemini API,No
+Qwen/Qwen-Image-Max,Alibaba / Qwen,Image Generation,,,Online: DashScope API,No
+Qwen/Qwen-Image-Edit-Max,Alibaba / Qwen,Image Generation,,,Online: DashScope API,No
+Wan-AI/Wan2.6-T2I,Alibaba / Qwen,Image Generation,,,Online: DashScope API,No
+Wan-AI/Wan2.6-Image-Edit,Alibaba / Qwen,Image Generation,,,Online: DashScope API,No
+Wan-AI/Wan2.7-Image-Edit,Alibaba / Qwen,Image Generation,,,Online: DashScope API,No
+ByteDance/Seedream-4,ByteDance / Doubao-Seed,Image Generation,,,Online: Volcano Ark API,No
+ByteDance/Seedream-4.5,ByteDance / Doubao-Seed,Image Generation,,,Online: Volcano Ark API,No
+Bria/Bria-3.2,Bria,Image Generation,,,Online: API,No
+Bria/fibo_edit,Bria,Image Generation,,,Online: API,No
+PrunaAI/p-image,Pruna AI,Image Generation,,,Online: API,No
+PrunaAI/p-image-Edit,Pruna AI,Image Generation,,,Online: API,No
+nvidia/Cosmos3-Super,NVIDIA,Image Generation,,,Online: API,No
+nvidia/Cosmos3-Nano,NVIDIA,Image Generation,,,Online: API,No

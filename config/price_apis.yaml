@@ -199,3 +199,21 @@ apis:
       output_per_1m: output_price
       cache_read_per_1m: cached_price
       cache_write_per_1m: caching_price
+
+  # Novita：OpenAI 兼容接口，免 API key。仅文本模型（实测 150 个，图像为 0）。
+  # ⚠️ unit 是实测定的，没有猜：原始字段 input_token_price_per_m 是万分之一美元/1M
+  #    （glm-5.3 原始值 14000，接口自带的 price_per_m_decimal 正好写着 "1.4"）。
+  #    锚点复核：qwen3-32b 1000->$0.10（官方≈$0.1）、llama-3.1-8b 200->$0.02（≈$0.02）、
+  #    deepseek-v3.1 2700->$0.27（≈$0.3）。因此这里直接取 *_decimal 字段，配 per_1m。
+  - id: novita
+    name: Novita AI
+    url: https://api.novita.ai/v3/openai/models
+    weblink: https://novita.ai/models
+    list_path: data
+    id_fields: [id]
+    unit: per_1m
+    tier: 3
+    fields:
+      input_per_1m: pricing.prompt.price_per_m_decimal
+      output_per_1m: pricing.completion.price_per_m_decimal
+      cache_read_per_1m: pricing.input_cache_read.price_per_m_decimal
