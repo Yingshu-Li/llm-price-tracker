@@ -1,10 +1,10 @@
 # 数据源清单
 
-由 `update_prices.py` 于 2026-08-26T01:36:46 自动生成。
+由 `update_prices.py` 于 2026-08-26T10:36:28 自动生成。
 
 | 数据 Provider | 网页 | 抓取地址 | 许可 | 状态 | 记录数 |
 | --- | --- | --- | --- | --- | --- |
-| 302.AI | https://302.ai/price | `https://price.302.ai/en/pricing_website/` | 公开价格表 | ✅ | 0 |
+| 302.AI | https://302.ai/price | `https://price.302.ai/en/pricing_website/` | 公开价格表 | ✅ | 3 |
 | Anthropic 官方文档 | https://platform.claude.com/docs/en/about-claude/pricing | `https://platform.claude.com/docs/en/about-claude/pricing.md` | 厂商官方文档 | ✅ | 31 |
 | AWS Bedrock | https://aws.amazon.com/bedrock/pricing/ | `https://pricing.us-east-1.amazonaws.com/offers/v1.0/aws/AmazonBedrock/` | AWS 公开价格表 | ✅ | 793 |
 | AWS Bedrock | https://aws.amazon.com/bedrock/pricing/ | `https://pricing.us-east-1.amazonaws.com/offers/v1.0/aws/AmazonBedrockF` | AWS 公开价格表 | ✅ | 235 |
@@ -13,18 +13,19 @@
 | 百度千帆官方价格 | https://cloud.baidu.com/doc/qianfan/s/wmh4sv6ya | `https://cloud.baidu.com/doc/qianfan/s/wmh4sv6ya` | 厂商官方价格页 | ✅ | 17 |
 | Chutes | https://chutes.ai | `https://llm.chutes.ai/v1/models` | 公开 API | ✅ | 14 |
 | Cortecs | https://cortecs.ai | `https://api.cortecs.ai/v1/models` | 公开 API | ✅ | 101 |
-| DeepInfra | https://deepinfra.com/models | `https://api.deepinfra.com/models/list` | 公开 API | ✅ | 219 |
+| DeepInfra | https://deepinfra.com/models | `https://api.deepinfra.com/models/list` | 公开 API | ✅ | 222 |
 | DeepSeek API 官方价格（人工核验） | https://api-docs.deepseek.com/quick_start/pricing/ | `https://api-docs.deepseek.com/quick_start/pricing/` | 厂商官方价格页（人工核验快照） | ✅ | 3 |
 | European Central Bank reference rates | https://data.ecb.europa.eu/key-figures/ecb-interest-rates-and-exchange-rates/exchange-rates | `https://www.ecb.europa.eu/stats/eurofxref/eurofxref-daily.xml` | ECB reference rates | ✅ | 152 |
 | Empirio Labs | https://empiriolabs.ai | `https://api.empiriolabs.ai/v1/models` | 公开 API | ✅ | 69 |
-| HuggingFace Router | https://huggingface.co/models?inference_provider=all | `https://router.huggingface.co/v1/models` | 公开 API | ✅ | 187 |
+| HuggingFace Router | https://huggingface.co/models?inference_provider=all | `https://router.huggingface.co/v1/models` | 公开 API | ✅ | 193 |
 | iFLYTEK 星火 MaaS 官方价格 | https://maas.xfyun.cn/modelSquare | `https://maas.xfyun.cn/api/v1/gpt-finetune/model/base/list-v2?page=1&si` | 厂商官方公开接口 | ✅ | 2 |
 | LiteLLM | https://github.com/BerriAI/litellm | `https://cdn.jsdelivr.net/gh/BerriAI/litellm@main/model_prices_and_cont` | MIT | ✅ | 2378 |
-| models.dev | https://models.dev | `https://models.dev/api.json` | MIT | ✅ | 5882 |
+| models.dev | https://models.dev | `https://models.dev/api.json` | MIT | ✅ | 5889 |
 | Moonshot AI / Kimi 官方文档 | https://platform.moonshot.ai/docs/pricing/chat-k3 | `https://platform.kimi.ai/docs/pricing/chat-k3.md` | 厂商官方文档 | ✅ | 10 |
 | Moonshot AI / Kimi 官方文档 | https://platform.moonshot.ai/docs/pricing/chat-k3 | `https://platform.kimi.ai/docs/pricing/chat-k27-code.md` | 厂商官方文档 | ✅ | 10 |
 | Moonshot AI / Kimi 官方文档 | https://platform.moonshot.ai/docs/pricing/chat-k3 | `https://platform.kimi.ai/docs/pricing/chat-k26.md` | 厂商官方文档 | ✅ | 10 |
 | Moonshot AI / Kimi 官方文档 | https://platform.moonshot.ai/docs/pricing/chat-k3 | `https://platform.kimi.ai/docs/pricing/chat-v1.md` | 厂商官方文档 | ✅ | 10 |
+| Novita AI | https://novita.ai/models | `https://api.novita.ai/v3/openai/models` | 公开 API | ✅ | 123 |
 | ofox | https://ofox.ai | `https://api.ofox.ai/v2/models/catalog?include=provider_price&limit=100` | 公开 API | ✅ | 138 |
 | OpenAI 官方文档 | https://platform.openai.com/docs/pricing | `https://developers.openai.com/api/docs/pricing.md` | 厂商官方文档 | ✅ | 217 |
 | OpenRouter | https://openrouter.ai/models | `https://openrouter.ai/api/v1/models` | 公开 API | ✅ | 336 |
@@ -71,16 +72,16 @@ models.dev 的 `google.ts` 里写着 `cost: existing.cost`（价格取自手工�
 
 - openai_md: 未识别的列头 `portrait`
 - openai_md: 未识别的列头 `category`
-- openai_md: 未识别的列头 `use case`
 - openai_md: 未识别的列头 `training`
-- openai_md: 未识别的列头 `pricing`
-- openai_md: 未识别的列头 `size`
+- openai_md: 未识别的列头 `use case`
+- openai_md: 未识别的列头 `landscape`
 - openai_md: 未识别的列头 `details`
 - openai_md: 未识别的列头 `estimated cost`
-- openai_md: 未识别的列头 `landscape`
+- openai_md: 未识别的列头 `size`
+- openai_md: 未识别的列头 `pricing`
 - openai_md: 跳过表格「Grouped Pricing Table data」— 没有可识别的价格列
-- anthropic_md: 未识别的列头 `tool choice`
 - anthropic_md: 未识别的列头 `additional input tokens`
+- anthropic_md: 未识别的列头 `tool choice`
 - anthropic_md: 未识别的列头 `tool use system prompt token count`
 - anthropic_md: 跳过表格「Claude Platform on AWS pricing」— 找不到模型/工具名列
 - anthropic_md: 跳过表格「Claude in Microsoft Foundry pricing」— 找不到模型/工具名列
@@ -96,4 +97,3 @@ models.dev 的 `google.ts` 里写着 `cost: existing.cost`（价格取自手工�
 - zhipu_md: 未识别的列头 `cached input storage`
 - volcengine_official_verified: 官方页无法稳定服务端渲染，当前使用 2026-08-25T00:00:00+10:00 人工核验快照；URL 与原文摘录已保留
 - deepseek_official_verified: 官方页无法稳定服务端渲染，当前使用 2026-08-25T00:00:00+10:00 人工核验快照；URL 与原文摘录已保留
-- ai302_html: 未找到 China AI Model / 302.AI 价格表
