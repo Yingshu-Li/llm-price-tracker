@@ -4,7 +4,7 @@
   "weblink": "https://data.ecb.europa.eu/key-figures/ecb-interest-rates-and-exchange-rates/exchange-rates",
   "base": "EUR",
   "as_of": "2026-08-27",
-  "fetched_at": "2026-08-28T03:27:48+00:00",
+  "fetched_at": "2026-08-28T10:27:01+00:00",
   "rates_per_eur": {
     "AUD": 1.6196,
     "BRL": 5.9879,
