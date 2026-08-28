@@ -126,15 +126,26 @@ prices:
     input_per_1m: 1
     output_per_1m: 2
     snippet: "model-a | 1元 input | 2元 output"
+  - source: official_verified
+    model_id: video-a
+    currency: USD
+    unit: USD base fee plus USD per output second
+    per_call: 0.05
+    per_second: 0.01
+    qualifier: 540p
+    snippet: "video-a | starts at $0.05, +$0.01/sec"
 """
         with tempfile.TemporaryDirectory() as directory:
             path = Path(directory) / "prices.yaml"
             path.write_text(content, encoding="utf-8")
             records, warnings, fetches = load_verified_snapshots(path)
-        self.assertEqual(1, len(records))
+        self.assertEqual(2, len(records))
         self.assertEqual("https://example.test/pricing", records[0].source_url)
         self.assertEqual("CNY", records[0].currency)
-        self.assertEqual(1, fetches[0]["n_records"])
+        self.assertEqual((0.05, 0.01, "540p"), (
+            records[1].per_call, records[1].per_second, records[1].qualifier,
+        ))
+        self.assertEqual(2, fetches[0]["n_records"])
         self.assertTrue(any("人工核验快照" in warning for warning in warnings))
 
 

@@ -12,6 +12,7 @@ models.dev 的 google.ts 里写着 `cost: existing.cost`（价格取自本地手
 from __future__ import annotations
 
 import json
+import re
 from pathlib import Path
 from typing import Any
 
@@ -35,6 +36,41 @@ LITELLM_WEBLINK = "https://github.com/BerriAI/litellm"
 _LITELLM_PROVIDER_COMPANIES = {
     "cohere": "Cohere",
 }
+
+# ── 图像质量/尺寸档 ────────────────────────────────────────────
+# LiteLLM 把图像模型的档位编码在 key 的前缀段里：
+#   low/1024-x-1024/gpt-image-1      $0.011/张
+#   medium/1024-x-1024/gpt-image-1   $0.042/张
+#   high/1024-x-1024/gpt-image-1     $0.167/张
+# 只取最后一段当 model_id 会把这三档压成一个，最低档看起来就是"这个模型的
+# 按张价"（实测差 15 倍）。与上下文分档同理：**一档一行**，不合并。
+_IMG_QUALITY = re.compile(r"^(low|medium|high|hd|standard)$", re.I)
+_IMG_SIZE = re.compile(r"^\d+-x-\d+$|^max-x-max$", re.I)
+_IMG_STEPS = re.compile(r"^(?:\d+|max)-steps$", re.I)
+
+
+def _image_qualifier(key: str) -> str | None:
+    """从 LiteLLM 的 key 前缀里提取质量/尺寸/步数档。
+
+    非档位的前缀段（`azure`、`fal_ai` 这类服务方）一律忽略——它们是卖家，
+    不是档位。完全没有档位信息就返回 None（那是该模型的基准价）。
+
+    ⚠️ 缺省质量归一到 `standard`：LiteLLM 同时存在 `1024-x-1024/gpt-image-1.5`
+    和 `standard/1024-x-1024/gpt-image-1.5`，两者价格都是 $0.009，是同一档的
+    两种写法。不归一就会分裂成两行重复档位。
+    """
+    quality = size = steps = None
+    for segment in key.split("/")[:-1]:
+        if _IMG_QUALITY.match(segment):
+            quality = segment.lower()
+        elif _IMG_SIZE.match(segment):
+            size = segment.lower()
+        elif _IMG_STEPS.match(segment):
+            steps = segment.lower()
+    if size is None and steps is None:
+        # 只有 `standard/dall-e-3` 这种没有尺寸的，不构成可比较的档位
+        return None
+    return " / ".join(filter(None, [quality or "standard", size, steps]))
 
 
 def local_path(name: str) -> Path:
@@ -179,8 +215,17 @@ def parse_litellm(
         # 不设这道门禁，$0.00012/张 会当成真实按张价流进通用表。
         mode = str(entry.get("mode") or "")
         GEN_MODES = {"image_generation", "image_edit", "video_generation"}
+        # 按张价上游有两套字段名：多数条目写 output_cost_per_image，而 OpenAI
+        # 直连的 `dall-e-2`/`dall-e-3` 写的是 input_cost_per_image（$0.02/$0.04）。
+        # 只读 output_ 的话这两个**官方价拿不到**，表里只剩转售商 aiml 的
+        # $0.026/$0.052，官方牌价一列会空着。
+        # ⚠️ 这个字段只在 GEN_MODES 下才是「每张产出图」；chat 模型身上的
+        #    input_cost_per_image 是「每张输入图」，语义完全不同，绝不能取。
         flat = {
-            "per_image": entry.get("output_cost_per_image") if mode in GEN_MODES else None,
+            "per_image": (
+                entry.get("output_cost_per_image")
+                or entry.get("input_cost_per_image")
+            ) if mode in GEN_MODES else None,
             "per_second": (
                 entry.get("output_cost_per_second")
                 or entry.get("output_cost_per_video_per_second")
@@ -191,6 +236,14 @@ def parse_litellm(
             for k, v in flat.items()
             if isinstance(v, (int, float)) and v > 0
         }
+        # 生成类模型身上的**占位** token 价要丢掉。fireworks_ai 给旗下每个
+        # image_generation 条目都填了同一个 input/output_cost_per_token=1.3e-10
+        #（即 $0.00013/1M）——它按步数计费，token 价只是占位符。真实的图像
+        # token 价在 $0.08/1M（digitalocean 的 sd3.5）到 $5/1M（gpt-image-1）
+        # 这个量级，与占位值差着三个数量级，不会被这道门槛误伤。
+        # 只在 GEN_MODES 下生效：聊天模型的低价是真价，不能碰。
+        if mode in GEN_MODES:
+            prices = {k: v for k, v in prices.items() if v > 0.001}
         prices.update(flat)
         if not prices:
             continue
@@ -258,6 +311,9 @@ def parse_litellm(
                 ),
                 source_version=source_version,
                 model_id=model_id,
+                # 只有生成类模型的前缀段才是质量/尺寸档；聊天模型的前缀
+                # （`bedrock/ap-northeast-1/...`）是服务方，绝不能当档位。
+                qualifier=_image_qualifier(key) if mode in GEN_MODES else None,
                 provider=f"litellm/{entry.get('litellm_provider') or '?'}",
                 context_length=entry.get("max_input_tokens"),
                 max_output=entry.get("max_output_tokens"),

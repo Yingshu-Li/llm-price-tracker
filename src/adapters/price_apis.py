@@ -112,6 +112,7 @@ def parse_api(
     fields: dict[str, str] = spec.get("fields") or {}
     id_fields: list[str] = spec.get("id_fields") or ["id"]
     nested = spec.get("nested_list")
+    qualifier_fields: list[str] = spec.get("qualifier_fields") or []
     skip_prefixes = tuple(spec.get("skip_id_prefixes") or ())
     skip_if_true = spec.get("skip_if_true") or []
 
@@ -150,7 +151,8 @@ def parse_api(
             free_tiers.setdefault(model_id, (spec.get("name") or spec["id"], link))
 
         # hf_router 这类把价格挂在 providers[] 数组里，每个托管方一条记录
-        containers = item.get(nested) if nested else None
+        # 嵌套价格表可以位于 pricing.video_duration_pricing 这类点号路径。
+        containers = _dig(item, nested) if nested else None
         buckets = (
             [c for c in containers if isinstance(c, dict)]
             if isinstance(containers, list)
@@ -195,6 +197,11 @@ def parse_api(
 
             snippet_parts = [f"{k}={_dig(bucket, v) or _dig(item, v)!r}" for k, v in fields.items()]
             snippet = f"{model_id} | " + " ".join(snippet_parts)
+            qualifier = ", ".join(
+                f"{field}={bucket[field]}"
+                for field in qualifier_fields
+                if bucket.get(field) is not None
+            ) or None
 
             try:
                 records.append(
@@ -213,6 +220,7 @@ def parse_api(
                         provider=provider,
                         currency=currency,
                         context_length=context_length,
+                        qualifier=qualifier,
                         raw={
                             "api": spec["id"],
                             "weblink": spec.get("weblink"),

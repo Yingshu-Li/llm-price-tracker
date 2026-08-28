@@ -51,6 +51,9 @@ def _record(
     input_price: float | None = None, output_price: float | None = None,
     cache_price: float | None = None, qualifier: str | None = None,
     context_length: int | None = None,
+    per_image: float | None = None, per_video: float | None = None,
+    per_second: float | None = None, per_call: float | None = None,
+    service_tier: str = "standard",
 ) -> PriceRecord:
     return PriceRecord(
         source=source,
@@ -65,8 +68,13 @@ def _record(
         input_per_1m=input_price,
         output_per_1m=output_price,
         cache_read_per_1m=cache_price,
+        per_image=per_image,
+        per_video=per_video,
+        per_second=per_second,
+        per_call=per_call,
         qualifier=qualifier,
         context_length=context_length,
+        service_tier=service_tier,
         currency=currency,
         source_version=source_version,
     )
@@ -321,7 +329,12 @@ def load_verified_snapshots(path: Path) -> tuple[list[PriceRecord], list[str], l
             input_price=item.get("input_per_1m"),
             output_price=item.get("output_per_1m"),
             cache_price=item.get("cache_read_per_1m"),
+            per_image=item.get("per_image"),
+            per_video=item.get("per_video"),
+            per_second=item.get("per_second"),
+            per_call=item.get("per_call"),
             qualifier=item.get("qualifier"),
+            service_tier=item.get("service_tier", "standard"),
         ))
         grouped[source["id"]] = grouped.get(source["id"], 0) + 1
     for source_id, count in grouped.items():

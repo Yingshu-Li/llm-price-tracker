@@ -14,6 +14,48 @@ sources:
     url: https://api-docs.deepseek.com/quick_start/pricing/
     verified_at: "2026-08-25T00:00:00+10:00"
 
+  - id: google_video_official_verified
+    name: Google Gemini API Veo 官方价格（人工核验）
+    provider: google-gemini-api
+    url: https://ai.google.dev/gemini-api/docs/pricing
+    verified_at: "2026-08-27T00:00:00+10:00"
+
+  - id: minimax_video_official_verified
+    name: MiniMax Video 官方按量价格（人工核验）
+    provider: minimax
+    url: https://platform.minimax.io/docs/guides/pricing-paygo
+    verified_at: "2026-08-27T00:00:00+10:00"
+
+  - id: runway_video_official_verified
+    name: Runway Dev 官方价格（人工核验）
+    provider: runway
+    url: https://docs.dev.runwayml.com/guides/pricing/
+    verified_at: "2026-08-27T00:00:00+10:00"
+
+  - id: luma_video_official_verified
+    name: Luma Agents Ray 3.2 官方价格（人工核验）
+    provider: luma
+    url: https://docs.agents.lumalabs.ai/guides/pricing
+    verified_at: "2026-08-27T00:00:00+10:00"
+
+  - id: vidu_video_official_verified
+    name: Vidu API 官方价格（人工核验）
+    provider: vidu
+    url: https://platform.vidu.com/docs/pricing
+    verified_at: "2026-08-27T00:00:00+10:00"
+
+  - id: pixverse_video_official_verified
+    name: PixVerse API 官方价格（人工核验）
+    provider: pixverse
+    url: https://docs.platform.pixverse.ai/pricing-796039m0
+    verified_at: "2026-08-27T00:00:00+10:00"
+
+  - id: alibaba_video_official_verified
+    name: Alibaba Model Studio Wan 官方价格（人工核验）
+    provider: alibaba-model-studio
+    url: https://help.aliyun.com/en/model-studio/model-pricing
+    verified_at: "2026-08-27T00:00:00+10:00"
+
 prices:
   - source: volcengine_official_verified
     model_id: doubao-seed-evolving
@@ -102,3 +144,277 @@ prices:
     output_per_1m: 0.66
     cache_read_per_1m: 0.007
     snippet: "deepseek-v4-flash-vision-exp | cache hit $0.007 | cache miss $0.22 | output $0.66 per 1M tokens | OFF-PEAK"
+
+  # ── Video Generation：非 token 价格保持原始量纲 ──
+  - source: google_video_official_verified
+    model_id: veo-3.1-generate-preview
+    currency: USD
+    unit: USD per output second
+    per_second: 0.40
+    qualifier: 720p/1080p, audio
+    snippet: "Veo 3.1 Standard video with audio | 720p and 1080p | $0.40 per second"
+  - source: google_video_official_verified
+    model_id: veo-3.1-generate-preview
+    currency: USD
+    unit: USD per output second
+    per_second: 0.60
+    qualifier: 4K, audio
+    snippet: "Veo 3.1 Standard video with audio | 4K | $0.60 per second"
+  - source: google_video_official_verified
+    model_id: veo-3.1-fast-generate-preview
+    currency: USD
+    unit: USD per output second
+    per_second: 0.10
+    qualifier: 720p, audio
+    snippet: "Veo 3.1 Fast video with audio | 720p | $0.10 per second"
+  - source: google_video_official_verified
+    model_id: veo-3.1-fast-generate-preview
+    currency: USD
+    unit: USD per output second
+    per_second: 0.12
+    qualifier: 1080p, audio
+    snippet: "Veo 3.1 Fast video with audio | 1080p | $0.12 per second"
+  - source: google_video_official_verified
+    model_id: veo-3.1-fast-generate-preview
+    currency: USD
+    unit: USD per output second
+    per_second: 0.30
+    qualifier: 4K, audio
+    snippet: "Veo 3.1 Fast video with audio | 4K | $0.30 per second"
+  - source: google_video_official_verified
+    model_id: veo-3.1-lite-generate-preview
+    currency: USD
+    unit: USD per output second
+    per_second: 0.05
+    qualifier: 720p, audio
+    snippet: "Veo 3.1 Lite video with audio | 720p | $0.05 per second"
+  - source: google_video_official_verified
+    model_id: veo-3.1-lite-generate-preview
+    currency: USD
+    unit: USD per output second
+    per_second: 0.08
+    qualifier: 1080p, audio
+    snippet: "Veo 3.1 Lite video with audio | 1080p | $0.08 per second"
+
+  - source: minimax_video_official_verified
+    model_id: MiniMax-H3
+    currency: USD
+    unit: USD per output second
+    per_second: 0.08
+    qualifier: 768p
+    snippet: "MiniMax-H3 | 768P | billed per second | $0.08 / second"
+  - source: minimax_video_official_verified
+    model_id: MiniMax-H3
+    currency: USD
+    unit: USD per output second
+    per_second: 0.13
+    qualifier: 2K
+    snippet: "MiniMax-H3 | 2K | billed per second | $0.13 / second"
+  - source: minimax_video_official_verified
+    model_id: MiniMax-Hailuo-2.3-Fast
+    currency: USD
+    unit: USD per generated video
+    per_video: 0.19
+    qualifier: 768p, 6s
+    snippet: "MiniMax-Hailuo-2.3-Fast | $0.19 per 768P, 6s video"
+  - source: minimax_video_official_verified
+    model_id: MiniMax-Hailuo-2.3
+    currency: USD
+    unit: USD per generated video
+    per_video: 0.28
+    qualifier: 768p, 6s
+    snippet: "MiniMax-Hailuo-2.3 | $0.28 per 768P, 6s video"
+  - source: minimax_video_official_verified
+    model_id: MiniMax-Hailuo-02
+    currency: USD
+    unit: USD per generated video
+    per_video: 0.10
+    qualifier: 512p, 6s
+    snippet: "MiniMax-Hailuo-02 | $0.10 per 512P, 6s video"
+
+  - source: runway_video_official_verified
+    model_id: gen4.5
+    currency: USD
+    unit: USD per output second
+    per_second: 0.12
+    snippet: "gen4.5 | 12 credits per second | 1 credit = $0.01"
+  - source: runway_video_official_verified
+    model_id: gen4_turbo
+    currency: USD
+    unit: USD per output second
+    per_second: 0.05
+    snippet: "gen4_turbo | 5 credits per second | 1 credit = $0.01"
+  - source: runway_video_official_verified
+    model_id: aleph2
+    currency: USD
+    unit: USD per output second
+    per_second: 0.28
+    snippet: "aleph2 | 28 credits per second (56 credit minimum) | 1 credit = $0.01"
+  - source: runway_video_official_verified
+    model_id: act_two
+    currency: USD
+    unit: USD per output second
+    per_second: 0.05
+    snippet: "act_two | 5 credits per second | 1 credit = $0.01"
+
+  - source: luma_video_official_verified
+    model_id: ray-3.2
+    currency: USD
+    unit: USD per generated video
+    per_video: 0.06
+    qualifier: video generation, 360p, 5s, SDR
+    snippet: "ray-3.2 video generation | 360p SDR | $0.0600 per 5s"
+  - source: luma_video_official_verified
+    model_id: ray-3.2
+    currency: USD
+    unit: USD per generated video
+    per_video: 0.30
+    qualifier: video generation, 720p, 5s, SDR
+    snippet: "ray-3.2 video generation | 720p SDR | $0.3000 per 5s"
+  - source: luma_video_official_verified
+    model_id: ray-3.2
+    currency: USD
+    unit: USD per generated video
+    per_video: 1.20
+    qualifier: video generation, 1080p, 5s, SDR
+    snippet: "ray-3.2 video generation | 1080p SDR | $1.2000 per 5s"
+
+  - source: vidu_video_official_verified
+    model_id: viduq3-pro
+    currency: USD
+    unit: USD per output second
+    per_second: 0.045
+    qualifier: 540p, standard
+    snippet: "Vidu Q3-pro | text/image/start-end to video | 540P | $0.045 / Second"
+  - source: vidu_video_official_verified
+    model_id: viduq3-turbo
+    currency: USD
+    unit: USD per output second
+    per_second: 0.035
+    qualifier: 540p, standard
+    snippet: "Vidu Q3-turbo | text/image/start-end to video | 540P | $0.035 / Second"
+  - source: vidu_video_official_verified
+    model_id: viduq3-pro-fast
+    currency: USD
+    unit: USD per output second
+    per_second: 0.10
+    qualifier: image-to-video, 720p, standard
+    snippet: "Vidu Q3-pro-fast | image-to-video | 720P | $0.10 / Second"
+  - source: vidu_video_official_verified
+    model_id: viduq3-mix
+    currency: USD
+    unit: USD per output second
+    per_second: 0.12
+    qualifier: reference-to-video, 720p, standard
+    snippet: "Vidu Q3-mix | reference-to-video | 720P | $0.12 / Second"
+  - source: vidu_video_official_verified
+    model_id: viduq2
+    currency: USD
+    unit: USD base fee plus USD per output second
+    per_call: 0.05
+    per_second: 0.01
+    qualifier: text-to-video, 540p
+    snippet: "Vidu Q2 | text-to-video | 540P | starts at $0.05, +$0.01/sec"
+  - source: vidu_video_official_verified
+    model_id: viduq2-turbo
+    currency: USD
+    unit: USD base fee plus USD per output second
+    per_call: 0.03
+    per_second: 0.01
+    qualifier: image/start-end-to-video, 540p
+    snippet: "Vidu Q2-turbo | image/start-end-to-video | 540P | starts at $0.03, +$0.01/sec"
+  - source: vidu_video_official_verified
+    model_id: viduq2-pro
+    currency: USD
+    unit: USD base fee plus USD per output second
+    per_call: 0.04
+    per_second: 0.025
+    qualifier: image/start-end-to-video, 540p
+    snippet: "Vidu Q2-pro | image/start-end-to-video | 540P | starts at $0.04, +$0.025/sec"
+  - source: vidu_video_official_verified
+    model_id: viduq2-pro-fast
+    currency: USD
+    unit: USD base fee plus USD per output second
+    per_call: 0.04
+    per_second: 0.01
+    qualifier: image/start-end-to-video, 720p
+    snippet: "Vidu Q2-pro-fast | image/start-end-to-video | 720P | starts at $0.04, +$0.01/sec"
+  - source: vidu_video_official_verified
+    model_id: viduq1
+    currency: USD
+    unit: USD per generated video
+    per_video: 0.40
+    qualifier: text/image/reference/start-end-to-video, 1080p, 5s
+    snippet: "Vidu Q1 | 1080P | 5S | $0.40 per video"
+
+  - source: pixverse_video_official_verified
+    model_id: pixverse-c1
+    currency: USD
+    unit: USD per output second
+    per_second: 0.06
+    qualifier: 360p, no audio, direct credit purchase
+    snippet: "PixVerse C1 | 360p | 6 credits per second without audio | $0.01 per credit"
+  - source: pixverse_video_official_verified
+    model_id: pixverse-v6
+    currency: USD
+    unit: USD per output second
+    per_second: 0.05
+    qualifier: 360p, no audio, direct credit purchase
+    snippet: "PixVerse V6 | 360p | 5 credits per second without audio | $0.01 per credit"
+  - source: pixverse_video_official_verified
+    model_id: pixverse-v5.6
+    currency: USD
+    unit: USD per generated video
+    per_video: 0.45
+    qualifier: 720p, 5s, no audio, direct credit purchase
+    snippet: "PixVerse V5.6 | 720p | 5s | 45 credits without audio | $0.01 per credit"
+  - source: pixverse_video_official_verified
+    model_id: pixverse-v5.5
+    currency: USD
+    unit: USD per generated video
+    per_video: 0.45
+    qualifier: 720p, 5s, single clip, no audio, direct credit purchase
+    snippet: "PixVerse V5.5 | 720p | 5s single clip | 45 credits without audio | $0.01 per credit"
+
+  - source: alibaba_video_official_verified
+    model_id: wan2.5-t2v-preview
+    currency: CNY
+    unit: CNY per output second
+    per_second: 0.366961
+    qualifier: Singapore, 480p
+    snippet: "wan2.5-t2v-preview | Singapore | 480P | CNY 0.366961/second"
+  - source: alibaba_video_official_verified
+    model_id: wan2.6-t2v
+    currency: CNY
+    unit: CNY per output second
+    per_second: 0.60
+    qualifier: China/Global, 720p
+    snippet: "wan2.6-t2v | 720P | CNY 0.6/second"
+  - source: alibaba_video_official_verified
+    model_id: wan2.6-i2v
+    currency: CNY
+    unit: CNY per output second
+    per_second: 0.60
+    qualifier: China, 720p, audio video
+    snippet: "wan2.6-i2v | audio video | 720P | CNY 0.6/second"
+  - source: alibaba_video_official_verified
+    model_id: wan2.6-i2v-flash
+    currency: CNY
+    unit: CNY per output second
+    per_second: 0.15
+    qualifier: China, 720p, silent video
+    snippet: "wan2.6-i2v-flash | silent video | 720P | CNY 0.15/second"
+  - source: alibaba_video_official_verified
+    model_id: wan2.7-t2v
+    currency: CNY
+    unit: CNY per output second
+    per_second: 0.733924
+    qualifier: Singapore, 720p
+    snippet: "wan2.7-t2v | Singapore | 720P | CNY 0.733924/second"
+  - source: alibaba_video_official_verified
+    model_id: wan2.7-i2v
+    currency: CNY
+    unit: CNY per output second
+    per_second: 0.60
+    qualifier: China, 720p, audio video
+    snippet: "wan2.7-i2v | audio video | 720P | CNY 0.6/second"

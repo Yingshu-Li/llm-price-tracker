@@ -62,6 +62,12 @@ COLUMNS = [
     # 分层的写厂商官网原文（`<272K context length` / `≥ 200k prompt tokens`）；
     # 不分层的写该模型的上下文长度数值；都拿不到就留空，不猜。
     "context_tier",
+    # ── 图像质量/尺寸档。厂商按画质分档定价时，一档一行 ──
+    # 与 context_tier 同理：`gpt-image-1` 的 low/medium/high 是 $0.011 /
+    # $0.042 / $0.167，只报最低档等于把贵 15 倍的另外两档藏起来。
+    # 写上游原文归一后的形式（`low / 1024-x-1024`）；不分档就留空。
+    # 只有按张表会用到这一列，其余表全空、按"全空的列不导出"自动省略。
+    "image_quality_tier",
     # ── 官方牌价的取值哨兵：got / weight open source / None ──
     "official_price",
     # ── 四组模态价，每组都是「官方价 + 全网最低价」──
@@ -107,6 +113,10 @@ COLUMNS = [
     "audio_official_source_url",
     "audio_cheapest_input_per_1m_usd",
     "audio_cheapest_input_seller",
+    # seller_url 是**去哪儿买**的入口，与 source_url（价格数据的证据链接）
+    # 是两回事。text 组一直有这一列，audio/image/video 三组此前漏了，
+    # 结果按张表的溯源面板只有「API 网址」，点不到卖家页面。
+    "audio_cheapest_input_seller_url",
     "audio_cheapest_input_provider",
     "audio_cheapest_input_source_url",
     "audio_quote_count",
@@ -116,6 +126,7 @@ COLUMNS = [
     "image_official_source_url",
     "image_cheapest_per_image_usd",
     "image_cheapest_seller",
+    "image_cheapest_seller_url",
     "image_cheapest_provider",
     "image_cheapest_source_url",
     "image_quote_count",
@@ -125,6 +136,7 @@ COLUMNS = [
     "video_official_source_url",
     "video_cheapest_per_second_usd",
     "video_cheapest_seller",
+    "video_cheapest_seller_url",
     "video_cheapest_provider",
     "video_cheapest_source_url",
     "video_quote_count",
@@ -308,20 +320,25 @@ def modality_official(
 
 
 def modality_cheapest(
-    records: list[PriceRecord], modality: str, field: str
+    records: list[PriceRecord], modality: str, field: str,
+    *, allow_qualifier: bool = False,
 ) -> PriceRecord | None:
     """某个模态下的全网最低价。
 
     只在**同模态、同单位**的报价之间排序：按张价与按 token 价没有换算关系，
     混比得出的"最低"没有意义。单位不符的源仍保留在 out/sources.md，
     只是值不参与统计。
+
+    allow_qualifier 只给按张表的分档行用：调用方已经把池子过滤到**单一档位**，
+    此时再排除带 qualifier 的记录就会把整档的价格全部滤掉。其余调用一律保持
+    默认的排除行为——横向比价混入加价档会失真。
     """
     pool = [
         r
         for r in records
         if r.currency == "USD"
         and r.service_tier == "standard"
-        and not r.qualifier
+        and (allow_qualifier or not r.qualifier)
         and _is_modality(r, modality)
         and getattr(r, field, None) is not None
     ]
@@ -330,7 +347,10 @@ def modality_cheapest(
     return min(pool, key=lambda r: (getattr(r, field), _sort_key(r)))
 
 
-def modality_quotes(records: list[PriceRecord], modality: str, field: str) -> int:
+def modality_quotes(
+    records: list[PriceRecord], modality: str, field: str,
+    *, allow_qualifier: bool = False,
+) -> int:
     """该模态下有几个独立报价方给出了这个单位的价格。"""
     return len(
         {
@@ -338,11 +358,55 @@ def modality_quotes(records: list[PriceRecord], modality: str, field: str) -> in
             for r in records
             if r.currency == "USD"
             and r.service_tier == "standard"
-            and not r.qualifier
+            and (allow_qualifier or not r.qualifier)
             and _is_modality(r, modality)
             and getattr(r, field, None) is not None
         }
     )
+
+
+def image_quality_groups(
+    records: list[PriceRecord],
+) -> list[tuple[str | None, list[PriceRecord]]]:
+    """按张价按质量/尺寸档分组，一档一组。
+
+    没有档位信息的记录（DeepInfra、Vercel 等聚合器都不分档）归到 None 组，
+    并排在最前——那是这个模型的基准价。其余按该档最低价升序，便宜的在前，
+    与 context_tier「短档在前」的排法一致。
+    """
+    groups: dict[str | None, list[PriceRecord]] = defaultdict(list)
+    for record in records:
+        if record.per_image is None:
+            continue
+        groups[record.qualifier or None].append(record)
+    if not groups:
+        return [(None, [])]
+
+    def _cheapest(bucket: list[PriceRecord]) -> float:
+        return min(
+            (r.per_image for r in bucket if r.per_image is not None),
+            default=0.0,
+        )
+
+    # `standard` 在上游有两种身份：dall-e-3 的 standard/hd 是**真实画质档**；
+    # 而 gpt-image-* 的画质只有 low/medium/high，LiteLLM 里的 `standard/…`
+    # （以及省略画质的裸尺寸键）只是指向其中一档的别名。别名与本尊同尺寸
+    # 同价，留着就是同一档出两行。仅在确实撞上时丢弃，dall-e-3 不受影响。
+    named = {
+        (q.split(" / ", 1)[1], _cheapest(b))
+        for q, b in groups.items()
+        if q and not q.startswith("standard / ")
+    }
+    for qualifier in list(groups):
+        if qualifier and qualifier.startswith("standard / "):
+            if (qualifier.split(" / ", 1)[1], _cheapest(groups[qualifier])) in named:
+                del groups[qualifier]
+
+    def _order(item: tuple[str | None, list[PriceRecord]]):
+        qualifier, bucket = item
+        return (1 if qualifier else 0, _cheapest(bucket), qualifier or "")
+
+    return sorted(groups.items(), key=_order)
 
 
 def _common_context(records: list[PriceRecord]) -> int | None:
@@ -524,6 +588,13 @@ EXPORT_HIDDEN_MODELS = {
     "XiaomiMiMo/MiMo-V2.5",
     # 旧版混元视觉 API 仅保留作数据源记录，展示当前 TokenHub 2.0 型号。
     "hunyuan-vision",
+    # DeepInfra 对这两个只给 `cents_per_frame_unit`（按帧），并标注
+    # 「$0.0500 / second」——按帧价换成每秒价必须先假定帧率（0.20833 分/帧
+    # × 24fps 才等于 $0.05/秒），那是编数据，不是换算。按张、按 token、
+    # 按秒三张表一张都对不上单位，先不展示；原始报价仍进 out/sources.md。
+    # 单位是按帧/按秒这一点本身也说明它更像视频模型，Function 待复核。
+    "nvidia/Cosmos3-Super",
+    "nvidia/Cosmos3-Nano",
 }
 EXPORT_HIDDEN_COMPANIES = {"NAVER"}
 
@@ -605,16 +676,26 @@ def write_table(
             # ── audio / image / video 三组：与 text 同样是「官方价 + 最低价」，
             #    单位各自固定（audio 按 token、image 按张、video 按秒）。
             #    一个模型可以同时有多组，互不覆盖。
-            def _group(modality: str, field: str, with_output: bool) -> list[str]:
+            def _group(
+                modality: str, field: str, with_output: bool,
+                *,
+                records: list[PriceRecord] | None = None,
+                allow_qualifier: bool = False,
+            ) -> list[str]:
                 """一组模态价：官方（价 + provider + url）+ 最低（价 + seller +
                 provider + url）+ 报价方数量。
 
                 with_output 只对 audio 为真——它按 token 计价，有输入/输出两个
                 维度；image/video 按张/按秒，只有一个价格维度。
                 """
-                off = modality_official(pool, modality, field)
-                cheap = modality_cheapest(pool, modality, field)
-                n = modality_quotes(pool, modality, field)
+                src = pool if records is None else records
+                off = modality_official(src, modality, field)
+                cheap = modality_cheapest(
+                    src, modality, field, allow_qualifier=allow_qualifier
+                )
+                n = modality_quotes(
+                    src, modality, field, allow_qualifier=allow_qualifier
+                )
                 cells = [_fmt(getattr(off, field)) if off else ""]
                 if with_output:
                     # 输出价取**同一条**官方记录的，保证同一档内自洽
@@ -624,27 +705,42 @@ def write_table(
                     off.source_url if off else "",
                     _fmt(getattr(cheap, field)) if cheap else "",
                     _seller_of(cheap) if cheap else "",
+                    # 卖家页面（去哪儿买），与下面的 source_url（价格证据）分开
+                    seller_url_of(cheap),
                     _provider_of(cheap) if cheap else "",
                     cheap.source_url if cheap else "",
                     str(n) if n else "",
                 ]
                 return cells
 
-            audio_cells = _group("audio", "input_per_1m", with_output=True)
-            image_cells = _group("image", "per_image", with_output=False)
-            video_cells = _group("video", "per_second", with_output=False)
-
             # image/video 的按次价常没有 modality 列（聚合器不给），
             # 靠字段本身识别：有 per_image 就是按张价，有 per_second 就是按秒价。
-            if not any(image_cells[:1] + image_cells[3:4]):
-                image_cells = _group("text", "per_image", with_output=False)
+            def _image_group(
+                records: list[PriceRecord] | None = None,
+                *, allow_qualifier: bool = False,
+            ) -> list[str]:
+                cells = _group(
+                    "image", "per_image", with_output=False,
+                    records=records, allow_qualifier=allow_qualifier,
+                )
+                if not any(cells[:1] + cells[3:4]):
+                    cells = _group(
+                        "text", "per_image", with_output=False,
+                        records=records, allow_qualifier=allow_qualifier,
+                    )
+                return cells
+
+            audio_cells = _group("audio", "input_per_1m", with_output=True)
+            image_cells = _image_group()
+            video_cells = _group("video", "per_second", with_output=False)
+
             if not any(video_cells[:1] + video_cells[3:4]):
                 video_cells = _group("text", "per_second", with_output=False)
             if token_prices_only or price_mode == PRICE_MODE_TOKEN:
                 # 即便同一条观测同时带 token 与按张/按秒价格，能力表也只展示
                 # token 部分；非 token 计费继续保留在源数据，不进入这两个 CSV。
-                image_cells = [""] * 8
-                video_cells = [""] * 8
+                image_cells = [""] * 9
+                video_cells = [""] * 9
 
             # ── text 组：输入、输出各自取最低（常来自不同卖家）──
             cheap_in = cheapest_by(pool, "input_per_1m")
@@ -662,8 +758,9 @@ def write_table(
                 # 展示出来就等于把两种单位并排放，最低价也会落到错的单位上。
                 cheap_in = cheap_out = None
                 quotes = 0
-                audio_cells = [""] * 9
-                video_cells = [""] * 8
+                # audio 组带输出价，比 image/video 多一格
+                audio_cells = [""] * 10
+                video_cells = [""] * 9
             # 免费额度层按该模型的任一候选形式查（源里的 id 与 raw.csv 不同名）
             ft = ("", "")
             for cand in raw.candidates:
@@ -743,7 +840,9 @@ def write_table(
                 因为改写就不再是"官网怎么写"了。
                 不分层的写该模型的上下文长度数值；两者都没有就留空，不猜。
                 """
-                if tier is not None and tier.qualifier:
+                # 按张表的 qualifier 是**画质档**，不是上下文档，属于
+                # image_quality_tier 那一列；混进来会让两种分档同列。
+                if tier is not None and tier.qualifier and price_mode != PRICE_MODE_IMAGE:
                     return [tier.qualifier]
                 # 厂商定价表往往不含上下文长度（OpenAI 的就没有），
                 # 得从该模型的**全部**观测里找——聚合器普遍带这个字段。
@@ -791,22 +890,40 @@ def write_table(
                     best.currency,
                 ]
 
-            # 每个上下文档位一行；没有官方价的模型仍出一行（携带哨兵）
-            for tier in tiers or [None]:
+            # 按张表按**画质档**展开，其余表按**上下文档**展开。
+            # 两者不叠加相乘：图像模型不按 prompt 长度分档定价，相乘只会造出
+            # 不存在的组合行。每行的按张价只取本档位的观测，保证同一行里的
+            # 官方价与最低价属于同一画质档。
+            if price_mode == PRICE_MODE_IMAGE:
+                row_specs = [
+                    (pick_official(bucket), quality, bucket)
+                    for quality, bucket in image_quality_groups(pool)
+                ]
+            else:
+                row_specs = [(tier, None, None) for tier in (tiers or [None])]
+
+            # 没有官方价的模型仍出一行（携带哨兵）
+            for tier, quality, bucket in row_specs:
                 # 本行价格的抓取时间：优先取本档位自己的，退回 best 或最低价。
                 # 分层展开后每行的价格来源不同，共用一个时间会不准。
                 stamped = tier or best or cheap_in or cheap_out
                 # official_price 哨兵要排在 context_tier 之后（见 COLUMNS），
                 # 所以 _official_cells 的首元素单独取出。
                 oc = _official_cells(tier)
+                row_image_cells = (
+                    _image_group(bucket, allow_qualifier=True)
+                    if bucket is not None
+                    else image_cells
+                )
                 row = (
                     prefix
                     + _context_tier(tier)
+                    + [quality or ""]
                     + [oc[0]]
                     + oc[1:]
                     + text_cheapest
                     + audio_cells
-                    + image_cells
+                    + row_image_cells
                     + video_cells
                     + [stamped.fetched_at[:10] if stamped else ""]
                 )

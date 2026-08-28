@@ -338,7 +338,7 @@ MiniMaxAI/MiniMax-Text-01,MiniMax,General-Purpose,456B,45.9B/token,Offline: Offi
 MiniMaxAI/MiniMax-VL-01,MiniMax,General-Purpose,456B,45.9B/token,Offline: Official Hugging Face / Open Weight,No
 MiniMax Image,MiniMax,Image Generation,Undisclosed,Undisclosed,Online: API,No
 MiniMax Video,MiniMax,Video Generation,Undisclosed,Undisclosed,Online: API,No
-MiniMaxAI/MiniMax-H3,MiniMax,Video Generation,33B,Undisclosed,Offline: Official Hugging Face / Open Weight,Yes
+MiniMaxAI/MiniMax-H3,MiniMax,Video Generation,33B,Undisclosed,Both: MiniMax API / Official Hugging Face Open Weight,Yes
 MiniMax Music,MiniMax,Speech & Audio,Undisclosed,Undisclosed,Online: API,No
 MiniMax Speech,MiniMax,Speech & Audio,Undisclosed,Undisclosed,Online: API,No
 doubao-seed-1.8,ByteDance / Doubao-Seed,General-Purpose,Undisclosed,Undisclosed,Online: Volcano Ark API,Yes
@@ -650,3 +650,50 @@ PrunaAI/p-image,Pruna AI,Image Generation,,,Online: API,No
 PrunaAI/p-image-Edit,Pruna AI,Image Generation,,,Online: API,No
 nvidia/Cosmos3-Super,NVIDIA,Image Generation,,,Online: API,No
 nvidia/Cosmos3-Nano,NVIDIA,Image Generation,,,Online: API,No
+sora-2,OpenAI,Video Generation,Undisclosed,Undisclosed,"Online: API (Deprecated, EOL 2026-09-24)",No
+sora-2-pro,OpenAI,Video Generation,Undisclosed,Undisclosed,"Online: API (Deprecated, EOL 2026-09-24)",No
+veo-3.1-fast-generate-preview,Google,Video Generation,Undisclosed,Undisclosed,Online: Gemini API (Preview),No
+MiniMax-Hailuo-2.3,MiniMax,Video Generation,Undisclosed,Undisclosed,Online: MiniMax API (Legacy),No
+MiniMax-Hailuo-2.3-Fast,MiniMax,Video Generation,Undisclosed,Undisclosed,Online: MiniMax API (Legacy),No
+MiniMax-Hailuo-02,MiniMax,Video Generation,Undisclosed,Undisclosed,Online: MiniMax API (Legacy),No
+gen4.5,Runway,Video Generation,Undisclosed,Undisclosed,Online: Runway API,No
+gen4_turbo,Runway,Video Generation,Undisclosed,Undisclosed,Online: Runway API,No
+aleph2,Runway,Video Generation,Undisclosed,Undisclosed,Online: Runway API,No
+act_two,Runway,Video Generation,Undisclosed,Undisclosed,Online: Runway API,No
+ray-3.2,Luma AI,Video Generation,Undisclosed,Undisclosed,Online: Luma Agents API,No
+viduq3-pro,ShengShu / Vidu,Video Generation,Undisclosed,Undisclosed,Online: Vidu API,No
+viduq3-turbo,ShengShu / Vidu,Video Generation,Undisclosed,Undisclosed,Online: Vidu API,No
+viduq3-pro-fast,ShengShu / Vidu,Video Generation,Undisclosed,Undisclosed,Online: Vidu API,No
+viduq3-mix,ShengShu / Vidu,Video Generation,Undisclosed,Undisclosed,Online: Vidu API,No
+viduq2,ShengShu / Vidu,Video Generation,Undisclosed,Undisclosed,Online: Vidu API,No
+viduq2-pro,ShengShu / Vidu,Video Generation,Undisclosed,Undisclosed,Online: Vidu API,No
+viduq2-turbo,ShengShu / Vidu,Video Generation,Undisclosed,Undisclosed,Online: Vidu API,No
+viduq2-pro-fast,ShengShu / Vidu,Video Generation,Undisclosed,Undisclosed,Online: Vidu API,No
+viduq1,ShengShu / Vidu,Video Generation,Undisclosed,Undisclosed,Online: Vidu API,No
+pixverse-c1,PixVerse,Video Generation,Undisclosed,Undisclosed,Online: PixVerse API,No
+pixverse-v6,PixVerse,Video Generation,Undisclosed,Undisclosed,Online: PixVerse API,No
+pixverse-v5.6,PixVerse,Video Generation,Undisclosed,Undisclosed,Online: PixVerse API (Legacy),No
+pixverse-v5.5,PixVerse,Video Generation,Undisclosed,Undisclosed,Online: PixVerse API (Legacy),No
+klingai/kling-v2.5-turbo-t2v,Kuaishou / Kling,Video Generation,Undisclosed,Undisclosed,Online: Kling API,No
+klingai/kling-v2.5-turbo-i2v,Kuaishou / Kling,Video Generation,Undisclosed,Undisclosed,Online: Kling API,No
+klingai/kling-v2.6-t2v,Kuaishou / Kling,Video Generation,Undisclosed,Undisclosed,Online: Kling API,No
+klingai/kling-v2.6-i2v,Kuaishou / Kling,Video Generation,Undisclosed,Undisclosed,Online: Kling API,No
+klingai/kling-v2.6-motion-control,Kuaishou / Kling,Video Generation,Undisclosed,Undisclosed,Online: Kling API,No
+klingai/kling-v3.0-t2v,Kuaishou / Kling,Video Generation,Undisclosed,Undisclosed,Online: Kling API,No
+klingai/kling-v3.0-i2v,Kuaishou / Kling,Video Generation,Undisclosed,Undisclosed,Online: Kling API,No
+klingai/kling-v3.0-motion-control,Kuaishou / Kling,Video Generation,Undisclosed,Undisclosed,Online: Kling API,No
+alibaba/wan-v2.5-t2v-preview,Alibaba / Qwen,Video Generation,Undisclosed,Undisclosed,Online: DashScope API (Preview),No
+alibaba/wan-v2.6-t2v,Alibaba / Qwen,Video Generation,Undisclosed,Undisclosed,Online: DashScope API,No
+alibaba/wan-v2.6-i2v,Alibaba / Qwen,Video Generation,Undisclosed,Undisclosed,Online: DashScope API,No
+alibaba/wan-v2.6-i2v-flash,Alibaba / Qwen,Video Generation,Undisclosed,Undisclosed,Online: DashScope API,No
+alibaba/wan-v2.6-r2v,Alibaba / Qwen,Video Generation,Undisclosed,Undisclosed,Online: DashScope API,No
+alibaba/wan-v2.6-r2v-flash,Alibaba / Qwen,Video Generation,Undisclosed,Undisclosed,Online: DashScope API,No
+alibaba/wan-v2.7-t2v,Alibaba / Qwen,Video Generation,Undisclosed,Undisclosed,Online: DashScope API,No
+alibaba/wan-v2.7-i2v,Alibaba / Qwen,Video Generation,Undisclosed,Undisclosed,Online: DashScope API,No
+alibaba/wan-v2.7-r2v,Alibaba / Qwen,Video Generation,Undisclosed,Undisclosed,Online: DashScope API,No
+alibaba/wan-v3.0-video,Alibaba / Qwen,Video Generation,Undisclosed,Undisclosed,Online: DashScope API,No
+bytedance/seedance-v1.0-pro,ByteDance / Doubao-Seed,Video Generation,Undisclosed,Undisclosed,Online: Vercel AI Gateway,No
+bytedance/seedance-v1.0-pro-fast,ByteDance / Doubao-Seed,Video Generation,Undisclosed,Undisclosed,Online: Vercel AI Gateway,No
+bytedance/seedance-v1.5-pro,ByteDance / Doubao-Seed,Video Generation,Undisclosed,Undisclosed,Online: Vercel AI Gateway,No
+bytedance/seedance-2.0-fast,ByteDance / Doubao-Seed,Video Generation,Undisclosed,Undisclosed,Online: Runway API / Vercel AI Gateway,No
+bytedance/seedance-2.0-mini,ByteDance / Doubao-Seed,Video Generation,Undisclosed,Undisclosed,Online: Runway API / Vercel AI Gateway,No

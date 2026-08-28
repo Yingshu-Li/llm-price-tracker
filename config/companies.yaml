@@ -424,6 +424,63 @@ companies:
     openrouter_prefixes: [inception]
     notes: Mercury 2 与 Mercury Edit 2 均为闭源 diffusion LLM，通过第一方 API 提供。
 
+  # ── 视频生成 API 厂商 ──────────────────────────────────────
+
+  - company: Runway
+    homepage: https://runwayml.com
+    blog: https://runwayml.com/news
+    rss: null
+    hf_org: null
+    api_docs: https://docs.dev.runwayml.com/guides/models/
+    pricing_page: https://docs.dev.runwayml.com/guides/pricing/
+    pricing_machine_readable: server_html
+    openrouter_prefixes: []
+    notes: 官方 API 价格以 credit/输出秒列示；1 credit = USD 0.01。
+
+  - company: Luma AI
+    homepage: https://lumalabs.ai
+    blog: https://lumalabs.ai/news
+    rss: null
+    hf_org: null
+    api_docs: https://docs.agents.lumalabs.ai/guides/models
+    pricing_page: https://docs.agents.lumalabs.ai/guides/pricing
+    pricing_machine_readable: server_html
+    openrouter_prefixes: []
+    notes: Luma Agents API 当前视频型号为 Ray 3.2，按任务、分辨率与时长分档。
+
+  - company: Kuaishou / Kling
+    homepage: https://kling.ai
+    blog: https://ir.kuaishou.com/news-releases
+    rss: null
+    hf_org: Kwai-Kolors
+    api_docs: https://kling.ai/document-api/apiReference/model/video
+    pricing_page: https://kling.ai/document-api/pricing/base/video
+    pricing_machine_readable: server_html
+    openrouter_prefixes: []
+    notes: Kling 官方开放平台与 Vercel AI Gateway 均提供当前 Video 2.5/2.6/3.0 系列。
+
+  - company: ShengShu / Vidu
+    homepage: https://www.shengshu-ai.com
+    blog: null
+    rss: null
+    hf_org: null
+    api_docs: https://platform.vidu.com/docs/text-to-video
+    pricing_page: https://platform.vidu.com/docs/pricing
+    pricing_machine_readable: server_html
+    openrouter_prefixes: []
+    notes: 官方 API 同时列出标准与 off-peak 价格；1 credit = USD 0.005。
+
+  - company: PixVerse
+    homepage: https://pixverse.ai
+    blog: https://pixverse.ai/blog
+    rss: null
+    hf_org: null
+    api_docs: https://docs.platform.pixverse.ai/
+    pricing_page: https://docs.platform.pixverse.ai/pricing-796039m0
+    pricing_machine_readable: server_html
+    openrouter_prefixes: []
+    notes: 官方 API 按分辨率、音频与输出秒扣 credit；直接充值基准为 USD 0.01/credit。
+
 # ── 跨公司的兜底源 ────────────────────────────────────────────
 # 单个 API 覆盖多家，比 28 个易碎的 RSS 更可靠，这才是主力信号。
 

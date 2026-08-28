@@ -73,6 +73,10 @@ apis:
     weblink: https://vercel.com/ai-gateway/models
     list_path: data
     id_fields: [id, name]
+    # 语言/图像模型把价格直接放在 pricing 下；视频模型则按分辨率、音频、
+    # 模式拆在 video_duration_pricing[]。通用适配器会为每档保留 qualifier。
+    nested_list: pricing.video_duration_pricing
+    qualifier_fields: [resolution, audio, mode, voice_control]
     unit: per_token
     tier: 3
     fields:
@@ -83,6 +87,7 @@ apis:
       #    纯文本模型（gpt-5 / gemini-2.5-pro / claude-sonnet-4.5）根本
       #    没有 image 字段——不存在 OpenRouter 那种"图像输入 token 价"污染。
       per_image: pricing.image
+      per_second: cost_per_second
 
   - id: pioneer
     name: Pioneer

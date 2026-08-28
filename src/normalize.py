@@ -185,6 +185,11 @@ _COMPANY_PREFIXES = {
     "Nex-AGI": ["nex-agi", "nex"],
     "Celeris": ["celeris"],
     "Inception Labs": ["inceptionlabs", "inception"],
+    "Runway": ["runwayml", "runway"],
+    "Luma AI": ["lumaai", "luma"],
+    "Kuaishou / Kling": ["klingai", "kling"],
+    "ShengShu / Vidu": ["shengshu", "vidu"],
+    "PixVerse": ["pixverse"],
 }
 
 
@@ -399,6 +404,50 @@ _COMPANY_MARKERS: tuple[tuple[str, str], ...] = (
     # 既不含 microsoft/ 前缀也不是 phi-，此前整组被判为归属不明而丢弃。
     # ⚠️ 只收窄到 `mai-image`：裸 `mai-` 作子串会命中 domain- 之类的词。
     ("mai-image", "Microsoft"),
+    # ── 开源图像生成厂商 ──
+    # 整块**放在全部既有 marker 之后**：先匹配者胜出，所以这里只可能把原本
+    # 返回 None（会被丢弃）的 id 变成有归属，不会改动任何已归属记录的公司。
+    # 此前整张表里没有一个图像厂商前缀，DeepInfra 的 39 个、Vercel 的 16 个
+    # 带价图像模型全部归属不明被丢弃，于是按张/按 token 两张表里只剩
+    # OpenAI/Google/Qwen/ByteDance 这几家自带 marker 的公司。
+    #
+    # ⚠️ 一律用 org 前缀，**不能**拿裸 `flux` / `sd` 当子串：DeepInfra 上的
+    #    `ClarityAI/flux`、`run-diffusion/Juggernaut-Flux`、`prodia/flux-fast-schnell`
+    #    是第三方微调，归给 Black Forest Labs 就是错配。
+    #    同理 `prunaai/p-image` 收窄到具体型号——PrunaAI 大量发布**别家**模型的
+    #    量化版（`PrunaAI/Llama-...`），裸 `pruna` 会把 Meta 的模型归到 Pruna 名下。
+    ("black-forest-labs", "Black Forest Labs"),
+    ("bfl/", "Black Forest Labs"),
+    ("stabilityai", "Stability AI"),
+    ("stable-diffusion", "Stability AI"),
+    ("sdxl", "Stability AI"),
+    ("sd3.5", "Stability AI"),
+    ("hidream", "HiDream"),
+    ("kolors", "Kuaishou / Kling"),
+    ("playground-v", "Playground AI"),
+    ("lumina", "OpenGVLab"),
+    ("bagel", "ByteDance / Doubao-Seed"),
+    ("wan-ai", "Alibaba / Qwen"),
+    ("wan2", "Alibaba / Qwen"),
+    ("z-image", "Alibaba / Qwen"),
+    ("briaai", "Bria"),
+    ("bria/", "Bria"),
+    ("fibo", "Bria"),
+    ("sana_", "NVIDIA"),
+    ("srpo", "Tencent / Hunyuan"),
+    ("prunaai/p-image", "Pruna AI"),
+    # ── 视频生成厂商 / API id ──
+    ("runwayml/", "Runway"),
+    ("gen4", "Runway"),
+    ("aleph2", "Runway"),
+    ("act_two", "Runway"),
+    ("lumaai/", "Luma AI"),
+    ("ray-3", "Luma AI"),
+    ("klingai/", "Kuaishou / Kling"),
+    ("kling-v", "Kuaishou / Kling"),
+    ("viduq", "ShengShu / Vidu"),
+    ("pixverse", "PixVerse"),
+    ("wan-v", "Alibaba / Qwen"),
     ("spark", None),  # ⚠️ 有意置空：`spark` 会误命中 OpenAI 的 codex-spark
 )
 

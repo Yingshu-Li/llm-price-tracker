@@ -209,6 +209,13 @@ def collect_china_official() -> tuple[list, list[dict], list[str]]:
     snapshot_companies = {
         "volcengine_official_verified": "ByteDance / Doubao-Seed",
         "deepseek_official_verified": "DeepSeek",
+        "google_video_official_verified": "Google",
+        "minimax_video_official_verified": "MiniMax",
+        "runway_video_official_verified": "Runway",
+        "luma_video_official_verified": "Luma AI",
+        "vidu_video_official_verified": "ShengShu / Vidu",
+        "pixverse_video_official_verified": "PixVerse",
+        "alibaba_video_official_verified": "Alibaba / Qwen",
     }
     for rec in snapshots:
         rec.raw["company"] = snapshot_companies[rec.source]
@@ -548,7 +555,24 @@ def collect_input_capabilities(raw_models: list) -> dict:
     if isinstance(litellm_payload, dict):
         records += parse_litellm_modalities(litellm_payload)
 
-    report = match_all(targets, records, load_aliases(CONFIG / "aliases.yaml"))
+    # aliases.yaml 是给**价格**匹配写的，条目形如 `deepinfra: <id>`。这里复用
+    # 同一张表匹配模态时必须先按源过滤：match_all 一旦命中别名就 continue，
+    # 跳过 exact/contains。若别名指向的源（deepinfra/vercel/…）根本不产模态
+    # 记录，而那个 model_id 又恰好出现在模态索引里，该模型就会既拿不到别名
+    # 对应的模态记录、又失去正常匹配 —— 直接触发 100% 覆盖检查中止导出。
+    # 实测：给 `flux-pro-1.1` 加 deepinfra 别名后，models.dev 里同名条目让
+    # 别名命中，模态覆盖随即报「未覆盖 flux-pro-1.1」。
+    modality_sources = {record.source for record in records}
+    aliases = {
+        model: kept
+        for model, sources in load_aliases(CONFIG / "aliases.yaml").items()
+        if (kept := {
+            source: model_id
+            for source, model_id in sources.items()
+            if source in modality_sources
+        })
+    }
+    report = match_all(targets, records, aliases)
     index = defaultdict(list)
     for record in records:
         index[(record.source, record.model_id)].append(record)
