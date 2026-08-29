@@ -1,5 +1,5 @@
-# 官方价格页无法在 GitHub Action 中稳定服务端渲染时使用的人工核验快照。
-# 每条必须保留官方 URL、核验日期和可人工复核的原文摘录；不得填推测价。
+# 官方或公开第三方价格页无法在 GitHub Action 中稳定服务端渲染时使用的人工核验快照。
+# 每条必须保留来源 URL、核验日期和可人工复核的原文摘录；不得填推测价。
 
 sources:
   - id: volcengine_official_verified
@@ -19,6 +19,26 @@ sources:
     provider: google-gemini-api
     url: https://ai.google.dev/gemini-api/docs/pricing
     verified_at: "2026-08-27T00:00:00+10:00"
+
+  - id: google_omni_video_official_verified
+    name: Google Gemini Omni 1.1 Flash 官方价格（人工核验）
+    provider: google-gemini-api
+    url: https://blog.google/innovation-and-ai/technology/developers-tools/build-with-gemini-omni-1-1-flash/
+    verified_at: "2026-08-29T00:00:00+10:00"
+
+  - id: fal_google_video_verified
+    name: fal Video API 公开价格（人工核验）
+    provider: fal-ai
+    url: https://fal.ai/models/google/gemini-omni-flash/v1.1/text-to-video/api
+    verified_at: "2026-08-29T00:00:00+10:00"
+    license: 公开第三方 API 价格页
+
+  - id: runway_google_video_verified
+    name: Runway API Gemini Omni 公开价格（人工核验）
+    provider: runway
+    url: https://docs.dev.runwayml.com/guides/pricing/
+    verified_at: "2026-08-29T00:00:00+10:00"
+    license: 公开第三方 API 价格页
 
   - id: minimax_video_official_verified
     name: MiniMax Video 官方按量价格（人工核验）
@@ -152,6 +172,72 @@ prices:
     snippet: "deepseek-v4-flash-vision-exp | cache hit $0.007 | cache miss $0.22 | output $0.66 per 1M tokens | OFF-PEAK"
 
   # ── Video Generation：非 token 价格保持原始量纲 ──
+  - source: google_omni_video_official_verified
+    model_id: gemini-omni-1.1-flash
+    currency: USD
+    unit: USD per output second
+    per_second: 0.03
+    qualifier: 360p
+    snippet: "Gemini Omni 1.1 Flash | 360p | $0.03 per second"
+  - source: google_omni_video_official_verified
+    model_id: gemini-omni-1.1-flash
+    currency: USD
+    unit: USD per output second
+    per_second: 0.10
+    qualifier: 720p
+    snippet: "Gemini Omni 1.1 Flash | 720p | $0.10 per second"
+  - source: google_omni_video_official_verified
+    model_id: gemini-omni-1.1-flash
+    currency: USD
+    unit: USD per output second
+    per_second: 0.15
+    qualifier: 1080p
+    snippet: "Gemini Omni 1.1 Flash | 1080p | $0.15 per second"
+  - source: google_omni_video_official_verified
+    model_id: gemini-omni-1.1-flash
+    currency: USD
+    unit: USD per output second
+    per_second: 0.30
+    qualifier: 4K
+    snippet: "Gemini Omni 1.1 Flash | 4K | $0.30 per second"
+
+  - source: fal_google_video_verified
+    model_id: google/gemini-omni-flash/v1.1/text-to-video
+    currency: USD
+    unit: USD per output second
+    per_second: 0.03
+    qualifier: 360p
+    snippet: "Gemini Omni Flash 1.1 | 360p | $0.03 per second"
+  - source: fal_google_video_verified
+    model_id: google/gemini-omni-flash/v1.1/text-to-video
+    currency: USD
+    unit: USD per output second
+    per_second: 0.10
+    qualifier: 720p
+    snippet: "Gemini Omni Flash 1.1 | 720p | $0.10 per second"
+  - source: fal_google_video_verified
+    model_id: google/gemini-omni-flash/v1.1/text-to-video
+    currency: USD
+    unit: USD per output second
+    per_second: 0.15
+    qualifier: 1080p
+    snippet: "Gemini Omni Flash 1.1 | 1080p | $0.15 per second"
+  - source: fal_google_video_verified
+    model_id: google/gemini-omni-flash/v1.1/text-to-video
+    currency: USD
+    unit: USD per output second
+    per_second: 0.30
+    qualifier: 4K
+    snippet: "Gemini Omni Flash 1.1 | 4K | $0.30 per second"
+
+  - source: runway_google_video_verified
+    model_id: gemini_omni_flash
+    currency: USD
+    unit: USD per output second
+    per_second: 0.10
+    qualifier: 720p
+    snippet: "gemini_omni_flash | text to video | 10 credits per second | 1 credit = $0.01"
+
   - source: google_video_official_verified
     model_id: veo-3.1-generate-preview
     currency: USD

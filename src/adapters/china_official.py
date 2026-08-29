@@ -309,7 +309,7 @@ def parse_tencent(
 
 
 def load_verified_snapshots(path: Path) -> tuple[list[PriceRecord], list[str], list[dict]]:
-    """载入无法稳定服务端渲染页面的人工核验官方快照。"""
+    """载入无法稳定服务端渲染页面的人工核验价格快照。"""
     cfg = yaml.safe_load(path.read_text("utf-8")) or {}
     records: list[PriceRecord] = []
     fetches: list[dict] = []
@@ -355,10 +355,10 @@ def load_verified_snapshots(path: Path) -> tuple[list[PriceRecord], list[str], l
             "n_records": count,
             "provider_name": source["name"],
             "weblink": source["url"],
-            "license": "厂商官方价格页（人工核验快照）",
+            "license": source.get("license", "厂商官方价格页（人工核验快照）"),
         })
         warnings.append(
-            f"{source_id}: 官方页无法稳定服务端渲染，当前使用 {source['verified_at']} "
+            f"{source_id}: 价格页无法稳定服务端渲染，当前使用 {source['verified_at']} "
             "人工核验快照；URL 与原文摘录已保留"
         )
     return records, warnings, fetches

@@ -30,6 +30,9 @@ LITELLM_URL = (
 )
 LITELLM_WEBLINK = "https://github.com/BerriAI/litellm"
 
+# 与非美元价的 ⇄ 同一类标记：≈ 表示「此价由数据源换算得出，不是厂商牌价」
+DERIVED_MARKER = "≈"
+
 # 有些 LiteLLM 第一方记录的 key 是裸模型名，唯一的厂商字段只有 provider。
 # 这里只列不会产生歧义的模型厂商自营 provider；云平台（bedrock/azure/oci）
 # 不能映射成模型公司。
@@ -90,6 +93,23 @@ def load_local(name: str) -> Any | None:
 def save_local(name: str, text: str) -> None:
     VENDOR_DIR.mkdir(parents=True, exist_ok=True)
     local_path(name).write_text(text, encoding="utf-8")
+
+
+# 带尺寸/画质前缀的按张价**不是厂商公布的牌价，是 LiteLLM 替它换算的**。
+# 实测：gpt-image-1 的 low/1024-x-1024 = $0.011，恰好等于官方图像输出 token
+# 价 $40/1M × OpenAI 公布的 272 token/张；9 个档位全部整除干净
+# （272→0.011、1056→0.042、4160→0.167…）。gpt-image-1.5 同理（$10/1M ×
+# 900/1300/3400/5000/13300/20000）。nova-canvas 换算的则是步数而非 token。
+#
+# 这类值有用，但读者必须看得出它是**换算值而不是牌价**——和非美元价的 ⇄
+# 一个道理：换算了就明说换算了。这里只打标，怎么展示交给导出层。
+#
+# ⚠️ 只有带前缀的才打标。裸键的按张价（dall-e-3 $0.04、imagen-4.0 $0.04、
+#    nova-canvas $0.06）是厂商真牌价，不能一起标上。
+def _derived_note(key: str, qualifier: str, per_image: float) -> str:
+    return (f"按张价由数据源换算得出：LiteLLM 把「{qualifier}」这一档的用量折算为 "
+            f"${per_image:g}/张；厂商本身按 token（或步数）计费，并未公布该档位的"
+            f"按张牌价。原始键 {key}")
 
 
 def parse_modelsdev(
@@ -247,6 +267,7 @@ def parse_litellm(
         prices.update(flat)
         if not prices:
             continue
+        image_qualifier = _image_qualifier(key) if mode in GEN_MODES else None
 
         # 这里**故意不设 modality**。导出层按模态分组比价，而聚合器
         # （empiriolabs / vercel / ofox…）都不给这个字段、一律落在默认的
@@ -313,7 +334,7 @@ def parse_litellm(
                 model_id=model_id,
                 # 只有生成类模型的前缀段才是质量/尺寸档；聊天模型的前缀
                 # （`bedrock/ap-northeast-1/...`）是服务方，绝不能当档位。
-                qualifier=_image_qualifier(key) if mode in GEN_MODES else None,
+                qualifier=image_qualifier,
                 provider=f"litellm/{entry.get('litellm_provider') or '?'}",
                 context_length=entry.get("max_input_tokens"),
                 max_output=entry.get("max_output_tokens"),
@@ -325,6 +346,10 @@ def parse_litellm(
                     "litellm_key": key,
                     "seller": seller,
                     "seller_url": catalog_url_for(seller),
+                    **({"derived_marker": DERIVED_MARKER,
+                        "derived_note": _derived_note(
+                            key, image_qualifier, flat["per_image"])}
+                       if image_qualifier and "per_image" in flat else {}),
                 },
                 **prices,
             )

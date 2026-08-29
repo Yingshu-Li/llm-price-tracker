@@ -253,6 +253,9 @@ def collect_china_official() -> tuple[list, list[dict], list[str]]:
         "volcengine_official_verified": "ByteDance / Doubao-Seed",
         "deepseek_official_verified": "DeepSeek",
         "google_video_official_verified": "Google",
+        "google_omni_video_official_verified": "Google",
+        "fal_google_video_verified": "Google",
+        "runway_google_video_verified": "Google",
         "minimax_video_official_verified": "MiniMax",
         "runway_video_official_verified": "Runway",
         "luma_video_official_verified": "Luma AI",
@@ -795,6 +798,22 @@ def main() -> int:
             include_text_output_prices=include_output,
         )
 
+    # ── 通用模型：开源权重且无任何报价 ──
+    # 与图像/视频同一处理：权重可自取、任何源都查不到报价的模型，其
+    # 价格是**客观不存在**而不是抓取失败。它们在主表里只能显示一片空白，
+    # 排序和比价都没有意义；单独成表后，这批模型本身成为看点（有多少家
+    # 公司、放出了多少参数量的权重），而主表的价格列不再被空行稀释。
+    # 闭源却没拿到价的（not_found）是真缺口，性质不同，不进这张表。
+    general_unpriced_stats = export_mod.write_table(
+        OUT / "general_unpriced_open_weight_models.csv",
+        raw_models,
+        best,
+        by_model,
+        free_tiers,
+        input_capabilities,
+        price_mode=export_mod.PRICE_MODE_UNPRICED,
+    )
+
     # ── 图像模型按结算单位拆三张表 ──
     # 图像生成的计价单位不统一（Gemini 系按 token、DALL·E 系按张），
     # 混在一张表里"最低价"会拿按张价去比按 token 价。拆表后每张表内
@@ -889,6 +908,11 @@ def main() -> int:
     print(f"      权重免费无报价 {stats.get('weights_free', 0)}（价格不存在，非抓取失败）"
           f" · 真缺口 {stats.get('not_found', 0)}（闭源却没拿到价）")
     print(f"      权重：开源 {stats.get('w_free', 0)} / 闭源 {stats.get('w_proprietary', 0)}")
+    print(
+        f"   out/general_unpriced_open_weight_models.csv "
+        f"{general_unpriced_stats.get('rows', 0)} 行"
+        f"（通用模型 · 开源权重且无任何报价；价格客观不存在）"
+    )
     for filename, functions, _include_output in function_exports:
         item = function_stats[filename]
         print(

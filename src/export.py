@@ -139,12 +139,19 @@ COLUMNS = [
     "image_official_fx_marker",
     "image_official_fx_note",
     "image_official_fx_source_url",
+    # ≈ 换算标记：该按张价不是厂商牌价，是数据源用 token（或步数）价折算的。
+    # 与 fx 的 ⇄ 同一类元信息——换算了就明说换算了，不能让读者以为是牌价。
+    # 目前只有 image 组有这种来源，audio/video 加了也全空。
+    "image_official_derived_marker",
+    "image_official_derived_note",
     "image_official_provider",
     "image_official_source_url",
     "image_cheapest_per_image_usd",
     "image_cheapest_fx_marker",
     "image_cheapest_fx_note",
     "image_cheapest_fx_source_url",
+    "image_cheapest_derived_marker",
+    "image_cheapest_derived_note",
     "image_cheapest_seller",
     "image_cheapest_seller_url",
     "image_cheapest_provider",
@@ -305,6 +312,16 @@ def count_quotes(records: list[PriceRecord]) -> int:
     让 cheapest 看起来比实际更有依据。
     """
     return len({(r.source, r.provider) for r in comparable_quotes(records)})
+
+
+def derived_cells(record: PriceRecord | None) -> list[str]:
+    """换算标记 + 可读说明。不是换算值就返回两个空格。"""
+    if record is None:
+        return ["", ""]
+    marker = record.raw.get("derived_marker")
+    if not marker:
+        return ["", ""]
+    return [marker, record.raw.get("derived_note") or ""]
 
 
 def _seller_of(record: PriceRecord) -> str:
@@ -714,6 +731,7 @@ def write_table(
                 *,
                 records: list[PriceRecord] | None = None,
                 allow_qualifier: bool = False,
+                with_derived: bool = False,
             ) -> list[str]:
                 """一组模态价：官方（价 + provider + url）+ 最低（价 + seller +
                 provider + url）+ 报价方数量。
@@ -733,6 +751,8 @@ def write_table(
                 # 只给该组的**主价格字段**带 fx 溯源：audio 的输出价与输入价
                 # 出自同一条记录、同一次换算，再挂一份 note 只是重复。
                 cells += fx_cells(off, field)
+                if with_derived:
+                    cells += derived_cells(off)
                 if with_output:
                     # 输出价取**同一条**官方记录的，保证同一档内自洽
                     cells.append(_fmt(off.output_per_1m) if off else "")
@@ -742,6 +762,8 @@ def write_table(
                     _fmt(getattr(cheap, field)) if cheap else "",
                 ]
                 cells += fx_cells(cheap, field)
+                if with_derived:
+                    cells += derived_cells(cheap)
                 cells += [
                     _seller_of(cheap) if cheap else "",
                     # 卖家页面（去哪儿买），与下面的 source_url（价格证据）分开
@@ -761,11 +783,14 @@ def write_table(
                 cells = _group(
                     "image", "per_image", with_output=False,
                     records=records, allow_qualifier=allow_qualifier,
+                    with_derived=True,
                 )
-                if not any(cells[:1] + cells[6:7]):
+                # ⚠️ 加了 derived 两列后，最低价从 [6] 挪到了 [8]
+                if not any(cells[:1] + cells[8:9]):
                     cells = _group(
                         "text", "per_image", with_output=False,
                         records=records, allow_qualifier=allow_qualifier,
+                        with_derived=True,
                     )
                 return cells
 
@@ -778,7 +803,7 @@ def write_table(
             if token_prices_only or price_mode == PRICE_MODE_TOKEN:
                 # 即便同一条观测同时带 token 与按张/按秒价格，能力表也只展示
                 # token 部分；非 token 计费继续保留在源数据，不进入这两个 CSV。
-                image_cells = [""] * 15
+                image_cells = [""] * 19
                 video_cells = [""] * 15
 
             # ── text 组：输入、输出各自取最低（常来自不同卖家）──

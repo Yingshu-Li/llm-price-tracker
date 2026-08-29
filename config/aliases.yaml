@@ -105,6 +105,10 @@ aliases:
     vercel: alibaba/wan-v2.7-i2v
 
   # Gemini API 仍使用 preview id；Vercel 目录把同一在售版本写成稳定 `-001`。
+  "gemini-omni-1.1-flash":
+    google_omni_video_official_verified: gemini-omni-1.1-flash
+    fal_google_video_verified: google/gemini-omni-flash/v1.1/text-to-video
+    runway_google_video_verified: gemini_omni_flash
   "veo-3.1-generate-preview":
     google_video_official_verified: veo-3.1-generate-preview
     litellm: veo-3.1-generate-preview

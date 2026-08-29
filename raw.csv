@@ -107,6 +107,7 @@ gemini-3.1-flash-image,Google,Image Generation,Undisclosed,Undisclosed,Online: G
 gemini-3.1-flash-lite-image,Google,Image Generation,Undisclosed,Undisclosed,Online: Gemini API (Stable),No
 imagen-4.0-generate,Google,Image Generation,Undisclosed,Undisclosed,"Online: Gemini API (Deprecated, still available)",No
 gemini-omni-flash-preview,Google,Video Generation,Undisclosed,Undisclosed,Online: Gemini API (Preview),No
+gemini-omni-1.1-flash,Google,Video Generation,Undisclosed,Undisclosed,Online: Gemini API (Production),No
 veo-3.1-generate-preview,Google,Video Generation,Undisclosed,Undisclosed,Online: Gemini API (Preview),No
 veo-3.1-lite-generate-preview,Google,Video Generation,Undisclosed,Undisclosed,Online: Gemini API (Preview),No
 gemini-2.5-flash-native-audio-preview-12-2025,Google,Speech & Audio,Undisclosed,Undisclosed,Online: Gemini Live API (Preview),Yes
@@ -281,6 +282,9 @@ kimi-k2.6,Moonshot AI / Kimi,General-Purpose,Undisclosed,Undisclosed,Online: Kim
 kimi-k3,Moonshot AI / Kimi,General-Purpose,2.8T,Undisclosed,Online: Kimi / API,Yes
 kimi-k2.7-code,Moonshot AI / Kimi,Coding,Undisclosed,Undisclosed,Online: API,Yes
 kimi-k2.7-code-highspeed,Moonshot AI / Kimi,Coding,Undisclosed,Undisclosed,Online: API,Yes
+moonshotai/Kimi-K3,Moonshot AI / Kimi,General-Purpose,2.8T,104B/token,Both: API / Official Hugging Face Open Weight,Yes
+moonshotai/Kimi-K2.6,Moonshot AI / Kimi,General-Purpose,1T,32B/token,Both: API / Official Hugging Face Open Weight,Yes
+moonshotai/Kimi-K2.7-Code,Moonshot AI / Kimi,Coding,1T,32B/token,Both: API / Official Hugging Face Open Weight,Yes
 GLM-4.1V-Thinking-Flash,Zhipu AI / GLM,General-Purpose,Undisclosed,Undisclosed,Online: BigModel API,Yes
 GLM-4.1V-Thinking-FlashX,Zhipu AI / GLM,General-Purpose,Undisclosed,Undisclosed,Online: BigModel API,Yes
 GLM-4.5-Air,Zhipu AI / GLM,General-Purpose,Undisclosed,Undisclosed,Online: BigModel API,Yes
@@ -318,6 +322,12 @@ GLM-ASR-2512,Zhipu AI / GLM,Speech & Audio,Undisclosed,Undisclosed,Online: BigMo
 GLM-Realtime,Zhipu AI / GLM,Speech & Audio,Undisclosed,Undisclosed,Online: BigModel API,No
 GLM-TTS,Zhipu AI / GLM,Speech & Audio,Undisclosed,Undisclosed,Online: BigModel API,No
 GLM-TTS-Clone,Zhipu AI / GLM,Speech & Audio,Undisclosed,Undisclosed,Online: BigModel API,No
+zai-org/GLM-5.3,Zhipu AI / GLM,General-Purpose,Undisclosed,Undisclosed,Both: API / Official Hugging Face Open Weight,Yes
+zai-org/GLM-4.7,Zhipu AI / GLM,General-Purpose,Undisclosed,Undisclosed,Both: API / Official Hugging Face Open Weight,Yes
+zai-org/GLM-4.7-Flash,Zhipu AI / GLM,General-Purpose,Undisclosed,Undisclosed,Both: API / Official Hugging Face Open Weight,Yes
+zai-org/GLM-4.6,Zhipu AI / GLM,General-Purpose,Undisclosed,Undisclosed,Both: API / Official Hugging Face Open Weight,Yes
+zai-org/GLM-4.6V,Zhipu AI / GLM,General-Purpose,Undisclosed,Undisclosed,Both: API / Official Hugging Face Open Weight,Yes
+zai-org/GLM-4.6V-Flash,Zhipu AI / GLM,General-Purpose,Undisclosed,Undisclosed,Both: API / Official Hugging Face Open Weight,Yes
 M2-her,MiniMax,General-Purpose,Undisclosed,Undisclosed,Online: API,No
 MiniMax-M2,MiniMax,General-Purpose,Undisclosed,Undisclosed,Online: API,Yes
 MiniMax-M2.1,MiniMax,General-Purpose,Undisclosed,Undisclosed,Online: API,Yes

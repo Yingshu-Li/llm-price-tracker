@@ -29,6 +29,7 @@ python update_prices.py             # 抓取全部源并导出
 | 文件 | 内容 |
 | --- | --- |
 | `out/models_with_prices.csv` | General-Purpose 主表（隐藏规则只影响展示，不删除原始数据） |
+| `out/general_unpriced_open_weight_models.csv` | General-Purpose：开源权重且任何源都没有报价的模型 |
 | `out/coding_models_with_prices.csv` | Coding 分表，22 行；仅保留 token 计费列 |
 | `out/embedding_models_with_prices.csv` | Embedding / Rerank 分表，30 行；仅保留输入/处理 token 计费列 |
 | `out/image_token_models_with_prices.csv` | Image Generation：按 token 计费的模型 |
@@ -111,6 +112,12 @@ Embedding 和三张按计费口径拆分的 Image Generation 分表：
 | `out/image_token_models_with_prices.csv` | Image Generation | 只展示按 token 计费的价格 |
 | `out/image_per_image_models_with_prices.csv` | Image Generation | 只展示按张计费的价格 |
 | `out/image_unpriced_open_weight_models.csv` | Image Generation | 只展示开源权重且没有 API 报价的模型 |
+| `out/general_unpriced_open_weight_models.csv` | General-Purpose | 只展示开源权重且没有任何报价的模型 |
+
+「无报价开源」三张表（general / image / video）共用同一条规则：**权重开源**
+且所有源都查不到报价。这类模型的价格是**客观不存在**，不是抓取失败；闭源
+却没拿到价的属于 `not_found`，是真缺口，故意不并进来——混在一起会让缺口
+看起来像「本来就免费」。主表不做删减，这些模型在主表里照常存在。
 
 能力分表保留对应 Function 的全部模型行。若某模型目前只有按次、按秒、按图片等
 非 token 报价，价格列留空，不把不同结算单位强行换算或放进表格；原始报价仍照常

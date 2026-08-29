@@ -80,6 +80,10 @@ company_defaults:
     source_url: https://huggingface.co/nex-agi/models
 
 models:
+  - model_id: gemini-omni-1.1-flash
+    company: Google
+    input_modalities: [text, image, audio, video]
+    source_url: https://ai.google.dev/gemini-api/docs/video
   # ── Image Generation：不得使用公司文本模型的默认值 ──
   - model_id: imagen-4.0-generate
     company: Google
