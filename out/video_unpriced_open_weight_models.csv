@@ -1,0 +1,7 @@
+display_name,Model,Company,Function,Total Para,Activate Para,On/Off Line,Reasoning,access_mode,lifecycle,is_open_weight,weights,price_status,official_price
+HunyuanVideo,HunyuanVideo,Tencent / Hunyuan,Video Generation,,,Online / Open Weight,No,both,stable,1,free,weights_free,weight open source
+HunyuanVideo 1.5,tencent/HunyuanVideo-1.5,Tencent / Hunyuan,Video Generation,8.3,8.3,Offline: Official Hugging Face / Open Weight,No,offline,stable,1,free,weights_free,weight open source
+Motif Video 2B,Motif-Technologies/Motif-Video-2B,Motif Technologies,Video Generation,2,2,Offline: Official Hugging Face / Open Weight,No,offline,stable,1,free,weights_free,weight open source
+LongCat Video Avatar 1.5,meituan-longcat/LongCat-Video-Avatar-1.5,Meituan / LongCat,Video Generation,,,Offline: Official Hugging Face / Open Weight,No,offline,stable,1,free,weights_free,weight open source
+LongCat Video Avatar,meituan-longcat/LongCat-Video-Avatar,Meituan / LongCat,Video Generation,,,Offline: Official Hugging Face / Open Weight,No,offline,stable,1,free,weights_free,weight open source
+LongCat Video,meituan-longcat/LongCat-Video,Meituan / LongCat,Video Generation,,,Offline: Official Hugging Face / Open Weight,No,offline,stable,1,free,weights_free,weight open source
