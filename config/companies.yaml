@@ -481,6 +481,187 @@ companies:
     openrouter_prefixes: []
     notes: 官方 API 按分辨率、音频与输出秒扣 credit；直接充值基准为 USD 0.01/credit。
 
+  # ── 语音 / 音频 API 厂商 ────────────────────────────────────
+  # 2026-08-29 音频计费单位盘点时新增。这几家的计价单位与文本模型完全不同
+  # （按分钟 / 按小时 / 按字符），pricing_page 已逐条实测可抓。
+
+  - company: ElevenLabs
+    homepage: https://elevenlabs.io
+    blog: https://elevenlabs.io/blog
+    rss: null
+    hf_org: null
+    api_docs: https://elevenlabs.io/docs/models
+    pricing_page: https://elevenlabs.io/pricing/api
+    pricing_machine_readable: server_html
+    openrouter_prefixes: []
+    notes: >-
+      TTS 按每 1K 字符、Scribe 按每小时、Music/Dubbing/Voice Changer 按每分钟，
+      三种单位同页并存。docs/models 给的是 API model_id 原文（eleven_v3 等），
+      与定价页的市场名（"v3"）对不上，匹配时以 model_id 为准。
+
+  - company: Deepgram
+    homepage: https://deepgram.com
+    blog: https://deepgram.com/learn
+    rss: null
+    hf_org: null
+    api_docs: https://developers.deepgram.com/docs/models-languages-overview
+    pricing_page: https://deepgram.com/pricing
+    pricing_machine_readable: server_html
+    openrouter_prefixes: []
+    notes: >-
+      STT 按每分钟、Aura TTS 按每 1K 字符。定价页含大量限时促销价
+      （"$X through 9/12 Then $Y"），抓取时要取 Then 之后的常规价。
+
+  - company: AssemblyAI
+    homepage: https://www.assemblyai.com
+    blog: https://www.assemblyai.com/blog
+    rss: null
+    hf_org: null
+    api_docs: https://www.assemblyai.com/docs
+    pricing_page: https://www.assemblyai.com/pricing
+    pricing_machine_readable: server_html
+    openrouter_prefixes: []
+    notes: >-
+      ⚠️ 全线按小时，但计量基数有两种：预录按「per hour of audio」，
+      流式按「per hour of session duration」（WebSocket 连接时长，静音也计费）。
+      两者不可同列比价，官方原文明确写了这个区分。
+
+  # ── 开源语音权重厂商（无 API 定价，仅追踪发布）──────────────
+
+  - company: OpenMOSS
+    homepage: https://www.open-moss.com
+    blog: null
+    rss: null
+    hf_org: OpenMOSS-Team
+    api_docs: null
+    pricing_page: null
+    pricing_machine_readable: none
+    openrouter_prefixes: []
+    notes: 复旦 OpenMOSS 团队；MOSS-TTS / MOSS-Audio 系列，仅发权重。
+
+  - company: Boson AI
+    homepage: https://boson.ai
+    blog: null
+    rss: null
+    hf_org: bosonai
+    api_docs: null
+    pricing_page: null
+    pricing_machine_readable: none
+    openrouter_prefixes: []
+    notes: Higgs Audio / Higgs TTS 系列。
+
+  - company: Kyutai
+    homepage: https://kyutai.org
+    blog: null
+    rss: null
+    hf_org: kyutai
+    api_docs: null
+    pricing_page: null
+    pricing_machine_readable: none
+    openrouter_prefixes: []
+    notes: Moshi / TTS / PersonaPlex 系列，全部开源权重。
+
+  - company: Fixie AI
+    homepage: https://www.fixie.ai
+    blog: null
+    rss: null
+    hf_org: fixie-ai
+    api_docs: null
+    pricing_page: null
+    pricing_machine_readable: none
+    openrouter_prefixes: []
+    notes: >-
+      Ultravox 系列。⚠️ HF 仓库只发适配器权重，safetensors.total
+      （687M / 683M）不是模型总参数量，不能直接当 Total Para 用。
+
+  - company: Resemble AI
+    homepage: https://www.resemble.ai
+    blog: null
+    rss: null
+    hf_org: ResembleAI
+    api_docs: null
+    pricing_page: null
+    pricing_machine_readable: none
+    openrouter_prefixes: []
+    notes: Chatterbox 开源 TTS。
+
+  - company: Fish Audio
+    homepage: https://fish.audio
+    blog: null
+    rss: null
+    hf_org: fishaudio
+    api_docs: null
+    pricing_page: null
+    pricing_machine_readable: none
+    openrouter_prefixes: []
+    notes: S2 系列 TTS。
+
+  - company: OpenBMB
+    homepage: https://www.openbmb.cn
+    blog: null
+    rss: null
+    hf_org: openbmb
+    api_docs: null
+    pricing_page: null
+    pricing_machine_readable: none
+    openrouter_prefixes: []
+    notes: VoxCPM 语音系列（与 MiniCPM 同组织）。
+
+  - company: Canopy Labs
+    homepage: https://canopylabs.ai
+    blog: null
+    rss: null
+    hf_org: canopylabs
+    api_docs: null
+    pricing_page: null
+    pricing_machine_readable: none
+    openrouter_prefixes: []
+    notes: Orpheus TTS。
+
+  - company: k2-fsa
+    homepage: https://k2-fsa.github.io
+    blog: null
+    rss: null
+    hf_org: k2-fsa
+    api_docs: null
+    pricing_page: null
+    pricing_machine_readable: none
+    openrouter_prefixes: []
+    notes: sherpa / OmniVoice，学术开源语音工具链。
+
+  - company: pyannote
+    homepage: https://www.pyannote.ai
+    blog: null
+    rss: null
+    hf_org: pyannote
+    api_docs: null
+    pricing_page: null
+    pricing_machine_readable: none
+    openrouter_prefixes: []
+    notes: 说话人分离（diarization）事实标准，是 pipeline 不是单一权重。
+
+  - company: ACE-Step
+    homepage: https://ace-step.github.io
+    blog: null
+    rss: null
+    hf_org: ACE-Step
+    api_docs: null
+    pricing_page: null
+    pricing_machine_readable: none
+    openrouter_prefixes: []
+    notes: 音乐生成与转录开源模型。
+
+  - company: MiSpeech
+    homepage: https://github.com/xiaomi-research
+    blog: null
+    rss: null
+    hf_org: mispeech
+    api_docs: null
+    pricing_page: null
+    pricing_machine_readable: none
+    openrouter_prefixes: []
+    notes: MiDashengLM 音频理解；与 raw.csv 的「Xiaomi / MiMo」是不同团队，勿合并。
+
 # ── 跨公司的兜底源 ────────────────────────────────────────────
 # 单个 API 覆盖多家，比 28 个易碎的 RSS 更可靠，这才是主力信号。
 

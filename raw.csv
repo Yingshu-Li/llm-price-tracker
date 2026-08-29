@@ -707,3 +707,74 @@ bytedance/seedance-v1.0-pro-fast,ByteDance / Doubao-Seed,Video Generation,Undisc
 bytedance/seedance-v1.5-pro,ByteDance / Doubao-Seed,Video Generation,Undisclosed,Undisclosed,Online: Vercel AI Gateway,No
 bytedance/seedance-2.0-fast,ByteDance / Doubao-Seed,Video Generation,Undisclosed,Undisclosed,Online: Runway API / Vercel AI Gateway,No
 bytedance/seedance-2.0-mini,ByteDance / Doubao-Seed,Video Generation,Undisclosed,Undisclosed,Online: Runway API / Vercel AI Gateway,No
+gpt-audio,OpenAI,Speech & Audio,Undisclosed,Undisclosed,Online: API,No
+gpt-audio-mini,OpenAI,Speech & Audio,Undisclosed,Undisclosed,Online: API,No
+gpt-realtime,OpenAI,Speech & Audio,Undisclosed,Undisclosed,Online: Realtime API,No
+gpt-realtime-mini,OpenAI,Speech & Audio,Undisclosed,Undisclosed,Online: Realtime API,No
+gpt-4o-mini-tts,OpenAI,Speech & Audio,Undisclosed,Undisclosed,Online: API,No
+tts-1,OpenAI,Speech & Audio,Undisclosed,Undisclosed,Online: API,No
+tts-1-hd,OpenAI,Speech & Audio,Undisclosed,Undisclosed,Online: API,No
+whisper-1,OpenAI,Speech & Audio,Undisclosed,Undisclosed,Online: API,No
+gpt-transcribe,OpenAI,Speech & Audio,Undisclosed,Undisclosed,Online: API,No
+gpt-4o-transcribe,OpenAI,Speech & Audio,Undisclosed,Undisclosed,Online: API,No
+gpt-4o-mini-transcribe,OpenAI,Speech & Audio,Undisclosed,Undisclosed,Online: API,No
+gpt-4o-transcribe-diarize,OpenAI,Speech & Audio,Undisclosed,Undisclosed,Online: API,No
+gemini-3.5-transcribe,Google,Speech & Audio,Undisclosed,Undisclosed,Online: Gemini API (Preview),No
+gemini-3.5-transcribe-live,Google,Speech & Audio,Undisclosed,Undisclosed,Online: Gemini Live API (Preview),No
+qwen-audio-3.0-tts-plus,Alibaba / Qwen,Speech & Audio,Undisclosed,Undisclosed,Online: Model Studio API,No
+qwen-audio-3.0-tts-flash,Alibaba / Qwen,Speech & Audio,Undisclosed,Undisclosed,Online: Model Studio API,No
+qwen3-tts-instruct-flash,Alibaba / Qwen,Speech & Audio,Undisclosed,Undisclosed,Online: Model Studio API,No
+fun-music-preview,Alibaba / Qwen,Speech & Audio,Undisclosed,Undisclosed,Online: Model Studio API,No
+fun-music-v1,Alibaba / Qwen,Speech & Audio,Undisclosed,Undisclosed,Online: Model Studio API,No
+qwen-audio-3.0-realtime-plus,Alibaba / Qwen,Speech & Audio,Undisclosed,Undisclosed,Online: Model Studio API,Yes
+GLM-Realtime-Flash,Zhipu AI / GLM,Speech & Audio,Undisclosed,Undisclosed,Online: BigModel API,No
+GLM-Realtime-Air,Zhipu AI / GLM,Speech & Audio,Undisclosed,Undisclosed,Online: BigModel API,No
+eleven_v3,ElevenLabs,Speech & Audio,Undisclosed,Undisclosed,Online: API,No
+eleven_v3_conversational,ElevenLabs,Speech & Audio,Undisclosed,Undisclosed,Online: API,No
+eleven_multilingual_v2,ElevenLabs,Speech & Audio,Undisclosed,Undisclosed,Online: API,No
+eleven_flash_v2_5,ElevenLabs,Speech & Audio,Undisclosed,Undisclosed,Online: API,No
+eleven_multilingual_sts_v2,ElevenLabs,Speech & Audio,Undisclosed,Undisclosed,Online: API,No
+eleven_text_to_sound_v2,ElevenLabs,Speech & Audio,Undisclosed,Undisclosed,Online: API,No
+scribe_v2,ElevenLabs,Speech & Audio,Undisclosed,Undisclosed,Online: API,No
+scribe_v2_realtime,ElevenLabs,Speech & Audio,Undisclosed,Undisclosed,Online: API,No
+music_v2,ElevenLabs,Speech & Audio,Undisclosed,Undisclosed,Online: API,No
+flux-general-en,Deepgram,Speech & Audio,Undisclosed,Undisclosed,Online: API,No
+flux-general-multi,Deepgram,Speech & Audio,Undisclosed,Undisclosed,Online: API,No
+nova-3,Deepgram,Speech & Audio,Undisclosed,Undisclosed,Online: API,No
+nova-3-medical,Deepgram,Speech & Audio,Undisclosed,Undisclosed,Online: API,No
+aura-2,Deepgram,Speech & Audio,Undisclosed,Undisclosed,Online: API,No
+aura,Deepgram,Speech & Audio,Undisclosed,Undisclosed,Online: API,No
+Universal-3.5 Pro,AssemblyAI,Speech & Audio,Undisclosed,Undisclosed,Online: API,No
+Universal-2,AssemblyAI,Speech & Audio,Undisclosed,Undisclosed,Online: API,No
+Universal-3.5 Pro Realtime,AssemblyAI,Speech & Audio,Undisclosed,Undisclosed,Online: API,No
+Universal-Streaming English,AssemblyAI,Speech & Audio,Undisclosed,Undisclosed,Online: API,No
+Universal-Streaming Multilingual,AssemblyAI,Speech & Audio,Undisclosed,Undisclosed,Online: API,No
+nvidia/parakeet-tdt-0.6b-v3,NVIDIA,Speech & Audio,627M,627M,Offline: Official Hugging Face / Open Weight,No
+nvidia/nemotron-3.5-asr-streaming-0.6b,NVIDIA,Speech & Audio,638M,638M,Offline: Official Hugging Face / Open Weight,No
+nvidia/audio-flamingo-3-hf,NVIDIA,Speech & Audio,8.3B,8.3B,Offline: Official Hugging Face / Open Weight,No
+nvidia/audio-flamingo-next-hf,NVIDIA,Speech & Audio,8.3B,8.3B,Offline: Official Hugging Face / Open Weight,No
+nvidia/music-flamingo-2601-hf,NVIDIA,Speech & Audio,8.3B,8.3B,Offline: Official Hugging Face / Open Weight,No
+nvidia/personaplex-7b-v1,NVIDIA,Speech & Audio,8.4B,8.4B,Offline: Official Hugging Face / Open Weight,No
+microsoft/VibeVoice-ASR,Microsoft,Speech & Audio,8.7B,8.7B,Offline: Official Hugging Face / Open Weight,No
+microsoft/VibeVoice-Realtime-0.5B,Microsoft,Speech & Audio,1B,1B,Offline: Official Hugging Face / Open Weight,No
+OpenMOSS-Team/MOSS-TTS-v1.5,OpenMOSS,Speech & Audio,8.5B,8.5B,Offline: Official Hugging Face / Open Weight,No
+OpenMOSS-Team/MOSS-TTS-Local-Transformer-v1.5,OpenMOSS,Speech & Audio,4.6B,4.6B,Offline: Official Hugging Face / Open Weight,No
+OpenMOSS-Team/MOSS-Audio-4B-Instruct,OpenMOSS,Speech & Audio,5.2B,5.2B,Offline: Official Hugging Face / Open Weight,No
+OpenMOSS-Team/MOSS-Audio-8B-Instruct,OpenMOSS,Speech & Audio,9.1B,9.1B,Offline: Official Hugging Face / Open Weight,No
+OpenMOSS-Team/MOSS-Transcribe-Diarize,OpenMOSS,Speech & Audio,909M,909M,Offline: Official Hugging Face / Open Weight,No
+OpenMOSS-Team/MOSS-Audio-4B-Thinking,OpenMOSS,Speech & Audio,5.2B,5.2B,Offline: Official Hugging Face / Open Weight,Yes
+OpenMOSS-Team/MOSS-Audio-8B-Thinking,OpenMOSS,Speech & Audio,9.1B,9.1B,Offline: Official Hugging Face / Open Weight,Yes
+ResembleAI/chatterbox,Resemble AI,Speech & Audio,Undisclosed,Undisclosed,Offline: Official Hugging Face / Open Weight,No
+k2-fsa/OmniVoice,k2-fsa,Speech & Audio,613M,613M,Offline: Official Hugging Face / Open Weight,No
+bosonai/higgs-tts-2-3b-base,Boson AI,Speech & Audio,5.8B,5.8B,Offline: Official Hugging Face / Open Weight,No
+bosonai/higgs-tts-3-4b,Boson AI,Speech & Audio,4.7B,4.7B,Offline: Official Hugging Face / Open Weight,No
+fishaudio/s2-pro,Fish Audio,Speech & Audio,4.6B,4.6B,Offline: Official Hugging Face / Open Weight,No
+openbmb/VoxCPM2,OpenBMB,Speech & Audio,2.3B,2.3B,Offline: Official Hugging Face / Open Weight,No
+canopylabs/orpheus-3b-0.1-ft,Canopy Labs,Speech & Audio,3.8B,3.8B,Offline: Official Hugging Face / Open Weight,No
+kyutai/tts-1.6b-en_fr,Kyutai,Speech & Audio,1.6B,1.6B,Offline: Official Hugging Face / Open Weight,No
+kyutai/personaplex-rl-seamless,Kyutai,Speech & Audio,8.4B,8.4B,Offline: Official Hugging Face / Open Weight,No
+fixie-ai/ultravox-v0_6-llama-3_1-8b,Fixie AI,Speech & Audio,Undisclosed,Undisclosed,Offline: Official Hugging Face / Open Weight,No
+fixie-ai/ultravox-v0_5-llama-3_2-1b,Fixie AI,Speech & Audio,Undisclosed,Undisclosed,Offline: Official Hugging Face / Open Weight,No
+pyannote/speaker-diarization-community-1,pyannote,Speech & Audio,Undisclosed,Undisclosed,Offline: Official Hugging Face / Open Weight,No
+ACE-Step/acestep-transcriber,ACE-Step,Speech & Audio,10.7B,10.7B,Offline: Official Hugging Face / Open Weight,No
+mispeech/midashenglm-7b,MiSpeech,Speech & Audio,8.3B,8.3B,Offline: Official Hugging Face / Open Weight,No

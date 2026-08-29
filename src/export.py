@@ -661,6 +661,7 @@ def write_table(
     token_prices_only: bool = False,
     include_text_output_prices: bool = True,
     price_mode: str | None = None,
+    exclude_unpriced_open_weight: bool = False,
 ) -> dict:
     """records_by_model 是该模型的**全部**观测（未收敛成一条）。
 
@@ -699,6 +700,16 @@ def write_table(
 
             av = raw.availability
             all_records = records_by_model.get(raw.model, [])
+            # General-purpose 主表与「开源无报价」子表必须互斥。这里复用
+            # PRICE_MODE_UNPRICED 的同一判定口径：权重开源，并且所有已匹配
+            # 观测都没有任何价格字段。闭源无价仍留在主表，作为真实数据缺口。
+            if exclude_unpriced_open_weight and _pool_for_price_mode(
+                all_records,
+                PRICE_MODE_UNPRICED,
+                is_open_weight=av.is_open_weight,
+            ) is not None:
+                stats["hidden_unpriced_open_weight"] += 1
+                continue
             if price_mode is not None:
                 # 按结算单位拆表：不属于本表的行直接跳过，
                 # 池子也只保留该单位的观测（保证官方价与最低价同单位）

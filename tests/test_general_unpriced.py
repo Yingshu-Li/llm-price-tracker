@@ -52,6 +52,21 @@ def _write(records_by_model):
             return list(csv.DictReader(handle))
 
 
+def _write_main(records_by_model):
+    with tempfile.TemporaryDirectory() as tmp:
+        path = Path(tmp) / "general_main.csv"
+        write_table(
+            path,
+            GeneralUnpricedTests.raw_models,
+            {},
+            records_by_model,
+            export_functions=EXPORT_FUNCTIONS,
+            exclude_unpriced_open_weight=True,
+        )
+        with path.open(encoding="utf-8", newline="") as handle:
+            return list(csv.DictReader(handle))
+
+
 class GeneralUnpricedTests(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
@@ -68,6 +83,19 @@ class GeneralUnpricedTests(unittest.TestCase):
     def test_open_weight_without_any_price_is_included(self):
         models = {row["Model"] for row in _write({})}
         self.assertIn(self.open_weight.model, models)
+
+    def test_open_weight_without_any_price_is_excluded_from_main(self):
+        models = {row["Model"] for row in _write_main({})}
+        self.assertNotIn(self.open_weight.model, models)
+
+    def test_open_weight_with_price_stays_in_main(self):
+        model = self.open_weight.model
+        rows = _write_main({model: [_record(model, input_per_1m=0.5)]})
+        self.assertIn(model, {row["Model"] for row in rows})
+
+    def test_closed_weight_without_price_stays_in_main_as_gap(self):
+        models = {row["Model"] for row in _write_main({})}
+        self.assertIn(self.closed.model, models)
 
     def test_open_weight_with_a_price_is_excluded(self):
         model = self.open_weight.model

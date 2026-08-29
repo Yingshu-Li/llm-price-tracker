@@ -24,6 +24,10 @@ python update_prices.py             # 抓取全部源并导出
   真被写了要报错，而不是悄悄提交上去。
 - 产物同时上传为 artifact（留存 14 天），流程失败时也能拿到。
 
+[.github/workflows/update-papers.yml](.github/workflows/update-papers.yml) 每天另行检查
+`config/paper_sources.csv` 中的公开研究清单。采集器优先保留来源已有的标题、期刊/会议和日期，
+只有字段缺失时才使用 arXiv 或 Crossref 补全；网页按分类分页，每页最多展示 200 篇。
+
 ## 产物
 
 | 文件 | 内容 |
@@ -37,6 +41,9 @@ python update_prices.py             # 抓取全部源并导出
 | `out/image_unpriced_open_weight_models.csv` | Image Generation：开源权重且没有 API 报价的模型 |
 | `out/sources.md` | 数据源清单 + 许可 + 解析告警 |
 | `out/exchange_rates.json` | ECB 最近一次成功的每日参考汇率；周末和短时故障回退使用 |
+| `out/papers.json` | 论文网页使用的分类目录、来源信息和论文条目 |
+| `out/papers.csv` | 同一论文目录的可下载 CSV 版本 |
+| `out/papers_state.json` | 各研究源的增量检查状态，不作为前端展示数据 |
 
 总表关键列：
 

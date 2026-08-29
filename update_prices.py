@@ -777,6 +777,7 @@ def main() -> int:
     stats = export_mod.write_table(
         OUT / "models_with_prices.csv", raw_models, best, by_model, free_tiers,
         input_capabilities,
+        exclude_unpriced_open_weight=True,
     )
     function_exports = (
         ("coding_models_with_prices.csv", {"Coding"}, True),
