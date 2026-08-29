@@ -1,6 +1,6 @@
 # 数据源清单
 
-由 `update_prices.py` 于 2026-08-29T02:57:12 自动生成。
+由 `update_prices.py` 于 2026-08-29T05:39:12 自动生成。
 
 | 数据 Provider | 网页 | 抓取地址 | 许可 | 状态 | 记录数 |
 | --- | --- | --- | --- | --- | --- |
@@ -20,13 +20,15 @@
 | DeepSeek API 官方价格（人工核验） | https://api-docs.deepseek.com/quick_start/pricing/ | `https://api-docs.deepseek.com/quick_start/pricing/` | 厂商官方价格页（人工核验快照） | ✅ | 3 |
 | European Central Bank reference rates | https://data.ecb.europa.eu/key-figures/ecb-interest-rates-and-exchange-rates/exchange-rates | `https://www.ecb.europa.eu/stats/eurofxref/eurofxref-daily.xml` | ECB reference rates | ✅ | 161 |
 | Empirio Labs | https://empiriolabs.ai | `https://api.empiriolabs.ai/v1/models` | 公开 API | ✅ | 75 |
+| fal Video API 公开价格（人工核验） | https://fal.ai/models/google/gemini-omni-flash/v1.1/text-to-video/api | `https://fal.ai/models/google/gemini-omni-flash/v1.1/text-to-video/api` | 公开第三方 API 价格页 | ✅ | 4 |
+| Google Gemini Omni 1.1 Flash 官方价格（人工核验） | https://blog.google/innovation-and-ai/technology/developers-tools/build-with-gemini-omni-1-1-flash/ | `https://blog.google/innovation-and-ai/technology/developers-tools/buil` | 厂商官方价格页（人工核验快照） | ✅ | 4 |
 | Google Gemini API Veo 官方价格（人工核验） | https://ai.google.dev/gemini-api/docs/pricing | `https://ai.google.dev/gemini-api/docs/pricing` | 厂商官方价格页（人工核验快照） | ✅ | 7 |
-| HuggingFace Router | https://huggingface.co/models?inference_provider=all | `https://router.huggingface.co/v1/models` | 公开 API | ✅ | 190 |
+| HuggingFace Router | https://huggingface.co/models?inference_provider=all | `https://router.huggingface.co/v1/models` | 公开 API | ✅ | 192 |
 | iFLYTEK 星火 MaaS 官方价格 | https://maas.xfyun.cn/modelSquare | `https://maas.xfyun.cn/api/v1/gpt-finetune/model/base/list-v2?page=1&si` | 厂商官方公开接口 | ✅ | 2 |
 | LiteLLM | https://github.com/BerriAI/litellm | `https://cdn.jsdelivr.net/gh/BerriAI/litellm@main/model_prices_and_cont` | MIT | ✅ | 2613 |
 | Luma Agents Ray 3.2 官方价格（人工核验） | https://docs.agents.lumalabs.ai/guides/pricing | `https://docs.agents.lumalabs.ai/guides/pricing` | 厂商官方价格页（人工核验快照） | ✅ | 3 |
 | MiniMax Video 官方按量价格（人工核验） | https://platform.minimax.io/docs/guides/pricing-paygo | `https://platform.minimax.io/docs/guides/pricing-paygo` | 厂商官方价格页（人工核验快照） | ✅ | 5 |
-| models.dev | https://models.dev | `https://models.dev/api.json` | MIT | ✅ | 6026 |
+| models.dev | https://models.dev | `https://models.dev/api.json` | MIT | ✅ | 6027 |
 | Moonshot AI / Kimi 官方文档 | https://platform.moonshot.ai/docs/pricing/chat-k3 | `https://platform.kimi.ai/docs/pricing/chat-k3.md` | 厂商官方文档 | ✅ | 10 |
 | Moonshot AI / Kimi 官方文档 | https://platform.moonshot.ai/docs/pricing/chat-k3 | `https://platform.kimi.ai/docs/pricing/chat-k27-code.md` | 厂商官方文档 | ✅ | 10 |
 | Moonshot AI / Kimi 官方文档 | https://platform.moonshot.ai/docs/pricing/chat-k3 | `https://platform.kimi.ai/docs/pricing/chat-k26.md` | 厂商官方文档 | ✅ | 10 |
@@ -41,6 +43,7 @@
 | PixVerse API 官方价格（人工核验） | https://docs.platform.pixverse.ai/pricing-796039m0 | `https://docs.platform.pixverse.ai/pricing-796039m0` | 厂商官方价格页（人工核验快照） | ✅ | 4 |
 | Pruna AI 官方按张价（人工核验） | https://www.pruna.ai/pricing | `https://www.pruna.ai/pricing` | 厂商官方价格页（人工核验快照） | ✅ | 2 |
 | Requesty | https://requesty.ai | `https://router.requesty.ai/v1/models/managed` | 公开 API | ✅ | 119 |
+| Runway API Gemini Omni 公开价格（人工核验） | https://docs.dev.runwayml.com/guides/pricing/ | `https://docs.dev.runwayml.com/guides/pricing/` | 公开第三方 API 价格页 | ✅ | 1 |
 | Runway Dev 官方价格（人工核验） | https://docs.dev.runwayml.com/guides/pricing/ | `https://docs.dev.runwayml.com/guides/pricing/` | 厂商官方价格页（人工核验快照） | ✅ | 4 |
 | SenseNova 官方模型列表 | https://www.sensecore.cn/help/docs/model-as-a-service/nova/overview/compatible-mode | `https://www.sensecore.cn/help/docs/model-as-a-service/nova/overview/co` | 厂商官方模型文档 | ✅ | 4 |
 | SenseNova 官方价格 | https://www.sensecore.cn/help/docs/model-as-a-service/nova/pricing | `https://www.sensecore.cn/help/docs/model-as-a-service/nova/pricing` | 厂商官方价格页 | ✅ | 9 |
@@ -81,19 +84,19 @@ models.dev 的 `google.ts` 里写着 `cost: existing.cost`（价格取自手工�
 
 厂商改一个列头就会静默丢掉一个价格维度，所以认不出的东西必须报出来。
 
-- openai_md: 未识别的列头 `use case`
-- openai_md: 未识别的列头 `training`
-- openai_md: 未识别的列头 `details`
-- openai_md: 未识别的列头 `category`
-- openai_md: 未识别的列头 `size`
-- openai_md: 未识别的列头 `estimated cost`
 - openai_md: 未识别的列头 `pricing`
+- openai_md: 未识别的列头 `estimated cost`
+- openai_md: 未识别的列头 `details`
+- openai_md: 未识别的列头 `use case`
+- openai_md: 未识别的列头 `category`
+- openai_md: 未识别的列头 `training`
 - openai_md: 未识别的列头 `portrait`
 - openai_md: 未识别的列头 `landscape`
+- openai_md: 未识别的列头 `size`
 - openai_md: 跳过表格「Grouped Pricing Table data」— 没有可识别的价格列
+- anthropic_md: 未识别的列头 `tool choice`
 - anthropic_md: 未识别的列头 `tool use system prompt token count`
 - anthropic_md: 未识别的列头 `additional input tokens`
-- anthropic_md: 未识别的列头 `tool choice`
 - anthropic_md: 跳过表格「Claude Platform on AWS pricing」— 找不到模型/工具名列
 - anthropic_md: 跳过表格「Claude in Microsoft Foundry pricing」— 找不到模型/工具名列
 - anthropic_md: 跳过表格「Prompt caching」— 找不到模型/工具名列
@@ -106,15 +109,18 @@ models.dev 的 `google.ts` 里写着 `cost: existing.cost`（价格取自手工�
 - anthropic_md: 跳过表格「Worked example」— 找不到模型/工具名列
 - xai_md: 跳过表格「Voice Pricing」— 列头可映射但未产出任何记录
 - zhipu_md: 未识别的列头 `cached input storage`
-- volcengine_official_verified: 官方页无法稳定服务端渲染，当前使用 2026-08-25T00:00:00+10:00 人工核验快照；URL 与原文摘录已保留
-- deepseek_official_verified: 官方页无法稳定服务端渲染，当前使用 2026-08-25T00:00:00+10:00 人工核验快照；URL 与原文摘录已保留
-- google_video_official_verified: 官方页无法稳定服务端渲染，当前使用 2026-08-27T00:00:00+10:00 人工核验快照；URL 与原文摘录已保留
-- minimax_video_official_verified: 官方页无法稳定服务端渲染，当前使用 2026-08-27T00:00:00+10:00 人工核验快照；URL 与原文摘录已保留
-- runway_video_official_verified: 官方页无法稳定服务端渲染，当前使用 2026-08-27T00:00:00+10:00 人工核验快照；URL 与原文摘录已保留
-- luma_video_official_verified: 官方页无法稳定服务端渲染，当前使用 2026-08-27T00:00:00+10:00 人工核验快照；URL 与原文摘录已保留
-- vidu_video_official_verified: 官方页无法稳定服务端渲染，当前使用 2026-08-27T00:00:00+10:00 人工核验快照；URL 与原文摘录已保留
-- pixverse_video_official_verified: 官方页无法稳定服务端渲染，当前使用 2026-08-27T00:00:00+10:00 人工核验快照；URL 与原文摘录已保留
-- alibaba_video_official_verified: 官方页无法稳定服务端渲染，当前使用 2026-08-27T00:00:00+10:00 人工核验快照；URL 与原文摘录已保留
-- pruna_official_verified: 官方页无法稳定服务端渲染，当前使用 2026-08-28T00:00:00+10:00 人工核验快照；URL 与原文摘录已保留
+- volcengine_official_verified: 价格页无法稳定服务端渲染，当前使用 2026-08-25T00:00:00+10:00 人工核验快照；URL 与原文摘录已保留
+- deepseek_official_verified: 价格页无法稳定服务端渲染，当前使用 2026-08-25T00:00:00+10:00 人工核验快照；URL 与原文摘录已保留
+- google_omni_video_official_verified: 价格页无法稳定服务端渲染，当前使用 2026-08-29T00:00:00+10:00 人工核验快照；URL 与原文摘录已保留
+- fal_google_video_verified: 价格页无法稳定服务端渲染，当前使用 2026-08-29T00:00:00+10:00 人工核验快照；URL 与原文摘录已保留
+- runway_google_video_verified: 价格页无法稳定服务端渲染，当前使用 2026-08-29T00:00:00+10:00 人工核验快照；URL 与原文摘录已保留
+- google_video_official_verified: 价格页无法稳定服务端渲染，当前使用 2026-08-27T00:00:00+10:00 人工核验快照；URL 与原文摘录已保留
+- minimax_video_official_verified: 价格页无法稳定服务端渲染，当前使用 2026-08-27T00:00:00+10:00 人工核验快照；URL 与原文摘录已保留
+- runway_video_official_verified: 价格页无法稳定服务端渲染，当前使用 2026-08-27T00:00:00+10:00 人工核验快照；URL 与原文摘录已保留
+- luma_video_official_verified: 价格页无法稳定服务端渲染，当前使用 2026-08-27T00:00:00+10:00 人工核验快照；URL 与原文摘录已保留
+- vidu_video_official_verified: 价格页无法稳定服务端渲染，当前使用 2026-08-27T00:00:00+10:00 人工核验快照；URL 与原文摘录已保留
+- pixverse_video_official_verified: 价格页无法稳定服务端渲染，当前使用 2026-08-27T00:00:00+10:00 人工核验快照；URL 与原文摘录已保留
+- alibaba_video_official_verified: 价格页无法稳定服务端渲染，当前使用 2026-08-27T00:00:00+10:00 人工核验快照；URL 与原文摘录已保留
+- pruna_official_verified: 价格页无法稳定服务端渲染，当前使用 2026-08-28T00:00:00+10:00 人工核验快照；URL 与原文摘录已保留
 - bfl_official: 以下条目不是按张计价，未纳入按张表（不做跨单位换算）：FLUX 3 Upscale (Creative)(megapixel-second), FLUX 3 Upscale (Precise)(megapixel-second), FLUX 3 Video(second), FLUX 3 Video Draft(second), FLUX Deblur(megapixel), FLUX Erase(megapixel), FLUX Outpainting [fast](megapixel), FLUX Outpainting [high](megapixel), FLUX VTO(megapixel), FLUX.2 [flex](megapixel), FLUX.2 [klein] 4B(megapixel), FLUX.2 [klein] 9B(megapixel), FLUX.2 [max](megapixel), FLUX.2 [pro](megapixel)
 - nanogpt: 136 条无法归属公司已丢弃（不硬塞）
