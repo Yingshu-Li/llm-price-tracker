@@ -56,6 +56,12 @@ sources:
     url: https://help.aliyun.com/en/model-studio/model-pricing
     verified_at: "2026-08-27T00:00:00+10:00"
 
+  - id: pruna_official_verified
+    name: Pruna AI 官方按张价（人工核验）
+    provider: pruna-ai
+    url: https://www.pruna.ai/pricing
+    verified_at: "2026-08-28T00:00:00+10:00"
+
 prices:
   - source: volcengine_official_verified
     model_id: doubao-seed-evolving
@@ -418,3 +424,21 @@ prices:
     per_second: 0.60
     qualifier: China, 720p, audio video
     snippet: "wan2.7-i2v | audio video | 720P | CNY 0.6/second"
+
+  # Pruna 的定价页是 Framer 站，模型名与价格分处不同列且整页重复渲染两遍，
+  # 扁平化后无法程序化对应，因此走人工核验快照而不是抓取器。
+  # 两个数字都有 DeepInfra 的独立旁证（p-image $0.005、p-image-Edit $0.01），
+  # 与官网一致。
+  - source: pruna_official_verified
+    model_id: PrunaAI/p-image
+    currency: USD
+    unit: USD per image
+    per_image: 0.005
+    snippet: "P-Image | $0.005 / image output"
+
+  - source: pruna_official_verified
+    model_id: PrunaAI/p-image-Edit
+    currency: USD
+    unit: USD per image
+    per_image: 0.010
+    snippet: "P-Image Edit | $0.010 / image output"

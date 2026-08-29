@@ -43,6 +43,28 @@ class PriceApiParserTests(unittest.TestCase):
             [r.qualifier for r in records],
         )
 
+    def test_flat_frame_price_is_preserved_without_fps_conversion(self):
+        spec = {
+            "id": "frame_api",
+            "name": "Frame API",
+            "id_fields": ["id"],
+            "unit": "per_1m",
+            "flat_unit": "cents",
+            "tier": 3,
+            "fields": {"per_frame": "pricing.cents_per_frame_unit"},
+        }
+        records, warnings, _free = parse_api(
+            [{"id": "video-model", "pricing": {"cents_per_frame_unit": 0.2}}],
+            spec,
+            source_url="https://example.com/models",
+            fetched_at="2026-08-28T00:00:00Z",
+            source_version=None,
+        )
+        self.assertEqual(warnings, [])
+        self.assertEqual(len(records), 1)
+        self.assertAlmostEqual(records[0].per_frame, 0.002)
+        self.assertIsNone(records[0].per_second)
+
 
 if __name__ == "__main__":
     unittest.main()

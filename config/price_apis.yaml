@@ -51,6 +51,9 @@ apis:
       per_image: pricing.cents_per_image_unit
       # 文生视频按输出秒计价
       per_second: pricing.cents_per_output_sec
+      # 少数视频模型（例如 Cosmos）按输出帧计价。帧率未知时绝不擅自
+      # 换算成每秒价，而是保留独立量纲供 Video Generation 子表展示。
+      per_frame: pricing.cents_per_frame_unit
     skip_if_true: [deprecated, private]
 
   - id: hf_router

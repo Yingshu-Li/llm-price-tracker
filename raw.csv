@@ -648,8 +648,8 @@ Bria/Bria-3.2,Bria,Image Generation,,,Online: API,No
 Bria/fibo_edit,Bria,Image Generation,,,Online: API,No
 PrunaAI/p-image,Pruna AI,Image Generation,,,Online: API,No
 PrunaAI/p-image-Edit,Pruna AI,Image Generation,,,Online: API,No
-nvidia/Cosmos3-Super,NVIDIA,Image Generation,,,Online: API,No
-nvidia/Cosmos3-Nano,NVIDIA,Image Generation,,,Online: API,No
+nvidia/Cosmos3-Super,NVIDIA,Video Generation,64B,Undisclosed,Both: DeepInfra API / Official Hugging Face Open Weight,No
+nvidia/Cosmos3-Nano,NVIDIA,Video Generation,16B,Undisclosed,Both: DeepInfra API / Official Hugging Face Open Weight,No
 sora-2,OpenAI,Video Generation,Undisclosed,Undisclosed,"Online: API (Deprecated, EOL 2026-09-24)",No
 sora-2-pro,OpenAI,Video Generation,Undisclosed,Undisclosed,"Online: API (Deprecated, EOL 2026-09-24)",No
 veo-3.1-fast-generate-preview,Google,Video Generation,Undisclosed,Undisclosed,Online: Gemini API (Preview),No

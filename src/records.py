@@ -50,6 +50,7 @@ class PriceRecord:
     per_image: float | None = None
     per_video: float | None = None
     per_second: float | None = None
+    per_frame: float | None = None
     per_call: float | None = None
 
     # ── 元信息 ────────────────────────────────────────────────
@@ -88,6 +89,7 @@ class PriceRecord:
         "per_image",
         "per_video",
         "per_second",
+        "per_frame",
         "per_call",
     )
 
@@ -127,5 +129,4 @@ class PriceRecord:
 
     def has_any_price(self) -> bool:
         return any(getattr(self, name) is not None for name in self.PRICE_FIELDS)
-
 

@@ -69,9 +69,14 @@ aliases:
   # 同一个模型两边词序相反（`FLUX-1.1-pro` vs `flux-pro-1.1`），规范化救不了。
   # 核对依据：DeepInfra 该条描述为「Black Forest Labs' latest state-of-the art
   # proprietary model」，按张价 $0.04，与 Vercel 的 bfl/flux-pro-1.1 同价。
+  # ⚠️ bfl_official 这一行是后加的：BFL 官方源上线后，若不列进来，
+  #    别名的短路会让**官方价**匹配不上（实测 flux-pro-1.1 因此拿不到
+  #    官方 $0.04，而同族没有别名的 flux-kontext-pro 拿到了）。
+  #    这正是本段开头那条「必须把源列全」的注意事项。
   "flux-pro-1.1":
     deepinfra: black-forest-labs/FLUX-1.1-pro
     vercel: bfl/flux-pro-1.1
+    bfl_official: flux-pro-1.1
 
   # raw.csv 写 HF 路径，Empirio Labs 用短 id。核对依据：该条描述为
   # 「Open-source text-to-image model on a multimodal Mixture-of-Experts

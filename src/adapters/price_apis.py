@@ -36,7 +36,9 @@ FLAT_UNIT_MULTIPLIER = {
 }
 
 # 与 token 无关、不参与 UNIT_MULTIPLIER 换算的价格字段
-FLAT_PRICE_FIELDS = ("per_image", "per_second", "per_video", "per_call")
+FLAT_PRICE_FIELDS = (
+    "per_image", "per_second", "per_frame", "per_video", "per_call"
+)
 
 # 同一模型的变体后缀，不是独立模型
 _VARIANT_SUFFIXES = (":free", ":extended", ":thinking", ":online", ":nitro")

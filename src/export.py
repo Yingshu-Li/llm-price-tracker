@@ -28,6 +28,7 @@ PRICE_FIELDS = [
     "per_image",
     "per_video",
     "per_second",
+    "per_frame",
 ]
 
 COLUMNS = [
@@ -108,10 +109,23 @@ COLUMNS = [
     "free_limited_url",
     # audio：同样按 token 计（OpenAI 的 audio token 与 text token 分开计价）
     "audio_official_input_per_1m_usd",
+    # ⚠️ 列序必须与 _group() 发出的格子一一对应：fx 三列紧跟**主价格字段**，
+    #    排在 output / provider 之前。放错位置不会触发行数断言（格数一样），
+    #    只会让整组从某一列起悄悄右移——正是本文件反复警告的那种静默事故。
+    "audio_official_fx_marker",
+    "audio_official_fx_note",
+    "audio_official_fx_source_url",
     "audio_official_output_per_1m_usd",
     "audio_official_provider",
     "audio_official_source_url",
     "audio_cheapest_input_per_1m_usd",
+    # fx 三列：非美元原始报价换算成美元后，得留下 ⇄ 标记、原币金额与 ECB 出处，
+    # 否则读者看到的只是一个美元数字，无从判断它是牌价还是换算值。
+    # text 组一直有这三列（`text_*_fx_marker` 等），audio/image/video 此前漏了——
+    # 人民币按张价（火山引擎、阿里云）接进来后，这个缺口会直接变成溯源断链。
+    "audio_cheapest_input_fx_marker",
+    "audio_cheapest_input_fx_note",
+    "audio_cheapest_input_fx_source_url",
     "audio_cheapest_input_seller",
     # seller_url 是**去哪儿买**的入口，与 source_url（价格数据的证据链接）
     # 是两回事。text 组一直有这一列，audio/image/video 三组此前漏了，
@@ -122,9 +136,15 @@ COLUMNS = [
     "audio_quote_count",
     # image：按张
     "image_official_per_image_usd",
+    "image_official_fx_marker",
+    "image_official_fx_note",
+    "image_official_fx_source_url",
     "image_official_provider",
     "image_official_source_url",
     "image_cheapest_per_image_usd",
+    "image_cheapest_fx_marker",
+    "image_cheapest_fx_note",
+    "image_cheapest_fx_source_url",
     "image_cheapest_seller",
     "image_cheapest_seller_url",
     "image_cheapest_provider",
@@ -132,9 +152,15 @@ COLUMNS = [
     "image_quote_count",
     # video：按秒（不拿 per_video 折算——一条视频几秒是未知的）
     "video_official_per_second_usd",
+    "video_official_fx_marker",
+    "video_official_fx_note",
+    "video_official_fx_source_url",
     "video_official_provider",
     "video_official_source_url",
     "video_cheapest_per_second_usd",
+    "video_cheapest_fx_marker",
+    "video_cheapest_fx_note",
+    "video_cheapest_fx_source_url",
     "video_cheapest_seller",
     "video_cheapest_seller_url",
     "video_cheapest_provider",
@@ -539,6 +565,8 @@ def has_token_price(record: PriceRecord) -> bool:
 # 两种单位都有的模型会**同时进** token 表和 per_image 表，各自取对应单位的价。
 PRICE_MODE_TOKEN = "token"
 PRICE_MODE_IMAGE = "per_image"
+PRICE_MODE_VIDEO_COUNT = "video_count"
+PRICE_MODE_VIDEO_TIME = "video_time"
 PRICE_MODE_UNPRICED = "unpriced"
 
 
@@ -555,6 +583,18 @@ def _pool_for_price_mode(
         return pool or None
     if price_mode == PRICE_MODE_IMAGE:
         pool = [r for r in all_records if r.per_image is not None]
+        return pool or None
+    if price_mode == PRICE_MODE_VIDEO_COUNT:
+        pool = [
+            r for r in all_records
+            if r.per_video is not None or r.per_call is not None
+        ]
+        return pool or None
+    if price_mode == PRICE_MODE_VIDEO_TIME:
+        pool = [
+            r for r in all_records
+            if r.per_second is not None or r.per_frame is not None
+        ]
         return pool or None
     if price_mode == PRICE_MODE_UNPRICED:
         # 有任何一条带价观测就不属于这张表；闭源无价属于 not_found，也不进
@@ -588,13 +628,6 @@ EXPORT_HIDDEN_MODELS = {
     "XiaomiMiMo/MiMo-V2.5",
     # 旧版混元视觉 API 仅保留作数据源记录，展示当前 TokenHub 2.0 型号。
     "hunyuan-vision",
-    # DeepInfra 对这两个只给 `cents_per_frame_unit`（按帧），并标注
-    # 「$0.0500 / second」——按帧价换成每秒价必须先假定帧率（0.20833 分/帧
-    # × 24fps 才等于 $0.05/秒），那是编数据，不是换算。按张、按 token、
-    # 按秒三张表一张都对不上单位，先不展示；原始报价仍进 out/sources.md。
-    # 单位是按帧/按秒这一点本身也说明它更像视频模型，Function 待复核。
-    "nvidia/Cosmos3-Super",
-    "nvidia/Cosmos3-Nano",
 }
 EXPORT_HIDDEN_COMPANIES = {"NAVER"}
 
@@ -697,6 +730,9 @@ def write_table(
                     src, modality, field, allow_qualifier=allow_qualifier
                 )
                 cells = [_fmt(getattr(off, field)) if off else ""]
+                # 只给该组的**主价格字段**带 fx 溯源：audio 的输出价与输入价
+                # 出自同一条记录、同一次换算，再挂一份 note 只是重复。
+                cells += fx_cells(off, field)
                 if with_output:
                     # 输出价取**同一条**官方记录的，保证同一档内自洽
                     cells.append(_fmt(off.output_per_1m) if off else "")
@@ -704,6 +740,9 @@ def write_table(
                     _provider_of(off) if off else "",
                     off.source_url if off else "",
                     _fmt(getattr(cheap, field)) if cheap else "",
+                ]
+                cells += fx_cells(cheap, field)
+                cells += [
                     _seller_of(cheap) if cheap else "",
                     # 卖家页面（去哪儿买），与下面的 source_url（价格证据）分开
                     seller_url_of(cheap),
@@ -723,7 +762,7 @@ def write_table(
                     "image", "per_image", with_output=False,
                     records=records, allow_qualifier=allow_qualifier,
                 )
-                if not any(cells[:1] + cells[3:4]):
+                if not any(cells[:1] + cells[6:7]):
                     cells = _group(
                         "text", "per_image", with_output=False,
                         records=records, allow_qualifier=allow_qualifier,
@@ -734,13 +773,13 @@ def write_table(
             image_cells = _image_group()
             video_cells = _group("video", "per_second", with_output=False)
 
-            if not any(video_cells[:1] + video_cells[3:4]):
+            if not any(video_cells[:1] + video_cells[6:7]):
                 video_cells = _group("text", "per_second", with_output=False)
             if token_prices_only or price_mode == PRICE_MODE_TOKEN:
                 # 即便同一条观测同时带 token 与按张/按秒价格，能力表也只展示
                 # token 部分；非 token 计费继续保留在源数据，不进入这两个 CSV。
-                image_cells = [""] * 9
-                video_cells = [""] * 9
+                image_cells = [""] * 15
+                video_cells = [""] * 15
 
             # ── text 组：输入、输出各自取最低（常来自不同卖家）──
             cheap_in = cheapest_by(pool, "input_per_1m")
@@ -759,8 +798,8 @@ def write_table(
                 cheap_in = cheap_out = None
                 quotes = 0
                 # audio 组带输出价，比 image/video 多一格
-                audio_cells = [""] * 10
-                video_cells = [""] * 9
+                audio_cells = [""] * 16
+                video_cells = [""] * 15
             # 免费额度层按该模型的任一候选形式查（源里的 id 与 raw.csv 不同名）
             ft = ("", "")
             for cand in raw.candidates:
@@ -949,6 +988,135 @@ def write_table(
         writer.writerow([COLUMNS[i] for i in keep])
         for row in buffered:
             writer.writerow([row[i] for i in keep])
+    return dict(stats)
+
+
+VIDEO_UNIT_COLUMNS = [
+    "display_name", "Model", "Company", "Function",
+    "input_modalities", "input_modalities_source",
+    "input_modalities_source_url", "Total Para", "Activate Para",
+    "On/Off Line", "Reasoning", "access_mode", "lifecycle",
+    "is_open_weight", "weights", "price_status", "price_kind", "currency",
+    "pricing_tier", "billing_unit", "official_price",
+    "video_unit_official_price_usd", "video_unit_official_fx_marker",
+    "video_unit_official_fx_note", "video_unit_official_fx_source_url",
+    "video_unit_official_provider", "video_unit_official_source_url",
+    "video_unit_cheapest_price_usd", "video_unit_cheapest_fx_marker",
+    "video_unit_cheapest_fx_note", "video_unit_cheapest_fx_source_url",
+    "video_unit_cheapest_seller", "video_unit_cheapest_seller_url",
+    "video_unit_cheapest_provider", "video_unit_cheapest_source_url",
+    "video_unit_quote_count", "fetched_at",
+]
+
+
+def write_video_unit_table(
+    path: Path,
+    raw_models: list,
+    records_by_model: dict[str, list[PriceRecord]],
+    input_capabilities: dict[str, InputCapability] | None = None,
+    *,
+    price_mode: str,
+) -> dict:
+    """导出视频模型的按次或按时间价格表。
+
+    一行只对应一个精确量纲：按次表分别保留 ``per_video`` / ``per_call``，
+    按时间表分别保留 ``per_second`` / ``per_frame``。不假定一次调用一定只产
+    一段视频，也不假定固定 FPS，因此不存在跨量纲的隐式换算。
+    """
+    fields_by_mode = {
+        PRICE_MODE_VIDEO_COUNT: ("per_video", "per_call"),
+        PRICE_MODE_VIDEO_TIME: ("per_second", "per_frame"),
+    }
+    if price_mode not in fields_by_mode:
+        raise ValueError(f"视频单位表不支持 price_mode={price_mode!r}")
+    input_capabilities = input_capabilities or {}
+    stats = defaultdict(int)
+    rows: list[list[str]] = []
+
+    for raw in raw_models:
+        if raw.function != "Video Generation":
+            continue
+        if (
+            raw.model in EXPORT_HIDDEN_MODELS
+            or raw.company in EXPORT_HIDDEN_COMPANIES
+        ):
+            stats["hidden_by_display_rule"] += 1
+            continue
+        av = raw.availability
+        all_records = records_by_model.get(raw.model, [])
+        for field in fields_by_mode[price_mode]:
+            candidates = [
+                record for record in all_records
+                if getattr(record, field, None) is not None
+                and record.currency == "USD"
+                and record.service_tier == "standard"
+            ]
+            if not candidates:
+                continue
+            groups: dict[str | None, list[PriceRecord]] = defaultdict(list)
+            for record in candidates:
+                groups[record.qualifier or None].append(record)
+            for qualifier, bucket in sorted(
+                groups.items(), key=lambda item: (1 if item[0] else 0, item[0] or "")
+            ):
+                official_pool = [record for record in bucket if record.is_official]
+                official = sorted(official_pool, key=_sort_key)[0] if official_pool else None
+                cheapest = min(
+                    bucket,
+                    key=lambda record: (getattr(record, field), _sort_key(record)),
+                )
+                quote_count = len({(r.source, r.provider) for r in bucket})
+                cap = input_capabilities.get(raw.model)
+                weights = WEIGHTS_FREE if av.is_open_weight else WEIGHTS_PROPRIETARY
+                official_sentinel = (
+                    "got" if official else
+                    (OFFICIAL_OPEN_WEIGHT if av.is_open_weight else OFFICIAL_NONE)
+                )
+                rows.append([
+                    display_name(raw.model, raw.company), raw.model, raw.company,
+                    raw.function,
+                    cap.modalities_cell if cap else "",
+                    cap.sources_cell if cap else "",
+                    cap.source_urls_cell if cap else "",
+                    _fmt(raw.total_params_b), _fmt(raw.active_params_b),
+                    av.raw, "Yes" if raw.reasoning else "No", av.access_mode,
+                    av.lifecycle, "1" if av.is_open_weight else "0", weights,
+                    STATUS_GOT,
+                    "official" if cheapest.is_official else "hosted", "USD",
+                    qualifier or "", field, official_sentinel,
+                    _fmt(getattr(official, field)) if official else "",
+                    *fx_cells(official, field),
+                    _provider_of(official) if official else "",
+                    official.source_url if official else "",
+                    _fmt(getattr(cheapest, field)),
+                    *fx_cells(cheapest, field),
+                    _seller_of(cheapest), seller_url_of(cheapest),
+                    _provider_of(cheapest), cheapest.source_url,
+                    str(quote_count),
+                    (official or cheapest).fetched_at[:10],
+                ])
+                stats["rows"] += 1
+                stats["models"] += 1
+                stats[field] += 1
+                stats["official" if official else "hosted_only"] += 1
+
+    # 与通用导出一致：整列全空时省略，但保留 billing_unit 以防单位失真。
+    keep = [
+        index for index, _name in enumerate(VIDEO_UNIT_COLUMNS)
+        if any(str(row[index]).strip() for row in rows)
+    ]
+    with open(path, "w", encoding="utf-8", newline="") as handle:
+        writer = csv.writer(handle, lineterminator="\n")
+        writer.writerow([VIDEO_UNIT_COLUMNS[index] for index in keep])
+        for row in rows:
+            if len(row) != len(VIDEO_UNIT_COLUMNS):
+                raise ValueError(
+                    f"视频单位表行列数不匹配：{len(row)} != "
+                    f"{len(VIDEO_UNIT_COLUMNS)}（model={row[1]!r}）"
+                )
+            writer.writerow([row[index] for index in keep])
+    stats["columns"] = len(keep)
+    stats["columns_dropped"] = len(VIDEO_UNIT_COLUMNS) - len(keep)
     return dict(stats)
 
 

@@ -52,7 +52,8 @@ def _record(
     cache_price: float | None = None, qualifier: str | None = None,
     context_length: int | None = None,
     per_image: float | None = None, per_video: float | None = None,
-    per_second: float | None = None, per_call: float | None = None,
+    per_second: float | None = None, per_frame: float | None = None,
+    per_call: float | None = None,
     service_tier: str = "standard",
 ) -> PriceRecord:
     return PriceRecord(
@@ -71,6 +72,7 @@ def _record(
         per_image=per_image,
         per_video=per_video,
         per_second=per_second,
+        per_frame=per_frame,
         per_call=per_call,
         qualifier=qualifier,
         context_length=context_length,
@@ -332,6 +334,7 @@ def load_verified_snapshots(path: Path) -> tuple[list[PriceRecord], list[str], l
             per_image=item.get("per_image"),
             per_video=item.get("per_video"),
             per_second=item.get("per_second"),
+            per_frame=item.get("per_frame"),
             per_call=item.get("per_call"),
             qualifier=item.get("qualifier"),
             service_tier=item.get("service_tier", "standard"),

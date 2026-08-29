@@ -25,6 +25,8 @@ from src.adapters import (
     azure_retail,
     china_official,
     iflytek,
+    image_official,
+    nanogpt,
     nonusd_official,
     price_apis,
     sensenova,
@@ -163,6 +165,47 @@ def collect_nonusd_official() -> tuple[list, list[dict], list[str]]:
     return records, [entry], warnings
 
 
+def collect_image_official() -> tuple[list, list[dict], list[str]]:
+    """Tier 1：图像生成厂商的官方**按张**价。
+
+    与 collect_china_official 同构，只是这两家报的是美元按张价而非人民币
+    token 价，口径不同，所以单独成一个 collector。
+    """
+    records, fetches, warnings = [], [], []
+    specs = [
+        (
+            "bfl_official", "Black Forest Labs", image_official.BFL_URL,
+            image_official.parse_bfl, "BFL 官方按张价",
+        ),
+        (
+            "bria_official", "Bria", image_official.BRIA_URL,
+            image_official.parse_bria, "Bria 官方按张价",
+        ),
+    ]
+    for source_id, company, url, parser, pretty in specs:
+        result = fetch(url, use_cache=True, timeout=60)
+        entry = _fetch_entry(
+            source_id, result.url, result.ok, result,
+            provider_name=pretty, weblink=url, license="厂商官方价格页",
+        )
+        fetches.append(entry)
+        if not result.ok:
+            print(f"  ✗ {source_id:32} {result.error}", file=sys.stderr)
+            continue
+        parsed, parsed_warnings = parser(
+            result.text, source_url=result.url, fetched_at=result.fetched_at,
+            source_version=result.version,
+        )
+        for rec in parsed:
+            rec.raw["company"] = company
+            rec.raw["provider_name"] = pretty
+        records += parsed
+        warnings += parsed_warnings
+        entry["n_records"] = len(parsed)
+        print(f"  ✓ {pretty:22} {len(parsed):4} 条")
+    return records, fetches, warnings
+
+
 def collect_china_official() -> tuple[list, list[dict], list[str]]:
     """Tier 1：中国厂商当前 HTML 价目表与可审计人工快照。"""
     records, fetches, warnings = [], [], []
@@ -216,6 +259,7 @@ def collect_china_official() -> tuple[list, list[dict], list[str]]:
         "vidu_video_official_verified": "ShengShu / Vidu",
         "pixverse_video_official_verified": "PixVerse",
         "alibaba_video_official_verified": "Alibaba / Qwen",
+        "pruna_official_verified": "Pruna AI",
     }
     for rec in snapshots:
         rec.raw["company"] = snapshot_companies[rec.source]
@@ -480,6 +524,31 @@ def collect_price_apis() -> tuple[list, list[dict], list[str], dict]:
     return records, fetches, warnings, free_tiers
 
 
+def collect_nanogpt() -> tuple[list, list[dict], list[str]]:
+    """Tier 3：nano-gpt 的图像模型转售价。
+
+    单独成一个 collector 而不是配进 price_apis.yaml：它的 models.image 是
+    以模型 id 为键的**嵌套字典**（通用适配器只吃列表），每个模型的 cost 又是
+    以分辨率为键的字典，没有单一价格字段可指。详见 adapters/nanogpt.py。
+    """
+    result = fetch(nanogpt.NANOGPT_URL, use_cache=True, timeout=60)
+    entry = _fetch_entry(
+        "nanogpt", result.url, result.ok, result,
+        provider_name="nano-gpt", weblink=nanogpt.NANOGPT_WEBLINK,
+        license="第三方转售价目",
+    )
+    if not result.ok:
+        print(f"  ✗ nanogpt {result.error}", file=sys.stderr)
+        return [], [entry], []
+    records, warnings = nanogpt.parse_nanogpt(
+        result.text, source_url=result.url, fetched_at=result.fetched_at,
+        source_version=result.version,
+    )
+    entry["n_records"] = len(records)
+    print(f"  ✓ nano-gpt 图像转售价 {len(records):4} 条")
+    return records, [entry], warnings
+
+
 def collect_vendored(refresh: bool) -> tuple[list, list[dict]]:
     """Tier 2：MIT 开源数据集，优先读本地 vendor/ 副本。"""
     records, fetches = [], []
@@ -613,6 +682,8 @@ def main() -> int:
     records += recs; fetches += fs; warnings += warns
     recs, fs, warns = collect_china_official()
     records += recs; fetches += fs; warnings += warns
+    recs, fs, warns = collect_image_official()
+    records += recs; fetches += fs; warnings += warns
     recs, fs, warns, official_free_tiers = collect_sensenova()
     records += recs; fetches += fs; warnings += warns
     recs, fs, warns = collect_iflytek()
@@ -624,6 +695,8 @@ def main() -> int:
     for collector in (collect_aws, collect_azure):
         recs, fs = collector()
         records += recs; fetches += fs
+    recs, fs, warns = collect_nanogpt()
+    records += recs; fetches += fs; warnings += warns
     recs, fs, warns, free_tiers = collect_price_apis()
     records += recs; fetches += fs; warnings += warns
     # 官方 Token Plan 比第三方免费变体更接近模型原厂，存在同名时优先展示。
@@ -744,6 +817,51 @@ def main() -> int:
             export_functions={"Image Generation"},
             price_mode=mode,
         )
+
+    # ── 视频模型按结算单位拆四张表 ──
+    # 同一模型可能同时按 token、每次调用、每段视频、每秒或每帧计价；这些
+    # 量纲不互相覆盖。因此导出规则故意允许一个模型出现在多张表中。
+    # 开源无报价表只收“权重开源且所有源均无价”的模型；开源但有托管报价的
+    # 模型仍正常进入前三张价格表。
+    video_exports = (
+        ("video_token_models_with_prices.csv", export_mod.PRICE_MODE_TOKEN),
+        (
+            "video_per_generation_models_with_prices.csv",
+            export_mod.PRICE_MODE_VIDEO_COUNT,
+        ),
+        (
+            "video_per_second_frame_models_with_prices.csv",
+            export_mod.PRICE_MODE_VIDEO_TIME,
+        ),
+        (
+            "video_unpriced_open_weight_models.csv",
+            export_mod.PRICE_MODE_UNPRICED,
+        ),
+    )
+    video_stats = {}
+    for filename, mode in video_exports:
+        if mode in {
+            export_mod.PRICE_MODE_VIDEO_COUNT,
+            export_mod.PRICE_MODE_VIDEO_TIME,
+        }:
+            video_stats[filename] = export_mod.write_video_unit_table(
+                OUT / filename,
+                raw_models,
+                by_model,
+                input_capabilities,
+                price_mode=mode,
+            )
+        else:
+            video_stats[filename] = export_mod.write_table(
+                OUT / filename,
+                raw_models,
+                best,
+                by_model,
+                free_tiers,
+                input_capabilities,
+                export_functions={"Video Generation"},
+                price_mode=mode,
+            )
     counts = defaultdict(int)
     for rec in records:
         counts[rec.source] += 1
@@ -781,6 +899,8 @@ def main() -> int:
     labels = {
         export_mod.PRICE_MODE_TOKEN: "按 token 结算",
         export_mod.PRICE_MODE_IMAGE: "按张结算",
+        export_mod.PRICE_MODE_VIDEO_COUNT: "按次/按段视频结算",
+        export_mod.PRICE_MODE_VIDEO_TIME: "按秒/按帧结算",
         export_mod.PRICE_MODE_UNPRICED: "开源权重且无任何报价",
     }
     for filename, mode in image_exports:
@@ -793,6 +913,17 @@ def main() -> int:
         print(
             f"   out/{filename:<40} {item.get('rows', 0)} 行"
             f"（图像模型 · {labels[mode]}；{detail}）"
+        )
+    for filename, mode in video_exports:
+        item = video_stats[filename]
+        detail = (
+            f"有价格 {item.get('rows', 0)} 行"
+            if mode != export_mod.PRICE_MODE_UNPRICED
+            else "价格客观不存在"
+        )
+        print(
+            f"   out/{filename:<40} {item.get('rows', 0)} 行"
+            f"（视频模型 · {labels[mode]}；{detail}）"
         )
     print(f"   out/sources.md               {len(fetches)} 个源")
     return 0
