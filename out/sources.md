@@ -1,6 +1,6 @@
 # 数据源清单
 
-由 `update_prices.py` 于 2026-08-29T05:39:12 自动生成。
+由 `update_prices.py` 于 2026-08-29T06:26:30 自动生成。
 
 | 数据 Provider | 网页 | 抓取地址 | 许可 | 状态 | 记录数 |
 | --- | --- | --- | --- | --- | --- |
@@ -84,19 +84,19 @@ models.dev 的 `google.ts` 里写着 `cost: existing.cost`（价格取自手工�
 
 厂商改一个列头就会静默丢掉一个价格维度，所以认不出的东西必须报出来。
 
-- openai_md: 未识别的列头 `pricing`
-- openai_md: 未识别的列头 `estimated cost`
-- openai_md: 未识别的列头 `details`
-- openai_md: 未识别的列头 `use case`
 - openai_md: 未识别的列头 `category`
+- openai_md: 未识别的列头 `size`
+- openai_md: 未识别的列头 `landscape`
+- openai_md: 未识别的列头 `estimated cost`
+- openai_md: 未识别的列头 `pricing`
+- openai_md: 未识别的列头 `use case`
+- openai_md: 未识别的列头 `details`
 - openai_md: 未识别的列头 `training`
 - openai_md: 未识别的列头 `portrait`
-- openai_md: 未识别的列头 `landscape`
-- openai_md: 未识别的列头 `size`
 - openai_md: 跳过表格「Grouped Pricing Table data」— 没有可识别的价格列
+- anthropic_md: 未识别的列头 `additional input tokens`
 - anthropic_md: 未识别的列头 `tool choice`
 - anthropic_md: 未识别的列头 `tool use system prompt token count`
-- anthropic_md: 未识别的列头 `additional input tokens`
 - anthropic_md: 跳过表格「Claude Platform on AWS pricing」— 找不到模型/工具名列
 - anthropic_md: 跳过表格「Claude in Microsoft Foundry pricing」— 找不到模型/工具名列
 - anthropic_md: 跳过表格「Prompt caching」— 找不到模型/工具名列
