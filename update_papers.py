@@ -8,6 +8,7 @@ from pathlib import Path
 import httpx
 
 from src.papers import (
+    apply_verified_metadata_cache,
     enrich_missing_metadata,
     filter_recent,
     load_json,
@@ -18,6 +19,7 @@ from src.papers import (
     save_outputs,
     source_readme,
     source_updated_at,
+    validate_catalog,
 )
 
 
@@ -29,7 +31,7 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--sources", type=Path, default=ROOT / "config" / "paper_sources.csv")
     parser.add_argument("--out-dir", type=Path, default=ROOT / "out")
     parser.add_argument("--since-year", type=int, default=date.today().year - 1)
-    parser.add_argument("--max-enrich", type=int, default=400)
+    parser.add_argument("--max-enrich", type=int, default=25000)
     parser.add_argument("--force", action="store_true", help="Reparse sources whose README hash has not changed.")
     parser.add_argument("--rebuild", action="store_true", help="Rebuild the catalog without carrying forward older collected rows.")
     return parser.parse_args()
@@ -38,9 +40,11 @@ def parse_args() -> argparse.Namespace:
 def main() -> int:
     args = parse_args()
     sources = load_sources(args.sources)
-    previous_payload = {"papers": []} if args.rebuild else load_json(args.out_dir / "papers.json", {"papers": []})
-    previous_papers = previous_payload.get("papers", [])
-    previous_by_key = {paper_key(paper): paper for paper in previous_papers}
+    cached_payload = load_json(args.out_dir / "papers.json", {"papers": []})
+    cached_papers = cached_payload.get("papers", [])
+    previous_papers = [] if args.rebuild else cached_papers
+    previous_payload = {"papers": previous_papers}
+    previous_by_key = {paper_key(paper): paper for paper in cached_papers}
     state = {"sources": {}} if args.rebuild else load_json(args.out_dir / "papers_state.json", {"sources": {}})
     state.setdefault("sources", {})
     today = date.today().isoformat()
@@ -80,9 +84,12 @@ def main() -> int:
                 print(f"[{index:02d}/{len(sources)}] warning {source.repository}: {exc}")
 
         merged = merge_papers(collected)
+        apply_verified_metadata_cache(merged, cached_papers)
         enrich_missing_metadata(client, merged, max_items=args.max_enrich)
+        merged = merge_papers(merged)
 
     recent = filter_recent(merged, args.since_year)
+    validate_catalog(recent)
     state["last_run_at"] = today
     state["failures"] = failures
     state["since_year"] = args.since_year

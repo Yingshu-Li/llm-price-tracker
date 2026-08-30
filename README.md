@@ -34,6 +34,11 @@ python update_prices.py             # 抓取全部源并导出
 | --- | --- |
 | `out/models_with_prices.csv` | General-Purpose 主表（隐藏规则只影响展示，不删除原始数据） |
 | `out/general_unpriced_open_weight_models.csv` | General-Purpose：开源权重且任何源都没有报价的模型 |
+| `out/audio_token_models_with_prices.csv` | Speech & Audio：按 token 计费 |
+| `out/audio_time_models_with_prices.csv` | Speech & Audio：按时长，**已统一归一到每分钟**（⏱ 标记留痕） |
+| `out/audio_per_generation_models_with_prices.csv` | Speech & Audio：按次 / 按段（Lyria 的 per song，来自 Google 官方定价页） |
+| `out/audio_per_character_models_with_prices.csv` | Speech & Audio：按字符（每 100 万字符） |
+| `out/audio_unpriced_open_weight_models.csv` | Speech & Audio：开源权重且无任何报价 |
 | `out/coding_models_with_prices.csv` | Coding 分表，22 行；仅保留 token 计费列 |
 | `out/embedding_models_with_prices.csv` | Embedding / Rerank 分表，30 行；仅保留输入/处理 token 计费列 |
 | `out/image_token_models_with_prices.csv` | Image Generation：按 token 计费的模型 |

@@ -251,6 +251,12 @@ companies:
     pricing_machine_readable: official_md
     openrouter_prefixes: [z-ai]
     notes: ⚠️ z.ai/blog 是 404；价格数字在 md 里是 \$ 转义，需 unescape。
+    audio_pricing_api: https://open.bigmodel.cn/api/biz/operation/query?ids=1122
+    audio_notes: >-
+      ✅ 已接入（adapters/zhipu_audio.py）。定价页是 SPA，但背后这个 JSON 接口
+      无需登录即可直取，且带 fieldList 把混淆字段码映射成中文列名。
+      一家覆盖四种计价单位：按字符 / 按次 / 按 token / 按分钟。
+      ⚠️ 实时音视频那两条同时印音频价与视频价（0.18 vs 1.2），只能取音频段。
 
   - company: Moonshot AI / Kimi
     homepage: https://www.moonshot.ai
@@ -277,6 +283,12 @@ companies:
     pricing_machine_readable: server_html
     openrouter_prefixes: [minimax]
     notes: ⚠️ platform.minimax.io/docs/price 是 404，.com 域名才是活的。
+    audio_pricing_page: https://platform.minimaxi.com/docs/guides/pricing-paygo
+    audio_notes: >-
+      ✅ 已接入（adapters/minimax_audio.py）。⚠️ 旧路径 /document/price 返回 500，
+      正确的是 /docs/guides/pricing-paygo，服务端渲染可直抓。
+      音色授权（9.9 元/音色）与语音资源包（预付套餐）故意不收——不是按量牌价。
+      音乐付费接口已于 2026-08-20 停售，raw.csv 里 MiniMax Music 已标 Deprecated。
 
   - company: ByteDance / Doubao-Seed
     homepage: https://seed.bytedance.com
@@ -345,6 +357,15 @@ companies:
       ⚠️ 28 家里最难的：不在 OpenRouter、HF 几乎无内容、文档仅中文。
       ⚠️⚠️ 严禁用 `spark` 子串匹配——会误命中 OpenAI 的 gpt-5.3-codex-spark。
       xfyun.cn/services/spark 返回 HTTP 500。
+    audio_pricing_page: https://www.xfyun.cn/services/online_tts?target=price
+    audio_notes: >-
+      ❌ 有意不接入。讯飞语音卖的是**年度预付服务量包**而非按量牌价：
+      50 万次/年 ￥2000、150 万次/年 ￥5800、750 万次/年 ￥27000、
+      2000 万次/年 ￥50000、5000 万次/年 ￥100000；发音人另按 2 万/个授权。
+      三个问题使它不可与其它厂商同列比价：(1) 计量单位是「次」，与别家的
+      「万字符」没有换算关系；(2) 一年过期，折合单价的前提是用完整个包；
+      (3) 阶梯定价，单价随采购量变化。折合价是**我们除出来的**，不是牌价，
+      按仓库规矩不能当官方价用。与火山「150 元/年/音色」同类处理。
 
   - company: SenseTime
     homepage: https://www.sensetime.com

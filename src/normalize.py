@@ -449,6 +449,29 @@ _COMPANY_MARKERS: tuple[tuple[str, str], ...] = (
     ("pixverse", "PixVerse"),
     ("wan-v", "Alibaba / Qwen"),
     ("spark", None),  # ⚠️ 有意置空：`spark` 会误命中 OpenAI 的 codex-spark
+    # ── 语音 / 音频厂商 ──
+    # 实测：DeepInfra 的 12 条按字符 TTS 报价里，只有 Qwen 一家能归属，
+    # 其余 10 条（Kokoro / orpheus / chatterbox / csm / HiggsAudio / inworld…）
+    # 全部 infer_company=None 而被静默丢弃，导致按字符表一行都出不来。
+    #
+    # ⚠️ 同样一律用 org 前缀。裸 `tts` / `audio` / `voice` 绝不能当子串——
+    #    它们会命中一大片别家模型（`qwen-audio-*`、`gpt-realtime-*`）。
+    ("canopylabs/", "Canopy Labs"),
+    ("hexgrad/", "Hexgrad"),
+    ("bosonai/", "Boson AI"),
+    ("resembleai/", "Resemble AI"),
+    ("sesame/", "Sesame AI"),
+    ("inworld-ai/", "Inworld AI"),
+    ("audio8/", "Audio8"),
+    ("openmoss-team/", "OpenMOSS"),
+    ("fishaudio/", "Fish Audio"),
+    ("k2-fsa/", "k2-fsa"),
+    ("kyutai/", "Kyutai"),
+    ("fixie-ai/", "Fixie AI"),
+    ("pyannote/", "pyannote"),
+    ("ace-step/", "ACE-Step"),
+    ("mispeech/", "MiSpeech"),
+    ("zyphra/", "Zyphra"),
 )
 
 

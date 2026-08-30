@@ -18,6 +18,7 @@ from typing import Any
 
 from ..normalize import infer_company
 from ..records import TIER_VENDORED, PriceRecord
+from ..units import to_per_minute
 from ..seller_urls import catalog_url_for
 
 VENDOR_DIR = Path(__file__).resolve().parent.parent.parent / "vendor"
@@ -235,6 +236,9 @@ def parse_litellm(
         # 不设这道门禁，$0.00012/张 会当成真实按张价流进通用表。
         mode = str(entry.get("mode") or "")
         GEN_MODES = {"image_generation", "image_edit", "video_generation"}
+        # realtime 也算音频：它的钱全部走 *_cost_per_audio_token。
+        AUDIO_MODES = {"audio_transcription", "audio_speech",
+                       "audio_translation", "realtime"}
         # 按张价上游有两套字段名：多数条目写 output_cost_per_image，而 OpenAI
         # 直连的 `dall-e-2`/`dall-e-3` 写的是 input_cost_per_image（$0.02/$0.04）。
         # 只读 output_ 的话这两个**官方价拿不到**，表里只剩转售商 aiml 的
@@ -265,6 +269,43 @@ def parse_litellm(
         if mode in GEN_MODES:
             prices = {k: v for k, v in prices.items() if v > 0.001}
         prices.update(flat)
+
+        # ── 音频专用计价键 ──
+        # 与 GEN_MODES 同样是一道**模式门禁**：只有音频类 mode 才读这些键。
+        # 不设门禁的话，聊天模型身上偶发的 output_cost_per_second 会被当成
+        # 音频时长价——那正是 GEN_MODES 那段注释里已经踩过一次的同类坑。
+        #
+        # ⚠️ input_cost_per_second 与 output_cost_per_second 方向相反：
+        #    转录类计的是**喂进去**的音频，合成类计的是**产出**的音频。
+        #    两者都归一到每分钟，但 billing_basis 必须分开标，否则导出层
+        #    会把 ASR 的价和 TTS 的价排进同一个 cheapest。
+        #    实测 79 个 API 音频模型里 17 个按分钟，10 个输入 / 7 个产出。
+        audio_basis = None
+        audio_patch: dict = {}
+        if mode in AUDIO_MODES:
+            for src_key, basis in (
+                ("input_cost_per_second", "input_audio"),
+                ("output_cost_per_second", "output_audio"),
+            ):
+                value = entry.get(src_key)
+                if (isinstance(value, (int, float)) and not isinstance(value, bool)
+                        and value > 0 and "per_minute" not in prices):
+                    prices["per_minute"], audio_patch = to_per_minute(
+                        float(value), "second")
+                    audio_basis = basis
+            char = entry.get("input_cost_per_character")
+            if (isinstance(char, (int, float)) and not isinstance(char, bool)
+                    and char > 0):
+                # 归一到每 100 万字符，与 input_per_1m 的 token 约定同构
+                prices["per_1m_chars"] = float(char) * 1_000_000
+            for src_key, target in (
+                ("input_cost_per_audio_token", "audio_input_per_1m"),
+                ("output_cost_per_audio_token", "audio_output_per_1m"),
+            ):
+                value = entry.get(src_key)
+                if (isinstance(value, (int, float)) and not isinstance(value, bool)
+                        and value > 0):
+                    prices[target] = float(value) * 1_000_000
         if not prices:
             continue
         image_qualifier = _image_qualifier(key) if mode in GEN_MODES else None
@@ -320,6 +361,10 @@ def parse_litellm(
                        if "per_image" in flat else "")
                     + (f" second={flat['per_second']}"
                        if "per_second" in flat else "")
+                    + (f" audio_sec_in={entry.get('input_cost_per_second')}"
+                       f" audio_sec_out={entry.get('output_cost_per_second')}"
+                       f" char={entry.get('input_cost_per_character')}"
+                       if mode in AUDIO_MODES else "")
                 ),
                 # 溯源要求单位描述与实际取到的字段一致，不能一律写 per token
                 unit_original=" + ".join(
@@ -328,6 +373,12 @@ def parse_litellm(
                             k.endswith("_per_1m") for k in prices) else "",
                         "per image (USD)" if "per_image" in flat else "",
                         "per second (USD)" if "per_second" in flat else "",
+                        # 音频：写清楚是**哪一段**的分钟，光写 per minute
+                        # 会让 ASR 与 TTS 的价看起来是同一个口径。
+                        (f"per minute of {audio_basis or 'audio'} (USD)"
+                         if "per_minute" in prices else ""),
+                        ("per 1M characters (USD)"
+                         if "per_1m_chars" in prices else ""),
                     ])
                 ),
                 source_version=source_version,
@@ -350,7 +401,9 @@ def parse_litellm(
                         "derived_note": _derived_note(
                             key, image_qualifier, flat["per_image"])}
                        if image_qualifier and "per_image" in flat else {}),
+                    **audio_patch,
                 },
+                billing_basis=audio_basis,
                 **prices,
             )
         )

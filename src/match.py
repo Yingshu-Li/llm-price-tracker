@@ -108,6 +108,28 @@ def load_aliases(path: str | Path) -> dict[str, dict[str, str]]:
     return data.get("aliases", {}) or {}
 
 
+def load_excluded_candidates(path: str | Path) -> dict[str, set[str]]:
+    """aliases.yaml: {raw_model: [不可用于匹配的规范化候选名]}
+
+    为什么需要：name_candidates() 会剥掉版本后缀（`-v3` → 空），这对
+    `gemma-3-12b-it` 匹配 `gemma-3-12b` 是必要的，但会让**同族不同代**的
+    模型塌成同一个候选名。实测 `whisper-large-v1/v2/v3` 三行都归一成
+    `whisper-large`，于是 DeepInfra 只托管 v3 的那条报价被 v1、v2 一并
+    拿走——两个厂商根本不卖的模型凭空有了价。
+
+    ⚠️ 这里**必须逐例人工确认**，不能改成「候选名有歧义就自动排除」的
+    通用规则。全库扫描有 57 个歧义候选，其中绝大多数是有意的双行约定
+    （`GLM-4.6` 的 API 行与 `zai-org/GLM-4.6` 的开源权重行是同一个模型，
+    共享同一个价格是**正确**的）。自动排除会把这几十行的价格全部抹掉。
+    """
+    path = Path(path)
+    if not path.exists():
+        return {}
+    data = yaml.safe_load(path.read_text(encoding="utf-8")) or {}
+    raw = data.get("exclude_candidates", {}) or {}
+    return {model: set(names) for model, names in raw.items()}
+
+
 def _index_by_company(records) -> dict[str, dict[str, list]]:
     """{company: {规范化候选形式: [records]}}
 
@@ -129,9 +151,11 @@ def match_all(
     raw_models: list[RawModel],
     records: list,
     aliases: dict[str, dict[str, str]],
+    excluded: dict[str, set[str]] | None = None,
 ) -> MatchReport:
     """把 raw.csv 的每一行匹配到 0..N 个源模型 id。"""
     index = _index_by_company(records)
+    excluded = excluded or {}
     matches: list[Match] = []
     method_counts: dict[str, int] = defaultdict(int)
     matched_models: set[str] = set()
@@ -167,7 +191,10 @@ def match_all(
             matched_models.add(raw.model)
             continue
 
-        raw_candidates = raw.candidates
+        raw_candidates = [
+            c for c in raw.candidates
+            if c not in excluded.get(raw.model, ())
+        ]
         # 一个源模型只登记一次。同一个 model_id 在源里往往有几十条观测
         # （standard/batch/flex/fast × 短/长上下文），逐条登记会让下游按
         # (source, model_id) 展开时产生平方级重复。

@@ -324,6 +324,20 @@ def derived_cells(record: PriceRecord | None) -> list[str]:
     return [marker, record.raw.get("derived_note") or ""]
 
 
+def time_cells(record: PriceRecord | None) -> list[str]:
+    """时长刻度归一的标记 + 可读说明。原本就按分钟报价的返回两个空格。
+
+    ⏱ 与 ⇄（汇率）、≈（数据源换算）是三件不同的事，含义不可互换：
+    ⏱ 说的是「这仍是厂商牌价，只是把小时/秒换成了分钟」。
+    """
+    if record is None:
+        return ["", ""]
+    marker = record.raw.get("time_marker")
+    if not marker:
+        return ["", ""]
+    return [marker, record.raw.get("time_note") or ""]
+
+
 def _seller_of(record: PriceRecord) -> str:
     """报这个价的卖家。聚合器有 seller 段就用它，否则退回 provider。"""
     return record.raw.get("seller") or record.provider
@@ -585,6 +599,16 @@ PRICE_MODE_IMAGE = "per_image"
 PRICE_MODE_VIDEO_COUNT = "video_count"
 PRICE_MODE_VIDEO_TIME = "video_time"
 PRICE_MODE_UNPRICED = "unpriced"
+# 音频三张单位表。与视频同样的道理：单位不同的价格之间没有换算关系，
+# 混在一张表里「最低价」会拿按字符价去比按分钟价。
+#   audio_time —— 时长价，**已统一归一到每分钟**（见 src/units.py）；
+#                 计量对象（输入音频 / 产出音频 / 会话）由 billing_basis 分列，
+#                 归一只解决刻度，不解决可比性。
+#   audio_call —— 一次调用一个价（Lyria 的 per song）
+#   audio_char —— TTS 按字符，归一到每 100 万字符
+PRICE_MODE_AUDIO_TIME = "audio_time"
+PRICE_MODE_AUDIO_CALL = "audio_call"
+PRICE_MODE_AUDIO_CHAR = "audio_char"
 
 
 def _pool_for_price_mode(
@@ -1153,6 +1177,161 @@ def write_video_unit_table(
             writer.writerow([row[index] for index in keep])
     stats["columns"] = len(keep)
     stats["columns_dropped"] = len(VIDEO_UNIT_COLUMNS) - len(keep)
+    return dict(stats)
+
+
+AUDIO_UNIT_COLUMNS = [
+    "display_name", "Model", "Company", "Function",
+    "input_modalities", "input_modalities_source",
+    "input_modalities_source_url", "Total Para", "Activate Para",
+    "On/Off Line", "Reasoning", "access_mode", "lifecycle",
+    "is_open_weight", "weights", "price_status", "price_kind", "currency",
+    "pricing_tier", "billing_unit",
+    # ⚠️ 计量对象。同样写着「每分钟」，ASR 计的是喂进去的音频、TTS 计的是
+    #    产出的音频、流式 ASR 计的是 WebSocket 连接时长（静音也收钱）。
+    #    实测 79 个 API 音频模型里有 17 个按分钟，其中 10 个输入 / 7 个产出，
+    #    不分列直接排序，选出来的「最低价」是假的。这一列永不省略。
+    "billing_basis",
+    "audio_output_modality", "official_price",
+    "audio_unit_official_price_usd", "audio_unit_official_fx_marker",
+    "audio_unit_official_fx_note", "audio_unit_official_fx_source_url",
+    "audio_unit_official_time_marker", "audio_unit_official_time_note",
+    "audio_unit_official_provider", "audio_unit_official_source_url",
+    "audio_unit_cheapest_price_usd", "audio_unit_cheapest_fx_marker",
+    "audio_unit_cheapest_fx_note", "audio_unit_cheapest_fx_source_url",
+    "audio_unit_cheapest_time_marker", "audio_unit_cheapest_time_note",
+    "audio_unit_cheapest_seller", "audio_unit_cheapest_seller_url",
+    "audio_unit_cheapest_provider", "audio_unit_cheapest_source_url",
+    "audio_unit_quote_count", "fetched_at",
+]
+
+# ⚠️ CSV 里存的是**语言无关的 key**，不是展示文案。与 billing_unit 的
+# per_video / per_second 同一约定，翻译交给前端的 basis.* 词条——
+# 把中文写进 CSV 会让英文界面这一列显示中文。
+BILLING_BASIS_KEYS = ("input_audio", "output_audio", "session")
+
+AUDIO_UNIT_FIELDS = {
+    PRICE_MODE_AUDIO_TIME: ("per_minute",),
+    PRICE_MODE_AUDIO_CALL: ("per_call",),
+    PRICE_MODE_AUDIO_CHAR: ("per_1m_chars",),
+}
+
+
+def write_audio_unit_table(
+    path: Path,
+    raw_models: list,
+    records_by_model: dict[str, list[PriceRecord]],
+    input_capabilities: dict[str, InputCapability] | None = None,
+    audio_output_modality: dict[str, str] | None = None,
+    *,
+    price_mode: str,
+) -> dict:
+    """导出音频模型的时长 / 按次 / 按字符价格表。
+
+    与 write_video_unit_table 同构：一行只对应一个精确量纲，表内官方价与
+    最低价必定同单位。额外多一层 billing_basis 分组——时长价的计量对象不同
+    就不是同一个东西，必须拆行而不是拆列。
+    """
+    if price_mode not in AUDIO_UNIT_FIELDS:
+        raise ValueError(f"音频单位表不支持 price_mode={price_mode!r}")
+    input_capabilities = input_capabilities or {}
+    audio_output_modality = audio_output_modality or {}
+    stats = defaultdict(int)
+    rows: list[list[str]] = []
+
+    for raw in raw_models:
+        if raw.function != "Speech & Audio":
+            continue
+        if (
+            raw.model in EXPORT_HIDDEN_MODELS
+            or raw.company in EXPORT_HIDDEN_COMPANIES
+        ):
+            stats["hidden_by_display_rule"] += 1
+            continue
+        av = raw.availability
+        all_records = records_by_model.get(raw.model, [])
+        for field in AUDIO_UNIT_FIELDS[price_mode]:
+            candidates = [
+                record for record in all_records
+                if getattr(record, field, None) is not None
+                and record.currency == "USD"
+                and record.service_tier == "standard"
+            ]
+            if not candidates:
+                continue
+            # 先按计量对象分组，再按价格档分组。顺序不能反：不同计量对象
+            # 之间比价无意义，先按档分组会把它们混进同一个 cheapest。
+            groups: dict[tuple[str | None, str | None], list[PriceRecord]] = defaultdict(list)
+            for record in candidates:
+                groups[(record.billing_basis or None, record.qualifier or None)].append(record)
+            for (basis, qualifier), bucket in sorted(
+                groups.items(),
+                key=lambda item: (item[0][0] or "", 1 if item[0][1] else 0, item[0][1] or ""),
+            ):
+                official_pool = [record for record in bucket if record.is_official]
+                official = sorted(official_pool, key=_sort_key)[0] if official_pool else None
+                cheapest = min(
+                    bucket,
+                    key=lambda record: (getattr(record, field), _sort_key(record)),
+                )
+                quote_count = len({(r.source, r.provider) for r in bucket})
+                cap = input_capabilities.get(raw.model)
+                weights = WEIGHTS_FREE if av.is_open_weight else WEIGHTS_PROPRIETARY
+                official_sentinel = (
+                    "got" if official else
+                    (OFFICIAL_OPEN_WEIGHT if av.is_open_weight else OFFICIAL_NONE)
+                )
+                rows.append([
+                    display_name(raw.model, raw.company), raw.model, raw.company,
+                    raw.function,
+                    cap.modalities_cell if cap else "",
+                    cap.sources_cell if cap else "",
+                    cap.source_urls_cell if cap else "",
+                    _fmt(raw.total_params_b), _fmt(raw.active_params_b),
+                    av.raw, "Yes" if raw.reasoning else "No", av.access_mode,
+                    av.lifecycle, "1" if av.is_open_weight else "0", weights,
+                    STATUS_GOT,
+                    "official" if cheapest.is_official else "hosted", "USD",
+                    qualifier or "", field,
+                    basis or "",
+                    audio_output_modality.get(raw.model, ""),
+                    official_sentinel,
+                    _fmt(getattr(official, field)) if official else "",
+                    *fx_cells(official, field),
+                    *time_cells(official),
+                    _provider_of(official) if official else "",
+                    official.source_url if official else "",
+                    _fmt(getattr(cheapest, field)),
+                    *fx_cells(cheapest, field),
+                    *time_cells(cheapest),
+                    _seller_of(cheapest), seller_url_of(cheapest),
+                    _provider_of(cheapest), cheapest.source_url,
+                    str(quote_count),
+                    (official or cheapest).fetched_at[:10],
+                ])
+                stats["rows"] += 1
+                stats[field] += 1
+                stats["official" if official else "hosted_only"] += 1
+
+    # 与其它表一致：整列全空即省略。但 billing_basis 强制保留——
+    # 这一列缺失会让不同计量对象的价格看起来可以直接比较。
+    always = {AUDIO_UNIT_COLUMNS.index("billing_basis")}
+    keep = [
+        index for index, _name in enumerate(AUDIO_UNIT_COLUMNS)
+        if index in always or any(str(row[index]).strip() for row in rows)
+    ]
+    with open(path, "w", encoding="utf-8", newline="") as handle:
+        writer = csv.writer(handle, lineterminator="\n")
+        writer.writerow([AUDIO_UNIT_COLUMNS[index] for index in keep])
+        for row in rows:
+            if len(row) != len(AUDIO_UNIT_COLUMNS):
+                raise ValueError(
+                    f"音频单位表行列数不匹配：{len(row)} != "
+                    f"{len(AUDIO_UNIT_COLUMNS)}（model={row[1]!r}）"
+                )
+            writer.writerow([row[index] for index in keep])
+    stats["columns"] = len(keep)
+    stats["columns_dropped"] = len(AUDIO_UNIT_COLUMNS) - len(keep)
     return dict(stats)
 
 

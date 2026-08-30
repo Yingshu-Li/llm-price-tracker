@@ -26,6 +26,18 @@ REFERENCE_LINK_RE = re.compile(r"\[([^\]]+)\]\[([^\]]+)\]")
 HTML_LINK_RE = re.compile(r"<a\s+[^>]*href=[\"'](https?://[^\"']+)[\"'][^>]*>(.*?)</a>", re.I)
 DATE_RE = re.compile(r"(?<!\d)(20(?:1\d|2\d))[./-](0?[1-9]|1[0-2])(?:[./-](0?[1-9]|[12]\d|3[01]))?(?!\d)")
 YEAR_RE = re.compile(r"(?<!\d)(20(?:1\d|2\d))(?!\d)")
+DATE_ONLY_TITLE_RE = re.compile(r"^20\d{2}(?:[-/.]\d{1,2})?(?:[-/.]\d{1,2})?$")
+VENUE_ONLY_TITLE_RE = re.compile(
+    r"^(?:arxiv|openreview|nature|science|cvpr|iccv|eccv|acl|emnlp|naacl|eacl|iclr|icml|neurips|aaai|ijcai)"
+    r"(?:\s*[:#-]?\s*20\d{2})?$",
+    re.I,
+)
+
+CORE_CATEGORIES = {
+    "Language", "Vision", "Vision-Language", "Image Generation", "Video",
+    "Audio & Speech", "3D & Spatial", "Unified Multimodal",
+    "Robotics & Embodied AI",
+}
 
 PAPER_DOMAINS = (
     "arxiv.org", "doi.org", "openreview.net", "aclanthology.org",
@@ -66,9 +78,11 @@ def load_sources(path: Path) -> list[PaperSource]:
             repository = (row.get("Repository") or "").strip()
             if not repository:
                 continue
+            category = (row.get("PrimaryCategory") or "Other").strip()
+            group = "Core Technology" if category in CORE_CATEGORIES else "Cross-disciplinary Applications"
             sources.append(PaperSource(
-                group=current_group,
-                category=(row.get("PrimaryCategory") or "Other").strip(),
+                group=group,
+                category=category,
                 subcategory=(row.get("Subcategory") or "General").strip(),
                 repository=repository,
                 url=(row.get("GitHubURL") or f"https://github.com/{repository}").strip(),
@@ -119,12 +133,35 @@ def _strip_markdown(value: str) -> str:
     value = re.sub(r"^[\s|>*#\-+•·✅🔥✨📄📃📝📌🆕]+", "", value)
     value = re.sub(r"^\d+[.)]\s*", "", value)
     value = re.sub(r"\s+", " ", value).strip(" |:;,-–—")
+    if value.startswith("[") and not value.startswith("[\""):
+        value = value[1:].strip()
+    if value.endswith("]"):
+        value = value[:-1].strip()
     return value
 
 
 def _link_label_is_generic(label: str) -> bool:
-    normalized = _strip_markdown(label).casefold()
-    return normalized in GENERIC_LABELS or len(normalized) < 5
+    return _title_is_suspicious(_strip_markdown(label))
+
+
+def _title_is_suspicious(title: str) -> bool:
+    normalized = _strip_markdown(title)
+    folded = normalized.casefold()
+    if len(normalized) < 7 or folded in GENERIC_LABELS:
+        return True
+    if normalized.count(";") >= 3:
+        return True
+    if re.search(r"\]\(https?://", normalized, re.I) or re.match(r"^[^]]{1,30}\]\s+", normalized):
+        return True
+    if DATE_ONLY_TITLE_RE.fullmatch(normalized) or VENUE_ONLY_TITLE_RE.fullmatch(normalized):
+        return True
+    if re.fullmatch(r"(?:image|images|figure|fig\.?|thumbnail|screenshot|图片|图像?|插图)(?:\s*\d+)?", normalized, re.I):
+        return True
+    if re.search(r"\.(?:png|jpe?g|gif|svg|webp)$", normalized, re.I):
+        return True
+    if re.fullmatch(r"\[?(?:arxiv\s*)?\d{4}\.\d{4,5}(?:v\d+)?\]?", normalized, re.I):
+        return True
+    return False
 
 
 def _looks_like_paper(label: str, url: str, line: str) -> bool:
@@ -142,11 +179,17 @@ def _title_from_line(line: str, label: str, match_start: int) -> str:
         return _strip_markdown(label)
 
     if "|" in line:
+        same_cell_prefix = line[:match_start].rsplit("|", 1)[-1]
+        same_cell_prefix = MARKDOWN_LINK_RE.sub(lambda item: item.group(1), same_cell_prefix)
+        same_cell_prefix = _strip_markdown(same_cell_prefix)
+        if not _title_is_suspicious(same_cell_prefix):
+            return same_cell_prefix
+
         cells = [_strip_markdown(cell) for cell in line.split("|")]
         link_cell = next((index for index, cell in enumerate(cells) if label in cell), -1)
         for index in range(link_cell - 1, -1, -1):
             candidate = cells[index]
-            if len(candidate) >= 8 and not re.fullmatch(r"20\d{2}(?:[./-]\d{1,2})?", candidate):
+            if not _title_is_suspicious(candidate):
                 return candidate
 
     before = line[:match_start]
@@ -157,18 +200,23 @@ def _title_from_line(line: str, label: str, match_start: int) -> str:
 
 
 def _extract_date(text: str) -> tuple[str, str]:
-    match = DATE_RE.search(text)
-    if match:
-        year, month, day = match.groups()
-        return f"{year}-{int(month):02d}-{int(day or 1):02d}", "day" if day else "month"
     arxiv = ARXIV_RE.search(text)
     if arxiv:
         prefix = arxiv.group("id")[:2]
         month = arxiv.group("id")[2:4]
-        return f"20{prefix}-{month}-01", "month"
+        return f"20{prefix}-{month}", "month"
+    proceedings = re.search(r"(?:content|proceedings)/(?:CVPR|ICCV|ECCV)[_-]?(20\d{2})", text, re.I)
+    if proceedings:
+        return proceedings.group(1), "year"
+    match = DATE_RE.search(text)
+    if match:
+        year, month, day = match.groups()
+        if day:
+            return f"{year}-{int(month):02d}-{int(day):02d}", "day"
+        return f"{year}-{int(month):02d}", "month"
     match = YEAR_RE.search(text)
     if match:
-        return f"{match.group(1)}-01-01", "year"
+        return match.group(1), "year"
     return "", "unknown"
 
 
@@ -203,6 +251,20 @@ def paper_key(paper: dict) -> str:
     return f"title:{normalized}" if normalized else f"url:{paper.get('paper_url', '')}"
 
 
+def paper_aliases(paper: dict) -> list[str]:
+    aliases: list[str] = []
+    if paper.get("arxiv_id"):
+        aliases.append(f"arxiv:{paper['arxiv_id'].casefold()}")
+    if paper.get("doi"):
+        aliases.append(f"doi:{paper['doi'].casefold().rstrip('.')}")
+    normalized = normalize_title(paper.get("title", ""))
+    if normalized:
+        aliases.append(f"title:{normalized}")
+    if not aliases and paper.get("paper_url"):
+        aliases.append(f"url:{paper['paper_url']}")
+    return aliases
+
+
 def parse_readme(source: PaperSource, readme: str, updated_at: str, first_seen_at: str) -> list[dict]:
     papers: list[dict] = []
     seen_urls: set[str] = set()
@@ -225,13 +287,34 @@ def parse_readme(source: PaperSource, readme: str, updated_at: str, first_seen_a
             for match in REFERENCE_LINK_RE.finditer(raw_line)
             if reference_urls.get(match.group(2).casefold())
         )
-        for label, raw_url, start in links:
+        paper_links = [
+            (label, raw_url, start) for label, raw_url, start in links
+            if _looks_like_paper(label, raw_url, raw_line)
+        ]
+        if not paper_links:
+            continue
+
+        def link_priority(item: tuple[str, str, int]) -> tuple[int, int]:
+            url = item[1].casefold()
+            if "arxiv.org/abs/" in url:
+                return (0, item[2])
+            if "doi.org/" in url:
+                return (1, item[2])
+            if "openreview.net/forum" in url:
+                return (2, item[2])
+            if "openaccess.thecvf.com" in url and not url.endswith(".pdf"):
+                return (3, item[2])
+            if not urllib.parse.urlsplit(url).path.endswith(".pdf"):
+                return (4, item[2])
+            return (5, item[2])
+
+        for label, raw_url, start in [min(paper_links, key=link_priority)]:
             url = raw_url.rstrip(".,;:)")
-            if url in seen_urls or not _looks_like_paper(label, url, raw_line):
+            if url in seen_urls:
                 continue
             seen_urls.add(url)
             title = _title_from_line(raw_line, label, start)
-            if len(title) < 7 or title.casefold() in GENERIC_LABELS:
+            if _title_is_suspicious(title):
                 title = ""
             arxiv_match = ARXIV_RE.search(url)
             doi_match = DOI_RE.search(url)
@@ -259,42 +342,109 @@ def parse_readme(source: PaperSource, readme: str, updated_at: str, first_seen_a
 
 
 def merge_papers(papers: Iterable[dict]) -> list[dict]:
-    merged: dict[str, dict] = {}
+    merged: list[dict] = []
+    alias_to_index: dict[str, int] = {}
     for paper in papers:
-        key = paper_key(paper)
-        if key not in merged:
+        aliases = paper_aliases(paper)
+        index = next((alias_to_index[alias] for alias in aliases if alias in alias_to_index), None)
+        if index is None:
             copy = dict(paper)
+            key = aliases[0] if aliases else paper_key(paper)
             copy["id"] = hashlib.sha1(key.encode()).hexdigest()[:16]
-            merged[key] = copy
+            merged.append(copy)
+            index = len(merged) - 1
+            for alias in aliases:
+                alias_to_index[alias] = index
             continue
-        current = merged[key]
+        current = merged[index]
         for field in ("categories", "subcategories", "source_repos", "source_urls", "metadata_sources"):
             current[field] = list(dict.fromkeys([*current.get(field, []), *paper.get(field, [])]))
-        for field in ("title", "venue", "published_at", "date_precision", "arxiv_id", "doi"):
+        for field in ("title", "venue", "arxiv_id", "doi"):
             if not current.get(field) and paper.get(field):
                 current[field] = paper[field]
+        if paper.get("published_at"):
+            precision_rank = {"unknown": 0, "year": 1, "month": 2, "day": 3}
+            current_rank = precision_rank.get(current.get("date_precision", "unknown"), 0)
+            paper_rank = precision_rank.get(paper.get("date_precision", "unknown"), 0)
+            if not current.get("published_at") or paper_rank > current_rank:
+                current["published_at"] = paper["published_at"]
+                current["date_precision"] = paper.get("date_precision", "unknown")
         current["source_updated_at"] = max(current.get("source_updated_at", ""), paper.get("source_updated_at", ""))
         current["first_seen_at"] = min(current.get("first_seen_at", "9999-12-31"), paper.get("first_seen_at", "9999-12-31"))
-    return list(merged.values())
+        for alias in [*paper_aliases(current), *aliases]:
+            alias_to_index[alias] = index
+    return merged
 
 
 def _arxiv_metadata(client: httpx.Client, ids: list[str]) -> dict[str, dict]:
     result: dict[str, dict] = {}
     namespace = {"a": "http://www.w3.org/2005/Atom", "arxiv": "http://arxiv.org/schemas/atom"}
-    for offset in range(0, len(ids), 50):
-        batch = ids[offset:offset + 50]
-        response = client.get("https://export.arxiv.org/api/query", params={"id_list": ",".join(batch)})
-        response.raise_for_status()
-        root = ET.fromstring(response.content)
+    # arXiv supports large id_list batches; using 400 keeps a full rebuild
+    # practical while retaining the documented delay between API requests.
+    batch_size = 400
+    for offset in range(0, len(ids), batch_size):
+        batch = ids[offset:offset + batch_size]
+        root = None
+        for attempt in range(3):
+            try:
+                response = client.get(
+                    "https://export.arxiv.org/api/query",
+                    params={"id_list": ",".join(batch), "max_results": len(batch)},
+                )
+                response.raise_for_status()
+                root = ET.fromstring(response.content)
+                break
+            except Exception as exc:
+                if attempt == 2:
+                    print(f"warning: arXiv metadata batch {offset // batch_size + 1} failed: {exc}")
+                else:
+                    status = getattr(getattr(exc, "response", None), "status_code", None)
+                    time.sleep((60 if status == 429 else 5) * (attempt + 1))
+        if root is None:
+            continue
         for entry in root.findall("a:entry", namespace):
             identifier = (entry.findtext("a:id", default="", namespaces=namespace).rsplit("/", 1)[-1]).split("v", 1)[0]
             result[identifier] = {
                 "title": re.sub(r"\s+", " ", entry.findtext("a:title", default="", namespaces=namespace)).strip(),
                 "published_at": entry.findtext("a:published", default="", namespaces=namespace)[:10],
+                "date_precision": "day",
                 "venue": (entry.findtext("arxiv:journal_ref", default="", namespaces=namespace) or "arXiv preprint").strip(),
             }
-        if offset + 50 < len(ids):
+        if offset + batch_size < len(ids):
             time.sleep(3)
+    return result
+
+
+def _semantic_scholar_arxiv_metadata(client: httpx.Client, ids: list[str]) -> dict[str, dict]:
+    """Resolve arXiv identifiers in batches when the arXiv API is rate limited."""
+    result: dict[str, dict] = {}
+    batch_size = 500
+    for offset in range(0, len(ids), batch_size):
+        batch = ids[offset:offset + batch_size]
+        response = client.post(
+            "https://api.semanticscholar.org/graph/v1/paper/batch",
+            params={"fields": "title,publicationDate,venue,externalIds"},
+            json={"ids": [f"ARXIV:{identifier}" for identifier in batch]},
+        )
+        response.raise_for_status()
+        for requested_id, item in zip(batch, response.json()):
+            if not item:
+                continue
+            identifier = (item.get("externalIds") or {}).get("ArXiv") or requested_id
+            published = item.get("publicationDate") or ""
+            precision = "day" if re.fullmatch(r"\d{4}-\d{2}-\d{2}", published) else (
+                "month" if re.fullmatch(r"\d{4}-\d{2}", published) else (
+                    "year" if re.fullmatch(r"\d{4}", published) else "unknown"
+                )
+            )
+            result[identifier] = {
+                "title": re.sub(r"\s+", " ", item.get("title") or "").strip(),
+                "published_at": published if precision != "unknown" else "",
+                "date_precision": precision,
+                "venue": (item.get("venue") or "arXiv preprint").strip(),
+            }
+        if offset + batch_size < len(ids):
+            time.sleep(1)
     return result
 
 
@@ -307,26 +457,51 @@ def _crossref_metadata(client: httpx.Client, doi: str) -> dict:
     venue = (message.get("container-title") or [""])[0]
     parts = ((message.get("published-online") or message.get("published-print") or message.get("issued") or {}).get("date-parts") or [[]])[0]
     published = ""
+    precision = "unknown"
     if parts:
-        published = f"{parts[0]:04d}-{(parts[1] if len(parts) > 1 else 1):02d}-{(parts[2] if len(parts) > 2 else 1):02d}"
-    return {"title": title, "venue": venue, "published_at": published}
+        if len(parts) >= 3:
+            published = f"{parts[0]:04d}-{parts[1]:02d}-{parts[2]:02d}"
+            precision = "day"
+        elif len(parts) == 2:
+            published = f"{parts[0]:04d}-{parts[1]:02d}"
+            precision = "month"
+        else:
+            published = f"{parts[0]:04d}"
+            precision = "year"
+    return {"title": title, "venue": venue, "published_at": published, "date_precision": precision}
 
 
-def enrich_missing_metadata(client: httpx.Client, papers: list[dict], max_items: int = 400) -> None:
-    needs = [paper for paper in papers if not paper.get("title") or not paper.get("venue") or not paper.get("published_at")]
+def enrich_missing_metadata(client: httpx.Client, papers: list[dict], max_items: int = 25000) -> None:
+    needs = [
+        paper for paper in papers
+        if not paper.get("title")
+        or _title_is_suspicious(paper.get("title", ""))
+        or not paper.get("venue")
+        or not paper.get("published_at")
+        or (paper.get("arxiv_id") and paper.get("date_precision") != "day")
+        or (paper.get("arxiv_id") and not {"arXiv", "Semantic Scholar"}.intersection(paper.get("metadata_sources", [])))
+        or (paper.get("doi") and "Crossref title" not in paper.get("metadata_sources", []))
+    ]
     arxiv_ids = list(dict.fromkeys(paper["arxiv_id"] for paper in needs if paper.get("arxiv_id")))[:max_items]
     if arxiv_ids:
         try:
-            metadata = _arxiv_metadata(client, arxiv_ids)
+            metadata = _semantic_scholar_arxiv_metadata(client, arxiv_ids)
+            missing_ids = [identifier for identifier in arxiv_ids if identifier not in metadata]
+            if missing_ids:
+                metadata.update(_arxiv_metadata(client, missing_ids))
             for paper in needs:
                 item = metadata.get(paper.get("arxiv_id", ""))
                 if not item:
                     continue
-                for field in ("title", "venue", "published_at"):
-                    if not paper.get(field) and item.get(field):
-                        paper[field] = item[field]
-                if "arXiv" not in paper["metadata_sources"]:
-                    paper["metadata_sources"].append("arXiv")
+                if item.get("title"):
+                    paper["title"] = item["title"]
+                if item.get("venue") and not paper.get("venue"):
+                    paper["venue"] = item["venue"]
+                if item.get("published_at") and (not paper.get("published_at") or paper.get("date_precision") != "day"):
+                    paper["published_at"] = item["published_at"]
+                    paper["date_precision"] = item["date_precision"]
+                if "Semantic Scholar" not in paper["metadata_sources"]:
+                    paper["metadata_sources"].append("Semantic Scholar")
         except Exception:
             pass
 
@@ -334,13 +509,68 @@ def enrich_missing_metadata(client: httpx.Client, papers: list[dict], max_items:
     for paper in [item for item in needs if item.get("doi")][:remaining]:
         try:
             item = _crossref_metadata(client, paper["doi"])
-            for field in ("title", "venue", "published_at"):
-                if not paper.get(field) and item.get(field):
-                    paper[field] = item[field]
+            if item.get("title"):
+                paper["title"] = item["title"]
+            if item.get("venue") and not paper.get("venue"):
+                paper["venue"] = item["venue"]
+            if item.get("published_at") and (not paper.get("published_at") or paper.get("date_precision") != "day"):
+                paper["published_at"] = item["published_at"]
+                paper["date_precision"] = item["date_precision"]
             if "Crossref" not in paper["metadata_sources"]:
                 paper["metadata_sources"].append("Crossref")
+            if "Crossref title" not in paper["metadata_sources"]:
+                paper["metadata_sources"].append("Crossref title")
         except Exception:
             continue
+
+    # A just-posted arXiv paper may not yet exist in either metadata index.
+    # Keep the source-list title and ID-derived month, but label that lower
+    # confidence explicitly instead of inventing a day value.
+    for paper in papers:
+        if (
+            paper.get("arxiv_id")
+            and not {"arXiv", "Semantic Scholar"}.intersection(paper.get("metadata_sources", []))
+            and not _title_is_suspicious(paper.get("title", ""))
+        ):
+            if "arXiv identifier" not in paper["metadata_sources"]:
+                paper["metadata_sources"].append("arXiv identifier")
+
+
+def apply_verified_metadata_cache(papers: Iterable[dict], cached_papers: Iterable[dict]) -> None:
+    cached_arxiv = {
+        paper["arxiv_id"]: paper
+        for paper in cached_papers
+        if paper.get("arxiv_id") and {"arXiv", "Semantic Scholar"}.intersection(paper.get("metadata_sources", []))
+    }
+    cached_doi = {
+        paper["doi"].casefold(): paper
+        for paper in cached_papers
+        if paper.get("doi") and "Crossref" in paper.get("metadata_sources", [])
+    }
+    for paper in papers:
+        cached = None
+        trusted_source = ""
+        if paper.get("arxiv_id") in cached_arxiv:
+            cached = cached_arxiv[paper["arxiv_id"]]
+            trusted_source = next(
+                (source for source in ("arXiv", "Semantic Scholar") if source in cached.get("metadata_sources", [])),
+                "Semantic Scholar",
+            )
+        elif paper.get("doi") and paper["doi"].casefold() in cached_doi:
+            cached = cached_doi[paper["doi"].casefold()]
+            trusted_source = "Crossref"
+        if not cached:
+            continue
+        if _title_is_suspicious(cached.get("title", "")):
+            continue
+        for field in ("title", "published_at", "date_precision"):
+            if cached.get(field):
+                paper[field] = cached[field]
+        if not paper.get("venue") and cached.get("venue"):
+            paper["venue"] = cached["venue"]
+        paper["metadata_sources"] = list(dict.fromkeys([
+            *paper.get("metadata_sources", []), trusted_source,
+        ]))
 
 
 def filter_recent(papers: Iterable[dict], since_year: int, max_without_date: int = 50) -> list[dict]:
@@ -348,8 +578,15 @@ def filter_recent(papers: Iterable[dict], since_year: int, max_without_date: int
     undated_by_source: dict[str, int] = {}
     for paper in papers:
         published = paper.get("published_at", "")
+        precision = paper.get("date_precision", "unknown")
+        if precision == "month" and re.fullmatch(r"\d{4}-\d{2}-\d{2}", published):
+            published = published[:7]
+            paper["published_at"] = published
+        elif precision == "year" and re.match(r"^\d{4}", published):
+            published = published[:4]
+            paper["published_at"] = published
         if published and published[:4].isdigit():
-            if int(published[:4]) < since_year:
+            if int(published[:4]) < since_year or int(published[:4]) > date.today().year:
                 continue
         elif not published:
             source = (paper.get("source_repos") or ["unknown"])[0]
@@ -357,7 +594,7 @@ def filter_recent(papers: Iterable[dict], since_year: int, max_without_date: int
             if count >= max_without_date:
                 continue
             undated_by_source[source] = count + 1
-        if not paper.get("title"):
+        if not paper.get("title") or _title_is_suspicious(paper.get("title", "")):
             continue
         paper["venue"] = paper.get("venue") or "Venue not specified"
         selected.append(paper)
@@ -371,6 +608,37 @@ def filter_recent(papers: Iterable[dict], since_year: int, max_without_date: int
         reverse=True,
     )
     return selected
+
+
+def validate_catalog(papers: Iterable[dict]) -> None:
+    problems: list[str] = []
+    seen_ids: set[str] = set()
+    date_patterns = {
+        "day": re.compile(r"^20\d{2}-(?:0[1-9]|1[0-2])-(?:0[1-9]|[12]\d|3[01])$"),
+        "month": re.compile(r"^20\d{2}-(?:0[1-9]|1[0-2])$"),
+        "year": re.compile(r"^20\d{2}$"),
+        "unknown": re.compile(r"^$"),
+    }
+    for index, paper in enumerate(papers):
+        identifier = paper.get("id", "")
+        if not identifier or identifier in seen_ids:
+            problems.append(f"row {index}: missing or duplicate id {identifier!r}")
+        seen_ids.add(identifier)
+        if _title_is_suspicious(paper.get("title", "")):
+            problems.append(f"row {index}: suspicious title {paper.get('title')!r}")
+        precision = paper.get("date_precision", "unknown")
+        value = paper.get("published_at", "")
+        pattern = date_patterns.get(precision)
+        if pattern is None or not pattern.fullmatch(value):
+            problems.append(f"row {index}: date {value!r} does not match precision {precision!r}")
+        if paper.get("arxiv_id") and not {"arXiv", "Semantic Scholar", "arXiv identifier"}.intersection(paper.get("metadata_sources", [])):
+            problems.append(f"row {index}: arXiv id {paper['arxiv_id']} was not verified")
+        if not paper.get("paper_url") or not paper.get("categories"):
+            problems.append(f"row {index}: missing URL or category")
+        if len(problems) >= 25:
+            break
+    if problems:
+        raise RuntimeError("paper catalog quality check failed:\n" + "\n".join(problems))
 
 
 def load_json(path: Path, default):

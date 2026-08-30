@@ -349,7 +349,7 @@ MiniMaxAI/MiniMax-VL-01,MiniMax,General-Purpose,456B,45.9B/token,Offline: Offici
 MiniMax Image,MiniMax,Image Generation,Undisclosed,Undisclosed,Online: API,No
 MiniMax Video,MiniMax,Video Generation,Undisclosed,Undisclosed,Online: API,No
 MiniMaxAI/MiniMax-H3,MiniMax,Video Generation,33B,Undisclosed,Both: MiniMax API / Official Hugging Face Open Weight,Yes
-MiniMax Music,MiniMax,Speech & Audio,Undisclosed,Undisclosed,Online: API,No
+MiniMax Music,MiniMax,Speech & Audio,Undisclosed,Undisclosed,Online: API (Deprecated; paid endpoint retired 2026-08-20),No
 MiniMax Speech,MiniMax,Speech & Audio,Undisclosed,Undisclosed,Online: API,No
 doubao-seed-1.8,ByteDance / Doubao-Seed,General-Purpose,Undisclosed,Undisclosed,Online: Volcano Ark API,Yes
 doubao-seed-2-0-lite-260428,ByteDance / Doubao-Seed,General-Purpose,Undisclosed,Undisclosed,Online: Volcano Ark API,Yes
@@ -778,3 +778,17 @@ fixie-ai/ultravox-v0_5-llama-3_2-1b,Fixie AI,Speech & Audio,Undisclosed,Undisclo
 pyannote/speaker-diarization-community-1,pyannote,Speech & Audio,Undisclosed,Undisclosed,Offline: Official Hugging Face / Open Weight,No
 ACE-Step/acestep-transcriber,ACE-Step,Speech & Audio,10.7B,10.7B,Offline: Official Hugging Face / Open Weight,No
 mispeech/midashenglm-7b,MiSpeech,Speech & Audio,8.3B,8.3B,Offline: Official Hugging Face / Open Weight,No
+hexgrad/Kokoro-82M,Hexgrad,Speech & Audio,Undisclosed,Undisclosed,Offline: Official Hugging Face / Open Weight,No
+ResembleAI/chatterbox-multilingual,Resemble AI,Speech & Audio,Undisclosed,Undisclosed,Offline: Official Hugging Face / Open Weight,No
+ResembleAI/chatterbox-turbo,Resemble AI,Speech & Audio,Undisclosed,Undisclosed,Offline: Official Hugging Face / Open Weight,No
+sesame/csm-1b,Sesame AI,Speech & Audio,1.6B,1.6B,Offline: Official Hugging Face / Open Weight,No
+bosonai/HiggsAudioV2.5,Boson AI,Speech & Audio,Undisclosed,Undisclosed,Offline: Official Hugging Face / Open Weight,No
+Qwen/Qwen3-TTS,Alibaba / Qwen,Speech & Audio,Undisclosed,Undisclosed,Offline: Official Hugging Face / Open Weight,No
+Qwen/Qwen3-TTS-VoiceDesign,Alibaba / Qwen,Speech & Audio,Undisclosed,Undisclosed,Offline: Official Hugging Face / Open Weight,No
+mistralai/Voxtral-Mini-3B-2507,Mistral AI,Speech & Audio,4.7B,4.7B,Offline: Official Hugging Face / Open Weight,No
+Audio8/Audio8-TTS-Preview-0.6b,Audio8,Speech & Audio,Undisclosed,Undisclosed,Online: API,No
+inworld-ai/realtime-tts-1.5-max,Inworld AI,Speech & Audio,Undisclosed,Undisclosed,Online: API,No
+inworld-ai/realtime-tts-1.5-mini,Inworld AI,Speech & Audio,Undisclosed,Undisclosed,Online: API,No
+inworld-ai/realtime-tts-2,Inworld AI,Speech & Audio,Undisclosed,Undisclosed,Online: API,No
+speech-2.8-hd,MiniMax,Speech & Audio,Undisclosed,Undisclosed,Online: API,No
+speech-2.8-turbo,MiniMax,Speech & Audio,Undisclosed,Undisclosed,Online: API,No

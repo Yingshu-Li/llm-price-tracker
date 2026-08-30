@@ -52,6 +52,21 @@ class PriceRecord:
     per_second: float | None = None
     per_frame: float | None = None
     per_call: float | None = None
+    # -- audio --
+    # per_minute: 音频时长价，**统一归一到「每分钟」**。时/分/秒是同一量纲，
+    # 换刻度不是跨单位折算（仓库先例：sensenova.py 读每分钟价后 /60 存 per_second）。
+    # 归一只解决刻度；计量对象不同的价格**不可同列比价**，靠 billing_basis 区分。
+    per_minute: float | None = None
+    # per_1m_chars: TTS 按字符计价。厂商口径有每千/每万/每百万字符，
+    # 一律归一到「每 100 万字符美元」——与 input_per_1m 的 token 约定同构，
+    # 数值落在 $0.62–$100 这个可读区间，不会出现一串前导零。
+    per_1m_chars: float | None = None
+
+    # 时长价的计量对象。None = 未知；不同基数的价格不可互相比较：
+    #   input_audio  -- 喂进去的音频时长（ASR）
+    #   output_audio -- 产出的音频时长（TTS / 音乐）
+    #   session      -- WebSocket 连接时长，静音也计费（AssemblyAI 流式）
+    billing_basis: str | None = None
 
     # ── 元信息 ────────────────────────────────────────────────
     context_length: int | None = None
@@ -91,6 +106,8 @@ class PriceRecord:
         "per_second",
         "per_frame",
         "per_call",
+        "per_minute",
+        "per_1m_chars",
     )
 
     def __post_init__(self) -> None:

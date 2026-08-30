@@ -121,3 +121,19 @@ aliases:
     google_video_official_verified: veo-3.1-lite-generate-preview
     litellm: veo-3.1-lite-generate-preview
     vercel: google/veo-3.1-lite-generate-001
+
+# ── 人工排除的规范化候选名 ──────────────────────────────────────
+# name_candidates() 剥版本后缀后，同族不同代会塌成同一个名字。
+# 这里逐例把**歧义的那个候选形式**从匹配中拿掉，精确形式仍然可用。
+#
+# ⚠️ 不要改成「歧义就自动排除」：全库有 57 个歧义候选，绝大多数是
+#    有意的双行约定（GLM-4.6 的 API 行与 zai-org/GLM-4.6 的开源行是
+#    同一个模型，共享价格是对的），自动排除会抹掉几十行真价格。
+exclude_candidates:
+  # DeepInfra 只托管 whisper-large-v3（$0.00045/分钟）。剥掉 `-vN` 后
+  # v1、v2 也命中 `whisper-large`，凭空拿到 v3 的价——它们是 2022/2023 年
+  # 的历史模型，没有任何厂商在售。v3 自身走精确形式，不受影响。
+  "whisper-large-v1":
+    - whisper-large
+  "whisper-large-v2":
+    - whisper-large

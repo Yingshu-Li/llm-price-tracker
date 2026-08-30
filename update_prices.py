@@ -32,11 +32,15 @@ from src.adapters import (
     sensenova,
     upstage,
     vendored,
+    deepinfra_audio,
+    google_audio,
+    zhipu_audio,
+    minimax_audio,
 )
 from src.adapters.md_docs import parse_doctable_doc, parse_pricing_doc
 from src.fx import convert_records_to_usd, load_ecb_rates
 from src.http import fetch
-from src.match import load_aliases, match_all
+from src.match import load_aliases, load_excluded_candidates, match_all
 from src.modalities import (
     load_manual_modalities,
     parse_litellm_modalities,
@@ -527,6 +531,105 @@ def collect_price_apis() -> tuple[list, list[dict], list[str], dict]:
     return records, fetches, warnings, free_tiers
 
 
+def collect_zhipu_audio() -> tuple[list, list[dict], list[str]]:
+    """Tier 1：智谱 BigModel 的语音官方价（人民币）。
+
+    定价页是 SPA，但背后有公开 JSON 接口（无需登录）。一家覆盖四种计价
+    单位：按字符 / 按次 / 按 token / 按分钟。详见 adapters/zhipu_audio.py。
+    """
+    result = fetch(zhipu_audio.ZHIPU_API, use_cache=True, timeout=60)
+    entry = _fetch_entry(
+        "zhipu_audio_official", result.url, result.ok, result,
+        provider_name="Zhipu BigModel", weblink=zhipu_audio.ZHIPU_WEBLINK,
+        license="官方定价页",
+    )
+    if not result.ok:
+        print(f"  \u2717 zhipu_audio {result.error}", file=sys.stderr)
+        return [], [entry], []
+    records, warnings = zhipu_audio.parse_zhipu_audio(
+        result.text, source_url=result.url, fetched_at=result.fetched_at,
+        source_version=result.version,
+    )
+    entry["n_records"] = len(records)
+    print(f"  \u2713 智谱语音官方价 {len(records):4} 条（人民币）")
+    return records, [entry], warnings
+
+
+def collect_minimax_audio() -> tuple[list, list[dict], list[str]]:
+    """Tier 1：MiniMax 的语音官方价（人民币，按万字符）。
+
+    ⚠️ 音色授权（9.9 元/音色）与语音资源包（预付套餐）故意不收；
+    音乐接口已于 2026-08-20 停售，也不再解析。
+    """
+    result = fetch(minimax_audio.MINIMAX_URL, use_cache=True, timeout=60)
+    entry = _fetch_entry(
+        "minimax_audio_official", result.url, result.ok, result,
+        provider_name="MiniMax", weblink=minimax_audio.MINIMAX_WEBLINK,
+        license="官方定价页",
+    )
+    if not result.ok:
+        print(f"  \u2717 minimax_audio {result.error}", file=sys.stderr)
+        return [], [entry], []
+    records, warnings = minimax_audio.parse_minimax_audio(
+        result.text, source_url=result.url, fetched_at=result.fetched_at,
+        source_version=result.version,
+    )
+    entry["n_records"] = len(records)
+    print(f"  \u2713 MiniMax 语音官方价 {len(records):4} 条（人民币）")
+    return records, [entry], warnings
+
+
+def collect_google_audio() -> tuple[list, list[dict], list[str]]:
+    """Tier 1：Google Gemini API 的音频按次官方价（Lyria 的 per song）。
+
+    只解析 per song 这一种单位——它是此前唯一没有任何源覆盖的音频计费
+    单位（按次表 0 行）。收窄范围让它不可能与 token / 分钟 / 字符三张表
+    撞车，也不会误伤同页的 Veo 与文本模型价。详见 adapters/google_audio.py。
+    """
+    result = fetch(google_audio.GOOGLE_PRICING_URL, use_cache=True, timeout=60)
+    entry = _fetch_entry(
+        "google_audio_official", result.url, result.ok, result,
+        provider_name="Google Gemini API", weblink=google_audio.GOOGLE_PRICING_URL,
+        license="官方定价页",
+    )
+    if not result.ok:
+        print(f"  ✗ google_audio {result.error}", file=sys.stderr)
+        return [], [entry], []
+    records, warnings = google_audio.parse_google_audio(
+        result.text, source_url=result.url, fetched_at=result.fetched_at,
+        source_version=result.version,
+    )
+    entry["n_records"] = len(records)
+    print(f"  ✓ Google 音频按次官方价 {len(records):4} 条")
+    return records, [entry], warnings
+
+
+def collect_deepinfra_audio() -> tuple[list, list[dict], list[str]]:
+    """Tier 3：DeepInfra 的音频托管价（按分钟 / 按字符）。
+
+    单独成一个 collector 而不是配进 price_apis.yaml：同一个
+    cents_per_output_sec 在 text-to-video 上是视频秒、在 text-to-music 上是
+    音频秒，通用适配器的全表统一映射表达不了这个条件分支；音频价还要写
+    billing_basis，YAML 里没有这个概念。详见 adapters/deepinfra_audio.py。
+    """
+    result = fetch(deepinfra_audio.DEEPINFRA_URL, use_cache=True, timeout=60)
+    entry = _fetch_entry(
+        "deepinfra_audio", result.url, result.ok, result,
+        provider_name="DeepInfra", weblink=deepinfra_audio.DEEPINFRA_WEBLINK,
+        license="第三方托管价目",
+    )
+    if not result.ok:
+        print(f"  ✗ deepinfra_audio {result.error}", file=sys.stderr)
+        return [], [entry], []
+    records, warnings = deepinfra_audio.parse_deepinfra_audio(
+        result.text, source_url=result.url, fetched_at=result.fetched_at,
+        source_version=result.version,
+    )
+    entry["n_records"] = len(records)
+    print(f"  ✓ DeepInfra 音频托管价 {len(records):4} 条")
+    return records, [entry], warnings
+
+
 def collect_nanogpt() -> tuple[list, list[dict], list[str]]:
     """Tier 3：nano-gpt 的图像模型转售价。
 
@@ -700,6 +803,14 @@ def main() -> int:
         records += recs; fetches += fs
     recs, fs, warns = collect_nanogpt()
     records += recs; fetches += fs; warnings += warns
+    recs, fs, warns = collect_deepinfra_audio()
+    records += recs; fetches += fs; warnings += warns
+    recs, fs, warns = collect_google_audio()
+    records += recs; fetches += fs; warnings += warns
+    recs, fs, warns = collect_zhipu_audio()
+    records += recs; fetches += fs; warnings += warns
+    recs, fs, warns = collect_minimax_audio()
+    records += recs; fetches += fs; warnings += warns
     recs, fs, warns, free_tiers = collect_price_apis()
     records += recs; fetches += fs; warnings += warns
     # 官方 Token Plan 比第三方免费变体更接近模型原厂，存在同名时优先展示。
@@ -753,7 +864,13 @@ def main() -> int:
     )
 
     print("\n== 6. 匹配价格到 raw.csv ==")
-    report = match_all(raw_models, records, load_aliases(CONFIG / "aliases.yaml"))
+    # exclude_candidates 只作用于价格匹配。模态匹配（line 674 那处）走的是
+    # 另一套 targets，且不涉及跨代错配，故意不传——那里排除反而会丢模态覆盖。
+    report = match_all(
+        raw_models, records,
+        load_aliases(CONFIG / "aliases.yaml"),
+        load_excluded_candidates(CONFIG / "aliases.yaml"),
+    )
     index = defaultdict(list)
     for rec in records:
         index[(rec.source, rec.model_id)].append(rec)
@@ -882,6 +999,39 @@ def main() -> int:
                 export_functions={"Video Generation"},
                 price_mode=mode,
             )
+    # ── 音频模型拆五张表 ──
+    # 音频是所有模态里计价口径最杂的：按 token / 按分钟 / 按次 / 按字符
+    # 四种真单位并存，加上一张开源无报价表。拆表规则与图像、视频一致——
+    # 表内官方价与最低价必定同单位。
+    #
+    # 时长表内部还多一层：所有时/秒价已归一到**每分钟**（src/units.py，
+    # 带 ⏱ 标记留痕），但计量对象（输入音频 / 产出音频 / 会话）不同的价
+    # 仍拆成独立行，靠 billing_basis 区分——归一只解决刻度，不解决可比性。
+    audio_unit_exports = (
+        ("audio_time_models_with_prices.csv", export_mod.PRICE_MODE_AUDIO_TIME),
+        ("audio_per_generation_models_with_prices.csv",
+         export_mod.PRICE_MODE_AUDIO_CALL),
+        ("audio_per_character_models_with_prices.csv",
+         export_mod.PRICE_MODE_AUDIO_CHAR),
+    )
+    audio_stats = {}
+    for filename, mode in audio_unit_exports:
+        audio_stats[filename] = export_mod.write_audio_unit_table(
+            OUT / filename, raw_models, by_model, input_capabilities,
+            price_mode=mode,
+        )
+    audio_table_exports = (
+        ("audio_token_models_with_prices.csv", export_mod.PRICE_MODE_TOKEN),
+        ("audio_unpriced_open_weight_models.csv", export_mod.PRICE_MODE_UNPRICED),
+    )
+    for filename, mode in audio_table_exports:
+        audio_stats[filename] = export_mod.write_table(
+            OUT / filename, raw_models, best, by_model, free_tiers,
+            input_capabilities,
+            export_functions={"Speech & Audio"},
+            price_mode=mode,
+        )
+
     counts = defaultdict(int)
     for rec in records:
         counts[rec.source] += 1
@@ -950,6 +1100,17 @@ def main() -> int:
             f"   out/{filename:<40} {item.get('rows', 0)} 行"
             f"（视频模型 · {labels[mode]}；{detail}）"
         )
+    audio_labels = {
+        "audio_time_models_with_prices.csv": "按时长（已归一到每分钟）",
+        "audio_per_generation_models_with_prices.csv": "按次 / 按段",
+        "audio_per_character_models_with_prices.csv": "按字符（每 100 万字符）",
+        "audio_token_models_with_prices.csv": "按 token",
+        "audio_unpriced_open_weight_models.csv": "开源权重且无任何报价",
+    }
+    for filename, label in audio_labels.items():
+        item = audio_stats[filename]
+        print(f"   out/{filename:<44} {item.get('rows', 0)} 行"
+              f"（音频模型 · {label}）")
     print(f"   out/sources.md               {len(fetches)} 个源")
     return 0
 
