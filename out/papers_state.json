@@ -253,11 +253,11 @@
       "candidate_count": 9
     },
     "mk-runner/Awesome-Radiology-Report-Generation": {
-      "readme_sha256": "3f218f88ea5e18e0756540f930569734550b7f747702f13ed117536a55d99de1",
-      "readme_url": "https://raw.githubusercontent.com/mk-runner/Awesome-Radiology-Report-Generation/bf30105932aa6ac8e5e7ec2430d7dceed7783ef3/README.md",
-      "source_updated_at": "2026-08-29",
-      "last_checked_at": "2026-08-29",
-      "candidate_count": 614
+      "readme_sha256": "f364327aec4475f09fa5a282c9e35ecc5c8ad428f342e0d18d19ba7fa5104c84",
+      "readme_url": "https://raw.githubusercontent.com/mk-runner/Awesome-Radiology-Report-Generation/eff7b508e3f9b7bddd416fc25fba21881831af9f/README.md",
+      "source_updated_at": "2026-08-30",
+      "last_checked_at": "2026-08-30",
+      "candidate_count": 616
     },
     "Dragon-Wu/awesome-medical-report-generation": {
       "readme_sha256": "a8f64148e4bd6928d62dfcd246094b90e54ee2048cc96c7fb279b1940df77d5c",
@@ -407,11 +407,11 @@
       "candidate_count": 135
     },
     "scadastrangelove/awesome-ai-security-tools": {
-      "readme_sha256": "c399a9e0d64048f598f7d0c53994d04a94cdfdacdfe62aeb6681fde38dac2d2d",
-      "readme_url": "https://raw.githubusercontent.com/scadastrangelove/awesome-ai-security-tools/b277852379291410084a8f2798c2bc0a431daf7a/README.md",
-      "source_updated_at": "2026-08-24",
-      "last_checked_at": "2026-08-29",
-      "candidate_count": 1
+      "readme_sha256": "adcbb1555467a244948d9a4649ee93b8e5eecda0d26ed945e089697a6de129c9",
+      "readme_url": "https://raw.githubusercontent.com/scadastrangelove/awesome-ai-security-tools/ec84b93fbe5b7f5a48bbe8a1e9626f7fb2539cfb/README.md",
+      "source_updated_at": "2026-08-30",
+      "last_checked_at": "2026-08-30",
+      "candidate_count": 3
     },
     "brinhosa/awesome-ai-security": {
       "readme_sha256": "deef11973b0b492d53ee529553b82f56775fb1256932a97067a108033bc27c43",
@@ -435,11 +435,11 @@
       "candidate_count": 153
     },
     "Nanboy-Ronan/awesome-medical-imaging-agents": {
-      "readme_sha256": "5f0acd68eb6002a569128bff8c1965e501dab57e05fe3550080bcaf9cac632d2",
-      "readme_url": "https://raw.githubusercontent.com/Nanboy-Ronan/awesome-medical-imaging-agents/940d5b1d353eeb63155032d8a9f6d64516d0dd50/README.md",
-      "source_updated_at": "2026-08-26",
-      "last_checked_at": "2026-08-29",
-      "candidate_count": 432
+      "readme_sha256": "38ae4737a054f94572d674d2122abb2d98da9f911af2d6ec4470e285782d9fc2",
+      "readme_url": "https://raw.githubusercontent.com/Nanboy-Ronan/awesome-medical-imaging-agents/33e33e7febb7ee40d2469d34cec8e46fe353396e/README.md",
+      "source_updated_at": "2026-08-29",
+      "last_checked_at": "2026-08-30",
+      "candidate_count": 437
     },
     "tyang816/Awesome-TCM-LLM": {
       "readme_sha256": "b15d519cd7621818d1614fb9a4a21da983f2948d4758b2ec7be15de7536ba99b",
@@ -477,7 +477,7 @@
       "candidate_count": 78
     }
   },
-  "last_run_at": "2026-08-29",
+  "last_run_at": "2026-08-30",
   "failures": [],
   "since_year": 2025
 }
