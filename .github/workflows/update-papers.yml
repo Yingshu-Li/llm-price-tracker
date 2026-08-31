@@ -1,6 +1,16 @@
 name: 更新论文雷达
 
 on:
+  push:
+    branches:
+      - main
+    paths:
+      - "src/papers.py"
+      - "update_papers.py"
+      - "audit_paper_sources.py"
+      - "config/paper_sources.csv"
+      - "requirements.txt"
+      - ".github/workflows/update-papers.yml"
   schedule:
     - cron: "20 1 * * *"
   workflow_dispatch:
@@ -40,7 +50,7 @@ jobs:
 
           for attempt in 1 2 3; do
             echo "=== 论文更新尝试 ${attempt}/3 ===" | tee -a out/papers_update.log
-            if python -u update_papers.py 2>&1 | tee -a out/papers_update.log; then
+            if python -u update_papers.py --force --rebuild --max-enrich 0 2>&1 | tee -a out/papers_update.log; then
               update_succeeded=true
               break
             fi
