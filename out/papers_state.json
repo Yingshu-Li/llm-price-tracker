@@ -197,11 +197,11 @@
       "candidate_count": 139
     },
     "junyuan-fang/awesome-physical-ai": {
-      "readme_sha256": "d5b6cbdc5452191fd9d4401c88fae37d30d873ed6ce9df0ebf93dfef4c13f086",
-      "readme_url": "https://raw.githubusercontent.com/junyuan-fang/awesome-physical-ai/03a2478e72c23da2fb11dae7c68627b374122612/README.md",
-      "source_updated_at": "2026-08-25",
-      "last_checked_at": "2026-08-29",
-      "candidate_count": 184
+      "readme_sha256": "dd8ccffbcea6392d6dfdde6893a518adb6332ddbf25047b9c43703c4c239231c",
+      "readme_url": "https://raw.githubusercontent.com/junyuan-fang/awesome-physical-ai/bbff0cc4528bc0a219104b02d977b677908a9eff/README.md",
+      "source_updated_at": "2026-08-31",
+      "last_checked_at": "2026-08-31",
+      "candidate_count": 188
     },
     "yueen-ma/Awesome-VLA": {
       "readme_sha256": "0cab707c5636fcae8a59afd0b0a2208fe5e18b72889f480652246a232f814255",
@@ -475,9 +475,23 @@
       "source_updated_at": "2026-08-21",
       "last_checked_at": "2026-08-29",
       "candidate_count": 78
+    },
+    "firetix/awesome-cvpr-2026-papers": {
+      "readme_sha256": "5d24cf52527b286cae849a50b1f5147af6511a1192836d62d6abce7eb2787e13",
+      "readme_url": "https://raw.githubusercontent.com/firetix/awesome-cvpr-2026-papers/3d707941cd0a97065f165aec22a8847d3b301a98/README.md",
+      "source_updated_at": "2026-06-08",
+      "last_checked_at": "2026-08-31",
+      "candidate_count": 4069
+    },
+    "52CV/CVPR-2025-Papers": {
+      "readme_sha256": "0ed607a56a557d3a615f4448f8fddb92ec9483b3682c7fc657d7dd9e6c50b93f",
+      "readme_url": "https://raw.githubusercontent.com/52CV/CVPR-2025-Papers/642645dbcc105203b34e2c6388301238f9e374bd/README.md",
+      "source_updated_at": "2025-06-30",
+      "last_checked_at": "2026-08-31",
+      "candidate_count": 2884
     }
   },
-  "last_run_at": "2026-08-30",
+  "last_run_at": "2026-08-31",
   "failures": [],
   "since_year": 2025
 }
