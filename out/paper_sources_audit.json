@@ -1,0 +1,762 @@
+[
+  {
+    "repository": "js-lee-AI/awesome-llm-agent-papers",
+    "category": "Language",
+    "subcategory": "LLM Agents",
+    "source_updated_at": "2026-08-24",
+    "last_checked_at": "2026-08-29",
+    "candidate_count": 496,
+    "output_count": 332,
+    "status": "ok"
+  },
+  {
+    "repository": "VoltAgent/awesome-ai-agent-papers",
+    "category": "Language",
+    "subcategory": "LLM Agents",
+    "source_updated_at": "2026-08-21",
+    "last_checked_at": "2026-08-29",
+    "candidate_count": 763,
+    "output_count": 383,
+    "status": "ok"
+  },
+  {
+    "repository": "atfortes/awesome-llm-reasoning",
+    "category": "Language",
+    "subcategory": "Reasoning",
+    "source_updated_at": "2026-04-20",
+    "last_checked_at": "2026-08-29",
+    "candidate_count": 146,
+    "output_count": 19,
+    "status": "ok"
+  },
+  {
+    "repository": "AIDASLab/Awesome-Diffusion-LLM",
+    "category": "Language",
+    "subcategory": "Diffusion LLM",
+    "source_updated_at": "2026-08-29",
+    "last_checked_at": "2026-08-29",
+    "candidate_count": 358,
+    "output_count": 298,
+    "status": "ok"
+  },
+  {
+    "repository": "VILA-Lab/Awesome-DLMs",
+    "category": "Language",
+    "subcategory": "Diffusion LLM",
+    "source_updated_at": "2026-08-26",
+    "last_checked_at": "2026-08-29",
+    "candidate_count": 559,
+    "output_count": 432,
+    "status": "ok"
+  },
+  {
+    "repository": "mawady/awesome-computer-vision-resources",
+    "category": "Vision",
+    "subcategory": "General Computer Vision",
+    "source_updated_at": "2026-08-19",
+    "last_checked_at": "2026-08-29",
+    "candidate_count": 29,
+    "output_count": 17,
+    "status": "ok"
+  },
+  {
+    "repository": "umitkacar/awesome-vision-models",
+    "category": "Vision",
+    "subcategory": "Vision Foundation Models",
+    "source_updated_at": "2025-11-10",
+    "last_checked_at": "2026-08-29",
+    "candidate_count": 16,
+    "output_count": 9,
+    "status": "ok"
+  },
+  {
+    "repository": "zli12321/Vision-Language-Models-Overview",
+    "category": "Vision-Language",
+    "subcategory": "General VLM",
+    "source_updated_at": "2026-08-22",
+    "last_checked_at": "2026-08-29",
+    "candidate_count": 476,
+    "output_count": 218,
+    "status": "ok"
+  },
+  {
+    "repository": "jingyi0000/VLM_survey",
+    "category": "Vision-Language",
+    "subcategory": "General VLM",
+    "source_updated_at": "2025-10-14",
+    "last_checked_at": "2026-08-29",
+    "candidate_count": 255,
+    "output_count": 1,
+    "status": "ok"
+  },
+  {
+    "repository": "OpenEnvision/Awesome-Multimodal-Modeling",
+    "category": "Vision-Language",
+    "subcategory": "Multimodal Modeling",
+    "source_updated_at": "2026-08-07",
+    "last_checked_at": "2026-08-29",
+    "candidate_count": 295,
+    "output_count": 25,
+    "status": "ok"
+  },
+  {
+    "repository": "BradyFU/Awesome-Multimodal-Large-Language-Models",
+    "category": "Vision-Language",
+    "subcategory": "MLLM Overview",
+    "source_updated_at": "2026-08-27",
+    "last_checked_at": "2026-08-29",
+    "candidate_count": 468,
+    "output_count": 44,
+    "status": "ok"
+  },
+  {
+    "repository": "lchen1019/awesome-mllm-benchmarks",
+    "category": "Vision-Language",
+    "subcategory": "Benchmarks",
+    "source_updated_at": "2026-08-13",
+    "last_checked_at": "2026-08-29",
+    "candidate_count": 124,
+    "output_count": 44,
+    "status": "ok"
+  },
+  {
+    "repository": "wangkai930418/awesome-diffusion-categorized",
+    "category": "Image Generation",
+    "subcategory": "Diffusion / T2I / Editing",
+    "source_updated_at": "2026-03-16",
+    "last_checked_at": "2026-08-29",
+    "candidate_count": 3768,
+    "output_count": 24,
+    "status": "ok"
+  },
+  {
+    "repository": "huan-yin/Awesome-Image-Generation-Model",
+    "category": "Image Generation",
+    "subcategory": "General Diffusion",
+    "source_updated_at": "2026-08-27",
+    "last_checked_at": "2026-08-29",
+    "candidate_count": 69,
+    "output_count": 12,
+    "status": "ok"
+  },
+  {
+    "repository": "diff-usion/Awesome-Diffusion-Models",
+    "category": "Image Generation",
+    "subcategory": "General Diffusion",
+    "source_updated_at": "2023-11-05",
+    "last_checked_at": "2026-08-29",
+    "candidate_count": 2636,
+    "output_count": 0,
+    "status": "no_recent_output"
+  },
+  {
+    "repository": "lixinustc/Awesome-diffusion-model-for-image-processing",
+    "category": "Image Generation",
+    "subcategory": "Low-Level / Restoration",
+    "source_updated_at": "2026-04-08",
+    "last_checked_at": "2026-08-29",
+    "candidate_count": 235,
+    "output_count": 15,
+    "status": "ok"
+  },
+  {
+    "repository": "kongzhecn/awesome-video-generation",
+    "category": "Video",
+    "subcategory": "Video Generation",
+    "source_updated_at": "2026-06-17",
+    "last_checked_at": "2026-08-29",
+    "candidate_count": 590,
+    "output_count": 7,
+    "status": "ok"
+  },
+  {
+    "repository": "AlonzoLeeeooo/awesome-video-generation",
+    "category": "Video",
+    "subcategory": "Video Generation",
+    "source_updated_at": "2026-03-31",
+    "last_checked_at": "2026-08-29",
+    "candidate_count": 8,
+    "output_count": 1,
+    "status": "ok"
+  },
+  {
+    "repository": "people-robots/Awesome-Video-Generation-Post-Training",
+    "category": "Video",
+    "subcategory": "Post-training & Alignment",
+    "source_updated_at": "2026-07-20",
+    "last_checked_at": "2026-08-29",
+    "candidate_count": 557,
+    "output_count": 9,
+    "status": "ok"
+  },
+  {
+    "repository": "AudioLLMs/Awesome-Audio-LLM",
+    "category": "Audio & Speech",
+    "subcategory": "Audio LLM / Speech / Music",
+    "source_updated_at": "2026-08-24",
+    "last_checked_at": "2026-08-29",
+    "candidate_count": 17,
+    "output_count": 13,
+    "status": "ok"
+  },
+  {
+    "repository": "metame-ai/awesome-audio-plaza",
+    "category": "Audio & Speech",
+    "subcategory": "Audio Foundation Models",
+    "source_updated_at": "2025-11-02",
+    "last_checked_at": "2026-08-29",
+    "candidate_count": 261,
+    "output_count": 60,
+    "status": "ok"
+  },
+  {
+    "repository": "juhayna-zh/Awesome-Music-Generation-Papers",
+    "category": "Audio & Speech",
+    "subcategory": "Music Generation",
+    "source_updated_at": "2026-04-24",
+    "last_checked_at": "2026-08-29",
+    "candidate_count": 48,
+    "output_count": 2,
+    "status": "ok"
+  },
+  {
+    "repository": "justimyhxu/awesome-3D-generation",
+    "category": "3D & Spatial",
+    "subcategory": "3D Generation",
+    "source_updated_at": "2023-03-09",
+    "last_checked_at": "2026-08-29",
+    "candidate_count": 113,
+    "output_count": 0,
+    "status": "no_recent_output"
+  },
+  {
+    "repository": "Yimi81/awesome-spatial-reasoning-scene-generation",
+    "category": "3D & Spatial",
+    "subcategory": "Spatial Intelligence",
+    "source_updated_at": "2026-07-03",
+    "last_checked_at": "2026-08-29",
+    "candidate_count": 120,
+    "output_count": 32,
+    "status": "ok"
+  },
+  {
+    "repository": "AIDC-AI/Awesome-Unified-Multimodal-Models",
+    "category": "Unified Multimodal",
+    "subcategory": "Unified Understanding + Generation",
+    "source_updated_at": "2026-03-24",
+    "last_checked_at": "2026-08-29",
+    "candidate_count": 216,
+    "output_count": 44,
+    "status": "ok"
+  },
+  {
+    "repository": "showlab/Awesome-Unified-Multimodal-Models",
+    "category": "Unified Multimodal",
+    "subcategory": "Unified Understanding + Generation",
+    "source_updated_at": "2025-10-10",
+    "last_checked_at": "2026-08-29",
+    "candidate_count": 70,
+    "output_count": 14,
+    "status": "ok"
+  },
+  {
+    "repository": "Purshow/Awesome-Unified-Multimodal",
+    "category": "Unified Multimodal",
+    "subcategory": "Unified Multimodal",
+    "source_updated_at": "2026-01-08",
+    "last_checked_at": "2026-08-29",
+    "candidate_count": 0,
+    "output_count": 0,
+    "status": "no_extractable_papers"
+  },
+  {
+    "repository": "zchoi/Awesome-Embodied-Robotics-and-Agent",
+    "category": "Robotics & Embodied AI",
+    "subcategory": "Embodied AI",
+    "source_updated_at": "2026-08-14",
+    "last_checked_at": "2026-08-29",
+    "candidate_count": 139,
+    "output_count": 16,
+    "status": "ok"
+  },
+  {
+    "repository": "junyuan-fang/awesome-physical-ai",
+    "category": "Robotics & Embodied AI",
+    "subcategory": "Physical AI / Humanoids",
+    "source_updated_at": "2026-08-31",
+    "last_checked_at": "2026-08-31",
+    "candidate_count": 188,
+    "output_count": 150,
+    "status": "ok"
+  },
+  {
+    "repository": "yueen-ma/Awesome-VLA",
+    "category": "Robotics & Embodied AI",
+    "subcategory": "VLA",
+    "source_updated_at": "2026-08-25",
+    "last_checked_at": "2026-08-29",
+    "candidate_count": 171,
+    "output_count": 3,
+    "status": "ok"
+  },
+  {
+    "repository": "jonyzhang2023/awesome-embodied-vla-va-vln",
+    "category": "Robotics & Embodied AI",
+    "subcategory": "VLA / VLN",
+    "source_updated_at": "2026-08-07",
+    "last_checked_at": "2026-08-29",
+    "candidate_count": 683,
+    "output_count": 16,
+    "status": "ok"
+  },
+  {
+    "repository": "JiahuaDong/Awesome-World-Models",
+    "category": "Robotics & Embodied AI",
+    "subcategory": "World Models",
+    "source_updated_at": "2026-08-12",
+    "last_checked_at": "2026-08-29",
+    "candidate_count": 0,
+    "output_count": 0,
+    "status": "no_extractable_papers"
+  },
+  {
+    "repository": "NeuraLiying/Awesome-World-Models",
+    "category": "Robotics & Embodied AI",
+    "subcategory": "World Models",
+    "source_updated_at": "2026-08-14",
+    "last_checked_at": "2026-08-29",
+    "candidate_count": 321,
+    "output_count": 13,
+    "status": "ok"
+  },
+  {
+    "repository": "FreedomIntelligence/Awesome-AI4Med",
+    "category": "Medicine & Healthcare",
+    "subcategory": "General Medical AI",
+    "source_updated_at": "2026-08-04",
+    "last_checked_at": "2026-08-29",
+    "candidate_count": 63,
+    "output_count": 6,
+    "status": "ok"
+  },
+  {
+    "repository": "fabianofilho/awesome-medical-ai",
+    "category": "Medicine & Healthcare",
+    "subcategory": "General Medical AI",
+    "source_updated_at": "2026-07-04",
+    "last_checked_at": "2026-08-29",
+    "candidate_count": 81,
+    "output_count": 66,
+    "status": "ok"
+  },
+  {
+    "repository": "richard-peng-xia/awesome-multimodal-in-medical-imaging",
+    "category": "Medicine & Healthcare",
+    "subcategory": "Medical Multimodal",
+    "source_updated_at": "2026-07-29",
+    "last_checked_at": "2026-08-29",
+    "candidate_count": 9,
+    "output_count": 2,
+    "status": "ok"
+  },
+  {
+    "repository": "mk-runner/Awesome-Radiology-Report-Generation",
+    "category": "Medicine & Healthcare",
+    "subcategory": "Radiology Report Generation",
+    "source_updated_at": "2026-08-30",
+    "last_checked_at": "2026-08-30",
+    "candidate_count": 616,
+    "output_count": 58,
+    "status": "ok"
+  },
+  {
+    "repository": "Dragon-Wu/awesome-medical-report-generation",
+    "category": "Medicine & Healthcare",
+    "subcategory": "Medical Report Generation",
+    "source_updated_at": "2024-02-23",
+    "last_checked_at": "2026-08-29",
+    "candidate_count": 34,
+    "output_count": 1,
+    "status": "ok"
+  },
+  {
+    "repository": "AgenticHealthAI/Awesome-AI-Agents-for-Healthcare",
+    "category": "Medicine & Healthcare",
+    "subcategory": "Medical Agents",
+    "source_updated_at": "2026-08-19",
+    "last_checked_at": "2026-08-29",
+    "candidate_count": 415,
+    "output_count": 374,
+    "status": "ok"
+  },
+  {
+    "repository": "OSU-NLP-Group/awesome-agents4science",
+    "category": "Science & Discovery",
+    "subcategory": "Scientific Agents",
+    "source_updated_at": "2024-12-11",
+    "last_checked_at": "2026-08-29",
+    "candidate_count": 13,
+    "output_count": 0,
+    "status": "no_recent_output"
+  },
+  {
+    "repository": "zoedsy/awesome-science-agents",
+    "category": "Science & Discovery",
+    "subcategory": "Scientific Agents",
+    "source_updated_at": "2026-08-03",
+    "last_checked_at": "2026-08-29",
+    "candidate_count": 76,
+    "output_count": 32,
+    "status": "ok"
+  },
+  {
+    "repository": "ai4s-research/awesome-ai-for-science",
+    "category": "Science & Discovery",
+    "subcategory": "General AI4Science",
+    "source_updated_at": "2026-08-27",
+    "last_checked_at": "2026-08-29",
+    "candidate_count": 60,
+    "output_count": 34,
+    "status": "ok"
+  },
+  {
+    "repository": "tilde-lab/awesome-materials-informatics",
+    "category": "Science & Discovery",
+    "subcategory": "Materials Science",
+    "source_updated_at": "2025-06-19",
+    "last_checked_at": "2026-08-29",
+    "candidate_count": 2,
+    "output_count": 1,
+    "status": "ok"
+  },
+  {
+    "repository": "yboulaamane/awesome-drug-discovery",
+    "category": "Science & Discovery",
+    "subcategory": "Drug Discovery",
+    "source_updated_at": "2026-07-30",
+    "last_checked_at": "2026-08-29",
+    "candidate_count": 0,
+    "output_count": 0,
+    "status": "no_extractable_papers"
+  },
+  {
+    "repository": "gudo7208/awesome-ai4cad",
+    "category": "Engineering & Manufacturing",
+    "subcategory": "AI for CAD",
+    "source_updated_at": "2026-08-31",
+    "last_checked_at": "2026-08-31",
+    "candidate_count": 554,
+    "output_count": 333,
+    "status": "ok"
+  },
+  {
+    "repository": "whut09/Awesome-AI-Engineering-Agents",
+    "category": "Engineering & Manufacturing",
+    "subcategory": "Engineering Agents",
+    "source_updated_at": "2026-08-28",
+    "last_checked_at": "2026-08-29",
+    "candidate_count": 152,
+    "output_count": 43,
+    "status": "ok"
+  },
+  {
+    "repository": "GeminiLight/awesome-ai-llm4education",
+    "category": "Education",
+    "subcategory": "AI/LLM for Education",
+    "source_updated_at": "2026-08-11",
+    "last_checked_at": "2026-08-29",
+    "candidate_count": 326,
+    "output_count": 7,
+    "status": "ok"
+  },
+  {
+    "repository": "Jeryi-Sun/LLM-and-Law",
+    "category": "Law & Governance",
+    "subcategory": "LLM and Law",
+    "source_updated_at": "2026-08-27",
+    "last_checked_at": "2026-08-29",
+    "candidate_count": 104,
+    "output_count": 44,
+    "status": "ok"
+  },
+  {
+    "repository": "FrederickPi1969/awesome-llm-for-finance",
+    "category": "Business & Finance",
+    "subcategory": "LLM for Finance",
+    "source_updated_at": "2026-05-21",
+    "last_checked_at": "2026-08-29",
+    "candidate_count": 55,
+    "output_count": 22,
+    "status": "ok"
+  },
+  {
+    "repository": "junhua/awesome-finance-ai-papers",
+    "category": "Business & Finance",
+    "subcategory": "AI for Finance",
+    "source_updated_at": "2024-11-24",
+    "last_checked_at": "2026-08-29",
+    "candidate_count": 56,
+    "output_count": 10,
+    "status": "ok"
+  },
+  {
+    "repository": "ujjwaldhaka71/awesome-ai-finance",
+    "category": "Business & Finance",
+    "subcategory": "AI Finance Ecosystem",
+    "source_updated_at": "2026-03-30",
+    "last_checked_at": "2026-08-29",
+    "candidate_count": 2,
+    "output_count": 1,
+    "status": "ok"
+  },
+  {
+    "repository": "Jinfeng-Xu/Awesome-Multimodal-Recommender-Systems",
+    "category": "Business & Finance",
+    "subcategory": "Recommender Systems",
+    "source_updated_at": "2026-08-07",
+    "last_checked_at": "2026-08-29",
+    "candidate_count": 91,
+    "output_count": 34,
+    "status": "ok"
+  },
+  {
+    "repository": "ValueByte-AI/Awesome-LLM-in-Social-Science",
+    "category": "Humanities & Social Science",
+    "subcategory": "LLM in Social Science",
+    "source_updated_at": "2026-08-19",
+    "last_checked_at": "2026-08-29",
+    "candidate_count": 1,
+    "output_count": 0,
+    "status": "no_recent_output"
+  },
+  {
+    "repository": "KeHang-Zhu/Awesome-LLM-for-Social-Science",
+    "category": "Humanities & Social Science",
+    "subcategory": "LLM for Social Science",
+    "source_updated_at": "2025-10-14",
+    "last_checked_at": "2026-08-29",
+    "candidate_count": 0,
+    "output_count": 0,
+    "status": "no_extractable_papers"
+  },
+  {
+    "repository": "ValueByte-AI/Awesome-LLM-Psychometrics",
+    "category": "Humanities & Social Science",
+    "subcategory": "Psychometrics",
+    "source_updated_at": "2026-08-18",
+    "last_checked_at": "2026-08-29",
+    "candidate_count": 301,
+    "output_count": 1,
+    "status": "ok"
+  },
+  {
+    "repository": "Jack-bo1220/Awesome-Remote-Sensing-Foundation-Models",
+    "category": "Environment & Earth Science",
+    "subcategory": "Remote Sensing Foundation Models",
+    "source_updated_at": "2026-05-07",
+    "last_checked_at": "2026-08-29",
+    "candidate_count": 299,
+    "output_count": 114,
+    "status": "ok"
+  },
+  {
+    "repository": "zhengkai15/Awesome-Weather-Forecast",
+    "category": "Environment & Earth Science",
+    "subcategory": "Weather & Climate",
+    "source_updated_at": "2026-08-04",
+    "last_checked_at": "2026-08-29",
+    "candidate_count": 98,
+    "output_count": 0,
+    "status": "no_recent_output"
+  },
+  {
+    "repository": "8kSec/awesome-ai-security",
+    "category": "Security & Cybersecurity",
+    "subcategory": "AI Security",
+    "source_updated_at": "2026-04-12",
+    "last_checked_at": "2026-08-29",
+    "candidate_count": 135,
+    "output_count": 41,
+    "status": "ok"
+  },
+  {
+    "repository": "scadastrangelove/awesome-ai-security-tools",
+    "category": "Security & Cybersecurity",
+    "subcategory": "AI Security Tools & Agents",
+    "source_updated_at": "2026-08-30",
+    "last_checked_at": "2026-08-30",
+    "candidate_count": 3,
+    "output_count": 2,
+    "status": "ok"
+  },
+  {
+    "repository": "brinhosa/awesome-ai-security",
+    "category": "Security & Cybersecurity",
+    "subcategory": "Cybersecurity + AI",
+    "source_updated_at": "2026-01-08",
+    "last_checked_at": "2026-08-29",
+    "candidate_count": 6,
+    "output_count": 0,
+    "status": "no_recent_output"
+  },
+  {
+    "repository": "AstraZeneca/awesome-drug-discovery-knowledge-graphs",
+    "category": "Science & Discovery",
+    "subcategory": "Drug Discovery Knowledge Graphs",
+    "source_updated_at": "2026-07-27",
+    "last_checked_at": "2026-08-29",
+    "candidate_count": 1,
+    "output_count": 0,
+    "status": "no_recent_output"
+  },
+  {
+    "repository": "subinium/Awesome-Scientific-LLM-Benchmarks",
+    "category": "Science & Discovery",
+    "subcategory": "Scientific LLM Benchmarks",
+    "source_updated_at": "2026-08-03",
+    "last_checked_at": "2026-08-29",
+    "candidate_count": 153,
+    "output_count": 58,
+    "status": "ok"
+  },
+  {
+    "repository": "Nanboy-Ronan/awesome-medical-imaging-agents",
+    "category": "Medicine & Healthcare",
+    "subcategory": "Medical Imaging Agents",
+    "source_updated_at": "2026-08-29",
+    "last_checked_at": "2026-08-30",
+    "candidate_count": 437,
+    "output_count": 391,
+    "status": "ok"
+  },
+  {
+    "repository": "tyang816/Awesome-TCM-LLM",
+    "category": "Medicine & Healthcare",
+    "subcategory": "Traditional Chinese Medical LLM",
+    "source_updated_at": "2026-08-16",
+    "last_checked_at": "2026-08-29",
+    "candidate_count": 249,
+    "output_count": 134,
+    "status": "ok"
+  },
+  {
+    "repository": "Yuliang-Liu/AWESOME-OCR-LLM",
+    "category": "Vision-Language",
+    "subcategory": "OCR / Document VLM",
+    "source_updated_at": "2026-08-28",
+    "last_checked_at": "2026-08-29",
+    "candidate_count": 225,
+    "output_count": 1,
+    "status": "ok"
+  },
+  {
+    "repository": "The-Martyr/Awesome-Multimodal-Reasoning",
+    "category": "Vision-Language",
+    "subcategory": "Multimodal Reasoning",
+    "source_updated_at": "2026-08-22",
+    "last_checked_at": "2026-08-29",
+    "candidate_count": 0,
+    "output_count": 0,
+    "status": "no_extractable_papers"
+  },
+  {
+    "repository": "ThreeSR/Awesome-Multimodal-Deep-Research",
+    "category": "Vision-Language",
+    "subcategory": "Multimodal Deep Research",
+    "source_updated_at": "2026-05-29",
+    "last_checked_at": "2026-08-29",
+    "candidate_count": 159,
+    "output_count": 73,
+    "status": "ok"
+  },
+  {
+    "repository": "tuteng0915/awesome-diffusion-ar",
+    "category": "Language",
+    "subcategory": "Diffusion x Autoregression",
+    "source_updated_at": "2026-08-21",
+    "last_checked_at": "2026-08-29",
+    "candidate_count": 78,
+    "output_count": 51,
+    "status": "ok"
+  },
+  {
+    "repository": "firetix/awesome-cvpr-2026-papers",
+    "category": "Vision",
+    "subcategory": "CVPR 2026 Proceedings",
+    "source_updated_at": "2026-06-08",
+    "last_checked_at": "2026-08-31",
+    "candidate_count": 4069,
+    "output_count": 1723,
+    "status": "ok"
+  },
+  {
+    "repository": "52CV/CVPR-2025-Papers",
+    "category": "Vision",
+    "subcategory": "CVPR 2025 Proceedings",
+    "source_updated_at": "2025-06-30",
+    "last_checked_at": "2026-08-31",
+    "candidate_count": 2884,
+    "output_count": 2794,
+    "status": "ok"
+  },
+  {
+    "repository": "hzxie/Awesome-3D-Scene-Generation",
+    "category": "3D & Spatial",
+    "subcategory": "3D Scene Generation",
+    "source_updated_at": "2026-08-11",
+    "last_checked_at": "2026-08-31",
+    "candidate_count": 538,
+    "output_count": 196,
+    "status": "ok"
+  },
+  {
+    "repository": "SIBench/Awesome-Visual-Spatial-Reasoning",
+    "category": "3D & Spatial",
+    "subcategory": "Visual Spatial Reasoning",
+    "source_updated_at": "2026-07-27",
+    "last_checked_at": "2026-08-31",
+    "candidate_count": 195,
+    "output_count": 123,
+    "status": "ok"
+  },
+  {
+    "repository": "linfei-mise/Awesome-AI-x-SS",
+    "category": "Humanities & Social Science",
+    "subcategory": "AI x Social Sciences",
+    "source_updated_at": "2026-04-09",
+    "last_checked_at": "2026-08-31",
+    "candidate_count": 188,
+    "output_count": 68,
+    "status": "ok"
+  },
+  {
+    "repository": "yuanjiayiy/dope-ai4science-paper",
+    "category": "Science & Discovery",
+    "subcategory": "Automated Scientific Discovery",
+    "source_updated_at": "2026-04-08",
+    "last_checked_at": "2026-08-31",
+    "candidate_count": 19,
+    "output_count": 13,
+    "status": "ok"
+  },
+  {
+    "repository": "john852517791/awesome-fake-audio-detection",
+    "category": "Audio & Speech",
+    "subcategory": "Audio Deepfake Detection",
+    "source_updated_at": "2026-08-27",
+    "last_checked_at": "2026-08-31",
+    "candidate_count": 460,
+    "output_count": 263,
+    "status": "ok"
+  },
+  {
+    "repository": "TalEliyahu/Awesome-AI-Security",
+    "category": "Security & Cybersecurity",
+    "subcategory": "AI Security Research",
+    "source_updated_at": "2026-07-18",
+    "last_checked_at": "2026-08-31",
+    "candidate_count": 55,
+    "output_count": 52,
+    "status": "ok"
+  }
+]

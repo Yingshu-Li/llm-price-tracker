@@ -309,11 +309,11 @@
       "candidate_count": 0
     },
     "gudo7208/awesome-ai4cad": {
-      "readme_sha256": "96bcbe3d3c4e96f338a575da6ef3d1e380cd0cf03b5326331828ac34c6363a5b",
-      "readme_url": "https://raw.githubusercontent.com/gudo7208/awesome-ai4cad/00e1ef25d99415fee1bb462b15998542b5284f2f/README.md",
-      "source_updated_at": "2026-08-27",
-      "last_checked_at": "2026-08-29",
-      "candidate_count": 552
+      "readme_sha256": "49ef108ec320bef93853a85346888825e4ae72d96fdabbeff50bb2a812b4af28",
+      "readme_url": "https://raw.githubusercontent.com/gudo7208/awesome-ai4cad/1c21f52e8573e77328ad4d3e5bb73c54162ea13e/README.md",
+      "source_updated_at": "2026-08-31",
+      "last_checked_at": "2026-08-31",
+      "candidate_count": 554
     },
     "whut09/Awesome-AI-Engineering-Agents": {
       "readme_sha256": "6c7dc1ba6cc78346164ff3b2187cc1333aa0e3f1def10c82227d6a3843415067",
@@ -489,6 +489,48 @@
       "source_updated_at": "2025-06-30",
       "last_checked_at": "2026-08-31",
       "candidate_count": 2884
+    },
+    "hzxie/Awesome-3D-Scene-Generation": {
+      "readme_sha256": "5c6c19338c4672e0a1d5bbd0040e7fb4d83ef4fe7d4d0ea6a8db43f9d8ff1ddf",
+      "readme_url": "https://raw.githubusercontent.com/hzxie/Awesome-3D-Scene-Generation/266f44f2cf02a53638369cf3d1c67b82a3819f83/README.md",
+      "source_updated_at": "2026-08-11",
+      "last_checked_at": "2026-08-31",
+      "candidate_count": 538
+    },
+    "SIBench/Awesome-Visual-Spatial-Reasoning": {
+      "readme_sha256": "e57a7b17a95e6bcdf1edc8e1c1ee3a251934021e6fc4e323ccd4b5ff130a73e7",
+      "readme_url": "https://raw.githubusercontent.com/SIBench/Awesome-Visual-Spatial-Reasoning/08601c72da9644b0df4b4a023b472e00a0573906/README.md",
+      "source_updated_at": "2026-07-27",
+      "last_checked_at": "2026-08-31",
+      "candidate_count": 195
+    },
+    "linfei-mise/Awesome-AI-x-SS": {
+      "readme_sha256": "4c19fe83a86da59e87c9dce6f53c8282dd5208ee810483a8812bdb8d69ed8a25",
+      "readme_url": "https://raw.githubusercontent.com/linfei-mise/Awesome-AI-x-SS/7cce449c151d7b5d20a3187b9d89d6c0de4f028c/README.md",
+      "source_updated_at": "2026-04-09",
+      "last_checked_at": "2026-08-31",
+      "candidate_count": 188
+    },
+    "yuanjiayiy/dope-ai4science-paper": {
+      "readme_sha256": "8941a2a76ab66bfa1b683b1270d7618f3d9949e51e910b83a778cb99cc80ee23",
+      "readme_url": "https://raw.githubusercontent.com/yuanjiayiy/dope-ai4science-paper/e97ef8aa74ad0e509a43c28d59aeffea5e0754bf/README.md",
+      "source_updated_at": "2026-04-08",
+      "last_checked_at": "2026-08-31",
+      "candidate_count": 19
+    },
+    "john852517791/awesome-fake-audio-detection": {
+      "readme_sha256": "dc242ebee360d7c5ca6bb94f73d14689829794be4832cb9a200f0599d1eba556",
+      "readme_url": "https://raw.githubusercontent.com/john852517791/awesome-fake-audio-detection/1812aefef3cdc9b850486e8745b8a3b94a46e8cd/README.md",
+      "source_updated_at": "2026-08-27",
+      "last_checked_at": "2026-08-31",
+      "candidate_count": 460
+    },
+    "TalEliyahu/Awesome-AI-Security": {
+      "readme_sha256": "c0033c2851c7936bdc18b61eb3479b7df8b62e29bc090157ed2175f3b47646b8",
+      "readme_url": "https://raw.githubusercontent.com/TalEliyahu/Awesome-AI-Security/944b0e52f535d13d5b543fddd9bd3b895aa6de1b/Research_Papers.md",
+      "source_updated_at": "2026-07-18",
+      "last_checked_at": "2026-08-31",
+      "candidate_count": 55
     }
   },
   "last_run_at": "2026-08-31",
