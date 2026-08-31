@@ -28,16 +28,18 @@ jobs:
       - name: 安装依赖
         run: pip install -r requirements.txt
 
-      - name: 检查 70 个来源并补全缺失元数据
+      - name: 检查论文来源并补全缺失元数据
         shell: bash
         run: |
           set -o pipefail
           : > out/papers_update.log
+          update_succeeded=false
 
           for attempt in 1 2 3; do
             echo "=== 论文更新尝试 ${attempt}/3 ===" | tee -a out/papers_update.log
             if python -u update_papers.py 2>&1 | tee -a out/papers_update.log; then
-              exit 0
+              update_succeeded=true
+              break
             fi
 
             if [ "${attempt}" -lt 3 ]; then
@@ -47,13 +49,17 @@ jobs:
             fi
           done
 
-          echo "论文更新连续失败 3 次，完整日志已上传到工作流产物。" | tee -a out/papers_update.log
-          exit 1
+          if [ "${update_succeeded}" != "true" ]; then
+            echo "论文更新连续失败 3 次，完整日志已上传到工作流产物。" | tee -a out/papers_update.log
+            exit 1
+          fi
+
+          python audit_paper_sources.py --offline --json out/paper_sources_audit.json
 
       - name: 提交论文产物
         run: |
           set -euo pipefail
-          git add out/papers.json out/papers.csv out/papers_state.json
+          git add out/papers.json out/papers.csv out/papers_state.json out/paper_sources_audit.json
 
           if git diff --cached --quiet; then
             echo "论文数据无变化，跳过提交。"
@@ -75,6 +81,7 @@ jobs:
             out/papers.json
             out/papers.csv
             out/papers_state.json
+            out/paper_sources_audit.json
             out/papers_update.log
           retention-days: 14
 

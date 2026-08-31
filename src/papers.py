@@ -19,14 +19,17 @@ import httpx
 
 ARXIV_RE = re.compile(r"arxiv\.org/(?:abs|pdf)/(?P<id>\d{4}\.\d{4,5})(?:v\d+)?", re.I)
 DOI_RE = re.compile(r"(?:doi\.org/|doi:\s*)(?P<id>10\.\d{4,9}/[^\s\]\[<>)\"']+)", re.I)
-MARKDOWN_LINK_RE = re.compile(r"\[([^\]]+)\]\((https?://[^)\s]+)(?:\s+[^)]*)?\)")
+MARKDOWN_LINK_RE = re.compile(r"\[\[?([^\]]+)\]\]?\((https?://[^)\s]+)(?:\s+[^)]*)?\)")
 RELATIVE_MARKDOWN_LINK_RE = re.compile(r"\[[^\]]+\]\((?!https?://)([^)#?]+\.md)(?:#[^)]*)?\)", re.I)
 REFERENCE_DEF_RE = re.compile(r"^\s*\[([^\]]+)\]:\s*(https?://\S+)\s*$", re.I | re.M)
 REFERENCE_LINK_RE = re.compile(r"\[([^\]]+)\]\[([^\]]+)\]")
 HTML_LINK_RE = re.compile(r"<a\s+[^>]*href=[\"'](https?://[^\"']+)[\"'][^>]*>(.*?)</a>", re.I)
-DATE_RE = re.compile(r"(?<!\d)(20(?:1\d|2\d))[./-](0?[1-9]|1[0-2])(?:[./-](0?[1-9]|[12]\d|3[01]))?(?!\d)")
-YEAR_RE = re.compile(r"(?<!\d)(20(?:1\d|2\d))(?!\d)")
-DATE_ONLY_TITLE_RE = re.compile(r"^20\d{2}(?:[-/.]\d{1,2})?(?:[-/.]\d{1,2})?$")
+DATE_RE = re.compile(r"(?<!\d)((?:19|20)\d{2})[./-](0?[1-9]|1[0-2])(?:[./-](0?[1-9]|[12]\d|3[01]))?(?!\d)")
+YEAR_RE = re.compile(r"(?<!\d)((?:19|20)\d{2})(?!\d)")
+DATE_ONLY_TITLE_RE = re.compile(
+    r"^(?:20\d{2}(?:[-/.]\d{1,2})?(?:[-/.]\d{1,2})?|"
+    r"(?:0?[1-9]|1[0-2])[-/.](?:0?[1-9]|[12]\d|3[01])[-/.]20\d{2})$"
+)
 VENUE_ONLY_TITLE_RE = re.compile(
     r"^(?:arxiv|openreview|nature|science|cvpr|iccv|eccv|acl|emnlp|naacl|eacl|iclr|icml|neurips|aaai|ijcai)"
     r"(?:\s*[:#-]?\s*20\d{2})?$",
@@ -49,7 +52,49 @@ PAPER_DOMAINS = (
 )
 GENERIC_LABELS = {
     "paper", "pdf", "arxiv", "preprint", "publication", "link", "论文",
-    "article", "project", "homepage", "read", "official paper",
+    "article", "project", "project page", "homepage", "website", "webpage",
+    "read", "official paper", "paper link", "technical report", "code",
+}
+TABLE_TITLE_HEADERS = {
+    "title", "paper title", "paper", "work", "method", "benchmark", "name", "model", "model name",
+}
+SOURCE_DOCUMENT_OVERRIDES = {
+    # The repository root is a broad security resource list; this document is
+    # its actual paper feed and excludes tools, policies, and vendor reports.
+    "TalEliyahu/Awesome-AI-Security": ("Research_Papers.md",),
+}
+VERIFIED_METADATA_OVERRIDES = {
+    "https://doi.org/10.1007/BF00992698": {
+        "title": "Q-Learning",
+        "published_at": "1992",
+        "date_precision": "year",
+        "venue": "Machine Learning",
+    },
+    "https://doi.org/10.1037/h0042519": {
+        "title": "The Perceptron: A Probabilistic Model for Information Storage and Organization in the Brain",
+        "published_at": "1958",
+        "date_precision": "year",
+        "venue": "Psychological Review",
+    },
+    "https://arxiv.org/abs/2603.09877": {
+        "title": "InternVL-U: Democratizing Unified Multimodal Models for Understanding, Reasoning, Generation and Editing",
+        "published_at": "2026-03-10",
+        "date_precision": "day",
+        "venue": "arXiv preprint",
+        "arxiv_id": "2603.09877",
+    },
+    "https://research.nvidia.com/labs/cosmos3/technical-report.pdf": {
+        "title": "Cosmos 3: Omnimodal World Models for Physical AI",
+        "published_at": "2026-06",
+        "date_precision": "month",
+        "venue": "arXiv preprint",
+        "arxiv_id": "2606.02800",
+    },
+}
+VERIFIED_METADATA_OVERRIDES_BY_ARXIV = {
+    value["arxiv_id"]: value
+    for value in VERIFIED_METADATA_OVERRIDES.values()
+    if value.get("arxiv_id")
 }
 VENUE_PATTERNS = (
     "NeurIPS", "ICLR", "ICML", "CVPR", "ICCV", "ECCV", "ACL", "EMNLP",
@@ -91,6 +136,19 @@ def load_sources(path: Path) -> list[PaperSource]:
 
 
 def source_readme(client: httpx.Client, repository: str) -> tuple[str, str]:
+    override_paths = SOURCE_DOCUMENT_OVERRIDES.get(repository)
+    if override_paths:
+        documents: list[str] = []
+        first_url = ""
+        for path in override_paths:
+            url = f"https://github.com/{repository}/raw/HEAD/{urllib.parse.quote(path, safe='/')}"
+            response = client.get(url)
+            response.raise_for_status()
+            if len(response.text) <= 30:
+                raise RuntimeError(f"paper document is empty for {repository}: {path}")
+            first_url = first_url or str(response.url)
+            documents.append(response.text)
+        return "\n".join(documents), first_url
     for name in ("README.md", "readme.md", "README.MD", "Readme.md"):
         url = f"https://github.com/{repository}/raw/HEAD/{name}"
         response = client.get(url)
@@ -131,13 +189,29 @@ def _strip_markdown(value: str) -> str:
     value = re.sub(r"<[^>]+>", " ", value)
     value = re.sub(r"[`*_~]", "", value)
     value = re.sub(r"^[\s|>*#\-+•·✅🔥✨📄📃📝📌🆕]+", "", value)
+    value = re.sub(r"^[^\w\u4e00-\u9fff\[]+", "", value)
     value = re.sub(r"^\d+[.)]\s*", "", value)
     value = re.sub(r"\s+", " ", value).strip(" |:;,-–—")
     if value.startswith("[") and not value.startswith("[\""):
         value = value[1:].strip()
     if value.endswith("]"):
         value = value[:-1].strip()
-    return value
+    if len(value) >= 2 and value[0] == value[-1] and value[0] in {'"', "'", "“", "”"}:
+        value = value[1:-1].strip()
+    return value.strip('"“”')
+
+
+def _clean_title_candidate(value: str) -> str:
+    value = MARKDOWN_LINK_RE.sub(lambda item: item.group(1), value)
+    value = HTML_LINK_RE.sub(lambda item: _strip_markdown(item.group(2)), value)
+    value = _strip_markdown(value)
+    if " — " in value:
+        value = value.split(" — ", 1)[0].strip()
+    if " - " in value:
+        prefix, suffix = value.split(" - ", 1)
+        if len(prefix) >= 8 and len(suffix) >= 35:
+            value = prefix.strip()
+    return _strip_markdown(value)
 
 
 def _link_label_is_generic(label: str) -> bool:
@@ -147,19 +221,22 @@ def _link_label_is_generic(label: str) -> bool:
 def _title_is_suspicious(title: str) -> bool:
     normalized = _strip_markdown(title)
     folded = normalized.casefold()
-    if len(normalized) < 7 or folded in GENERIC_LABELS:
+    folded_clean = folded.strip(" .,:;()[]")
+    if len(normalized) < 7 or folded_clean in GENERIC_LABELS:
         return True
     if normalized.count(";") >= 3:
         return True
     if re.search(r"\]\(https?://", normalized, re.I) or re.match(r"^[^]]{1,30}\]\s+", normalized):
         return True
-    if DATE_ONLY_TITLE_RE.fullmatch(normalized) or VENUE_ONLY_TITLE_RE.fullmatch(normalized):
+    venue_candidate = re.sub(r"[,.:;]+", " ", normalized).strip()
+    venue_candidate = re.sub(r"\s+", " ", venue_candidate)
+    if DATE_ONLY_TITLE_RE.fullmatch(normalized) or VENUE_ONLY_TITLE_RE.fullmatch(venue_candidate):
         return True
     if re.fullmatch(r"(?:image|images|figure|fig\.?|thumbnail|screenshot|图片|图像?|插图)(?:\s*\d+)?", normalized, re.I):
         return True
     if re.search(r"\.(?:png|jpe?g|gif|svg|webp)$", normalized, re.I):
         return True
-    if re.fullmatch(r"\[?(?:arxiv\s*)?\d{4}\.\d{4,5}(?:v\d+)?\]?", normalized, re.I):
+    if re.fullmatch(r"\[?(?:arxiv\s*[:#-]?\s*)?\d{4}\.\d{4,5}(?:v\d+)?\]?", normalized, re.I):
         return True
     return False
 
@@ -170,13 +247,87 @@ def _looks_like_paper(label: str, url: str, line: str) -> bool:
     if any(domain in lowered_url for domain in PAPER_DOMAINS):
         return True
     if urllib.parse.urlsplit(url).path.casefold().endswith(".pdf"):
+        if re.search(r"\bslides?\b", line, re.I):
+            return False
         return not any(domain in lowered_url for domain in ("github.com", "huggingface.co"))
     return False
 
 
-def _title_from_line(line: str, label: str, match_start: int) -> str:
+def _table_cells(line: str) -> list[str]:
+    value = line.strip()
+    if value.startswith("|"):
+        value = value[1:]
+    if value.endswith("|"):
+        value = value[:-1]
+    return [cell.strip() for cell in re.split(r"(?<!\\)\|", value)]
+
+
+def _is_table_separator(line: str) -> bool:
+    cells = _table_cells(line)
+    return bool(cells) and all(re.fullmatch(r":?-{3,}:?", cell.replace(" ", "")) for cell in cells)
+
+
+def _table_title(line: str, headers: list[str]) -> str:
+    cells = _table_cells(line)
+    if not headers or len(cells) != len(headers):
+        return ""
+    for index, header in enumerate(headers):
+        normalized_header = _strip_markdown(header).casefold()
+        if normalized_header not in TABLE_TITLE_HEADERS:
+            continue
+        candidate = _clean_title_candidate(cells[index])
+        if not _title_is_suspicious(candidate):
+            return candidate
+    return ""
+
+
+def _context_title(line: str) -> str:
+    candidates = re.findall(r"\*\*([^*]{7,500})\*\*", line)
+    if not candidates and re.match(r"^\s{0,3}#{1,6}\s+", line):
+        candidates = [re.sub(r"^\s{0,3}#{1,6}\s+", "", line)]
+    if not candidates and re.match(r"^\s*[-*+]\s+", line) and not MARKDOWN_LINK_RE.search(line):
+        candidates = [re.sub(r"^\s*[-*+]\s+", "", line)]
+    for candidate in candidates:
+        candidate = _clean_title_candidate(candidate)
+        if not _title_is_suspicious(candidate):
+            return candidate
+    return ""
+
+
+def _logical_lines(readme: str) -> list[str]:
+    """Join wrapped Markdown entries while a bold title is still open."""
+    result: list[str] = []
+    pending = ""
+    for raw_line in readme.splitlines():
+        if pending:
+            pending = f"{pending.rstrip()} {raw_line.strip()}"
+            if pending.count("**") % 2 == 0:
+                result.append(pending)
+                pending = ""
+            continue
+        if raw_line.count("**") % 2 == 1:
+            pending = raw_line
+        else:
+            result.append(raw_line)
+    if pending:
+        result.append(pending)
+    return result
+
+
+def _title_from_line(
+    line: str,
+    label: str,
+    match_start: int,
+    *,
+    table_title: str = "",
+    context_title: str = "",
+) -> str:
+    if table_title:
+        return table_title
     if not _link_label_is_generic(label):
-        return _strip_markdown(label)
+        return _clean_title_candidate(label)
+    if context_title:
+        return context_title
 
     if "|" in line:
         same_cell_prefix = line[:match_start].rsplit("|", 1)[-1]
@@ -193,10 +344,17 @@ def _title_from_line(line: str, label: str, match_start: int) -> str:
                 return candidate
 
     before = line[:match_start]
+    wrapped_venue = before.rstrip().endswith("(")
     before = MARKDOWN_LINK_RE.sub(lambda item: item.group(1), before)
     before = _strip_markdown(before)
     before = re.sub(r"^(?:\[[^]]+\]|\([^)]*\))\s*", "", before)
-    return before[-300:].strip(" |:;,-–—")
+    before = before[-300:].strip(" |:;,-–—")
+    if wrapped_venue:
+        before = before.rstrip(" (")
+        before = re.sub(r",\s*[A-Za-z][A-Za-z0-9-]{1,24}'?\d{2,4}$", "", before).strip()
+    if not _title_is_suspicious(before):
+        return before
+    return ""
 
 
 def _extract_date(text: str) -> tuple[str, str]:
@@ -208,6 +366,9 @@ def _extract_date(text: str) -> tuple[str, str]:
     proceedings = re.search(r"(?:content|proceedings)/(?:CVPR|ICCV|ECCV)[_-]?(20\d{2})", text, re.I)
     if proceedings:
         return proceedings.group(1), "year"
+    short_venue_year = re.search(r"\b[A-Z][A-Z0-9-]{2,12}'(\d{2})\b", text)
+    if short_venue_year:
+        return f"20{short_venue_year.group(1)}", "year"
     match = DATE_RE.search(text)
     if match:
         year, month, day = match.groups()
@@ -272,9 +433,24 @@ def parse_readme(source: PaperSource, readme: str, updated_at: str, first_seen_a
         key.casefold(): url.rstrip(".,;:")
         for key, url in REFERENCE_DEF_RE.findall(readme)
     }
-    for raw_line in readme.splitlines():
+    lines = _logical_lines(readme)
+    table_headers: list[str] = []
+    previous_context = ""
+    context_age = 99
+    for line_index, raw_line in enumerate(lines):
         if len(raw_line) > 4000:
             continue
+        if "|" in raw_line and line_index + 1 < len(lines) and _is_table_separator(lines[line_index + 1]):
+            table_headers = _table_cells(raw_line)
+            previous_context = ""
+            context_age = 99
+            continue
+        if _is_table_separator(raw_line):
+            continue
+        if "|" not in raw_line:
+            table_headers = []
+        line_table_title = _table_title(raw_line, table_headers) if table_headers else ""
+        line_context = _context_title(raw_line)
         links: list[tuple[str, str, int]] = [
             (match.group(1), match.group(2), match.start()) for match in MARKDOWN_LINK_RE.finditer(raw_line)
         ]
@@ -290,8 +466,19 @@ def parse_readme(source: PaperSource, readme: str, updated_at: str, first_seen_a
         paper_links = [
             (label, raw_url, start) for label, raw_url, start in links
             if _looks_like_paper(label, raw_url, raw_line)
+            and not (
+                raw_line.lstrip().startswith(">")
+                and _link_label_is_generic(label)
+            )
         ]
         if not paper_links:
+            if line_context:
+                previous_context = line_context
+                context_age = 0
+            elif raw_line.strip():
+                context_age += 1
+                if context_age > 2:
+                    previous_context = ""
             continue
 
         def link_priority(item: tuple[str, str, int]) -> tuple[int, int]:
@@ -313,7 +500,13 @@ def parse_readme(source: PaperSource, readme: str, updated_at: str, first_seen_a
             if url in seen_urls:
                 continue
             seen_urls.add(url)
-            title = _title_from_line(raw_line, label, start)
+            title = _title_from_line(
+                raw_line,
+                label,
+                start,
+                table_title=line_table_title,
+                context_title=line_context or (previous_context if context_age <= 2 else ""),
+            )
             if _title_is_suspicious(title):
                 title = ""
             arxiv_match = ARXIV_RE.search(url)
@@ -338,6 +531,13 @@ def parse_readme(source: PaperSource, readme: str, updated_at: str, first_seen_a
                 "source_urls": [source.url],
                 "metadata_sources": ["source README"],
             })
+        if line_context:
+            previous_context = line_context
+            context_age = 0
+        elif raw_line.strip():
+            context_age += 1
+            if context_age > 2:
+                previous_context = ""
     return papers
 
 
@@ -374,6 +574,21 @@ def merge_papers(papers: Iterable[dict]) -> list[dict]:
         for alias in [*paper_aliases(current), *aliases]:
             alias_to_index[alias] = index
     return merged
+
+
+def apply_verified_metadata_overrides(papers: Iterable[dict]) -> None:
+    """Apply a tiny set of title fixes verified against first-party pages."""
+    for paper in papers:
+        override = (
+            VERIFIED_METADATA_OVERRIDES.get(paper.get("paper_url", ""))
+            or VERIFIED_METADATA_OVERRIDES_BY_ARXIV.get(paper.get("arxiv_id", ""))
+        )
+        if not override:
+            continue
+        paper.update(override)
+        paper["metadata_sources"] = list(dict.fromkeys([
+            *paper.get("metadata_sources", []), "verified source page",
+        ]))
 
 
 def _arxiv_metadata(client: httpx.Client, ids: list[str]) -> dict[str, dict]:
@@ -421,12 +636,26 @@ def _semantic_scholar_arxiv_metadata(client: httpx.Client, ids: list[str]) -> di
     batch_size = 500
     for offset in range(0, len(ids), batch_size):
         batch = ids[offset:offset + batch_size]
-        response = client.post(
-            "https://api.semanticscholar.org/graph/v1/paper/batch",
-            params={"fields": "title,publicationDate,venue,externalIds"},
-            json={"ids": [f"ARXIV:{identifier}" for identifier in batch]},
-        )
-        response.raise_for_status()
+        response = None
+        for attempt in range(3):
+            try:
+                response = client.post(
+                    "https://api.semanticscholar.org/graph/v1/paper/batch",
+                    params={"fields": "title,publicationDate,venue,externalIds"},
+                    json={"ids": [f"ARXIV:{identifier}" for identifier in batch]},
+                )
+                response.raise_for_status()
+                break
+            except Exception:
+                if attempt < 2:
+                    time.sleep(5 * (attempt + 1))
+                else:
+                    response = None
+        if response is None:
+            # Public unauthenticated access can be rate-limited for several
+            # minutes. Stop hammering subsequent batches and let arXiv handle
+            # the unresolved identifiers instead.
+            break
         for requested_id, item in zip(batch, response.json()):
             if not item:
                 continue
@@ -455,7 +684,8 @@ def _crossref_metadata(client: httpx.Client, doi: str) -> dict:
     message = response.json().get("message", {})
     title = (message.get("title") or [""])[0]
     venue = (message.get("container-title") or [""])[0]
-    parts = ((message.get("published-online") or message.get("published-print") or message.get("issued") or {}).get("date-parts") or [[]])[0]
+    date_parts = (message.get("published-online") or message.get("published-print") or message.get("issued") or {}).get("date-parts") or [[]]
+    parts = [part for part in date_parts[0] if isinstance(part, int)] if date_parts else []
     published = ""
     precision = "unknown"
     if parts:
@@ -476,37 +706,50 @@ def enrich_missing_metadata(client: httpx.Client, papers: list[dict], max_items:
         paper for paper in papers
         if not paper.get("title")
         or _title_is_suspicious(paper.get("title", ""))
-        or not paper.get("venue")
         or not paper.get("published_at")
-        or (paper.get("arxiv_id") and paper.get("date_precision") != "day")
-        or (paper.get("arxiv_id") and not {"arXiv", "Semantic Scholar"}.intersection(paper.get("metadata_sources", [])))
-        or (paper.get("doi") and "Crossref title" not in paper.get("metadata_sources", []))
     ]
     arxiv_ids = list(dict.fromkeys(paper["arxiv_id"] for paper in needs if paper.get("arxiv_id")))[:max_items]
     if arxiv_ids:
+        metadata: dict[str, dict] = {}
+        semantic_ids: set[str] = set()
         try:
-            metadata = _semantic_scholar_arxiv_metadata(client, arxiv_ids)
-            missing_ids = [identifier for identifier in arxiv_ids if identifier not in metadata]
-            if missing_ids:
-                metadata.update(_arxiv_metadata(client, missing_ids))
-            for paper in needs:
-                item = metadata.get(paper.get("arxiv_id", ""))
-                if not item:
-                    continue
-                if item.get("title"):
-                    paper["title"] = item["title"]
-                if item.get("venue") and not paper.get("venue"):
-                    paper["venue"] = item["venue"]
-                if item.get("published_at") and (not paper.get("published_at") or paper.get("date_precision") != "day"):
-                    paper["published_at"] = item["published_at"]
-                    paper["date_precision"] = item["date_precision"]
-                if "Semantic Scholar" not in paper["metadata_sources"]:
-                    paper["metadata_sources"].append("Semantic Scholar")
+            semantic_metadata = _semantic_scholar_arxiv_metadata(client, arxiv_ids)
+            metadata.update(semantic_metadata)
+            semantic_ids.update(semantic_metadata)
         except Exception as exc:
-            print(f"warning: scholarly metadata enrichment failed: {exc}")
+            print(f"warning: Semantic Scholar enrichment failed: {exc}")
+        missing_ids = [identifier for identifier in arxiv_ids if identifier not in metadata]
+        if missing_ids:
+            try:
+                metadata.update(_arxiv_metadata(client, missing_ids))
+            except Exception as exc:
+                print(f"warning: arXiv enrichment failed: {exc}")
+        for paper in needs:
+            identifier = paper.get("arxiv_id", "")
+            item = metadata.get(identifier)
+            if not item:
+                continue
+            if item.get("title"):
+                paper["title"] = item["title"]
+            if item.get("venue") and not paper.get("venue"):
+                paper["venue"] = item["venue"]
+            if item.get("published_at") and (not paper.get("published_at") or paper.get("date_precision") != "day"):
+                paper["published_at"] = item["published_at"]
+                paper["date_precision"] = item["date_precision"]
+            metadata_source = "Semantic Scholar" if identifier in semantic_ids else "arXiv"
+            if metadata_source not in paper["metadata_sources"]:
+                paper["metadata_sources"].append(metadata_source)
 
     remaining = max(0, max_items - len(arxiv_ids))
-    for paper in [item for item in needs if item.get("doi")][:remaining]:
+    doi_needs = [
+        paper for paper in papers
+        if paper.get("doi") and (
+            not paper.get("title")
+            or _title_is_suspicious(paper.get("title", ""))
+            or not paper.get("published_at")
+        )
+    ]
+    for paper in doi_needs[:remaining]:
         try:
             item = _crossref_metadata(client, paper["doi"])
             if item.get("title"):
@@ -580,6 +823,14 @@ def filter_recent(papers: Iterable[dict], since_year: int, max_without_date: int
     for paper in papers:
         published = paper.get("published_at", "")
         precision = paper.get("date_precision", "unknown")
+        if precision == "unknown":
+            if re.fullmatch(r"20\d{2}-(?:0[1-9]|1[0-2])-(?:0[1-9]|[12]\d|3[01])", published):
+                precision = "day"
+            elif re.fullmatch(r"20\d{2}-(?:0[1-9]|1[0-2])", published):
+                precision = "month"
+            elif re.fullmatch(r"20\d{2}", published):
+                precision = "year"
+            paper["date_precision"] = precision
         if precision == "month" and re.fullmatch(r"\d{4}-\d{2}-\d{2}", published):
             published = published[:7]
             paper["published_at"] = published
@@ -673,7 +924,7 @@ def save_outputs(out_dir: Path, papers: list[dict], sources: list[PaperSource], 
         "source_repos", "metadata_sources",
     )
     with (out_dir / "papers.csv").open("w", encoding="utf-8", newline="") as handle:
-        writer = csv.DictWriter(handle, fieldnames=columns)
+        writer = csv.DictWriter(handle, fieldnames=columns, lineterminator="\n")
         writer.writeheader()
         for paper in papers:
             row = {key: paper.get(key, "") for key in columns}

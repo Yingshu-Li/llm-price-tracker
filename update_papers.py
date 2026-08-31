@@ -9,6 +9,7 @@ import httpx
 
 from src.papers import (
     apply_verified_metadata_cache,
+    apply_verified_metadata_overrides,
     enrich_missing_metadata,
     filter_recent,
     load_json,
@@ -85,8 +86,10 @@ def main() -> int:
 
         merged = merge_papers(collected)
         apply_verified_metadata_cache(merged, cached_papers)
+        apply_verified_metadata_overrides(merged)
         enrich_missing_metadata(client, merged, max_items=args.max_enrich)
         merged = merge_papers(merged)
+        apply_verified_metadata_overrides(merged)
 
     recent = filter_recent(merged, args.since_year)
     validate_catalog(recent)
