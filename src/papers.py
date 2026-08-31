@@ -31,8 +31,9 @@ DATE_ONLY_TITLE_RE = re.compile(
     r"(?:0?[1-9]|1[0-2])[-/.](?:0?[1-9]|[12]\d|3[01])[-/.]20\d{2})$"
 )
 VENUE_ONLY_TITLE_RE = re.compile(
-    r"^(?:arxiv|openreview|nature|science|cvpr|iccv|eccv|acl|emnlp|naacl|eacl|iclr|icml|neurips|aaai|ijcai)"
-    r"(?:\s*[:#-]?\s*20\d{2})?$",
+    r"^\[?(?:arxiv|openreview|nature|science|cvpr|iccv|eccv|wacv|bmvc|siggraph(?:\s+asia)?|"
+    r"acm\s+(?:mm|mmasia)|acl|emnlp|naacl|eacl|iclr|icml|neurips(?:\s+db)?|aaai|ijcai)"
+    r"(?:\s+(?:spotlight|oral|poster))?(?:\s*[:#-]?\s*20\d{2})?\]?\s*$",
     re.I,
 )
 
@@ -63,6 +64,12 @@ SOURCE_DOCUMENT_OVERRIDES = {
     # its actual paper feed and excludes tools, policies, and vendor reports.
     "TalEliyahu/Awesome-AI-Security": ("Research_Papers.md",),
 }
+SOURCE_STRUCTURED_FEEDS = {
+    # This repository publishes a canonical CVF-derived JSON dataset. Its
+    # Markdown pages place author/resource links close enough to paper links
+    # that a generic Markdown parser can mistake an author list for a title.
+    "firetix/awesome-cvpr-2026-papers": "data/cvpr2026_papers.json",
+}
 VERIFIED_METADATA_OVERRIDES = {
     "https://doi.org/10.1007/BF00992698": {
         "title": "Q-Learning",
@@ -82,6 +89,13 @@ VERIFIED_METADATA_OVERRIDES = {
         "date_precision": "day",
         "venue": "arXiv preprint",
         "arxiv_id": "2603.09877",
+    },
+    "https://arxiv.org/abs/2607.15176": {
+        "title": "Benchmarking Multimodal Large Language Models for Scientific Visualization Literacy",
+        "published_at": "2026-07-16",
+        "date_precision": "day",
+        "venue": "arXiv preprint",
+        "arxiv_id": "2607.15176",
     },
     "https://research.nvidia.com/labs/cosmos3/technical-report.pdf": {
         "title": "Cosmos 3: Omnimodal World Models for Physical AI",
@@ -135,7 +149,31 @@ def load_sources(path: Path) -> list[PaperSource]:
     return sources
 
 
+def _structured_papers_to_markdown(payload: object, repository: str) -> str:
+    if not isinstance(payload, list):
+        raise RuntimeError(f"structured paper feed is not a list for {repository}")
+    lines: list[str] = []
+    for item in payload:
+        if not isinstance(item, dict):
+            continue
+        title = re.sub(r"\s+", " ", str(item.get("title") or "")).strip()
+        url = str(item.get("arxiv") or item.get("cvf_html") or item.get("cvf_pdf") or "").strip()
+        if not title or not url.startswith(("http://", "https://")):
+            continue
+        title = title.replace("**", "")
+        lines.append(f"- **{title}** — CVPR 2026. [Paper]({url})")
+    if not lines:
+        raise RuntimeError(f"structured paper feed contains no usable rows for {repository}")
+    return "\n".join(lines)
+
+
 def source_readme(client: httpx.Client, repository: str) -> tuple[str, str]:
+    structured_path = SOURCE_STRUCTURED_FEEDS.get(repository)
+    if structured_path:
+        url = f"https://github.com/{repository}/raw/HEAD/{urllib.parse.quote(structured_path, safe='/')}"
+        response = client.get(url)
+        response.raise_for_status()
+        return _structured_papers_to_markdown(response.json(), repository), str(response.url)
     override_paths = SOURCE_DOCUMENT_OVERRIDES.get(repository)
     if override_paths:
         documents: list[str] = []
@@ -211,7 +249,10 @@ def _clean_title_candidate(value: str) -> str:
         prefix, suffix = value.split(" - ", 1)
         if len(prefix) >= 8 and len(suffix) >= 35:
             value = prefix.strip()
-    return _strip_markdown(value)
+    value = _strip_markdown(value)
+    value = re.sub(r"\s+(?:📄|🌐|💻|⭐).*$", "", value).strip()
+    value = re.sub(r"^arXiv\s+(?=[A-Z0-9])", "", value).strip()
+    return value
 
 
 def _link_label_is_generic(label: str) -> bool:
@@ -545,6 +586,9 @@ def merge_papers(papers: Iterable[dict]) -> list[dict]:
     merged: list[dict] = []
     alias_to_index: dict[str, int] = {}
     for paper in papers:
+        paper = dict(paper)
+        if paper.get("title"):
+            paper["title"] = _clean_title_candidate(paper["title"])
         aliases = paper_aliases(paper)
         index = next((alias_to_index[alias] for alias in aliases if alias in alias_to_index), None)
         if index is None:
@@ -557,6 +601,19 @@ def merge_papers(papers: Iterable[dict]) -> list[dict]:
                 alias_to_index[alias] = index
             continue
         current = merged[index]
+        verified_title_sources = {"verified source page", "Crossref title", "Semantic Scholar", "arXiv"}
+        current_title_rank = (
+            3 if verified_title_sources.intersection(current.get("metadata_sources", [])) else
+            2 if "structured source" in current.get("metadata_sources", []) else
+            1 if current.get("title") and not _title_is_suspicious(current["title"]) else 0
+        )
+        paper_title_rank = (
+            3 if verified_title_sources.intersection(paper.get("metadata_sources", [])) else
+            2 if "structured source" in paper.get("metadata_sources", []) else
+            1 if paper.get("title") and not _title_is_suspicious(paper["title"]) else 0
+        )
+        if paper.get("title") and paper_title_rank > current_title_rank:
+            current["title"] = paper["title"]
         for field in ("categories", "subcategories", "source_repos", "source_urls", "metadata_sources"):
             current[field] = list(dict.fromkeys([*current.get(field, []), *paper.get(field, [])]))
         for field in ("title", "venue", "arxiv_id", "doi"):
@@ -883,7 +940,7 @@ def validate_catalog(papers: Iterable[dict]) -> None:
         pattern = date_patterns.get(precision)
         if pattern is None or not pattern.fullmatch(value):
             problems.append(f"row {index}: date {value!r} does not match precision {precision!r}")
-        if paper.get("arxiv_id") and not {"arXiv", "Semantic Scholar", "arXiv identifier"}.intersection(paper.get("metadata_sources", [])):
+        if paper.get("arxiv_id") and not {"arXiv", "Semantic Scholar", "arXiv identifier", "structured source"}.intersection(paper.get("metadata_sources", [])):
             problems.append(f"row {index}: arXiv id {paper['arxiv_id']} was not verified")
         if not paper.get("paper_url") or not paper.get("categories"):
             problems.append(f"row {index}: missing URL or category")

@@ -2,6 +2,7 @@ from datetime import date
 
 from src.papers import (
     PaperSource,
+    _structured_papers_to_markdown,
     _title_is_suspicious,
     apply_verified_metadata_cache,
     apply_verified_metadata_overrides,
@@ -20,6 +21,71 @@ SOURCE = PaperSource(
     repository="example/papers",
     url="https://github.com/example/papers",
 )
+
+
+def test_structured_feed_uses_title_field_instead_of_authors():
+    markdown = _structured_papers_to_markdown([{
+        "title": "CrossVL: Complexity-Aware Feature Routing",
+        "authors": "Zhipeng Liu; Chunbo Luo",
+        "arxiv": "https://arxiv.org/abs/2605.09802",
+    }], "example/cvpr")
+    papers = parse_readme(SOURCE, markdown, "2026-06-08", "2026-08-31")
+    assert papers[0]["title"] == "CrossVL: Complexity-Aware Feature Routing"
+    assert "Zhipeng Liu" not in papers[0]["title"]
+    assert papers[0]["venue"] == "CVPR 2026"
+
+
+def test_structured_title_replaces_an_earlier_unverified_readme_title():
+    common = {
+        "paper_url": "https://arxiv.org/abs/2605.09802",
+        "arxiv_id": "2605.09802",
+        "doi": "",
+        "venue": "CVPR 2026",
+        "published_at": "2026-05",
+        "date_precision": "month",
+        "categories": ["Vision"],
+        "subcategories": ["General"],
+        "source_urls": ["https://github.com/example/source"],
+    }
+    merged = merge_papers([
+        {**common, "title": "Zhipeng Liu; Chunbo Luo", "source_repos": ["example/readme"], "metadata_sources": ["source README"]},
+        {**common, "title": "CrossVL: Complexity-Aware Feature Routing", "source_repos": ["example/structured"], "metadata_sources": ["structured source"]},
+    ])
+    assert merged[0]["title"] == "CrossVL: Complexity-Aware Feature Routing"
+
+
+def test_resource_badges_are_removed_from_a_paper_title():
+    readme = "- **VideoWeaver: Evaluating Skills 📄 arXiv 💻 Code ⭐ 7** [Paper](https://arxiv.org/abs/2606.08091)"
+    papers = parse_readme(SOURCE, readme, "2026-06-08", "2026-08-31")
+    assert papers[0]["title"] == "VideoWeaver: Evaluating Skills"
+
+
+def test_merge_normalizes_cached_resource_badges():
+    paper = {
+        "title": "PhyCo: Learning Controllable Physical Priors 📄 arXiv 🌐 Homepage",
+        "paper_url": "https://arxiv.org/abs/2606.00001",
+        "arxiv_id": "2606.00001",
+        "categories": ["Video"],
+        "subcategories": ["General"],
+        "source_repos": ["example/video"],
+        "source_urls": ["https://github.com/example/video"],
+        "metadata_sources": ["source README"],
+    }
+    assert merge_papers([paper])[0]["title"] == "PhyCo: Learning Controllable Physical Priors"
+
+
+def test_conference_link_uses_preceding_bold_paper_title():
+    readme = """**ConsistEdit: Highly Consistent and Precise Training-free Visual Editing** \\
+[[SIGGRAPH Asia 2025](https://arxiv.org/abs/2510.17803)]
+[[Project](https://example.org/consistedit)]
+**OverLayBench: A Benchmark for Layout-to-Image Generation with Dense Overlaps** \\
+[[NeurIPS DB 2025](https://arxiv.org/abs/2509.19282)]
+"""
+    papers = parse_readme(SOURCE, readme, "2026-06-08", "2026-08-31")
+    assert [paper["title"] for paper in papers] == [
+        "ConsistEdit: Highly Consistent and Precise Training-free Visual Editing",
+        "OverLayBench: A Benchmark for Layout-to-Image Generation with Dense Overlaps",
+    ]
 
 
 def test_parse_markdown_paper_with_source_metadata():

@@ -9,7 +9,10 @@ permissions:
   contents: write
 
 concurrency:
-  group: update-papers
+  # ⚠️ 两个机器人工作流（价格 / 论文）**共用同一个组**：它们都往 main 提交，
+  # 各用各的组时可以并行跑，于是互相把对方的 push 顶掉。
+  # 排队执行既避免了 non-fast-forward，也避免两个进程同时写 out/。
+  group: repo-write
   cancel-in-progress: false
 
 jobs:

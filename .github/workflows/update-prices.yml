@@ -17,8 +17,10 @@ permissions:
   contents: write
 
 concurrency:
-  # 上一次还没跑完就别开第二个——两个进程同时写 out/ 会互相覆盖
-  group: update-prices
+  # ⚠️ 两个机器人工作流（价格 / 论文）**共用同一个组**：它们都往 main 提交，
+  # 各用各的组时可以并行跑，于是互相把对方的 push 顶掉。
+  # 排队执行既避免了 non-fast-forward，也避免两个进程同时写 out/。
+  group: repo-write
   cancel-in-progress: false
 
 jobs:
@@ -73,9 +75,23 @@ jobs:
           git add out/
           git commit -m "chore: 更新价格数据 ($(date -u +%Y-%m-%d))"
 
-          # 定时任务之间可能有人推过东西，先 rebase 再推，避免 non-fast-forward
-          git pull --rebase --autostash origin "${GITHUB_REF_NAME}"
-          git push origin "HEAD:${GITHUB_REF_NAME}"
+          # rebase 与 push 之间存在竞态窗口：远端在这几百毫秒内前进，
+          # push 就会被拒（实测 2026-08-31 一次失败——rebase 时报
+          # "Current branch main is up to date"，紧接着 push 就 "fetch first"）。
+          # 只 rebase 一次撞上就整个 job 红，所以包进有界重试。
+          for attempt in 1 2 3 4 5; do
+            git pull --rebase --autostash origin "${GITHUB_REF_NAME}"
+            if git push origin "HEAD:${GITHUB_REF_NAME}"; then
+              echo "推送成功（第 ${attempt} 次尝试）"
+              break
+            fi
+            if [ "${attempt}" = "5" ]; then
+              echo "::error::连续 5 次推送都被拒，远端一直在变。请人工查看。"
+              exit 1
+            fi
+            echo "::warning::第 ${attempt} 次推送被拒（远端已前进），退避后重试"
+            sleep $(( attempt * 5 ))
+          done
 
       - name: 上传产物（失败时也能拿到）
         if: always()

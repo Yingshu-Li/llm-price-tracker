@@ -8,6 +8,7 @@ from pathlib import Path
 import httpx
 
 from src.papers import (
+    SOURCE_STRUCTURED_FEEDS,
     apply_verified_metadata_cache,
     apply_verified_metadata_overrides,
     enrich_missing_metadata,
@@ -67,6 +68,9 @@ def main() -> int:
                     continue
                 updated_at = source_updated_at(client, source.repository)
                 parsed = parse_readme(source, readme, updated_at, today)
+                if source.repository in SOURCE_STRUCTURED_FEEDS:
+                    for paper in parsed:
+                        paper["metadata_sources"] = ["structured source"]
                 for paper in parsed:
                     old_paper = previous_by_key.get(paper_key(paper))
                     if old_paper:
