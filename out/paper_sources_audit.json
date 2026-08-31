@@ -43,10 +43,10 @@
     "repository": "VILA-Lab/Awesome-DLMs",
     "category": "Language",
     "subcategory": "Diffusion LLM",
-    "source_updated_at": "2026-08-26",
-    "last_checked_at": "2026-08-29",
+    "source_updated_at": "2026-08-31",
+    "last_checked_at": "2026-08-31",
     "candidate_count": 559,
-    "output_count": 432,
+    "output_count": 434,
     "status": "ok"
   },
   {
@@ -686,7 +686,7 @@
     "source_updated_at": "2026-06-08",
     "last_checked_at": "2026-08-31",
     "candidate_count": 4069,
-    "output_count": 1723,
+    "output_count": 4047,
     "status": "ok"
   },
   {

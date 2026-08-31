@@ -29,10 +29,10 @@
       "candidate_count": 358
     },
     "VILA-Lab/Awesome-DLMs": {
-      "readme_sha256": "db5ae768f581d21c643108d6e88ac467629dcbe05d0810f2ca9c563ab56e4248",
-      "readme_url": "https://raw.githubusercontent.com/VILA-Lab/Awesome-DLMs/cd375ce8bcb1a67e615feddc126fdab0caa220f2/README.md",
-      "source_updated_at": "2026-08-26",
-      "last_checked_at": "2026-08-29",
+      "readme_sha256": "828c3c17174238ba67ad29f9c3b96b41c77a4beba3c5af42ce96178c5a406415",
+      "readme_url": "https://raw.githubusercontent.com/VILA-Lab/Awesome-DLMs/2079a0248d16fb914fae3e26a44cf31c7300eb98/README.md",
+      "source_updated_at": "2026-08-31",
+      "last_checked_at": "2026-08-31",
       "candidate_count": 559
     },
     "mawady/awesome-computer-vision-resources": {
@@ -477,8 +477,8 @@
       "candidate_count": 78
     },
     "firetix/awesome-cvpr-2026-papers": {
-      "readme_sha256": "5d24cf52527b286cae849a50b1f5147af6511a1192836d62d6abce7eb2787e13",
-      "readme_url": "https://raw.githubusercontent.com/firetix/awesome-cvpr-2026-papers/3d707941cd0a97065f165aec22a8847d3b301a98/README.md",
+      "readme_sha256": "8d50f9b73561af2fa71c9f9f957eb330b5c55b242abd2ea53eb53f6b69e9a02e",
+      "readme_url": "https://raw.githubusercontent.com/firetix/awesome-cvpr-2026-papers/3d707941cd0a97065f165aec22a8847d3b301a98/data/cvpr2026_papers.json",
       "source_updated_at": "2026-06-08",
       "last_checked_at": "2026-08-31",
       "candidate_count": 4069
