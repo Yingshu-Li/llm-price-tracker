@@ -18,9 +18,9 @@ jobs:
     timeout-minutes: 30
 
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6
 
-      - uses: actions/setup-python@v5
+      - uses: actions/setup-python@v6
         with:
           python-version: "3.13"
           cache: pip
@@ -29,7 +29,26 @@ jobs:
         run: pip install -r requirements.txt
 
       - name: 检查 70 个来源并补全缺失元数据
-        run: python update_papers.py
+        shell: bash
+        run: |
+          set -o pipefail
+          : > out/papers_update.log
+
+          for attempt in 1 2 3; do
+            echo "=== 论文更新尝试 ${attempt}/3 ===" | tee -a out/papers_update.log
+            if python -u update_papers.py 2>&1 | tee -a out/papers_update.log; then
+              exit 0
+            fi
+
+            if [ "${attempt}" -lt 3 ]; then
+              wait_seconds=$((attempt * 45))
+              echo "本次更新失败，${wait_seconds} 秒后重试。" | tee -a out/papers_update.log
+              sleep "${wait_seconds}"
+            fi
+          done
+
+          echo "论文更新连续失败 3 次，完整日志已上传到工作流产物。" | tee -a out/papers_update.log
+          exit 1
 
       - name: 提交论文产物
         run: |
@@ -49,12 +68,13 @@ jobs:
 
       - name: 上传论文数据
         if: always()
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v6
         with:
           name: ai-paper-radar
           path: |
             out/papers.json
             out/papers.csv
             out/papers_state.json
+            out/papers_update.log
           retention-days: 14
 

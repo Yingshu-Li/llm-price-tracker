@@ -502,8 +502,8 @@ def enrich_missing_metadata(client: httpx.Client, papers: list[dict], max_items:
                     paper["date_precision"] = item["date_precision"]
                 if "Semantic Scholar" not in paper["metadata_sources"]:
                     paper["metadata_sources"].append("Semantic Scholar")
-        except Exception:
-            pass
+        except Exception as exc:
+            print(f"warning: scholarly metadata enrichment failed: {exc}")
 
     remaining = max(0, max_items - len(arxiv_ids))
     for paper in [item for item in needs if item.get("doi")][:remaining]:
@@ -520,7 +520,8 @@ def enrich_missing_metadata(client: httpx.Client, papers: list[dict], max_items:
                 paper["metadata_sources"].append("Crossref")
             if "Crossref title" not in paper["metadata_sources"]:
                 paper["metadata_sources"].append("Crossref title")
-        except Exception:
+        except Exception as exc:
+            print(f"warning: Crossref metadata failed for {paper['doi']}: {exc}")
             continue
 
     # A just-posted arXiv paper may not yet exist in either metadata index.
