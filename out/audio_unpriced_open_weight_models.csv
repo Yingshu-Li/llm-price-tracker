@@ -1,0 +1,52 @@
+display_name,Model,Company,Function,Total Para,Activate Para,On/Off Line,Reasoning,access_mode,lifecycle,is_open_weight,weights,price_status,official_price
+Whisper Base En,whisper-base.en,OpenAI,Speech & Audio,0.074,0.074,Offline: Open Weight,No,offline,stable,1,free,weights_free,weight open source
+Whisper Large V1,whisper-large-v1,OpenAI,Speech & Audio,1.55,1.55,Offline: Open Weight,No,offline,stable,1,free,weights_free,weight open source
+Whisper Large V2,whisper-large-v2,OpenAI,Speech & Audio,1.55,1.55,Offline: Open Weight,No,offline,stable,1,free,weights_free,weight open source
+Whisper Medium En,whisper-medium.en,OpenAI,Speech & Audio,0.769,0.769,Offline: Open Weight,No,offline,stable,1,free,weights_free,weight open source
+Whisper Small En,whisper-small.en,OpenAI,Speech & Audio,0.244,0.244,Offline: Open Weight,No,offline,stable,1,free,weights_free,weight open source
+Whisper Tiny En,whisper-tiny.en,OpenAI,Speech & Audio,0.039,0.039,Offline: Open Weight,No,offline,stable,1,free,weights_free,weight open source
+Whisper Turbo,whisper-turbo,OpenAI,Speech & Audio,0.798,0.798,Offline: Open Weight,No,offline,stable,1,free,weights_free,weight open source
+Qwen3 ForcedAligner 0.6B,Qwen/Qwen3-ForcedAligner-0.6B,Alibaba / Qwen,Speech & Audio,0.6,0.6,Offline: Official Hugging Face / Open Weight,No,offline,stable,1,free,weights_free,weight open source
+Qwen3 TTS 12hz 0.6B Base,Qwen/Qwen3-TTS-12Hz-0.6B-Base,Alibaba / Qwen,Speech & Audio,0.6,0.6,Offline: Official Hugging Face / Open Weight,No,offline,stable,1,free,weights_free,weight open source
+Qwen3 TTS 12hz 0.6B CustomVoice,Qwen/Qwen3-TTS-12Hz-0.6B-CustomVoice,Alibaba / Qwen,Speech & Audio,0.6,0.6,Offline: Official Hugging Face / Open Weight,No,offline,stable,1,free,weights_free,weight open source
+Qwen3 TTS 12hz 1.7B Base,Qwen/Qwen3-TTS-12Hz-1.7B-Base,Alibaba / Qwen,Speech & Audio,1.7,1.7,Offline: Official Hugging Face / Open Weight,No,offline,stable,1,free,weights_free,weight open source
+Qwen3 TTS 12hz 1.7B CustomVoice,Qwen/Qwen3-TTS-12Hz-1.7B-CustomVoice,Alibaba / Qwen,Speech & Audio,1.7,1.7,Offline: Official Hugging Face / Open Weight,No,offline,stable,1,free,weights_free,weight open source
+Qwen3 TTS 12hz 1.7B VoiceDesign,Qwen/Qwen3-TTS-12Hz-1.7B-VoiceDesign,Alibaba / Qwen,Speech & Audio,1.7,1.7,Offline: Official Hugging Face / Open Weight,No,offline,stable,1,free,weights_free,weight open source
+Cohere Transcribe 03 2026,CohereLabs/cohere-transcribe-03-2026,Cohere,Speech & Audio,2,2,Offline: Official Hugging Face / Open Weight,No,offline,stable,1,free,weights_free,weight open source
+MiMo Audio 7B,MiMo-Audio-7B,Xiaomi / MiMo,Speech & Audio,7,7,Offline: Open Weight,Yes,offline,stable,1,free,weights_free,weight open source
+MiMo Audio 7B Instruct,XiaomiMiMo/MiMo-Audio-7B-Instruct,Xiaomi / MiMo,Speech & Audio,7,7,Offline: Official Hugging Face / Open Weight,Yes,offline,stable,1,free,weights_free,weight open source
+MiMo V2.5 ASR,XiaomiMiMo/MiMo-V2.5-ASR,Xiaomi / MiMo,Speech & Audio,,,Offline: Official Hugging Face / Open Weight,No,offline,stable,1,free,weights_free,weight open source
+Step Audio 2 Mini,stepfun-ai/Step-Audio-2-mini,StepFun,Speech & Audio,,,Offline: Official Hugging Face / Open Weight,No,offline,stable,1,free,weights_free,weight open source
+Granite Speech 4.1,Granite Speech 4.1,IBM,Speech & Audio,,,Offline: Open Weight,No,offline,stable,1,free,weights_free,weight open source
+Baichuan Audio Instruct,baichuan-inc/Baichuan-Audio-Instruct,Baichuan AI,Speech & Audio,10,10,Offline: Official Hugging Face / Open Weight,No,offline,stable,1,free,weights_free,weight open source
+Motif Audio,Motif-Technologies/Motif-Audio,Motif Technologies,Speech & Audio,0.8,0.8,Offline: Official Hugging Face / Open Weight,No,offline,stable,1,free,weights_free,weight open source
+LongCat AudioDiT 1B,meituan-longcat/LongCat-AudioDiT-1B,Meituan / LongCat,Speech & Audio,1,1,Offline: Official Hugging Face / Open Weight,No,offline,stable,1,free,weights_free,weight open source
+LongCat AudioDiT 3.5B,meituan-longcat/LongCat-AudioDiT-3.5B,Meituan / LongCat,Speech & Audio,3.5,3.5,Offline: Official Hugging Face / Open Weight,No,offline,stable,1,free,weights_free,weight open source
+Parakeet Tdt 0.6B V3,nvidia/parakeet-tdt-0.6b-v3,NVIDIA,Speech & Audio,0.627,0.627,Offline: Official Hugging Face / Open Weight,No,offline,stable,1,free,weights_free,weight open source
+Nemotron 3.5 ASR Streaming 0.6B,nvidia/nemotron-3.5-asr-streaming-0.6b,NVIDIA,Speech & Audio,0.638,0.638,Offline: Official Hugging Face / Open Weight,No,offline,stable,1,free,weights_free,weight open source
+Audio Flamingo 3 Hf,nvidia/audio-flamingo-3-hf,NVIDIA,Speech & Audio,8.3,8.3,Offline: Official Hugging Face / Open Weight,No,offline,stable,1,free,weights_free,weight open source
+Audio Flamingo Next Hf,nvidia/audio-flamingo-next-hf,NVIDIA,Speech & Audio,8.3,8.3,Offline: Official Hugging Face / Open Weight,No,offline,stable,1,free,weights_free,weight open source
+Music Flamingo 2601 Hf,nvidia/music-flamingo-2601-hf,NVIDIA,Speech & Audio,8.3,8.3,Offline: Official Hugging Face / Open Weight,No,offline,stable,1,free,weights_free,weight open source
+Personaplex 7B V1,nvidia/personaplex-7b-v1,NVIDIA,Speech & Audio,8.4,8.4,Offline: Official Hugging Face / Open Weight,No,offline,stable,1,free,weights_free,weight open source
+VibeVoice ASR,microsoft/VibeVoice-ASR,Microsoft,Speech & Audio,8.7,8.7,Offline: Official Hugging Face / Open Weight,No,offline,stable,1,free,weights_free,weight open source
+VibeVoice Realtime 0.5B,microsoft/VibeVoice-Realtime-0.5B,Microsoft,Speech & Audio,1,1,Offline: Official Hugging Face / Open Weight,No,offline,stable,1,free,weights_free,weight open source
+MOSS TTS V1.5,OpenMOSS-Team/MOSS-TTS-v1.5,OpenMOSS,Speech & Audio,8.5,8.5,Offline: Official Hugging Face / Open Weight,No,offline,stable,1,free,weights_free,weight open source
+MOSS TTS Local Transformer V1.5,OpenMOSS-Team/MOSS-TTS-Local-Transformer-v1.5,OpenMOSS,Speech & Audio,4.6,4.6,Offline: Official Hugging Face / Open Weight,No,offline,stable,1,free,weights_free,weight open source
+MOSS Audio 4B Instruct,OpenMOSS-Team/MOSS-Audio-4B-Instruct,OpenMOSS,Speech & Audio,5.2,5.2,Offline: Official Hugging Face / Open Weight,No,offline,stable,1,free,weights_free,weight open source
+MOSS Audio 8B Instruct,OpenMOSS-Team/MOSS-Audio-8B-Instruct,OpenMOSS,Speech & Audio,9.1,9.1,Offline: Official Hugging Face / Open Weight,No,offline,stable,1,free,weights_free,weight open source
+MOSS Transcribe Diarize,OpenMOSS-Team/MOSS-Transcribe-Diarize,OpenMOSS,Speech & Audio,0.909,0.909,Offline: Official Hugging Face / Open Weight,No,offline,stable,1,free,weights_free,weight open source
+MOSS Audio 4B Thinking,OpenMOSS-Team/MOSS-Audio-4B-Thinking,OpenMOSS,Speech & Audio,5.2,5.2,Offline: Official Hugging Face / Open Weight,Yes,offline,stable,1,free,weights_free,weight open source
+MOSS Audio 8B Thinking,OpenMOSS-Team/MOSS-Audio-8B-Thinking,OpenMOSS,Speech & Audio,9.1,9.1,Offline: Official Hugging Face / Open Weight,Yes,offline,stable,1,free,weights_free,weight open source
+Chatterbox,ResembleAI/chatterbox,Resemble AI,Speech & Audio,,,Offline: Official Hugging Face / Open Weight,No,offline,stable,1,free,weights_free,weight open source
+OmniVoice,k2-fsa/OmniVoice,k2-fsa,Speech & Audio,0.613,0.613,Offline: Official Hugging Face / Open Weight,No,offline,stable,1,free,weights_free,weight open source
+Higgs TTS 2 3B Base,bosonai/higgs-tts-2-3b-base,Boson AI,Speech & Audio,5.8,5.8,Offline: Official Hugging Face / Open Weight,No,offline,stable,1,free,weights_free,weight open source
+Higgs TTS 3 4B,bosonai/higgs-tts-3-4b,Boson AI,Speech & Audio,4.7,4.7,Offline: Official Hugging Face / Open Weight,No,offline,stable,1,free,weights_free,weight open source
+S2 Pro,fishaudio/s2-pro,Fish Audio,Speech & Audio,4.6,4.6,Offline: Official Hugging Face / Open Weight,No,offline,stable,1,free,weights_free,weight open source
+Voxcpm2,openbmb/VoxCPM2,OpenBMB,Speech & Audio,2.3,2.3,Offline: Official Hugging Face / Open Weight,No,offline,stable,1,free,weights_free,weight open source
+TTS 1.6B En Fr,kyutai/tts-1.6b-en_fr,Kyutai,Speech & Audio,1.6,1.6,Offline: Official Hugging Face / Open Weight,No,offline,stable,1,free,weights_free,weight open source
+Personaplex Rl Seamless,kyutai/personaplex-rl-seamless,Kyutai,Speech & Audio,8.4,8.4,Offline: Official Hugging Face / Open Weight,No,offline,stable,1,free,weights_free,weight open source
+Ultravox V0 6 Llama 3 1 8B,fixie-ai/ultravox-v0_6-llama-3_1-8b,Fixie AI,Speech & Audio,,,Offline: Official Hugging Face / Open Weight,No,offline,stable,1,free,weights_free,weight open source
+Ultravox V0 5 Llama 3 2 1B,fixie-ai/ultravox-v0_5-llama-3_2-1b,Fixie AI,Speech & Audio,,,Offline: Official Hugging Face / Open Weight,No,offline,stable,1,free,weights_free,weight open source
+Speaker Diarization Community 1,pyannote/speaker-diarization-community-1,pyannote,Speech & Audio,,,Offline: Official Hugging Face / Open Weight,No,offline,stable,1,free,weights_free,weight open source
+Acestep Transcriber,ACE-Step/acestep-transcriber,ACE-Step,Speech & Audio,10.7,10.7,Offline: Official Hugging Face / Open Weight,No,offline,stable,1,free,weights_free,weight open source
+Midashenglm 7B,mispeech/midashenglm-7b,MiSpeech,Speech & Audio,8.3,8.3,Offline: Official Hugging Face / Open Weight,No,offline,stable,1,free,weights_free,weight open source
