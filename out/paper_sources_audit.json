@@ -4,8 +4,8 @@
     "category": "Language",
     "subcategory": "LLM Agents",
     "source_updated_at": "2026-08-24",
-    "last_checked_at": "2026-08-31",
-    "candidate_count": 496,
+    "last_checked_at": "2026-09-01",
+    "candidate_count": 495,
     "output_count": 332,
     "status": "ok"
   },
@@ -14,9 +14,9 @@
     "category": "Language",
     "subcategory": "LLM Agents",
     "source_updated_at": "2026-08-21",
-    "last_checked_at": "2026-08-31",
-    "candidate_count": 383,
-    "output_count": 383,
+    "last_checked_at": "2026-09-01",
+    "candidate_count": 382,
+    "output_count": 382,
     "status": "ok"
   },
   {
@@ -24,7 +24,7 @@
     "category": "Language",
     "subcategory": "Reasoning",
     "source_updated_at": "2026-04-20",
-    "last_checked_at": "2026-08-31",
+    "last_checked_at": "2026-09-01",
     "candidate_count": 144,
     "output_count": 19,
     "status": "ok"
@@ -34,7 +34,7 @@
     "category": "Language",
     "subcategory": "Diffusion LLM",
     "source_updated_at": "2026-08-29",
-    "last_checked_at": "2026-08-31",
+    "last_checked_at": "2026-09-01",
     "candidate_count": 358,
     "output_count": 299,
     "status": "ok"
@@ -44,7 +44,7 @@
     "category": "Language",
     "subcategory": "Diffusion LLM",
     "source_updated_at": "2026-08-31",
-    "last_checked_at": "2026-08-31",
+    "last_checked_at": "2026-09-01",
     "candidate_count": 559,
     "output_count": 433,
     "status": "ok"
@@ -54,19 +54,19 @@
     "category": "Vision",
     "subcategory": "General Computer Vision",
     "source_updated_at": "2026-08-19",
-    "last_checked_at": "2026-08-31",
-    "candidate_count": 29,
-    "output_count": 17,
-    "status": "ok"
+    "last_checked_at": "2026-09-01",
+    "candidate_count": 12,
+    "output_count": 0,
+    "status": "no_recent_output"
   },
   {
     "repository": "umitkacar/awesome-vision-models",
     "category": "Vision",
     "subcategory": "Vision Foundation Models",
     "source_updated_at": "2025-11-10",
-    "last_checked_at": "2026-08-31",
+    "last_checked_at": "2026-09-01",
     "candidate_count": 16,
-    "output_count": 9,
+    "output_count": 7,
     "status": "ok"
   },
   {
@@ -74,9 +74,9 @@
     "category": "Vision-Language",
     "subcategory": "General VLM",
     "source_updated_at": "2026-08-22",
-    "last_checked_at": "2026-08-31",
+    "last_checked_at": "2026-09-01",
     "candidate_count": 452,
-    "output_count": 235,
+    "output_count": 239,
     "status": "ok"
   },
   {
@@ -84,9 +84,9 @@
     "category": "Vision-Language",
     "subcategory": "General VLM",
     "source_updated_at": "2025-10-14",
-    "last_checked_at": "2026-08-31",
+    "last_checked_at": "2026-09-01",
     "candidate_count": 255,
-    "output_count": 4,
+    "output_count": 9,
     "status": "ok"
   },
   {
@@ -94,9 +94,9 @@
     "category": "Vision-Language",
     "subcategory": "Multimodal Modeling",
     "source_updated_at": "2026-08-07",
-    "last_checked_at": "2026-08-31",
+    "last_checked_at": "2026-09-01",
     "candidate_count": 294,
-    "output_count": 140,
+    "output_count": 137,
     "status": "ok"
   },
   {
@@ -104,9 +104,9 @@
     "category": "Vision-Language",
     "subcategory": "MLLM Overview",
     "source_updated_at": "2026-08-27",
-    "last_checked_at": "2026-08-31",
+    "last_checked_at": "2026-09-01",
     "candidate_count": 468,
-    "output_count": 58,
+    "output_count": 56,
     "status": "ok"
   },
   {
@@ -114,9 +114,9 @@
     "category": "Vision-Language",
     "subcategory": "Benchmarks",
     "source_updated_at": "2026-08-13",
-    "last_checked_at": "2026-08-31",
+    "last_checked_at": "2026-09-01",
     "candidate_count": 124,
-    "output_count": 46,
+    "output_count": 43,
     "status": "ok"
   },
   {
@@ -124,7 +124,7 @@
     "category": "Image Generation",
     "subcategory": "Diffusion / T2I / Editing",
     "source_updated_at": "2026-03-16",
-    "last_checked_at": "2026-08-31",
+    "last_checked_at": "2026-09-01",
     "candidate_count": 3785,
     "output_count": 1746,
     "status": "ok"
@@ -134,7 +134,7 @@
     "category": "Image Generation",
     "subcategory": "General Diffusion",
     "source_updated_at": "2026-08-27",
-    "last_checked_at": "2026-08-31",
+    "last_checked_at": "2026-09-01",
     "candidate_count": 65,
     "output_count": 50,
     "status": "ok"
@@ -144,7 +144,7 @@
     "category": "Image Generation",
     "subcategory": "General Diffusion",
     "source_updated_at": "2023-11-05",
-    "last_checked_at": "2026-08-31",
+    "last_checked_at": "2026-09-01",
     "candidate_count": 2636,
     "output_count": 0,
     "status": "no_recent_output"
@@ -154,7 +154,7 @@
     "category": "Image Generation",
     "subcategory": "Low-Level / Restoration",
     "source_updated_at": "2026-04-08",
-    "last_checked_at": "2026-08-31",
+    "last_checked_at": "2026-09-01",
     "candidate_count": 235,
     "output_count": 30,
     "status": "ok"
@@ -164,9 +164,9 @@
     "category": "Video",
     "subcategory": "Video Generation",
     "source_updated_at": "2026-06-17",
-    "last_checked_at": "2026-08-31",
-    "candidate_count": 590,
-    "output_count": 589,
+    "last_checked_at": "2026-09-01",
+    "candidate_count": 589,
+    "output_count": 588,
     "status": "ok"
   },
   {
@@ -174,9 +174,9 @@
     "category": "Video",
     "subcategory": "Video Generation",
     "source_updated_at": "2026-03-31",
-    "last_checked_at": "2026-08-31",
+    "last_checked_at": "2026-09-01",
     "candidate_count": 247,
-    "output_count": 43,
+    "output_count": 35,
     "status": "ok"
   },
   {
@@ -184,19 +184,19 @@
     "category": "Video",
     "subcategory": "Post-training & Alignment",
     "source_updated_at": "2026-07-20",
-    "last_checked_at": "2026-08-31",
+    "last_checked_at": "2026-09-01",
     "candidate_count": 557,
-    "output_count": 470,
+    "output_count": 467,
     "status": "ok"
   },
   {
     "repository": "AudioLLMs/Awesome-Audio-LLM",
     "category": "Audio & Speech",
     "subcategory": "Audio LLM / Speech / Music",
-    "source_updated_at": "2026-08-24",
-    "last_checked_at": "2026-08-31",
-    "candidate_count": 17,
-    "output_count": 13,
+    "source_updated_at": "2026-08-31",
+    "last_checked_at": "2026-09-01",
+    "candidate_count": 125,
+    "output_count": 44,
     "status": "ok"
   },
   {
@@ -204,9 +204,9 @@
     "category": "Audio & Speech",
     "subcategory": "Audio Foundation Models",
     "source_updated_at": "2025-11-02",
-    "last_checked_at": "2026-08-31",
+    "last_checked_at": "2026-09-01",
     "candidate_count": 133,
-    "output_count": 64,
+    "output_count": 63,
     "status": "ok"
   },
   {
@@ -214,7 +214,7 @@
     "category": "Audio & Speech",
     "subcategory": "Music Generation",
     "source_updated_at": "2026-04-24",
-    "last_checked_at": "2026-08-31",
+    "last_checked_at": "2026-09-01",
     "candidate_count": 49,
     "output_count": 15,
     "status": "ok"
@@ -224,7 +224,7 @@
     "category": "3D & Spatial",
     "subcategory": "3D Generation",
     "source_updated_at": "2023-03-09",
-    "last_checked_at": "2026-08-31",
+    "last_checked_at": "2026-09-01",
     "candidate_count": 113,
     "output_count": 0,
     "status": "no_recent_output"
@@ -234,9 +234,9 @@
     "category": "3D & Spatial",
     "subcategory": "Spatial Intelligence",
     "source_updated_at": "2026-07-03",
-    "last_checked_at": "2026-08-31",
+    "last_checked_at": "2026-09-01",
     "candidate_count": 120,
-    "output_count": 35,
+    "output_count": 32,
     "status": "ok"
   },
   {
@@ -244,9 +244,9 @@
     "category": "Unified Multimodal",
     "subcategory": "Unified Understanding + Generation",
     "source_updated_at": "2026-03-24",
-    "last_checked_at": "2026-08-31",
+    "last_checked_at": "2026-09-01",
     "candidate_count": 216,
-    "output_count": 91,
+    "output_count": 89,
     "status": "ok"
   },
   {
@@ -254,7 +254,7 @@
     "category": "Unified Multimodal",
     "subcategory": "Unified Understanding + Generation",
     "source_updated_at": "2025-10-10",
-    "last_checked_at": "2026-08-31",
+    "last_checked_at": "2026-09-01",
     "candidate_count": 70,
     "output_count": 25,
     "status": "ok"
@@ -264,7 +264,7 @@
     "category": "Unified Multimodal",
     "subcategory": "Unified Multimodal",
     "source_updated_at": "2026-01-08",
-    "last_checked_at": "2026-08-31",
+    "last_checked_at": "2026-09-01",
     "candidate_count": 0,
     "output_count": 0,
     "status": "no_extractable_papers"
@@ -274,7 +274,7 @@
     "category": "Robotics & Embodied AI",
     "subcategory": "Embodied AI",
     "source_updated_at": "2026-08-14",
-    "last_checked_at": "2026-08-31",
+    "last_checked_at": "2026-09-01",
     "candidate_count": 138,
     "output_count": 16,
     "status": "ok"
@@ -284,7 +284,7 @@
     "category": "Robotics & Embodied AI",
     "subcategory": "Physical AI / Humanoids",
     "source_updated_at": "2026-08-31",
-    "last_checked_at": "2026-08-31",
+    "last_checked_at": "2026-09-01",
     "candidate_count": 185,
     "output_count": 154,
     "status": "ok"
@@ -294,7 +294,7 @@
     "category": "Robotics & Embodied AI",
     "subcategory": "VLA",
     "source_updated_at": "2026-08-25",
-    "last_checked_at": "2026-08-31",
+    "last_checked_at": "2026-09-01",
     "candidate_count": 171,
     "output_count": 31,
     "status": "ok"
@@ -304,9 +304,9 @@
     "category": "Robotics & Embodied AI",
     "subcategory": "VLA / VLN",
     "source_updated_at": "2026-08-07",
-    "last_checked_at": "2026-08-31",
+    "last_checked_at": "2026-09-01",
     "candidate_count": 681,
-    "output_count": 81,
+    "output_count": 488,
     "status": "ok"
   },
   {
@@ -314,9 +314,9 @@
     "category": "Robotics & Embodied AI",
     "subcategory": "World Models",
     "source_updated_at": "2026-08-12",
-    "last_checked_at": "2026-08-31",
+    "last_checked_at": "2026-09-01",
     "candidate_count": 232,
-    "output_count": 144,
+    "output_count": 145,
     "status": "ok"
   },
   {
@@ -324,7 +324,7 @@
     "category": "Robotics & Embodied AI",
     "subcategory": "World Models",
     "source_updated_at": "2026-08-14",
-    "last_checked_at": "2026-08-31",
+    "last_checked_at": "2026-09-01",
     "candidate_count": 321,
     "output_count": 167,
     "status": "ok"
@@ -334,7 +334,7 @@
     "category": "Medicine & Healthcare",
     "subcategory": "General Medical AI",
     "source_updated_at": "2026-08-04",
-    "last_checked_at": "2026-08-31",
+    "last_checked_at": "2026-09-01",
     "candidate_count": 63,
     "output_count": 30,
     "status": "ok"
@@ -344,9 +344,9 @@
     "category": "Medicine & Healthcare",
     "subcategory": "General Medical AI",
     "source_updated_at": "2026-07-04",
-    "last_checked_at": "2026-08-31",
-    "candidate_count": 81,
-    "output_count": 67,
+    "last_checked_at": "2026-09-01",
+    "candidate_count": 80,
+    "output_count": 63,
     "status": "ok"
   },
   {
@@ -354,9 +354,9 @@
     "category": "Medicine & Healthcare",
     "subcategory": "Medical Multimodal",
     "source_updated_at": "2026-07-29",
-    "last_checked_at": "2026-08-31",
+    "last_checked_at": "2026-09-01",
     "candidate_count": 279,
-    "output_count": 21,
+    "output_count": 23,
     "status": "ok"
   },
   {
@@ -364,9 +364,9 @@
     "category": "Medicine & Healthcare",
     "subcategory": "Radiology Report Generation",
     "source_updated_at": "2026-08-30",
-    "last_checked_at": "2026-08-31",
+    "last_checked_at": "2026-09-01",
     "candidate_count": 616,
-    "output_count": 265,
+    "output_count": 273,
     "status": "ok"
   },
   {
@@ -374,9 +374,9 @@
     "category": "Medicine & Healthcare",
     "subcategory": "Medical Report Generation",
     "source_updated_at": "2024-02-23",
-    "last_checked_at": "2026-08-31",
+    "last_checked_at": "2026-09-01",
     "candidate_count": 34,
-    "output_count": 8,
+    "output_count": 7,
     "status": "ok"
   },
   {
@@ -384,9 +384,9 @@
     "category": "Medicine & Healthcare",
     "subcategory": "Medical Agents",
     "source_updated_at": "2026-08-19",
-    "last_checked_at": "2026-08-31",
-    "candidate_count": 568,
-    "output_count": 488,
+    "last_checked_at": "2026-09-01",
+    "candidate_count": 567,
+    "output_count": 486,
     "status": "ok"
   },
   {
@@ -394,7 +394,7 @@
     "category": "Science & Discovery",
     "subcategory": "Scientific Agents",
     "source_updated_at": "2024-12-11",
-    "last_checked_at": "2026-08-31",
+    "last_checked_at": "2026-09-01",
     "candidate_count": 13,
     "output_count": 0,
     "status": "no_recent_output"
@@ -404,9 +404,9 @@
     "category": "Science & Discovery",
     "subcategory": "Scientific Agents",
     "source_updated_at": "2026-08-03",
-    "last_checked_at": "2026-08-31",
+    "last_checked_at": "2026-09-01",
     "candidate_count": 76,
-    "output_count": 14,
+    "output_count": 27,
     "status": "ok"
   },
   {
@@ -414,9 +414,9 @@
     "category": "Science & Discovery",
     "subcategory": "General AI4Science",
     "source_updated_at": "2026-08-27",
-    "last_checked_at": "2026-08-31",
+    "last_checked_at": "2026-09-01",
     "candidate_count": 60,
-    "output_count": 35,
+    "output_count": 32,
     "status": "ok"
   },
   {
@@ -424,9 +424,9 @@
     "category": "Science & Discovery",
     "subcategory": "Materials Science",
     "source_updated_at": "2025-06-19",
-    "last_checked_at": "2026-08-31",
+    "last_checked_at": "2026-09-01",
     "candidate_count": 2,
-    "output_count": 2,
+    "output_count": 1,
     "status": "ok"
   },
   {
@@ -434,7 +434,7 @@
     "category": "Science & Discovery",
     "subcategory": "Drug Discovery",
     "source_updated_at": "2026-07-30",
-    "last_checked_at": "2026-08-31",
+    "last_checked_at": "2026-09-01",
     "candidate_count": 0,
     "output_count": 0,
     "status": "no_extractable_papers"
@@ -444,7 +444,7 @@
     "category": "Engineering & Manufacturing",
     "subcategory": "AI for CAD",
     "source_updated_at": "2026-08-31",
-    "last_checked_at": "2026-08-31",
+    "last_checked_at": "2026-09-01",
     "candidate_count": 554,
     "output_count": 332,
     "status": "ok"
@@ -454,7 +454,7 @@
     "category": "Engineering & Manufacturing",
     "subcategory": "Engineering Agents",
     "source_updated_at": "2026-08-28",
-    "last_checked_at": "2026-08-31",
+    "last_checked_at": "2026-09-01",
     "candidate_count": 151,
     "output_count": 85,
     "status": "ok"
@@ -464,9 +464,9 @@
     "category": "Education",
     "subcategory": "AI/LLM for Education",
     "source_updated_at": "2026-08-11",
-    "last_checked_at": "2026-08-31",
+    "last_checked_at": "2026-09-01",
     "candidate_count": 326,
-    "output_count": 68,
+    "output_count": 147,
     "status": "ok"
   },
   {
@@ -474,7 +474,7 @@
     "category": "Law & Governance",
     "subcategory": "LLM and Law",
     "source_updated_at": "2026-08-27",
-    "last_checked_at": "2026-08-31",
+    "last_checked_at": "2026-09-01",
     "candidate_count": 104,
     "output_count": 44,
     "status": "ok"
@@ -484,7 +484,7 @@
     "category": "Business & Finance",
     "subcategory": "LLM for Finance",
     "source_updated_at": "2026-05-21",
-    "last_checked_at": "2026-08-31",
+    "last_checked_at": "2026-09-01",
     "candidate_count": 55,
     "output_count": 22,
     "status": "ok"
@@ -494,7 +494,7 @@
     "category": "Business & Finance",
     "subcategory": "AI for Finance",
     "source_updated_at": "2024-11-24",
-    "last_checked_at": "2026-08-31",
+    "last_checked_at": "2026-09-01",
     "candidate_count": 56,
     "output_count": 0,
     "status": "no_recent_output"
@@ -504,7 +504,7 @@
     "category": "Business & Finance",
     "subcategory": "AI Finance Ecosystem",
     "source_updated_at": "2026-03-30",
-    "last_checked_at": "2026-08-31",
+    "last_checked_at": "2026-09-01",
     "candidate_count": 2,
     "output_count": 0,
     "status": "no_recent_output"
@@ -514,9 +514,9 @@
     "category": "Business & Finance",
     "subcategory": "Recommender Systems",
     "source_updated_at": "2026-08-07",
-    "last_checked_at": "2026-08-31",
+    "last_checked_at": "2026-09-01",
     "candidate_count": 91,
-    "output_count": 34,
+    "output_count": 14,
     "status": "ok"
   },
   {
@@ -524,9 +524,9 @@
     "category": "Humanities & Social Science",
     "subcategory": "LLM in Social Science",
     "source_updated_at": "2026-08-19",
-    "last_checked_at": "2026-08-31",
-    "candidate_count": 213,
-    "output_count": 60,
+    "last_checked_at": "2026-09-01",
+    "candidate_count": 208,
+    "output_count": 59,
     "status": "ok"
   },
   {
@@ -534,8 +534,8 @@
     "category": "Humanities & Social Science",
     "subcategory": "LLM for Social Science",
     "source_updated_at": "2025-10-14",
-    "last_checked_at": "2026-08-31",
-    "candidate_count": 20,
+    "last_checked_at": "2026-09-01",
+    "candidate_count": 19,
     "output_count": 1,
     "status": "ok"
   },
@@ -544,8 +544,8 @@
     "category": "Humanities & Social Science",
     "subcategory": "Psychometrics",
     "source_updated_at": "2026-08-18",
-    "last_checked_at": "2026-08-31",
-    "candidate_count": 301,
+    "last_checked_at": "2026-09-01",
+    "candidate_count": 298,
     "output_count": 76,
     "status": "ok"
   },
@@ -554,7 +554,7 @@
     "category": "Environment & Earth Science",
     "subcategory": "Remote Sensing Foundation Models",
     "source_updated_at": "2026-05-07",
-    "last_checked_at": "2026-08-31",
+    "last_checked_at": "2026-09-01",
     "candidate_count": 299,
     "output_count": 154,
     "status": "ok"
@@ -564,9 +564,9 @@
     "category": "Environment & Earth Science",
     "subcategory": "Weather & Climate",
     "source_updated_at": "2026-08-04",
-    "last_checked_at": "2026-08-31",
-    "candidate_count": 98,
-    "output_count": 41,
+    "last_checked_at": "2026-09-01",
+    "candidate_count": 95,
+    "output_count": 24,
     "status": "ok"
   },
   {
@@ -574,17 +574,17 @@
     "category": "Security & Cybersecurity",
     "subcategory": "AI Security",
     "source_updated_at": "2026-04-12",
-    "last_checked_at": "2026-08-31",
+    "last_checked_at": "2026-09-01",
     "candidate_count": 128,
-    "output_count": 66,
+    "output_count": 62,
     "status": "ok"
   },
   {
     "repository": "scadastrangelove/awesome-ai-security-tools",
     "category": "Security & Cybersecurity",
     "subcategory": "AI Security Tools & Agents",
-    "source_updated_at": "2026-08-30",
-    "last_checked_at": "2026-08-31",
+    "source_updated_at": "2026-08-31",
+    "last_checked_at": "2026-09-01",
     "candidate_count": 3,
     "output_count": 2,
     "status": "ok"
@@ -594,7 +594,7 @@
     "category": "Security & Cybersecurity",
     "subcategory": "Cybersecurity + AI",
     "source_updated_at": "2026-01-08",
-    "last_checked_at": "2026-08-31",
+    "last_checked_at": "2026-09-01",
     "candidate_count": 6,
     "output_count": 0,
     "status": "no_recent_output"
@@ -604,7 +604,7 @@
     "category": "Science & Discovery",
     "subcategory": "Drug Discovery Knowledge Graphs",
     "source_updated_at": "2026-07-27",
-    "last_checked_at": "2026-08-31",
+    "last_checked_at": "2026-09-01",
     "candidate_count": 1,
     "output_count": 0,
     "status": "no_recent_output"
@@ -614,9 +614,9 @@
     "category": "Science & Discovery",
     "subcategory": "Scientific LLM Benchmarks",
     "source_updated_at": "2026-08-03",
-    "last_checked_at": "2026-08-31",
+    "last_checked_at": "2026-09-01",
     "candidate_count": 153,
-    "output_count": 54,
+    "output_count": 52,
     "status": "ok"
   },
   {
@@ -624,7 +624,7 @@
     "category": "Medicine & Healthcare",
     "subcategory": "Medical Imaging Agents",
     "source_updated_at": "2026-08-29",
-    "last_checked_at": "2026-08-31",
+    "last_checked_at": "2026-09-01",
     "candidate_count": 437,
     "output_count": 392,
     "status": "ok"
@@ -634,9 +634,9 @@
     "category": "Medicine & Healthcare",
     "subcategory": "Traditional Chinese Medical LLM",
     "source_updated_at": "2026-08-16",
-    "last_checked_at": "2026-08-31",
+    "last_checked_at": "2026-09-01",
     "candidate_count": 233,
-    "output_count": 152,
+    "output_count": 128,
     "status": "ok"
   },
   {
@@ -644,9 +644,9 @@
     "category": "Vision-Language",
     "subcategory": "OCR / Document VLM",
     "source_updated_at": "2026-08-28",
-    "last_checked_at": "2026-08-31",
+    "last_checked_at": "2026-09-01",
     "candidate_count": 225,
-    "output_count": 65,
+    "output_count": 58,
     "status": "ok"
   },
   {
@@ -654,7 +654,7 @@
     "category": "Vision-Language",
     "subcategory": "Multimodal Reasoning",
     "source_updated_at": "2026-08-22",
-    "last_checked_at": "2026-08-31",
+    "last_checked_at": "2026-09-01",
     "candidate_count": 0,
     "output_count": 0,
     "status": "no_extractable_papers"
@@ -664,9 +664,9 @@
     "category": "Vision-Language",
     "subcategory": "Multimodal Deep Research",
     "source_updated_at": "2026-05-29",
-    "last_checked_at": "2026-08-31",
-    "candidate_count": 159,
-    "output_count": 73,
+    "last_checked_at": "2026-09-01",
+    "candidate_count": 158,
+    "output_count": 72,
     "status": "ok"
   },
   {
@@ -674,9 +674,9 @@
     "category": "Language",
     "subcategory": "Diffusion x Autoregression",
     "source_updated_at": "2026-08-21",
-    "last_checked_at": "2026-08-31",
-    "candidate_count": 78,
-    "output_count": 64,
+    "last_checked_at": "2026-09-01",
+    "candidate_count": 77,
+    "output_count": 63,
     "status": "ok"
   },
   {
@@ -684,9 +684,9 @@
     "category": "Vision",
     "subcategory": "CVPR 2026 Proceedings",
     "source_updated_at": "2026-06-08",
-    "last_checked_at": "2026-08-31",
+    "last_checked_at": "2026-09-01",
     "candidate_count": 4069,
-    "output_count": 4043,
+    "output_count": 4044,
     "status": "ok"
   },
   {
@@ -694,9 +694,9 @@
     "category": "Vision",
     "subcategory": "CVPR 2025 Proceedings",
     "source_updated_at": "2025-06-30",
-    "last_checked_at": "2026-08-31",
+    "last_checked_at": "2026-09-01",
     "candidate_count": 2884,
-    "output_count": 2720,
+    "output_count": 2694,
     "status": "ok"
   },
   {
@@ -704,7 +704,7 @@
     "category": "3D & Spatial",
     "subcategory": "3D Scene Generation",
     "source_updated_at": "2026-08-11",
-    "last_checked_at": "2026-08-31",
+    "last_checked_at": "2026-09-01",
     "candidate_count": 538,
     "output_count": 195,
     "status": "ok"
@@ -714,9 +714,9 @@
     "category": "3D & Spatial",
     "subcategory": "Visual Spatial Reasoning",
     "source_updated_at": "2026-07-27",
-    "last_checked_at": "2026-08-31",
+    "last_checked_at": "2026-09-01",
     "candidate_count": 195,
-    "output_count": 125,
+    "output_count": 124,
     "status": "ok"
   },
   {
@@ -724,9 +724,9 @@
     "category": "Humanities & Social Science",
     "subcategory": "AI x Social Sciences",
     "source_updated_at": "2026-04-09",
-    "last_checked_at": "2026-08-31",
+    "last_checked_at": "2026-09-01",
     "candidate_count": 188,
-    "output_count": 71,
+    "output_count": 33,
     "status": "ok"
   },
   {
@@ -734,7 +734,7 @@
     "category": "Science & Discovery",
     "subcategory": "Automated Scientific Discovery",
     "source_updated_at": "2026-04-08",
-    "last_checked_at": "2026-08-31",
+    "last_checked_at": "2026-09-01",
     "candidate_count": 19,
     "output_count": 13,
     "status": "ok"
@@ -744,7 +744,7 @@
     "category": "Audio & Speech",
     "subcategory": "Audio Deepfake Detection",
     "source_updated_at": "2026-08-27",
-    "last_checked_at": "2026-08-31",
+    "last_checked_at": "2026-09-01",
     "candidate_count": 460,
     "output_count": 263,
     "status": "ok"
@@ -754,7 +754,7 @@
     "category": "Security & Cybersecurity",
     "subcategory": "AI Security Research",
     "source_updated_at": "2026-07-18",
-    "last_checked_at": "2026-08-31",
+    "last_checked_at": "2026-09-01",
     "candidate_count": 55,
     "output_count": 52,
     "status": "ok"
