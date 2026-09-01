@@ -45,8 +45,8 @@
     "subcategory": "Diffusion LLM",
     "source_updated_at": "2026-08-31",
     "last_checked_at": "2026-09-01",
-    "candidate_count": 559,
-    "output_count": 433,
+    "candidate_count": 560,
+    "output_count": 434,
     "status": "ok"
   },
   {
@@ -96,7 +96,7 @@
     "source_updated_at": "2026-08-07",
     "last_checked_at": "2026-09-01",
     "candidate_count": 294,
-    "output_count": 137,
+    "output_count": 138,
     "status": "ok"
   },
   {
@@ -255,8 +255,8 @@
     "subcategory": "Unified Understanding + Generation",
     "source_updated_at": "2025-10-10",
     "last_checked_at": "2026-09-01",
-    "candidate_count": 70,
-    "output_count": 25,
+    "candidate_count": 71,
+    "output_count": 26,
     "status": "ok"
   },
   {
@@ -265,9 +265,9 @@
     "subcategory": "Unified Multimodal",
     "source_updated_at": "2026-01-08",
     "last_checked_at": "2026-09-01",
-    "candidate_count": 0,
-    "output_count": 0,
-    "status": "no_extractable_papers"
+    "candidate_count": 79,
+    "output_count": 53,
+    "status": "ok"
   },
   {
     "repository": "zchoi/Awesome-Embodied-Robotics-and-Agent",
@@ -295,8 +295,8 @@
     "subcategory": "VLA",
     "source_updated_at": "2026-08-25",
     "last_checked_at": "2026-09-01",
-    "candidate_count": 171,
-    "output_count": 31,
+    "candidate_count": 173,
+    "output_count": 32,
     "status": "ok"
   },
   {
@@ -413,7 +413,7 @@
     "repository": "ai4s-research/awesome-ai-for-science",
     "category": "Science & Discovery",
     "subcategory": "General AI4Science",
-    "source_updated_at": "2026-08-27",
+    "source_updated_at": "2026-09-01",
     "last_checked_at": "2026-09-01",
     "candidate_count": 59,
     "output_count": 31,
@@ -425,7 +425,7 @@
     "subcategory": "Materials Science",
     "source_updated_at": "2025-06-19",
     "last_checked_at": "2026-09-01",
-    "candidate_count": 2,
+    "candidate_count": 3,
     "output_count": 2,
     "status": "ok"
   },
@@ -645,8 +645,8 @@
     "subcategory": "OCR / Document VLM",
     "source_updated_at": "2026-08-28",
     "last_checked_at": "2026-09-01",
-    "candidate_count": 225,
-    "output_count": 58,
+    "candidate_count": 686,
+    "output_count": 263,
     "status": "ok"
   },
   {
@@ -655,9 +655,9 @@
     "subcategory": "Multimodal Reasoning",
     "source_updated_at": "2026-08-22",
     "last_checked_at": "2026-09-01",
-    "candidate_count": 0,
-    "output_count": 0,
-    "status": "no_extractable_papers"
+    "candidate_count": 1003,
+    "output_count": 940,
+    "status": "ok"
   },
   {
     "repository": "ThreeSR/Awesome-Multimodal-Deep-Research",
@@ -696,7 +696,7 @@
     "source_updated_at": "2025-06-30",
     "last_checked_at": "2026-09-01",
     "candidate_count": 2884,
-    "output_count": 2695,
+    "output_count": 2684,
     "status": "ok"
   },
   {
@@ -716,7 +716,7 @@
     "source_updated_at": "2026-07-27",
     "last_checked_at": "2026-09-01",
     "candidate_count": 194,
-    "output_count": 123,
+    "output_count": 122,
     "status": "ok"
   },
   {
@@ -757,6 +757,36 @@
     "last_checked_at": "2026-09-01",
     "candidate_count": 55,
     "output_count": 51,
+    "status": "ok"
+  },
+  {
+    "repository": "Xnhyacinth/Awesome-LLM-Long-Context-Modeling",
+    "category": "Language",
+    "subcategory": "Long Context",
+    "source_updated_at": "2026-08-17",
+    "last_checked_at": "2026-09-01",
+    "candidate_count": 1921,
+    "output_count": 1257,
+    "status": "ok"
+  },
+  {
+    "repository": "mbzuai-oryx/Awesome-LLM-Post-training",
+    "category": "Language",
+    "subcategory": "Post-training",
+    "source_updated_at": "2026-07-27",
+    "last_checked_at": "2026-09-01",
+    "candidate_count": 161,
+    "output_count": 48,
+    "status": "ok"
+  },
+  {
+    "repository": "FDU-INS/awesome-financial-llm-trustworthiness-benchmarks",
+    "category": "Business & Finance",
+    "subcategory": "FinLLM Benchmarks",
+    "source_updated_at": "2026-08-25",
+    "last_checked_at": "2026-09-01",
+    "candidate_count": 78,
+    "output_count": 70,
     "status": "ok"
   }
 ]

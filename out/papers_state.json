@@ -33,7 +33,7 @@
       "readme_url": "https://raw.githubusercontent.com/VILA-Lab/Awesome-DLMs/HEAD/README.md",
       "source_updated_at": "2026-08-31",
       "last_checked_at": "2026-09-01",
-      "candidate_count": 559
+      "candidate_count": 560
     },
     "mawady/awesome-computer-vision-resources": {
       "readme_sha256": "ecf4d913e67cc46dbd6409c582608b4c29638d33818dc7d74b65eabb6ed85526",
@@ -180,14 +180,14 @@
       "readme_url": "https://raw.githubusercontent.com/showlab/Awesome-Unified-Multimodal-Models/HEAD/README.md",
       "source_updated_at": "2025-10-10",
       "last_checked_at": "2026-09-01",
-      "candidate_count": 70
+      "candidate_count": 71
     },
     "Purshow/Awesome-Unified-Multimodal": {
       "readme_sha256": "40263c544663387e566ff11fa1466930e724a0e43117eb0ff440d1f8b654c247",
       "readme_url": "https://raw.githubusercontent.com/Purshow/Awesome-Unified-Multimodal/HEAD/README.md",
       "source_updated_at": "2026-01-08",
       "last_checked_at": "2026-09-01",
-      "candidate_count": 0
+      "candidate_count": 79
     },
     "zchoi/Awesome-Embodied-Robotics-and-Agent": {
       "readme_sha256": "8fe05512351cbb058b25a438912ef64c7e186af211833917c13d83e13fffd11b",
@@ -208,7 +208,7 @@
       "readme_url": "https://raw.githubusercontent.com/yueen-ma/Awesome-VLA/HEAD/README.md",
       "source_updated_at": "2026-08-25",
       "last_checked_at": "2026-09-01",
-      "candidate_count": 171
+      "candidate_count": 173
     },
     "jonyzhang2023/awesome-embodied-vla-va-vln": {
       "readme_sha256": "a684b700a4b0c8400fd91e1167b2830134ad951914c13b9a23412419af98d309",
@@ -288,9 +288,9 @@
       "candidate_count": 76
     },
     "ai4s-research/awesome-ai-for-science": {
-      "readme_sha256": "03c14abc8f9f3b1e29d1907fec2bd6c7b5792689b72f3b50057507a2e8ed2b06",
+      "readme_sha256": "1e2d36b1c7a5ab322b992abdadbbb5c68ac94df5cac490ec544e789bd049e787",
       "readme_url": "https://raw.githubusercontent.com/ai4s-research/awesome-ai-for-science/HEAD/README.md",
-      "source_updated_at": "2026-08-27",
+      "source_updated_at": "2026-09-01",
       "last_checked_at": "2026-09-01",
       "candidate_count": 59
     },
@@ -299,7 +299,7 @@
       "readme_url": "https://raw.githubusercontent.com/tilde-lab/awesome-materials-informatics/HEAD/README.md",
       "source_updated_at": "2025-06-19",
       "last_checked_at": "2026-09-01",
-      "candidate_count": 2
+      "candidate_count": 3
     },
     "yboulaamane/awesome-drug-discovery": {
       "readme_sha256": "6ee30c24cfb359a0f4de2b485e1a6fd2dacb5b146bc0a9288d8d1e62df38c6d9",
@@ -453,14 +453,14 @@
       "readme_url": "https://raw.githubusercontent.com/Yuliang-Liu/AWESOME-OCR-LLM/HEAD/README.md",
       "source_updated_at": "2026-08-28",
       "last_checked_at": "2026-09-01",
-      "candidate_count": 225
+      "candidate_count": 686
     },
     "The-Martyr/Awesome-Multimodal-Reasoning": {
       "readme_sha256": "1c4b9108cb9c7f8633e4dc1c745a2f916bc7ffa9d0a4651239eadafb1dfe4f66",
       "readme_url": "https://raw.githubusercontent.com/The-Martyr/Awesome-Multimodal-Reasoning/HEAD/README.md",
       "source_updated_at": "2026-08-22",
       "last_checked_at": "2026-09-01",
-      "candidate_count": 0
+      "candidate_count": 1003
     },
     "ThreeSR/Awesome-Multimodal-Deep-Research": {
       "readme_sha256": "851b2f7663ca3b94c3cb8fe24840ca09e1c85f7cf69d33f9bc827c7081e5aa3c",
@@ -531,6 +531,27 @@
       "source_updated_at": "2026-07-18",
       "last_checked_at": "2026-09-01",
       "candidate_count": 55
+    },
+    "Xnhyacinth/Awesome-LLM-Long-Context-Modeling": {
+      "readme_sha256": "7b10c580aa400832892b22187db210d861f9b36468ad2609519a3d090ff12f81",
+      "readme_url": "https://raw.githubusercontent.com/Xnhyacinth/Awesome-LLM-Long-Context-Modeling/HEAD/README.md",
+      "source_updated_at": "2026-08-17",
+      "last_checked_at": "2026-09-01",
+      "candidate_count": 1921
+    },
+    "mbzuai-oryx/Awesome-LLM-Post-training": {
+      "readme_sha256": "6a1f1aeaaf3a14472e54d3ba585b8639209a82a3a9f5017d7bd3faf6f212d6a9",
+      "readme_url": "https://raw.githubusercontent.com/mbzuai-oryx/Awesome-LLM-Post-training/HEAD/README.md",
+      "source_updated_at": "2026-07-27",
+      "last_checked_at": "2026-09-01",
+      "candidate_count": 161
+    },
+    "FDU-INS/awesome-financial-llm-trustworthiness-benchmarks": {
+      "readme_sha256": "2c408e2f8797e62a31752cc384a762116c73aa557222668e415e56ae94d60719",
+      "readme_url": "https://raw.githubusercontent.com/FDU-INS/awesome-financial-llm-trustworthiness-benchmarks/HEAD/README.md",
+      "source_updated_at": "2026-08-25",
+      "last_checked_at": "2026-09-01",
+      "candidate_count": 78
     }
   },
   "last_run_at": "2026-09-01",
