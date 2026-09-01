@@ -17,7 +17,11 @@ from typing import Iterable
 import httpx
 
 
-ARXIV_RE = re.compile(r"arxiv\.org/(?:abs|pdf)/(?P<id>\d{4}\.\d{4,5})(?:v\d+)?", re.I)
+ARXIV_RE = re.compile(
+    r"arxiv\.org/(?:abs|pdf|html)/+(?P<id>(?:\d{4}\.\d{4,5}|[a-z-]+/\d{7}))"
+    r"(?:v\d+)?(?:\.pdf)?",
+    re.I,
+)
 DOI_RE = re.compile(r"(?:doi\.org/|doi:\s*)(?P<id>10\.\d{4,9}/[^\s\]\[<>)\"']+)", re.I)
 MARKDOWN_LINK_RE = re.compile(r"\[\[?([^\]]+)\]\]?\((https?://[^)\s]+)(?:\s+[^)]*)?\)")
 RELATIVE_MARKDOWN_LINK_RE = re.compile(r"\[[^\]]+\]\((?!https?://)([^)#?]+\.md)(?:#[^)]*)?\)", re.I)
@@ -102,21 +106,21 @@ VERIFIED_METADATA_OVERRIDES = {
         "title": "InternVL-U: Democratizing Unified Multimodal Models for Understanding, Reasoning, Generation and Editing",
         "published_at": "2026-03-10",
         "date_precision": "day",
-        "venue": "arXiv preprint",
+        "venue": "arXiv",
         "arxiv_id": "2603.09877",
     },
     "https://arxiv.org/abs/2607.15176": {
         "title": "Benchmarking Multimodal Large Language Models for Scientific Visualization Literacy",
         "published_at": "2026-07-16",
         "date_precision": "day",
-        "venue": "arXiv preprint",
+        "venue": "arXiv",
         "arxiv_id": "2607.15176",
     },
     "https://research.nvidia.com/labs/cosmos3/technical-report.pdf": {
         "title": "Cosmos 3: Omnimodal World Models for Physical AI",
         "published_at": "2026-06",
         "date_precision": "month",
-        "venue": "arXiv preprint",
+        "venue": "arXiv",
         "arxiv_id": "2606.02800",
     },
 }
@@ -356,9 +360,20 @@ def _title_has_verified_metadata(paper: dict) -> bool:
     return bool(VERIFIED_TITLE_SOURCES.intersection(paper.get("metadata_sources", [])))
 
 
+def _is_arxiv_host(url: str) -> bool:
+    hostname = (urllib.parse.urlsplit(url).hostname or "").casefold()
+    return hostname == "arxiv.org" or hostname.endswith(".arxiv.org")
+
+
+def _is_arxiv_paper_url(url: str) -> bool:
+    return _is_arxiv_host(url) and bool(ARXIV_RE.search(url))
+
+
 def _looks_like_paper(label: str, url: str, line: str) -> bool:
     lowered_url = url.casefold()
-    if "xxxx" in lowered_url or re.search(r"arxiv\.org/(?:abs|pdf)/(?:id|[a-z.-]+)$", lowered_url):
+    if _is_arxiv_host(url):
+        return _is_arxiv_paper_url(url)
+    if "xxxx" in lowered_url or re.search(r"arxiv\.org/(?:abs|pdf|html)/(?:id|[a-z.-]+)$", lowered_url):
         return False
     if any(fragment in lowered_url for fragment in (
         "arxiv.org/list/", "/recentissue.jsp", "/xpl/recentissue.jsp",
@@ -480,7 +495,7 @@ def _title_from_line(
 
 def _extract_date(text: str) -> tuple[str, str]:
     arxiv = ARXIV_RE.search(text)
-    if arxiv:
+    if arxiv and re.fullmatch(r"\d{4}\.\d{4,5}", arxiv.group("id")):
         prefix = arxiv.group("id")[:2]
         month = arxiv.group("id")[2:4]
         return f"20{prefix}-{month}", "month"
@@ -503,13 +518,16 @@ def _extract_date(text: str) -> tuple[str, str]:
 
 
 def _extract_venue(text: str, url: str) -> str:
+    # The site labels the source represented by the selected paper link. When
+    # that link is an arXiv record, keep one canonical badge regardless of a
+    # conference name mentioned elsewhere on the same awesome-list row.
+    if _is_arxiv_paper_url(url):
+        return "arXiv"
     for venue in VENUE_PATTERNS:
         if re.search(rf"(?<![A-Za-z]){re.escape(venue)}(?:\s+(?:Findings|Workshop))?(?:\s+20\d{{2}})?", text, re.I):
             match = re.search(rf"(?<![A-Za-z])({re.escape(venue)}(?:\s+(?:Findings|Workshop))?(?:\s+20\d{{2}})?)", text, re.I)
             if match:
                 return match.group(1)
-    if "arxiv.org" in url.casefold():
-        return ""
     if "openreview.net" in url.casefold():
         return "OpenReview"
     if "biorxiv.org" in url.casefold():
@@ -517,6 +535,16 @@ def _extract_venue(text: str, url: str) -> str:
     if "medrxiv.org" in url.casefold():
         return "medRxiv preprint"
     return ""
+
+
+def _normalize_venue(paper: dict) -> str:
+    """Return the canonical venue badge written to the public catalog."""
+    venue = re.sub(r"\s+", " ", paper.get("venue") or "").strip()
+    if _is_arxiv_paper_url(paper.get("paper_url") or ""):
+        return "arXiv"
+    if re.fullmatch(r"arxiv(?:\s+(?:preprint|paper|e-?print))?", venue, re.I):
+        return "arXiv"
+    return venue or "Venue not specified"
 
 
 def normalize_title(title: str) -> str:
@@ -759,7 +787,7 @@ def _arxiv_metadata(client: httpx.Client, ids: list[str]) -> dict[str, dict]:
                 "title": re.sub(r"\s+", " ", entry.findtext("a:title", default="", namespaces=namespace)).strip(),
                 "published_at": entry.findtext("a:published", default="", namespaces=namespace)[:10],
                 "date_precision": "day",
-                "venue": (entry.findtext("arxiv:journal_ref", default="", namespaces=namespace) or "arXiv preprint").strip(),
+                "venue": (entry.findtext("arxiv:journal_ref", default="", namespaces=namespace) or "arXiv").strip(),
             }
         if offset + batch_size < len(ids):
             time.sleep(3)
@@ -806,7 +834,7 @@ def _semantic_scholar_arxiv_metadata(client: httpx.Client, ids: list[str]) -> di
                 "title": re.sub(r"\s+", " ", item.get("title") or "").strip(),
                 "published_at": published if precision != "unknown" else "",
                 "date_precision": precision,
-                "venue": (item.get("venue") or "arXiv preprint").strip(),
+                "venue": (item.get("venue") or "arXiv").strip(),
             }
         if offset + batch_size < len(ids):
             time.sleep(1)
@@ -1057,6 +1085,8 @@ def filter_recent(papers: Iterable[dict], since_year: int, max_without_date: int
     selected: list[dict] = []
     undated_by_source: dict[str, int] = {}
     for paper in papers:
+        if _is_arxiv_host(paper.get("paper_url") or "") and not _is_arxiv_paper_url(paper.get("paper_url") or ""):
+            continue
         published = paper.get("published_at", "")
         precision = paper.get("date_precision", "unknown")
         if precision == "unknown":
@@ -1090,7 +1120,7 @@ def filter_recent(papers: Iterable[dict], since_year: int, max_without_date: int
         # the label is the actual paper title (or replaces it with the full one).
         if _title_needs_metadata(paper.get("title", "")) and not _title_has_verified_metadata(paper):
             continue
-        paper["venue"] = paper.get("venue") or "Venue not specified"
+        paper["venue"] = _normalize_venue(paper)
         selected.append(paper)
     selected.sort(
         key=lambda item: (
@@ -1131,6 +1161,11 @@ def validate_catalog(papers: Iterable[dict]) -> None:
             problems.append(f"row {index}: arXiv id {paper['arxiv_id']} was not verified")
         if not paper.get("paper_url") or not paper.get("categories"):
             problems.append(f"row {index}: missing URL or category")
+        expected_venue = _normalize_venue(paper)
+        if paper.get("venue") != expected_venue:
+            problems.append(
+                f"row {index}: venue {paper.get('venue')!r} is not normalized as {expected_venue!r}"
+            )
         if len(problems) >= 25:
             break
     if problems:

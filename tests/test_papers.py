@@ -34,7 +34,7 @@ def test_structured_feed_uses_title_field_instead_of_authors():
     papers = parse_readme(SOURCE, markdown, "2026-06-08", "2026-08-31")
     assert papers[0]["title"] == "CrossVL: Complexity-Aware Feature Routing"
     assert "Zhipeng Liu" not in papers[0]["title"]
-    assert papers[0]["venue"] == "CVPR 2026"
+    assert papers[0]["venue"] == "arXiv"
 
 
 def test_audio_hub_structured_feed_uses_complete_title_not_abbreviation():
@@ -141,7 +141,7 @@ def test_parse_markdown_paper_with_source_metadata():
     papers = parse_readme(SOURCE, readme, "2026-08-29", "2026-08-30")
     assert len(papers) == 1
     assert papers[0]["title"] == "Reasoning Better"
-    assert papers[0]["venue"].startswith("ACL")
+    assert papers[0]["venue"] == "arXiv"
     assert papers[0]["published_at"] == "2026-04"
     assert papers[0]["date_precision"] == "month"
     assert papers[0]["arxiv_id"] == "2604.12345"
@@ -272,6 +272,7 @@ def test_semantic_scholar_is_accepted_as_arxiv_id_verification():
         "date_precision": "day",
         "paper_url": "https://arxiv.org/abs/2604.12345",
         "arxiv_id": "2604.12345",
+        "venue": "arXiv",
         "metadata_sources": ["source README", "Semantic Scholar"],
         "categories": ["Language"],
     }
@@ -288,6 +289,63 @@ def test_month_precision_never_displays_an_invented_first_day():
     }
     selected = filter_recent([paper], 2025)
     assert selected[0]["published_at"] == "2026-04"
+
+
+def test_arxiv_link_always_uses_one_canonical_venue_badge():
+    variants = ["", "arxiv", "arXiv preprint", "CVPR 2026", "Venue not specified"]
+    papers = [{
+        "title": "A Complete and Reliably Sourced Paper Title",
+        "published_at": "2026-04",
+        "date_precision": "month",
+        "venue": venue,
+        "paper_url": f"https://arxiv.org/abs/2604.{index:05d}",
+        "arxiv_id": f"2604.{index:05d}",
+        "source_repos": ["example/list"],
+        "metadata_sources": ["arXiv"],
+    } for index, venue in enumerate(variants, start=1)]
+
+    selected = filter_recent(papers, 2025)
+    assert {paper["venue"] for paper in selected} == {"arXiv"}
+
+    html_paper = parse_readme(
+        SOURCE,
+        "[A Complete arXiv HTML Paper Title](https://arxiv.org/html/2604.99999v1)",
+        "2026-04-20",
+        "2026-04-20",
+    )[0]
+    assert html_paper["arxiv_id"] == "2604.99999"
+    assert html_paper["venue"] == "arXiv"
+
+    doubled_slash = parse_readme(
+        SOURCE,
+        "[A Complete Paper behind a Malformed Source Link](https://arxiv.org/abs//2604.88888)",
+        "2026-04-20",
+        "2026-04-20",
+    )[0]
+    assert doubled_slash["arxiv_id"] == "2604.88888"
+    assert doubled_slash["venue"] == "arXiv"
+
+
+def test_arxiv_search_and_home_pages_are_not_papers():
+    readme = "\n".join((
+        "[arXiv home](https://arxiv.org/)",
+        "[Search results](https://arxiv.org/search/?query=multimodal)",
+        "[Missing identifier](https://arxiv.org/abs/)",
+    ))
+    assert parse_readme(SOURCE, readme, "2026-04-20", "2026-04-20") == []
+
+
+def test_non_arxiv_official_venue_is_preserved():
+    paper = {
+        "title": "A Complete Conference Paper Title for Testing",
+        "published_at": "2026",
+        "date_precision": "year",
+        "venue": "CVPR 2026",
+        "paper_url": "https://openaccess.thecvf.com/content/CVPR2026/html/example.html",
+        "source_repos": ["example/list"],
+        "metadata_sources": ["official page title"],
+    }
+    assert filter_recent([paper], 2025)[0]["venue"] == "CVPR 2026"
 
 
 def test_author_lists_and_embedded_resource_links_are_not_titles():
