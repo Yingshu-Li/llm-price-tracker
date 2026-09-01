@@ -563,3 +563,85 @@ def test_historical_year_is_extracted_so_old_doi_is_not_treated_as_undated():
     papers = parse_readme(SOURCE, readme, "2026-08-31", "2026-08-31")
     assert papers[0]["published_at"] == "1958"
     assert filter_recent(papers, 2025) == []
+
+def test_badge_style_entry_uses_the_paper_link_not_the_badge_image():
+    """[![arXiv](img.shields.io/...)](https://arxiv.org/abs/...) 这种写法。
+
+    MARKDOWN_LINK_RE 的标签部分是 [^\\]]+，遇到嵌套的图片链接会在内层 ] 闭合，
+    抓到的 url 是徽章图片地址，真正的论文链接反而丢掉，整条被当成非论文丢弃。
+    The-Martyr/Awesome-Multimodal-Reasoning 整个源因此产出为 0。
+    """
+    readme = (
+        "(06 Jun 2026) Test-Time Scaling in Multimodal Foundation Models: A Survey "
+        "[![arXiv](https://img.shields.io/badge/arXiv-b31b1b.svg)]"
+        "(https://arxiv.org/abs/2606.01613)\n"
+    )
+    papers = parse_readme(SOURCE, readme, "2026-06-08", "2026-08-31")
+    assert len(papers) == 1
+    assert papers[0]["paper_url"] == "https://arxiv.org/abs/2606.01613"
+    # 行首的 (06 Jun 2026) 必须整段剥掉，不能剩下 "06 Jun 2026) ..."
+    assert papers[0]["title"] == (
+        "Test-Time Scaling in Multimodal Foundation Models: A Survey"
+    )
+
+
+def test_bold_title_with_leading_date_tag_survives():
+    """`**[2024-05-08] Emu: ...**` 里的前导日期标签要成对去掉。
+
+    只剥一个 '[' 会留下游离的 ']'，_title_is_suspicious 据此判废整条标题，
+    Purshow/Awesome-Unified-Multimodal 的 79 条因此全部没有标题。
+    """
+    readme = (
+        "- **[2024-05-08] Emu: Generative Pretraining in Multimodality**  \n"
+        "  [![Static Badge](https://img.shields.io/badge/2307.05222-red?logo=arxiv)]"
+        "(https://arxiv.org/abs/2307.05222)\n"
+    )
+    papers = parse_readme(SOURCE, readme, "2026-06-08", "2026-08-31")
+    assert len(papers) == 1
+    assert papers[0]["title"] == "Emu: Generative Pretraining in Multimodality"
+
+
+def test_bare_badge_image_in_a_table_cell_is_kept_as_content():
+    """裸露的 ![会议](徽章) 不是链接标签，alt 文字属于单元格内容，不能剥掉。
+
+    一并剥掉会把 `![WACV](badge) GeneVA` 剩成 6 个字符的 "GeneVA"，
+    因长度不足被判可疑，标题直接变空。
+    """
+    readme = (
+        "| Benchmark | Year | Links |\n"
+        "| --- | --- | --- |\n"
+        "| ![WACV](https://img.shields.io/badge/WACV-dodgerblue) GeneVA | 2026 "
+        "| [Paper](https://arxiv.org/abs/2509.08818) |\n"
+    )
+    papers = parse_readme(SOURCE, readme, "2026-06-08", "2026-08-31")
+    assert len(papers) == 1
+    assert "GeneVA" in papers[0]["title"]
+
+def test_a_few_dead_sources_do_not_fail_the_whole_run():
+    """单个源抓不到不该阻断当天提交。
+
+    目录本身已经正确生成，因为一个无关的源就整份丢掉，代价远大于少几篇论文；
+    而仓库改名/删库这类永久性失败会天天复现，等于让论文雷达静默冻结。
+    """
+    from update_papers import source_failure_verdict
+
+    assert source_failure_verdict(0, 76) == (False, 7)
+    assert source_failure_verdict(1, 76) == (False, 7)
+    assert source_failure_verdict(7, 76) == (False, 7)
+
+
+def test_widespread_source_failures_still_fail_the_run():
+    """大批源同时失败多半是网络或鉴权的系统性问题，这时目录是残缺的，不能覆盖好数据。"""
+    from update_papers import source_failure_verdict
+
+    assert source_failure_verdict(8, 76) == (True, 7)
+    assert source_failure_verdict(40, 76) == (True, 7)
+
+
+def test_failure_tolerance_has_a_floor_for_small_source_lists():
+    """源很少时不能按十分之一算，否则一个失败就超标，退回原来的老毛病。"""
+    from update_papers import source_failure_verdict
+
+    assert source_failure_verdict(1, 5) == (False, 3)
+    assert source_failure_verdict(3, 10) == (False, 3)
+    assert source_failure_verdict(4, 10) == (True, 3)

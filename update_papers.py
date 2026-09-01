@@ -39,6 +39,20 @@ def parse_args() -> argparse.Namespace:
     return parser.parse_args()
 
 
+def source_failure_verdict(failure_count: int, source_count: int) -> tuple[bool, int]:
+    """判断这次运行算不算失败，返回 (是否失败, 容忍上限)。
+
+    单个源抓不到（改名、删库、转私有、临时 5xx）只该少几篇论文，不该让当天
+    整份目录提交不上去。但如果大批源同时失败，那多半是网络或鉴权出了系统性
+    问题，这时提交上去的目录是残缺的，宁可失败也不能覆盖掉好数据。
+
+    阈值取「十分之一，且至少 3 个」：源少的时候不至于一个失败就超标，
+    源多的时候也不会把半个目录的缺失当成正常。
+    """
+    tolerated = max(3, source_count // 10)
+    return failure_count > tolerated, tolerated
+
+
 def main() -> int:
     args = parse_args()
     sources = load_sources(args.sources)
@@ -102,7 +116,24 @@ def main() -> int:
     state["since_year"] = args.since_year
     save_outputs(args.out_dir, recent, sources, state)
     print(f"Saved {len(recent)} papers from {len(sources)} sources; failures={len(failures)}")
-    return 1 if failures else 0
+
+    # 失败必须看得见：打成 Actions 注解顶到运行摘要，别只躺在日志里等人翻。
+    for failure in failures:
+        print(f"::warning title=论文源抓取失败::{failure}")
+
+    run_failed, tolerated = source_failure_verdict(len(failures), len(sources))
+    if run_failed:
+        print(
+            f"::error title=论文源大面积失败::{len(failures)}/{len(sources)} 个源抓取失败，"
+            f"超过容忍上限 {tolerated}，本次目录不提交。"
+        )
+        return 1
+    if failures:
+        print(
+            f"{len(failures)}/{len(sources)} 个源抓取失败（容忍上限 {tolerated}），"
+            "其余照常入库并提交；失败清单见 out/papers_state.json 的 failures 字段。"
+        )
+    return 0
 
 
 if __name__ == "__main__":

@@ -23,7 +23,13 @@ ARXIV_RE = re.compile(
     re.I,
 )
 DOI_RE = re.compile(r"(?:doi\.org/|doi:\s*)(?P<id>10\.\d{4,9}/[^\s\]\[<>)\"']+)", re.I)
-MARKDOWN_LINK_RE = re.compile(r"\[\[?([^\]]+)\]\]?\((https?://[^)\s]+)(?:\s+[^)]*)?\)")
+MARKDOWN_LINK_RE = re.compile(r"\[\[?([^\]]*)\]\]?\((https?://[^)\s]+)(?:\s+[^)]*)?\)")
+# 很多清单把条目写成 [![arXiv](img.shields.io/...)](https://arxiv.org/abs/...)。
+# 图片嵌在链接标签里会让上面的正则在内层 ] 闭合，抓走徽章图片地址而丢掉论文链接。
+# 解析前把这种「标签整个是一张图片」的链接塌成 [](target)，标签留空，
+# 交给既有的上下文取标题分支。只匹配这一种形态：裸露的 ![alt](img)（例如表格
+# 单元格 `![WACV](badge) GeneVA`）的 alt 属于内容，一并剥掉会把标题剩成残句。
+BADGE_LINK_RE = re.compile(r"\[!\[[^\]]*\]\([^)\s]*(?:\s+[^)]*)?\)\]\((https?://[^)\s]+)\)")
 RELATIVE_MARKDOWN_LINK_RE = re.compile(r"\[[^\]]+\]\((?!https?://)([^)#?]+\.md)(?:#[^)]*)?\)", re.I)
 REFERENCE_DEF_RE = re.compile(r"^\s*\[([^\]]+)\]:\s*(https?://\S+)\s*$", re.I | re.M)
 REFERENCE_LINK_RE = re.compile(r"\[([^\]]+)\]\[([^\]]+)\]")
@@ -286,6 +292,11 @@ def _strip_markdown(value: str) -> str:
 
 
 def _clean_title_candidate(value: str) -> str:
+    # 形如 **[2024-05-08] Emu: ...** 的前导日期/会议标签要成对去掉：只剥一个 '['
+    # 会留下游离的 ']'，_title_is_suspicious 会据此把整条标题判废。
+    # 只认日期和会议缩写两种形态，且后面必须还有内容——候选本身就是一对括号时
+    # （如 `[WeatherQA]`）该保留括号内的文字，那是标题本身。
+    value = re.sub(r"^\s*\[(?:\d{4}(?:[-/.]\d{1,2}){0,2}|[A-Za-z]{2,12}\s*'?\d{2,4})\]\s*(?=\S)", "", value)
     value = MARKDOWN_LINK_RE.sub(lambda item: item.group(1), value)
     value = HTML_LINK_RE.sub(lambda item: _strip_markdown(item.group(2)), value)
     value = _strip_markdown(value)
@@ -482,6 +493,9 @@ def _title_from_line(
     before = line[:match_start]
     wrapped_venue = before.rstrip().endswith("(")
     before = MARKDOWN_LINK_RE.sub(lambda item: item.group(1), before)
+    # 先剥一次行首的 (日期) / [标签]：_strip_markdown 会把行首的 "(" 当噪声删掉，
+    # 留下没有左括号的 "06 Jun 2026) Title"，下面那条括号规则就再也匹配不到了。
+    before = re.sub(r"^[\s\-*+>#]*\((?:[^()]{1,40})\)\s*(?=\S)", "", before)
     before = _strip_markdown(before)
     before = re.sub(r"^(?:\[[^]]+\]|\([^)]*\))\s*", "", before)
     before = before[-300:].strip(" |:;,-–—")
@@ -590,7 +604,7 @@ def parse_readme(source: PaperSource, readme: str, updated_at: str, first_seen_a
         key.casefold(): url.rstrip(".,;:")
         for key, url in REFERENCE_DEF_RE.findall(readme)
     }
-    lines = _logical_lines(readme)
+    lines = [BADGE_LINK_RE.sub(r"[](\1)", line) for line in _logical_lines(readme)]
     table_headers: list[str] = []
     previous_context = ""
     context_age = 99
@@ -656,7 +670,6 @@ def parse_readme(source: PaperSource, readme: str, updated_at: str, first_seen_a
             url = raw_url.rstrip(".,;:)")
             if url in seen_urls:
                 continue
-            seen_urls.add(url)
             title = _title_from_line(
                 raw_line,
                 label,
@@ -666,6 +679,11 @@ def parse_readme(source: PaperSource, readme: str, updated_at: str, first_seen_a
             )
             if _title_is_suspicious(title):
                 title = ""
+            if not title and not label.strip():
+                # 只有徽章、标题在别处的行。seen_urls 先到先得，这种行若把 URL
+                # 占掉，后面真正带标题的那行会被去重掉，所以不认领，换下一个候选。
+                continue
+            seen_urls.add(url)
             arxiv_match = ARXIV_RE.search(url)
             doi_match = DOI_RE.search(url)
             published_at, precision = _extract_date(f"{raw_line} {url}")
