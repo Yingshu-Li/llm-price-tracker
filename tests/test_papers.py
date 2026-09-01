@@ -3,6 +3,8 @@ from datetime import date
 from src.papers import (
     PaperSource,
     _structured_papers_to_markdown,
+    _title_from_cvf_url,
+    _title_from_html,
     _title_is_suspicious,
     apply_verified_metadata_cache,
     apply_verified_metadata_overrides,
@@ -28,11 +30,23 @@ def test_structured_feed_uses_title_field_instead_of_authors():
         "title": "CrossVL: Complexity-Aware Feature Routing",
         "authors": "Zhipeng Liu; Chunbo Luo",
         "arxiv": "https://arxiv.org/abs/2605.09802",
-    }], "example/cvpr")
+    }], "firetix/awesome-cvpr-2026-papers")
     papers = parse_readme(SOURCE, markdown, "2026-06-08", "2026-08-31")
     assert papers[0]["title"] == "CrossVL: Complexity-Aware Feature Routing"
     assert "Zhipeng Liu" not in papers[0]["title"]
     assert papers[0]["venue"] == "CVPR 2026"
+
+
+def test_audio_hub_structured_feed_uses_complete_title_not_abbreviation():
+    markdown = _structured_papers_to_markdown([{
+        "Abbreviation": "ACA-SER",
+        "Title": "Acoustic Cue Alignment in Audio Language Models for Speech Emotion Recognition",
+        "Time": "2026-06",
+        "Paper_Link": "https://arxiv.org/abs/2606.07309",
+    }], "AudioLLMs/Awesome-Audio-LLM")
+    papers = parse_readme(SOURCE, markdown, "2026-08-24", "2026-08-31")
+    assert papers[0]["title"] == "Acoustic Cue Alignment in Audio Language Models for Speech Emotion Recognition"
+    assert papers[0]["published_at"] == "2026-06"
 
 
 def test_structured_title_replaces_an_earlier_unverified_readme_title():
@@ -88,6 +102,40 @@ def test_conference_link_uses_preceding_bold_paper_title():
     ]
 
 
+def test_official_html_citation_title_is_preferred_over_page_chrome():
+    document = '<html><head><meta name="citation_title" content="A Complete Paper Title for Testing"><title>Short | Publisher</title></head></html>'
+    assert _title_from_html(document) == "A Complete Paper Title for Testing"
+
+
+def test_cvf_filename_recovers_full_title_from_conference_link():
+    url = "https://openaccess.thecvf.com/content/CVPR2026W/DG-EBF/papers/Ullah_Teresa_Uncertainty-Aware_Generalizable_Chest_X-ray_Report_Generation_and_Disease_Classification_CVPRW_2026_paper.pdf"
+    assert _title_from_cvf_url(url) == "Teresa Uncertainty-Aware Generalizable Chest X-ray Report Generation and Disease Classification"
+
+
+def test_domain_and_method_year_venue_labels_are_suspicious():
+    assert _title_is_suspicious("nature.com")
+    assert _title_is_suspicious("SiMGR | 2026 | AAAI")
+    assert _title_is_suspicious("WACV'26")
+    assert _title_is_suspicious("Workshop")
+    assert _title_is_suspicious("TPAMI'26")
+    assert _title_is_suspicious("IEEE TVCG")
+    assert _title_is_suspicious("arXiv cs.CV")
+    assert _title_is_suspicious("arXiv:ID")
+    assert _title_is_suspicious("���� corrupted title")
+
+
+def test_unverified_short_label_is_not_displayed_as_a_paper_title():
+    paper = {
+        "title": "VoxCPM2",
+        "published_at": "2026-06",
+        "date_precision": "month",
+        "venue": "arXiv preprint",
+        "source_repos": ["example/list"],
+        "metadata_sources": ["source README"],
+    }
+    assert filter_recent([paper], 2025) == []
+
+
 def test_parse_markdown_paper_with_source_metadata():
     readme = "- **Reasoning Better** — ACL 2026, [Paper](https://arxiv.org/abs/2604.12345)"
     papers = parse_readme(SOURCE, readme, "2026-08-29", "2026-08-30")
@@ -113,8 +161,8 @@ def test_merge_uses_arxiv_id_and_preserves_all_sources():
 def test_recent_filter_keeps_current_and_previous_year():
     year = date.today().year
     papers = [
-        {"title": "New Paper", "published_at": f"{year}-01-01", "venue": "arXiv", "source_repos": ["a"]},
-        {"title": "Old Paper", "published_at": f"{year - 2}-01-01", "venue": "arXiv", "source_repos": ["a"]},
+        {"title": "New Paper", "published_at": f"{year}-01-01", "venue": "arXiv", "source_repos": ["a"], "metadata_sources": ["arXiv"]},
+        {"title": "Old Paper", "published_at": f"{year - 2}-01-01", "venue": "arXiv", "source_repos": ["a"], "metadata_sources": ["arXiv"]},
     ]
     selected = filter_recent(papers, year - 1)
     assert [paper["title"] for paper in selected] == ["New Paper"]
@@ -127,8 +175,8 @@ def test_tool_link_with_paper_in_name_is_not_a_publication():
 
 def test_undated_entries_sort_after_dated_papers():
     papers = [
-        {"title": "Undated Paper", "published_at": "", "first_seen_at": "2026-08-29", "venue": "", "source_repos": ["a"]},
-        {"title": "Dated Paper", "published_at": "2025-01-01", "first_seen_at": "2025-01-02", "venue": "arXiv", "source_repos": ["a"]},
+        {"title": "Undated Paper", "published_at": "", "first_seen_at": "2026-08-29", "venue": "", "source_repos": ["a"], "metadata_sources": ["Crossref title"]},
+        {"title": "Dated Paper", "published_at": "2025-01-01", "first_seen_at": "2025-01-02", "venue": "arXiv", "source_repos": ["a"], "metadata_sources": ["arXiv"]},
     ]
     selected = filter_recent(papers, 2025)
     assert [paper["title"] for paper in selected] == ["Dated Paper", "Undated Paper"]

@@ -32,10 +32,22 @@ DATE_ONLY_TITLE_RE = re.compile(
 )
 VENUE_ONLY_TITLE_RE = re.compile(
     r"^\[?(?:arxiv|openreview|nature|science|cvpr|iccv|eccv|wacv|bmvc|siggraph(?:\s+asia)?|"
-    r"acm\s+(?:mm|mmasia)|acl|emnlp|naacl|eacl|iclr|icml|neurips(?:\s+db)?|aaai|ijcai)"
-    r"(?:\s+(?:spotlight|oral|poster))?(?:\s*[:#-]?\s*20\d{2})?\]?\s*$",
+    r"acm\s+(?:mm|mmasia)|acl|emnlp|naacl|eacl|coling|interspeech|icassp|ismir|iwslt|"
+    r"iclr|icml|neurips(?:\s+db)?|aaai|ijcai|kdd|sigir|chi|colm|corl|iros|icra|rss|aamas)"
+    r"(?:\s+(?:spotlight|oral|poster))?(?:\s*[:#-]?\s*(?:20\d{2}|'?\d{2}))?\]?\s*$",
     re.I,
 )
+
+VENUE_SHORTHAND_TITLE_RE = re.compile(
+    r"^(?:ieee\s+)?(?:tpami|tvcg|tmi|tip|tcsvt|ral|tmm|ijcv|eswa|eaai|"
+    r"neurocomputing|science\s+robotics)(?:\s*['’]?\d{2,4})?$",
+    re.I,
+)
+
+VERIFIED_TITLE_SOURCES = {
+    "verified source page", "Crossref title", "Semantic Scholar", "arXiv",
+    "structured source", "official paper page", "official page title",
+}
 
 CORE_CATEGORIES = {
     "Language", "Vision", "Vision-Language", "Image Generation", "Video",
@@ -48,7 +60,7 @@ PAPER_DOMAINS = (
     "proceedings.neurips.cc", "proceedings.mlr.press", "dl.acm.org",
     "ieeexplore.ieee.org", "link.springer.com", "nature.com/articles",
     "science.org/doi", "sciencedirect.com", "biorxiv.org", "medrxiv.org",
-    "pubmed.ncbi.nlm.nih.gov", "ojs.aaai.org", "journals.", "jmlr.org",
+    "pubmed.ncbi.nlm.nih.gov", "ojs.aaai.org", "jmlr.org",
     "openaccess.thecvf.com", "papers.nips.cc", "aaai.org/papers",
 )
 GENERIC_LABELS = {
@@ -69,6 +81,9 @@ SOURCE_STRUCTURED_FEEDS = {
     # Markdown pages place author/resource links close enough to paper links
     # that a generic Markdown parser can mistake an author list for a title.
     "firetix/awesome-cvpr-2026-papers": "data/cvpr2026_papers.json",
+    # The README intentionally shows abbreviations for browsing. The generated
+    # site dataset keeps the complete paper Title separate from Abbreviation.
+    "AudioLLMs/Awesome-Audio-LLM": "docs/data.json",
 }
 VERIFIED_METADATA_OVERRIDES = {
     "https://doi.org/10.1007/BF00992698": {
@@ -149,6 +164,27 @@ def load_sources(path: Path) -> list[PaperSource]:
     return sources
 
 
+def _repository_file(client: httpx.Client, repository: str, path: str) -> httpx.Response | None:
+    encoded_path = urllib.parse.quote(path, safe="/")
+    urls = (
+        f"https://raw.githubusercontent.com/{repository}/HEAD/{encoded_path}",
+        f"https://github.com/{repository}/raw/HEAD/{encoded_path}",
+    )
+    for url in urls:
+        for attempt in range(2):
+            try:
+                response = client.get(url)
+                if response.status_code == 200 and len(response.content) > 30:
+                    return response
+                if response.status_code not in {429, 500, 502, 503, 504}:
+                    break
+            except Exception:
+                pass
+            if attempt == 0:
+                time.sleep(2)
+    return None
+
+
 def _structured_papers_to_markdown(payload: object, repository: str) -> str:
     if not isinstance(payload, list):
         raise RuntimeError(f"structured paper feed is not a list for {repository}")
@@ -156,12 +192,22 @@ def _structured_papers_to_markdown(payload: object, repository: str) -> str:
     for item in payload:
         if not isinstance(item, dict):
             continue
-        title = re.sub(r"\s+", " ", str(item.get("title") or "")).strip()
-        url = str(item.get("arxiv") or item.get("cvf_html") or item.get("cvf_pdf") or "").strip()
+        title = re.sub(r"\s+", " ", str(item.get("title") or item.get("Title") or "")).strip()
+        url = str(
+            item.get("arxiv") or item.get("cvf_html") or item.get("cvf_pdf")
+            or item.get("Paper_Link") or ""
+        ).strip()
         if not title or not url.startswith(("http://", "https://")):
             continue
         title = title.replace("**", "")
-        lines.append(f"- **{title}** — CVPR 2026. [Paper]({url})")
+        details: list[str] = []
+        if repository == "firetix/awesome-cvpr-2026-papers":
+            details.append("CVPR 2026")
+        listed_time = str(item.get("Time") or "").strip()
+        if listed_time:
+            details.append(listed_time)
+        suffix = f" — {'. '.join(details)}." if details else ""
+        lines.append(f"- **{title}**{suffix} [Paper]({url})")
     if not lines:
         raise RuntimeError(f"structured paper feed contains no usable rows for {repository}")
     return "\n".join(lines)
@@ -170,27 +216,24 @@ def _structured_papers_to_markdown(payload: object, repository: str) -> str:
 def source_readme(client: httpx.Client, repository: str) -> tuple[str, str]:
     structured_path = SOURCE_STRUCTURED_FEEDS.get(repository)
     if structured_path:
-        url = f"https://github.com/{repository}/raw/HEAD/{urllib.parse.quote(structured_path, safe='/')}"
-        response = client.get(url)
-        response.raise_for_status()
+        response = _repository_file(client, repository, structured_path)
+        if response is None:
+            raise RuntimeError(f"structured paper feed unavailable for {repository}: {structured_path}")
         return _structured_papers_to_markdown(response.json(), repository), str(response.url)
     override_paths = SOURCE_DOCUMENT_OVERRIDES.get(repository)
     if override_paths:
         documents: list[str] = []
         first_url = ""
         for path in override_paths:
-            url = f"https://github.com/{repository}/raw/HEAD/{urllib.parse.quote(path, safe='/')}"
-            response = client.get(url)
-            response.raise_for_status()
-            if len(response.text) <= 30:
-                raise RuntimeError(f"paper document is empty for {repository}: {path}")
+            response = _repository_file(client, repository, path)
+            if response is None:
+                raise RuntimeError(f"paper document unavailable for {repository}: {path}")
             first_url = first_url or str(response.url)
             documents.append(response.text)
         return "\n".join(documents), first_url
     for name in ("README.md", "readme.md", "README.MD", "Readme.md"):
-        url = f"https://github.com/{repository}/raw/HEAD/{name}"
-        response = client.get(url)
-        if response.status_code == 200 and len(response.text) > 30:
+        response = _repository_file(client, repository, name)
+        if response is not None:
             readme = response.text
             extra_documents: list[str] = []
             seen_paths: set[str] = set()
@@ -199,9 +242,8 @@ def source_readme(client: httpx.Client, repository: str) -> tuple[str, str]:
                 if not path or path.casefold().startswith("readme") or path in seen_paths or ".." in path.split("/"):
                     continue
                 seen_paths.add(path)
-                extra_url = f"https://github.com/{repository}/raw/HEAD/{urllib.parse.quote(path, safe='/')}"
-                extra = client.get(extra_url)
-                if extra.status_code == 200 and len(extra.text) > 30:
+                extra = _repository_file(client, repository, path)
+                if extra is not None:
                     extra_documents.append(f"\n<!-- collected from {path} -->\n{extra.text}")
                 if len(extra_documents) >= 20:
                     break
@@ -260,10 +302,20 @@ def _link_label_is_generic(label: str) -> bool:
 
 
 def _title_is_suspicious(title: str) -> bool:
+    if "�" in title:
+        return True
     normalized = _strip_markdown(title)
     folded = normalized.casefold()
     folded_clean = folded.strip(" .,:;()[]")
-    if len(normalized) < 7 or folded_clean in GENERIC_LABELS:
+    if len(normalized) < 7 or folded_clean in {*GENERIC_LABELS, "workshop", "conference"}:
+        return True
+    if re.fullmatch(r"arxiv(?:\s+[a-z-]+(?:\.[a-z-]+)*)?", folded_clean, re.I):
+        return True
+    if re.fullmatch(r"arxiv\s*:\s*(?:id|xxxx(?:\.xxxxx)?)", folded_clean, re.I):
+        return True
+    if re.fullmatch(r"(?:www\.)?[a-z0-9-]+(?:\.[a-z0-9-]+)+", folded_clean, re.I):
+        return True
+    if "|" in normalized and re.search(r"\b20\d{2}\b", normalized):
         return True
     if normalized.count(";") >= 3:
         return True
@@ -271,7 +323,11 @@ def _title_is_suspicious(title: str) -> bool:
         return True
     venue_candidate = re.sub(r"[,.:;]+", " ", normalized).strip()
     venue_candidate = re.sub(r"\s+", " ", venue_candidate)
-    if DATE_ONLY_TITLE_RE.fullmatch(normalized) or VENUE_ONLY_TITLE_RE.fullmatch(venue_candidate):
+    if (
+        DATE_ONLY_TITLE_RE.fullmatch(normalized)
+        or VENUE_ONLY_TITLE_RE.fullmatch(venue_candidate)
+        or VENUE_SHORTHAND_TITLE_RE.fullmatch(venue_candidate)
+    ):
         return True
     if re.fullmatch(r"(?:image|images|figure|fig\.?|thumbnail|screenshot|图片|图像?|插图)(?:\s*\d+)?", normalized, re.I):
         return True
@@ -282,8 +338,32 @@ def _title_is_suspicious(title: str) -> bool:
     return False
 
 
+def _title_needs_metadata(title: str) -> bool:
+    """Return true for titles that deserve an authoritative metadata lookup.
+
+    Short project/model abbreviations are sometimes legitimate paper titles,
+    so they are not filtered. They are instead resolved through arXiv or DOI
+    metadata when available.
+    """
+    normalized = _strip_markdown(title)
+    if _title_is_suspicious(normalized):
+        return True
+    words = re.findall(r"[A-Za-z0-9][A-Za-z0-9.+_-]*", normalized)
+    return len(normalized) <= 32 and len(words) <= 3
+
+
+def _title_has_verified_metadata(paper: dict) -> bool:
+    return bool(VERIFIED_TITLE_SOURCES.intersection(paper.get("metadata_sources", [])))
+
+
 def _looks_like_paper(label: str, url: str, line: str) -> bool:
     lowered_url = url.casefold()
+    if "xxxx" in lowered_url or re.search(r"arxiv\.org/(?:abs|pdf)/(?:id|[a-z.-]+)$", lowered_url):
+        return False
+    if any(fragment in lowered_url for fragment in (
+        "arxiv.org/list/", "/recentissue.jsp", "/xpl/recentissue.jsp",
+    )):
+        return False
     lowered_label = _strip_markdown(label).casefold()
     if any(domain in lowered_url for domain in PAPER_DOMAINS):
         return True
@@ -651,9 +731,8 @@ def apply_verified_metadata_overrides(papers: Iterable[dict]) -> None:
 def _arxiv_metadata(client: httpx.Client, ids: list[str]) -> dict[str, dict]:
     result: dict[str, dict] = {}
     namespace = {"a": "http://www.w3.org/2005/Atom", "arxiv": "http://arxiv.org/schemas/atom"}
-    # arXiv supports large id_list batches; using 400 keeps a full rebuild
-    # practical while retaining the documented delay between API requests.
-    batch_size = 400
+    # Keep the query URL below common proxy/server limits.
+    batch_size = 100
     for offset in range(0, len(ids), batch_size):
         batch = ids[offset:offset + batch_size]
         root = None
@@ -758,11 +837,88 @@ def _crossref_metadata(client: httpx.Client, doi: str) -> dict:
     return {"title": title, "venue": venue, "published_at": published, "date_precision": precision}
 
 
+def _title_from_cvf_url(url: str) -> str:
+    path = urllib.parse.unquote(urllib.parse.urlsplit(url).path)
+    filename = path.rsplit("/", 1)[-1]
+    match = re.match(
+        r"^[^_]+_(.+?)_(?:CVPRW?|ICCVW?|ECCVW?|WACV)_20\d{2}_paper(?:\.pdf|\.html)?$",
+        filename,
+        re.I,
+    )
+    if not match:
+        return ""
+    return re.sub(r"\s+", " ", match.group(1).replace("_", " ")).strip()
+
+
+def _title_from_html(document: str) -> str:
+    for tag in re.findall(r"<meta\b[^>]*>", document, re.I):
+        attributes = {
+            key.casefold(): html.unescape(value).strip()
+            for key, _, value in re.findall(r"([:\w-]+)\s*=\s*([\"'])(.*?)\2", tag, re.I | re.S)
+        }
+        name = (attributes.get("name") or attributes.get("property") or "").casefold()
+        if name in {"citation_title", "dc.title", "dcterms.title", "og:title"}:
+            candidate = _clean_title_candidate(attributes.get("content", ""))
+            if candidate and not _title_is_suspicious(candidate):
+                return candidate
+    match = re.search(r"<title\b[^>]*>(.*?)</title>", document, re.I | re.S)
+    if not match:
+        return ""
+    candidate = _clean_title_candidate(match.group(1))
+    candidate = re.split(r"\s+(?:\||[-–—])\s+", candidate, maxsplit=1)[0].strip()
+    return candidate if not _title_is_suspicious(candidate) else ""
+
+
+def _webpage_title_metadata(client: httpx.Client, url: str) -> dict:
+    cvf_title = _title_from_cvf_url(url) if "openaccess.thecvf.com" in url.casefold() else ""
+    fetch_url = url
+    if cvf_title and "/papers/" in fetch_url and fetch_url.casefold().endswith(".pdf"):
+        fetch_url = fetch_url.replace("/papers/", "/html/")[:-4] + ".html"
+    ojs_match = re.search(r"(ojs\.aaai\.org/index\.php/AAAI/article)/(?:download|view)/(\d+)", url, re.I)
+    if ojs_match:
+        fetch_url = f"https://{ojs_match.group(1)}/view/{ojs_match.group(2)}"
+    response = client.get(fetch_url, headers={"Accept": "text/html,application/xhtml+xml"})
+    response.raise_for_status()
+    content_type = response.headers.get("content-type", "").casefold()
+    if "html" not in content_type and not response.text.lstrip().startswith("<"):
+        return {"title": cvf_title} if cvf_title else {}
+    title = _title_from_html(response.text)
+    title = title or cvf_title
+    return {"title": title} if title else {}
+
+
+def _is_supported_official_paper_page(url: str) -> bool:
+    lowered = url.casefold()
+    return any(pattern in lowered for pattern in (
+        "openaccess.thecvf.com/content/",
+        "ojs.aaai.org/index.php/aaai/article/",
+        "ieeexplore.ieee.org/abstract/document/",
+        "ieeexplore.ieee.org/document/",
+        "dl.acm.org/doi/",
+        "nature.com/articles/",
+        "sciencedirect.com/science/article/",
+        "pubmed.ncbi.nlm.nih.gov/",
+        "openreview.net/forum",
+        "openreview.net/pdf",
+        "aclanthology.org/",
+        "biorxiv.org/content/",
+        "medrxiv.org/content/",
+        "link.springer.com/article/",
+        "link.springer.com/chapter/",
+        "science.org/doi/",
+        "proceedings.neurips.cc/paper",
+        "proceedings.mlr.press/",
+        "jmlr.org/papers/",
+        "arxiv.org/abs/",
+        "arxiv.org/html/",
+    ))
+
+
 def enrich_missing_metadata(client: httpx.Client, papers: list[dict], max_items: int = 25000) -> None:
     needs = [
         paper for paper in papers
         if not paper.get("title")
-        or _title_is_suspicious(paper.get("title", ""))
+        or _title_needs_metadata(paper.get("title", ""))
         or not paper.get("published_at")
     ]
     arxiv_ids = list(dict.fromkeys(paper["arxiv_id"] for paper in needs if paper.get("arxiv_id")))[:max_items]
@@ -802,11 +958,12 @@ def enrich_missing_metadata(client: httpx.Client, papers: list[dict], max_items:
         paper for paper in papers
         if paper.get("doi") and (
             not paper.get("title")
-            or _title_is_suspicious(paper.get("title", ""))
+            or _title_needs_metadata(paper.get("title", ""))
             or not paper.get("published_at")
         )
     ]
-    for paper in doi_needs[:remaining]:
+    attempted_dois = doi_needs[:remaining]
+    for paper in attempted_dois:
         try:
             item = _crossref_metadata(client, paper["doi"])
             if item.get("title"):
@@ -822,6 +979,28 @@ def enrich_missing_metadata(client: httpx.Client, papers: list[dict], max_items:
                 paper["metadata_sources"].append("Crossref title")
         except Exception as exc:
             print(f"warning: Crossref metadata failed for {paper['doi']}: {exc}")
+            continue
+
+    remaining = max(0, remaining - len(attempted_dois))
+    webpage_needs = [
+        paper for paper in papers
+        if remaining
+        and paper.get("paper_url")
+        and _is_supported_official_paper_page(paper["paper_url"])
+        and _title_needs_metadata(paper.get("title", ""))
+        and not {"arXiv", "Semantic Scholar", "Crossref title", "verified source page", "structured source"}.intersection(
+            paper.get("metadata_sources", [])
+        )
+    ]
+    for paper in webpage_needs[:remaining]:
+        try:
+            item = _webpage_title_metadata(client, paper["paper_url"])
+            if item.get("title"):
+                paper["title"] = item["title"]
+                if "official page title" not in paper["metadata_sources"]:
+                    paper["metadata_sources"].append("official page title")
+        except Exception as exc:
+            print(f"warning: official page title failed for {paper['paper_url']}: {exc}")
             continue
 
     # A just-posted arXiv paper may not yet exist in either metadata index.
@@ -905,6 +1084,12 @@ def filter_recent(papers: Iterable[dict], since_year: int, max_without_date: int
             undated_by_source[source] = count + 1
         if not paper.get("title") or _title_is_suspicious(paper.get("title", "")):
             continue
+        # Very short labels are frequently model names, dataset names, venue
+        # shorthands, or site navigation copied from an awesome-list. They are
+        # displayed only after an authoritative metadata source confirms that
+        # the label is the actual paper title (or replaces it with the full one).
+        if _title_needs_metadata(paper.get("title", "")) and not _title_has_verified_metadata(paper):
+            continue
         paper["venue"] = paper.get("venue") or "Venue not specified"
         selected.append(paper)
     selected.sort(
@@ -935,6 +1120,8 @@ def validate_catalog(papers: Iterable[dict]) -> None:
         seen_ids.add(identifier)
         if _title_is_suspicious(paper.get("title", "")):
             problems.append(f"row {index}: suspicious title {paper.get('title')!r}")
+        if _title_needs_metadata(paper.get("title", "")) and not _title_has_verified_metadata(paper):
+            problems.append(f"row {index}: unverified short title {paper.get('title')!r}")
         precision = paper.get("date_precision", "unknown")
         value = paper.get("published_at", "")
         pattern = date_patterns.get(precision)

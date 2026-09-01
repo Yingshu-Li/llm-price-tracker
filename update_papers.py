@@ -102,7 +102,7 @@ def main() -> int:
     state["since_year"] = args.since_year
     save_outputs(args.out_dir, recent, sources, state)
     print(f"Saved {len(recent)} papers from {len(sources)} sources; failures={len(failures)}")
-    return 0
+    return 1 if failures else 0
 
 
 if __name__ == "__main__":
