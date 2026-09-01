@@ -40,7 +40,7 @@ def test_structured_feed_uses_title_field_instead_of_authors():
     papers = parse_readme(SOURCE, markdown, "2026-06-08", "2026-08-31")
     assert papers[0]["title"] == "CrossVL: Complexity-Aware Feature Routing"
     assert "Zhipeng Liu" not in papers[0]["title"]
-    assert papers[0]["venue"] == "arXiv"
+    assert papers[0]["venue"] == "CVPR 2026"
 
 
 def test_audio_hub_structured_feed_uses_complete_title_not_abbreviation():
@@ -147,7 +147,7 @@ def test_parse_markdown_paper_with_source_metadata():
     papers = parse_readme(SOURCE, readme, "2026-08-29", "2026-08-30")
     assert len(papers) == 1
     assert papers[0]["title"] == "Reasoning Better"
-    assert papers[0]["venue"] == "arXiv"
+    assert papers[0]["venue"].startswith("ACL")
     assert papers[0]["published_at"] == "2026-04"
     assert papers[0]["date_precision"] == "month"
     assert papers[0]["arxiv_id"] == "2604.12345"
@@ -261,12 +261,13 @@ def test_verified_metadata_cache_replaces_source_placeholders():
         "title": "Official Paper Title",
         "published_at": "2026-04-18",
         "date_precision": "day",
-        "venue": "arXiv preprint",
+        "venue": "CVPR 2026",
         "metadata_sources": ["source README", "arXiv"],
     }]
     apply_verified_metadata_cache(fresh, cached)
     assert fresh[0]["title"] == "Official Paper Title"
     assert fresh[0]["published_at"] == "2026-04-18"
+    assert fresh[0]["venue"] == "CVPR 2026"
     assert "arXiv" in fresh[0]["metadata_sources"]
 
 
@@ -297,8 +298,8 @@ def test_month_precision_never_displays_an_invented_first_day():
     assert selected[0]["published_at"] == "2026-04"
 
 
-def test_arxiv_link_always_uses_one_canonical_venue_badge():
-    variants = ["", "arxiv", "arXiv preprint", "CVPR 2026", "Venue not specified"]
+def test_arxiv_link_normalizes_only_missing_or_arxiv_venue_badges():
+    variants = ["", "arxiv", "arXiv.org", "arXiv preprint", "CVPR 2026", "Venue not specified"]
     papers = [{
         "title": "A Complete and Reliably Sourced Paper Title",
         "published_at": "2026-04",
@@ -311,7 +312,8 @@ def test_arxiv_link_always_uses_one_canonical_venue_badge():
     } for index, venue in enumerate(variants, start=1)]
 
     selected = filter_recent(papers, 2025)
-    assert {paper["venue"] for paper in selected} == {"arXiv"}
+    assert [paper["venue"] for paper in selected].count("arXiv") == 5
+    assert [paper["venue"] for paper in selected].count("CVPR 2026") == 1
 
     html_paper = parse_readme(
         SOURCE,

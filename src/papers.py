@@ -518,16 +518,15 @@ def _extract_date(text: str) -> tuple[str, str]:
 
 
 def _extract_venue(text: str, url: str) -> str:
-    # The site labels the source represented by the selected paper link. When
-    # that link is an arXiv record, keep one canonical badge regardless of a
-    # conference name mentioned elsewhere on the same awesome-list row.
-    if _is_arxiv_paper_url(url):
-        return "arXiv"
+    # Preserve an explicitly identified journal or conference even when the
+    # selected public paper link happens to be its arXiv version.
     for venue in VENUE_PATTERNS:
         if re.search(rf"(?<![A-Za-z]){re.escape(venue)}(?:\s+(?:Findings|Workshop))?(?:\s+20\d{{2}})?", text, re.I):
             match = re.search(rf"(?<![A-Za-z])({re.escape(venue)}(?:\s+(?:Findings|Workshop))?(?:\s+20\d{{2}})?)", text, re.I)
             if match:
                 return match.group(1)
+    if _is_arxiv_paper_url(url):
+        return "arXiv"
     if "openreview.net" in url.casefold():
         return "OpenReview"
     if "biorxiv.org" in url.casefold():
@@ -540,11 +539,20 @@ def _extract_venue(text: str, url: str) -> str:
 def _normalize_venue(paper: dict) -> str:
     """Return the canonical venue badge written to the public catalog."""
     venue = re.sub(r"\s+", " ", paper.get("venue") or "").strip()
+    if re.fullmatch(r"arxiv(?:\.org)?(?:\s+(?:preprint|paper|e-?print))?", venue, re.I):
+        return "arXiv"
+    if venue and venue.casefold() != "venue not specified":
+        return venue
     if _is_arxiv_paper_url(paper.get("paper_url") or ""):
         return "arXiv"
-    if re.fullmatch(r"arxiv(?:\s+(?:preprint|paper|e-?print))?", venue, re.I):
-        return "arXiv"
     return venue or "Venue not specified"
+
+
+def _venue_can_be_replaced_by_metadata(venue: str) -> bool:
+    normalized = re.sub(r"\s+", " ", venue or "").strip()
+    return not normalized or normalized.casefold() == "venue not specified" or bool(
+        re.fullmatch(r"arxiv(?:\.org)?(?:\s+(?:preprint|paper|e-?print))?", normalized, re.I)
+    )
 
 
 def normalize_title(title: str) -> str:
@@ -996,7 +1004,7 @@ def enrich_missing_metadata(client: httpx.Client, papers: list[dict], max_items:
                 continue
             if item.get("title"):
                 paper["title"] = item["title"]
-            if item.get("venue") and not paper.get("venue"):
+            if item.get("venue") and _venue_can_be_replaced_by_metadata(paper.get("venue", "")):
                 paper["venue"] = item["venue"]
             if item.get("published_at") and (not paper.get("published_at") or paper.get("date_precision") != "day"):
                 paper["published_at"] = item["published_at"]
@@ -1019,7 +1027,7 @@ def enrich_missing_metadata(client: httpx.Client, papers: list[dict], max_items:
             item = _crossref_metadata(client, paper["doi"])
             if item.get("title"):
                 paper["title"] = item["title"]
-            if item.get("venue") and not paper.get("venue"):
+            if item.get("venue") and _venue_can_be_replaced_by_metadata(paper.get("venue", "")):
                 paper["venue"] = item["venue"]
             if item.get("published_at") and (not paper.get("published_at") or paper.get("date_precision") != "day"):
                 paper["published_at"] = item["published_at"]
@@ -1099,7 +1107,7 @@ def apply_verified_metadata_cache(papers: Iterable[dict], cached_papers: Iterabl
         for field in ("title", "published_at", "date_precision"):
             if cached.get(field):
                 paper[field] = cached[field]
-        if not paper.get("venue") and cached.get("venue"):
+        if _venue_can_be_replaced_by_metadata(paper.get("venue", "")) and cached.get("venue"):
             paper["venue"] = cached["venue"]
         paper["metadata_sources"] = list(dict.fromkeys([
             *paper.get("metadata_sources", []), trusted_source,
