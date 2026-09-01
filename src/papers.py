@@ -769,16 +769,23 @@ def _arxiv_metadata(client: httpx.Client, ids: list[str]) -> dict[str, dict]:
                 response = client.get(
                     "https://export.arxiv.org/api/query",
                     params={"id_list": ",".join(batch), "max_results": len(batch)},
+                    timeout=15,
                 )
                 response.raise_for_status()
                 root = ET.fromstring(response.content)
                 break
             except Exception as exc:
+                status = getattr(getattr(exc, "response", None), "status_code", None)
+                if status == 429:
+                    print(
+                        f"warning: arXiv metadata rate-limited at batch "
+                        f"{offset // batch_size + 1}; keeping source titles"
+                    )
+                    return result
                 if attempt == 2:
                     print(f"warning: arXiv metadata batch {offset // batch_size + 1} failed: {exc}")
                 else:
-                    status = getattr(getattr(exc, "response", None), "status_code", None)
-                    time.sleep((60 if status == 429 else 5) * (attempt + 1))
+                    time.sleep(5 * (attempt + 1))
         if root is None:
             continue
         for entry in root.findall("a:entry", namespace):
@@ -807,10 +814,15 @@ def _semantic_scholar_arxiv_metadata(client: httpx.Client, ids: list[str]) -> di
                     "https://api.semanticscholar.org/graph/v1/paper/batch",
                     params={"fields": "title,publicationDate,venue,externalIds"},
                     json={"ids": [f"ARXIV:{identifier}" for identifier in batch]},
+                    timeout=15,
                 )
                 response.raise_for_status()
                 break
-            except Exception:
+            except Exception as exc:
+                status = getattr(getattr(exc, "response", None), "status_code", None)
+                if status == 429:
+                    response = None
+                    break
                 if attempt < 2:
                     time.sleep(5 * (attempt + 1))
                 else:
@@ -843,7 +855,11 @@ def _semantic_scholar_arxiv_metadata(client: httpx.Client, ids: list[str]) -> di
 
 def _crossref_metadata(client: httpx.Client, doi: str) -> dict:
     encoded = urllib.parse.quote(doi, safe="")
-    response = client.get(f"https://api.crossref.org/works/{encoded}", params={"mailto": "llm-price-tracker@users.noreply.github.com"})
+    response = client.get(
+        f"https://api.crossref.org/works/{encoded}",
+        params={"mailto": "llm-price-tracker@users.noreply.github.com"},
+        timeout=10,
+    )
     response.raise_for_status()
     message = response.json().get("message", {})
     title = (message.get("title") or [""])[0]
@@ -905,7 +921,11 @@ def _webpage_title_metadata(client: httpx.Client, url: str) -> dict:
     ojs_match = re.search(r"(ojs\.aaai\.org/index\.php/AAAI/article)/(?:download|view)/(\d+)", url, re.I)
     if ojs_match:
         fetch_url = f"https://{ojs_match.group(1)}/view/{ojs_match.group(2)}"
-    response = client.get(fetch_url, headers={"Accept": "text/html,application/xhtml+xml"})
+    response = client.get(
+        fetch_url,
+        headers={"Accept": "text/html,application/xhtml+xml"},
+        timeout=10,
+    )
     response.raise_for_status()
     content_type = response.headers.get("content-type", "").casefold()
     if "html" not in content_type and not response.text.lstrip().startswith("<"):
@@ -943,11 +963,15 @@ def _is_supported_official_paper_page(url: str) -> bool:
 
 
 def enrich_missing_metadata(client: httpx.Client, papers: list[dict], max_items: int = 25000) -> None:
+    # Enrichment is a title-quality fallback, not a requirement to turn every
+    # source-list month/year into a day. Attempting metadata for every undated
+    # row makes a full rebuild issue thousands of requests and can exceed the
+    # GitHub Actions time limit. Dates already present in successful title
+    # lookups are still accepted below.
     needs = [
         paper for paper in papers
         if not paper.get("title")
         or _title_needs_metadata(paper.get("title", ""))
-        or not paper.get("published_at")
     ]
     arxiv_ids = list(dict.fromkeys(paper["arxiv_id"] for paper in needs if paper.get("arxiv_id")))[:max_items]
     if arxiv_ids:
@@ -987,7 +1011,6 @@ def enrich_missing_metadata(client: httpx.Client, papers: list[dict], max_items:
         if paper.get("doi") and (
             not paper.get("title")
             or _title_needs_metadata(paper.get("title", ""))
-            or not paper.get("published_at")
         )
     ]
     attempted_dois = doi_needs[:remaining]
@@ -1020,7 +1043,9 @@ def enrich_missing_metadata(client: httpx.Client, papers: list[dict], max_items:
             paper.get("metadata_sources", [])
         )
     ]
-    for paper in webpage_needs[:remaining]:
+    # Official publisher pages are fetched one by one. Keep this last-resort
+    # phase bounded even when an upstream list suddenly changes its format.
+    for paper in webpage_needs[:min(remaining, 75)]:
         try:
             item = _webpage_title_metadata(client, paper["paper_url"])
             if item.get("title"):

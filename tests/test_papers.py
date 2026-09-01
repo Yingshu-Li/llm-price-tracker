@@ -1,5 +1,9 @@
 from datetime import date
 
+import httpx
+
+import src.papers as papers_module
+
 from src.papers import (
     PaperSource,
     _structured_papers_to_markdown,
@@ -13,6 +17,8 @@ from src.papers import (
     parse_readme,
     validate_catalog,
     _crossref_metadata,
+    _arxiv_metadata,
+    enrich_missing_metadata,
 )
 
 
@@ -420,6 +426,51 @@ def test_crossref_metadata_tolerates_null_date_parts():
     item = _crossref_metadata(Client(), "10.0000/example")
     assert item["title"] == "Reliable Title"
     assert item["published_at"] == ""
+
+
+def test_arxiv_rate_limit_stops_immediately_without_long_sleep(monkeypatch):
+    class Response:
+        status_code = 429
+        request = httpx.Request("GET", "https://export.arxiv.org/api/query")
+
+        def raise_for_status(self):
+            raise httpx.HTTPStatusError("rate limited", request=self.request, response=self)
+
+    class Client:
+        calls = 0
+
+        def get(self, *args, **kwargs):
+            self.calls += 1
+            return Response()
+
+    monkeypatch.setattr(
+        papers_module.time,
+        "sleep",
+        lambda *_: (_ for _ in ()).throw(AssertionError("429 must not trigger a long sleep")),
+    )
+    client = Client()
+    assert _arxiv_metadata(client, [f"2604.{index:05d}" for index in range(101)]) == {}
+    assert client.calls == 1
+
+
+def test_complete_title_without_exact_date_does_not_trigger_network_enrichment():
+    class Client:
+        def get(self, *args, **kwargs):
+            raise AssertionError("complete titles should not be fetched merely to add a date")
+
+        def post(self, *args, **kwargs):
+            raise AssertionError("complete titles should not be fetched merely to add a date")
+
+    paper = {
+        "title": "A Complete Paper Title Already Supplied by Its Curated Source",
+        "paper_url": "https://arxiv.org/abs/2604.12345",
+        "arxiv_id": "2604.12345",
+        "doi": "",
+        "published_at": "",
+        "metadata_sources": ["source README"],
+    }
+    enrich_missing_metadata(Client(), [paper], max_items=500)
+    assert paper["title"].startswith("A Complete Paper Title")
 
 
 def test_filter_recovers_precision_from_a_complete_cached_date():

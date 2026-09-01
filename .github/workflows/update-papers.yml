@@ -50,7 +50,7 @@ jobs:
 
           for attempt in 1 2 3; do
             echo "=== 论文更新尝试 ${attempt}/3 ===" | tee -a out/papers_update.log
-            if python -u update_papers.py --force --rebuild --max-enrich 2000 2>&1 | tee -a out/papers_update.log; then
+            if python -u update_papers.py --force --rebuild --max-enrich 500 2>&1 | tee -a out/papers_update.log; then
               update_succeeded=true
               break
             fi
