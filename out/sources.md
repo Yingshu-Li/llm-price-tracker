@@ -1,6 +1,6 @@
 # 数据源清单
 
-由 `update_prices.py` 于 2026-09-05T03:44:27 自动生成。
+由 `update_prices.py` 于 2026-09-06T03:47:32 自动生成。
 
 | 数据 Provider | 网页 | 抓取地址 | 许可 | 状态 | 记录数 |
 | --- | --- | --- | --- | --- | --- |
@@ -9,7 +9,6 @@
 | Anthropic 官方文档 | https://platform.claude.com/docs/en/about-claude/pricing | `https://platform.claude.com/docs/en/about-claude/pricing.md` | 厂商官方文档 | ✅ | 35 |
 | AWS Bedrock | https://aws.amazon.com/bedrock/pricing/ | `https://pricing.us-east-1.amazonaws.com/offers/v1.0/aws/AmazonBedrock/` | AWS 公开价格表 | ✅ | 793 |
 | AWS Bedrock | https://aws.amazon.com/bedrock/pricing/ | `https://pricing.us-east-1.amazonaws.com/offers/v1.0/aws/AmazonBedrockF` | AWS 公开价格表 | ✅ | 255 |
-| Azure AI Foundry | https://azure.microsoft.com/pricing/details/phi-3/ | `https://prices.azure.com/api/retail/prices?$filter=serviceName%20eq%20` | Azure 公开价格表 | ✅ | 167 |
 | Baichuan AI 官方价格 | https://platform.baichuan-ai.com/prices | `https://platform.baichuan-ai.com/prices` | 厂商官方价格页 | ✅ | 1 |
 | 百度千帆官方价格 | https://cloud.baidu.com/doc/qianfan/s/wmh4sv6ya | `https://cloud.baidu.com/doc/qianfan/s/wmh4sv6ya` | 厂商官方价格页 | ✅ | 17 |
 | BFL 官方按张价 | https://docs.bfl.ai/pricing | `https://bfl.ai/pricing` | 厂商官方价格页 | ✅ | 7 |
@@ -31,14 +30,14 @@
 | Luma Agents Ray 3.2 官方价格（人工核验） | https://docs.agents.lumalabs.ai/guides/pricing | `https://docs.agents.lumalabs.ai/guides/pricing` | 厂商官方价格页（人工核验快照） | ✅ | 3 |
 | MiniMax | https://platform.minimaxi.com/docs/guides/pricing-paygo | `https://platform.minimaxi.com/docs/guides/pricing-paygo` | 官方定价页 | ✅ | 2 |
 | MiniMax Video 官方按量价格（人工核验） | https://platform.minimax.io/docs/guides/pricing-paygo | `https://platform.minimax.io/docs/guides/pricing-paygo` | 厂商官方价格页（人工核验快照） | ✅ | 5 |
-| models.dev | https://models.dev | `https://models.dev/api.json` | MIT | ✅ | 6091 |
+| models.dev | https://models.dev | `https://models.dev/api.json` | MIT | ✅ | 6097 |
 | Moonshot AI / Kimi 官方文档 | https://platform.moonshot.ai/docs/pricing/chat-k3 | `https://platform.kimi.ai/docs/pricing/chat-k3.md` | 厂商官方文档 | ✅ | 4 |
 | Moonshot AI / Kimi 官方文档 | https://platform.moonshot.ai/docs/pricing/chat-k3 | `https://platform.kimi.ai/docs/pricing/chat-k27-code.md` | 厂商官方文档 | ✅ | 4 |
 | Moonshot AI / Kimi 官方文档 | https://platform.moonshot.ai/docs/pricing/chat-k3 | `https://platform.kimi.ai/docs/pricing/chat-k26.md` | 厂商官方文档 | ✅ | 4 |
 | Moonshot AI / Kimi 官方文档 | https://platform.moonshot.ai/docs/pricing/chat-k3 | `https://platform.kimi.ai/docs/models.md` | 厂商官方文档 | ✅ | 4 |
-| nano-gpt | https://nano-gpt.com | `https://nano-gpt.com/api/models` | 第三方转售价目 | ✅ | 66 |
+| nano-gpt | https://nano-gpt.com | `https://nano-gpt.com/api/models` | 第三方转售价目 | ✅ | 68 |
 | Novita AI | https://novita.ai/models | `https://api.novita.ai/v3/openai/models` | 公开 API | ✅ | 127 |
-| ofox | https://ofox.ai | `https://api.ofox.ai/v2/models/catalog?include=provider_price&limit=100` | 公开 API | ✅ | 143 |
+| ofox | https://ofox.ai | `https://api.ofox.ai/v2/models/catalog?include=provider_price&limit=100` | 公开 API | ✅ | 144 |
 | OpenAI 官方文档 | https://platform.openai.com/docs/pricing | `https://developers.openai.com/api/docs/pricing.md` | 厂商官方文档 | ✅ | 225 |
 | OpenRouter | https://openrouter.ai/models | `https://openrouter.ai/api/v1/models` | 公开 API | ✅ | 350 |
 | OVHcloud AI Endpoints | https://endpoints.ai.cloud.ovh.net | `https://catalog.endpoints.ai.ovh.net/rest/v2/openrouter` | 公开 API | ✅ | 12 |
@@ -61,6 +60,7 @@
 | xAI 官方文档 | https://docs.x.ai/docs/models | `https://docs.x.ai/developers/models.md` | 厂商官方文档 | ✅ | 19 |
 | Zhipu BigModel | https://open.bigmodel.cn/pricing | `https://open.bigmodel.cn/api/biz/operation/query?ids=1122` | 官方定价页 | ✅ | 6 |
 | Zhipu AI / GLM 官方文档 | https://docs.z.ai/guides/overview/pricing | `https://docs.z.ai/guides/overview/pricing.md` | 厂商官方文档 | ✅ | 28 |
+| Azure AI Foundry | https://azure.microsoft.com/pricing/details/phi-3/ | `https://prices.azure.com/api/retail/prices?$filter=serviceName%20eq%20` | Azure 公开价格表 | ❌ http_error | 0 |
 
 ## 说明
 
@@ -88,15 +88,15 @@ models.dev 的 `google.ts` 里写着 `cost: existing.cost`（价格取自手工�
 
 厂商改一个列头就会静默丢掉一个价格维度，所以认不出的东西必须报出来。
 
+- openai_md: 未识别的列头 `portrait`
+- openai_md: 未识别的列头 `pricing`
+- openai_md: 未识别的列头 `use case`
 - openai_md: 未识别的列头 `details`
 - openai_md: 未识别的列头 `estimated cost`
-- openai_md: 未识别的列头 `portrait`
-- openai_md: 未识别的列头 `category`
-- openai_md: 未识别的列头 `use case`
-- openai_md: 未识别的列头 `landscape`
 - openai_md: 未识别的列头 `size`
+- openai_md: 未识别的列头 `category`
 - openai_md: 未识别的列头 `training`
-- openai_md: 未识别的列头 `pricing`
+- openai_md: 未识别的列头 `landscape`
 - openai_md: 跳过表格「Grouped Pricing Table data」— 没有可识别的价格列
 - anthropic_md: 未识别的列头 `tool use system prompt token count`
 - anthropic_md: 未识别的列头 `additional input tokens`
