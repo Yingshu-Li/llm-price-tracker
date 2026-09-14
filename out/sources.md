@@ -1,6 +1,6 @@
 # 数据源清单
 
-由 `update_prices.py` 于 2026-09-13T04:02:30 自动生成。
+由 `update_prices.py` 于 2026-09-14T04:10:37 自动生成。
 
 | 数据 Provider | 网页 | 抓取地址 | 许可 | 状态 | 记录数 |
 | --- | --- | --- | --- | --- | --- |
@@ -25,13 +25,13 @@
 | Google Gemini API | https://ai.google.dev/gemini-api/docs/pricing | `https://ai.google.dev/gemini-api/docs/pricing` | 官方定价页 | ✅ | 2 |
 | Google Gemini Omni 1.1 Flash 官方价格（人工核验） | https://blog.google/innovation-and-ai/technology/developers-tools/build-with-gemini-omni-1-1-flash/ | `https://blog.google/innovation-and-ai/technology/developers-tools/buil` | 厂商官方价格页（人工核验快照） | ✅ | 4 |
 | Google Gemini API Veo 官方价格（人工核验） | https://ai.google.dev/gemini-api/docs/pricing | `https://ai.google.dev/gemini-api/docs/pricing` | 厂商官方价格页（人工核验快照） | ✅ | 7 |
-| HuggingFace Router | https://huggingface.co/models?inference_provider=all | `https://router.huggingface.co/v1/models` | 公开 API | ✅ | 198 |
+| HuggingFace Router | https://huggingface.co/models?inference_provider=all | `https://router.huggingface.co/v1/models` | 公开 API | ✅ | 197 |
 | iFLYTEK 星火 MaaS 官方价格 | https://maas.xfyun.cn/modelSquare | `https://maas.xfyun.cn/api/v1/gpt-finetune/model/base/list-v2?page=1&si` | 厂商官方公开接口 | ✅ | 2 |
-| LiteLLM | https://github.com/BerriAI/litellm | `https://cdn.jsdelivr.net/gh/BerriAI/litellm@main/model_prices_and_cont` | MIT | ✅ | 3089 |
+| LiteLLM | https://github.com/BerriAI/litellm | `https://cdn.jsdelivr.net/gh/BerriAI/litellm@main/model_prices_and_cont` | MIT | ✅ | 3126 |
 | Luma Agents Ray 3.2 官方价格（人工核验） | https://docs.agents.lumalabs.ai/guides/pricing | `https://docs.agents.lumalabs.ai/guides/pricing` | 厂商官方价格页（人工核验快照） | ✅ | 3 |
 | MiniMax | https://platform.minimaxi.com/docs/guides/pricing-paygo | `https://platform.minimax.cn/docs/guides/pricing-paygo` | 官方定价页 | ✅ | 2 |
 | MiniMax Video 官方按量价格（人工核验） | https://platform.minimax.io/docs/guides/pricing-paygo | `https://platform.minimax.io/docs/guides/pricing-paygo` | 厂商官方价格页（人工核验快照） | ✅ | 5 |
-| models.dev | https://models.dev | `https://models.dev/api.json` | MIT | ✅ | 6269 |
+| models.dev | https://models.dev | `https://models.dev/api.json` | MIT | ✅ | 6292 |
 | Moonshot AI / Kimi 官方文档 | https://platform.moonshot.ai/docs/pricing/chat-k3 | `https://platform.kimi.ai/docs/pricing/chat.md` | 厂商官方文档 | ✅ | 12 |
 | Moonshot AI / Kimi 官方文档 | https://platform.moonshot.ai/docs/pricing/chat-k3 | `https://platform.kimi.ai/docs/pricing/chat.md` | 厂商官方文档 | ✅ | 12 |
 | Moonshot AI / Kimi 官方文档 | https://platform.moonshot.ai/docs/pricing/chat-k3 | `https://platform.kimi.ai/docs/pricing/chat.md` | 厂商官方文档 | ✅ | 12 |
@@ -88,16 +88,16 @@ models.dev 的 `google.ts` 里写着 `cost: existing.cost`（价格取自手工�
 
 厂商改一个列头就会静默丢掉一个价格维度，所以认不出的东西必须报出来。
 
-- openai_md: 未识别的列头 `details`
 - openai_md: 未识别的列头 `portrait`
-- openai_md: 未识别的列头 `size`
-- openai_md: 未识别的列头 `price per minute`
-- openai_md: 未识别的列头 `category`
-- openai_md: 未识别的列头 `training`
-- openai_md: 未识别的列头 `use case`
 - openai_md: 未识别的列头 `landscape`
+- openai_md: 未识别的列头 `size`
+- openai_md: 未识别的列头 `training`
 - openai_md: 未识别的列头 `pricing`
 - openai_md: 未识别的列头 `estimated cost`
+- openai_md: 未识别的列头 `category`
+- openai_md: 未识别的列头 `price per minute`
+- openai_md: 未识别的列头 `details`
+- openai_md: 未识别的列头 `use case`
 - openai_md: 跳过表格「Pricing Table data」— 没有可识别的价格列
 - openai_md: 跳过表格「Grouped Pricing Table data」— 没有可识别的价格列
 - anthropic_md: 未识别的列头 `additional input tokens`
@@ -131,5 +131,5 @@ models.dev 的 `google.ts` 里写着 `cost: existing.cost`（价格取自手工�
 - pruna_official_verified: 价格页无法稳定服务端渲染，当前使用 2026-08-28T00:00:00+10:00 人工核验快照；URL 与原文摘录已保留
 - bfl_official: 以下条目不是按张计价，未纳入按张表（不做跨单位换算）：FLUX 3 Upscale [creative](megapixel-second), FLUX 3 Upscale [precise](megapixel-second), FLUX 3 Video(second), FLUX 3 Video Draft(second), FLUX Deblur(megapixel), FLUX Erase(megapixel), FLUX Outpainting [fast](megapixel), FLUX Outpainting [high](megapixel), FLUX VTO(megapixel), FLUX Video Edit [fast](second), FLUX.2 [flex](megapixel), FLUX.2 [klein] 4B(megapixel), FLUX.2 [klein] 9B(megapixel), FLUX.2 [max](megapixel), FLUX.2 [pro](megapixel)
 - upstage_official_html: 官方价格页未找到 Embed 的 1M token 价格
-- nanogpt: 137 条无法归属公司已丢弃（不硬塞）
+- nanogpt: 139 条无法归属公司已丢弃（不硬塞）
 - google_audio: 找到 $0.08 per song，但前面没有核验表里的行标签（最近几格：['Paid Tier, per request in USD', 'Lyria 3.5 (Full Song)', 'Not available']）。页面结构可能变了，需人工确认后更新 _ROW_TO_MODEL，**不要**改成模糊匹配。
