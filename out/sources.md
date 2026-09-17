@@ -1,6 +1,6 @@
 # 数据源清单
 
-由 `update_prices.py` 于 2026-09-16T04:06:24 自动生成。
+由 `update_prices.py` 于 2026-09-17T04:13:21 自动生成。
 
 | 数据 Provider | 网页 | 抓取地址 | 许可 | 状态 | 记录数 |
 | --- | --- | --- | --- | --- | --- |
@@ -9,7 +9,7 @@
 | Anthropic 官方文档 | https://platform.claude.com/docs/en/about-claude/pricing | `https://platform.claude.com/docs/en/about-claude/pricing.md` | 厂商官方文档 | ✅ | 35 |
 | AWS Bedrock | https://aws.amazon.com/bedrock/pricing/ | `https://pricing.us-east-1.amazonaws.com/offers/v1.0/aws/AmazonBedrock/` | AWS 公开价格表 | ✅ | 793 |
 | AWS Bedrock | https://aws.amazon.com/bedrock/pricing/ | `https://pricing.us-east-1.amazonaws.com/offers/v1.0/aws/AmazonBedrockF` | AWS 公开价格表 | ✅ | 255 |
-| Azure AI Foundry | https://azure.microsoft.com/pricing/details/phi-3/ | `https://prices.azure.com/api/retail/prices?$filter=serviceName%20eq%20` | Azure 公开价格表 | ✅ | 172 |
+| Azure AI Foundry | https://azure.microsoft.com/pricing/details/phi-3/ | `https://prices.azure.com/api/retail/prices?$filter=serviceName%20eq%20` | Azure 公开价格表 | ✅ | 175 |
 | Baichuan AI 官方价格 | https://platform.baichuan-ai.com/prices | `https://platform.baichuan-ai.com/prices` | 厂商官方价格页 | ✅ | 1 |
 | 百度千帆官方价格 | https://cloud.baidu.com/doc/qianfan/s/wmh4sv6ya | `https://cloud.baidu.com/doc/qianfan/s/wmh4sv6ya` | 厂商官方价格页 | ✅ | 17 |
 | BFL 官方按张价 | https://docs.bfl.ai/pricing | `https://bfl.ai/pricing` | 厂商官方价格页 | ✅ | 7 |
@@ -25,13 +25,13 @@
 | Google Gemini API | https://ai.google.dev/gemini-api/docs/pricing | `https://ai.google.dev/gemini-api/docs/pricing` | 官方定价页 | ✅ | 2 |
 | Google Gemini Omni 1.1 Flash 官方价格（人工核验） | https://blog.google/innovation-and-ai/technology/developers-tools/build-with-gemini-omni-1-1-flash/ | `https://blog.google/innovation-and-ai/technology/developers-tools/buil` | 厂商官方价格页（人工核验快照） | ✅ | 4 |
 | Google Gemini API Veo 官方价格（人工核验） | https://ai.google.dev/gemini-api/docs/pricing | `https://ai.google.dev/gemini-api/docs/pricing` | 厂商官方价格页（人工核验快照） | ✅ | 7 |
-| HuggingFace Router | https://huggingface.co/models?inference_provider=all | `https://router.huggingface.co/v1/models` | 公开 API | ✅ | 196 |
+| HuggingFace Router | https://huggingface.co/models?inference_provider=all | `https://router.huggingface.co/v1/models` | 公开 API | ✅ | 197 |
 | iFLYTEK 星火 MaaS 官方价格 | https://maas.xfyun.cn/modelSquare | `https://maas.xfyun.cn/api/v1/gpt-finetune/model/base/list-v2?page=1&si` | 厂商官方公开接口 | ✅ | 2 |
-| LiteLLM | https://github.com/BerriAI/litellm | `https://cdn.jsdelivr.net/gh/BerriAI/litellm@main/model_prices_and_cont` | MIT | ✅ | 3160 |
+| LiteLLM | https://github.com/BerriAI/litellm | `https://cdn.jsdelivr.net/gh/BerriAI/litellm@main/model_prices_and_cont` | MIT | ✅ | 3303 |
 | Luma Agents Ray 3.2 官方价格（人工核验） | https://docs.agents.lumalabs.ai/guides/pricing | `https://docs.agents.lumalabs.ai/guides/pricing` | 厂商官方价格页（人工核验快照） | ✅ | 3 |
 | MiniMax | https://platform.minimaxi.com/docs/guides/pricing-paygo | `https://platform.minimax.cn/docs/guides/pricing-paygo` | 官方定价页 | ✅ | 2 |
 | MiniMax Video 官方按量价格（人工核验） | https://platform.minimax.io/docs/guides/pricing-paygo | `https://platform.minimax.io/docs/guides/pricing-paygo` | 厂商官方价格页（人工核验快照） | ✅ | 5 |
-| models.dev | https://models.dev | `https://models.dev/api.json` | MIT | ✅ | 6343 |
+| models.dev | https://models.dev | `https://models.dev/api.json` | MIT | ✅ | 6364 |
 | Moonshot AI / Kimi 官方文档 | https://platform.moonshot.ai/docs/pricing/chat-k3 | `https://platform.kimi.ai/docs/pricing/chat.md` | 厂商官方文档 | ✅ | 12 |
 | Moonshot AI / Kimi 官方文档 | https://platform.moonshot.ai/docs/pricing/chat-k3 | `https://platform.kimi.ai/docs/pricing/chat.md` | 厂商官方文档 | ✅ | 12 |
 | Moonshot AI / Kimi 官方文档 | https://platform.moonshot.ai/docs/pricing/chat-k3 | `https://platform.kimi.ai/docs/pricing/chat.md` | 厂商官方文档 | ✅ | 12 |
@@ -89,21 +89,21 @@ models.dev 的 `google.ts` 里写着 `cost: existing.cost`（价格取自手工�
 厂商改一个列头就会静默丢掉一个价格维度，所以认不出的东西必须报出来。
 
 - openai_md: 未识别的列头 `category`
-- openai_md: 未识别的列头 `details`
-- openai_md: 未识别的列头 `price per minute`
+- openai_md: 未识别的列头 `pricing`
+- openai_md: 未识别的列头 `portrait`
+- openai_md: 未识别的列头 `landscape`
+- openai_md: 未识别的列头 `training`
 - openai_md: 未识别的列头 `use case`
 - openai_md: 未识别的列头 `size`
-- openai_md: 未识别的列头 `pricing`
+- openai_md: 未识别的列头 `price per minute`
+- openai_md: 未识别的列头 `details`
 - openai_md: 未识别的列头 `estimated cost`
-- openai_md: 未识别的列头 `portrait`
-- openai_md: 未识别的列头 `training`
-- openai_md: 未识别的列头 `landscape`
 - openai_md: 跳过表格「Pricing Table data」— 没有可识别的价格列
 - openai_md: 跳过表格「Grouped Pricing Table data」— 没有可识别的价格列
-- anthropic_md: 未识别的列头 `tool use system prompt token count`
-- anthropic_md: 未识别的列头 `additional input tokens`
 - anthropic_md: 未识别的列头 `tool choice`
+- anthropic_md: 未识别的列头 `tool use system prompt token count`
 - anthropic_md: 未识别的列头 `cache hits and refreshes`
+- anthropic_md: 未识别的列头 `additional input tokens`
 - anthropic_md: 跳过表格「Claude Platform on AWS pricing」— 找不到模型/工具名列
 - anthropic_md: 跳过表格「Claude in Microsoft Foundry pricing」— 找不到模型/工具名列
 - anthropic_md: 跳过表格「Prompt caching」— 找不到模型/工具名列
