@@ -1,7 +1,7 @@
 {
-  "generated_at": "2026-09-20T06:19:44+00:00",
+  "generated_at": "2026-09-21T06:23:46+00:00",
   "source_count": 79,
-  "paper_count": 16911,
+  "paper_count": 16912,
   "page_size": 200,
   "categories": {
     "core": [
@@ -89,6 +89,36 @@
       "metadata_sources": [
         "source README",
         "arXiv"
+      ]
+    },
+    {
+      "id": "a488fcee332c1c10",
+      "title": "LLaDA-Image: Building Strong Image Generators with Fully Open Training Recipes",
+      "venue": "arXiv",
+      "published_at": "2026-09-03",
+      "date_precision": "day",
+      "first_seen_at": "2026-09-21",
+      "source_updated_at": "2026-09-21",
+      "paper_url": "https://arxiv.org/pdf/2609.03796",
+      "arxiv_id": "2609.03796",
+      "doi": "",
+      "group": "Core Technology",
+      "category": "Image Generation",
+      "categories": [
+        "Image Generation"
+      ],
+      "subcategories": [
+        "General Diffusion"
+      ],
+      "source_repos": [
+        "huan-yin/Awesome-Image-Generation-Model"
+      ],
+      "source_urls": [
+        "https://github.com/huan-yin/Awesome-Image-Generation-Model"
+      ],
+      "metadata_sources": [
+        "source README",
+        "Semantic Scholar"
       ]
     },
     {
@@ -4461,7 +4491,8 @@
       ],
       "metadata_sources": [
         "source README",
-        "arXiv"
+        "arXiv",
+        "Semantic Scholar"
       ]
     },
     {
@@ -4825,7 +4856,8 @@
       ],
       "metadata_sources": [
         "source README",
-        "arXiv"
+        "arXiv",
+        "Semantic Scholar"
       ]
     },
     {
@@ -25164,7 +25196,8 @@
       ],
       "metadata_sources": [
         "source README",
-        "arXiv"
+        "arXiv",
+        "Semantic Scholar"
       ]
     },
     {
@@ -25500,7 +25533,8 @@
       ],
       "metadata_sources": [
         "source README",
-        "arXiv"
+        "arXiv",
+        "Semantic Scholar"
       ]
     },
     {
@@ -25696,7 +25730,7 @@
       "published_at": "2026-07-21",
       "date_precision": "day",
       "first_seen_at": "2026-08-31",
-      "source_updated_at": "2026-09-04",
+      "source_updated_at": "2026-09-21",
       "paper_url": "https://arxiv.org/pdf/2607.19064",
       "arxiv_id": "2607.19064",
       "doi": "",
@@ -25850,7 +25884,7 @@
       "published_at": "2026-07-14",
       "date_precision": "day",
       "first_seen_at": "2026-08-31",
-      "source_updated_at": "2026-09-18",
+      "source_updated_at": "2026-09-21",
       "paper_url": "https://arxiv.org/pdf/2607.13125",
       "arxiv_id": "2607.13125",
       "doi": "",
@@ -26401,6 +26435,40 @@
       "metadata_sources": [
         "source README",
         "Semantic Scholar"
+      ]
+    },
+    {
+      "id": "f8c0e20fe01ab3d3",
+      "title": "Vision as Unified Multimodal Generation (SenseNova-Vision)",
+      "venue": "arXiv",
+      "published_at": "2026-07",
+      "date_precision": "month",
+      "first_seen_at": "2026-08-31",
+      "source_updated_at": "2026-09-21",
+      "paper_url": "https://arxiv.org/abs/2607.06560",
+      "arxiv_id": "2607.06560",
+      "doi": "",
+      "group": "Core Technology",
+      "category": "Vision-Language",
+      "categories": [
+        "Vision-Language",
+        "Image Generation"
+      ],
+      "subcategories": [
+        "Multimodal Modeling",
+        "General Diffusion"
+      ],
+      "source_repos": [
+        "OpenEnvision/Awesome-Multimodal-Modeling",
+        "huan-yin/Awesome-Image-Generation-Model"
+      ],
+      "source_urls": [
+        "https://github.com/OpenEnvision/Awesome-Multimodal-Modeling",
+        "https://github.com/huan-yin/Awesome-Image-Generation-Model"
+      ],
+      "metadata_sources": [
+        "source README",
+        "arXiv identifier"
       ]
     },
     {
@@ -30894,40 +30962,6 @@
       ],
       "source_urls": [
         "https://github.com/gudo7208/awesome-ai4cad"
-      ],
-      "metadata_sources": [
-        "source README",
-        "arXiv identifier"
-      ]
-    },
-    {
-      "id": "f8c0e20fe01ab3d3",
-      "title": "Vision as Unified Multimodal Generation (SenseNova-Vision)",
-      "venue": "arXiv",
-      "published_at": "2026-07",
-      "date_precision": "month",
-      "first_seen_at": "2026-08-31",
-      "source_updated_at": "2026-09-14",
-      "paper_url": "https://arxiv.org/abs/2607.06560",
-      "arxiv_id": "2607.06560",
-      "doi": "",
-      "group": "Core Technology",
-      "category": "Vision-Language",
-      "categories": [
-        "Vision-Language",
-        "Image Generation"
-      ],
-      "subcategories": [
-        "Multimodal Modeling",
-        "General Diffusion"
-      ],
-      "source_repos": [
-        "OpenEnvision/Awesome-Multimodal-Modeling",
-        "huan-yin/Awesome-Image-Generation-Model"
-      ],
-      "source_urls": [
-        "https://github.com/OpenEnvision/Awesome-Multimodal-Modeling",
-        "https://github.com/huan-yin/Awesome-Image-Generation-Model"
       ],
       "metadata_sources": [
         "source README",
@@ -41391,7 +41425,7 @@
       "published_at": "2026-06-21",
       "date_precision": "day",
       "first_seen_at": "2026-08-31",
-      "source_updated_at": "2026-09-04",
+      "source_updated_at": "2026-09-21",
       "paper_url": "https://arxiv.org/pdf/2606.22568",
       "arxiv_id": "2606.22568",
       "doi": "",
@@ -41684,7 +41718,8 @@
       ],
       "metadata_sources": [
         "source README",
-        "arXiv"
+        "arXiv",
+        "Semantic Scholar"
       ]
     },
     {
@@ -41889,6 +41924,36 @@
       ]
     },
     {
+      "id": "488e10ea134507f9",
+      "title": "i1: A Simple and Fully Open Recipe for Strong Text-to-Image Models",
+      "venue": "arXiv",
+      "published_at": "2026-06-09",
+      "date_precision": "day",
+      "first_seen_at": "2026-08-31",
+      "source_updated_at": "2026-09-21",
+      "paper_url": "https://arxiv.org/pdf/2606.11289",
+      "arxiv_id": "2606.11289",
+      "doi": "",
+      "group": "Core Technology",
+      "category": "Image Generation",
+      "categories": [
+        "Image Generation"
+      ],
+      "subcategories": [
+        "General Diffusion"
+      ],
+      "source_repos": [
+        "huan-yin/Awesome-Image-Generation-Model"
+      ],
+      "source_urls": [
+        "https://github.com/huan-yin/Awesome-Image-Generation-Model"
+      ],
+      "metadata_sources": [
+        "source README",
+        "Semantic Scholar"
+      ]
+    },
+    {
       "id": "dc8ec7619cde9441",
       "title": "WorldOlympiad: Can Your World Model Survive a Triathlon?",
       "venue": "arXiv",
@@ -41916,36 +41981,6 @@
       "source_urls": [
         "https://github.com/zli12321/Vision-Language-Models-Overview",
         "https://github.com/junyuan-fang/awesome-physical-ai"
-      ],
-      "metadata_sources": [
-        "source README",
-        "Semantic Scholar"
-      ]
-    },
-    {
-      "id": "488e10ea134507f9",
-      "title": "i1: A Simple and Fully Open Recipe for Strong Text-to-Image Models",
-      "venue": "arXiv",
-      "published_at": "2026-06-09",
-      "date_precision": "day",
-      "first_seen_at": "2026-08-31",
-      "source_updated_at": "2026-09-04",
-      "paper_url": "https://arxiv.org/pdf/2606.11289",
-      "arxiv_id": "2606.11289",
-      "doi": "",
-      "group": "Core Technology",
-      "category": "Image Generation",
-      "categories": [
-        "Image Generation"
-      ],
-      "subcategories": [
-        "General Diffusion"
-      ],
-      "source_repos": [
-        "huan-yin/Awesome-Image-Generation-Model"
-      ],
-      "source_urls": [
-        "https://github.com/huan-yin/Awesome-Image-Generation-Model"
       ],
       "metadata_sources": [
         "source README",
@@ -42051,7 +42086,8 @@
       ],
       "metadata_sources": [
         "structured source",
-        "arXiv"
+        "arXiv",
+        "Semantic Scholar"
       ]
     },
     {
@@ -42081,7 +42117,8 @@
       ],
       "metadata_sources": [
         "structured source",
-        "arXiv"
+        "arXiv",
+        "Semantic Scholar"
       ]
     },
     {
@@ -42352,6 +42389,51 @@
       "metadata_sources": [
         "source README",
         "Semantic Scholar"
+      ]
+    },
+    {
+      "id": "1507776659e699c9",
+      "title": "Cosmos 3: Omnimodal World Models for Physical AI",
+      "venue": "arXiv",
+      "published_at": "2026-06",
+      "date_precision": "month",
+      "first_seen_at": "2026-08-29",
+      "source_updated_at": "2026-09-21",
+      "paper_url": "https://arxiv.org/abs/2606.02800",
+      "arxiv_id": "2606.02800",
+      "doi": "",
+      "group": "Core Technology",
+      "category": "Vision-Language",
+      "categories": [
+        "Vision-Language",
+        "Video",
+        "Image Generation"
+      ],
+      "subcategories": [
+        "General VLM",
+        "MLLM Overview",
+        "Video Generation",
+        "OCR / Document VLM",
+        "General Diffusion"
+      ],
+      "source_repos": [
+        "zli12321/Vision-Language-Models-Overview",
+        "BradyFU/Awesome-Multimodal-Large-Language-Models",
+        "kongzhecn/awesome-video-generation",
+        "Yuliang-Liu/AWESOME-OCR-LLM",
+        "huan-yin/Awesome-Image-Generation-Model"
+      ],
+      "source_urls": [
+        "https://github.com/zli12321/Vision-Language-Models-Overview",
+        "https://github.com/BradyFU/Awesome-Multimodal-Large-Language-Models",
+        "https://github.com/kongzhecn/awesome-video-generation",
+        "https://github.com/Yuliang-Liu/AWESOME-OCR-LLM",
+        "https://github.com/huan-yin/Awesome-Image-Generation-Model"
+      ],
+      "metadata_sources": [
+        "source README",
+        "verified source page",
+        "arXiv identifier"
       ]
     },
     {
@@ -44274,51 +44356,6 @@
       ],
       "metadata_sources": [
         "source README",
-        "arXiv identifier"
-      ]
-    },
-    {
-      "id": "1507776659e699c9",
-      "title": "Cosmos 3: Omnimodal World Models for Physical AI",
-      "venue": "arXiv",
-      "published_at": "2026-06",
-      "date_precision": "month",
-      "first_seen_at": "2026-08-29",
-      "source_updated_at": "2026-09-18",
-      "paper_url": "https://arxiv.org/abs/2606.02800",
-      "arxiv_id": "2606.02800",
-      "doi": "",
-      "group": "Core Technology",
-      "category": "Vision-Language",
-      "categories": [
-        "Vision-Language",
-        "Video",
-        "Image Generation"
-      ],
-      "subcategories": [
-        "General VLM",
-        "MLLM Overview",
-        "Video Generation",
-        "OCR / Document VLM",
-        "General Diffusion"
-      ],
-      "source_repos": [
-        "zli12321/Vision-Language-Models-Overview",
-        "BradyFU/Awesome-Multimodal-Large-Language-Models",
-        "kongzhecn/awesome-video-generation",
-        "Yuliang-Liu/AWESOME-OCR-LLM",
-        "huan-yin/Awesome-Image-Generation-Model"
-      ],
-      "source_urls": [
-        "https://github.com/zli12321/Vision-Language-Models-Overview",
-        "https://github.com/BradyFU/Awesome-Multimodal-Large-Language-Models",
-        "https://github.com/kongzhecn/awesome-video-generation",
-        "https://github.com/Yuliang-Liu/AWESOME-OCR-LLM",
-        "https://github.com/huan-yin/Awesome-Image-Generation-Model"
-      ],
-      "metadata_sources": [
-        "source README",
-        "verified source page",
         "arXiv identifier"
       ]
     },
@@ -60467,6 +60504,36 @@
       ]
     },
     {
+      "id": "06b01a94d31b02ba",
+      "title": "Lens: Rethinking Training Efficiency for Foundational Text-to-Image Models",
+      "venue": "arXiv",
+      "published_at": "2026-05-20",
+      "date_precision": "day",
+      "first_seen_at": "2026-08-31",
+      "source_updated_at": "2026-09-21",
+      "paper_url": "https://arxiv.org/pdf/2605.21573",
+      "arxiv_id": "2605.21573",
+      "doi": "",
+      "group": "Core Technology",
+      "category": "Image Generation",
+      "categories": [
+        "Image Generation"
+      ],
+      "subcategories": [
+        "General Diffusion"
+      ],
+      "source_repos": [
+        "huan-yin/Awesome-Image-Generation-Model"
+      ],
+      "source_urls": [
+        "https://github.com/huan-yin/Awesome-Image-Generation-Model"
+      ],
+      "metadata_sources": [
+        "source README",
+        "Semantic Scholar"
+      ]
+    },
+    {
       "id": "c2e2cbf523b4f0e0",
       "title": "Lost in Fog: Sensor Perturbations Expose Reasoning Fragility in Driving VLAs",
       "venue": "arXiv",
@@ -60490,36 +60557,6 @@
       ],
       "source_urls": [
         "https://github.com/zli12321/Vision-Language-Models-Overview"
-      ],
-      "metadata_sources": [
-        "source README",
-        "Semantic Scholar"
-      ]
-    },
-    {
-      "id": "06b01a94d31b02ba",
-      "title": "Lens: Rethinking Training Efficiency for Foundational Text-to-Image Models",
-      "venue": "arXiv",
-      "published_at": "2026-05-20",
-      "date_precision": "day",
-      "first_seen_at": "2026-08-31",
-      "source_updated_at": "2026-09-04",
-      "paper_url": "https://arxiv.org/pdf/2605.21573",
-      "arxiv_id": "2605.21573",
-      "doi": "",
-      "group": "Core Technology",
-      "category": "Image Generation",
-      "categories": [
-        "Image Generation"
-      ],
-      "subcategories": [
-        "General Diffusion"
-      ],
-      "source_repos": [
-        "huan-yin/Awesome-Image-Generation-Model"
-      ],
-      "source_urls": [
-        "https://github.com/huan-yin/Awesome-Image-Generation-Model"
       ],
       "metadata_sources": [
         "source README",
@@ -61019,7 +61056,7 @@
       "published_at": "2026-05-12",
       "date_precision": "day",
       "first_seen_at": "2026-08-31",
-      "source_updated_at": "2026-09-18",
+      "source_updated_at": "2026-09-21",
       "paper_url": "https://arxiv.org/abs/2605.12500",
       "arxiv_id": "2605.12500",
       "doi": "",
@@ -61149,7 +61186,7 @@
       "published_at": "2026-05-11",
       "date_precision": "day",
       "first_seen_at": "2026-08-31",
-      "source_updated_at": "2026-09-18",
+      "source_updated_at": "2026-09-21",
       "paper_url": "https://arxiv.org/abs/2605.10730",
       "arxiv_id": "2605.10730",
       "doi": "",
@@ -61176,7 +61213,42 @@
       ],
       "metadata_sources": [
         "source README",
-        "arXiv"
+        "arXiv",
+        "Semantic Scholar"
+      ]
+    },
+    {
+      "id": "2bec62c5f107e725",
+      "title": "HiDream-O1-Image: A Natively Unified Image Generative Foundation Model with Pixel-level Unified Transformer",
+      "venue": "arXiv",
+      "published_at": "2026-05-11",
+      "date_precision": "day",
+      "first_seen_at": "2026-08-31",
+      "source_updated_at": "2026-09-21",
+      "paper_url": "https://arxiv.org/abs/2605.11061",
+      "arxiv_id": "2605.11061",
+      "doi": "",
+      "group": "Core Technology",
+      "category": "Vision-Language",
+      "categories": [
+        "Vision-Language",
+        "Image Generation"
+      ],
+      "subcategories": [
+        "Multimodal Modeling",
+        "General Diffusion"
+      ],
+      "source_repos": [
+        "OpenEnvision/Awesome-Multimodal-Modeling",
+        "huan-yin/Awesome-Image-Generation-Model"
+      ],
+      "source_urls": [
+        "https://github.com/OpenEnvision/Awesome-Multimodal-Modeling",
+        "https://github.com/huan-yin/Awesome-Image-Generation-Model"
+      ],
+      "metadata_sources": [
+        "source README",
+        "Semantic Scholar"
       ]
     },
     {
@@ -61203,40 +61275,6 @@
       ],
       "source_urls": [
         "https://github.com/zli12321/Vision-Language-Models-Overview"
-      ],
-      "metadata_sources": [
-        "source README",
-        "Semantic Scholar"
-      ]
-    },
-    {
-      "id": "2bec62c5f107e725",
-      "title": "HiDream-O1-Image: A Natively Unified Image Generative Foundation Model with Pixel-level Unified Transformer",
-      "venue": "arXiv",
-      "published_at": "2026-05-11",
-      "date_precision": "day",
-      "first_seen_at": "2026-08-31",
-      "source_updated_at": "2026-09-14",
-      "paper_url": "https://arxiv.org/abs/2605.11061",
-      "arxiv_id": "2605.11061",
-      "doi": "",
-      "group": "Core Technology",
-      "category": "Vision-Language",
-      "categories": [
-        "Vision-Language",
-        "Image Generation"
-      ],
-      "subcategories": [
-        "Multimodal Modeling",
-        "General Diffusion"
-      ],
-      "source_repos": [
-        "OpenEnvision/Awesome-Multimodal-Modeling",
-        "huan-yin/Awesome-Image-Generation-Model"
-      ],
-      "source_urls": [
-        "https://github.com/OpenEnvision/Awesome-Multimodal-Modeling",
-        "https://github.com/huan-yin/Awesome-Image-Generation-Model"
       ],
       "metadata_sources": [
         "source README",
@@ -61496,7 +61534,7 @@
       "published_at": "2026-05-05",
       "date_precision": "day",
       "first_seen_at": "2026-08-31",
-      "source_updated_at": "2026-09-18",
+      "source_updated_at": "2026-09-21",
       "paper_url": "https://arxiv.org/pdf/2605.04128",
       "arxiv_id": "2605.04128",
       "doi": "",
@@ -61824,6 +61862,40 @@
       "metadata_sources": [
         "source README",
         "Semantic Scholar"
+      ]
+    },
+    {
+      "id": "942e4bc6f8b01b00",
+      "title": "Intelligent Creation Lab, ByteDance",
+      "venue": "arXiv",
+      "published_at": "2026-05",
+      "date_precision": "month",
+      "first_seen_at": "2026-08-31",
+      "source_updated_at": "2026-09-21",
+      "paper_url": "https://arxiv.org/pdf/2605.18678",
+      "arxiv_id": "2605.18678",
+      "doi": "",
+      "group": "Core Technology",
+      "category": "Image Generation",
+      "categories": [
+        "Image Generation",
+        "Vision-Language"
+      ],
+      "subcategories": [
+        "General Diffusion",
+        "OCR / Document VLM"
+      ],
+      "source_repos": [
+        "huan-yin/Awesome-Image-Generation-Model",
+        "Yuliang-Liu/AWESOME-OCR-LLM"
+      ],
+      "source_urls": [
+        "https://github.com/huan-yin/Awesome-Image-Generation-Model",
+        "https://github.com/Yuliang-Liu/AWESOME-OCR-LLM"
+      ],
+      "metadata_sources": [
+        "source README",
+        "arXiv identifier"
       ]
     },
     {
@@ -63463,40 +63535,6 @@
         "Yuliang-Liu/AWESOME-OCR-LLM"
       ],
       "source_urls": [
-        "https://github.com/Yuliang-Liu/AWESOME-OCR-LLM"
-      ],
-      "metadata_sources": [
-        "source README",
-        "arXiv identifier"
-      ]
-    },
-    {
-      "id": "942e4bc6f8b01b00",
-      "title": "Intelligent Creation Lab, ByteDance",
-      "venue": "arXiv",
-      "published_at": "2026-05",
-      "date_precision": "month",
-      "first_seen_at": "2026-08-31",
-      "source_updated_at": "2026-09-18",
-      "paper_url": "https://arxiv.org/pdf/2605.18678",
-      "arxiv_id": "2605.18678",
-      "doi": "",
-      "group": "Core Technology",
-      "category": "Image Generation",
-      "categories": [
-        "Image Generation",
-        "Vision-Language"
-      ],
-      "subcategories": [
-        "General Diffusion",
-        "OCR / Document VLM"
-      ],
-      "source_repos": [
-        "huan-yin/Awesome-Image-Generation-Model",
-        "Yuliang-Liu/AWESOME-OCR-LLM"
-      ],
-      "source_urls": [
-        "https://github.com/huan-yin/Awesome-Image-Generation-Model",
         "https://github.com/Yuliang-Liu/AWESOME-OCR-LLM"
       ],
       "metadata_sources": [
@@ -83622,7 +83660,8 @@
       ],
       "metadata_sources": [
         "source README",
-        "arXiv"
+        "arXiv",
+        "Semantic Scholar"
       ]
     },
     {
@@ -84089,43 +84128,13 @@
       ]
     },
     {
-      "id": "2236f835295fe2b1",
-      "title": "OphAgent: A Generalisable Ophthalmic Agentic System for Global Eye Care",
-      "venue": "Venue not specified",
-      "published_at": "2026-04-14",
-      "date_precision": "day",
-      "first_seen_at": "2026-08-29",
-      "source_updated_at": "2026-09-18",
-      "paper_url": "https://doi.org/10.21203/rs.3.rs-9189179/v1",
-      "arxiv_id": "",
-      "doi": "10.21203/rs.3.rs-9189179/v1",
-      "group": "Cross-disciplinary Applications",
-      "category": "Medicine & Healthcare",
-      "categories": [
-        "Medicine & Healthcare"
-      ],
-      "subcategories": [
-        "Medical Imaging Agents"
-      ],
-      "source_repos": [
-        "Nanboy-Ronan/awesome-medical-imaging-agents"
-      ],
-      "source_urls": [
-        "https://github.com/Nanboy-Ronan/awesome-medical-imaging-agents"
-      ],
-      "metadata_sources": [
-        "source README",
-        "Crossref"
-      ]
-    },
-    {
       "id": "40ca764874289e58",
       "title": "Nucleus-Image: Sparse MoE for Image Generation",
       "venue": "arXiv",
       "published_at": "2026-04-14",
       "date_precision": "day",
       "first_seen_at": "2026-08-31",
-      "source_updated_at": "2026-09-04",
+      "source_updated_at": "2026-09-21",
       "paper_url": "https://arxiv.org/pdf/2604.12163",
       "arxiv_id": "2604.12163",
       "doi": "",
@@ -84155,7 +84164,7 @@
       "published_at": "2026-04-14",
       "date_precision": "day",
       "first_seen_at": "2026-08-31",
-      "source_updated_at": "2026-09-04",
+      "source_updated_at": "2026-09-21",
       "paper_url": "https://arxiv.org/pdf/2604.13030",
       "arxiv_id": "2604.13030",
       "doi": "",
@@ -84176,6 +84185,36 @@
       "metadata_sources": [
         "source README",
         "Semantic Scholar"
+      ]
+    },
+    {
+      "id": "2236f835295fe2b1",
+      "title": "OphAgent: A Generalisable Ophthalmic Agentic System for Global Eye Care",
+      "venue": "Venue not specified",
+      "published_at": "2026-04-14",
+      "date_precision": "day",
+      "first_seen_at": "2026-08-29",
+      "source_updated_at": "2026-09-18",
+      "paper_url": "https://doi.org/10.21203/rs.3.rs-9189179/v1",
+      "arxiv_id": "",
+      "doi": "10.21203/rs.3.rs-9189179/v1",
+      "group": "Cross-disciplinary Applications",
+      "category": "Medicine & Healthcare",
+      "categories": [
+        "Medicine & Healthcare"
+      ],
+      "subcategories": [
+        "Medical Imaging Agents"
+      ],
+      "source_repos": [
+        "Nanboy-Ronan/awesome-medical-imaging-agents"
+      ],
+      "source_urls": [
+        "https://github.com/Nanboy-Ronan/awesome-medical-imaging-agents"
+      ],
+      "metadata_sources": [
+        "source README",
+        "Crossref"
       ]
     },
     {
@@ -108716,6 +108755,36 @@
       ]
     },
     {
+      "id": "a704b5ce403f18d1",
+      "title": "DreamLite: A Lightweight On-Device Unified Model for Image Generation and Editing",
+      "venue": "arXiv",
+      "published_at": "2026-03-30",
+      "date_precision": "day",
+      "first_seen_at": "2026-08-31",
+      "source_updated_at": "2026-09-21",
+      "paper_url": "https://arxiv.org/pdf/2603.28713",
+      "arxiv_id": "2603.28713",
+      "doi": "",
+      "group": "Core Technology",
+      "category": "Image Generation",
+      "categories": [
+        "Image Generation"
+      ],
+      "subcategories": [
+        "General Diffusion"
+      ],
+      "source_repos": [
+        "huan-yin/Awesome-Image-Generation-Model"
+      ],
+      "source_urls": [
+        "https://github.com/huan-yin/Awesome-Image-Generation-Model"
+      ],
+      "metadata_sources": [
+        "source README",
+        "Semantic Scholar"
+      ]
+    },
+    {
       "id": "7fe5b5d0ab4cf4c6",
       "title": "DongYuan: An LLM-Based Framework for Integrative Chinese and Western Medicine Spleen-Stomach Disorders Diagnosis",
       "venue": "arXiv",
@@ -108739,36 +108808,6 @@
       ],
       "source_urls": [
         "https://github.com/tyang816/Awesome-TCM-LLM"
-      ],
-      "metadata_sources": [
-        "source README",
-        "Semantic Scholar"
-      ]
-    },
-    {
-      "id": "a704b5ce403f18d1",
-      "title": "DreamLite: A Lightweight On-Device Unified Model for Image Generation and Editing",
-      "venue": "arXiv",
-      "published_at": "2026-03-30",
-      "date_precision": "day",
-      "first_seen_at": "2026-08-31",
-      "source_updated_at": "2026-09-04",
-      "paper_url": "https://arxiv.org/pdf/2603.28713",
-      "arxiv_id": "2603.28713",
-      "doi": "",
-      "group": "Core Technology",
-      "category": "Image Generation",
-      "categories": [
-        "Image Generation"
-      ],
-      "subcategories": [
-        "General Diffusion"
-      ],
-      "source_repos": [
-        "huan-yin/Awesome-Image-Generation-Model"
-      ],
-      "source_urls": [
-        "https://github.com/huan-yin/Awesome-Image-Generation-Model"
       ],
       "metadata_sources": [
         "source README",
@@ -109081,7 +109120,8 @@
       ],
       "metadata_sources": [
         "source README",
-        "arXiv"
+        "arXiv",
+        "Semantic Scholar"
       ]
     },
     {
@@ -109297,7 +109337,8 @@
       ],
       "metadata_sources": [
         "source README",
-        "arXiv"
+        "arXiv",
+        "Semantic Scholar"
       ]
     },
     {
@@ -109366,7 +109407,7 @@
       "published_at": "2026-03-10",
       "date_precision": "day",
       "first_seen_at": "2026-08-29",
-      "source_updated_at": "2026-09-18",
+      "source_updated_at": "2026-09-21",
       "paper_url": "https://arxiv.org/abs/2603.09877",
       "arxiv_id": "2603.09877",
       "doi": "",
@@ -149826,7 +149867,7 @@
       "published_at": "2026-02-15",
       "date_precision": "day",
       "first_seen_at": "2026-08-31",
-      "source_updated_at": "2026-09-04",
+      "source_updated_at": "2026-09-21",
       "paper_url": "https://arxiv.org/pdf/2602.14041",
       "arxiv_id": "2602.14041",
       "doi": "",
@@ -149903,6 +149944,36 @@
       ],
       "source_urls": [
         "https://github.com/subinium/Awesome-Scientific-LLM-Benchmarks"
+      ],
+      "metadata_sources": [
+        "source README",
+        "Semantic Scholar"
+      ]
+    },
+    {
+      "id": "4c30d0a1942f3765",
+      "title": "FireRed-Image-Edit-1.0 Technical Report",
+      "venue": "arXiv",
+      "published_at": "2026-02-12",
+      "date_precision": "day",
+      "first_seen_at": "2026-08-31",
+      "source_updated_at": "2026-09-21",
+      "paper_url": "https://arxiv.org/pdf/2602.13344",
+      "arxiv_id": "2602.13344",
+      "doi": "",
+      "group": "Core Technology",
+      "category": "Image Generation",
+      "categories": [
+        "Image Generation"
+      ],
+      "subcategories": [
+        "General Diffusion"
+      ],
+      "source_repos": [
+        "huan-yin/Awesome-Image-Generation-Model"
+      ],
+      "source_urls": [
+        "https://github.com/huan-yin/Awesome-Image-Generation-Model"
       ],
       "metadata_sources": [
         "source README",
@@ -150003,36 +150074,6 @@
       ]
     },
     {
-      "id": "4c30d0a1942f3765",
-      "title": "FireRed-Image-Edit-1.0 Technical Report",
-      "venue": "arXiv",
-      "published_at": "2026-02-12",
-      "date_precision": "day",
-      "first_seen_at": "2026-08-31",
-      "source_updated_at": "2026-09-04",
-      "paper_url": "https://arxiv.org/pdf/2602.13344",
-      "arxiv_id": "2602.13344",
-      "doi": "",
-      "group": "Core Technology",
-      "category": "Image Generation",
-      "categories": [
-        "Image Generation"
-      ],
-      "subcategories": [
-        "General Diffusion"
-      ],
-      "source_repos": [
-        "huan-yin/Awesome-Image-Generation-Model"
-      ],
-      "source_urls": [
-        "https://github.com/huan-yin/Awesome-Image-Generation-Model"
-      ],
-      "metadata_sources": [
-        "source README",
-        "Semantic Scholar"
-      ]
-    },
-    {
       "id": "8eb92f158ffe3571",
       "title": "Evaluating Large‐Scale and Lightweight Large Language Models for Traditional Chinese Medicine Exam Questions: A Comparative Study",
       "venue": "Venue not specified",
@@ -150099,7 +150140,7 @@
       "published_at": "2026-02-10",
       "date_precision": "day",
       "first_seen_at": "2026-08-29",
-      "source_updated_at": "2026-09-19",
+      "source_updated_at": "2026-09-20",
       "paper_url": "https://arxiv.org/abs/2602.10177",
       "arxiv_id": "2602.10177",
       "doi": "",
@@ -172928,6 +172969,36 @@
       ]
     },
     {
+      "id": "767e3edb0da028ac",
+      "title": "TeleStyle: Content-Preserving Style Transfer in Images and Videos",
+      "venue": "Chi",
+      "published_at": "2026-01-28",
+      "date_precision": "day",
+      "first_seen_at": "2026-08-29",
+      "source_updated_at": "2026-09-21",
+      "paper_url": "https://arxiv.org/pdf/2601.20175",
+      "arxiv_id": "2601.20175",
+      "doi": "",
+      "group": "Core Technology",
+      "category": "Image Generation",
+      "categories": [
+        "Image Generation"
+      ],
+      "subcategories": [
+        "General Diffusion"
+      ],
+      "source_repos": [
+        "huan-yin/Awesome-Image-Generation-Model"
+      ],
+      "source_urls": [
+        "https://github.com/huan-yin/Awesome-Image-Generation-Model"
+      ],
+      "metadata_sources": [
+        "source README",
+        "Semantic Scholar"
+      ]
+    },
+    {
       "id": "820c34d41268f4f1",
       "title": "DeepSeek-OCR 2: Visual Causal Flow",
       "venue": "arXiv",
@@ -172954,36 +173025,6 @@
       "source_urls": [
         "https://github.com/OpenEnvision/Awesome-Multimodal-Modeling",
         "https://github.com/Yuliang-Liu/AWESOME-OCR-LLM"
-      ],
-      "metadata_sources": [
-        "source README",
-        "Semantic Scholar"
-      ]
-    },
-    {
-      "id": "767e3edb0da028ac",
-      "title": "TeleStyle: Content-Preserving Style Transfer in Images and Videos",
-      "venue": "Chi",
-      "published_at": "2026-01-28",
-      "date_precision": "day",
-      "first_seen_at": "2026-08-29",
-      "source_updated_at": "2026-09-04",
-      "paper_url": "https://arxiv.org/pdf/2601.20175",
-      "arxiv_id": "2601.20175",
-      "doi": "",
-      "group": "Core Technology",
-      "category": "Image Generation",
-      "categories": [
-        "Image Generation"
-      ],
-      "subcategories": [
-        "General Diffusion"
-      ],
-      "source_repos": [
-        "huan-yin/Awesome-Image-Generation-Model"
-      ],
-      "source_urls": [
-        "https://github.com/huan-yin/Awesome-Image-Generation-Model"
       ],
       "metadata_sources": [
         "source README",
@@ -173235,7 +173276,38 @@
       ],
       "metadata_sources": [
         "source README",
-        "arXiv"
+        "arXiv",
+        "Semantic Scholar"
+      ]
+    },
+    {
+      "id": "00db05d524aa2b79",
+      "title": "Skywork UniPic 3.0: Unified Multi-Image Composition via Sequence Modeling",
+      "venue": "arXiv",
+      "published_at": "2026-01-22",
+      "date_precision": "day",
+      "first_seen_at": "2026-08-31",
+      "source_updated_at": "2026-09-21",
+      "paper_url": "https://arxiv.org/pdf/2601.15664",
+      "arxiv_id": "2601.15664",
+      "doi": "",
+      "group": "Core Technology",
+      "category": "Image Generation",
+      "categories": [
+        "Image Generation"
+      ],
+      "subcategories": [
+        "General Diffusion"
+      ],
+      "source_repos": [
+        "huan-yin/Awesome-Image-Generation-Model"
+      ],
+      "source_urls": [
+        "https://github.com/huan-yin/Awesome-Image-Generation-Model"
+      ],
+      "metadata_sources": [
+        "source README",
+        "Semantic Scholar"
       ]
     },
     {
@@ -173265,36 +173337,7 @@
       ],
       "metadata_sources": [
         "source README",
-        "arXiv"
-      ]
-    },
-    {
-      "id": "00db05d524aa2b79",
-      "title": "Skywork UniPic 3.0: Unified Multi-Image Composition via Sequence Modeling",
-      "venue": "arXiv",
-      "published_at": "2026-01-22",
-      "date_precision": "day",
-      "first_seen_at": "2026-08-31",
-      "source_updated_at": "2026-09-04",
-      "paper_url": "https://arxiv.org/pdf/2601.15664",
-      "arxiv_id": "2601.15664",
-      "doi": "",
-      "group": "Core Technology",
-      "category": "Image Generation",
-      "categories": [
-        "Image Generation"
-      ],
-      "subcategories": [
-        "General Diffusion"
-      ],
-      "source_repos": [
-        "huan-yin/Awesome-Image-Generation-Model"
-      ],
-      "source_urls": [
-        "https://github.com/huan-yin/Awesome-Image-Generation-Model"
-      ],
-      "metadata_sources": [
-        "source README",
+        "arXiv",
         "Semantic Scholar"
       ]
     },
@@ -173443,7 +173486,8 @@
       ],
       "metadata_sources": [
         "source README",
-        "arXiv"
+        "arXiv",
+        "Semantic Scholar"
       ]
     },
     {
@@ -173508,7 +173552,8 @@
       "metadata_sources": [
         "source README",
         "structured source",
-        "arXiv"
+        "arXiv",
+        "Semantic Scholar"
       ]
     },
     {
@@ -173661,7 +173706,8 @@
       ],
       "metadata_sources": [
         "source README",
-        "arXiv"
+        "arXiv",
+        "Semantic Scholar"
       ]
     },
     {
@@ -173751,7 +173797,8 @@
       ],
       "metadata_sources": [
         "source README",
-        "arXiv"
+        "arXiv",
+        "Semantic Scholar"
       ]
     },
     {
@@ -173786,7 +173833,8 @@
       "metadata_sources": [
         "source README",
         "structured source",
-        "arXiv"
+        "arXiv",
+        "Semantic Scholar"
       ]
     },
     {
@@ -238859,7 +238907,8 @@
       ],
       "metadata_sources": [
         "source README",
-        "arXiv"
+        "arXiv",
+        "Semantic Scholar"
       ]
     },
     {
@@ -238869,7 +238918,7 @@
       "published_at": "2025-12-27",
       "date_precision": "day",
       "first_seen_at": "2026-08-31",
-      "source_updated_at": "2026-09-04",
+      "source_updated_at": "2026-09-21",
       "paper_url": "https://arxiv.org/pdf/2512.22525",
       "arxiv_id": "2512.22525",
       "doi": "",
@@ -239192,7 +239241,8 @@
       ],
       "metadata_sources": [
         "source README",
-        "arXiv"
+        "arXiv",
+        "Semantic Scholar"
       ]
     },
     {
@@ -239592,7 +239642,7 @@
       "published_at": "2025-12-08",
       "date_precision": "day",
       "first_seen_at": "2026-08-31",
-      "source_updated_at": "2026-09-04",
+      "source_updated_at": "2026-09-21",
       "paper_url": "https://arxiv.org/pdf/2512.07584",
       "arxiv_id": "2512.07584",
       "doi": "",
@@ -239612,7 +239662,8 @@
       ],
       "metadata_sources": [
         "source README",
-        "arXiv"
+        "arXiv",
+        "Semantic Scholar"
       ]
     },
     {
@@ -262178,7 +262229,7 @@
       "published_at": "2025-11-28",
       "date_precision": "day",
       "first_seen_at": "2026-08-31",
-      "source_updated_at": "2026-09-04",
+      "source_updated_at": "2026-09-21",
       "paper_url": "https://arxiv.org/pdf/2511.22982",
       "arxiv_id": "2511.22982",
       "doi": "",
@@ -262198,7 +262249,38 @@
       ],
       "metadata_sources": [
         "source README",
-        "arXiv"
+        "arXiv",
+        "Semantic Scholar"
+      ]
+    },
+    {
+      "id": "6a487dc75eb365b4",
+      "title": "Z-Image: An Efficient Image Generation Foundation Model with Single-Stream Diffusion Transformer",
+      "venue": "arXiv",
+      "published_at": "2025-11-27",
+      "date_precision": "day",
+      "first_seen_at": "2026-08-31",
+      "source_updated_at": "2026-09-21",
+      "paper_url": "https://arxiv.org/pdf/2511.22699",
+      "arxiv_id": "2511.22699",
+      "doi": "",
+      "group": "Core Technology",
+      "category": "Image Generation",
+      "categories": [
+        "Image Generation"
+      ],
+      "subcategories": [
+        "General Diffusion"
+      ],
+      "source_repos": [
+        "huan-yin/Awesome-Image-Generation-Model"
+      ],
+      "source_urls": [
+        "https://github.com/huan-yin/Awesome-Image-Generation-Model"
+      ],
+      "metadata_sources": [
+        "source README",
+        "Semantic Scholar"
       ]
     },
     {
@@ -262262,36 +262344,6 @@
       ]
     },
     {
-      "id": "6a487dc75eb365b4",
-      "title": "Z-Image: An Efficient Image Generation Foundation Model with Single-Stream Diffusion Transformer",
-      "venue": "arXiv",
-      "published_at": "2025-11-27",
-      "date_precision": "day",
-      "first_seen_at": "2026-08-31",
-      "source_updated_at": "2026-09-04",
-      "paper_url": "https://arxiv.org/pdf/2511.22699",
-      "arxiv_id": "2511.22699",
-      "doi": "",
-      "group": "Core Technology",
-      "category": "Image Generation",
-      "categories": [
-        "Image Generation"
-      ],
-      "subcategories": [
-        "General Diffusion"
-      ],
-      "source_repos": [
-        "huan-yin/Awesome-Image-Generation-Model"
-      ],
-      "source_urls": [
-        "https://github.com/huan-yin/Awesome-Image-Generation-Model"
-      ],
-      "metadata_sources": [
-        "source README",
-        "Semantic Scholar"
-      ]
-    },
-    {
       "id": "edcad042a8432851",
       "title": "Qwen3-VL Technical Report",
       "venue": "arXiv",
@@ -262345,7 +262397,8 @@
       ],
       "metadata_sources": [
         "source README",
-        "arXiv"
+        "arXiv",
+        "Semantic Scholar"
       ]
     },
     {
@@ -262988,7 +263041,7 @@
       "published_at": "2025-11-06",
       "date_precision": "day",
       "first_seen_at": "2026-08-31",
-      "source_updated_at": "2026-09-04",
+      "source_updated_at": "2026-09-21",
       "paper_url": "https://arxiv.org/pdf/2511.04675",
       "arxiv_id": "2511.04675",
       "doi": "",
@@ -263159,6 +263212,108 @@
       "metadata_sources": [
         "source README",
         "Semantic Scholar"
+      ]
+    },
+    {
+      "id": "2c3f195038c0e093",
+      "title": "PixelDiT: Pixel Diffusion Transformers for Image Generation",
+      "venue": "arXiv",
+      "published_at": "2025-11",
+      "date_precision": "month",
+      "first_seen_at": "2026-08-31",
+      "source_updated_at": "2026-09-21",
+      "paper_url": "https://arxiv.org/pdf/2511.20645",
+      "arxiv_id": "2511.20645",
+      "doi": "",
+      "group": "Core Technology",
+      "category": "Image Generation",
+      "categories": [
+        "Image Generation",
+        "Vision"
+      ],
+      "subcategories": [
+        "General Diffusion",
+        "CVPR 2026 Proceedings"
+      ],
+      "source_repos": [
+        "huan-yin/Awesome-Image-Generation-Model",
+        "firetix/awesome-cvpr-2026-papers"
+      ],
+      "source_urls": [
+        "https://github.com/huan-yin/Awesome-Image-Generation-Model",
+        "https://github.com/firetix/awesome-cvpr-2026-papers"
+      ],
+      "metadata_sources": [
+        "source README",
+        "structured source",
+        "arXiv identifier"
+      ]
+    },
+    {
+      "id": "248307149eef723f",
+      "title": "Kandinsky 5.0 Lite T2I",
+      "venue": "arXiv",
+      "published_at": "2025-11",
+      "date_precision": "month",
+      "first_seen_at": "2026-08-31",
+      "source_updated_at": "2026-09-21",
+      "paper_url": "https://arxiv.org/pdf/2511.14993",
+      "arxiv_id": "2511.14993",
+      "doi": "",
+      "group": "Core Technology",
+      "category": "Image Generation",
+      "categories": [
+        "Image Generation",
+        "Video"
+      ],
+      "subcategories": [
+        "General Diffusion",
+        "Post-training & Alignment"
+      ],
+      "source_repos": [
+        "huan-yin/Awesome-Image-Generation-Model",
+        "people-robots/Awesome-Video-Generation-Post-Training"
+      ],
+      "source_urls": [
+        "https://github.com/huan-yin/Awesome-Image-Generation-Model",
+        "https://github.com/people-robots/Awesome-Video-Generation-Post-Training"
+      ],
+      "metadata_sources": [
+        "source README",
+        "arXiv identifier"
+      ]
+    },
+    {
+      "id": "21321e62008f8557",
+      "title": "Generating an Image From 1,000 Words: Enhancing Text-to-Image With Structured Captions",
+      "venue": "arXiv",
+      "published_at": "2025-11",
+      "date_precision": "month",
+      "first_seen_at": "2026-08-31",
+      "source_updated_at": "2026-09-21",
+      "paper_url": "https://arxiv.org/abs/2511.06876",
+      "arxiv_id": "2511.06876",
+      "doi": "",
+      "group": "Core Technology",
+      "category": "Image Generation",
+      "categories": [
+        "Image Generation"
+      ],
+      "subcategories": [
+        "Diffusion / T2I / Editing",
+        "General Diffusion"
+      ],
+      "source_repos": [
+        "wangkai930418/awesome-diffusion-categorized",
+        "huan-yin/Awesome-Image-Generation-Model"
+      ],
+      "source_urls": [
+        "https://github.com/wangkai930418/awesome-diffusion-categorized",
+        "https://github.com/huan-yin/Awesome-Image-Generation-Model"
+      ],
+      "metadata_sources": [
+        "source README",
+        "arXiv identifier"
       ]
     },
     {
@@ -266490,108 +266645,6 @@
       ],
       "source_urls": [
         "https://github.com/AgenticHealthAI/Awesome-AI-Agents-for-Healthcare"
-      ],
-      "metadata_sources": [
-        "source README",
-        "arXiv identifier"
-      ]
-    },
-    {
-      "id": "2c3f195038c0e093",
-      "title": "PixelDiT: Pixel Diffusion Transformers for Image Generation",
-      "venue": "arXiv",
-      "published_at": "2025-11",
-      "date_precision": "month",
-      "first_seen_at": "2026-08-31",
-      "source_updated_at": "2026-09-04",
-      "paper_url": "https://arxiv.org/pdf/2511.20645",
-      "arxiv_id": "2511.20645",
-      "doi": "",
-      "group": "Core Technology",
-      "category": "Image Generation",
-      "categories": [
-        "Image Generation",
-        "Vision"
-      ],
-      "subcategories": [
-        "General Diffusion",
-        "CVPR 2026 Proceedings"
-      ],
-      "source_repos": [
-        "huan-yin/Awesome-Image-Generation-Model",
-        "firetix/awesome-cvpr-2026-papers"
-      ],
-      "source_urls": [
-        "https://github.com/huan-yin/Awesome-Image-Generation-Model",
-        "https://github.com/firetix/awesome-cvpr-2026-papers"
-      ],
-      "metadata_sources": [
-        "source README",
-        "structured source",
-        "arXiv identifier"
-      ]
-    },
-    {
-      "id": "248307149eef723f",
-      "title": "Kandinsky 5.0 Lite T2I",
-      "venue": "arXiv",
-      "published_at": "2025-11",
-      "date_precision": "month",
-      "first_seen_at": "2026-08-31",
-      "source_updated_at": "2026-09-04",
-      "paper_url": "https://arxiv.org/pdf/2511.14993",
-      "arxiv_id": "2511.14993",
-      "doi": "",
-      "group": "Core Technology",
-      "category": "Image Generation",
-      "categories": [
-        "Image Generation",
-        "Video"
-      ],
-      "subcategories": [
-        "General Diffusion",
-        "Post-training & Alignment"
-      ],
-      "source_repos": [
-        "huan-yin/Awesome-Image-Generation-Model",
-        "people-robots/Awesome-Video-Generation-Post-Training"
-      ],
-      "source_urls": [
-        "https://github.com/huan-yin/Awesome-Image-Generation-Model",
-        "https://github.com/people-robots/Awesome-Video-Generation-Post-Training"
-      ],
-      "metadata_sources": [
-        "source README",
-        "arXiv identifier"
-      ]
-    },
-    {
-      "id": "21321e62008f8557",
-      "title": "Generating an Image From 1,000 Words: Enhancing Text-to-Image With Structured Captions",
-      "venue": "arXiv",
-      "published_at": "2025-11",
-      "date_precision": "month",
-      "first_seen_at": "2026-08-31",
-      "source_updated_at": "2026-09-04",
-      "paper_url": "https://arxiv.org/abs/2511.06876",
-      "arxiv_id": "2511.06876",
-      "doi": "",
-      "group": "Core Technology",
-      "category": "Image Generation",
-      "categories": [
-        "Image Generation"
-      ],
-      "subcategories": [
-        "Diffusion / T2I / Editing",
-        "General Diffusion"
-      ],
-      "source_repos": [
-        "wangkai930418/awesome-diffusion-categorized",
-        "huan-yin/Awesome-Image-Generation-Model"
-      ],
-      "source_urls": [
-        "https://github.com/wangkai930418/awesome-diffusion-categorized",
-        "https://github.com/huan-yin/Awesome-Image-Generation-Model"
       ],
       "metadata_sources": [
         "source README",
@@ -281253,7 +281306,7 @@
       "published_at": "2025-10-19",
       "date_precision": "day",
       "first_seen_at": "2026-08-31",
-      "source_updated_at": "2026-09-04",
+      "source_updated_at": "2026-09-21",
       "paper_url": "https://arxiv.org/pdf/2510.16888",
       "arxiv_id": "2510.16888",
       "doi": "",
@@ -281313,7 +281366,7 @@
       "published_at": "2025-10-17",
       "date_precision": "day",
       "first_seen_at": "2026-08-31",
-      "source_updated_at": "2026-09-04",
+      "source_updated_at": "2026-09-21",
       "paper_url": "https://arxiv.org/pdf/2510.15857",
       "arxiv_id": "2510.15857",
       "doi": "",
@@ -281805,6 +281858,36 @@
       ]
     },
     {
+      "id": "09f000ec6fa6ccda",
+      "title": "DreamOmni2: Multimodal Instruction-based Editing and Generation",
+      "venue": "Chi",
+      "published_at": "2025-10-08",
+      "date_precision": "day",
+      "first_seen_at": "2026-08-31",
+      "source_updated_at": "2026-09-21",
+      "paper_url": "https://arxiv.org/pdf/2510.06679",
+      "arxiv_id": "2510.06679",
+      "doi": "",
+      "group": "Core Technology",
+      "category": "Image Generation",
+      "categories": [
+        "Image Generation"
+      ],
+      "subcategories": [
+        "General Diffusion"
+      ],
+      "source_repos": [
+        "huan-yin/Awesome-Image-Generation-Model"
+      ],
+      "source_urls": [
+        "https://github.com/huan-yin/Awesome-Image-Generation-Model"
+      ],
+      "metadata_sources": [
+        "source README",
+        "Semantic Scholar"
+      ]
+    },
+    {
       "id": "684f7aa2e1234ebe",
       "title": "NewtonBench: Benchmarking Generalizable Scientific Law Discovery in LLM Agents",
       "venue": "arXiv",
@@ -281888,36 +281971,6 @@
       ],
       "source_urls": [
         "https://github.com/jonyzhang2023/awesome-embodied-vla-va-vln"
-      ],
-      "metadata_sources": [
-        "source README",
-        "Semantic Scholar"
-      ]
-    },
-    {
-      "id": "09f000ec6fa6ccda",
-      "title": "DreamOmni2: Multimodal Instruction-based Editing and Generation",
-      "venue": "Chi",
-      "published_at": "2025-10-08",
-      "date_precision": "day",
-      "first_seen_at": "2026-08-31",
-      "source_updated_at": "2026-09-04",
-      "paper_url": "https://arxiv.org/pdf/2510.06679",
-      "arxiv_id": "2510.06679",
-      "doi": "",
-      "group": "Core Technology",
-      "category": "Image Generation",
-      "categories": [
-        "Image Generation"
-      ],
-      "subcategories": [
-        "General Diffusion"
-      ],
-      "source_repos": [
-        "huan-yin/Awesome-Image-Generation-Model"
-      ],
-      "source_urls": [
-        "https://github.com/huan-yin/Awesome-Image-Generation-Model"
       ],
       "metadata_sources": [
         "source README",
@@ -282345,6 +282398,86 @@
       ]
     },
     {
+      "id": "2650d40c0840a07b",
+      "title": "Star Emu3.5: Native Multimodal Models are World Learners",
+      "venue": "arXiv",
+      "published_at": "2025-10",
+      "date_precision": "month",
+      "first_seen_at": "2026-08-31",
+      "source_updated_at": "2026-09-21",
+      "paper_url": "https://arxiv.org/pdf/2510.26583",
+      "arxiv_id": "2510.26583",
+      "doi": "",
+      "group": "Core Technology",
+      "category": "Vision-Language",
+      "categories": [
+        "Vision-Language",
+        "Image Generation",
+        "Unified Multimodal"
+      ],
+      "subcategories": [
+        "General VLM",
+        "Multimodal Modeling",
+        "MLLM Overview",
+        "General Diffusion",
+        "Unified Understanding + Generation"
+      ],
+      "source_repos": [
+        "zli12321/Vision-Language-Models-Overview",
+        "OpenEnvision/Awesome-Multimodal-Modeling",
+        "BradyFU/Awesome-Multimodal-Large-Language-Models",
+        "huan-yin/Awesome-Image-Generation-Model",
+        "AIDC-AI/Awesome-Unified-Multimodal-Models"
+      ],
+      "source_urls": [
+        "https://github.com/zli12321/Vision-Language-Models-Overview",
+        "https://github.com/OpenEnvision/Awesome-Multimodal-Modeling",
+        "https://github.com/BradyFU/Awesome-Multimodal-Large-Language-Models",
+        "https://github.com/huan-yin/Awesome-Image-Generation-Model",
+        "https://github.com/AIDC-AI/Awesome-Unified-Multimodal-Models"
+      ],
+      "metadata_sources": [
+        "source README",
+        "arXiv identifier"
+      ]
+    },
+    {
+      "id": "699a561af2219133",
+      "title": "Lumina-DiMOO: Omni Diffusion LLM for Generation",
+      "venue": "arXiv",
+      "published_at": "2025-10",
+      "date_precision": "month",
+      "first_seen_at": "2026-08-29",
+      "source_updated_at": "2026-09-21",
+      "paper_url": "https://arxiv.org/abs/2510.06308",
+      "arxiv_id": "2510.06308",
+      "doi": "",
+      "group": "Core Technology",
+      "category": "Language",
+      "categories": [
+        "Language",
+        "Image Generation"
+      ],
+      "subcategories": [
+        "Diffusion LLM",
+        "General Diffusion"
+      ],
+      "source_repos": [
+        "AIDASLab/Awesome-Diffusion-LLM",
+        "VILA-Lab/Awesome-DLMs",
+        "huan-yin/Awesome-Image-Generation-Model"
+      ],
+      "source_urls": [
+        "https://github.com/AIDASLab/Awesome-Diffusion-LLM",
+        "https://github.com/VILA-Lab/Awesome-DLMs",
+        "https://github.com/huan-yin/Awesome-Image-Generation-Model"
+      ],
+      "metadata_sources": [
+        "source README",
+        "arXiv identifier"
+      ]
+    },
+    {
       "id": "1582e60d9a4b22b0",
       "title": "REvolution: An Evolutionary Framework for RTL Generation",
       "venue": "arXiv",
@@ -282368,6 +282501,36 @@
       ],
       "source_urls": [
         "https://github.com/whut09/Awesome-AI-Engineering-Agents"
+      ],
+      "metadata_sources": [
+        "source README",
+        "arXiv identifier"
+      ]
+    },
+    {
+      "id": "a5fe1204975dc02b",
+      "title": "Paper2Web: Let's Make Your Paper Alive!",
+      "venue": "arXiv",
+      "published_at": "2025-10",
+      "date_precision": "month",
+      "first_seen_at": "2026-08-29",
+      "source_updated_at": "2026-09-20",
+      "paper_url": "https://arxiv.org/abs/2510.15842",
+      "arxiv_id": "2510.15842",
+      "doi": "",
+      "group": "Cross-disciplinary Applications",
+      "category": "Science & Discovery",
+      "categories": [
+        "Science & Discovery"
+      ],
+      "subcategories": [
+        "General AI4Science"
+      ],
+      "source_repos": [
+        "ai4s-research/awesome-ai-for-science"
+      ],
+      "source_urls": [
+        "https://github.com/ai4s-research/awesome-ai-for-science"
       ],
       "metadata_sources": [
         "source README",
@@ -282405,6 +282568,36 @@
       ]
     },
     {
+      "id": "2f58f740296450ec",
+      "title": "DeepAnalyze: Agentic Large Language Models for Autonomous Data Science",
+      "venue": "Science",
+      "published_at": "2025-10",
+      "date_precision": "month",
+      "first_seen_at": "2026-08-29",
+      "source_updated_at": "2026-09-20",
+      "paper_url": "https://arxiv.org/abs/2510.16872",
+      "arxiv_id": "2510.16872",
+      "doi": "",
+      "group": "Cross-disciplinary Applications",
+      "category": "Science & Discovery",
+      "categories": [
+        "Science & Discovery"
+      ],
+      "subcategories": [
+        "General AI4Science"
+      ],
+      "source_repos": [
+        "ai4s-research/awesome-ai-for-science"
+      ],
+      "source_urls": [
+        "https://github.com/ai4s-research/awesome-ai-for-science"
+      ],
+      "metadata_sources": [
+        "source README",
+        "arXiv identifier"
+      ]
+    },
+    {
       "id": "5a475374d56b17db",
       "title": "A Foundation Model for Shape- and Resolution-Free Structural Topology Optimization",
       "venue": "arXiv",
@@ -282431,66 +282624,6 @@
       "source_urls": [
         "https://github.com/gudo7208/awesome-ai4cad",
         "https://github.com/whut09/Awesome-AI-Engineering-Agents"
-      ],
-      "metadata_sources": [
-        "source README",
-        "arXiv identifier"
-      ]
-    },
-    {
-      "id": "a5fe1204975dc02b",
-      "title": "Paper2Web: Let's Make Your Paper Alive!",
-      "venue": "arXiv",
-      "published_at": "2025-10",
-      "date_precision": "month",
-      "first_seen_at": "2026-08-29",
-      "source_updated_at": "2026-09-19",
-      "paper_url": "https://arxiv.org/abs/2510.15842",
-      "arxiv_id": "2510.15842",
-      "doi": "",
-      "group": "Cross-disciplinary Applications",
-      "category": "Science & Discovery",
-      "categories": [
-        "Science & Discovery"
-      ],
-      "subcategories": [
-        "General AI4Science"
-      ],
-      "source_repos": [
-        "ai4s-research/awesome-ai-for-science"
-      ],
-      "source_urls": [
-        "https://github.com/ai4s-research/awesome-ai-for-science"
-      ],
-      "metadata_sources": [
-        "source README",
-        "arXiv identifier"
-      ]
-    },
-    {
-      "id": "2f58f740296450ec",
-      "title": "DeepAnalyze: Agentic Large Language Models for Autonomous Data Science",
-      "venue": "Science",
-      "published_at": "2025-10",
-      "date_precision": "month",
-      "first_seen_at": "2026-08-29",
-      "source_updated_at": "2026-09-19",
-      "paper_url": "https://arxiv.org/abs/2510.16872",
-      "arxiv_id": "2510.16872",
-      "doi": "",
-      "group": "Cross-disciplinary Applications",
-      "category": "Science & Discovery",
-      "categories": [
-        "Science & Discovery"
-      ],
-      "subcategories": [
-        "General AI4Science"
-      ],
-      "source_repos": [
-        "ai4s-research/awesome-ai-for-science"
-      ],
-      "source_urls": [
-        "https://github.com/ai4s-research/awesome-ai-for-science"
       ],
       "metadata_sources": [
         "source README",
@@ -282681,50 +282814,6 @@
       ],
       "source_urls": [
         "https://github.com/BradyFU/Awesome-Multimodal-Large-Language-Models"
-      ],
-      "metadata_sources": [
-        "source README",
-        "arXiv identifier"
-      ]
-    },
-    {
-      "id": "2650d40c0840a07b",
-      "title": "Star Emu3.5: Native Multimodal Models are World Learners",
-      "venue": "arXiv",
-      "published_at": "2025-10",
-      "date_precision": "month",
-      "first_seen_at": "2026-08-31",
-      "source_updated_at": "2026-09-18",
-      "paper_url": "https://arxiv.org/pdf/2510.26583",
-      "arxiv_id": "2510.26583",
-      "doi": "",
-      "group": "Core Technology",
-      "category": "Vision-Language",
-      "categories": [
-        "Vision-Language",
-        "Image Generation",
-        "Unified Multimodal"
-      ],
-      "subcategories": [
-        "General VLM",
-        "Multimodal Modeling",
-        "MLLM Overview",
-        "General Diffusion",
-        "Unified Understanding + Generation"
-      ],
-      "source_repos": [
-        "zli12321/Vision-Language-Models-Overview",
-        "OpenEnvision/Awesome-Multimodal-Modeling",
-        "BradyFU/Awesome-Multimodal-Large-Language-Models",
-        "huan-yin/Awesome-Image-Generation-Model",
-        "AIDC-AI/Awesome-Unified-Multimodal-Models"
-      ],
-      "source_urls": [
-        "https://github.com/zli12321/Vision-Language-Models-Overview",
-        "https://github.com/OpenEnvision/Awesome-Multimodal-Modeling",
-        "https://github.com/BradyFU/Awesome-Multimodal-Large-Language-Models",
-        "https://github.com/huan-yin/Awesome-Image-Generation-Model",
-        "https://github.com/AIDC-AI/Awesome-Unified-Multimodal-Models"
       ],
       "metadata_sources": [
         "source README",
@@ -286100,42 +286189,6 @@
       "source_urls": [
         "https://github.com/ValueByte-AI/Awesome-LLM-in-Social-Science",
         "https://github.com/ValueByte-AI/Awesome-LLM-Psychometrics"
-      ],
-      "metadata_sources": [
-        "source README",
-        "arXiv identifier"
-      ]
-    },
-    {
-      "id": "699a561af2219133",
-      "title": "Lumina-DiMOO: Omni Diffusion LLM for Generation",
-      "venue": "arXiv",
-      "published_at": "2025-10",
-      "date_precision": "month",
-      "first_seen_at": "2026-08-29",
-      "source_updated_at": "2026-09-04",
-      "paper_url": "https://arxiv.org/abs/2510.06308",
-      "arxiv_id": "2510.06308",
-      "doi": "",
-      "group": "Core Technology",
-      "category": "Language",
-      "categories": [
-        "Language",
-        "Image Generation"
-      ],
-      "subcategories": [
-        "Diffusion LLM",
-        "General Diffusion"
-      ],
-      "source_repos": [
-        "AIDASLab/Awesome-Diffusion-LLM",
-        "VILA-Lab/Awesome-DLMs",
-        "huan-yin/Awesome-Image-Generation-Model"
-      ],
-      "source_urls": [
-        "https://github.com/AIDASLab/Awesome-Diffusion-LLM",
-        "https://github.com/VILA-Lab/Awesome-DLMs",
-        "https://github.com/huan-yin/Awesome-Image-Generation-Model"
       ],
       "metadata_sources": [
         "source README",
@@ -295766,7 +295819,7 @@
       "published_at": "2025-09-28",
       "date_precision": "day",
       "first_seen_at": "2026-08-31",
-      "source_updated_at": "2026-09-04",
+      "source_updated_at": "2026-09-21",
       "paper_url": "https://arxiv.org/pdf/2509.23951",
       "arxiv_id": "2509.23951",
       "doi": "",
@@ -296284,7 +296337,8 @@
       "metadata_sources": [
         "source README",
         "structured source",
-        "arXiv"
+        "arXiv",
+        "Semantic Scholar"
       ]
     },
     {
@@ -296380,7 +296434,8 @@
       ],
       "metadata_sources": [
         "source README",
-        "arXiv"
+        "arXiv",
+        "Semantic Scholar"
       ]
     },
     {
@@ -296503,7 +296558,8 @@
       ],
       "metadata_sources": [
         "structured source",
-        "arXiv"
+        "arXiv",
+        "Semantic Scholar"
       ]
     },
     {
@@ -297083,6 +297139,73 @@
       ]
     },
     {
+      "id": "174a19869a2035e5",
+      "title": "Directly Aligning the Full Diffusion Trajectory with Fine-Grained Human Preference",
+      "venue": "arXiv",
+      "published_at": "2025-09",
+      "date_precision": "month",
+      "first_seen_at": "2026-08-31",
+      "source_updated_at": "2026-09-21",
+      "paper_url": "https://arxiv.org/abs/2509.06942",
+      "arxiv_id": "2509.06942",
+      "doi": "",
+      "group": "Core Technology",
+      "category": "Image Generation",
+      "categories": [
+        "Image Generation"
+      ],
+      "subcategories": [
+        "Diffusion / T2I / Editing",
+        "General Diffusion"
+      ],
+      "source_repos": [
+        "wangkai930418/awesome-diffusion-categorized",
+        "huan-yin/Awesome-Image-Generation-Model"
+      ],
+      "source_urls": [
+        "https://github.com/wangkai930418/awesome-diffusion-categorized",
+        "https://github.com/huan-yin/Awesome-Image-Generation-Model"
+      ],
+      "metadata_sources": [
+        "source README",
+        "arXiv identifier"
+      ]
+    },
+    {
+      "id": "609383fdb3bf89a8",
+      "title": "ToolUniverse: An open platform for democratizing AI scientists",
+      "venue": "arXiv",
+      "published_at": "2025-09",
+      "date_precision": "month",
+      "first_seen_at": "2026-08-29",
+      "source_updated_at": "2026-09-20",
+      "paper_url": "https://arxiv.org/abs/2509.23426",
+      "arxiv_id": "2509.23426",
+      "doi": "",
+      "group": "Cross-disciplinary Applications",
+      "category": "Medicine & Healthcare",
+      "categories": [
+        "Medicine & Healthcare",
+        "Science & Discovery"
+      ],
+      "subcategories": [
+        "Medical Agents",
+        "General AI4Science"
+      ],
+      "source_repos": [
+        "AgenticHealthAI/Awesome-AI-Agents-for-Healthcare",
+        "ai4s-research/awesome-ai-for-science"
+      ],
+      "source_urls": [
+        "https://github.com/AgenticHealthAI/Awesome-AI-Agents-for-Healthcare",
+        "https://github.com/ai4s-research/awesome-ai-for-science"
+      ],
+      "metadata_sources": [
+        "source README",
+        "arXiv identifier"
+      ]
+    },
+    {
       "id": "ae9f8ac8fa8f55f6",
       "title": "Foam-Agent 2.0: An End-to-End Composable Multi-Agent Framework for Automating CFD Simulation in OpenFOAM",
       "venue": "arXiv",
@@ -297113,47 +297236,13 @@
       ]
     },
     {
-      "id": "609383fdb3bf89a8",
-      "title": "ToolUniverse: An open platform for democratizing AI scientists",
-      "venue": "arXiv",
-      "published_at": "2025-09",
-      "date_precision": "month",
-      "first_seen_at": "2026-08-29",
-      "source_updated_at": "2026-09-19",
-      "paper_url": "https://arxiv.org/abs/2509.23426",
-      "arxiv_id": "2509.23426",
-      "doi": "",
-      "group": "Cross-disciplinary Applications",
-      "category": "Medicine & Healthcare",
-      "categories": [
-        "Medicine & Healthcare",
-        "Science & Discovery"
-      ],
-      "subcategories": [
-        "Medical Agents",
-        "General AI4Science"
-      ],
-      "source_repos": [
-        "AgenticHealthAI/Awesome-AI-Agents-for-Healthcare",
-        "ai4s-research/awesome-ai-for-science"
-      ],
-      "source_urls": [
-        "https://github.com/AgenticHealthAI/Awesome-AI-Agents-for-Healthcare",
-        "https://github.com/ai4s-research/awesome-ai-for-science"
-      ],
-      "metadata_sources": [
-        "source README",
-        "arXiv identifier"
-      ]
-    },
-    {
       "id": "6b4cc99f5b75abea",
       "title": "Earth-Agent: Unlocking the Full Landscape of Earth Observation with Agents",
       "venue": "arXiv",
       "published_at": "2025-09",
       "date_precision": "month",
       "first_seen_at": "2026-08-29",
-      "source_updated_at": "2026-09-19",
+      "source_updated_at": "2026-09-20",
       "paper_url": "https://arxiv.org/abs/2509.23141",
       "arxiv_id": "2509.23141",
       "doi": "",
@@ -299912,39 +300001,6 @@
       ],
       "source_urls": [
         "https://github.com/ValueByte-AI/Awesome-LLM-in-Social-Science"
-      ],
-      "metadata_sources": [
-        "source README",
-        "arXiv identifier"
-      ]
-    },
-    {
-      "id": "174a19869a2035e5",
-      "title": "Directly Aligning the Full Diffusion Trajectory with Fine-Grained Human Preference",
-      "venue": "arXiv",
-      "published_at": "2025-09",
-      "date_precision": "month",
-      "first_seen_at": "2026-08-31",
-      "source_updated_at": "2026-09-04",
-      "paper_url": "https://arxiv.org/abs/2509.06942",
-      "arxiv_id": "2509.06942",
-      "doi": "",
-      "group": "Core Technology",
-      "category": "Image Generation",
-      "categories": [
-        "Image Generation"
-      ],
-      "subcategories": [
-        "Diffusion / T2I / Editing",
-        "General Diffusion"
-      ],
-      "source_repos": [
-        "wangkai930418/awesome-diffusion-categorized",
-        "huan-yin/Awesome-Image-Generation-Model"
-      ],
-      "source_urls": [
-        "https://github.com/wangkai930418/awesome-diffusion-categorized",
-        "https://github.com/huan-yin/Awesome-Image-Generation-Model"
       ],
       "metadata_sources": [
         "source README",
@@ -309130,7 +309186,8 @@
       ],
       "metadata_sources": [
         "source README",
-        "arXiv"
+        "arXiv",
+        "Semantic Scholar"
       ]
     },
     {
@@ -309641,7 +309698,8 @@
       ],
       "metadata_sources": [
         "source README",
-        "arXiv"
+        "arXiv",
+        "Semantic Scholar"
       ]
     },
     {
@@ -309677,7 +309735,8 @@
       ],
       "metadata_sources": [
         "source README",
-        "arXiv"
+        "arXiv",
+        "Semantic Scholar"
       ]
     },
     {
@@ -309704,6 +309763,36 @@
       ],
       "source_urls": [
         "https://github.com/jonyzhang2023/awesome-embodied-vla-va-vln"
+      ],
+      "metadata_sources": [
+        "source README",
+        "Semantic Scholar"
+      ]
+    },
+    {
+      "id": "a5588d49155c65d4",
+      "title": "NextStep-1: Toward Autoregressive Image Generation with Continuous Tokens at Scale",
+      "venue": "arXiv",
+      "published_at": "2025-08-14",
+      "date_precision": "day",
+      "first_seen_at": "2026-08-31",
+      "source_updated_at": "2026-09-21",
+      "paper_url": "https://arxiv.org/pdf/2508.10711",
+      "arxiv_id": "2508.10711",
+      "doi": "",
+      "group": "Core Technology",
+      "category": "Image Generation",
+      "categories": [
+        "Image Generation"
+      ],
+      "subcategories": [
+        "General Diffusion"
+      ],
+      "source_repos": [
+        "huan-yin/Awesome-Image-Generation-Model"
+      ],
+      "source_urls": [
+        "https://github.com/huan-yin/Awesome-Image-Generation-Model"
       ],
       "metadata_sources": [
         "source README",
@@ -309824,36 +309913,6 @@
       ],
       "source_urls": [
         "https://github.com/jonyzhang2023/awesome-embodied-vla-va-vln"
-      ],
-      "metadata_sources": [
-        "source README",
-        "Semantic Scholar"
-      ]
-    },
-    {
-      "id": "a5588d49155c65d4",
-      "title": "NextStep-1: Toward Autoregressive Image Generation with Continuous Tokens at Scale",
-      "venue": "arXiv",
-      "published_at": "2025-08-14",
-      "date_precision": "day",
-      "first_seen_at": "2026-08-31",
-      "source_updated_at": "2026-09-04",
-      "paper_url": "https://arxiv.org/pdf/2508.10711",
-      "arxiv_id": "2508.10711",
-      "doi": "",
-      "group": "Core Technology",
-      "category": "Image Generation",
-      "categories": [
-        "Image Generation"
-      ],
-      "subcategories": [
-        "General Diffusion"
-      ],
-      "source_repos": [
-        "huan-yin/Awesome-Image-Generation-Model"
-      ],
-      "source_urls": [
-        "https://github.com/huan-yin/Awesome-Image-Generation-Model"
       ],
       "metadata_sources": [
         "source README",
@@ -310175,7 +310234,7 @@
       "published_at": "2025-08-04",
       "date_precision": "day",
       "first_seen_at": "2026-08-31",
-      "source_updated_at": "2026-09-14",
+      "source_updated_at": "2026-09-21",
       "paper_url": "https://arxiv.org/abs/2508.02324",
       "arxiv_id": "2508.02324",
       "doi": "",
@@ -310203,7 +310262,8 @@
       ],
       "metadata_sources": [
         "source README",
-        "arXiv"
+        "arXiv",
+        "Semantic Scholar"
       ]
     },
     {
@@ -310360,6 +310420,39 @@
       ]
     },
     {
+      "id": "6e44b4a72ab5eabc",
+      "title": "From AI for Science to Agentic Science: A Survey on Autonomous Scientific Discovery",
+      "venue": "Science",
+      "published_at": "2025-08",
+      "date_precision": "month",
+      "first_seen_at": "2026-08-29",
+      "source_updated_at": "2026-09-20",
+      "paper_url": "https://arxiv.org/abs/2508.14111",
+      "arxiv_id": "2508.14111",
+      "doi": "",
+      "group": "Cross-disciplinary Applications",
+      "category": "Science & Discovery",
+      "categories": [
+        "Science & Discovery"
+      ],
+      "subcategories": [
+        "Scientific Agents",
+        "General AI4Science"
+      ],
+      "source_repos": [
+        "zoedsy/awesome-science-agents",
+        "ai4s-research/awesome-ai-for-science"
+      ],
+      "source_urls": [
+        "https://github.com/zoedsy/awesome-science-agents",
+        "https://github.com/ai4s-research/awesome-ai-for-science"
+      ],
+      "metadata_sources": [
+        "source README",
+        "arXiv identifier"
+      ]
+    },
+    {
       "id": "39e9cccb0aec0896",
       "title": "AutoEDA: Enabling EDA Flow Automation through Microservice-Based LLM Agents",
       "venue": "arXiv",
@@ -310420,46 +310513,13 @@
       ]
     },
     {
-      "id": "6e44b4a72ab5eabc",
-      "title": "From AI for Science to Agentic Science: A Survey on Autonomous Scientific Discovery",
-      "venue": "Science",
-      "published_at": "2025-08",
-      "date_precision": "month",
-      "first_seen_at": "2026-08-29",
-      "source_updated_at": "2026-09-19",
-      "paper_url": "https://arxiv.org/abs/2508.14111",
-      "arxiv_id": "2508.14111",
-      "doi": "",
-      "group": "Cross-disciplinary Applications",
-      "category": "Science & Discovery",
-      "categories": [
-        "Science & Discovery"
-      ],
-      "subcategories": [
-        "Scientific Agents",
-        "General AI4Science"
-      ],
-      "source_repos": [
-        "zoedsy/awesome-science-agents",
-        "ai4s-research/awesome-ai-for-science"
-      ],
-      "source_urls": [
-        "https://github.com/zoedsy/awesome-science-agents",
-        "https://github.com/ai4s-research/awesome-ai-for-science"
-      ],
-      "metadata_sources": [
-        "source README",
-        "arXiv identifier"
-      ]
-    },
-    {
       "id": "55b88e77a9e374fb",
       "title": "A Survey of Scientific Large Language Models: From Data Foundations to Agent Frontiers",
       "venue": "arXiv",
       "published_at": "2025-08",
       "date_precision": "month",
       "first_seen_at": "2026-08-29",
-      "source_updated_at": "2026-09-19",
+      "source_updated_at": "2026-09-20",
       "paper_url": "https://arxiv.org/abs/2508.21148",
       "arxiv_id": "2508.21148",
       "doi": "",
@@ -322984,7 +323044,8 @@
       "metadata_sources": [
         "structured source",
         "source README",
-        "arXiv"
+        "arXiv",
+        "Semantic Scholar"
       ]
     },
     {
@@ -324021,47 +324082,13 @@
       ]
     },
     {
-      "id": "b3c5fc9572d7eac2",
-      "title": "STELLA: Self-Evolving LLM Agent for Biomedical Research",
-      "venue": "arXiv",
-      "published_at": "2025-07",
-      "date_precision": "month",
-      "first_seen_at": "2026-08-31",
-      "source_updated_at": "2026-09-19",
-      "paper_url": "http://arxiv.org/abs/2507.02004v1",
-      "arxiv_id": "2507.02004",
-      "doi": "",
-      "group": "Cross-disciplinary Applications",
-      "category": "Medicine & Healthcare",
-      "categories": [
-        "Medicine & Healthcare",
-        "Science & Discovery"
-      ],
-      "subcategories": [
-        "Medical Agents",
-        "Scientific Agents"
-      ],
-      "source_repos": [
-        "AgenticHealthAI/Awesome-AI-Agents-for-Healthcare",
-        "zoedsy/awesome-science-agents"
-      ],
-      "source_urls": [
-        "https://github.com/AgenticHealthAI/Awesome-AI-Agents-for-Healthcare",
-        "https://github.com/zoedsy/awesome-science-agents"
-      ],
-      "metadata_sources": [
-        "source README",
-        "arXiv identifier"
-      ]
-    },
-    {
       "id": "02bbf8bb6d6a349a",
       "title": "Autonomous Scientific Discovery Through Hierarchical AI Scientist Systems",
       "venue": "arXiv",
       "published_at": "2025-07",
       "date_precision": "month",
       "first_seen_at": "2026-08-29",
-      "source_updated_at": "2026-09-19",
+      "source_updated_at": "2026-09-20",
       "paper_url": "https://arxiv.org/abs/2507.15951",
       "arxiv_id": "2507.15951",
       "doi": "",
@@ -324091,7 +324118,7 @@
       "published_at": "2025-07",
       "date_precision": "month",
       "first_seen_at": "2026-08-29",
-      "source_updated_at": "2026-09-19",
+      "source_updated_at": "2026-09-20",
       "paper_url": "https://arxiv.org/abs/2507.01903",
       "arxiv_id": "2507.01903",
       "doi": "",
@@ -324108,6 +324135,40 @@
       ],
       "source_urls": [
         "https://github.com/ai4s-research/awesome-ai-for-science"
+      ],
+      "metadata_sources": [
+        "source README",
+        "arXiv identifier"
+      ]
+    },
+    {
+      "id": "b3c5fc9572d7eac2",
+      "title": "STELLA: Self-Evolving LLM Agent for Biomedical Research",
+      "venue": "arXiv",
+      "published_at": "2025-07",
+      "date_precision": "month",
+      "first_seen_at": "2026-08-31",
+      "source_updated_at": "2026-09-19",
+      "paper_url": "http://arxiv.org/abs/2507.02004v1",
+      "arxiv_id": "2507.02004",
+      "doi": "",
+      "group": "Cross-disciplinary Applications",
+      "category": "Medicine & Healthcare",
+      "categories": [
+        "Medicine & Healthcare",
+        "Science & Discovery"
+      ],
+      "subcategories": [
+        "Medical Agents",
+        "Scientific Agents"
+      ],
+      "source_repos": [
+        "AgenticHealthAI/Awesome-AI-Agents-for-Healthcare",
+        "zoedsy/awesome-science-agents"
+      ],
+      "source_urls": [
+        "https://github.com/AgenticHealthAI/Awesome-AI-Agents-for-Healthcare",
+        "https://github.com/zoedsy/awesome-science-agents"
       ],
       "metadata_sources": [
         "source README",
@@ -332621,7 +332682,7 @@
       "published_at": "2025-06-28",
       "date_precision": "day",
       "first_seen_at": "2026-08-31",
-      "source_updated_at": "2026-09-14",
+      "source_updated_at": "2026-09-21",
       "paper_url": "https://arxiv.org/abs/2506.23044",
       "arxiv_id": "2506.23044",
       "doi": "",
@@ -332649,7 +332710,8 @@
       ],
       "metadata_sources": [
         "source README",
-        "arXiv"
+        "arXiv",
+        "Semantic Scholar"
       ]
     },
     {
@@ -333379,6 +333441,36 @@
       ]
     },
     {
+      "id": "807f2af65c543ad1",
+      "title": "FLUX.1 Kontext: Flow Matching for In-Context Image Generation and Editing in Latent Space",
+      "venue": "arXiv",
+      "published_at": "2025-06-17",
+      "date_precision": "day",
+      "first_seen_at": "2026-08-31",
+      "source_updated_at": "2026-09-21",
+      "paper_url": "https://arxiv.org/pdf/2506.15742",
+      "arxiv_id": "2506.15742",
+      "doi": "",
+      "group": "Core Technology",
+      "category": "Image Generation",
+      "categories": [
+        "Image Generation"
+      ],
+      "subcategories": [
+        "General Diffusion"
+      ],
+      "source_repos": [
+        "huan-yin/Awesome-Image-Generation-Model"
+      ],
+      "source_urls": [
+        "https://github.com/huan-yin/Awesome-Image-Generation-Model"
+      ],
+      "metadata_sources": [
+        "source README",
+        "Semantic Scholar"
+      ]
+    },
+    {
       "id": "4a1808a68e2aa61d",
       "title": "Gemini 2.5: Pushing the Frontier with Advanced Reasoning, Multimodality, Long Context, and Next Generation Agentic Capabilities",
       "venue": "arXiv",
@@ -333592,36 +333684,6 @@
       ],
       "source_urls": [
         "https://github.com/jonyzhang2023/awesome-embodied-vla-va-vln"
-      ],
-      "metadata_sources": [
-        "source README",
-        "Semantic Scholar"
-      ]
-    },
-    {
-      "id": "807f2af65c543ad1",
-      "title": "FLUX.1 Kontext: Flow Matching for In-Context Image Generation and Editing in Latent Space",
-      "venue": "arXiv",
-      "published_at": "2025-06-17",
-      "date_precision": "day",
-      "first_seen_at": "2026-08-31",
-      "source_updated_at": "2026-09-04",
-      "paper_url": "https://arxiv.org/pdf/2506.15742",
-      "arxiv_id": "2506.15742",
-      "doi": "",
-      "group": "Core Technology",
-      "category": "Image Generation",
-      "categories": [
-        "Image Generation"
-      ],
-      "subcategories": [
-        "General Diffusion"
-      ],
-      "source_repos": [
-        "huan-yin/Awesome-Image-Generation-Model"
-      ],
-      "source_urls": [
-        "https://github.com/huan-yin/Awesome-Image-Generation-Model"
       ],
       "metadata_sources": [
         "source README",
@@ -333867,7 +333929,46 @@
       ],
       "metadata_sources": [
         "source README",
-        "arXiv"
+        "arXiv",
+        "Semantic Scholar"
+      ]
+    },
+    {
+      "id": "6e9fc728b058b853",
+      "title": "Ming-Omni: A Unified Multimodal Model for Perception and Generation",
+      "venue": "arXiv",
+      "published_at": "2025-06-11",
+      "date_precision": "day",
+      "first_seen_at": "2026-08-31",
+      "source_updated_at": "2026-09-21",
+      "paper_url": "https://arxiv.org/abs/2506.09344",
+      "arxiv_id": "2506.09344",
+      "doi": "",
+      "group": "Core Technology",
+      "category": "Vision-Language",
+      "categories": [
+        "Vision-Language",
+        "Image Generation",
+        "Unified Multimodal"
+      ],
+      "subcategories": [
+        "Multimodal Modeling",
+        "General Diffusion",
+        "Unified Understanding + Generation"
+      ],
+      "source_repos": [
+        "OpenEnvision/Awesome-Multimodal-Modeling",
+        "huan-yin/Awesome-Image-Generation-Model",
+        "AIDC-AI/Awesome-Unified-Multimodal-Models"
+      ],
+      "source_urls": [
+        "https://github.com/OpenEnvision/Awesome-Multimodal-Modeling",
+        "https://github.com/huan-yin/Awesome-Image-Generation-Model",
+        "https://github.com/AIDC-AI/Awesome-Unified-Multimodal-Models"
+      ],
+      "metadata_sources": [
+        "source README",
+        "Semantic Scholar"
       ]
     },
     {
@@ -333987,44 +334088,6 @@
       ],
       "source_urls": [
         "https://github.com/jonyzhang2023/awesome-embodied-vla-va-vln"
-      ],
-      "metadata_sources": [
-        "source README",
-        "Semantic Scholar"
-      ]
-    },
-    {
-      "id": "6e9fc728b058b853",
-      "title": "Ming-Omni: A Unified Multimodal Model for Perception and Generation",
-      "venue": "arXiv",
-      "published_at": "2025-06-11",
-      "date_precision": "day",
-      "first_seen_at": "2026-08-31",
-      "source_updated_at": "2026-09-14",
-      "paper_url": "https://arxiv.org/abs/2506.09344",
-      "arxiv_id": "2506.09344",
-      "doi": "",
-      "group": "Core Technology",
-      "category": "Vision-Language",
-      "categories": [
-        "Vision-Language",
-        "Image Generation",
-        "Unified Multimodal"
-      ],
-      "subcategories": [
-        "Multimodal Modeling",
-        "General Diffusion",
-        "Unified Understanding + Generation"
-      ],
-      "source_repos": [
-        "OpenEnvision/Awesome-Multimodal-Modeling",
-        "huan-yin/Awesome-Image-Generation-Model",
-        "AIDC-AI/Awesome-Unified-Multimodal-Models"
-      ],
-      "source_urls": [
-        "https://github.com/OpenEnvision/Awesome-Multimodal-Modeling",
-        "https://github.com/huan-yin/Awesome-Image-Generation-Model",
-        "https://github.com/AIDC-AI/Awesome-Unified-Multimodal-Models"
       ],
       "metadata_sources": [
         "source README",
@@ -334577,7 +334640,8 @@
       ],
       "metadata_sources": [
         "source README",
-        "arXiv"
+        "arXiv",
+        "Semantic Scholar"
       ]
     },
     {
@@ -334890,7 +334954,8 @@
       ],
       "metadata_sources": [
         "source README",
-        "arXiv"
+        "arXiv",
+        "Semantic Scholar"
       ]
     },
     {
@@ -334924,6 +334989,175 @@
       ]
     },
     {
+      "id": "cbcd4de954e21454",
+      "title": "UniWorld: High-Resolution Semantic Encoders for Unified Visual Understanding and Generation",
+      "venue": "arXiv",
+      "published_at": "2025-06",
+      "date_precision": "month",
+      "first_seen_at": "2026-08-31",
+      "source_updated_at": "2026-09-21",
+      "paper_url": "https://arxiv.org/abs/2506.03147",
+      "arxiv_id": "2506.03147",
+      "doi": "",
+      "group": "Core Technology",
+      "category": "Vision-Language",
+      "categories": [
+        "Vision-Language",
+        "Image Generation",
+        "Unified Multimodal"
+      ],
+      "subcategories": [
+        "Multimodal Modeling",
+        "General Diffusion",
+        "Unified Understanding + Generation",
+        "Unified Multimodal"
+      ],
+      "source_repos": [
+        "OpenEnvision/Awesome-Multimodal-Modeling",
+        "huan-yin/Awesome-Image-Generation-Model",
+        "AIDC-AI/Awesome-Unified-Multimodal-Models",
+        "Purshow/Awesome-Unified-Multimodal"
+      ],
+      "source_urls": [
+        "https://github.com/OpenEnvision/Awesome-Multimodal-Modeling",
+        "https://github.com/huan-yin/Awesome-Image-Generation-Model",
+        "https://github.com/AIDC-AI/Awesome-Unified-Multimodal-Models",
+        "https://github.com/Purshow/Awesome-Unified-Multimodal"
+      ],
+      "metadata_sources": [
+        "source README",
+        "arXiv identifier"
+      ]
+    },
+    {
+      "id": "99f1a1d2c109bfaf",
+      "title": "Show-o2: Improved Native Unified Multimodal Models",
+      "venue": "arXiv",
+      "published_at": "2025-06",
+      "date_precision": "month",
+      "first_seen_at": "2026-08-29",
+      "source_updated_at": "2026-09-21",
+      "paper_url": "https://arxiv.org/abs/2506.15564",
+      "arxiv_id": "2506.15564",
+      "doi": "",
+      "group": "Core Technology",
+      "category": "Language",
+      "categories": [
+        "Language",
+        "Vision-Language",
+        "Image Generation",
+        "Unified Multimodal"
+      ],
+      "subcategories": [
+        "Diffusion LLM",
+        "Multimodal Modeling",
+        "MLLM Overview",
+        "General Diffusion",
+        "Unified Understanding + Generation",
+        "Unified Multimodal"
+      ],
+      "source_repos": [
+        "AIDASLab/Awesome-Diffusion-LLM",
+        "OpenEnvision/Awesome-Multimodal-Modeling",
+        "BradyFU/Awesome-Multimodal-Large-Language-Models",
+        "huan-yin/Awesome-Image-Generation-Model",
+        "AIDC-AI/Awesome-Unified-Multimodal-Models",
+        "showlab/Awesome-Unified-Multimodal-Models",
+        "Purshow/Awesome-Unified-Multimodal"
+      ],
+      "source_urls": [
+        "https://github.com/AIDASLab/Awesome-Diffusion-LLM",
+        "https://github.com/OpenEnvision/Awesome-Multimodal-Modeling",
+        "https://github.com/BradyFU/Awesome-Multimodal-Large-Language-Models",
+        "https://github.com/huan-yin/Awesome-Image-Generation-Model",
+        "https://github.com/AIDC-AI/Awesome-Unified-Multimodal-Models",
+        "https://github.com/showlab/Awesome-Unified-Multimodal-Models",
+        "https://github.com/Purshow/Awesome-Unified-Multimodal"
+      ],
+      "metadata_sources": [
+        "source README",
+        "arXiv identifier"
+      ]
+    },
+    {
+      "id": "fe46ca5ced1f4ce8",
+      "title": "OmniGen2: Towards Instruction-Aligned Multimodal Generation",
+      "venue": "arXiv",
+      "published_at": "2025-06",
+      "date_precision": "month",
+      "first_seen_at": "2026-08-29",
+      "source_updated_at": "2026-09-21",
+      "paper_url": "https://arxiv.org/abs/2506.18871",
+      "arxiv_id": "2506.18871",
+      "doi": "",
+      "group": "Core Technology",
+      "category": "Vision-Language",
+      "categories": [
+        "Vision-Language",
+        "Image Generation",
+        "Unified Multimodal",
+        "Vision"
+      ],
+      "subcategories": [
+        "General VLM",
+        "Multimodal Modeling",
+        "General Diffusion",
+        "Unified Understanding + Generation",
+        "CVPR 2026 Proceedings"
+      ],
+      "source_repos": [
+        "zli12321/Vision-Language-Models-Overview",
+        "OpenEnvision/Awesome-Multimodal-Modeling",
+        "huan-yin/Awesome-Image-Generation-Model",
+        "AIDC-AI/Awesome-Unified-Multimodal-Models",
+        "showlab/Awesome-Unified-Multimodal-Models",
+        "firetix/awesome-cvpr-2026-papers"
+      ],
+      "source_urls": [
+        "https://github.com/zli12321/Vision-Language-Models-Overview",
+        "https://github.com/OpenEnvision/Awesome-Multimodal-Modeling",
+        "https://github.com/huan-yin/Awesome-Image-Generation-Model",
+        "https://github.com/AIDC-AI/Awesome-Unified-Multimodal-Models",
+        "https://github.com/showlab/Awesome-Unified-Multimodal-Models",
+        "https://github.com/firetix/awesome-cvpr-2026-papers"
+      ],
+      "metadata_sources": [
+        "source README",
+        "structured source",
+        "arXiv identifier"
+      ]
+    },
+    {
+      "id": "a179b882761932d3",
+      "title": "MedAgentGym: A Scalable Agentic Training Environment for Code-Centric Reasoning in Biomedical Data Science",
+      "venue": "Science",
+      "published_at": "2025-06",
+      "date_precision": "month",
+      "first_seen_at": "2026-08-29",
+      "source_updated_at": "2026-09-20",
+      "paper_url": "https://arxiv.org/abs/2506.04405",
+      "arxiv_id": "2506.04405",
+      "doi": "",
+      "group": "Cross-disciplinary Applications",
+      "category": "Science & Discovery",
+      "categories": [
+        "Science & Discovery"
+      ],
+      "subcategories": [
+        "General AI4Science"
+      ],
+      "source_repos": [
+        "ai4s-research/awesome-ai-for-science"
+      ],
+      "source_urls": [
+        "https://github.com/ai4s-research/awesome-ai-for-science"
+      ],
+      "metadata_sources": [
+        "source README",
+        "arXiv identifier"
+      ]
+    },
+    {
       "id": "2db86f2c14b39dbc",
       "title": "ChatCFD: An LLM-Driven Agent for End-to-End CFD Automation with Structured Knowledge and Reasoning",
       "venue": "arXiv",
@@ -334947,36 +335181,6 @@
       ],
       "source_urls": [
         "https://github.com/whut09/Awesome-AI-Engineering-Agents"
-      ],
-      "metadata_sources": [
-        "source README",
-        "arXiv identifier"
-      ]
-    },
-    {
-      "id": "a179b882761932d3",
-      "title": "MedAgentGym: A Scalable Agentic Training Environment for Code-Centric Reasoning in Biomedical Data Science",
-      "venue": "Science",
-      "published_at": "2025-06",
-      "date_precision": "month",
-      "first_seen_at": "2026-08-29",
-      "source_updated_at": "2026-09-19",
-      "paper_url": "https://arxiv.org/abs/2506.04405",
-      "arxiv_id": "2506.04405",
-      "doi": "",
-      "group": "Cross-disciplinary Applications",
-      "category": "Science & Discovery",
-      "categories": [
-        "Science & Discovery"
-      ],
-      "subcategories": [
-        "General AI4Science"
-      ],
-      "source_repos": [
-        "ai4s-research/awesome-ai-for-science"
-      ],
-      "source_urls": [
-        "https://github.com/ai4s-research/awesome-ai-for-science"
       ],
       "metadata_sources": [
         "source README",
@@ -335347,56 +335551,6 @@
       ],
       "source_urls": [
         "https://github.com/BradyFU/Awesome-Multimodal-Large-Language-Models"
-      ],
-      "metadata_sources": [
-        "source README",
-        "arXiv identifier"
-      ]
-    },
-    {
-      "id": "99f1a1d2c109bfaf",
-      "title": "Show-o2: Improved Native Unified Multimodal Models",
-      "venue": "arXiv",
-      "published_at": "2025-06",
-      "date_precision": "month",
-      "first_seen_at": "2026-08-29",
-      "source_updated_at": "2026-09-18",
-      "paper_url": "https://arxiv.org/abs/2506.15564",
-      "arxiv_id": "2506.15564",
-      "doi": "",
-      "group": "Core Technology",
-      "category": "Language",
-      "categories": [
-        "Language",
-        "Vision-Language",
-        "Image Generation",
-        "Unified Multimodal"
-      ],
-      "subcategories": [
-        "Diffusion LLM",
-        "Multimodal Modeling",
-        "MLLM Overview",
-        "General Diffusion",
-        "Unified Understanding + Generation",
-        "Unified Multimodal"
-      ],
-      "source_repos": [
-        "AIDASLab/Awesome-Diffusion-LLM",
-        "OpenEnvision/Awesome-Multimodal-Modeling",
-        "BradyFU/Awesome-Multimodal-Large-Language-Models",
-        "huan-yin/Awesome-Image-Generation-Model",
-        "AIDC-AI/Awesome-Unified-Multimodal-Models",
-        "showlab/Awesome-Unified-Multimodal-Models",
-        "Purshow/Awesome-Unified-Multimodal"
-      ],
-      "source_urls": [
-        "https://github.com/AIDASLab/Awesome-Diffusion-LLM",
-        "https://github.com/OpenEnvision/Awesome-Multimodal-Modeling",
-        "https://github.com/BradyFU/Awesome-Multimodal-Large-Language-Models",
-        "https://github.com/huan-yin/Awesome-Image-Generation-Model",
-        "https://github.com/AIDC-AI/Awesome-Unified-Multimodal-Models",
-        "https://github.com/showlab/Awesome-Unified-Multimodal-Models",
-        "https://github.com/Purshow/Awesome-Unified-Multimodal"
       ],
       "metadata_sources": [
         "source README",
@@ -337301,47 +337455,6 @@
       ]
     },
     {
-      "id": "cbcd4de954e21454",
-      "title": "UniWorld: High-Resolution Semantic Encoders for Unified Visual Understanding and Generation",
-      "venue": "arXiv",
-      "published_at": "2025-06",
-      "date_precision": "month",
-      "first_seen_at": "2026-08-31",
-      "source_updated_at": "2026-09-14",
-      "paper_url": "https://arxiv.org/abs/2506.03147",
-      "arxiv_id": "2506.03147",
-      "doi": "",
-      "group": "Core Technology",
-      "category": "Vision-Language",
-      "categories": [
-        "Vision-Language",
-        "Image Generation",
-        "Unified Multimodal"
-      ],
-      "subcategories": [
-        "Multimodal Modeling",
-        "General Diffusion",
-        "Unified Understanding + Generation",
-        "Unified Multimodal"
-      ],
-      "source_repos": [
-        "OpenEnvision/Awesome-Multimodal-Modeling",
-        "huan-yin/Awesome-Image-Generation-Model",
-        "AIDC-AI/Awesome-Unified-Multimodal-Models",
-        "Purshow/Awesome-Unified-Multimodal"
-      ],
-      "source_urls": [
-        "https://github.com/OpenEnvision/Awesome-Multimodal-Modeling",
-        "https://github.com/huan-yin/Awesome-Image-Generation-Model",
-        "https://github.com/AIDC-AI/Awesome-Unified-Multimodal-Models",
-        "https://github.com/Purshow/Awesome-Unified-Multimodal"
-      ],
-      "metadata_sources": [
-        "source README",
-        "arXiv identifier"
-      ]
-    },
-    {
       "id": "07e1cfed2e4aef77",
       "title": "UniFork: Exploring Modality Alignment for Unified Multimodal Understanding and Generation",
       "venue": "arXiv",
@@ -337565,54 +337678,6 @@
         "https://github.com/AudioLLMs/Awesome-Audio-LLM"
       ],
       "metadata_sources": [
-        "structured source",
-        "arXiv identifier"
-      ]
-    },
-    {
-      "id": "fe46ca5ced1f4ce8",
-      "title": "OmniGen2: Towards Instruction-Aligned Multimodal Generation",
-      "venue": "arXiv",
-      "published_at": "2025-06",
-      "date_precision": "month",
-      "first_seen_at": "2026-08-29",
-      "source_updated_at": "2026-09-14",
-      "paper_url": "https://arxiv.org/abs/2506.18871",
-      "arxiv_id": "2506.18871",
-      "doi": "",
-      "group": "Core Technology",
-      "category": "Vision-Language",
-      "categories": [
-        "Vision-Language",
-        "Image Generation",
-        "Unified Multimodal",
-        "Vision"
-      ],
-      "subcategories": [
-        "General VLM",
-        "Multimodal Modeling",
-        "General Diffusion",
-        "Unified Understanding + Generation",
-        "CVPR 2026 Proceedings"
-      ],
-      "source_repos": [
-        "zli12321/Vision-Language-Models-Overview",
-        "OpenEnvision/Awesome-Multimodal-Modeling",
-        "huan-yin/Awesome-Image-Generation-Model",
-        "AIDC-AI/Awesome-Unified-Multimodal-Models",
-        "showlab/Awesome-Unified-Multimodal-Models",
-        "firetix/awesome-cvpr-2026-papers"
-      ],
-      "source_urls": [
-        "https://github.com/zli12321/Vision-Language-Models-Overview",
-        "https://github.com/OpenEnvision/Awesome-Multimodal-Modeling",
-        "https://github.com/huan-yin/Awesome-Image-Generation-Model",
-        "https://github.com/AIDC-AI/Awesome-Unified-Multimodal-Models",
-        "https://github.com/showlab/Awesome-Unified-Multimodal-Models",
-        "https://github.com/firetix/awesome-cvpr-2026-papers"
-      ],
-      "metadata_sources": [
-        "source README",
         "structured source",
         "arXiv identifier"
       ]
@@ -349815,6 +349880,36 @@
       ]
     },
     {
+      "id": "846c0ab6dd8e99e2",
+      "title": "HiDream-I1: A High-Efficient Image Generative Foundation Model with Sparse Diffusion Transformer",
+      "venue": "arXiv",
+      "published_at": "2025-05-28",
+      "date_precision": "day",
+      "first_seen_at": "2026-08-31",
+      "source_updated_at": "2026-09-21",
+      "paper_url": "https://arxiv.org/pdf/2505.22705",
+      "arxiv_id": "2505.22705",
+      "doi": "",
+      "group": "Core Technology",
+      "category": "Image Generation",
+      "categories": [
+        "Image Generation"
+      ],
+      "subcategories": [
+        "General Diffusion"
+      ],
+      "source_repos": [
+        "huan-yin/Awesome-Image-Generation-Model"
+      ],
+      "source_urls": [
+        "https://github.com/huan-yin/Awesome-Image-Generation-Model"
+      ],
+      "metadata_sources": [
+        "source README",
+        "Semantic Scholar"
+      ]
+    },
+    {
       "id": "bbb27ae0934f79e5",
       "title": "Streaming Flow Policy: Simplifying diffusion/flow-matching policies by treating action trajectories as flow trajectories",
       "venue": "CoRL",
@@ -349868,36 +349963,6 @@
       ],
       "source_urls": [
         "https://github.com/jonyzhang2023/awesome-embodied-vla-va-vln"
-      ],
-      "metadata_sources": [
-        "source README",
-        "Semantic Scholar"
-      ]
-    },
-    {
-      "id": "846c0ab6dd8e99e2",
-      "title": "HiDream-I1: A High-Efficient Image Generative Foundation Model with Sparse Diffusion Transformer",
-      "venue": "arXiv",
-      "published_at": "2025-05-28",
-      "date_precision": "day",
-      "first_seen_at": "2026-08-31",
-      "source_updated_at": "2026-09-04",
-      "paper_url": "https://arxiv.org/pdf/2505.22705",
-      "arxiv_id": "2505.22705",
-      "doi": "",
-      "group": "Core Technology",
-      "category": "Image Generation",
-      "categories": [
-        "Image Generation"
-      ],
-      "subcategories": [
-        "General Diffusion"
-      ],
-      "source_repos": [
-        "huan-yin/Awesome-Image-Generation-Model"
-      ],
-      "source_urls": [
-        "https://github.com/huan-yin/Awesome-Image-Generation-Model"
       ],
       "metadata_sources": [
         "source README",
@@ -350608,7 +350673,7 @@
       "published_at": "2025-05-22",
       "date_precision": "day",
       "first_seen_at": "2026-08-29",
-      "source_updated_at": "2026-09-19",
+      "source_updated_at": "2026-09-20",
       "paper_url": "https://arxiv.org/abs/2505.16301",
       "arxiv_id": "2505.16301",
       "doi": "",
@@ -350698,7 +350763,7 @@
       "published_at": "2025-05-20",
       "date_precision": "day",
       "first_seen_at": "2026-08-29",
-      "source_updated_at": "2026-09-18",
+      "source_updated_at": "2026-09-21",
       "paper_url": "https://arxiv.org/abs/2505.14683",
       "arxiv_id": "2505.14683",
       "doi": "",
@@ -351771,7 +351836,7 @@
       "published_at": "2025-05-14",
       "date_precision": "day",
       "first_seen_at": "2026-08-29",
-      "source_updated_at": "2026-09-18",
+      "source_updated_at": "2026-09-21",
       "paper_url": "https://www.arxiv.org/abs/2505.09568",
       "arxiv_id": "2505.09568",
       "doi": "",
@@ -352338,7 +352403,8 @@
       ],
       "metadata_sources": [
         "source README",
-        "arXiv"
+        "arXiv",
+        "Semantic Scholar"
       ]
     },
     {
@@ -352378,7 +352444,7 @@
       "published_at": "2025-05-10",
       "date_precision": "day",
       "first_seen_at": "2026-08-29",
-      "source_updated_at": "2026-09-19",
+      "source_updated_at": "2026-09-20",
       "paper_url": "https://arxiv.org/abs/2511.18345",
       "arxiv_id": "2511.18345",
       "doi": "",
@@ -353232,6 +353298,53 @@
       ]
     },
     {
+      "id": "c9c5d0b831eab888",
+      "title": "MMaDA: Multimodal Large Diffusion Language Models",
+      "venue": "NeurIPS",
+      "published_at": "2025-05",
+      "date_precision": "month",
+      "first_seen_at": "2026-08-29",
+      "source_updated_at": "2026-09-21",
+      "paper_url": "https://arxiv.org/abs/2505.15809",
+      "arxiv_id": "2505.15809",
+      "doi": "",
+      "group": "Core Technology",
+      "category": "Language",
+      "categories": [
+        "Language",
+        "Vision-Language",
+        "Image Generation",
+        "Unified Multimodal"
+      ],
+      "subcategories": [
+        "Diffusion LLM",
+        "Multimodal Modeling",
+        "MLLM Overview",
+        "General Diffusion",
+        "Unified Understanding + Generation"
+      ],
+      "source_repos": [
+        "AIDASLab/Awesome-Diffusion-LLM",
+        "VILA-Lab/Awesome-DLMs",
+        "OpenEnvision/Awesome-Multimodal-Modeling",
+        "BradyFU/Awesome-Multimodal-Large-Language-Models",
+        "huan-yin/Awesome-Image-Generation-Model",
+        "AIDC-AI/Awesome-Unified-Multimodal-Models"
+      ],
+      "source_urls": [
+        "https://github.com/AIDASLab/Awesome-Diffusion-LLM",
+        "https://github.com/VILA-Lab/Awesome-DLMs",
+        "https://github.com/OpenEnvision/Awesome-Multimodal-Modeling",
+        "https://github.com/BradyFU/Awesome-Multimodal-Large-Language-Models",
+        "https://github.com/huan-yin/Awesome-Image-Generation-Model",
+        "https://github.com/AIDC-AI/Awesome-Unified-Multimodal-Models"
+      ],
+      "metadata_sources": [
+        "source README",
+        "arXiv identifier"
+      ]
+    },
+    {
       "id": "948cc7c7be2fb66d",
       "title": "cadrille: Multi-modal CAD Reconstruction with Online Reinforcement Learning",
       "venue": "ICLR 2026",
@@ -353295,6 +353408,36 @@
       ]
     },
     {
+      "id": "7d6c8226193afb15",
+      "title": "InternAgent: When Agent Becomes the Scientist -- Building Closed-Loop System from Hypothesis to Verification",
+      "venue": "arXiv",
+      "published_at": "2025-05",
+      "date_precision": "month",
+      "first_seen_at": "2026-08-29",
+      "source_updated_at": "2026-09-20",
+      "paper_url": "https://arxiv.org/abs/2505.16938",
+      "arxiv_id": "2505.16938",
+      "doi": "",
+      "group": "Cross-disciplinary Applications",
+      "category": "Science & Discovery",
+      "categories": [
+        "Science & Discovery"
+      ],
+      "subcategories": [
+        "General AI4Science"
+      ],
+      "source_repos": [
+        "ai4s-research/awesome-ai-for-science"
+      ],
+      "source_urls": [
+        "https://github.com/ai4s-research/awesome-ai-for-science"
+      ],
+      "metadata_sources": [
+        "source README",
+        "arXiv identifier"
+      ]
+    },
+    {
       "id": "9e37038465f65afb",
       "title": "GeoCAD: Local Geometry-Controllable CAD Generation with Large Language Models",
       "venue": "NeurIPS",
@@ -353318,6 +353461,36 @@
       ],
       "source_urls": [
         "https://github.com/whut09/Awesome-AI-Engineering-Agents"
+      ],
+      "metadata_sources": [
+        "source README",
+        "arXiv identifier"
+      ]
+    },
+    {
+      "id": "1d398579c0d0ef92",
+      "title": "From Automation to Autonomy: A Survey on Large Language Models in Scientific Discovery",
+      "venue": "arXiv",
+      "published_at": "2025-05",
+      "date_precision": "month",
+      "first_seen_at": "2026-08-29",
+      "source_updated_at": "2026-09-20",
+      "paper_url": "https://arxiv.org/abs/2505.13259",
+      "arxiv_id": "2505.13259",
+      "doi": "",
+      "group": "Cross-disciplinary Applications",
+      "category": "Science & Discovery",
+      "categories": [
+        "Science & Discovery"
+      ],
+      "subcategories": [
+        "General AI4Science"
+      ],
+      "source_repos": [
+        "ai4s-research/awesome-ai-for-science"
+      ],
+      "source_urls": [
+        "https://github.com/ai4s-research/awesome-ai-for-science"
       ],
       "metadata_sources": [
         "source README",
@@ -353391,73 +353564,13 @@
       ]
     },
     {
-      "id": "7d6c8226193afb15",
-      "title": "InternAgent: When Agent Becomes the Scientist -- Building Closed-Loop System from Hypothesis to Verification",
-      "venue": "arXiv",
-      "published_at": "2025-05",
-      "date_precision": "month",
-      "first_seen_at": "2026-08-29",
-      "source_updated_at": "2026-09-19",
-      "paper_url": "https://arxiv.org/abs/2505.16938",
-      "arxiv_id": "2505.16938",
-      "doi": "",
-      "group": "Cross-disciplinary Applications",
-      "category": "Science & Discovery",
-      "categories": [
-        "Science & Discovery"
-      ],
-      "subcategories": [
-        "General AI4Science"
-      ],
-      "source_repos": [
-        "ai4s-research/awesome-ai-for-science"
-      ],
-      "source_urls": [
-        "https://github.com/ai4s-research/awesome-ai-for-science"
-      ],
-      "metadata_sources": [
-        "source README",
-        "arXiv identifier"
-      ]
-    },
-    {
-      "id": "1d398579c0d0ef92",
-      "title": "From Automation to Autonomy: A Survey on Large Language Models in Scientific Discovery",
-      "venue": "arXiv",
-      "published_at": "2025-05",
-      "date_precision": "month",
-      "first_seen_at": "2026-08-29",
-      "source_updated_at": "2026-09-19",
-      "paper_url": "https://arxiv.org/abs/2505.13259",
-      "arxiv_id": "2505.13259",
-      "doi": "",
-      "group": "Cross-disciplinary Applications",
-      "category": "Science & Discovery",
-      "categories": [
-        "Science & Discovery"
-      ],
-      "subcategories": [
-        "General AI4Science"
-      ],
-      "source_repos": [
-        "ai4s-research/awesome-ai-for-science"
-      ],
-      "source_urls": [
-        "https://github.com/ai4s-research/awesome-ai-for-science"
-      ],
-      "metadata_sources": [
-        "source README",
-        "arXiv identifier"
-      ]
-    },
-    {
       "id": "5feb3f539bae39cb",
       "title": "AI-Researcher: Autonomous Scientific Innovation",
       "venue": "arXiv",
       "published_at": "2025-05",
       "date_precision": "month",
       "first_seen_at": "2026-08-29",
-      "source_updated_at": "2026-09-19",
+      "source_updated_at": "2026-09-20",
       "paper_url": "https://arxiv.org/abs/2505.18705",
       "arxiv_id": "2505.18705",
       "doi": "",
@@ -354181,53 +354294,6 @@
       ],
       "source_urls": [
         "https://github.com/mk-runner/Awesome-Radiology-Report-Generation"
-      ],
-      "metadata_sources": [
-        "source README",
-        "arXiv identifier"
-      ]
-    },
-    {
-      "id": "c9c5d0b831eab888",
-      "title": "MMaDA: Multimodal Large Diffusion Language Models",
-      "venue": "NeurIPS",
-      "published_at": "2025-05",
-      "date_precision": "month",
-      "first_seen_at": "2026-08-29",
-      "source_updated_at": "2026-09-18",
-      "paper_url": "https://arxiv.org/abs/2505.15809",
-      "arxiv_id": "2505.15809",
-      "doi": "",
-      "group": "Core Technology",
-      "category": "Language",
-      "categories": [
-        "Language",
-        "Vision-Language",
-        "Image Generation",
-        "Unified Multimodal"
-      ],
-      "subcategories": [
-        "Diffusion LLM",
-        "Multimodal Modeling",
-        "MLLM Overview",
-        "General Diffusion",
-        "Unified Understanding + Generation"
-      ],
-      "source_repos": [
-        "AIDASLab/Awesome-Diffusion-LLM",
-        "VILA-Lab/Awesome-DLMs",
-        "OpenEnvision/Awesome-Multimodal-Modeling",
-        "BradyFU/Awesome-Multimodal-Large-Language-Models",
-        "huan-yin/Awesome-Image-Generation-Model",
-        "AIDC-AI/Awesome-Unified-Multimodal-Models"
-      ],
-      "source_urls": [
-        "https://github.com/AIDASLab/Awesome-Diffusion-LLM",
-        "https://github.com/VILA-Lab/Awesome-DLMs",
-        "https://github.com/OpenEnvision/Awesome-Multimodal-Modeling",
-        "https://github.com/BradyFU/Awesome-Multimodal-Large-Language-Models",
-        "https://github.com/huan-yin/Awesome-Image-Generation-Model",
-        "https://github.com/AIDC-AI/Awesome-Unified-Multimodal-Models"
       ],
       "metadata_sources": [
         "source README",
@@ -370462,7 +370528,7 @@
       "published_at": "2025-04-28",
       "date_precision": "day",
       "first_seen_at": "2026-08-29",
-      "source_updated_at": "2026-09-19",
+      "source_updated_at": "2026-09-20",
       "paper_url": "https://arxiv.org/abs/2504.20117",
       "arxiv_id": "2504.20117",
       "doi": "",
@@ -370492,7 +370558,7 @@
       "published_at": "2025-04-28",
       "date_precision": "day",
       "first_seen_at": "2026-08-29",
-      "source_updated_at": "2026-09-19",
+      "source_updated_at": "2026-09-20",
       "paper_url": "https://arxiv.org/abs/2504.20115",
       "arxiv_id": "2504.20115",
       "doi": "",
@@ -370670,7 +370736,8 @@
       "metadata_sources": [
         "structured source",
         "source README",
-        "arXiv"
+        "arXiv",
+        "Semantic Scholar"
       ]
     },
     {
@@ -371454,7 +371521,7 @@
       "published_at": "2025-04-14",
       "date_precision": "day",
       "first_seen_at": "2026-08-29",
-      "source_updated_at": "2026-09-19",
+      "source_updated_at": "2026-09-20",
       "paper_url": "https://www.biorxiv.org/content/10.1101/2025.04.14.648850v2",
       "arxiv_id": "",
       "doi": "",
@@ -371889,7 +371956,8 @@
       ],
       "metadata_sources": [
         "source README",
-        "arXiv"
+        "arXiv",
+        "Semantic Scholar"
       ]
     },
     {
@@ -372667,13 +372735,53 @@
       ]
     },
     {
+      "id": "d675c84495001fb8",
+      "title": "Step1X-Edit: A Practical Framework for General Image Editing",
+      "venue": "arXiv",
+      "published_at": "2025-04",
+      "date_precision": "month",
+      "first_seen_at": "2026-08-31",
+      "source_updated_at": "2026-09-21",
+      "paper_url": "https://arxiv.org/abs/2504.17761",
+      "arxiv_id": "2504.17761",
+      "doi": "",
+      "group": "Core Technology",
+      "category": "Image Generation",
+      "categories": [
+        "Image Generation",
+        "Unified Multimodal"
+      ],
+      "subcategories": [
+        "Diffusion / T2I / Editing",
+        "General Diffusion",
+        "Unified Understanding + Generation",
+        "Unified Multimodal"
+      ],
+      "source_repos": [
+        "wangkai930418/awesome-diffusion-categorized",
+        "huan-yin/Awesome-Image-Generation-Model",
+        "AIDC-AI/Awesome-Unified-Multimodal-Models",
+        "Purshow/Awesome-Unified-Multimodal"
+      ],
+      "source_urls": [
+        "https://github.com/wangkai930418/awesome-diffusion-categorized",
+        "https://github.com/huan-yin/Awesome-Image-Generation-Model",
+        "https://github.com/AIDC-AI/Awesome-Unified-Multimodal-Models",
+        "https://github.com/Purshow/Awesome-Unified-Multimodal"
+      ],
+      "metadata_sources": [
+        "source README",
+        "arXiv identifier"
+      ]
+    },
+    {
       "id": "d418b2d6c4570f72",
       "title": "The AI Scientist-v2: Workshop-Level Automated Scientific Discovery via Agentic Tree Search",
       "venue": "arXiv",
       "published_at": "2025-04",
       "date_precision": "month",
       "first_seen_at": "2026-08-29",
-      "source_updated_at": "2026-09-19",
+      "source_updated_at": "2026-09-20",
       "paper_url": "https://arxiv.org/abs/2504.08066",
       "arxiv_id": "2504.08066",
       "doi": "10.48550/arXiv.2504.08066",
@@ -372714,7 +372822,7 @@
       "published_at": "2025-04",
       "date_precision": "month",
       "first_seen_at": "2026-08-29",
-      "source_updated_at": "2026-09-19",
+      "source_updated_at": "2026-09-20",
       "paper_url": "https://arxiv.org/abs/2504.04280",
       "arxiv_id": "2504.04280",
       "doi": "",
@@ -375782,46 +375890,6 @@
       ],
       "source_urls": [
         "https://github.com/mbzuai-oryx/Awesome-LLM-Post-training"
-      ],
-      "metadata_sources": [
-        "source README",
-        "arXiv identifier"
-      ]
-    },
-    {
-      "id": "d675c84495001fb8",
-      "title": "Step1X-Edit: A Practical Framework for General Image Editing",
-      "venue": "arXiv",
-      "published_at": "2025-04",
-      "date_precision": "month",
-      "first_seen_at": "2026-08-31",
-      "source_updated_at": "2026-09-04",
-      "paper_url": "https://arxiv.org/abs/2504.17761",
-      "arxiv_id": "2504.17761",
-      "doi": "",
-      "group": "Core Technology",
-      "category": "Image Generation",
-      "categories": [
-        "Image Generation",
-        "Unified Multimodal"
-      ],
-      "subcategories": [
-        "Diffusion / T2I / Editing",
-        "General Diffusion",
-        "Unified Understanding + Generation",
-        "Unified Multimodal"
-      ],
-      "source_repos": [
-        "wangkai930418/awesome-diffusion-categorized",
-        "huan-yin/Awesome-Image-Generation-Model",
-        "AIDC-AI/Awesome-Unified-Multimodal-Models",
-        "Purshow/Awesome-Unified-Multimodal"
-      ],
-      "source_urls": [
-        "https://github.com/wangkai930418/awesome-diffusion-categorized",
-        "https://github.com/huan-yin/Awesome-Image-Generation-Model",
-        "https://github.com/AIDC-AI/Awesome-Unified-Multimodal-Models",
-        "https://github.com/Purshow/Awesome-Unified-Multimodal"
       ],
       "metadata_sources": [
         "source README",
@@ -385282,6 +385350,36 @@
       ]
     },
     {
+      "id": "5a584e1a234e6a6c",
+      "title": "Lumina-Image 2.0: a Unified and Efficient Image Generative Framework",
+      "venue": "arXiv",
+      "published_at": "2025-03-27",
+      "date_precision": "day",
+      "first_seen_at": "2026-08-31",
+      "source_updated_at": "2026-09-21",
+      "paper_url": "https://arxiv.org/pdf/2503.21758",
+      "arxiv_id": "2503.21758",
+      "doi": "",
+      "group": "Core Technology",
+      "category": "Image Generation",
+      "categories": [
+        "Image Generation"
+      ],
+      "subcategories": [
+        "General Diffusion"
+      ],
+      "source_repos": [
+        "huan-yin/Awesome-Image-Generation-Model"
+      ],
+      "source_urls": [
+        "https://github.com/huan-yin/Awesome-Image-Generation-Model"
+      ],
+      "metadata_sources": [
+        "source README",
+        "Semantic Scholar"
+      ]
+    },
+    {
       "id": "ffcdded532dbb11e",
       "title": "ResearchBench: Benchmarking LLMs in Scientific Discovery via Inspiration-Based Task Decomposition",
       "venue": "arXiv",
@@ -385379,36 +385477,6 @@
       ]
     },
     {
-      "id": "5a584e1a234e6a6c",
-      "title": "Lumina-Image 2.0: a Unified and Efficient Image Generative Framework",
-      "venue": "arXiv",
-      "published_at": "2025-03-27",
-      "date_precision": "day",
-      "first_seen_at": "2026-08-31",
-      "source_updated_at": "2026-09-04",
-      "paper_url": "https://arxiv.org/pdf/2503.21758",
-      "arxiv_id": "2503.21758",
-      "doi": "",
-      "group": "Core Technology",
-      "category": "Image Generation",
-      "categories": [
-        "Image Generation"
-      ],
-      "subcategories": [
-        "General Diffusion"
-      ],
-      "source_repos": [
-        "huan-yin/Awesome-Image-Generation-Model"
-      ],
-      "source_urls": [
-        "https://github.com/huan-yin/Awesome-Image-Generation-Model"
-      ],
-      "metadata_sources": [
-        "source README",
-        "Semantic Scholar"
-      ]
-    },
-    {
       "id": "0767b11b506e0e4f",
       "title": "Diffusion Image Prior",
       "venue": "IEEE International Conference on Computer Vision",
@@ -385435,7 +385503,8 @@
       ],
       "metadata_sources": [
         "source README",
-        "arXiv"
+        "arXiv",
+        "Semantic Scholar"
       ]
     },
     {
@@ -385536,7 +385605,8 @@
       "metadata_sources": [
         "source README",
         "structured source",
-        "arXiv"
+        "arXiv",
+        "Semantic Scholar"
       ]
     },
     {
@@ -385566,7 +385636,8 @@
       ],
       "metadata_sources": [
         "source README",
-        "arXiv"
+        "arXiv",
+        "Semantic Scholar"
       ]
     },
     {
@@ -387389,7 +387460,8 @@
       ],
       "metadata_sources": [
         "source README",
-        "arXiv"
+        "arXiv",
+        "Semantic Scholar"
       ]
     },
     {
@@ -388308,7 +388380,8 @@
       ],
       "metadata_sources": [
         "source README",
-        "arXiv"
+        "arXiv",
+        "Semantic Scholar"
       ]
     },
     {
@@ -388343,7 +388416,7 @@
     },
     {
       "id": "b464b4422ea8f201",
-      "title": "Generative Video Bi-flow",
+      "title": "Generative Video Bi-Flow",
       "venue": "IEEE International Conference on Computer Vision",
       "published_at": "2025-03-09",
       "date_precision": "day",
@@ -388368,7 +388441,8 @@
       ],
       "metadata_sources": [
         "source README",
-        "arXiv"
+        "arXiv",
+        "Semantic Scholar"
       ]
     },
     {
@@ -390052,6 +390126,84 @@
       ]
     },
     {
+      "id": "af25495f463847e6",
+      "title": "TxAgent: An AI agent for therapeutic reasoning across a universe of tools",
+      "venue": "arXiv",
+      "published_at": "2025-03",
+      "date_precision": "month",
+      "first_seen_at": "2026-08-29",
+      "source_updated_at": "2026-09-20",
+      "paper_url": "http://arxiv.org/abs/2503.10970v1",
+      "arxiv_id": "2503.10970",
+      "doi": "",
+      "group": "Cross-disciplinary Applications",
+      "category": "Medicine & Healthcare",
+      "categories": [
+        "Medicine & Healthcare",
+        "Science & Discovery"
+      ],
+      "subcategories": [
+        "Medical Agents",
+        "Scientific Agents",
+        "General AI4Science",
+        "Medical Imaging Agents"
+      ],
+      "source_repos": [
+        "AgenticHealthAI/Awesome-AI-Agents-for-Healthcare",
+        "zoedsy/awesome-science-agents",
+        "ai4s-research/awesome-ai-for-science",
+        "Nanboy-Ronan/awesome-medical-imaging-agents"
+      ],
+      "source_urls": [
+        "https://github.com/AgenticHealthAI/Awesome-AI-Agents-for-Healthcare",
+        "https://github.com/zoedsy/awesome-science-agents",
+        "https://github.com/ai4s-research/awesome-ai-for-science",
+        "https://github.com/Nanboy-Ronan/awesome-medical-imaging-agents"
+      ],
+      "metadata_sources": [
+        "source README",
+        "arXiv identifier"
+      ]
+    },
+    {
+      "id": "c52c108efa31f532",
+      "title": "Towards Scientific Intelligence: A Survey of LLM-based Scientific Agents",
+      "venue": "arXiv",
+      "published_at": "2025-03",
+      "date_precision": "month",
+      "first_seen_at": "2026-08-29",
+      "source_updated_at": "2026-09-20",
+      "paper_url": "https://arxiv.org/abs/2503.24047",
+      "arxiv_id": "2503.24047",
+      "doi": "",
+      "group": "Core Technology",
+      "category": "Language",
+      "categories": [
+        "Language",
+        "Science & Discovery",
+        "Humanities & Social Science"
+      ],
+      "subcategories": [
+        "LLM Agents",
+        "General AI4Science",
+        "LLM in Social Science"
+      ],
+      "source_repos": [
+        "js-lee-AI/awesome-llm-agent-papers",
+        "ai4s-research/awesome-ai-for-science",
+        "ValueByte-AI/Awesome-LLM-in-Social-Science"
+      ],
+      "source_urls": [
+        "https://github.com/js-lee-AI/awesome-llm-agent-papers",
+        "https://github.com/ai4s-research/awesome-ai-for-science",
+        "https://github.com/ValueByte-AI/Awesome-LLM-in-Social-Science"
+      ],
+      "metadata_sources": [
+        "source README",
+        "arXiv identifier"
+      ]
+    },
+    {
       "id": "c41d9707fd04bc0a",
       "title": "OpenLLM-RTL: Open Dataset and Benchmark for LLM-Aided Design RTL Generation",
       "venue": "arXiv",
@@ -390112,124 +390264,13 @@
       ]
     },
     {
-      "id": "0c13feb71bebfcff",
-      "title": "A Language Model-Driven Multi-Agent System for Collaborative Design",
-      "venue": "arXiv",
-      "published_at": "2025-03",
-      "date_precision": "month",
-      "first_seen_at": "2026-08-31",
-      "source_updated_at": "2026-09-20",
-      "paper_url": "https://arxiv.org/abs/2503.04417",
-      "arxiv_id": "2503.04417",
-      "doi": "",
-      "group": "Cross-disciplinary Applications",
-      "category": "Engineering & Manufacturing",
-      "categories": [
-        "Engineering & Manufacturing"
-      ],
-      "subcategories": [
-        "AI for CAD",
-        "Engineering Agents"
-      ],
-      "source_repos": [
-        "gudo7208/awesome-ai4cad",
-        "whut09/Awesome-AI-Engineering-Agents"
-      ],
-      "source_urls": [
-        "https://github.com/gudo7208/awesome-ai4cad",
-        "https://github.com/whut09/Awesome-AI-Engineering-Agents"
-      ],
-      "metadata_sources": [
-        "source README",
-        "arXiv identifier"
-      ]
-    },
-    {
-      "id": "af25495f463847e6",
-      "title": "TxAgent: An AI agent for therapeutic reasoning across a universe of tools",
-      "venue": "arXiv",
-      "published_at": "2025-03",
-      "date_precision": "month",
-      "first_seen_at": "2026-08-29",
-      "source_updated_at": "2026-09-19",
-      "paper_url": "http://arxiv.org/abs/2503.10970v1",
-      "arxiv_id": "2503.10970",
-      "doi": "",
-      "group": "Cross-disciplinary Applications",
-      "category": "Medicine & Healthcare",
-      "categories": [
-        "Medicine & Healthcare",
-        "Science & Discovery"
-      ],
-      "subcategories": [
-        "Medical Agents",
-        "Scientific Agents",
-        "General AI4Science",
-        "Medical Imaging Agents"
-      ],
-      "source_repos": [
-        "AgenticHealthAI/Awesome-AI-Agents-for-Healthcare",
-        "zoedsy/awesome-science-agents",
-        "ai4s-research/awesome-ai-for-science",
-        "Nanboy-Ronan/awesome-medical-imaging-agents"
-      ],
-      "source_urls": [
-        "https://github.com/AgenticHealthAI/Awesome-AI-Agents-for-Healthcare",
-        "https://github.com/zoedsy/awesome-science-agents",
-        "https://github.com/ai4s-research/awesome-ai-for-science",
-        "https://github.com/Nanboy-Ronan/awesome-medical-imaging-agents"
-      ],
-      "metadata_sources": [
-        "source README",
-        "arXiv identifier"
-      ]
-    },
-    {
-      "id": "c52c108efa31f532",
-      "title": "Towards Scientific Intelligence: A Survey of LLM-based Scientific Agents",
-      "venue": "arXiv",
-      "published_at": "2025-03",
-      "date_precision": "month",
-      "first_seen_at": "2026-08-29",
-      "source_updated_at": "2026-09-19",
-      "paper_url": "https://arxiv.org/abs/2503.24047",
-      "arxiv_id": "2503.24047",
-      "doi": "",
-      "group": "Core Technology",
-      "category": "Language",
-      "categories": [
-        "Language",
-        "Science & Discovery",
-        "Humanities & Social Science"
-      ],
-      "subcategories": [
-        "LLM Agents",
-        "General AI4Science",
-        "LLM in Social Science"
-      ],
-      "source_repos": [
-        "js-lee-AI/awesome-llm-agent-papers",
-        "ai4s-research/awesome-ai-for-science",
-        "ValueByte-AI/Awesome-LLM-in-Social-Science"
-      ],
-      "source_urls": [
-        "https://github.com/js-lee-AI/awesome-llm-agent-papers",
-        "https://github.com/ai4s-research/awesome-ai-for-science",
-        "https://github.com/ValueByte-AI/Awesome-LLM-in-Social-Science"
-      ],
-      "metadata_sources": [
-        "source README",
-        "arXiv identifier"
-      ]
-    },
-    {
       "id": "87034d7ed3850673",
       "title": "From Theory to Application: A Practical Introduction to Neural Operators in Scientific Computing",
       "venue": "arXiv",
       "published_at": "2025-03",
       "date_precision": "month",
       "first_seen_at": "2026-08-29",
-      "source_updated_at": "2026-09-19",
+      "source_updated_at": "2026-09-20",
       "paper_url": "https://arxiv.org/abs/2503.05598",
       "arxiv_id": "2503.05598",
       "doi": "",
@@ -390263,7 +390304,7 @@
       "published_at": "2025-03",
       "date_precision": "month",
       "first_seen_at": "2026-08-29",
-      "source_updated_at": "2026-09-19",
+      "source_updated_at": "2026-09-20",
       "paper_url": "https://arxiv.org/abs/2503.08979",
       "arxiv_id": "2503.08979",
       "doi": "",
@@ -390280,6 +390321,39 @@
       ],
       "source_urls": [
         "https://github.com/ai4s-research/awesome-ai-for-science"
+      ],
+      "metadata_sources": [
+        "source README",
+        "arXiv identifier"
+      ]
+    },
+    {
+      "id": "0c13feb71bebfcff",
+      "title": "A Language Model-Driven Multi-Agent System for Collaborative Design",
+      "venue": "arXiv",
+      "published_at": "2025-03",
+      "date_precision": "month",
+      "first_seen_at": "2026-08-31",
+      "source_updated_at": "2026-09-20",
+      "paper_url": "https://arxiv.org/abs/2503.04417",
+      "arxiv_id": "2503.04417",
+      "doi": "",
+      "group": "Cross-disciplinary Applications",
+      "category": "Engineering & Manufacturing",
+      "categories": [
+        "Engineering & Manufacturing"
+      ],
+      "subcategories": [
+        "AI for CAD",
+        "Engineering Agents"
+      ],
+      "source_repos": [
+        "gudo7208/awesome-ai4cad",
+        "whut09/Awesome-AI-Engineering-Agents"
+      ],
+      "source_urls": [
+        "https://github.com/gudo7208/awesome-ai4cad",
+        "https://github.com/whut09/Awesome-AI-Engineering-Agents"
       ],
       "metadata_sources": [
         "source README",
@@ -420251,7 +420325,8 @@
       ],
       "metadata_sources": [
         "source README",
-        "arXiv"
+        "arXiv",
+        "Semantic Scholar"
       ]
     },
     {
@@ -421409,7 +421484,8 @@
       ],
       "metadata_sources": [
         "source README",
-        "arXiv"
+        "arXiv",
+        "Semantic Scholar"
       ]
     },
     {
@@ -422166,6 +422242,36 @@
       ]
     },
     {
+      "id": "e8e56b1c8d28423d",
+      "title": "A Survey on AI-assisted Scientific Discovery",
+      "venue": "arXiv",
+      "published_at": "2025-02",
+      "date_precision": "month",
+      "first_seen_at": "2026-08-29",
+      "source_updated_at": "2026-09-20",
+      "paper_url": "https://arxiv.org/abs/2502.05151",
+      "arxiv_id": "2502.05151",
+      "doi": "",
+      "group": "Cross-disciplinary Applications",
+      "category": "Science & Discovery",
+      "categories": [
+        "Science & Discovery"
+      ],
+      "subcategories": [
+        "General AI4Science"
+      ],
+      "source_repos": [
+        "ai4s-research/awesome-ai-for-science"
+      ],
+      "source_urls": [
+        "https://github.com/ai4s-research/awesome-ai-for-science"
+      ],
+      "metadata_sources": [
+        "source README",
+        "arXiv identifier"
+      ]
+    },
+    {
       "id": "1bea166c99b565e2",
       "title": "Towards an AI co-scientist",
       "venue": "science",
@@ -422193,36 +422299,6 @@
       "source_urls": [
         "https://github.com/js-lee-AI/awesome-llm-agent-papers",
         "https://github.com/zoedsy/awesome-science-agents"
-      ],
-      "metadata_sources": [
-        "source README",
-        "arXiv identifier"
-      ]
-    },
-    {
-      "id": "e8e56b1c8d28423d",
-      "title": "A Survey on AI-assisted Scientific Discovery",
-      "venue": "arXiv",
-      "published_at": "2025-02",
-      "date_precision": "month",
-      "first_seen_at": "2026-08-29",
-      "source_updated_at": "2026-09-19",
-      "paper_url": "https://arxiv.org/abs/2502.05151",
-      "arxiv_id": "2502.05151",
-      "doi": "",
-      "group": "Cross-disciplinary Applications",
-      "category": "Science & Discovery",
-      "categories": [
-        "Science & Discovery"
-      ],
-      "subcategories": [
-        "General AI4Science"
-      ],
-      "source_repos": [
-        "ai4s-research/awesome-ai-for-science"
-      ],
-      "source_urls": [
-        "https://github.com/ai4s-research/awesome-ai-for-science"
       ],
       "metadata_sources": [
         "source README",
@@ -437036,6 +437112,47 @@
       ]
     },
     {
+      "id": "fa32267a67c7e8ca",
+      "title": "Janus-Pro: Unified Multimodal Understanding and Generation with Data and Model Scaling",
+      "venue": "arXiv",
+      "published_at": "2025-01",
+      "date_precision": "month",
+      "first_seen_at": "2026-08-31",
+      "source_updated_at": "2026-09-21",
+      "paper_url": "https://arxiv.org/abs/2501.17811",
+      "arxiv_id": "2501.17811",
+      "doi": "",
+      "group": "Core Technology",
+      "category": "Vision-Language",
+      "categories": [
+        "Vision-Language",
+        "Image Generation",
+        "Unified Multimodal"
+      ],
+      "subcategories": [
+        "Multimodal Modeling",
+        "General Diffusion",
+        "Unified Understanding + Generation",
+        "Unified Multimodal"
+      ],
+      "source_repos": [
+        "OpenEnvision/Awesome-Multimodal-Modeling",
+        "huan-yin/Awesome-Image-Generation-Model",
+        "AIDC-AI/Awesome-Unified-Multimodal-Models",
+        "Purshow/Awesome-Unified-Multimodal"
+      ],
+      "source_urls": [
+        "https://github.com/OpenEnvision/Awesome-Multimodal-Modeling",
+        "https://github.com/huan-yin/Awesome-Image-Generation-Model",
+        "https://github.com/AIDC-AI/Awesome-Unified-Multimodal-Models",
+        "https://github.com/Purshow/Awesome-Unified-Multimodal"
+      ],
+      "metadata_sources": [
+        "source README",
+        "arXiv identifier"
+      ]
+    },
+    {
       "id": "87cf227e80c5e267",
       "title": "OpenFOAMGPT: a RAG-Augmented LLM Agent for OpenFOAM-Based Computational Fluid Dynamics",
       "venue": "arXiv",
@@ -438505,47 +438622,6 @@
       ],
       "metadata_sources": [
         "structured source",
-        "arXiv identifier"
-      ]
-    },
-    {
-      "id": "fa32267a67c7e8ca",
-      "title": "Janus-Pro: Unified Multimodal Understanding and Generation with Data and Model Scaling",
-      "venue": "arXiv",
-      "published_at": "2025-01",
-      "date_precision": "month",
-      "first_seen_at": "2026-08-31",
-      "source_updated_at": "2026-09-14",
-      "paper_url": "https://arxiv.org/abs/2501.17811",
-      "arxiv_id": "2501.17811",
-      "doi": "",
-      "group": "Core Technology",
-      "category": "Vision-Language",
-      "categories": [
-        "Vision-Language",
-        "Image Generation",
-        "Unified Multimodal"
-      ],
-      "subcategories": [
-        "Multimodal Modeling",
-        "General Diffusion",
-        "Unified Understanding + Generation",
-        "Unified Multimodal"
-      ],
-      "source_repos": [
-        "OpenEnvision/Awesome-Multimodal-Modeling",
-        "huan-yin/Awesome-Image-Generation-Model",
-        "AIDC-AI/Awesome-Unified-Multimodal-Models",
-        "Purshow/Awesome-Unified-Multimodal"
-      ],
-      "source_urls": [
-        "https://github.com/OpenEnvision/Awesome-Multimodal-Modeling",
-        "https://github.com/huan-yin/Awesome-Image-Generation-Model",
-        "https://github.com/AIDC-AI/Awesome-Unified-Multimodal-Models",
-        "https://github.com/Purshow/Awesome-Unified-Multimodal"
-      ],
-      "metadata_sources": [
-        "source README",
         "arXiv identifier"
       ]
     },
@@ -445080,6 +445156,35 @@
       ]
     },
     {
+      "id": "c83ee2b9cdff4e7e",
+      "title": "Foundation Models for Materials Discovery",
+      "venue": "www",
+      "published_at": "2025",
+      "date_precision": "year",
+      "first_seen_at": "2026-08-29",
+      "source_updated_at": "2026-09-20",
+      "paper_url": "https://www.nature.com/articles/s41524-025-01538-0",
+      "arxiv_id": "",
+      "doi": "",
+      "group": "Cross-disciplinary Applications",
+      "category": "Science & Discovery",
+      "categories": [
+        "Science & Discovery"
+      ],
+      "subcategories": [
+        "General AI4Science"
+      ],
+      "source_repos": [
+        "ai4s-research/awesome-ai-for-science"
+      ],
+      "source_urls": [
+        "https://github.com/ai4s-research/awesome-ai-for-science"
+      ],
+      "metadata_sources": [
+        "source README"
+      ]
+    },
+    {
       "id": "b3ad8044a06bda7f",
       "title": "CADInstruct: A Multimodal Dataset for Natural Language-Guided CAD Program Synthesis",
       "venue": "Venue not specified",
@@ -445138,42 +445243,13 @@
       ]
     },
     {
-      "id": "c83ee2b9cdff4e7e",
-      "title": "Foundation Models for Materials Discovery",
-      "venue": "www",
-      "published_at": "2025",
-      "date_precision": "year",
-      "first_seen_at": "2026-08-29",
-      "source_updated_at": "2026-09-19",
-      "paper_url": "https://www.nature.com/articles/s41524-025-01538-0",
-      "arxiv_id": "",
-      "doi": "",
-      "group": "Cross-disciplinary Applications",
-      "category": "Science & Discovery",
-      "categories": [
-        "Science & Discovery"
-      ],
-      "subcategories": [
-        "General AI4Science"
-      ],
-      "source_repos": [
-        "ai4s-research/awesome-ai-for-science"
-      ],
-      "source_urls": [
-        "https://github.com/ai4s-research/awesome-ai-for-science"
-      ],
-      "metadata_sources": [
-        "source README"
-      ]
-    },
-    {
       "id": "9f159416d5e933c3",
       "title": "Architectures, variants, and performance of neural operators: A comparative review",
       "venue": "www",
       "published_at": "2025",
       "date_precision": "year",
       "first_seen_at": "2026-08-29",
-      "source_updated_at": "2026-09-19",
+      "source_updated_at": "2026-09-20",
       "paper_url": "https://www.sciencedirect.com/science/article/abs/pii/S0925231225011907",
       "arxiv_id": "",
       "doi": "",
@@ -445202,7 +445278,7 @@
       "published_at": "2025",
       "date_precision": "year",
       "first_seen_at": "2026-08-29",
-      "source_updated_at": "2026-09-19",
+      "source_updated_at": "2026-09-20",
       "paper_url": "https://www.nature.com/articles/d42473-025-00161-3",
       "arxiv_id": "",
       "doi": "",
@@ -508979,7 +509055,7 @@
       "published_at": "",
       "date_precision": "unknown",
       "first_seen_at": "2026-08-29",
-      "source_updated_at": "2026-09-19",
+      "source_updated_at": "2026-09-20",
       "paper_url": "https://www.nature.com/articles/s41586-023-06221-2",
       "arxiv_id": "",
       "doi": "",
@@ -509008,7 +509084,7 @@
       "published_at": "",
       "date_precision": "unknown",
       "first_seen_at": "2026-08-29",
-      "source_updated_at": "2026-09-19",
+      "source_updated_at": "2026-09-20",
       "paper_url": "https://www.nature.com/articles/s41586-021-03819-2",
       "arxiv_id": "",
       "doi": "",
@@ -509037,7 +509113,7 @@
       "published_at": "",
       "date_precision": "unknown",
       "first_seen_at": "2026-08-29",
-      "source_updated_at": "2026-09-19",
+      "source_updated_at": "2026-09-20",
       "paper_url": "https://www.nature.com/articles/s41578-023-00540-6",
       "arxiv_id": "",
       "doi": "",
