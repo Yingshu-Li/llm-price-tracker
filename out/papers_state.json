@@ -4,557 +4,557 @@
       "readme_sha256": "32f51691cec63080a93a46af7861d8194d97a5180ac8400dfb1b891ce9f2d836",
       "readme_url": "https://raw.githubusercontent.com/js-lee-AI/awesome-llm-agent-papers/HEAD/README.md",
       "source_updated_at": "2026-09-15",
-      "last_checked_at": "2026-09-21",
+      "last_checked_at": "2026-09-22",
       "candidate_count": 521
     },
     "VoltAgent/awesome-ai-agent-papers": {
-      "readme_sha256": "9798dfc4e9d3dbaca783313e5c6103ffafd3a63ac049da03178d11f78d078ee7",
+      "readme_sha256": "d4fb4c0ce899c4c20dab2246dd570dc13ad41ebc40cf74308612eff6663871da",
       "readme_url": "https://raw.githubusercontent.com/VoltAgent/awesome-ai-agent-papers/HEAD/README.md",
-      "source_updated_at": "2026-09-12",
-      "last_checked_at": "2026-09-21",
+      "source_updated_at": "2026-09-21",
+      "last_checked_at": "2026-09-22",
       "candidate_count": 388
     },
     "atfortes/awesome-llm-reasoning": {
       "readme_sha256": "5b0397ef62cc83c9ec05ec66a0d5348869e9ee6b4e30fa8749bddfd41abe1967",
       "readme_url": "https://raw.githubusercontent.com/atfortes/awesome-llm-reasoning/HEAD/README.md",
       "source_updated_at": "2026-04-20",
-      "last_checked_at": "2026-09-21",
+      "last_checked_at": "2026-09-22",
       "candidate_count": 144
     },
     "AIDASLab/Awesome-Diffusion-LLM": {
       "readme_sha256": "ead19f79e65c488567fe7d09d8e310bdcdb55b01b4c981deb914544e4604cff9",
       "readme_url": "https://raw.githubusercontent.com/AIDASLab/Awesome-Diffusion-LLM/HEAD/README.md",
       "source_updated_at": "2026-09-01",
-      "last_checked_at": "2026-09-21",
+      "last_checked_at": "2026-09-22",
       "candidate_count": 526
     },
     "VILA-Lab/Awesome-DLMs": {
       "readme_sha256": "828c3c17174238ba67ad29f9c3b96b41c77a4beba3c5af42ce96178c5a406415",
       "readme_url": "https://raw.githubusercontent.com/VILA-Lab/Awesome-DLMs/HEAD/README.md",
       "source_updated_at": "2026-08-31",
-      "last_checked_at": "2026-09-21",
+      "last_checked_at": "2026-09-22",
       "candidate_count": 560
     },
     "mawady/awesome-computer-vision-resources": {
       "readme_sha256": "ecf4d913e67cc46dbd6409c582608b4c29638d33818dc7d74b65eabb6ed85526",
       "readme_url": "https://raw.githubusercontent.com/mawady/awesome-computer-vision-resources/HEAD/README.md",
       "source_updated_at": "2026-08-19",
-      "last_checked_at": "2026-09-21",
+      "last_checked_at": "2026-09-22",
       "candidate_count": 12
     },
     "umitkacar/awesome-vision-models": {
       "readme_sha256": "37abdf687f5f29966b9be84bef832ce9d11b6384b5a10db92edb330480d56425",
       "readme_url": "https://raw.githubusercontent.com/umitkacar/awesome-vision-models/HEAD/README.md",
       "source_updated_at": "2025-11-10",
-      "last_checked_at": "2026-09-21",
+      "last_checked_at": "2026-09-22",
       "candidate_count": 16
     },
     "zli12321/Vision-Language-Models-Overview": {
       "readme_sha256": "f20d613bd265ab56ead73cb05ebde94aa4579baf3442de2cc610c6eb18b7c951",
       "readme_url": "https://raw.githubusercontent.com/zli12321/Vision-Language-Models-Overview/HEAD/README.md",
       "source_updated_at": "2026-09-14",
-      "last_checked_at": "2026-09-21",
+      "last_checked_at": "2026-09-22",
       "candidate_count": 499
     },
     "jingyi0000/VLM_survey": {
       "readme_sha256": "4f1e6655a779de35458c122e66972692fc438884fe358efe75b6516070cc0578",
       "readme_url": "https://raw.githubusercontent.com/jingyi0000/VLM_survey/HEAD/README.md",
       "source_updated_at": "2026-09-16",
-      "last_checked_at": "2026-09-21",
+      "last_checked_at": "2026-09-22",
       "candidate_count": 257
     },
     "OpenEnvision/Awesome-Multimodal-Modeling": {
       "readme_sha256": "7c3d7f3c6f482572584d103823b9493ff85c13c8279dd78b74eaa8d8cfb617b1",
       "readme_url": "https://raw.githubusercontent.com/OpenEnvision/Awesome-Multimodal-Modeling/HEAD/README.md",
       "source_updated_at": "2026-09-14",
-      "last_checked_at": "2026-09-21",
+      "last_checked_at": "2026-09-22",
       "candidate_count": 297
     },
     "BradyFU/Awesome-Multimodal-Large-Language-Models": {
       "readme_sha256": "a539e0e551b2259822496b2b8cd8f22aeaacb0d0bb946db404ce85065181a474",
       "readme_url": "https://raw.githubusercontent.com/BradyFU/Awesome-Multimodal-Large-Language-Models/HEAD/README.md",
       "source_updated_at": "2026-09-18",
-      "last_checked_at": "2026-09-21",
+      "last_checked_at": "2026-09-22",
       "candidate_count": 469
     },
     "lchen1019/awesome-mllm-benchmarks": {
       "readme_sha256": "5548e4aa801d1d743e33901abb8587c4a367bf7c684a499e4030f789db0dda8e",
       "readme_url": "https://raw.githubusercontent.com/lchen1019/awesome-mllm-benchmarks/HEAD/README.md",
       "source_updated_at": "2026-08-13",
-      "last_checked_at": "2026-09-21",
+      "last_checked_at": "2026-09-22",
       "candidate_count": 124
     },
     "wangkai930418/awesome-diffusion-categorized": {
       "readme_sha256": "a646579832f17f8ec8b7b73cc30f5b1838569ab50b64b86d8bf302519cd01615",
       "readme_url": "https://raw.githubusercontent.com/wangkai930418/awesome-diffusion-categorized/HEAD/README.md",
       "source_updated_at": "2026-03-16",
-      "last_checked_at": "2026-09-21",
+      "last_checked_at": "2026-09-22",
       "candidate_count": 3785
     },
     "huan-yin/Awesome-Image-Generation-Model": {
       "readme_sha256": "a083fd9ac8d610c839277df74d57253cb2cbcd333f6b5d75076278d3b508aa12",
       "readme_url": "https://raw.githubusercontent.com/huan-yin/Awesome-Image-Generation-Model/HEAD/README.md",
       "source_updated_at": "2026-09-21",
-      "last_checked_at": "2026-09-21",
+      "last_checked_at": "2026-09-22",
       "candidate_count": 66
     },
     "diff-usion/Awesome-Diffusion-Models": {
       "readme_sha256": "2dbfaa72a37eec62c6c01e218c086df55758bd800aef3bc2e49eb4018e390582",
       "readme_url": "https://raw.githubusercontent.com/diff-usion/Awesome-Diffusion-Models/HEAD/README.md",
       "source_updated_at": "2023-11-05",
-      "last_checked_at": "2026-09-21",
+      "last_checked_at": "2026-09-22",
       "candidate_count": 2636
     },
     "lixinustc/Awesome-diffusion-model-for-image-processing": {
       "readme_sha256": "5df7b125151a3d91cc5c93b32de0e9d98c7f3379dbf666520e97b1435653385a",
       "readme_url": "https://raw.githubusercontent.com/lixinustc/Awesome-diffusion-model-for-image-processing/HEAD/README.md",
       "source_updated_at": "2026-04-08",
-      "last_checked_at": "2026-09-21",
+      "last_checked_at": "2026-09-22",
       "candidate_count": 235
     },
     "kongzhecn/awesome-video-generation": {
       "readme_sha256": "0fb89b36ac98dc6013e142d12df6b325cbf08c0b775b493db494d0017e6b10a5",
       "readme_url": "https://raw.githubusercontent.com/kongzhecn/awesome-video-generation/HEAD/README.md",
       "source_updated_at": "2026-06-17",
-      "last_checked_at": "2026-09-21",
+      "last_checked_at": "2026-09-22",
       "candidate_count": 589
     },
     "AlonzoLeeeooo/awesome-video-generation": {
       "readme_sha256": "9c8d0047ade7a8d060710178cdfa7d731e00134b1a0ad5905cd15def081c5d95",
       "readme_url": "https://raw.githubusercontent.com/AlonzoLeeeooo/awesome-video-generation/HEAD/README.md",
       "source_updated_at": "2026-03-31",
-      "last_checked_at": "2026-09-21",
+      "last_checked_at": "2026-09-22",
       "candidate_count": 247
     },
     "people-robots/Awesome-Video-Generation-Post-Training": {
       "readme_sha256": "1770cd5e4ca51338a100b513b526d1a61c3699c19064c146661a6efb0c03315b",
       "readme_url": "https://raw.githubusercontent.com/people-robots/Awesome-Video-Generation-Post-Training/HEAD/README.md",
       "source_updated_at": "2026-07-20",
-      "last_checked_at": "2026-09-21",
+      "last_checked_at": "2026-09-22",
       "candidate_count": 557
     },
     "AudioLLMs/Awesome-Audio-LLM": {
       "readme_sha256": "2adc3b98fd41528ff99e0b22a88e3c84662b45b26df526093c08b5a983bda6d2",
       "readme_url": "https://raw.githubusercontent.com/AudioLLMs/Awesome-Audio-LLM/HEAD/docs/data.json",
-      "source_updated_at": "2026-09-14",
-      "last_checked_at": "2026-09-21",
+      "source_updated_at": "2026-09-21",
+      "last_checked_at": "2026-09-22",
       "candidate_count": 125
     },
     "metame-ai/awesome-audio-plaza": {
       "readme_sha256": "85ba97b441a9559323339357ab9133fba670f90ac2b613db89f579f2986e26d9",
       "readme_url": "https://raw.githubusercontent.com/metame-ai/awesome-audio-plaza/HEAD/README.md",
       "source_updated_at": "2025-11-02",
-      "last_checked_at": "2026-09-21",
+      "last_checked_at": "2026-09-22",
       "candidate_count": 133
     },
     "juhayna-zh/Awesome-Music-Generation-Papers": {
       "readme_sha256": "0caebb4fde9043a87bcedc3a48567214c9a0d7b8bb3eec7553f0fcb9441324be",
       "readme_url": "https://raw.githubusercontent.com/juhayna-zh/Awesome-Music-Generation-Papers/HEAD/README.md",
       "source_updated_at": "2026-04-24",
-      "last_checked_at": "2026-09-21",
+      "last_checked_at": "2026-09-22",
       "candidate_count": 49
     },
     "justimyhxu/awesome-3D-generation": {
       "readme_sha256": "ff63bb4dc9f761caafd86fd687a0815c538dbd4b2381dc4b0c325217e95fccc2",
       "readme_url": "https://raw.githubusercontent.com/justimyhxu/awesome-3D-generation/HEAD/README.md",
       "source_updated_at": "2023-03-09",
-      "last_checked_at": "2026-09-21",
+      "last_checked_at": "2026-09-22",
       "candidate_count": 113
     },
     "Yimi81/awesome-spatial-reasoning-scene-generation": {
       "readme_sha256": "eea4ffdb242582159c5713695ee79e3c232560652fea286b643fb2c18ef685ce",
       "readme_url": "https://raw.githubusercontent.com/Yimi81/awesome-spatial-reasoning-scene-generation/HEAD/README.md",
       "source_updated_at": "2026-07-03",
-      "last_checked_at": "2026-09-21",
+      "last_checked_at": "2026-09-22",
       "candidate_count": 120
     },
     "AIDC-AI/Awesome-Unified-Multimodal-Models": {
       "readme_sha256": "e0fd5c2562393fbcc4d1db95d40648b6e5b54510779083e73aed763e68a68952",
       "readme_url": "https://raw.githubusercontent.com/AIDC-AI/Awesome-Unified-Multimodal-Models/HEAD/README.md",
       "source_updated_at": "2026-03-24",
-      "last_checked_at": "2026-09-21",
+      "last_checked_at": "2026-09-22",
       "candidate_count": 216
     },
     "showlab/Awesome-Unified-Multimodal-Models": {
       "readme_sha256": "77111c4c6da7f3e000a7583c01345dce957f934a3cb0f47e26483c469d6eeb56",
       "readme_url": "https://raw.githubusercontent.com/showlab/Awesome-Unified-Multimodal-Models/HEAD/README.md",
       "source_updated_at": "2025-10-10",
-      "last_checked_at": "2026-09-21",
+      "last_checked_at": "2026-09-22",
       "candidate_count": 71
     },
     "Purshow/Awesome-Unified-Multimodal": {
       "readme_sha256": "40263c544663387e566ff11fa1466930e724a0e43117eb0ff440d1f8b654c247",
       "readme_url": "https://raw.githubusercontent.com/Purshow/Awesome-Unified-Multimodal/HEAD/README.md",
       "source_updated_at": "2026-01-08",
-      "last_checked_at": "2026-09-21",
+      "last_checked_at": "2026-09-22",
       "candidate_count": 79
     },
     "zchoi/Awesome-Embodied-Robotics-and-Agent": {
       "readme_sha256": "11750be30a15116e4e0f812f07b8581bd08e92dd3bd61c5f1563cabc212bec42",
       "readme_url": "https://raw.githubusercontent.com/zchoi/Awesome-Embodied-Robotics-and-Agent/HEAD/README.md",
       "source_updated_at": "2026-09-16",
-      "last_checked_at": "2026-09-21",
+      "last_checked_at": "2026-09-22",
       "candidate_count": 139
     },
     "junyuan-fang/awesome-physical-ai": {
       "readme_sha256": "926006dfed3b5425b9b3bccf75d834aebbb4612c2b4be32a1e090580cbce1147",
       "readme_url": "https://raw.githubusercontent.com/junyuan-fang/awesome-physical-ai/HEAD/README.md",
       "source_updated_at": "2026-09-09",
-      "last_checked_at": "2026-09-21",
+      "last_checked_at": "2026-09-22",
       "candidate_count": 188
     },
     "yueen-ma/Awesome-VLA": {
       "readme_sha256": "0cab707c5636fcae8a59afd0b0a2208fe5e18b72889f480652246a232f814255",
       "readme_url": "https://raw.githubusercontent.com/yueen-ma/Awesome-VLA/HEAD/README.md",
       "source_updated_at": "2026-08-25",
-      "last_checked_at": "2026-09-21",
+      "last_checked_at": "2026-09-22",
       "candidate_count": 173
     },
     "jonyzhang2023/awesome-embodied-vla-va-vln": {
       "readme_sha256": "988efb1bb2911fbee0d42cb1555e76a5b59d9d1d3450e287293f56e30fe33587",
       "readme_url": "https://raw.githubusercontent.com/jonyzhang2023/awesome-embodied-vla-va-vln/HEAD/README.md",
       "source_updated_at": "2026-09-15",
-      "last_checked_at": "2026-09-21",
+      "last_checked_at": "2026-09-22",
       "candidate_count": 681
     },
     "JiahuaDong/Awesome-World-Models": {
       "readme_sha256": "2e2cb6197f22afa1bfc03788f1fe12a8be23f204a860625b669953a8335f1eb4",
       "readme_url": "https://raw.githubusercontent.com/JiahuaDong/Awesome-World-Models/HEAD/README.md",
       "source_updated_at": "2026-08-12",
-      "last_checked_at": "2026-09-21",
+      "last_checked_at": "2026-09-22",
       "candidate_count": 232
     },
     "NeuraLiying/Awesome-World-Models": {
       "readme_sha256": "9cd03052f372a50e03f5818d77e73883e6883756351df7d3d729de135b983864",
       "readme_url": "https://raw.githubusercontent.com/NeuraLiying/Awesome-World-Models/HEAD/README.md",
       "source_updated_at": "2026-08-14",
-      "last_checked_at": "2026-09-21",
+      "last_checked_at": "2026-09-22",
       "candidate_count": 321
     },
     "FreedomIntelligence/Awesome-AI4Med": {
       "readme_sha256": "a6d1f9bcb2ce27b38260f9f9baf4524bc6162a41d41e6e786b18a167ad4f2459",
       "readme_url": "https://raw.githubusercontent.com/FreedomIntelligence/Awesome-AI4Med/HEAD/README.md",
       "source_updated_at": "2026-08-04",
-      "last_checked_at": "2026-09-21",
+      "last_checked_at": "2026-09-22",
       "candidate_count": 63
     },
     "fabianofilho/awesome-medical-ai": {
       "readme_sha256": "0a9fab342839d8aecb8e326fd3c109b77fef3f9c2aa0754680eea345b149e49e",
       "readme_url": "https://raw.githubusercontent.com/fabianofilho/awesome-medical-ai/HEAD/README.md",
       "source_updated_at": "2026-07-04",
-      "last_checked_at": "2026-09-21",
+      "last_checked_at": "2026-09-22",
       "candidate_count": 79
     },
     "richard-peng-xia/awesome-multimodal-in-medical-imaging": {
       "readme_sha256": "7ed6e9b9e8e12b06ce21c8205d877cd90e0641f0a941ead582fb10b8bd6668b8",
       "readme_url": "https://raw.githubusercontent.com/richard-peng-xia/awesome-multimodal-in-medical-imaging/HEAD/README.md",
       "source_updated_at": "2026-07-29",
-      "last_checked_at": "2026-09-21",
+      "last_checked_at": "2026-09-22",
       "candidate_count": 279
     },
     "mk-runner/Awesome-Radiology-Report-Generation": {
       "readme_sha256": "1dbd904f6746ace69fbcdf807d95b11e623e9f949ef5c384bf0fb4c6af88eee3",
       "readme_url": "https://raw.githubusercontent.com/mk-runner/Awesome-Radiology-Report-Generation/HEAD/README.md",
       "source_updated_at": "2026-09-18",
-      "last_checked_at": "2026-09-21",
+      "last_checked_at": "2026-09-22",
       "candidate_count": 625
     },
     "Dragon-Wu/awesome-medical-report-generation": {
       "readme_sha256": "a8f64148e4bd6928d62dfcd246094b90e54ee2048cc96c7fb279b1940df77d5c",
       "readme_url": "https://raw.githubusercontent.com/Dragon-Wu/awesome-medical-report-generation/HEAD/README.md",
       "source_updated_at": "2024-02-23",
-      "last_checked_at": "2026-09-21",
+      "last_checked_at": "2026-09-22",
       "candidate_count": 34
     },
     "AgenticHealthAI/Awesome-AI-Agents-for-Healthcare": {
       "readme_sha256": "7607f19ed47a7b19c824f267988139cbed6642545693dec69208844e13397faa",
       "readme_url": "https://raw.githubusercontent.com/AgenticHealthAI/Awesome-AI-Agents-for-Healthcare/HEAD/README.md",
       "source_updated_at": "2026-09-08",
-      "last_checked_at": "2026-09-21",
+      "last_checked_at": "2026-09-22",
       "candidate_count": 568
     },
     "OSU-NLP-Group/awesome-agents4science": {
       "readme_sha256": "075ebfdae20bfc897c56b829e5c4a550f8412187f62db87dc460940cfa8bf44c",
       "readme_url": "https://raw.githubusercontent.com/OSU-NLP-Group/awesome-agents4science/HEAD/README.md",
       "source_updated_at": "2024-12-11",
-      "last_checked_at": "2026-09-21",
+      "last_checked_at": "2026-09-22",
       "candidate_count": 13
     },
     "zoedsy/awesome-science-agents": {
       "readme_sha256": "a7be0eb9908e3be6b879779f99fecfe2f223ea678112956da3b0447f2869c580",
       "readme_url": "https://raw.githubusercontent.com/zoedsy/awesome-science-agents/HEAD/README.md",
       "source_updated_at": "2026-09-19",
-      "last_checked_at": "2026-09-21",
+      "last_checked_at": "2026-09-22",
       "candidate_count": 95
     },
     "ai4s-research/awesome-ai-for-science": {
-      "readme_sha256": "ed492f91c05d7c7f26ce7269c6d796ae8f7a627328d4a0196022dcbe59041aca",
+      "readme_sha256": "889cfeb8ffe353df8a9a38e4d591817a92276e075cf62d052f2fffcb9fc1a0cc",
       "readme_url": "https://raw.githubusercontent.com/ai4s-research/awesome-ai-for-science/HEAD/README.md",
-      "source_updated_at": "2026-09-20",
-      "last_checked_at": "2026-09-21",
+      "source_updated_at": "2026-09-21",
+      "last_checked_at": "2026-09-22",
       "candidate_count": 59
     },
     "tilde-lab/awesome-materials-informatics": {
       "readme_sha256": "861c9fa59e9942e6dd9d49ba19ec79c84ce5e69c034398ca98abe359b7a7b0a1",
       "readme_url": "https://raw.githubusercontent.com/tilde-lab/awesome-materials-informatics/HEAD/README.md",
       "source_updated_at": "2025-06-19",
-      "last_checked_at": "2026-09-21",
+      "last_checked_at": "2026-09-22",
       "candidate_count": 3
     },
     "yboulaamane/awesome-drug-discovery": {
-      "readme_sha256": "dc8ca88e10961d8585c2a2c23c6c0558ebc14f490690f01ccdceca2545d065ff",
+      "readme_sha256": "4845bcee8f1547898382660a4803103ed7d73155cc73e8837882a0dc2b50aef7",
       "readme_url": "https://raw.githubusercontent.com/yboulaamane/awesome-drug-discovery/HEAD/README.md",
-      "source_updated_at": "2026-09-17",
-      "last_checked_at": "2026-09-21",
+      "source_updated_at": "2026-09-21",
+      "last_checked_at": "2026-09-22",
       "candidate_count": 0
     },
     "gudo7208/awesome-ai4cad": {
       "readme_sha256": "6e618de4ae74a2f477f837c0de83ab229e9ad935d9fe483c784ab8b2656045fe",
       "readme_url": "https://raw.githubusercontent.com/gudo7208/awesome-ai4cad/HEAD/README.md",
       "source_updated_at": "2026-09-15",
-      "last_checked_at": "2026-09-21",
+      "last_checked_at": "2026-09-22",
       "candidate_count": 561
     },
     "whut09/Awesome-AI-Engineering-Agents": {
       "readme_sha256": "8387670ab17d2bbc4955011571d3c57a9ccae3a8c904cead016a048f712e2f42",
       "readme_url": "https://raw.githubusercontent.com/whut09/Awesome-AI-Engineering-Agents/HEAD/README.md",
       "source_updated_at": "2026-09-20",
-      "last_checked_at": "2026-09-21",
+      "last_checked_at": "2026-09-22",
       "candidate_count": 186
     },
     "GeminiLight/awesome-ai-llm4education": {
       "readme_sha256": "445d84d87309af826e629bf3a16f4dacac8e42f26b403bc29cfedd578412b609",
       "readme_url": "https://raw.githubusercontent.com/GeminiLight/awesome-ai-llm4education/HEAD/README.md",
       "source_updated_at": "2026-08-11",
-      "last_checked_at": "2026-09-21",
+      "last_checked_at": "2026-09-22",
       "candidate_count": 326
     },
     "Jeryi-Sun/LLM-and-Law": {
       "readme_sha256": "18d5b4b243f89e3d6e0c689d8de76a6c6069bf3600e2bee6fec005c373cffd27",
       "readme_url": "https://raw.githubusercontent.com/Jeryi-Sun/LLM-and-Law/HEAD/README.md",
       "source_updated_at": "2026-09-18",
-      "last_checked_at": "2026-09-21",
+      "last_checked_at": "2026-09-22",
       "candidate_count": 109
     },
     "FrederickPi1969/awesome-llm-for-finance": {
       "readme_sha256": "0d35195e588c9ba7295fd82cfe0b60d0e3bfe29639d8d0876888536ee28e7ab1",
       "readme_url": "https://raw.githubusercontent.com/FrederickPi1969/awesome-llm-for-finance/HEAD/README.md",
       "source_updated_at": "2026-05-21",
-      "last_checked_at": "2026-09-21",
+      "last_checked_at": "2026-09-22",
       "candidate_count": 55
     },
     "junhua/awesome-finance-ai-papers": {
       "readme_sha256": "86745540f567161e598adc582922b8d7f663a7f2aeab1fde4f9d54117da4b42d",
       "readme_url": "https://raw.githubusercontent.com/junhua/awesome-finance-ai-papers/HEAD/README.md",
       "source_updated_at": "2024-11-24",
-      "last_checked_at": "2026-09-21",
+      "last_checked_at": "2026-09-22",
       "candidate_count": 56
     },
     "ujjwaldhaka71/awesome-ai-finance": {
       "readme_sha256": "69d3e3b0203ac570f0c0c7070007c519edce0f655a35cc9f3d0dcb36e5723847",
       "readme_url": "https://raw.githubusercontent.com/ujjwaldhaka71/awesome-ai-finance/HEAD/README.md",
       "source_updated_at": "2026-03-30",
-      "last_checked_at": "2026-09-21",
+      "last_checked_at": "2026-09-22",
       "candidate_count": 1
     },
     "Jinfeng-Xu/Awesome-Multimodal-Recommender-Systems": {
       "readme_sha256": "dc8bac41856c780e12ee84c3995478fed5151c97e1daef6f4d36664a513cee7a",
       "readme_url": "https://raw.githubusercontent.com/Jinfeng-Xu/Awesome-Multimodal-Recommender-Systems/HEAD/README.md",
       "source_updated_at": "2026-08-07",
-      "last_checked_at": "2026-09-21",
+      "last_checked_at": "2026-09-22",
       "candidate_count": 91
     },
     "ValueByte-AI/Awesome-LLM-in-Social-Science": {
       "readme_sha256": "51f53be13f956f3590710abc2029857890dd12a7cf7a446dc6665b166d3d076c",
       "readme_url": "https://raw.githubusercontent.com/ValueByte-AI/Awesome-LLM-in-Social-Science/HEAD/README.md",
       "source_updated_at": "2026-09-07",
-      "last_checked_at": "2026-09-21",
+      "last_checked_at": "2026-09-22",
       "candidate_count": 210
     },
     "KeHang-Zhu/Awesome-LLM-for-Social-Science": {
       "readme_sha256": "9887efe40b92ec3c68181d60b60d7449a96a5f8169442878dbdee85e4b5cfdc8",
       "readme_url": "https://raw.githubusercontent.com/KeHang-Zhu/Awesome-LLM-for-Social-Science/HEAD/README.md",
       "source_updated_at": "2025-10-14",
-      "last_checked_at": "2026-09-21",
+      "last_checked_at": "2026-09-22",
       "candidate_count": 19
     },
     "ValueByte-AI/Awesome-LLM-Psychometrics": {
       "readme_sha256": "8865bbd0707d20202b010f0d3849e9f1a9f52b629cfd33b6d841bd392bb5c087",
       "readme_url": "https://raw.githubusercontent.com/ValueByte-AI/Awesome-LLM-Psychometrics/HEAD/readme.md",
       "source_updated_at": "2026-08-18",
-      "last_checked_at": "2026-09-21",
+      "last_checked_at": "2026-09-22",
       "candidate_count": 298
     },
     "Jack-bo1220/Awesome-Remote-Sensing-Foundation-Models": {
       "readme_sha256": "b888c59624ecbd04ddc6768063c0314703555d8680092447c33b78fd2e407a4a",
       "readme_url": "https://raw.githubusercontent.com/Jack-bo1220/Awesome-Remote-Sensing-Foundation-Models/HEAD/README.md",
       "source_updated_at": "2026-05-07",
-      "last_checked_at": "2026-09-21",
+      "last_checked_at": "2026-09-22",
       "candidate_count": 299
     },
     "zhengkai15/Awesome-Weather-Forecast": {
       "readme_sha256": "5715c2d29d1a8fcbd1f681f56caf7d0a3fe350c73330e5777e91560d03fb9b70",
       "readme_url": "https://raw.githubusercontent.com/zhengkai15/Awesome-Weather-Forecast/HEAD/README.md",
       "source_updated_at": "2026-08-04",
-      "last_checked_at": "2026-09-21",
+      "last_checked_at": "2026-09-22",
       "candidate_count": 95
     },
     "8kSec/awesome-ai-security": {
       "readme_sha256": "301079f5d7ef60c31e75baac3ca6f1982fdf37a248404182dc9db585bae9a04b",
       "readme_url": "https://raw.githubusercontent.com/8kSec/awesome-ai-security/HEAD/README.md",
       "source_updated_at": "2026-04-12",
-      "last_checked_at": "2026-09-21",
+      "last_checked_at": "2026-09-22",
       "candidate_count": 128
     },
     "scadastrangelove/awesome-ai-security-tools": {
-      "readme_sha256": "47d29736996e2f0eb226d564add733365126e356fdfbf9c6e36eae5b8ad5de43",
+      "readme_sha256": "e15fb8d104c8d78d91c67aca6c11dc871f1e31f93e72fe7f3b408c233fd09cf3",
       "readme_url": "https://raw.githubusercontent.com/scadastrangelove/awesome-ai-security-tools/HEAD/README.md",
-      "source_updated_at": "2026-09-14",
-      "last_checked_at": "2026-09-21",
+      "source_updated_at": "2026-09-21",
+      "last_checked_at": "2026-09-22",
       "candidate_count": 3
     },
     "brinhosa/awesome-ai-security": {
       "readme_sha256": "deef11973b0b492d53ee529553b82f56775fb1256932a97067a108033bc27c43",
       "readme_url": "https://raw.githubusercontent.com/brinhosa/awesome-ai-security/HEAD/README.md",
       "source_updated_at": "2026-01-08",
-      "last_checked_at": "2026-09-21",
+      "last_checked_at": "2026-09-22",
       "candidate_count": 6
     },
     "AstraZeneca/awesome-drug-discovery-knowledge-graphs": {
       "readme_sha256": "d65f5514d2d90d54dd4c8340e0e69d4565bfcc2535aa1ac52b4f1c3abbae8205",
       "readme_url": "https://raw.githubusercontent.com/AstraZeneca/awesome-drug-discovery-knowledge-graphs/HEAD/README.md",
       "source_updated_at": "2026-07-27",
-      "last_checked_at": "2026-09-21",
+      "last_checked_at": "2026-09-22",
       "candidate_count": 1
     },
     "subinium/Awesome-Scientific-LLM-Benchmarks": {
       "readme_sha256": "a80a76eb55398d8ed8df584de6910b4a568d8d40ce8a4ea0b117c3b4b7e080db",
       "readme_url": "https://raw.githubusercontent.com/subinium/Awesome-Scientific-LLM-Benchmarks/HEAD/README.md",
-      "source_updated_at": "2026-09-18",
-      "last_checked_at": "2026-09-21",
+      "source_updated_at": "2026-09-21",
+      "last_checked_at": "2026-09-22",
       "candidate_count": 156
     },
     "Nanboy-Ronan/awesome-medical-imaging-agents": {
       "readme_sha256": "94b8d9c296be51ff4cda619599e5175fd968048e6f008a52c95f2edef383d61e",
       "readme_url": "https://raw.githubusercontent.com/Nanboy-Ronan/awesome-medical-imaging-agents/HEAD/README.md",
       "source_updated_at": "2026-09-18",
-      "last_checked_at": "2026-09-21",
+      "last_checked_at": "2026-09-22",
       "candidate_count": 466
     },
     "tyang816/Awesome-TCM-LLM": {
       "readme_sha256": "4474fcc088226c73a0c95ec898999e842e9e62a88eec1f5a581a818084eceb78",
       "readme_url": "https://raw.githubusercontent.com/tyang816/Awesome-TCM-LLM/HEAD/README.md",
       "source_updated_at": "2026-09-13",
-      "last_checked_at": "2026-09-21",
+      "last_checked_at": "2026-09-22",
       "candidate_count": 288
     },
     "Yuliang-Liu/AWESOME-OCR-LLM": {
-      "readme_sha256": "d4a4911a9c8c703bae066d3f9de2b79c42482b87eebe6d2222f7b133c0d23c41",
+      "readme_sha256": "58b5f3ca3368b1d583880a7793598787fbb155852314b2a1820b286a9c6b6b98",
       "readme_url": "https://raw.githubusercontent.com/Yuliang-Liu/AWESOME-OCR-LLM/HEAD/README.md",
-      "source_updated_at": "2026-09-18",
-      "last_checked_at": "2026-09-21",
+      "source_updated_at": "2026-09-21",
+      "last_checked_at": "2026-09-22",
       "candidate_count": 703
     },
     "The-Martyr/Awesome-Multimodal-Reasoning": {
       "readme_sha256": "3b33e96c1e35314291b0041c40d5b020dad893c7ef870d6063afd2b0427bec3b",
       "readme_url": "https://raw.githubusercontent.com/The-Martyr/Awesome-Multimodal-Reasoning/HEAD/README.md",
       "source_updated_at": "2026-09-10",
-      "last_checked_at": "2026-09-21",
+      "last_checked_at": "2026-09-22",
       "candidate_count": 1194
     },
     "ThreeSR/Awesome-Multimodal-Deep-Research": {
       "readme_sha256": "851b2f7663ca3b94c3cb8fe24840ca09e1c85f7cf69d33f9bc827c7081e5aa3c",
       "readme_url": "https://raw.githubusercontent.com/ThreeSR/Awesome-Multimodal-Deep-Research/HEAD/README.md",
       "source_updated_at": "2026-05-29",
-      "last_checked_at": "2026-09-21",
+      "last_checked_at": "2026-09-22",
       "candidate_count": 158
     },
     "tuteng0915/awesome-diffusion-ar": {
       "readme_sha256": "e57a3e64f5a659917aa7671fec4550f40853976ae6cf655e059a425ed27cfdef",
       "readme_url": "https://raw.githubusercontent.com/tuteng0915/awesome-diffusion-ar/HEAD/README.md",
       "source_updated_at": "2026-09-08",
-      "last_checked_at": "2026-09-21",
+      "last_checked_at": "2026-09-22",
       "candidate_count": 78
     },
     "firetix/awesome-cvpr-2026-papers": {
       "readme_sha256": "8d50f9b73561af2fa71c9f9f957eb330b5c55b242abd2ea53eb53f6b69e9a02e",
       "readme_url": "https://raw.githubusercontent.com/firetix/awesome-cvpr-2026-papers/HEAD/data/cvpr2026_papers.json",
       "source_updated_at": "2026-06-08",
-      "last_checked_at": "2026-09-21",
+      "last_checked_at": "2026-09-22",
       "candidate_count": 4069
     },
     "52CV/CVPR-2025-Papers": {
       "readme_sha256": "0ed607a56a557d3a615f4448f8fddb92ec9483b3682c7fc657d7dd9e6c50b93f",
       "readme_url": "https://raw.githubusercontent.com/52CV/CVPR-2025-Papers/HEAD/README.md",
       "source_updated_at": "2025-06-30",
-      "last_checked_at": "2026-09-21",
+      "last_checked_at": "2026-09-22",
       "candidate_count": 2884
     },
     "hzxie/Awesome-3D-Scene-Generation": {
       "readme_sha256": "4a7f0197a0947f434e876cd993f4cdedf3b49d5d4a454022a2ae4aa8619234c9",
       "readme_url": "https://raw.githubusercontent.com/hzxie/Awesome-3D-Scene-Generation/HEAD/README.md",
       "source_updated_at": "2026-09-18",
-      "last_checked_at": "2026-09-21",
+      "last_checked_at": "2026-09-22",
       "candidate_count": 548
     },
     "SIBench/Awesome-Visual-Spatial-Reasoning": {
       "readme_sha256": "e57a7b17a95e6bcdf1edc8e1c1ee3a251934021e6fc4e323ccd4b5ff130a73e7",
       "readme_url": "https://raw.githubusercontent.com/SIBench/Awesome-Visual-Spatial-Reasoning/HEAD/README.md",
       "source_updated_at": "2026-07-27",
-      "last_checked_at": "2026-09-21",
+      "last_checked_at": "2026-09-22",
       "candidate_count": 194
     },
     "linfei-mise/Awesome-AI-x-SS": {
       "readme_sha256": "4c19fe83a86da59e87c9dce6f53c8282dd5208ee810483a8812bdb8d69ed8a25",
       "readme_url": "https://raw.githubusercontent.com/linfei-mise/Awesome-AI-x-SS/HEAD/README.md",
       "source_updated_at": "2026-04-09",
-      "last_checked_at": "2026-09-21",
+      "last_checked_at": "2026-09-22",
       "candidate_count": 188
     },
     "yuanjiayiy/dope-ai4science-paper": {
       "readme_sha256": "8941a2a76ab66bfa1b683b1270d7618f3d9949e51e910b83a778cb99cc80ee23",
       "readme_url": "https://raw.githubusercontent.com/yuanjiayiy/dope-ai4science-paper/HEAD/README.md",
       "source_updated_at": "2026-04-08",
-      "last_checked_at": "2026-09-21",
+      "last_checked_at": "2026-09-22",
       "candidate_count": 19
     },
     "john852517791/awesome-fake-audio-detection": {
       "readme_sha256": "dc242ebee360d7c5ca6bb94f73d14689829794be4832cb9a200f0599d1eba556",
       "readme_url": "https://raw.githubusercontent.com/john852517791/awesome-fake-audio-detection/HEAD/README.md",
       "source_updated_at": "2026-08-27",
-      "last_checked_at": "2026-09-21",
+      "last_checked_at": "2026-09-22",
       "candidate_count": 460
     },
     "TalEliyahu/Awesome-AI-Security": {
       "readme_sha256": "c0033c2851c7936bdc18b61eb3479b7df8b62e29bc090157ed2175f3b47646b8",
       "readme_url": "https://raw.githubusercontent.com/TalEliyahu/Awesome-AI-Security/HEAD/Research_Papers.md",
       "source_updated_at": "2026-07-18",
-      "last_checked_at": "2026-09-21",
+      "last_checked_at": "2026-09-22",
       "candidate_count": 55
     },
     "Xnhyacinth/Awesome-LLM-Long-Context-Modeling": {
       "readme_sha256": "7b10c580aa400832892b22187db210d861f9b36468ad2609519a3d090ff12f81",
       "readme_url": "https://raw.githubusercontent.com/Xnhyacinth/Awesome-LLM-Long-Context-Modeling/HEAD/README.md",
       "source_updated_at": "2026-08-17",
-      "last_checked_at": "2026-09-21",
+      "last_checked_at": "2026-09-22",
       "candidate_count": 1921
     },
     "mbzuai-oryx/Awesome-LLM-Post-training": {
       "readme_sha256": "adce6eff9b83d616640c2ff4ddc34ff3ba5c82d194dd4ecbdebdda29c9088ed0",
       "readme_url": "https://raw.githubusercontent.com/mbzuai-oryx/Awesome-LLM-Post-training/HEAD/README.md",
       "source_updated_at": "2026-09-05",
-      "last_checked_at": "2026-09-21",
+      "last_checked_at": "2026-09-22",
       "candidate_count": 161
     },
     "FDU-INS/awesome-financial-llm-trustworthiness-benchmarks": {
       "readme_sha256": "1335e427a981d703805b6c5d15c425a919af384461395848326bb4e858eb25eb",
       "readme_url": "https://raw.githubusercontent.com/FDU-INS/awesome-financial-llm-trustworthiness-benchmarks/HEAD/README.md",
       "source_updated_at": "2026-09-17",
-      "last_checked_at": "2026-09-21",
+      "last_checked_at": "2026-09-22",
       "candidate_count": 93
     }
   },
-  "last_run_at": "2026-09-21",
+  "last_run_at": "2026-09-22",
   "failures": [],
   "since_year": 2025
 }
