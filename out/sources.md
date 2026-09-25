@@ -1,6 +1,6 @@
 # 数据源清单
 
-由 `update_prices.py` 于 2026-09-24T03:58:29 自动生成。
+由 `update_prices.py` 于 2026-09-25T04:13:21 自动生成。
 
 | 数据 Provider | 网页 | 抓取地址 | 许可 | 状态 | 记录数 |
 | --- | --- | --- | --- | --- | --- |
@@ -25,24 +25,23 @@
 | Google Gemini API | https://ai.google.dev/gemini-api/docs/pricing | `https://ai.google.dev/gemini-api/docs/pricing` | 官方定价页 | ✅ | 2 |
 | Google Gemini Omni 1.1 Flash 官方价格（人工核验） | https://blog.google/innovation-and-ai/technology/developers-tools/build-with-gemini-omni-1-1-flash/ | `https://blog.google/innovation-and-ai/technology/developers-tools/buil` | 厂商官方价格页（人工核验快照） | ✅ | 4 |
 | Google Gemini API Veo 官方价格（人工核验） | https://ai.google.dev/gemini-api/docs/pricing | `https://ai.google.dev/gemini-api/docs/pricing` | 厂商官方价格页（人工核验快照） | ✅ | 7 |
-| HuggingFace Router | https://huggingface.co/models?inference_provider=all | `https://router.huggingface.co/v1/models` | 公开 API | ✅ | 197 |
+| HuggingFace Router | https://huggingface.co/models?inference_provider=all | `https://router.huggingface.co/v1/models` | 公开 API | ✅ | 199 |
 | iFLYTEK 星火 MaaS 官方价格 | https://maas.xfyun.cn/modelSquare | `https://maas.xfyun.cn/api/v1/gpt-finetune/model/base/list-v2?page=1&si` | 厂商官方公开接口 | ✅ | 2 |
-| LiteLLM | https://github.com/BerriAI/litellm | `https://cdn.jsdelivr.net/gh/BerriAI/litellm@main/model_prices_and_cont` | MIT | ✅ | 3374 |
+| LiteLLM | https://github.com/BerriAI/litellm | `https://cdn.jsdelivr.net/gh/BerriAI/litellm@main/model_prices_and_cont` | MIT | ✅ | 3497 |
 | Luma Agents Ray 3.2 官方价格（人工核验） | https://docs.agents.lumalabs.ai/guides/pricing | `https://docs.agents.lumalabs.ai/guides/pricing` | 厂商官方价格页（人工核验快照） | ✅ | 3 |
 | MiniMax | https://platform.minimaxi.com/docs/guides/pricing-paygo | `https://platform.minimax.cn/docs/guides/pricing-paygo` | 官方定价页 | ✅ | 2 |
 | MiniMax Video 官方按量价格（人工核验） | https://platform.minimax.io/docs/guides/pricing-paygo | `https://platform.minimax.io/docs/guides/pricing-paygo` | 厂商官方价格页（人工核验快照） | ✅ | 5 |
-| models.dev | https://models.dev | `https://models.dev/api.json` | MIT | ✅ | 6652 |
+| models.dev | https://models.dev | `https://models.dev/api.json` | MIT | ✅ | 6654 |
 | Moonshot AI / Kimi 官方文档 | https://platform.moonshot.ai/docs/pricing/chat-k3 | `https://platform.kimi.ai/docs/pricing/chat.md` | 厂商官方文档 | ✅ | 12 |
 | Moonshot AI / Kimi 官方文档 | https://platform.moonshot.ai/docs/pricing/chat-k3 | `https://platform.kimi.ai/docs/pricing/chat.md` | 厂商官方文档 | ✅ | 12 |
 | Moonshot AI / Kimi 官方文档 | https://platform.moonshot.ai/docs/pricing/chat-k3 | `https://platform.kimi.ai/docs/pricing/chat.md` | 厂商官方文档 | ✅ | 12 |
 | Moonshot AI / Kimi 官方文档 | https://platform.moonshot.ai/docs/pricing/chat-k3 | `https://platform.kimi.ai/docs/models.md` | 厂商官方文档 | ✅ | 12 |
 | nano-gpt | https://nano-gpt.com | `https://nano-gpt.com/api/models` | 第三方转售价目 | ✅ | 82 |
-| Novita AI | https://novita.ai/models | `https://api.novita.ai/v3/openai/models` | 公开 API | ✅ | 102 |
+| Novita AI | https://novita.ai/models | `https://api.novita.ai/v3/openai/models` | 公开 API | ✅ | 104 |
 | ofox | https://ofox.ai | `https://api.ofox.ai/v2/models/catalog?include=provider_price&limit=100` | 公开 API | ✅ | 151 |
-| OpenAI 官方文档 | https://platform.openai.com/docs/pricing | `https://developers.openai.com/api/docs/pricing.md` | 厂商官方文档 | ✅ | 246 |
+| OpenAI 官方文档 | https://platform.openai.com/docs/pricing | `https://developers.openai.com/api/docs/pricing.md` | 厂商官方文档 | ✅ | 238 |
 | OpenRouter | https://openrouter.ai/models | `https://openrouter.ai/api/v1/models` | 公开 API | ✅ | 366 |
 | OVHcloud AI Endpoints | https://endpoints.ai.cloud.ovh.net | `https://catalog.endpoints.ai.ovh.net/rest/v2/openrouter` | 公开 API | ✅ | 12 |
-| Pioneer | https://pioneer.ai | `https://api.pioneer.ai/v1/models` | 公开 API | ✅ | 35 |
 | PixVerse API 官方价格（人工核验） | https://docs.platform.pixverse.ai/pricing-796039m0 | `https://docs.platform.pixverse.ai/pricing-796039m0` | 厂商官方价格页（人工核验快照） | ✅ | 4 |
 | Pruna AI 官方按张价（人工核验） | https://www.pruna.ai/pricing | `https://www.pruna.ai/pricing` | 厂商官方价格页（人工核验快照） | ✅ | 2 |
 | Requesty | https://requesty.ai | `https://router.requesty.ai/v1/models/managed` | 公开 API | ✅ | 136 |
@@ -61,6 +60,7 @@
 | xAI 官方文档 | https://docs.x.ai/docs/models | `https://docs.x.ai/developers/models.md` | 厂商官方文档 | ✅ | 21 |
 | Zhipu BigModel | https://open.bigmodel.cn/pricing | `https://open.bigmodel.cn/api/biz/operation/query?ids=1122` | 官方定价页 | ✅ | 6 |
 | Zhipu AI / GLM 官方文档 | https://docs.z.ai/guides/overview/pricing | `https://docs.z.ai/guides/overview/pricing.md` | 厂商官方文档 | ✅ | 29 |
+| Pioneer | https://pioneer.ai | `https://api.pioneer.ai/v1/models` | 公开 API | ❌ http_error | 0 |
 
 ## 说明
 
@@ -89,21 +89,18 @@ models.dev 的 `google.ts` 里写着 `cost: existing.cost`（价格取自手工�
 厂商改一个列头就会静默丢掉一个价格维度，所以认不出的东西必须报出来。
 
 - openai_md: 未识别的列头 `category`
-- openai_md: 未识别的列头 `training`
-- openai_md: 未识别的列头 `price per minute`
 - openai_md: 未识别的列头 `estimated cost`
-- openai_md: 未识别的列头 `landscape`
 - openai_md: 未识别的列头 `details`
-- openai_md: 未识别的列头 `pricing`
-- openai_md: 未识别的列头 `size`
-- openai_md: 未识别的列头 `portrait`
+- openai_md: 未识别的列头 `training`
 - openai_md: 未识别的列头 `use case`
+- openai_md: 未识别的列头 `price per minute`
+- openai_md: 未识别的列头 `pricing`
 - openai_md: 跳过表格「Pricing Table data」— 没有可识别的价格列
 - openai_md: 跳过表格「Grouped Pricing Table data」— 没有可识别的价格列
 - anthropic_md: 未识别的列头 `additional input tokens`
+- anthropic_md: 未识别的列头 `tool use system prompt tokens: auto, none`
 - anthropic_md: 未识别的列头 `tool use system prompt tokens: any, tool`
 - anthropic_md: 未识别的列头 `cache hits and refreshes`
-- anthropic_md: 未识别的列头 `tool use system prompt tokens: auto, none`
 - anthropic_md: 跳过表格「Claude Platform on AWS pricing」— 找不到模型/工具名列
 - anthropic_md: 跳过表格「Claude in Microsoft Foundry pricing」— 找不到模型/工具名列
 - anthropic_md: 跳过表格「Prompt caching」— 找不到模型/工具名列
@@ -116,8 +113,6 @@ models.dev 的 `google.ts` 里写着 `cost: existing.cost`（价格取自手工�
 - anthropic_md: 跳过表格「Worked example」— 找不到模型/工具名列
 - xai_md: 跳过表格「Voice Pricing」— 列头可映射但未产出任何记录
 - zhipu_md: 未识别的列头 `cached input storage`
-- moonshot_md: 未识别的列头 `cached input price`
-- moonshot_md: 未识别的列头 `cache write price (ttl 1h)`
 - moonshot_md: 未识别的列头 `cache write price (ttl 5min)`
 - moonshot_md: 未识别的列头 `cached input price`
 - moonshot_md: 未识别的列头 `cache write price (ttl 1h)`
@@ -125,6 +120,8 @@ models.dev 的 `google.ts` 里写着 `cost: existing.cost`（价格取自手工�
 - moonshot_md: 未识别的列头 `cached input price`
 - moonshot_md: 未识别的列头 `cache write price (ttl 1h)`
 - moonshot_md: 未识别的列头 `cache write price (ttl 5min)`
+- moonshot_md: 未识别的列头 `cached input price`
+- moonshot_md: 未识别的列头 `cache write price (ttl 1h)`
 - volcengine_official_verified: 价格页无法稳定服务端渲染，当前使用 2026-08-25T00:00:00+10:00 人工核验快照；URL 与原文摘录已保留
 - deepseek_official_verified: 价格页无法稳定服务端渲染，当前使用 2026-08-25T00:00:00+10:00 人工核验快照；URL 与原文摘录已保留
 - google_omni_video_official_verified: 价格页无法稳定服务端渲染，当前使用 2026-08-29T00:00:00+10:00 人工核验快照；URL 与原文摘录已保留
