@@ -6,6 +6,7 @@ Gemma 2 2B IT,google/gemma-2-2b-it,Google,General-Purpose,text,modelsdev,https:/
 Gemma 3 1B IT,google/gemma-3-1b-it,Google,General-Purpose,text,official_family_catalog,https://huggingface.co/google/models,1,1,Offline: Open Weight,No,offline,stable,1,free,weights_free,weight open source
 Gemma 3 270M IT,google/gemma-3-270m-it,Google,General-Purpose,text,official_family_catalog,https://huggingface.co/google/models,0.27,0.27,Offline: Open Weight,No,offline,stable,1,free,weights_free,weight open source
 Gemma 3n E2B IT,google/gemma-3n-E2B-it,Google,General-Purpose,text | image,modelsdev,https://models.dev,,2,Offline: Open Weight,No,offline,stable,1,free,weights_free,weight open source
+Gemma 3n E4B IT,google/gemma-3n-E4B-it,Google,General-Purpose,text | image,modelsdev,https://models.dev,,4,Offline: Open Weight,No,offline,stable,1,free,weights_free,weight open source
 Paligemma2 10B,google/paligemma2-10b,Google,General-Purpose,text | image,official_model_doc,https://huggingface.co/google/paligemma2-10b-mix-224,10,10,Offline: Open Weight,No,offline,stable,1,free,weights_free,weight open source
 Paligemma2 28B,google/paligemma2-28b,Google,General-Purpose,text | image,official_model_doc,https://huggingface.co/google/paligemma2-28b-mix-224,28,28,Offline: Open Weight,No,offline,stable,1,free,weights_free,weight open source
 Paligemma2 3B,google/paligemma2-3b,Google,General-Purpose,text | image,official_model_doc,https://huggingface.co/google/paligemma2-3b-mix-224,3,3,Offline: Open Weight,No,offline,stable,1,free,weights_free,weight open source
