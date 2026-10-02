@@ -1,7 +1,7 @@
 {
-  "generated_at": "2026-10-01T07:13:00+00:00",
+  "generated_at": "2026-10-02T07:03:44+00:00",
   "source_count": 79,
-  "paper_count": 16965,
+  "paper_count": 16979,
   "page_size": 200,
   "categories": {
     "core": [
@@ -4943,8 +4943,7 @@
       ],
       "metadata_sources": [
         "source README",
-        "arXiv",
-        "Semantic Scholar"
+        "arXiv"
       ]
     },
     {
@@ -5308,8 +5307,7 @@
       ],
       "metadata_sources": [
         "source README",
-        "arXiv",
-        "Semantic Scholar"
+        "arXiv"
       ]
     },
     {
@@ -25893,8 +25891,7 @@
       ],
       "metadata_sources": [
         "source README",
-        "arXiv",
-        "Semantic Scholar"
+        "arXiv"
       ]
     },
     {
@@ -26260,8 +26257,7 @@
       ],
       "metadata_sources": [
         "source README",
-        "arXiv",
-        "Semantic Scholar"
+        "arXiv"
       ]
     },
     {
@@ -42565,8 +42561,7 @@
       ],
       "metadata_sources": [
         "source README",
-        "arXiv",
-        "Semantic Scholar"
+        "arXiv"
       ]
     },
     {
@@ -42933,8 +42928,7 @@
       ],
       "metadata_sources": [
         "structured source",
-        "arXiv",
-        "Semantic Scholar"
+        "arXiv"
       ]
     },
     {
@@ -42964,8 +42958,7 @@
       ],
       "metadata_sources": [
         "structured source",
-        "arXiv",
-        "Semantic Scholar"
+        "arXiv"
       ]
     },
     {
@@ -62273,8 +62266,7 @@
       ],
       "metadata_sources": [
         "source README",
-        "arXiv",
-        "Semantic Scholar"
+        "arXiv"
       ]
     },
     {
@@ -84780,8 +84772,7 @@
       ],
       "metadata_sources": [
         "source README",
-        "arXiv",
-        "Semantic Scholar"
+        "arXiv"
       ]
     },
     {
@@ -110302,8 +110293,7 @@
       ],
       "metadata_sources": [
         "source README",
-        "arXiv",
-        "Semantic Scholar"
+        "arXiv"
       ]
     },
     {
@@ -110519,8 +110509,7 @@
       ],
       "metadata_sources": [
         "source README",
-        "arXiv",
-        "Semantic Scholar"
+        "arXiv"
       ]
     },
     {
@@ -151346,43 +151335,13 @@
       ]
     },
     {
-      "id": "c9a20563f9457560",
-      "title": "Towards Autonomous Mathematics Research",
-      "venue": "arXiv",
-      "published_at": "2026-02-10",
-      "date_precision": "day",
-      "first_seen_at": "2026-08-29",
-      "source_updated_at": "2026-09-30",
-      "paper_url": "https://arxiv.org/abs/2602.10177",
-      "arxiv_id": "2602.10177",
-      "doi": "",
-      "group": "Cross-disciplinary Applications",
-      "category": "Science & Discovery",
-      "categories": [
-        "Science & Discovery"
-      ],
-      "subcategories": [
-        "General AI4Science"
-      ],
-      "source_repos": [
-        "ai4s-research/awesome-ai-for-science"
-      ],
-      "source_urls": [
-        "https://github.com/ai4s-research/awesome-ai-for-science"
-      ],
-      "metadata_sources": [
-        "source README",
-        "Semantic Scholar"
-      ]
-    },
-    {
       "id": "ed65fe366b4991bb",
       "title": "Hand2World: Autoregressive Egocentric Interaction Generation via Free-Space Hand Gestures",
       "venue": "arXiv",
       "published_at": "2026-02-10",
       "date_precision": "day",
       "first_seen_at": "2026-08-31",
-      "source_updated_at": "2026-09-24",
+      "source_updated_at": "2026-10-02",
       "paper_url": "https://arxiv.org/abs/2602.09600",
       "arxiv_id": "2602.09600",
       "doi": "",
@@ -151399,6 +151358,36 @@
       ],
       "source_urls": [
         "https://github.com/AlonzoLeeeooo/awesome-video-generation"
+      ],
+      "metadata_sources": [
+        "source README",
+        "Semantic Scholar"
+      ]
+    },
+    {
+      "id": "c9a20563f9457560",
+      "title": "Towards Autonomous Mathematics Research",
+      "venue": "arXiv",
+      "published_at": "2026-02-10",
+      "date_precision": "day",
+      "first_seen_at": "2026-08-29",
+      "source_updated_at": "2026-10-01",
+      "paper_url": "https://arxiv.org/abs/2602.10177",
+      "arxiv_id": "2602.10177",
+      "doi": "",
+      "group": "Cross-disciplinary Applications",
+      "category": "Science & Discovery",
+      "categories": [
+        "Science & Discovery"
+      ],
+      "subcategories": [
+        "General AI4Science"
+      ],
+      "source_repos": [
+        "ai4s-research/awesome-ai-for-science"
+      ],
+      "source_urls": [
+        "https://github.com/ai4s-research/awesome-ai-for-science"
       ],
       "metadata_sources": [
         "source README",
@@ -174524,8 +174513,7 @@
       ],
       "metadata_sources": [
         "source README",
-        "arXiv",
-        "Semantic Scholar"
+        "arXiv"
       ]
     },
     {
@@ -174643,8 +174631,7 @@
       ],
       "metadata_sources": [
         "source README",
-        "arXiv",
-        "Semantic Scholar"
+        "arXiv"
       ]
     },
     {
@@ -174704,8 +174691,7 @@
       ],
       "metadata_sources": [
         "source README",
-        "arXiv",
-        "Semantic Scholar"
+        "arXiv"
       ]
     },
     {
@@ -174829,8 +174815,7 @@
       "metadata_sources": [
         "source README",
         "structured source",
-        "arXiv",
-        "Semantic Scholar"
+        "arXiv"
       ]
     },
     {
@@ -174954,8 +174939,7 @@
       ],
       "metadata_sources": [
         "source README",
-        "arXiv",
-        "Semantic Scholar"
+        "arXiv"
       ]
     },
     {
@@ -175050,8 +175034,7 @@
       "metadata_sources": [
         "source README",
         "structured source",
-        "arXiv",
-        "Semantic Scholar"
+        "arXiv"
       ]
     },
     {
@@ -175081,8 +175064,7 @@
       ],
       "metadata_sources": [
         "source README",
-        "arXiv",
-        "Semantic Scholar"
+        "arXiv"
       ]
     },
     {
@@ -240243,8 +240225,7 @@
       ],
       "metadata_sources": [
         "source README",
-        "arXiv",
-        "Semantic Scholar"
+        "arXiv"
       ]
     },
     {
@@ -240517,8 +240498,7 @@
       ],
       "metadata_sources": [
         "source README",
-        "arXiv",
-        "Semantic Scholar"
+        "arXiv"
       ]
     },
     {
@@ -240998,8 +240978,7 @@
       ],
       "metadata_sources": [
         "source README",
-        "arXiv",
-        "Semantic Scholar"
+        "arXiv"
       ]
     },
     {
@@ -263618,8 +263597,7 @@
       ],
       "metadata_sources": [
         "source README",
-        "arXiv",
-        "Semantic Scholar"
+        "arXiv"
       ]
     },
     {
@@ -263766,8 +263744,7 @@
       ],
       "metadata_sources": [
         "source README",
-        "arXiv",
-        "Semantic Scholar"
+        "arXiv"
       ]
     },
     {
@@ -264581,6 +264558,44 @@
       "metadata_sources": [
         "source README",
         "Semantic Scholar"
+      ]
+    },
+    {
+      "id": "c117a03380f07938",
+      "title": "EgoControl: Controllable Egocentric Video Generation via 3D Full-Body Poses",
+      "venue": "arXiv",
+      "published_at": "2025-11",
+      "date_precision": "month",
+      "first_seen_at": "2026-08-31",
+      "source_updated_at": "2026-10-02",
+      "paper_url": "https://arxiv.org/abs/2511.18173",
+      "arxiv_id": "2511.18173",
+      "doi": "",
+      "group": "Core Technology",
+      "category": "Video",
+      "categories": [
+        "Video",
+        "Vision"
+      ],
+      "subcategories": [
+        "Video Generation",
+        "Post-training & Alignment",
+        "CVPR 2026 Proceedings"
+      ],
+      "source_repos": [
+        "AlonzoLeeeooo/awesome-video-generation",
+        "people-robots/Awesome-Video-Generation-Post-Training",
+        "firetix/awesome-cvpr-2026-papers"
+      ],
+      "source_urls": [
+        "https://github.com/AlonzoLeeeooo/awesome-video-generation",
+        "https://github.com/people-robots/Awesome-Video-Generation-Post-Training",
+        "https://github.com/firetix/awesome-cvpr-2026-papers"
+      ],
+      "metadata_sources": [
+        "source README",
+        "structured source",
+        "arXiv identifier"
       ]
     },
     {
@@ -265757,44 +265772,6 @@
       ],
       "metadata_sources": [
         "source README",
-        "arXiv identifier"
-      ]
-    },
-    {
-      "id": "c117a03380f07938",
-      "title": "EgoControl: Controllable Egocentric Video Generation via 3D Full-Body Poses",
-      "venue": "arXiv",
-      "published_at": "2025-11",
-      "date_precision": "month",
-      "first_seen_at": "2026-08-31",
-      "source_updated_at": "2026-10-01",
-      "paper_url": "https://arxiv.org/abs/2511.18173",
-      "arxiv_id": "2511.18173",
-      "doi": "",
-      "group": "Core Technology",
-      "category": "Video",
-      "categories": [
-        "Video",
-        "Vision"
-      ],
-      "subcategories": [
-        "Video Generation",
-        "Post-training & Alignment",
-        "CVPR 2026 Proceedings"
-      ],
-      "source_repos": [
-        "AlonzoLeeeooo/awesome-video-generation",
-        "people-robots/Awesome-Video-Generation-Post-Training",
-        "firetix/awesome-cvpr-2026-papers"
-      ],
-      "source_urls": [
-        "https://github.com/AlonzoLeeeooo/awesome-video-generation",
-        "https://github.com/people-robots/Awesome-Video-Generation-Post-Training",
-        "https://github.com/firetix/awesome-cvpr-2026-papers"
-      ],
-      "metadata_sources": [
-        "source README",
-        "structured source",
         "arXiv identifier"
       ]
     },
@@ -283797,6 +283774,43 @@
       ]
     },
     {
+      "id": "731a2880b3bc4173",
+      "title": "Stable Video Infinity: Infinite-Length Video Generation with Error Recycling",
+      "venue": "arXiv",
+      "published_at": "2025-10",
+      "date_precision": "month",
+      "first_seen_at": "2026-08-31",
+      "source_updated_at": "2026-10-02",
+      "paper_url": "https://arxiv.org/abs/2510.09212",
+      "arxiv_id": "2510.09212",
+      "doi": "",
+      "group": "Core Technology",
+      "category": "Image Generation",
+      "categories": [
+        "Image Generation",
+        "Video"
+      ],
+      "subcategories": [
+        "Diffusion / T2I / Editing",
+        "Video Generation",
+        "Post-training & Alignment"
+      ],
+      "source_repos": [
+        "wangkai930418/awesome-diffusion-categorized",
+        "AlonzoLeeeooo/awesome-video-generation",
+        "people-robots/Awesome-Video-Generation-Post-Training"
+      ],
+      "source_urls": [
+        "https://github.com/wangkai930418/awesome-diffusion-categorized",
+        "https://github.com/AlonzoLeeeooo/awesome-video-generation",
+        "https://github.com/people-robots/Awesome-Video-Generation-Post-Training"
+      ],
+      "metadata_sources": [
+        "source README",
+        "arXiv identifier"
+      ]
+    },
+    {
       "id": "6a90e48bd63a8c70",
       "title": "VideoVerse: Does Your T2V Generator Have World Model Capability to Synthesize Videos?",
       "venue": "arXiv",
@@ -284047,43 +284061,6 @@
       ]
     },
     {
-      "id": "731a2880b3bc4173",
-      "title": "Stable Video Infinity: Infinite-Length Video Generation with Error Recycling",
-      "venue": "arXiv",
-      "published_at": "2025-10",
-      "date_precision": "month",
-      "first_seen_at": "2026-08-31",
-      "source_updated_at": "2026-10-01",
-      "paper_url": "https://arxiv.org/abs/2510.09212",
-      "arxiv_id": "2510.09212",
-      "doi": "",
-      "group": "Core Technology",
-      "category": "Image Generation",
-      "categories": [
-        "Image Generation",
-        "Video"
-      ],
-      "subcategories": [
-        "Diffusion / T2I / Editing",
-        "Video Generation",
-        "Post-training & Alignment"
-      ],
-      "source_repos": [
-        "wangkai930418/awesome-diffusion-categorized",
-        "AlonzoLeeeooo/awesome-video-generation",
-        "people-robots/Awesome-Video-Generation-Post-Training"
-      ],
-      "source_urls": [
-        "https://github.com/wangkai930418/awesome-diffusion-categorized",
-        "https://github.com/AlonzoLeeeooo/awesome-video-generation",
-        "https://github.com/people-robots/Awesome-Video-Generation-Post-Training"
-      ],
-      "metadata_sources": [
-        "source README",
-        "arXiv identifier"
-      ]
-    },
-    {
       "id": "7c1a6e2847f6acf9",
       "title": "Reasoning Visual Language Model for Chest X-Ray Analysis",
       "venue": "arXiv",
@@ -284205,6 +284182,36 @@
       ],
       "source_urls": [
         "https://github.com/people-robots/Awesome-Video-Generation-Post-Training"
+      ],
+      "metadata_sources": [
+        "source README",
+        "arXiv identifier"
+      ]
+    },
+    {
+      "id": "a5fe1204975dc02b",
+      "title": "Paper2Web: Let's Make Your Paper Alive!",
+      "venue": "arXiv",
+      "published_at": "2025-10",
+      "date_precision": "month",
+      "first_seen_at": "2026-08-29",
+      "source_updated_at": "2026-10-01",
+      "paper_url": "https://arxiv.org/abs/2510.15842",
+      "arxiv_id": "2510.15842",
+      "doi": "",
+      "group": "Cross-disciplinary Applications",
+      "category": "Science & Discovery",
+      "categories": [
+        "Science & Discovery"
+      ],
+      "subcategories": [
+        "General AI4Science"
+      ],
+      "source_repos": [
+        "ai4s-research/awesome-ai-for-science"
+      ],
+      "source_urls": [
+        "https://github.com/ai4s-research/awesome-ai-for-science"
       ],
       "metadata_sources": [
         "source README",
@@ -284821,6 +284828,36 @@
       ]
     },
     {
+      "id": "2f58f740296450ec",
+      "title": "DeepAnalyze: Agentic Large Language Models for Autonomous Data Science",
+      "venue": "Science",
+      "published_at": "2025-10",
+      "date_precision": "month",
+      "first_seen_at": "2026-08-29",
+      "source_updated_at": "2026-10-01",
+      "paper_url": "https://arxiv.org/abs/2510.16872",
+      "arxiv_id": "2510.16872",
+      "doi": "",
+      "group": "Cross-disciplinary Applications",
+      "category": "Science & Discovery",
+      "categories": [
+        "Science & Discovery"
+      ],
+      "subcategories": [
+        "General AI4Science"
+      ],
+      "source_repos": [
+        "ai4s-research/awesome-ai-for-science"
+      ],
+      "source_urls": [
+        "https://github.com/ai4s-research/awesome-ai-for-science"
+      ],
+      "metadata_sources": [
+        "source README",
+        "arXiv identifier"
+      ]
+    },
+    {
       "id": "a3e42cecb31267f1",
       "title": "CoMo: Compositional Motion Customization for Text-to-Video Generation",
       "venue": "arXiv",
@@ -285076,36 +285113,6 @@
       ]
     },
     {
-      "id": "a5fe1204975dc02b",
-      "title": "Paper2Web: Let's Make Your Paper Alive!",
-      "venue": "arXiv",
-      "published_at": "2025-10",
-      "date_precision": "month",
-      "first_seen_at": "2026-08-29",
-      "source_updated_at": "2026-09-30",
-      "paper_url": "https://arxiv.org/abs/2510.15842",
-      "arxiv_id": "2510.15842",
-      "doi": "",
-      "group": "Cross-disciplinary Applications",
-      "category": "Science & Discovery",
-      "categories": [
-        "Science & Discovery"
-      ],
-      "subcategories": [
-        "General AI4Science"
-      ],
-      "source_repos": [
-        "ai4s-research/awesome-ai-for-science"
-      ],
-      "source_urls": [
-        "https://github.com/ai4s-research/awesome-ai-for-science"
-      ],
-      "metadata_sources": [
-        "source README",
-        "arXiv identifier"
-      ]
-    },
-    {
       "id": "1a7c5884ac244c75",
       "title": "MedReflect: Teaching Medical LLMs to Self-Improve via Reflective Correction",
       "venue": "arXiv",
@@ -285222,36 +285229,6 @@
       "source_urls": [
         "https://github.com/OpenEnvision/Awesome-Multimodal-Modeling",
         "https://github.com/Yuliang-Liu/AWESOME-OCR-LLM"
-      ],
-      "metadata_sources": [
-        "source README",
-        "arXiv identifier"
-      ]
-    },
-    {
-      "id": "2f58f740296450ec",
-      "title": "DeepAnalyze: Agentic Large Language Models for Autonomous Data Science",
-      "venue": "Science",
-      "published_at": "2025-10",
-      "date_precision": "month",
-      "first_seen_at": "2026-08-29",
-      "source_updated_at": "2026-09-30",
-      "paper_url": "https://arxiv.org/abs/2510.16872",
-      "arxiv_id": "2510.16872",
-      "doi": "",
-      "group": "Cross-disciplinary Applications",
-      "category": "Science & Discovery",
-      "categories": [
-        "Science & Discovery"
-      ],
-      "subcategories": [
-        "General AI4Science"
-      ],
-      "source_repos": [
-        "ai4s-research/awesome-ai-for-science"
-      ],
-      "source_urls": [
-        "https://github.com/ai4s-research/awesome-ai-for-science"
       ],
       "metadata_sources": [
         "source README",
@@ -297000,7 +296977,7 @@
       "published_at": "2025-09-30",
       "date_precision": "day",
       "first_seen_at": "2026-08-31",
-      "source_updated_at": "2026-09-24",
+      "source_updated_at": "2026-10-02",
       "paper_url": "https://arxiv.org/pdf/2509.26555",
       "arxiv_id": "2509.26555",
       "doi": "",
@@ -297248,7 +297225,7 @@
       "published_at": "2025-09-26",
       "date_precision": "day",
       "first_seen_at": "2026-09-25",
-      "source_updated_at": "2026-10-01",
+      "source_updated_at": "2026-10-02",
       "paper_url": "https://arxiv.org/abs/2509.22799",
       "arxiv_id": "2509.22799",
       "doi": "",
@@ -297769,8 +297746,7 @@
       "metadata_sources": [
         "source README",
         "structured source",
-        "arXiv",
-        "Semantic Scholar"
+        "arXiv"
       ]
     },
     {
@@ -297866,8 +297842,7 @@
       ],
       "metadata_sources": [
         "source README",
-        "arXiv",
-        "Semantic Scholar"
+        "arXiv"
       ]
     },
     {
@@ -297930,8 +297905,7 @@
       ],
       "metadata_sources": [
         "structured source",
-        "arXiv",
-        "Semantic Scholar"
+        "arXiv"
       ]
     },
     {
@@ -298699,6 +298673,40 @@
       ]
     },
     {
+      "id": "609383fdb3bf89a8",
+      "title": "ToolUniverse: An open platform for democratizing AI scientists",
+      "venue": "arXiv",
+      "published_at": "2025-09",
+      "date_precision": "month",
+      "first_seen_at": "2026-08-29",
+      "source_updated_at": "2026-10-01",
+      "paper_url": "https://arxiv.org/abs/2509.23426",
+      "arxiv_id": "2509.23426",
+      "doi": "",
+      "group": "Cross-disciplinary Applications",
+      "category": "Medicine & Healthcare",
+      "categories": [
+        "Medicine & Healthcare",
+        "Science & Discovery"
+      ],
+      "subcategories": [
+        "Medical Agents",
+        "General AI4Science"
+      ],
+      "source_repos": [
+        "AgenticHealthAI/Awesome-AI-Agents-for-Healthcare",
+        "ai4s-research/awesome-ai-for-science"
+      ],
+      "source_urls": [
+        "https://github.com/AgenticHealthAI/Awesome-AI-Agents-for-Healthcare",
+        "https://github.com/ai4s-research/awesome-ai-for-science"
+      ],
+      "metadata_sources": [
+        "source README",
+        "arXiv identifier"
+      ]
+    },
+    {
       "id": "3f93717b3cc6dd6d",
       "title": "TemMed-Bench: Evaluating Temporal Medical Image Reasoning in Vision-Language Models",
       "venue": "arXiv",
@@ -299398,6 +299406,40 @@
       ]
     },
     {
+      "id": "6b4cc99f5b75abea",
+      "title": "Earth-Agent: Unlocking the Full Landscape of Earth Observation with Agents",
+      "venue": "arXiv",
+      "published_at": "2025-09",
+      "date_precision": "month",
+      "first_seen_at": "2026-08-29",
+      "source_updated_at": "2026-10-01",
+      "paper_url": "https://arxiv.org/abs/2509.23141",
+      "arxiv_id": "2509.23141",
+      "doi": "",
+      "group": "Cross-disciplinary Applications",
+      "category": "Science & Discovery",
+      "categories": [
+        "Science & Discovery",
+        "Environment & Earth Science"
+      ],
+      "subcategories": [
+        "General AI4Science",
+        "Remote Sensing Foundation Models"
+      ],
+      "source_repos": [
+        "ai4s-research/awesome-ai-for-science",
+        "Jack-bo1220/Awesome-Remote-Sensing-Foundation-Models"
+      ],
+      "source_urls": [
+        "https://github.com/ai4s-research/awesome-ai-for-science",
+        "https://github.com/Jack-bo1220/Awesome-Remote-Sensing-Foundation-Models"
+      ],
+      "metadata_sources": [
+        "source README",
+        "arXiv identifier"
+      ]
+    },
+    {
       "id": "3d4399b79c66d6f9",
       "title": "DevilSight: Augmenting Monocular Human Avatar Reconstruction through a Virtual Perspective",
       "venue": "arXiv",
@@ -299598,40 +299640,6 @@
       "metadata_sources": [
         "source README",
         "structured source",
-        "arXiv identifier"
-      ]
-    },
-    {
-      "id": "609383fdb3bf89a8",
-      "title": "ToolUniverse: An open platform for democratizing AI scientists",
-      "venue": "arXiv",
-      "published_at": "2025-09",
-      "date_precision": "month",
-      "first_seen_at": "2026-08-29",
-      "source_updated_at": "2026-09-30",
-      "paper_url": "https://arxiv.org/abs/2509.23426",
-      "arxiv_id": "2509.23426",
-      "doi": "",
-      "group": "Cross-disciplinary Applications",
-      "category": "Medicine & Healthcare",
-      "categories": [
-        "Medicine & Healthcare",
-        "Science & Discovery"
-      ],
-      "subcategories": [
-        "Medical Agents",
-        "General AI4Science"
-      ],
-      "source_repos": [
-        "AgenticHealthAI/Awesome-AI-Agents-for-Healthcare",
-        "ai4s-research/awesome-ai-for-science"
-      ],
-      "source_urls": [
-        "https://github.com/AgenticHealthAI/Awesome-AI-Agents-for-Healthcare",
-        "https://github.com/ai4s-research/awesome-ai-for-science"
-      ],
-      "metadata_sources": [
-        "source README",
         "arXiv identifier"
       ]
     },
@@ -299907,40 +299915,6 @@
       ],
       "source_urls": [
         "https://github.com/Nanboy-Ronan/awesome-medical-imaging-agents"
-      ],
-      "metadata_sources": [
-        "source README",
-        "arXiv identifier"
-      ]
-    },
-    {
-      "id": "6b4cc99f5b75abea",
-      "title": "Earth-Agent: Unlocking the Full Landscape of Earth Observation with Agents",
-      "venue": "arXiv",
-      "published_at": "2025-09",
-      "date_precision": "month",
-      "first_seen_at": "2026-08-29",
-      "source_updated_at": "2026-09-30",
-      "paper_url": "https://arxiv.org/abs/2509.23141",
-      "arxiv_id": "2509.23141",
-      "doi": "",
-      "group": "Cross-disciplinary Applications",
-      "category": "Science & Discovery",
-      "categories": [
-        "Science & Discovery",
-        "Environment & Earth Science"
-      ],
-      "subcategories": [
-        "General AI4Science",
-        "Remote Sensing Foundation Models"
-      ],
-      "source_repos": [
-        "ai4s-research/awesome-ai-for-science",
-        "Jack-bo1220/Awesome-Remote-Sensing-Foundation-Models"
-      ],
-      "source_urls": [
-        "https://github.com/ai4s-research/awesome-ai-for-science",
-        "https://github.com/Jack-bo1220/Awesome-Remote-Sensing-Foundation-Models"
       ],
       "metadata_sources": [
         "source README",
@@ -310618,8 +310592,7 @@
       ],
       "metadata_sources": [
         "source README",
-        "arXiv",
-        "Semantic Scholar"
+        "arXiv"
       ]
     },
     {
@@ -311130,8 +311103,7 @@
       ],
       "metadata_sources": [
         "source README",
-        "arXiv",
-        "Semantic Scholar"
+        "arXiv"
       ]
     },
     {
@@ -311167,8 +311139,7 @@
       ],
       "metadata_sources": [
         "source README",
-        "arXiv",
-        "Semantic Scholar"
+        "arXiv"
       ]
     },
     {
@@ -311694,8 +311665,7 @@
       ],
       "metadata_sources": [
         "source README",
-        "arXiv",
-        "Semantic Scholar"
+        "arXiv"
       ]
     },
     {
@@ -311852,6 +311822,43 @@
       ]
     },
     {
+      "id": "07ff9dc99152bbb8",
+      "title": "Versatile Transition Generation with Image-to-Video Diffusion",
+      "venue": "arXiv",
+      "published_at": "2025-08",
+      "date_precision": "month",
+      "first_seen_at": "2026-08-31",
+      "source_updated_at": "2026-10-02",
+      "paper_url": "https://arxiv.org/abs/2508.01698",
+      "arxiv_id": "2508.01698",
+      "doi": "",
+      "group": "Core Technology",
+      "category": "Image Generation",
+      "categories": [
+        "Image Generation",
+        "Video"
+      ],
+      "subcategories": [
+        "Diffusion / T2I / Editing",
+        "Video Generation",
+        "Post-training & Alignment"
+      ],
+      "source_repos": [
+        "wangkai930418/awesome-diffusion-categorized",
+        "AlonzoLeeeooo/awesome-video-generation",
+        "people-robots/Awesome-Video-Generation-Post-Training"
+      ],
+      "source_urls": [
+        "https://github.com/wangkai930418/awesome-diffusion-categorized",
+        "https://github.com/AlonzoLeeeooo/awesome-video-generation",
+        "https://github.com/people-robots/Awesome-Video-Generation-Post-Training"
+      ],
+      "metadata_sources": [
+        "source README",
+        "arXiv identifier"
+      ]
+    },
+    {
       "id": "fbacda82d8dd3f37",
       "title": "WorldWeaver: Generating Long-Horizon Video Worlds via Rich Perception",
       "venue": "arXiv",
@@ -311912,43 +311919,6 @@
       ],
       "source_urls": [
         "https://github.com/wangkai930418/awesome-diffusion-categorized",
-        "https://github.com/people-robots/Awesome-Video-Generation-Post-Training"
-      ],
-      "metadata_sources": [
-        "source README",
-        "arXiv identifier"
-      ]
-    },
-    {
-      "id": "07ff9dc99152bbb8",
-      "title": "Versatile Transition Generation with Image-to-Video Diffusion",
-      "venue": "arXiv",
-      "published_at": "2025-08",
-      "date_precision": "month",
-      "first_seen_at": "2026-08-31",
-      "source_updated_at": "2026-10-01",
-      "paper_url": "https://arxiv.org/abs/2508.01698",
-      "arxiv_id": "2508.01698",
-      "doi": "",
-      "group": "Core Technology",
-      "category": "Image Generation",
-      "categories": [
-        "Image Generation",
-        "Video"
-      ],
-      "subcategories": [
-        "Diffusion / T2I / Editing",
-        "Video Generation",
-        "Post-training & Alignment"
-      ],
-      "source_repos": [
-        "wangkai930418/awesome-diffusion-categorized",
-        "AlonzoLeeeooo/awesome-video-generation",
-        "people-robots/Awesome-Video-Generation-Post-Training"
-      ],
-      "source_urls": [
-        "https://github.com/wangkai930418/awesome-diffusion-categorized",
-        "https://github.com/AlonzoLeeeooo/awesome-video-generation",
         "https://github.com/people-robots/Awesome-Video-Generation-Post-Training"
       ],
       "metadata_sources": [
@@ -312876,6 +312846,39 @@
       ]
     },
     {
+      "id": "6e44b4a72ab5eabc",
+      "title": "From AI for Science to Agentic Science: A Survey on Autonomous Scientific Discovery",
+      "venue": "Science",
+      "published_at": "2025-08",
+      "date_precision": "month",
+      "first_seen_at": "2026-08-29",
+      "source_updated_at": "2026-10-01",
+      "paper_url": "https://arxiv.org/abs/2508.14111",
+      "arxiv_id": "2508.14111",
+      "doi": "",
+      "group": "Cross-disciplinary Applications",
+      "category": "Science & Discovery",
+      "categories": [
+        "Science & Discovery"
+      ],
+      "subcategories": [
+        "Scientific Agents",
+        "General AI4Science"
+      ],
+      "source_repos": [
+        "zoedsy/awesome-science-agents",
+        "ai4s-research/awesome-ai-for-science"
+      ],
+      "source_urls": [
+        "https://github.com/zoedsy/awesome-science-agents",
+        "https://github.com/ai4s-research/awesome-ai-for-science"
+      ],
+      "metadata_sources": [
+        "source README",
+        "arXiv identifier"
+      ]
+    },
+    {
       "id": "560eb05d90af5fde",
       "title": "Eyes on the Image: Gaze Supervised Multimodal Learning for Chest X-ray Diagnosis and Report Generation",
       "venue": "arXiv",
@@ -313191,6 +313194,36 @@
       ]
     },
     {
+      "id": "55b88e77a9e374fb",
+      "title": "A Survey of Scientific Large Language Models: From Data Foundations to Agent Frontiers",
+      "venue": "arXiv",
+      "published_at": "2025-08",
+      "date_precision": "month",
+      "first_seen_at": "2026-08-29",
+      "source_updated_at": "2026-10-01",
+      "paper_url": "https://arxiv.org/abs/2508.21148",
+      "arxiv_id": "2508.21148",
+      "doi": "",
+      "group": "Cross-disciplinary Applications",
+      "category": "Science & Discovery",
+      "categories": [
+        "Science & Discovery"
+      ],
+      "subcategories": [
+        "General AI4Science"
+      ],
+      "source_repos": [
+        "ai4s-research/awesome-ai-for-science"
+      ],
+      "source_urls": [
+        "https://github.com/ai4s-research/awesome-ai-for-science"
+      ],
+      "metadata_sources": [
+        "source README",
+        "arXiv identifier"
+      ]
+    },
+    {
       "id": "358c33ff642ff5ae",
       "title": "4DNeX: Feed-Forward 4D Generative Modeling Made Easy",
       "venue": "arXiv",
@@ -313477,39 +313510,6 @@
       ]
     },
     {
-      "id": "6e44b4a72ab5eabc",
-      "title": "From AI for Science to Agentic Science: A Survey on Autonomous Scientific Discovery",
-      "venue": "Science",
-      "published_at": "2025-08",
-      "date_precision": "month",
-      "first_seen_at": "2026-08-29",
-      "source_updated_at": "2026-09-30",
-      "paper_url": "https://arxiv.org/abs/2508.14111",
-      "arxiv_id": "2508.14111",
-      "doi": "",
-      "group": "Cross-disciplinary Applications",
-      "category": "Science & Discovery",
-      "categories": [
-        "Science & Discovery"
-      ],
-      "subcategories": [
-        "Scientific Agents",
-        "General AI4Science"
-      ],
-      "source_repos": [
-        "zoedsy/awesome-science-agents",
-        "ai4s-research/awesome-ai-for-science"
-      ],
-      "source_urls": [
-        "https://github.com/zoedsy/awesome-science-agents",
-        "https://github.com/ai4s-research/awesome-ai-for-science"
-      ],
-      "metadata_sources": [
-        "source README",
-        "arXiv identifier"
-      ]
-    },
-    {
       "id": "1bc11d8fc6c7e1d4",
       "title": "EndoAgent: A Memory-Guided Reflective Agent for Intelligent Endoscopic Vision-to-Decision Reasoning",
       "venue": "arXiv",
@@ -313659,36 +313659,6 @@
       "source_urls": [
         "https://github.com/AgenticHealthAI/Awesome-AI-Agents-for-Healthcare",
         "https://github.com/Nanboy-Ronan/awesome-medical-imaging-agents"
-      ],
-      "metadata_sources": [
-        "source README",
-        "arXiv identifier"
-      ]
-    },
-    {
-      "id": "55b88e77a9e374fb",
-      "title": "A Survey of Scientific Large Language Models: From Data Foundations to Agent Frontiers",
-      "venue": "arXiv",
-      "published_at": "2025-08",
-      "date_precision": "month",
-      "first_seen_at": "2026-08-29",
-      "source_updated_at": "2026-09-30",
-      "paper_url": "https://arxiv.org/abs/2508.21148",
-      "arxiv_id": "2508.21148",
-      "doi": "",
-      "group": "Cross-disciplinary Applications",
-      "category": "Science & Discovery",
-      "categories": [
-        "Science & Discovery"
-      ],
-      "subcategories": [
-        "General AI4Science"
-      ],
-      "source_repos": [
-        "ai4s-research/awesome-ai-for-science"
-      ],
-      "source_urls": [
-        "https://github.com/ai4s-research/awesome-ai-for-science"
       ],
       "metadata_sources": [
         "source README",
@@ -324510,8 +324480,7 @@
       "metadata_sources": [
         "structured source",
         "source README",
-        "arXiv",
-        "Semantic Scholar"
+        "arXiv"
       ]
     },
     {
@@ -325484,6 +325453,40 @@
       ]
     },
     {
+      "id": "a8cfeaa194135338",
+      "title": "AnyI2V: Animating Any Conditional Image with Motion Control",
+      "venue": "ICCV 2025",
+      "published_at": "2025-07",
+      "date_precision": "month",
+      "first_seen_at": "2026-08-31",
+      "source_updated_at": "2026-10-02",
+      "paper_url": "https://arxiv.org/abs/2507.02857",
+      "arxiv_id": "2507.02857",
+      "doi": "",
+      "group": "Core Technology",
+      "category": "Image Generation",
+      "categories": [
+        "Image Generation",
+        "Video"
+      ],
+      "subcategories": [
+        "Diffusion / T2I / Editing",
+        "Video Generation"
+      ],
+      "source_repos": [
+        "wangkai930418/awesome-diffusion-categorized",
+        "AlonzoLeeeooo/awesome-video-generation"
+      ],
+      "source_urls": [
+        "https://github.com/wangkai930418/awesome-diffusion-categorized",
+        "https://github.com/AlonzoLeeeooo/awesome-video-generation"
+      ],
+      "metadata_sources": [
+        "source README",
+        "arXiv identifier"
+      ]
+    },
+    {
       "id": "b040b6f7d69b6161",
       "title": "Zero-Shot Dynamic Concept Personalization with Grid-Based LoRA",
       "venue": "arXiv",
@@ -326086,6 +326089,36 @@
       ]
     },
     {
+      "id": "02bbf8bb6d6a349a",
+      "title": "Autonomous Scientific Discovery Through Hierarchical AI Scientist Systems",
+      "venue": "arXiv",
+      "published_at": "2025-07",
+      "date_precision": "month",
+      "first_seen_at": "2026-08-29",
+      "source_updated_at": "2026-10-01",
+      "paper_url": "https://arxiv.org/abs/2507.15951",
+      "arxiv_id": "2507.15951",
+      "doi": "",
+      "group": "Cross-disciplinary Applications",
+      "category": "Science & Discovery",
+      "categories": [
+        "Science & Discovery"
+      ],
+      "subcategories": [
+        "General AI4Science"
+      ],
+      "source_repos": [
+        "ai4s-research/awesome-ai-for-science"
+      ],
+      "source_urls": [
+        "https://github.com/ai4s-research/awesome-ai-for-science"
+      ],
+      "metadata_sources": [
+        "source README",
+        "arXiv identifier"
+      ]
+    },
+    {
       "id": "e422940790941859",
       "title": "AnimeColor: Reference-based Animation Colorization with Diffusion Transformers",
       "venue": "arXiv",
@@ -326113,6 +326146,36 @@
       "source_urls": [
         "https://github.com/wangkai930418/awesome-diffusion-categorized",
         "https://github.com/people-robots/Awesome-Video-Generation-Post-Training"
+      ],
+      "metadata_sources": [
+        "source README",
+        "arXiv identifier"
+      ]
+    },
+    {
+      "id": "63975a2a20f92624",
+      "title": "AI4Research: A Survey of Artificial Intelligence for Scientific Research",
+      "venue": "arXiv",
+      "published_at": "2025-07",
+      "date_precision": "month",
+      "first_seen_at": "2026-08-29",
+      "source_updated_at": "2026-10-01",
+      "paper_url": "https://arxiv.org/abs/2507.01903",
+      "arxiv_id": "2507.01903",
+      "doi": "",
+      "group": "Cross-disciplinary Applications",
+      "category": "Science & Discovery",
+      "categories": [
+        "Science & Discovery"
+      ],
+      "subcategories": [
+        "General AI4Science"
+      ],
+      "source_repos": [
+        "ai4s-research/awesome-ai-for-science"
+      ],
+      "source_urls": [
+        "https://github.com/ai4s-research/awesome-ai-for-science"
       ],
       "metadata_sources": [
         "source README",
@@ -326381,36 +326444,6 @@
       ]
     },
     {
-      "id": "02bbf8bb6d6a349a",
-      "title": "Autonomous Scientific Discovery Through Hierarchical AI Scientist Systems",
-      "venue": "arXiv",
-      "published_at": "2025-07",
-      "date_precision": "month",
-      "first_seen_at": "2026-08-29",
-      "source_updated_at": "2026-09-30",
-      "paper_url": "https://arxiv.org/abs/2507.15951",
-      "arxiv_id": "2507.15951",
-      "doi": "",
-      "group": "Cross-disciplinary Applications",
-      "category": "Science & Discovery",
-      "categories": [
-        "Science & Discovery"
-      ],
-      "subcategories": [
-        "General AI4Science"
-      ],
-      "source_repos": [
-        "ai4s-research/awesome-ai-for-science"
-      ],
-      "source_urls": [
-        "https://github.com/ai4s-research/awesome-ai-for-science"
-      ],
-      "metadata_sources": [
-        "source README",
-        "arXiv identifier"
-      ]
-    },
-    {
       "id": "231061bf836e27eb",
       "title": "An Autonomous Agent for Auditing and Improving the Reliability of Clinical AI Models",
       "venue": "arXiv",
@@ -326467,36 +326500,6 @@
       "source_urls": [
         "https://github.com/AgenticHealthAI/Awesome-AI-Agents-for-Healthcare",
         "https://github.com/Nanboy-Ronan/awesome-medical-imaging-agents"
-      ],
-      "metadata_sources": [
-        "source README",
-        "arXiv identifier"
-      ]
-    },
-    {
-      "id": "63975a2a20f92624",
-      "title": "AI4Research: A Survey of Artificial Intelligence for Scientific Research",
-      "venue": "arXiv",
-      "published_at": "2025-07",
-      "date_precision": "month",
-      "first_seen_at": "2026-08-29",
-      "source_updated_at": "2026-09-30",
-      "paper_url": "https://arxiv.org/abs/2507.01903",
-      "arxiv_id": "2507.01903",
-      "doi": "",
-      "group": "Cross-disciplinary Applications",
-      "category": "Science & Discovery",
-      "categories": [
-        "Science & Discovery"
-      ],
-      "subcategories": [
-        "General AI4Science"
-      ],
-      "source_repos": [
-        "ai4s-research/awesome-ai-for-science"
-      ],
-      "source_urls": [
-        "https://github.com/ai4s-research/awesome-ai-for-science"
       ],
       "metadata_sources": [
         "source README",
@@ -326876,40 +326879,6 @@
       "source_urls": [
         "https://github.com/OpenEnvision/Awesome-Multimodal-Modeling",
         "https://github.com/AIDC-AI/Awesome-Unified-Multimodal-Models"
-      ],
-      "metadata_sources": [
-        "source README",
-        "arXiv identifier"
-      ]
-    },
-    {
-      "id": "a8cfeaa194135338",
-      "title": "AnyI2V: Animating Any Conditional Image with Motion Control",
-      "venue": "ICCV 2025",
-      "published_at": "2025-07",
-      "date_precision": "month",
-      "first_seen_at": "2026-08-31",
-      "source_updated_at": "2026-09-24",
-      "paper_url": "https://arxiv.org/abs/2507.02857",
-      "arxiv_id": "2507.02857",
-      "doi": "",
-      "group": "Core Technology",
-      "category": "Image Generation",
-      "categories": [
-        "Image Generation",
-        "Video"
-      ],
-      "subcategories": [
-        "Diffusion / T2I / Editing",
-        "Video Generation"
-      ],
-      "source_repos": [
-        "wangkai930418/awesome-diffusion-categorized",
-        "AlonzoLeeeooo/awesome-video-generation"
-      ],
-      "source_urls": [
-        "https://github.com/wangkai930418/awesome-diffusion-categorized",
-        "https://github.com/AlonzoLeeeooo/awesome-video-generation"
       ],
       "metadata_sources": [
         "source README",
@@ -334172,8 +334141,7 @@
       ],
       "metadata_sources": [
         "source README",
-        "arXiv",
-        "Semantic Scholar"
+        "arXiv"
       ]
     },
     {
@@ -334213,7 +334181,7 @@
       "published_at": "2025-06-27",
       "date_precision": "day",
       "first_seen_at": "2026-09-25",
-      "source_updated_at": "2026-09-24",
+      "source_updated_at": "2026-10-02",
       "paper_url": "https://arxiv.org/abs/2506.22298",
       "arxiv_id": "2506.22298",
       "doi": "",
@@ -335361,8 +335329,7 @@
       ],
       "metadata_sources": [
         "source README",
-        "arXiv",
-        "Semantic Scholar"
+        "arXiv"
       ]
     },
     {
@@ -336132,8 +336099,7 @@
       ],
       "metadata_sources": [
         "source README",
-        "arXiv",
-        "Semantic Scholar"
+        "arXiv"
       ]
     },
     {
@@ -336446,8 +336412,7 @@
       ],
       "metadata_sources": [
         "source README",
-        "arXiv",
-        "Semantic Scholar"
+        "arXiv"
       ]
     },
     {
@@ -336478,6 +336443,36 @@
       "metadata_sources": [
         "source README",
         "Semantic Scholar"
+      ]
+    },
+    {
+      "id": "ffc3977ddc552fe9",
+      "title": "FEAT: Full-Dimensional Efficient Attention Transformer for Medical Video Generation",
+      "venue": "www",
+      "published_at": "2025-06",
+      "date_precision": "month",
+      "first_seen_at": "2026-08-31",
+      "source_updated_at": "2026-10-02",
+      "paper_url": "https://www.arxiv.org/pdf/2506.04956",
+      "arxiv_id": "2506.04956",
+      "doi": "",
+      "group": "Core Technology",
+      "category": "Video",
+      "categories": [
+        "Video"
+      ],
+      "subcategories": [
+        "Video Generation"
+      ],
+      "source_repos": [
+        "AlonzoLeeeooo/awesome-video-generation"
+      ],
+      "source_urls": [
+        "https://github.com/AlonzoLeeeooo/awesome-video-generation"
+      ],
+      "metadata_sources": [
+        "source README",
+        "arXiv identifier"
       ]
     },
     {
@@ -337621,6 +337616,36 @@
       ],
       "source_urls": [
         "https://github.com/people-robots/Awesome-Video-Generation-Post-Training"
+      ],
+      "metadata_sources": [
+        "source README",
+        "arXiv identifier"
+      ]
+    },
+    {
+      "id": "a179b882761932d3",
+      "title": "MedAgentGym: A Scalable Agentic Training Environment for Code-Centric Reasoning in Biomedical Data Science",
+      "venue": "Science",
+      "published_at": "2025-06",
+      "date_precision": "month",
+      "first_seen_at": "2026-08-29",
+      "source_updated_at": "2026-10-01",
+      "paper_url": "https://arxiv.org/abs/2506.04405",
+      "arxiv_id": "2506.04405",
+      "doi": "",
+      "group": "Cross-disciplinary Applications",
+      "category": "Science & Discovery",
+      "categories": [
+        "Science & Discovery"
+      ],
+      "subcategories": [
+        "General AI4Science"
+      ],
+      "source_repos": [
+        "ai4s-research/awesome-ai-for-science"
+      ],
+      "source_urls": [
+        "https://github.com/ai4s-research/awesome-ai-for-science"
       ],
       "metadata_sources": [
         "source README",
@@ -338834,36 +338859,6 @@
       ],
       "source_urls": [
         "https://github.com/Nanboy-Ronan/awesome-medical-imaging-agents"
-      ],
-      "metadata_sources": [
-        "source README",
-        "arXiv identifier"
-      ]
-    },
-    {
-      "id": "a179b882761932d3",
-      "title": "MedAgentGym: A Scalable Agentic Training Environment for Code-Centric Reasoning in Biomedical Data Science",
-      "venue": "Science",
-      "published_at": "2025-06",
-      "date_precision": "month",
-      "first_seen_at": "2026-08-29",
-      "source_updated_at": "2026-09-30",
-      "paper_url": "https://arxiv.org/abs/2506.04405",
-      "arxiv_id": "2506.04405",
-      "doi": "",
-      "group": "Cross-disciplinary Applications",
-      "category": "Science & Discovery",
-      "categories": [
-        "Science & Discovery"
-      ],
-      "subcategories": [
-        "General AI4Science"
-      ],
-      "source_repos": [
-        "ai4s-research/awesome-ai-for-science"
-      ],
-      "source_urls": [
-        "https://github.com/ai4s-research/awesome-ai-for-science"
       ],
       "metadata_sources": [
         "source README",
@@ -340219,36 +340214,6 @@
       "metadata_sources": [
         "source README",
         "structured source",
-        "arXiv identifier"
-      ]
-    },
-    {
-      "id": "ffc3977ddc552fe9",
-      "title": "FEAT: Full-Dimensional Efficient Attention Transformer for Medical Video Generation",
-      "venue": "www",
-      "published_at": "2025-06",
-      "date_precision": "month",
-      "first_seen_at": "2026-08-31",
-      "source_updated_at": "2026-09-24",
-      "paper_url": "https://www.arxiv.org/pdf/2506.04956",
-      "arxiv_id": "2506.04956",
-      "doi": "",
-      "group": "Core Technology",
-      "category": "Video",
-      "categories": [
-        "Video"
-      ],
-      "subcategories": [
-        "Video Generation"
-      ],
-      "source_repos": [
-        "AlonzoLeeeooo/awesome-video-generation"
-      ],
-      "source_urls": [
-        "https://github.com/AlonzoLeeeooo/awesome-video-generation"
-      ],
-      "metadata_sources": [
-        "source README",
         "arXiv identifier"
       ]
     },
@@ -351074,7 +351039,7 @@
       "published_at": "2025-05-30",
       "date_precision": "day",
       "first_seen_at": "2026-08-31",
-      "source_updated_at": "2026-09-24",
+      "source_updated_at": "2026-10-02",
       "paper_url": "https://arxiv.org/abs/2505.24877",
       "arxiv_id": "2505.24877",
       "doi": "",
@@ -352165,7 +352130,7 @@
       "published_at": "2025-05-22",
       "date_precision": "day",
       "first_seen_at": "2026-08-29",
-      "source_updated_at": "2026-09-30",
+      "source_updated_at": "2026-10-01",
       "paper_url": "https://arxiv.org/abs/2505.16301",
       "arxiv_id": "2505.16301",
       "doi": "",
@@ -353895,8 +353860,7 @@
       ],
       "metadata_sources": [
         "source README",
-        "arXiv",
-        "Semantic Scholar"
+        "arXiv"
       ]
     },
     {
@@ -353936,7 +353900,7 @@
       "published_at": "2025-05-10",
       "date_precision": "day",
       "first_seen_at": "2026-08-29",
-      "source_updated_at": "2026-09-30",
+      "source_updated_at": "2026-10-01",
       "paper_url": "https://arxiv.org/abs/2511.18345",
       "arxiv_id": "2511.18345",
       "doi": "",
@@ -354791,6 +354755,40 @@
       "metadata_sources": [
         "source README",
         "Semantic Scholar"
+      ]
+    },
+    {
+      "id": "760917438dca2207",
+      "title": "Minute-Long Videos with Dual Parallelisms",
+      "venue": "arXiv",
+      "published_at": "2025-05",
+      "date_precision": "month",
+      "first_seen_at": "2026-08-31",
+      "source_updated_at": "2026-10-02",
+      "paper_url": "https://arxiv.org/abs/2505.21070",
+      "arxiv_id": "2505.21070",
+      "doi": "",
+      "group": "Core Technology",
+      "category": "Image Generation",
+      "categories": [
+        "Image Generation",
+        "Video"
+      ],
+      "subcategories": [
+        "Diffusion / T2I / Editing",
+        "Video Generation"
+      ],
+      "source_repos": [
+        "wangkai930418/awesome-diffusion-categorized",
+        "AlonzoLeeeooo/awesome-video-generation"
+      ],
+      "source_urls": [
+        "https://github.com/wangkai930418/awesome-diffusion-categorized",
+        "https://github.com/AlonzoLeeeooo/awesome-video-generation"
+      ],
+      "metadata_sources": [
+        "source README",
+        "arXiv identifier"
       ]
     },
     {
@@ -355657,6 +355655,36 @@
       ]
     },
     {
+      "id": "7d6c8226193afb15",
+      "title": "InternAgent: When Agent Becomes the Scientist -- Building Closed-Loop System from Hypothesis to Verification",
+      "venue": "arXiv",
+      "published_at": "2025-05",
+      "date_precision": "month",
+      "first_seen_at": "2026-08-29",
+      "source_updated_at": "2026-10-01",
+      "paper_url": "https://arxiv.org/abs/2505.16938",
+      "arxiv_id": "2505.16938",
+      "doi": "",
+      "group": "Cross-disciplinary Applications",
+      "category": "Science & Discovery",
+      "categories": [
+        "Science & Discovery"
+      ],
+      "subcategories": [
+        "General AI4Science"
+      ],
+      "source_repos": [
+        "ai4s-research/awesome-ai-for-science"
+      ],
+      "source_urls": [
+        "https://github.com/ai4s-research/awesome-ai-for-science"
+      ],
+      "metadata_sources": [
+        "source README",
+        "arXiv identifier"
+      ]
+    },
+    {
       "id": "8972fd882b6d076a",
       "title": "ICLR Diffusion-NPO: Negative Preference Optimization for Better Preference Aligned Generation of Diffusion Models",
       "venue": "ICLR",
@@ -355774,6 +355802,36 @@
       ],
       "source_urls": [
         "https://github.com/mk-runner/Awesome-Radiology-Report-Generation"
+      ],
+      "metadata_sources": [
+        "source README",
+        "arXiv identifier"
+      ]
+    },
+    {
+      "id": "1d398579c0d0ef92",
+      "title": "From Automation to Autonomy: A Survey on Large Language Models in Scientific Discovery",
+      "venue": "arXiv",
+      "published_at": "2025-05",
+      "date_precision": "month",
+      "first_seen_at": "2026-08-29",
+      "source_updated_at": "2026-10-01",
+      "paper_url": "https://arxiv.org/abs/2505.13259",
+      "arxiv_id": "2505.13259",
+      "doi": "",
+      "group": "Cross-disciplinary Applications",
+      "category": "Science & Discovery",
+      "categories": [
+        "Science & Discovery"
+      ],
+      "subcategories": [
+        "General AI4Science"
+      ],
+      "source_repos": [
+        "ai4s-research/awesome-ai-for-science"
+      ],
+      "source_urls": [
+        "https://github.com/ai4s-research/awesome-ai-for-science"
       ],
       "metadata_sources": [
         "source README",
@@ -356330,6 +356388,42 @@
       ]
     },
     {
+      "id": "5feb3f539bae39cb",
+      "title": "AI-Researcher: Autonomous Scientific Innovation",
+      "venue": "arXiv",
+      "published_at": "2025-05",
+      "date_precision": "month",
+      "first_seen_at": "2026-08-29",
+      "source_updated_at": "2026-10-01",
+      "paper_url": "https://arxiv.org/abs/2505.18705",
+      "arxiv_id": "2505.18705",
+      "doi": "",
+      "group": "Cross-disciplinary Applications",
+      "category": "Science & Discovery",
+      "categories": [
+        "Science & Discovery"
+      ],
+      "subcategories": [
+        "Scientific Agents",
+        "General AI4Science",
+        "Scientific LLM Benchmarks"
+      ],
+      "source_repos": [
+        "zoedsy/awesome-science-agents",
+        "ai4s-research/awesome-ai-for-science",
+        "subinium/Awesome-Scientific-LLM-Benchmarks"
+      ],
+      "source_urls": [
+        "https://github.com/zoedsy/awesome-science-agents",
+        "https://github.com/ai4s-research/awesome-ai-for-science",
+        "https://github.com/subinium/Awesome-Scientific-LLM-Benchmarks"
+      ],
+      "metadata_sources": [
+        "source README",
+        "arXiv identifier"
+      ]
+    },
+    {
       "id": "e57bcf531f20e0fa",
       "title": "A Unit Enhancement and Guidance Framework for Audio-Driven Avatar Video Generation",
       "venue": "arXiv",
@@ -356516,66 +356610,6 @@
       "source_urls": [
         "https://github.com/AgenticHealthAI/Awesome-AI-Agents-for-Healthcare",
         "https://github.com/Nanboy-Ronan/awesome-medical-imaging-agents"
-      ],
-      "metadata_sources": [
-        "source README",
-        "arXiv identifier"
-      ]
-    },
-    {
-      "id": "7d6c8226193afb15",
-      "title": "InternAgent: When Agent Becomes the Scientist -- Building Closed-Loop System from Hypothesis to Verification",
-      "venue": "arXiv",
-      "published_at": "2025-05",
-      "date_precision": "month",
-      "first_seen_at": "2026-08-29",
-      "source_updated_at": "2026-09-30",
-      "paper_url": "https://arxiv.org/abs/2505.16938",
-      "arxiv_id": "2505.16938",
-      "doi": "",
-      "group": "Cross-disciplinary Applications",
-      "category": "Science & Discovery",
-      "categories": [
-        "Science & Discovery"
-      ],
-      "subcategories": [
-        "General AI4Science"
-      ],
-      "source_repos": [
-        "ai4s-research/awesome-ai-for-science"
-      ],
-      "source_urls": [
-        "https://github.com/ai4s-research/awesome-ai-for-science"
-      ],
-      "metadata_sources": [
-        "source README",
-        "arXiv identifier"
-      ]
-    },
-    {
-      "id": "1d398579c0d0ef92",
-      "title": "From Automation to Autonomy: A Survey on Large Language Models in Scientific Discovery",
-      "venue": "arXiv",
-      "published_at": "2025-05",
-      "date_precision": "month",
-      "first_seen_at": "2026-08-29",
-      "source_updated_at": "2026-09-30",
-      "paper_url": "https://arxiv.org/abs/2505.13259",
-      "arxiv_id": "2505.13259",
-      "doi": "",
-      "group": "Cross-disciplinary Applications",
-      "category": "Science & Discovery",
-      "categories": [
-        "Science & Discovery"
-      ],
-      "subcategories": [
-        "General AI4Science"
-      ],
-      "source_repos": [
-        "ai4s-research/awesome-ai-for-science"
-      ],
-      "source_urls": [
-        "https://github.com/ai4s-research/awesome-ai-for-science"
       ],
       "metadata_sources": [
         "source README",
@@ -356866,42 +356900,6 @@
       "source_urls": [
         "https://github.com/AgenticHealthAI/Awesome-AI-Agents-for-Healthcare",
         "https://github.com/Nanboy-Ronan/awesome-medical-imaging-agents"
-      ],
-      "metadata_sources": [
-        "source README",
-        "arXiv identifier"
-      ]
-    },
-    {
-      "id": "5feb3f539bae39cb",
-      "title": "AI-Researcher: Autonomous Scientific Innovation",
-      "venue": "arXiv",
-      "published_at": "2025-05",
-      "date_precision": "month",
-      "first_seen_at": "2026-08-29",
-      "source_updated_at": "2026-09-30",
-      "paper_url": "https://arxiv.org/abs/2505.18705",
-      "arxiv_id": "2505.18705",
-      "doi": "",
-      "group": "Cross-disciplinary Applications",
-      "category": "Science & Discovery",
-      "categories": [
-        "Science & Discovery"
-      ],
-      "subcategories": [
-        "Scientific Agents",
-        "General AI4Science",
-        "Scientific LLM Benchmarks"
-      ],
-      "source_repos": [
-        "zoedsy/awesome-science-agents",
-        "ai4s-research/awesome-ai-for-science",
-        "subinium/Awesome-Scientific-LLM-Benchmarks"
-      ],
-      "source_urls": [
-        "https://github.com/zoedsy/awesome-science-agents",
-        "https://github.com/ai4s-research/awesome-ai-for-science",
-        "https://github.com/subinium/Awesome-Scientific-LLM-Benchmarks"
       ],
       "metadata_sources": [
         "source README",
@@ -358042,40 +358040,6 @@
         "https://github.com/OpenEnvision/Awesome-Multimodal-Modeling",
         "https://github.com/AIDC-AI/Awesome-Unified-Multimodal-Models",
         "https://github.com/Purshow/Awesome-Unified-Multimodal"
-      ],
-      "metadata_sources": [
-        "source README",
-        "arXiv identifier"
-      ]
-    },
-    {
-      "id": "760917438dca2207",
-      "title": "Minute-Long Videos with Dual Parallelisms",
-      "venue": "arXiv",
-      "published_at": "2025-05",
-      "date_precision": "month",
-      "first_seen_at": "2026-08-31",
-      "source_updated_at": "2026-09-24",
-      "paper_url": "https://arxiv.org/abs/2505.21070",
-      "arxiv_id": "2505.21070",
-      "doi": "",
-      "group": "Core Technology",
-      "category": "Image Generation",
-      "categories": [
-        "Image Generation",
-        "Video"
-      ],
-      "subcategories": [
-        "Diffusion / T2I / Editing",
-        "Video Generation"
-      ],
-      "source_repos": [
-        "wangkai930418/awesome-diffusion-categorized",
-        "AlonzoLeeeooo/awesome-video-generation"
-      ],
-      "source_urls": [
-        "https://github.com/wangkai930418/awesome-diffusion-categorized",
-        "https://github.com/AlonzoLeeeooo/awesome-video-generation"
       ],
       "metadata_sources": [
         "source README",
@@ -372084,7 +372048,7 @@
       "published_at": "2025-04-28",
       "date_precision": "day",
       "first_seen_at": "2026-08-29",
-      "source_updated_at": "2026-09-30",
+      "source_updated_at": "2026-10-01",
       "paper_url": "https://arxiv.org/abs/2504.20117",
       "arxiv_id": "2504.20117",
       "doi": "",
@@ -372114,7 +372078,7 @@
       "published_at": "2025-04-28",
       "date_precision": "day",
       "first_seen_at": "2026-08-29",
-      "source_updated_at": "2026-09-30",
+      "source_updated_at": "2026-10-01",
       "paper_url": "https://arxiv.org/abs/2504.20115",
       "arxiv_id": "2504.20115",
       "doi": "",
@@ -372292,8 +372256,7 @@
       "metadata_sources": [
         "structured source",
         "source README",
-        "arXiv",
-        "Semantic Scholar"
+        "arXiv"
       ]
     },
     {
@@ -372303,7 +372266,7 @@
       "published_at": "2025-04-24",
       "date_precision": "day",
       "first_seen_at": "2026-08-31",
-      "source_updated_at": "2026-09-24",
+      "source_updated_at": "2026-10-02",
       "paper_url": "https://arxiv.org/abs/2504.17828",
       "arxiv_id": "2504.17828",
       "doi": "",
@@ -373071,6 +373034,35 @@
       ]
     },
     {
+      "id": "7e56de376a7c5ccd",
+      "title": "Scaling Large Language Models for Next-Generation Single-Cell Analysis",
+      "venue": "www",
+      "published_at": "2025-04-14",
+      "date_precision": "day",
+      "first_seen_at": "2026-08-29",
+      "source_updated_at": "2026-10-01",
+      "paper_url": "https://www.biorxiv.org/content/10.1101/2025.04.14.648850v2",
+      "arxiv_id": "",
+      "doi": "",
+      "group": "Cross-disciplinary Applications",
+      "category": "Science & Discovery",
+      "categories": [
+        "Science & Discovery"
+      ],
+      "subcategories": [
+        "General AI4Science"
+      ],
+      "source_repos": [
+        "ai4s-research/awesome-ai-for-science"
+      ],
+      "source_urls": [
+        "https://github.com/ai4s-research/awesome-ai-for-science"
+      ],
+      "metadata_sources": [
+        "source README"
+      ]
+    },
+    {
       "id": "e1a500f0fed06892",
       "title": "InternVL3: Exploring Advanced Training and Test-Time Recipes for Open-Source Multimodal Models",
       "venue": "arXiv",
@@ -373141,35 +373133,6 @@
       "metadata_sources": [
         "source README",
         "Semantic Scholar"
-      ]
-    },
-    {
-      "id": "7e56de376a7c5ccd",
-      "title": "Scaling Large Language Models for Next-Generation Single-Cell Analysis",
-      "venue": "www",
-      "published_at": "2025-04-14",
-      "date_precision": "day",
-      "first_seen_at": "2026-08-29",
-      "source_updated_at": "2026-09-30",
-      "paper_url": "https://www.biorxiv.org/content/10.1101/2025.04.14.648850v2",
-      "arxiv_id": "",
-      "doi": "",
-      "group": "Cross-disciplinary Applications",
-      "category": "Science & Discovery",
-      "categories": [
-        "Science & Discovery"
-      ],
-      "subcategories": [
-        "General AI4Science"
-      ],
-      "source_repos": [
-        "ai4s-research/awesome-ai-for-science"
-      ],
-      "source_urls": [
-        "https://github.com/ai4s-research/awesome-ai-for-science"
-      ],
-      "metadata_sources": [
-        "source README"
       ]
     },
     {
@@ -373482,8 +373445,7 @@
       ],
       "metadata_sources": [
         "source README",
-        "arXiv",
-        "Semantic Scholar"
+        "arXiv"
       ]
     },
     {
@@ -374291,13 +374253,51 @@
       ]
     },
     {
+      "id": "51fc080576a9553a",
+      "title": "Visual Prompting for One-shot Controllable Video Editing without Inversion",
+      "venue": "CVPR 2025",
+      "published_at": "2025-04",
+      "date_precision": "month",
+      "first_seen_at": "2026-08-31",
+      "source_updated_at": "2026-10-02",
+      "paper_url": "https://arxiv.org/abs/2504.14335",
+      "arxiv_id": "2504.14335",
+      "doi": "",
+      "group": "Core Technology",
+      "category": "Image Generation",
+      "categories": [
+        "Image Generation",
+        "Video",
+        "Vision"
+      ],
+      "subcategories": [
+        "Diffusion / T2I / Editing",
+        "Video Generation",
+        "CVPR 2025 Proceedings"
+      ],
+      "source_repos": [
+        "wangkai930418/awesome-diffusion-categorized",
+        "AlonzoLeeeooo/awesome-video-generation",
+        "52CV/CVPR-2025-Papers"
+      ],
+      "source_urls": [
+        "https://github.com/wangkai930418/awesome-diffusion-categorized",
+        "https://github.com/AlonzoLeeeooo/awesome-video-generation",
+        "https://github.com/52CV/CVPR-2025-Papers"
+      ],
+      "metadata_sources": [
+        "source README",
+        "arXiv identifier"
+      ]
+    },
+    {
       "id": "abd1cd9ddabf6019",
       "title": "UniAnimate-DiT: Human Image Animation with Large-Scale Video Diffusion Transformer",
       "venue": "arXiv",
       "published_at": "2025-04",
       "date_precision": "month",
       "first_seen_at": "2026-08-31",
-      "source_updated_at": "2026-10-01",
+      "source_updated_at": "2026-10-02",
       "paper_url": "https://arxiv.org/abs/2504.11289",
       "arxiv_id": "2504.11289",
       "doi": "",
@@ -374321,6 +374321,157 @@
         "https://github.com/wangkai930418/awesome-diffusion-categorized",
         "https://github.com/AlonzoLeeeooo/awesome-video-generation",
         "https://github.com/people-robots/Awesome-Video-Generation-Post-Training"
+      ],
+      "metadata_sources": [
+        "source README",
+        "arXiv identifier"
+      ]
+    },
+    {
+      "id": "cdcc1724b4ad2e83",
+      "title": "The Devil is in the Prompts: Retrieval-Augmented Prompt Optimization for Text-to-Video Generation",
+      "venue": "CVPR 2025",
+      "published_at": "2025-04",
+      "date_precision": "month",
+      "first_seen_at": "2026-08-31",
+      "source_updated_at": "2026-10-02",
+      "paper_url": "https://arxiv.org/abs/2504.11739",
+      "arxiv_id": "2504.11739",
+      "doi": "",
+      "group": "Core Technology",
+      "category": "Image Generation",
+      "categories": [
+        "Image Generation",
+        "Video",
+        "Vision"
+      ],
+      "subcategories": [
+        "Diffusion / T2I / Editing",
+        "Video Generation",
+        "CVPR 2025 Proceedings"
+      ],
+      "source_repos": [
+        "wangkai930418/awesome-diffusion-categorized",
+        "AlonzoLeeeooo/awesome-video-generation",
+        "52CV/CVPR-2025-Papers"
+      ],
+      "source_urls": [
+        "https://github.com/wangkai930418/awesome-diffusion-categorized",
+        "https://github.com/AlonzoLeeeooo/awesome-video-generation",
+        "https://github.com/52CV/CVPR-2025-Papers"
+      ],
+      "metadata_sources": [
+        "source README",
+        "arXiv identifier"
+      ]
+    },
+    {
+      "id": "e75aefd601071f85",
+      "title": "EIDT-V: Exploiting Intersections in Diffusion Trajectories for Model-Agnostic, Zero-Shot, Training-Free Text-to-Video Generation",
+      "venue": "CVPR 2025",
+      "published_at": "2025-04",
+      "date_precision": "month",
+      "first_seen_at": "2026-08-31",
+      "source_updated_at": "2026-10-02",
+      "paper_url": "https://arxiv.org/abs/2504.06861",
+      "arxiv_id": "2504.06861",
+      "doi": "",
+      "group": "Core Technology",
+      "category": "Image Generation",
+      "categories": [
+        "Image Generation",
+        "Video",
+        "Vision"
+      ],
+      "subcategories": [
+        "Diffusion / T2I / Editing",
+        "Video Generation",
+        "CVPR 2025 Proceedings"
+      ],
+      "source_repos": [
+        "wangkai930418/awesome-diffusion-categorized",
+        "AlonzoLeeeooo/awesome-video-generation",
+        "52CV/CVPR-2025-Papers"
+      ],
+      "source_urls": [
+        "https://github.com/wangkai930418/awesome-diffusion-categorized",
+        "https://github.com/AlonzoLeeeooo/awesome-video-generation",
+        "https://github.com/52CV/CVPR-2025-Papers"
+      ],
+      "metadata_sources": [
+        "source README",
+        "arXiv identifier"
+      ]
+    },
+    {
+      "id": "b815f1a7b995174b",
+      "title": "DreamActor-M1: Holistic, Expressive and Robust Human Image Animation with Hybrid Guidance",
+      "venue": "arXiv",
+      "published_at": "2025-04",
+      "date_precision": "month",
+      "first_seen_at": "2026-08-31",
+      "source_updated_at": "2026-10-02",
+      "paper_url": "https://arxiv.org/abs/2504.01724",
+      "arxiv_id": "2504.01724",
+      "doi": "",
+      "group": "Core Technology",
+      "category": "Image Generation",
+      "categories": [
+        "Image Generation",
+        "Video"
+      ],
+      "subcategories": [
+        "Diffusion / T2I / Editing",
+        "Video Generation"
+      ],
+      "source_repos": [
+        "wangkai930418/awesome-diffusion-categorized",
+        "AlonzoLeeeooo/awesome-video-generation"
+      ],
+      "source_urls": [
+        "https://github.com/wangkai930418/awesome-diffusion-categorized",
+        "https://github.com/AlonzoLeeeooo/awesome-video-generation"
+      ],
+      "metadata_sources": [
+        "source README",
+        "arXiv identifier"
+      ]
+    },
+    {
+      "id": "d418b2d6c4570f72",
+      "title": "The AI Scientist-v2: Workshop-Level Automated Scientific Discovery via Agentic Tree Search",
+      "venue": "arXiv",
+      "published_at": "2025-04",
+      "date_precision": "month",
+      "first_seen_at": "2026-08-29",
+      "source_updated_at": "2026-10-01",
+      "paper_url": "https://arxiv.org/abs/2504.08066",
+      "arxiv_id": "2504.08066",
+      "doi": "10.48550/arXiv.2504.08066",
+      "group": "Core Technology",
+      "category": "Language",
+      "categories": [
+        "Language",
+        "Science & Discovery",
+        "Environment & Earth Science"
+      ],
+      "subcategories": [
+        "LLM Agents",
+        "Scientific Agents",
+        "General AI4Science",
+        "Weather & Climate"
+      ],
+      "source_repos": [
+        "js-lee-AI/awesome-llm-agent-papers",
+        "zoedsy/awesome-science-agents",
+        "ai4s-research/awesome-ai-for-science",
+        "zhengkai15/Awesome-Weather-Forecast"
+      ],
+      "source_urls": [
+        "https://github.com/js-lee-AI/awesome-llm-agent-papers",
+        "https://github.com/zoedsy/awesome-science-agents",
+        "https://github.com/ai4s-research/awesome-ai-for-science",
+        "https://github.com/zhengkai15/Awesome-Weather-Forecast"
       ],
       "metadata_sources": [
         "source README",
@@ -374942,6 +375093,36 @@
       ]
     },
     {
+      "id": "3828dd9666fb85e1",
+      "title": "Foundation Models for Environmental Science: A Survey",
+      "venue": "Science",
+      "published_at": "2025-04",
+      "date_precision": "month",
+      "first_seen_at": "2026-08-29",
+      "source_updated_at": "2026-10-01",
+      "paper_url": "https://arxiv.org/abs/2504.04280",
+      "arxiv_id": "2504.04280",
+      "doi": "",
+      "group": "Cross-disciplinary Applications",
+      "category": "Science & Discovery",
+      "categories": [
+        "Science & Discovery"
+      ],
+      "subcategories": [
+        "General AI4Science"
+      ],
+      "source_repos": [
+        "ai4s-research/awesome-ai-for-science"
+      ],
+      "source_urls": [
+        "https://github.com/ai4s-research/awesome-ai-for-science"
+      ],
+      "metadata_sources": [
+        "source README",
+        "arXiv identifier"
+      ]
+    },
+    {
       "id": "3963dca931096e51",
       "title": "EasyGenNet: An Efficient Framework for Audio-Driven Gesture Video Generation Based on Diffusion Model",
       "venue": "arXiv",
@@ -375298,47 +375479,6 @@
       ]
     },
     {
-      "id": "d418b2d6c4570f72",
-      "title": "The AI Scientist-v2: Workshop-Level Automated Scientific Discovery via Agentic Tree Search",
-      "venue": "arXiv",
-      "published_at": "2025-04",
-      "date_precision": "month",
-      "first_seen_at": "2026-08-29",
-      "source_updated_at": "2026-09-30",
-      "paper_url": "https://arxiv.org/abs/2504.08066",
-      "arxiv_id": "2504.08066",
-      "doi": "10.48550/arXiv.2504.08066",
-      "group": "Core Technology",
-      "category": "Language",
-      "categories": [
-        "Language",
-        "Science & Discovery",
-        "Environment & Earth Science"
-      ],
-      "subcategories": [
-        "LLM Agents",
-        "Scientific Agents",
-        "General AI4Science",
-        "Weather & Climate"
-      ],
-      "source_repos": [
-        "js-lee-AI/awesome-llm-agent-papers",
-        "zoedsy/awesome-science-agents",
-        "ai4s-research/awesome-ai-for-science",
-        "zhengkai15/Awesome-Weather-Forecast"
-      ],
-      "source_urls": [
-        "https://github.com/js-lee-AI/awesome-llm-agent-papers",
-        "https://github.com/zoedsy/awesome-science-agents",
-        "https://github.com/ai4s-research/awesome-ai-for-science",
-        "https://github.com/zhengkai15/Awesome-Weather-Forecast"
-      ],
-      "metadata_sources": [
-        "source README",
-        "arXiv identifier"
-      ]
-    },
-    {
       "id": "4733085013770ec2",
       "title": "Learning to Be a Doctor: Searching for Effective Medical Agent Architectures",
       "venue": "arXiv",
@@ -375362,36 +375502,6 @@
       ],
       "source_urls": [
         "https://github.com/Nanboy-Ronan/awesome-medical-imaging-agents"
-      ],
-      "metadata_sources": [
-        "source README",
-        "arXiv identifier"
-      ]
-    },
-    {
-      "id": "3828dd9666fb85e1",
-      "title": "Foundation Models for Environmental Science: A Survey",
-      "venue": "Science",
-      "published_at": "2025-04",
-      "date_precision": "month",
-      "first_seen_at": "2026-08-29",
-      "source_updated_at": "2026-09-30",
-      "paper_url": "https://arxiv.org/abs/2504.04280",
-      "arxiv_id": "2504.04280",
-      "doi": "",
-      "group": "Cross-disciplinary Applications",
-      "category": "Science & Discovery",
-      "categories": [
-        "Science & Discovery"
-      ],
-      "subcategories": [
-        "General AI4Science"
-      ],
-      "source_repos": [
-        "ai4s-research/awesome-ai-for-science"
-      ],
-      "source_urls": [
-        "https://github.com/ai4s-research/awesome-ai-for-science"
       ],
       "metadata_sources": [
         "source README",
@@ -376303,44 +376413,6 @@
       ]
     },
     {
-      "id": "51fc080576a9553a",
-      "title": "Visual Prompting for One-shot Controllable Video Editing without Inversion",
-      "venue": "CVPR 2025",
-      "published_at": "2025-04",
-      "date_precision": "month",
-      "first_seen_at": "2026-08-31",
-      "source_updated_at": "2026-09-24",
-      "paper_url": "https://arxiv.org/abs/2504.14335",
-      "arxiv_id": "2504.14335",
-      "doi": "",
-      "group": "Core Technology",
-      "category": "Image Generation",
-      "categories": [
-        "Image Generation",
-        "Video",
-        "Vision"
-      ],
-      "subcategories": [
-        "Diffusion / T2I / Editing",
-        "Video Generation",
-        "CVPR 2025 Proceedings"
-      ],
-      "source_repos": [
-        "wangkai930418/awesome-diffusion-categorized",
-        "AlonzoLeeeooo/awesome-video-generation",
-        "52CV/CVPR-2025-Papers"
-      ],
-      "source_urls": [
-        "https://github.com/wangkai930418/awesome-diffusion-categorized",
-        "https://github.com/AlonzoLeeeooo/awesome-video-generation",
-        "https://github.com/52CV/CVPR-2025-Papers"
-      ],
-      "metadata_sources": [
-        "source README",
-        "arXiv identifier"
-      ]
-    },
-    {
       "id": "ca94d08c53d71982",
       "title": "VARGPT-v1.1: Improve Visual Autoregressive Large Unified Model via Iterative Instruction Tuning and Reinforcement Learning",
       "venue": "arXiv",
@@ -376449,44 +376521,6 @@
         "https://github.com/AIDC-AI/Awesome-Unified-Multimodal-Models",
         "https://github.com/showlab/Awesome-Unified-Multimodal-Models",
         "https://github.com/Purshow/Awesome-Unified-Multimodal"
-      ],
-      "metadata_sources": [
-        "source README",
-        "arXiv identifier"
-      ]
-    },
-    {
-      "id": "cdcc1724b4ad2e83",
-      "title": "The Devil is in the Prompts: Retrieval-Augmented Prompt Optimization for Text-to-Video Generation",
-      "venue": "CVPR 2025",
-      "published_at": "2025-04",
-      "date_precision": "month",
-      "first_seen_at": "2026-08-31",
-      "source_updated_at": "2026-09-24",
-      "paper_url": "https://arxiv.org/abs/2504.11739",
-      "arxiv_id": "2504.11739",
-      "doi": "",
-      "group": "Core Technology",
-      "category": "Image Generation",
-      "categories": [
-        "Image Generation",
-        "Video",
-        "Vision"
-      ],
-      "subcategories": [
-        "Diffusion / T2I / Editing",
-        "Video Generation",
-        "CVPR 2025 Proceedings"
-      ],
-      "source_repos": [
-        "wangkai930418/awesome-diffusion-categorized",
-        "AlonzoLeeeooo/awesome-video-generation",
-        "52CV/CVPR-2025-Papers"
-      ],
-      "source_urls": [
-        "https://github.com/wangkai930418/awesome-diffusion-categorized",
-        "https://github.com/AlonzoLeeeooo/awesome-video-generation",
-        "https://github.com/52CV/CVPR-2025-Papers"
       ],
       "metadata_sources": [
         "source README",
@@ -376623,78 +376657,6 @@
         "https://github.com/AIDC-AI/Awesome-Unified-Multimodal-Models",
         "https://github.com/showlab/Awesome-Unified-Multimodal-Models",
         "https://github.com/Purshow/Awesome-Unified-Multimodal"
-      ],
-      "metadata_sources": [
-        "source README",
-        "arXiv identifier"
-      ]
-    },
-    {
-      "id": "e75aefd601071f85",
-      "title": "EIDT-V: Exploiting Intersections in Diffusion Trajectories for Model-Agnostic, Zero-Shot, Training-Free Text-to-Video Generation",
-      "venue": "CVPR 2025",
-      "published_at": "2025-04",
-      "date_precision": "month",
-      "first_seen_at": "2026-08-31",
-      "source_updated_at": "2026-09-24",
-      "paper_url": "https://arxiv.org/abs/2504.06861",
-      "arxiv_id": "2504.06861",
-      "doi": "",
-      "group": "Core Technology",
-      "category": "Image Generation",
-      "categories": [
-        "Image Generation",
-        "Video",
-        "Vision"
-      ],
-      "subcategories": [
-        "Diffusion / T2I / Editing",
-        "Video Generation",
-        "CVPR 2025 Proceedings"
-      ],
-      "source_repos": [
-        "wangkai930418/awesome-diffusion-categorized",
-        "AlonzoLeeeooo/awesome-video-generation",
-        "52CV/CVPR-2025-Papers"
-      ],
-      "source_urls": [
-        "https://github.com/wangkai930418/awesome-diffusion-categorized",
-        "https://github.com/AlonzoLeeeooo/awesome-video-generation",
-        "https://github.com/52CV/CVPR-2025-Papers"
-      ],
-      "metadata_sources": [
-        "source README",
-        "arXiv identifier"
-      ]
-    },
-    {
-      "id": "b815f1a7b995174b",
-      "title": "DreamActor-M1: Holistic, Expressive and Robust Human Image Animation with Hybrid Guidance",
-      "venue": "arXiv",
-      "published_at": "2025-04",
-      "date_precision": "month",
-      "first_seen_at": "2026-08-31",
-      "source_updated_at": "2026-09-24",
-      "paper_url": "https://arxiv.org/abs/2504.01724",
-      "arxiv_id": "2504.01724",
-      "doi": "",
-      "group": "Core Technology",
-      "category": "Image Generation",
-      "categories": [
-        "Image Generation",
-        "Video"
-      ],
-      "subcategories": [
-        "Diffusion / T2I / Editing",
-        "Video Generation"
-      ],
-      "source_repos": [
-        "wangkai930418/awesome-diffusion-categorized",
-        "AlonzoLeeeooo/awesome-video-generation"
-      ],
-      "source_urls": [
-        "https://github.com/wangkai930418/awesome-diffusion-categorized",
-        "https://github.com/AlonzoLeeeooo/awesome-video-generation"
       ],
       "metadata_sources": [
         "source README",
@@ -386571,7 +386533,7 @@
       "published_at": "2025-03-31",
       "date_precision": "day",
       "first_seen_at": "2026-08-31",
-      "source_updated_at": "2026-10-01",
+      "source_updated_at": "2026-10-02",
       "paper_url": "https://arxiv.org/pdf/2503.23715",
       "arxiv_id": "2503.23715",
       "doi": "",
@@ -387059,8 +387021,7 @@
       ],
       "metadata_sources": [
         "source README",
-        "arXiv",
-        "Semantic Scholar"
+        "arXiv"
       ]
     },
     {
@@ -387101,8 +387062,7 @@
       "metadata_sources": [
         "source README",
         "structured source",
-        "arXiv",
-        "Semantic Scholar"
+        "arXiv"
       ]
     },
     {
@@ -387192,7 +387152,40 @@
       ],
       "metadata_sources": [
         "source README",
-        "arXiv",
+        "arXiv"
+      ]
+    },
+    {
+      "id": "00a61a0974cb27d9",
+      "title": "AudCast: Audio-Driven Human Video Generation by Cascaded Diffusion Transformers",
+      "venue": "arXiv",
+      "published_at": "2025-03-25",
+      "date_precision": "day",
+      "first_seen_at": "2026-08-31",
+      "source_updated_at": "2026-10-02",
+      "paper_url": "https://arxiv.org/abs/2503.19824",
+      "arxiv_id": "2503.19824",
+      "doi": "",
+      "group": "Core Technology",
+      "category": "Video",
+      "categories": [
+        "Video",
+        "Vision"
+      ],
+      "subcategories": [
+        "Video Generation",
+        "CVPR 2025 Proceedings"
+      ],
+      "source_repos": [
+        "AlonzoLeeeooo/awesome-video-generation",
+        "52CV/CVPR-2025-Papers"
+      ],
+      "source_urls": [
+        "https://github.com/AlonzoLeeeooo/awesome-video-generation",
+        "https://github.com/52CV/CVPR-2025-Papers"
+      ],
+      "metadata_sources": [
+        "source README",
         "Semantic Scholar"
       ]
     },
@@ -387223,40 +387216,6 @@
       ],
       "metadata_sources": [
         "source README"
-      ]
-    },
-    {
-      "id": "00a61a0974cb27d9",
-      "title": "AudCast: Audio-Driven Human Video Generation by Cascaded Diffusion Transformers",
-      "venue": "arXiv",
-      "published_at": "2025-03-25",
-      "date_precision": "day",
-      "first_seen_at": "2026-08-31",
-      "source_updated_at": "2026-09-24",
-      "paper_url": "https://arxiv.org/abs/2503.19824",
-      "arxiv_id": "2503.19824",
-      "doi": "",
-      "group": "Core Technology",
-      "category": "Video",
-      "categories": [
-        "Video",
-        "Vision"
-      ],
-      "subcategories": [
-        "Video Generation",
-        "CVPR 2025 Proceedings"
-      ],
-      "source_repos": [
-        "AlonzoLeeeooo/awesome-video-generation",
-        "52CV/CVPR-2025-Papers"
-      ],
-      "source_urls": [
-        "https://github.com/AlonzoLeeeooo/awesome-video-generation",
-        "https://github.com/52CV/CVPR-2025-Papers"
-      ],
-      "metadata_sources": [
-        "source README",
-        "Semantic Scholar"
       ]
     },
     {
@@ -388844,7 +388803,7 @@
       "published_at": "2025-03-12",
       "date_precision": "day",
       "first_seen_at": "2026-08-31",
-      "source_updated_at": "2026-10-01",
+      "source_updated_at": "2026-10-02",
       "paper_url": "https://arxiv.org/abs/2503.09151",
       "arxiv_id": "2503.09151",
       "doi": "",
@@ -388899,8 +388858,7 @@
       ],
       "metadata_sources": [
         "source README",
-        "arXiv",
-        "Semantic Scholar"
+        "arXiv"
       ]
     },
     {
@@ -389054,6 +389012,40 @@
       ]
     },
     {
+      "id": "3082f1732cfe41f3",
+      "title": "ObjectMover: Generative Object Movement with Video Prior",
+      "venue": "arXiv",
+      "published_at": "2025-03-11",
+      "date_precision": "day",
+      "first_seen_at": "2026-08-31",
+      "source_updated_at": "2026-10-02",
+      "paper_url": "https://arxiv.org/abs/2503.08037",
+      "arxiv_id": "2503.08037",
+      "doi": "",
+      "group": "Core Technology",
+      "category": "Video",
+      "categories": [
+        "Video",
+        "Vision"
+      ],
+      "subcategories": [
+        "Video Generation",
+        "CVPR 2025 Proceedings"
+      ],
+      "source_repos": [
+        "AlonzoLeeeooo/awesome-video-generation",
+        "52CV/CVPR-2025-Papers"
+      ],
+      "source_urls": [
+        "https://github.com/AlonzoLeeeooo/awesome-video-generation",
+        "https://github.com/52CV/CVPR-2025-Papers"
+      ],
+      "metadata_sources": [
+        "source README",
+        "Semantic Scholar"
+      ]
+    },
+    {
       "id": "a4e73368a06f2229",
       "title": "PhysVLM: Enabling Visual Language Models to Understand Robotic Physical Reachability",
       "venue": "arXiv",
@@ -389085,40 +389077,6 @@
         "https://github.com/jonyzhang2023/awesome-embodied-vla-va-vln",
         "https://github.com/52CV/CVPR-2025-Papers",
         "https://github.com/SIBench/Awesome-Visual-Spatial-Reasoning"
-      ],
-      "metadata_sources": [
-        "source README",
-        "Semantic Scholar"
-      ]
-    },
-    {
-      "id": "3082f1732cfe41f3",
-      "title": "ObjectMover: Generative Object Movement with Video Prior",
-      "venue": "arXiv",
-      "published_at": "2025-03-11",
-      "date_precision": "day",
-      "first_seen_at": "2026-08-31",
-      "source_updated_at": "2026-09-24",
-      "paper_url": "https://arxiv.org/abs/2503.08037",
-      "arxiv_id": "2503.08037",
-      "doi": "",
-      "group": "Core Technology",
-      "category": "Video",
-      "categories": [
-        "Video",
-        "Vision"
-      ],
-      "subcategories": [
-        "Video Generation",
-        "CVPR 2025 Proceedings"
-      ],
-      "source_repos": [
-        "AlonzoLeeeooo/awesome-video-generation",
-        "52CV/CVPR-2025-Papers"
-      ],
-      "source_urls": [
-        "https://github.com/AlonzoLeeeooo/awesome-video-generation",
-        "https://github.com/52CV/CVPR-2025-Papers"
       ],
       "metadata_sources": [
         "source README",
@@ -389936,8 +389894,7 @@
       ],
       "metadata_sources": [
         "source README",
-        "arXiv",
-        "Semantic Scholar"
+        "arXiv"
       ]
     },
     {
@@ -389997,8 +389954,7 @@
       ],
       "metadata_sources": [
         "source README",
-        "arXiv",
-        "Semantic Scholar"
+        "arXiv"
       ]
     },
     {
@@ -391682,6 +391638,233 @@
       ]
     },
     {
+      "id": "bbb47e9f6fcf2852",
+      "title": "h-Edit: Effective and Flexible Diffusion-Based Editing via Doob's h-Transform",
+      "venue": "CVPR 2025",
+      "published_at": "2025-03",
+      "date_precision": "month",
+      "first_seen_at": "2026-08-31",
+      "source_updated_at": "2026-10-02",
+      "paper_url": "https://arxiv.org/abs/2503.02187",
+      "arxiv_id": "2503.02187",
+      "doi": "",
+      "group": "Core Technology",
+      "category": "Image Generation",
+      "categories": [
+        "Image Generation",
+        "Video",
+        "Vision"
+      ],
+      "subcategories": [
+        "Diffusion / T2I / Editing",
+        "Video Generation",
+        "CVPR 2025 Proceedings"
+      ],
+      "source_repos": [
+        "wangkai930418/awesome-diffusion-categorized",
+        "AlonzoLeeeooo/awesome-video-generation",
+        "52CV/CVPR-2025-Papers"
+      ],
+      "source_urls": [
+        "https://github.com/wangkai930418/awesome-diffusion-categorized",
+        "https://github.com/AlonzoLeeeooo/awesome-video-generation",
+        "https://github.com/52CV/CVPR-2025-Papers"
+      ],
+      "metadata_sources": [
+        "source README",
+        "arXiv identifier"
+      ]
+    },
+    {
+      "id": "b75573872caf4ab5",
+      "title": "VideoMage: Multi-Subject and Motion Customization of Text-to-Video Diffusion Models",
+      "venue": "CVPR 2025",
+      "published_at": "2025-03",
+      "date_precision": "month",
+      "first_seen_at": "2026-08-31",
+      "source_updated_at": "2026-10-02",
+      "paper_url": "https://arxiv.org/abs/2503.21781",
+      "arxiv_id": "2503.21781",
+      "doi": "",
+      "group": "Core Technology",
+      "category": "Image Generation",
+      "categories": [
+        "Image Generation",
+        "Video",
+        "Vision"
+      ],
+      "subcategories": [
+        "Diffusion / T2I / Editing",
+        "Video Generation",
+        "CVPR 2025 Proceedings"
+      ],
+      "source_repos": [
+        "wangkai930418/awesome-diffusion-categorized",
+        "AlonzoLeeeooo/awesome-video-generation",
+        "52CV/CVPR-2025-Papers"
+      ],
+      "source_urls": [
+        "https://github.com/wangkai930418/awesome-diffusion-categorized",
+        "https://github.com/AlonzoLeeeooo/awesome-video-generation",
+        "https://github.com/52CV/CVPR-2025-Papers"
+      ],
+      "metadata_sources": [
+        "source README",
+        "arXiv identifier"
+      ]
+    },
+    {
+      "id": "7ad2e10b27bb1442",
+      "title": "VACE: All-in-One Video Creation and Editing",
+      "venue": "arXiv",
+      "published_at": "2025-03",
+      "date_precision": "month",
+      "first_seen_at": "2026-08-31",
+      "source_updated_at": "2026-10-02",
+      "paper_url": "https://arxiv.org/abs/2503.07598",
+      "arxiv_id": "2503.07598",
+      "doi": "",
+      "group": "Core Technology",
+      "category": "Image Generation",
+      "categories": [
+        "Image Generation",
+        "Video",
+        "Vision"
+      ],
+      "subcategories": [
+        "Diffusion / T2I / Editing",
+        "Video Generation",
+        "CVPR 2025 Proceedings"
+      ],
+      "source_repos": [
+        "wangkai930418/awesome-diffusion-categorized",
+        "AlonzoLeeeooo/awesome-video-generation",
+        "52CV/CVPR-2025-Papers"
+      ],
+      "source_urls": [
+        "https://github.com/wangkai930418/awesome-diffusion-categorized",
+        "https://github.com/AlonzoLeeeooo/awesome-video-generation",
+        "https://github.com/52CV/CVPR-2025-Papers"
+      ],
+      "metadata_sources": [
+        "source README",
+        "arXiv identifier"
+      ]
+    },
+    {
+      "id": "dc3fba243469d889",
+      "title": "SketchVideo: Sketch-based Video Generation and Editing",
+      "venue": "CVPR 2025",
+      "published_at": "2025-03",
+      "date_precision": "month",
+      "first_seen_at": "2026-08-31",
+      "source_updated_at": "2026-10-02",
+      "paper_url": "https://arxiv.org/abs/2503.23284",
+      "arxiv_id": "2503.23284",
+      "doi": "",
+      "group": "Core Technology",
+      "category": "Image Generation",
+      "categories": [
+        "Image Generation",
+        "Video",
+        "Vision"
+      ],
+      "subcategories": [
+        "Diffusion / T2I / Editing",
+        "Video Generation",
+        "CVPR 2025 Proceedings"
+      ],
+      "source_repos": [
+        "wangkai930418/awesome-diffusion-categorized",
+        "AlonzoLeeeooo/awesome-video-generation",
+        "52CV/CVPR-2025-Papers"
+      ],
+      "source_urls": [
+        "https://github.com/wangkai930418/awesome-diffusion-categorized",
+        "https://github.com/AlonzoLeeeooo/awesome-video-generation",
+        "https://github.com/52CV/CVPR-2025-Papers"
+      ],
+      "metadata_sources": [
+        "source README",
+        "arXiv identifier"
+      ]
+    },
+    {
+      "id": "659511f85377966c",
+      "title": "Extrapolating and Decoupling Image-to-Video Generation Models: Motion Modeling is Easier Than You Think",
+      "venue": "CVPR 2025",
+      "published_at": "2025-03",
+      "date_precision": "month",
+      "first_seen_at": "2026-08-31",
+      "source_updated_at": "2026-10-02",
+      "paper_url": "https://arxiv.org/abs/2503.00948",
+      "arxiv_id": "2503.00948",
+      "doi": "",
+      "group": "Core Technology",
+      "category": "Image Generation",
+      "categories": [
+        "Image Generation",
+        "Video",
+        "Vision"
+      ],
+      "subcategories": [
+        "Diffusion / T2I / Editing",
+        "Video Generation",
+        "Post-training & Alignment",
+        "CVPR 2025 Proceedings"
+      ],
+      "source_repos": [
+        "wangkai930418/awesome-diffusion-categorized",
+        "AlonzoLeeeooo/awesome-video-generation",
+        "people-robots/Awesome-Video-Generation-Post-Training",
+        "52CV/CVPR-2025-Papers"
+      ],
+      "source_urls": [
+        "https://github.com/wangkai930418/awesome-diffusion-categorized",
+        "https://github.com/AlonzoLeeeooo/awesome-video-generation",
+        "https://github.com/people-robots/Awesome-Video-Generation-Post-Training",
+        "https://github.com/52CV/CVPR-2025-Papers"
+      ],
+      "metadata_sources": [
+        "source README",
+        "arXiv identifier"
+      ]
+    },
+    {
+      "id": "b22508ddd9e7a850",
+      "title": "DynamiCtrl: Rethinking the Basic Structure and the Role of Text for High-quality Human Image Animation",
+      "venue": "arXiv",
+      "published_at": "2025-03",
+      "date_precision": "month",
+      "first_seen_at": "2026-08-31",
+      "source_updated_at": "2026-10-02",
+      "paper_url": "https://arxiv.org/abs/2503.21246",
+      "arxiv_id": "2503.21246",
+      "doi": "",
+      "group": "Core Technology",
+      "category": "Image Generation",
+      "categories": [
+        "Image Generation",
+        "Video"
+      ],
+      "subcategories": [
+        "Diffusion / T2I / Editing",
+        "Video Generation"
+      ],
+      "source_repos": [
+        "wangkai930418/awesome-diffusion-categorized",
+        "AlonzoLeeeooo/awesome-video-generation"
+      ],
+      "source_urls": [
+        "https://github.com/wangkai930418/awesome-diffusion-categorized",
+        "https://github.com/AlonzoLeeeooo/awesome-video-generation"
+      ],
+      "metadata_sources": [
+        "source README",
+        "arXiv identifier"
+      ]
+    },
+    {
       "id": "1134d3f0666c0e5e",
       "title": "What Are You Doing? A Closer Look at Controllable Human Video Generation",
       "venue": "arXiv",
@@ -391778,6 +391961,84 @@
       "source_urls": [
         "https://github.com/wangkai930418/awesome-diffusion-categorized",
         "https://github.com/people-robots/Awesome-Video-Generation-Post-Training"
+      ],
+      "metadata_sources": [
+        "source README",
+        "arXiv identifier"
+      ]
+    },
+    {
+      "id": "af25495f463847e6",
+      "title": "TxAgent: An AI agent for therapeutic reasoning across a universe of tools",
+      "venue": "arXiv",
+      "published_at": "2025-03",
+      "date_precision": "month",
+      "first_seen_at": "2026-08-29",
+      "source_updated_at": "2026-10-01",
+      "paper_url": "http://arxiv.org/abs/2503.10970v1",
+      "arxiv_id": "2503.10970",
+      "doi": "",
+      "group": "Cross-disciplinary Applications",
+      "category": "Medicine & Healthcare",
+      "categories": [
+        "Medicine & Healthcare",
+        "Science & Discovery"
+      ],
+      "subcategories": [
+        "Medical Agents",
+        "Scientific Agents",
+        "General AI4Science",
+        "Medical Imaging Agents"
+      ],
+      "source_repos": [
+        "AgenticHealthAI/Awesome-AI-Agents-for-Healthcare",
+        "zoedsy/awesome-science-agents",
+        "ai4s-research/awesome-ai-for-science",
+        "Nanboy-Ronan/awesome-medical-imaging-agents"
+      ],
+      "source_urls": [
+        "https://github.com/AgenticHealthAI/Awesome-AI-Agents-for-Healthcare",
+        "https://github.com/zoedsy/awesome-science-agents",
+        "https://github.com/ai4s-research/awesome-ai-for-science",
+        "https://github.com/Nanboy-Ronan/awesome-medical-imaging-agents"
+      ],
+      "metadata_sources": [
+        "source README",
+        "arXiv identifier"
+      ]
+    },
+    {
+      "id": "c52c108efa31f532",
+      "title": "Towards Scientific Intelligence: A Survey of LLM-based Scientific Agents",
+      "venue": "arXiv",
+      "published_at": "2025-03",
+      "date_precision": "month",
+      "first_seen_at": "2026-08-29",
+      "source_updated_at": "2026-10-01",
+      "paper_url": "https://arxiv.org/abs/2503.24047",
+      "arxiv_id": "2503.24047",
+      "doi": "",
+      "group": "Core Technology",
+      "category": "Language",
+      "categories": [
+        "Language",
+        "Science & Discovery",
+        "Humanities & Social Science"
+      ],
+      "subcategories": [
+        "LLM Agents",
+        "General AI4Science",
+        "LLM in Social Science"
+      ],
+      "source_repos": [
+        "js-lee-AI/awesome-llm-agent-papers",
+        "ai4s-research/awesome-ai-for-science",
+        "ValueByte-AI/Awesome-LLM-in-Social-Science"
+      ],
+      "source_urls": [
+        "https://github.com/js-lee-AI/awesome-llm-agent-papers",
+        "https://github.com/ai4s-research/awesome-ai-for-science",
+        "https://github.com/ValueByte-AI/Awesome-LLM-in-Social-Science"
       ],
       "metadata_sources": [
         "source README",
@@ -392252,6 +392513,40 @@
       ]
     },
     {
+      "id": "87034d7ed3850673",
+      "title": "From Theory to Application: A Practical Introduction to Neural Operators in Scientific Computing",
+      "venue": "arXiv",
+      "published_at": "2025-03",
+      "date_precision": "month",
+      "first_seen_at": "2026-08-29",
+      "source_updated_at": "2026-10-01",
+      "paper_url": "https://arxiv.org/abs/2503.05598",
+      "arxiv_id": "2503.05598",
+      "doi": "",
+      "group": "Cross-disciplinary Applications",
+      "category": "Science & Discovery",
+      "categories": [
+        "Science & Discovery",
+        "Engineering & Manufacturing"
+      ],
+      "subcategories": [
+        "General AI4Science",
+        "AI for CAD"
+      ],
+      "source_repos": [
+        "ai4s-research/awesome-ai-for-science",
+        "gudo7208/awesome-ai4cad"
+      ],
+      "source_urls": [
+        "https://github.com/ai4s-research/awesome-ai-for-science",
+        "https://github.com/gudo7208/awesome-ai4cad"
+      ],
+      "metadata_sources": [
+        "source README",
+        "arXiv identifier"
+      ]
+    },
+    {
       "id": "a21e62a286ae2908",
       "title": "FiVE: A Fine-grained Video Editing Benchmark for Evaluating Emerging Diffusion and Rectified Flow Models",
       "venue": "arXiv",
@@ -392279,47 +392574,6 @@
       "source_urls": [
         "https://github.com/wangkai930418/awesome-diffusion-categorized",
         "https://github.com/people-robots/Awesome-Video-Generation-Post-Training"
-      ],
-      "metadata_sources": [
-        "source README",
-        "arXiv identifier"
-      ]
-    },
-    {
-      "id": "659511f85377966c",
-      "title": "Extrapolating and Decoupling Image-to-Video Generation Models: Motion Modeling is Easier Than You Think",
-      "venue": "CVPR 2025",
-      "published_at": "2025-03",
-      "date_precision": "month",
-      "first_seen_at": "2026-08-31",
-      "source_updated_at": "2026-10-01",
-      "paper_url": "https://arxiv.org/abs/2503.00948",
-      "arxiv_id": "2503.00948",
-      "doi": "",
-      "group": "Core Technology",
-      "category": "Image Generation",
-      "categories": [
-        "Image Generation",
-        "Video",
-        "Vision"
-      ],
-      "subcategories": [
-        "Diffusion / T2I / Editing",
-        "Video Generation",
-        "Post-training & Alignment",
-        "CVPR 2025 Proceedings"
-      ],
-      "source_repos": [
-        "wangkai930418/awesome-diffusion-categorized",
-        "AlonzoLeeeooo/awesome-video-generation",
-        "people-robots/Awesome-Video-Generation-Post-Training",
-        "52CV/CVPR-2025-Papers"
-      ],
-      "source_urls": [
-        "https://github.com/wangkai930418/awesome-diffusion-categorized",
-        "https://github.com/AlonzoLeeeooo/awesome-video-generation",
-        "https://github.com/people-robots/Awesome-Video-Generation-Post-Training",
-        "https://github.com/52CV/CVPR-2025-Papers"
       ],
       "metadata_sources": [
         "source README",
@@ -392553,77 +392807,29 @@
       ]
     },
     {
-      "id": "af25495f463847e6",
-      "title": "TxAgent: An AI agent for therapeutic reasoning across a universe of tools",
-      "venue": "arXiv",
+      "id": "c6a2d9c442451aae",
+      "title": "Agentic AI for Scientific Discovery: A Survey of Progress, Challenges, and Future Directions",
+      "venue": "science",
       "published_at": "2025-03",
       "date_precision": "month",
       "first_seen_at": "2026-08-29",
-      "source_updated_at": "2026-09-30",
-      "paper_url": "http://arxiv.org/abs/2503.10970v1",
-      "arxiv_id": "2503.10970",
+      "source_updated_at": "2026-10-01",
+      "paper_url": "https://arxiv.org/abs/2503.08979",
+      "arxiv_id": "2503.08979",
       "doi": "",
       "group": "Cross-disciplinary Applications",
-      "category": "Medicine & Healthcare",
+      "category": "Science & Discovery",
       "categories": [
-        "Medicine & Healthcare",
         "Science & Discovery"
       ],
       "subcategories": [
-        "Medical Agents",
-        "Scientific Agents",
-        "General AI4Science",
-        "Medical Imaging Agents"
+        "General AI4Science"
       ],
       "source_repos": [
-        "AgenticHealthAI/Awesome-AI-Agents-for-Healthcare",
-        "zoedsy/awesome-science-agents",
-        "ai4s-research/awesome-ai-for-science",
-        "Nanboy-Ronan/awesome-medical-imaging-agents"
+        "ai4s-research/awesome-ai-for-science"
       ],
       "source_urls": [
-        "https://github.com/AgenticHealthAI/Awesome-AI-Agents-for-Healthcare",
-        "https://github.com/zoedsy/awesome-science-agents",
-        "https://github.com/ai4s-research/awesome-ai-for-science",
-        "https://github.com/Nanboy-Ronan/awesome-medical-imaging-agents"
-      ],
-      "metadata_sources": [
-        "source README",
-        "arXiv identifier"
-      ]
-    },
-    {
-      "id": "c52c108efa31f532",
-      "title": "Towards Scientific Intelligence: A Survey of LLM-based Scientific Agents",
-      "venue": "arXiv",
-      "published_at": "2025-03",
-      "date_precision": "month",
-      "first_seen_at": "2026-08-29",
-      "source_updated_at": "2026-09-30",
-      "paper_url": "https://arxiv.org/abs/2503.24047",
-      "arxiv_id": "2503.24047",
-      "doi": "",
-      "group": "Core Technology",
-      "category": "Language",
-      "categories": [
-        "Language",
-        "Science & Discovery",
-        "Humanities & Social Science"
-      ],
-      "subcategories": [
-        "LLM Agents",
-        "General AI4Science",
-        "LLM in Social Science"
-      ],
-      "source_repos": [
-        "js-lee-AI/awesome-llm-agent-papers",
-        "ai4s-research/awesome-ai-for-science",
-        "ValueByte-AI/Awesome-LLM-in-Social-Science"
-      ],
-      "source_urls": [
-        "https://github.com/js-lee-AI/awesome-llm-agent-papers",
-        "https://github.com/ai4s-research/awesome-ai-for-science",
-        "https://github.com/ValueByte-AI/Awesome-LLM-in-Social-Science"
+        "https://github.com/ai4s-research/awesome-ai-for-science"
       ],
       "metadata_sources": [
         "source README",
@@ -392990,40 +393196,6 @@
       ]
     },
     {
-      "id": "87034d7ed3850673",
-      "title": "From Theory to Application: A Practical Introduction to Neural Operators in Scientific Computing",
-      "venue": "arXiv",
-      "published_at": "2025-03",
-      "date_precision": "month",
-      "first_seen_at": "2026-08-29",
-      "source_updated_at": "2026-09-30",
-      "paper_url": "https://arxiv.org/abs/2503.05598",
-      "arxiv_id": "2503.05598",
-      "doi": "",
-      "group": "Cross-disciplinary Applications",
-      "category": "Science & Discovery",
-      "categories": [
-        "Science & Discovery",
-        "Engineering & Manufacturing"
-      ],
-      "subcategories": [
-        "General AI4Science",
-        "AI for CAD"
-      ],
-      "source_repos": [
-        "ai4s-research/awesome-ai-for-science",
-        "gudo7208/awesome-ai4cad"
-      ],
-      "source_urls": [
-        "https://github.com/ai4s-research/awesome-ai-for-science",
-        "https://github.com/gudo7208/awesome-ai4cad"
-      ],
-      "metadata_sources": [
-        "source README",
-        "arXiv identifier"
-      ]
-    },
-    {
       "id": "70695b7f6ae76f7d",
       "title": "Beyond Words: Advancing Long-Text Image Generation via Multimodal Autoregressive Models",
       "venue": "arXiv",
@@ -393051,36 +393223,6 @@
       "source_urls": [
         "https://github.com/wangkai930418/awesome-diffusion-categorized",
         "https://github.com/Yuliang-Liu/AWESOME-OCR-LLM"
-      ],
-      "metadata_sources": [
-        "source README",
-        "arXiv identifier"
-      ]
-    },
-    {
-      "id": "c6a2d9c442451aae",
-      "title": "Agentic AI for Scientific Discovery: A Survey of Progress, Challenges, and Future Directions",
-      "venue": "science",
-      "published_at": "2025-03",
-      "date_precision": "month",
-      "first_seen_at": "2026-08-29",
-      "source_updated_at": "2026-09-30",
-      "paper_url": "https://arxiv.org/abs/2503.08979",
-      "arxiv_id": "2503.08979",
-      "doi": "",
-      "group": "Cross-disciplinary Applications",
-      "category": "Science & Discovery",
-      "categories": [
-        "Science & Discovery"
-      ],
-      "subcategories": [
-        "General AI4Science"
-      ],
-      "source_repos": [
-        "ai4s-research/awesome-ai-for-science"
-      ],
-      "source_urls": [
-        "https://github.com/ai4s-research/awesome-ai-for-science"
       ],
       "metadata_sources": [
         "source README",
@@ -393954,82 +394096,6 @@
       ]
     },
     {
-      "id": "bbb47e9f6fcf2852",
-      "title": "h-Edit: Effective and Flexible Diffusion-Based Editing via Doob's h-Transform",
-      "venue": "CVPR 2025",
-      "published_at": "2025-03",
-      "date_precision": "month",
-      "first_seen_at": "2026-08-31",
-      "source_updated_at": "2026-09-24",
-      "paper_url": "https://arxiv.org/abs/2503.02187",
-      "arxiv_id": "2503.02187",
-      "doi": "",
-      "group": "Core Technology",
-      "category": "Image Generation",
-      "categories": [
-        "Image Generation",
-        "Video",
-        "Vision"
-      ],
-      "subcategories": [
-        "Diffusion / T2I / Editing",
-        "Video Generation",
-        "CVPR 2025 Proceedings"
-      ],
-      "source_repos": [
-        "wangkai930418/awesome-diffusion-categorized",
-        "AlonzoLeeeooo/awesome-video-generation",
-        "52CV/CVPR-2025-Papers"
-      ],
-      "source_urls": [
-        "https://github.com/wangkai930418/awesome-diffusion-categorized",
-        "https://github.com/AlonzoLeeeooo/awesome-video-generation",
-        "https://github.com/52CV/CVPR-2025-Papers"
-      ],
-      "metadata_sources": [
-        "source README",
-        "arXiv identifier"
-      ]
-    },
-    {
-      "id": "b75573872caf4ab5",
-      "title": "VideoMage: Multi-Subject and Motion Customization of Text-to-Video Diffusion Models",
-      "venue": "CVPR 2025",
-      "published_at": "2025-03",
-      "date_precision": "month",
-      "first_seen_at": "2026-08-31",
-      "source_updated_at": "2026-09-24",
-      "paper_url": "https://arxiv.org/abs/2503.21781",
-      "arxiv_id": "2503.21781",
-      "doi": "",
-      "group": "Core Technology",
-      "category": "Image Generation",
-      "categories": [
-        "Image Generation",
-        "Video",
-        "Vision"
-      ],
-      "subcategories": [
-        "Diffusion / T2I / Editing",
-        "Video Generation",
-        "CVPR 2025 Proceedings"
-      ],
-      "source_repos": [
-        "wangkai930418/awesome-diffusion-categorized",
-        "AlonzoLeeeooo/awesome-video-generation",
-        "52CV/CVPR-2025-Papers"
-      ],
-      "source_urls": [
-        "https://github.com/wangkai930418/awesome-diffusion-categorized",
-        "https://github.com/AlonzoLeeeooo/awesome-video-generation",
-        "https://github.com/52CV/CVPR-2025-Papers"
-      ],
-      "metadata_sources": [
-        "source README",
-        "arXiv identifier"
-      ]
-    },
-    {
       "id": "2ea7d9dc54a8de93",
       "title": "Value Profiles for Encoding Human Variation",
       "venue": "arXiv",
@@ -394053,44 +394119,6 @@
       ],
       "source_urls": [
         "https://github.com/ValueByte-AI/Awesome-LLM-in-Social-Science"
-      ],
-      "metadata_sources": [
-        "source README",
-        "arXiv identifier"
-      ]
-    },
-    {
-      "id": "7ad2e10b27bb1442",
-      "title": "VACE: All-in-One Video Creation and Editing",
-      "venue": "arXiv",
-      "published_at": "2025-03",
-      "date_precision": "month",
-      "first_seen_at": "2026-08-31",
-      "source_updated_at": "2026-09-24",
-      "paper_url": "https://arxiv.org/abs/2503.07598",
-      "arxiv_id": "2503.07598",
-      "doi": "",
-      "group": "Core Technology",
-      "category": "Image Generation",
-      "categories": [
-        "Image Generation",
-        "Video",
-        "Vision"
-      ],
-      "subcategories": [
-        "Diffusion / T2I / Editing",
-        "Video Generation",
-        "CVPR 2025 Proceedings"
-      ],
-      "source_repos": [
-        "wangkai930418/awesome-diffusion-categorized",
-        "AlonzoLeeeooo/awesome-video-generation",
-        "52CV/CVPR-2025-Papers"
-      ],
-      "source_urls": [
-        "https://github.com/wangkai930418/awesome-diffusion-categorized",
-        "https://github.com/AlonzoLeeeooo/awesome-video-generation",
-        "https://github.com/52CV/CVPR-2025-Papers"
       ],
       "metadata_sources": [
         "source README",
@@ -394210,44 +394238,6 @@
         "https://github.com/AIDC-AI/Awesome-Unified-Multimodal-Models",
         "https://github.com/showlab/Awesome-Unified-Multimodal-Models",
         "https://github.com/Purshow/Awesome-Unified-Multimodal"
-      ],
-      "metadata_sources": [
-        "source README",
-        "arXiv identifier"
-      ]
-    },
-    {
-      "id": "dc3fba243469d889",
-      "title": "SketchVideo: Sketch-based Video Generation and Editing",
-      "venue": "CVPR 2025",
-      "published_at": "2025-03",
-      "date_precision": "month",
-      "first_seen_at": "2026-08-31",
-      "source_updated_at": "2026-09-24",
-      "paper_url": "https://arxiv.org/abs/2503.23284",
-      "arxiv_id": "2503.23284",
-      "doi": "",
-      "group": "Core Technology",
-      "category": "Image Generation",
-      "categories": [
-        "Image Generation",
-        "Video",
-        "Vision"
-      ],
-      "subcategories": [
-        "Diffusion / T2I / Editing",
-        "Video Generation",
-        "CVPR 2025 Proceedings"
-      ],
-      "source_repos": [
-        "wangkai930418/awesome-diffusion-categorized",
-        "AlonzoLeeeooo/awesome-video-generation",
-        "52CV/CVPR-2025-Papers"
-      ],
-      "source_urls": [
-        "https://github.com/wangkai930418/awesome-diffusion-categorized",
-        "https://github.com/AlonzoLeeeooo/awesome-video-generation",
-        "https://github.com/52CV/CVPR-2025-Papers"
       ],
       "metadata_sources": [
         "source README",
@@ -394576,40 +394566,6 @@
         "https://github.com/AIDC-AI/Awesome-Unified-Multimodal-Models",
         "https://github.com/showlab/Awesome-Unified-Multimodal-Models",
         "https://github.com/Purshow/Awesome-Unified-Multimodal"
-      ],
-      "metadata_sources": [
-        "source README",
-        "arXiv identifier"
-      ]
-    },
-    {
-      "id": "b22508ddd9e7a850",
-      "title": "DynamiCtrl: Rethinking the Basic Structure and the Role of Text for High-quality Human Image Animation",
-      "venue": "arXiv",
-      "published_at": "2025-03",
-      "date_precision": "month",
-      "first_seen_at": "2026-08-31",
-      "source_updated_at": "2026-09-24",
-      "paper_url": "https://arxiv.org/abs/2503.21246",
-      "arxiv_id": "2503.21246",
-      "doi": "",
-      "group": "Core Technology",
-      "category": "Image Generation",
-      "categories": [
-        "Image Generation",
-        "Video"
-      ],
-      "subcategories": [
-        "Diffusion / T2I / Editing",
-        "Video Generation"
-      ],
-      "source_repos": [
-        "wangkai930418/awesome-diffusion-categorized",
-        "AlonzoLeeeooo/awesome-video-generation"
-      ],
-      "source_urls": [
-        "https://github.com/wangkai930418/awesome-diffusion-categorized",
-        "https://github.com/AlonzoLeeeooo/awesome-video-generation"
       ],
       "metadata_sources": [
         "source README",
@@ -421884,8 +421840,7 @@
       ],
       "metadata_sources": [
         "source README",
-        "arXiv",
-        "Semantic Scholar"
+        "arXiv"
       ]
     },
     {
@@ -423073,8 +423028,7 @@
       ],
       "metadata_sources": [
         "source README",
-        "arXiv",
-        "Semantic Scholar"
+        "arXiv"
       ]
     },
     {
@@ -423798,6 +423752,108 @@
       ]
     },
     {
+      "id": "c54174accf6ba816",
+      "title": "VideoGrain: Modulating Space-Time Attention for Multi-grained Video Editing",
+      "venue": "ICLR 2025",
+      "published_at": "2025-02",
+      "date_precision": "month",
+      "first_seen_at": "2026-08-31",
+      "source_updated_at": "2026-10-02",
+      "paper_url": "https://arxiv.org/abs/2502.17258",
+      "arxiv_id": "2502.17258",
+      "doi": "",
+      "group": "Core Technology",
+      "category": "Image Generation",
+      "categories": [
+        "Image Generation",
+        "Video"
+      ],
+      "subcategories": [
+        "Diffusion / T2I / Editing",
+        "Video Generation"
+      ],
+      "source_repos": [
+        "wangkai930418/awesome-diffusion-categorized",
+        "AlonzoLeeeooo/awesome-video-generation"
+      ],
+      "source_urls": [
+        "https://github.com/wangkai930418/awesome-diffusion-categorized",
+        "https://github.com/AlonzoLeeeooo/awesome-video-generation"
+      ],
+      "metadata_sources": [
+        "source README",
+        "arXiv identifier"
+      ]
+    },
+    {
+      "id": "629f6c872dc13016",
+      "title": "HumanDiT: Pose-Guided Diffusion Transformer for Long-form Human Motion Video Generation",
+      "venue": "arXiv",
+      "published_at": "2025-02",
+      "date_precision": "month",
+      "first_seen_at": "2026-08-31",
+      "source_updated_at": "2026-10-02",
+      "paper_url": "https://arxiv.org/abs/2502.04847",
+      "arxiv_id": "2502.04847",
+      "doi": "",
+      "group": "Core Technology",
+      "category": "Image Generation",
+      "categories": [
+        "Image Generation",
+        "Video"
+      ],
+      "subcategories": [
+        "Diffusion / T2I / Editing",
+        "Video Generation"
+      ],
+      "source_repos": [
+        "wangkai930418/awesome-diffusion-categorized",
+        "AlonzoLeeeooo/awesome-video-generation"
+      ],
+      "source_urls": [
+        "https://github.com/wangkai930418/awesome-diffusion-categorized",
+        "https://github.com/AlonzoLeeeooo/awesome-video-generation"
+      ],
+      "metadata_sources": [
+        "source README",
+        "arXiv identifier"
+      ]
+    },
+    {
+      "id": "7a5edf5b1072f69f",
+      "title": "Animate Anyone 2: High-Fidelity Character Image Animation with Environment Affordance",
+      "venue": "arXiv",
+      "published_at": "2025-02",
+      "date_precision": "month",
+      "first_seen_at": "2026-08-31",
+      "source_updated_at": "2026-10-02",
+      "paper_url": "https://arxiv.org/abs/2502.06145",
+      "arxiv_id": "2502.06145",
+      "doi": "",
+      "group": "Core Technology",
+      "category": "Image Generation",
+      "categories": [
+        "Image Generation",
+        "Video"
+      ],
+      "subcategories": [
+        "Diffusion / T2I / Editing",
+        "Video Generation"
+      ],
+      "source_repos": [
+        "wangkai930418/awesome-diffusion-categorized",
+        "AlonzoLeeeooo/awesome-video-generation"
+      ],
+      "source_urls": [
+        "https://github.com/wangkai930418/awesome-diffusion-categorized",
+        "https://github.com/AlonzoLeeeooo/awesome-video-generation"
+      ],
+      "metadata_sources": [
+        "source README",
+        "arXiv identifier"
+      ]
+    },
+    {
       "id": "081f7f08a6c69f98",
       "title": "WorldModelBench: Judging Video Generation Models As World Models",
       "venue": "arXiv",
@@ -424154,6 +424210,36 @@
       ]
     },
     {
+      "id": "e8e56b1c8d28423d",
+      "title": "A Survey on AI-assisted Scientific Discovery",
+      "venue": "arXiv",
+      "published_at": "2025-02",
+      "date_precision": "month",
+      "first_seen_at": "2026-08-29",
+      "source_updated_at": "2026-10-01",
+      "paper_url": "https://arxiv.org/abs/2502.05151",
+      "arxiv_id": "2502.05151",
+      "doi": "",
+      "group": "Cross-disciplinary Applications",
+      "category": "Science & Discovery",
+      "categories": [
+        "Science & Discovery"
+      ],
+      "subcategories": [
+        "General AI4Science"
+      ],
+      "source_repos": [
+        "ai4s-research/awesome-ai-for-science"
+      ],
+      "source_urls": [
+        "https://github.com/ai4s-research/awesome-ai-for-science"
+      ],
+      "metadata_sources": [
+        "source README",
+        "arXiv identifier"
+      ]
+    },
+    {
       "id": "7767092d696df261",
       "title": "olmOCR: Unlocking Trillions of Tokens in PDFs with VLMs",
       "venue": "arXiv",
@@ -424403,36 +424489,6 @@
       "source_urls": [
         "https://github.com/AgenticHealthAI/Awesome-AI-Agents-for-Healthcare",
         "https://github.com/Nanboy-Ronan/awesome-medical-imaging-agents"
-      ],
-      "metadata_sources": [
-        "source README",
-        "arXiv identifier"
-      ]
-    },
-    {
-      "id": "e8e56b1c8d28423d",
-      "title": "A Survey on AI-assisted Scientific Discovery",
-      "venue": "arXiv",
-      "published_at": "2025-02",
-      "date_precision": "month",
-      "first_seen_at": "2026-08-29",
-      "source_updated_at": "2026-09-30",
-      "paper_url": "https://arxiv.org/abs/2502.05151",
-      "arxiv_id": "2502.05151",
-      "doi": "",
-      "group": "Cross-disciplinary Applications",
-      "category": "Science & Discovery",
-      "categories": [
-        "Science & Discovery"
-      ],
-      "subcategories": [
-        "General AI4Science"
-      ],
-      "source_repos": [
-        "ai4s-research/awesome-ai-for-science"
-      ],
-      "source_urls": [
-        "https://github.com/ai4s-research/awesome-ai-for-science"
       ],
       "metadata_sources": [
         "source README",
@@ -425067,40 +425123,6 @@
       ]
     },
     {
-      "id": "c54174accf6ba816",
-      "title": "VideoGrain: Modulating Space-Time Attention for Multi-grained Video Editing",
-      "venue": "ICLR 2025",
-      "published_at": "2025-02",
-      "date_precision": "month",
-      "first_seen_at": "2026-08-31",
-      "source_updated_at": "2026-09-24",
-      "paper_url": "https://arxiv.org/abs/2502.17258",
-      "arxiv_id": "2502.17258",
-      "doi": "",
-      "group": "Core Technology",
-      "category": "Image Generation",
-      "categories": [
-        "Image Generation",
-        "Video"
-      ],
-      "subcategories": [
-        "Diffusion / T2I / Editing",
-        "Video Generation"
-      ],
-      "source_repos": [
-        "wangkai930418/awesome-diffusion-categorized",
-        "AlonzoLeeeooo/awesome-video-generation"
-      ],
-      "source_urls": [
-        "https://github.com/wangkai930418/awesome-diffusion-categorized",
-        "https://github.com/AlonzoLeeeooo/awesome-video-generation"
-      ],
-      "metadata_sources": [
-        "source README",
-        "arXiv identifier"
-      ]
-    },
-    {
       "id": "3ecbbd55b24c5111",
       "title": "UniTok: A Unified Tokenizer for Visual Generation and Understanding",
       "venue": "arXiv",
@@ -425363,40 +425385,6 @@
       ]
     },
     {
-      "id": "629f6c872dc13016",
-      "title": "HumanDiT: Pose-Guided Diffusion Transformer for Long-form Human Motion Video Generation",
-      "venue": "arXiv",
-      "published_at": "2025-02",
-      "date_precision": "month",
-      "first_seen_at": "2026-08-31",
-      "source_updated_at": "2026-09-24",
-      "paper_url": "https://arxiv.org/abs/2502.04847",
-      "arxiv_id": "2502.04847",
-      "doi": "",
-      "group": "Core Technology",
-      "category": "Image Generation",
-      "categories": [
-        "Image Generation",
-        "Video"
-      ],
-      "subcategories": [
-        "Diffusion / T2I / Editing",
-        "Video Generation"
-      ],
-      "source_repos": [
-        "wangkai930418/awesome-diffusion-categorized",
-        "AlonzoLeeeooo/awesome-video-generation"
-      ],
-      "source_urls": [
-        "https://github.com/wangkai930418/awesome-diffusion-categorized",
-        "https://github.com/AlonzoLeeeooo/awesome-video-generation"
-      ],
-      "metadata_sources": [
-        "source README",
-        "arXiv identifier"
-      ]
-    },
-    {
       "id": "5bb77bb7e96e9a01",
       "title": "Generative Psycho-Lexical Approach for Constructing Value Systems in Large Language Models",
       "venue": "arXiv",
@@ -425486,40 +425474,6 @@
       "source_urls": [
         "https://github.com/ValueByte-AI/Awesome-LLM-in-Social-Science",
         "https://github.com/ValueByte-AI/Awesome-LLM-Psychometrics"
-      ],
-      "metadata_sources": [
-        "source README",
-        "arXiv identifier"
-      ]
-    },
-    {
-      "id": "7a5edf5b1072f69f",
-      "title": "Animate Anyone 2: High-Fidelity Character Image Animation with Environment Affordance",
-      "venue": "arXiv",
-      "published_at": "2025-02",
-      "date_precision": "month",
-      "first_seen_at": "2026-08-31",
-      "source_updated_at": "2026-09-24",
-      "paper_url": "https://arxiv.org/abs/2502.06145",
-      "arxiv_id": "2502.06145",
-      "doi": "",
-      "group": "Core Technology",
-      "category": "Image Generation",
-      "categories": [
-        "Image Generation",
-        "Video"
-      ],
-      "subcategories": [
-        "Diffusion / T2I / Editing",
-        "Video Generation"
-      ],
-      "source_repos": [
-        "wangkai930418/awesome-diffusion-categorized",
-        "AlonzoLeeeooo/awesome-video-generation"
-      ],
-      "source_urls": [
-        "https://github.com/wangkai930418/awesome-diffusion-categorized",
-        "https://github.com/AlonzoLeeeooo/awesome-video-generation"
       ],
       "metadata_sources": [
         "source README",
@@ -437891,7 +437845,7 @@
       "published_at": "2025-01-24",
       "date_precision": "day",
       "first_seen_at": "2026-08-31",
-      "source_updated_at": "2026-09-24",
+      "source_updated_at": "2026-10-02",
       "paper_url": "https://arxiv.org/abs/2501.14677",
       "arxiv_id": "2501.14677",
       "doi": "",
@@ -438701,6 +438655,225 @@
       ]
     },
     {
+      "id": "9b1cf3110e7b6ab2",
+      "title": "X-Dyna: Expressive Dynamic Human Image Animation",
+      "venue": "CVPR 2025",
+      "published_at": "2025-01",
+      "date_precision": "month",
+      "first_seen_at": "2026-08-31",
+      "source_updated_at": "2026-10-02",
+      "paper_url": "https://arxiv.org/abs/2501.10021",
+      "arxiv_id": "2501.10021",
+      "doi": "",
+      "group": "Core Technology",
+      "category": "Image Generation",
+      "categories": [
+        "Image Generation",
+        "Video",
+        "Vision"
+      ],
+      "subcategories": [
+        "Diffusion / T2I / Editing",
+        "Video Generation",
+        "CVPR 2025 Proceedings"
+      ],
+      "source_repos": [
+        "wangkai930418/awesome-diffusion-categorized",
+        "AlonzoLeeeooo/awesome-video-generation",
+        "52CV/CVPR-2025-Papers"
+      ],
+      "source_urls": [
+        "https://github.com/wangkai930418/awesome-diffusion-categorized",
+        "https://github.com/AlonzoLeeeooo/awesome-video-generation",
+        "https://github.com/52CV/CVPR-2025-Papers"
+      ],
+      "metadata_sources": [
+        "source README",
+        "arXiv identifier"
+      ]
+    },
+    {
+      "id": "bc67ecd35c925c82",
+      "title": "VideoAnydoor: High-fidelity Video Object Insertion with Precise Motion Control",
+      "venue": "arXiv",
+      "published_at": "2025-01",
+      "date_precision": "month",
+      "first_seen_at": "2026-08-31",
+      "source_updated_at": "2026-10-02",
+      "paper_url": "https://arxiv.org/abs/2501.01427",
+      "arxiv_id": "2501.01427",
+      "doi": "",
+      "group": "Core Technology",
+      "category": "Image Generation",
+      "categories": [
+        "Image Generation",
+        "Video"
+      ],
+      "subcategories": [
+        "Diffusion / T2I / Editing",
+        "Video Generation"
+      ],
+      "source_repos": [
+        "wangkai930418/awesome-diffusion-categorized",
+        "AlonzoLeeeooo/awesome-video-generation"
+      ],
+      "source_urls": [
+        "https://github.com/wangkai930418/awesome-diffusion-categorized",
+        "https://github.com/AlonzoLeeeooo/awesome-video-generation"
+      ],
+      "metadata_sources": [
+        "source README",
+        "arXiv identifier"
+      ]
+    },
+    {
+      "id": "aa9d59a2c9287ba9",
+      "title": "TransPixar: Advancing Text-to-Video Generation with Transparency",
+      "venue": "CVPR 2025",
+      "published_at": "2025-01",
+      "date_precision": "month",
+      "first_seen_at": "2026-08-31",
+      "source_updated_at": "2026-10-02",
+      "paper_url": "https://arxiv.org/abs/2501.03006",
+      "arxiv_id": "2501.03006",
+      "doi": "",
+      "group": "Core Technology",
+      "category": "Image Generation",
+      "categories": [
+        "Image Generation",
+        "Video"
+      ],
+      "subcategories": [
+        "Diffusion / T2I / Editing",
+        "Video Generation",
+        "Post-training & Alignment"
+      ],
+      "source_repos": [
+        "wangkai930418/awesome-diffusion-categorized",
+        "AlonzoLeeeooo/awesome-video-generation",
+        "people-robots/Awesome-Video-Generation-Post-Training"
+      ],
+      "source_urls": [
+        "https://github.com/wangkai930418/awesome-diffusion-categorized",
+        "https://github.com/AlonzoLeeeooo/awesome-video-generation",
+        "https://github.com/people-robots/Awesome-Video-Generation-Post-Training"
+      ],
+      "metadata_sources": [
+        "source README",
+        "arXiv identifier"
+      ]
+    },
+    {
+      "id": "bf5dd5540237b7ab",
+      "title": "Through-The-Mask: Mask-based Motion Trajectories for Image-to-Video Generation",
+      "venue": "CVPR 2025",
+      "published_at": "2025-01",
+      "date_precision": "month",
+      "first_seen_at": "2026-08-31",
+      "source_updated_at": "2026-10-02",
+      "paper_url": "https://arxiv.org/abs/2501.03059",
+      "arxiv_id": "2501.03059",
+      "doi": "",
+      "group": "Core Technology",
+      "category": "Image Generation",
+      "categories": [
+        "Image Generation",
+        "Video",
+        "Vision"
+      ],
+      "subcategories": [
+        "Diffusion / T2I / Editing",
+        "Video Generation",
+        "CVPR 2025 Proceedings"
+      ],
+      "source_repos": [
+        "wangkai930418/awesome-diffusion-categorized",
+        "AlonzoLeeeooo/awesome-video-generation",
+        "52CV/CVPR-2025-Papers"
+      ],
+      "source_urls": [
+        "https://github.com/wangkai930418/awesome-diffusion-categorized",
+        "https://github.com/AlonzoLeeeooo/awesome-video-generation",
+        "https://github.com/52CV/CVPR-2025-Papers"
+      ],
+      "metadata_sources": [
+        "source README",
+        "arXiv identifier"
+      ]
+    },
+    {
+      "id": "5a436d75818c1343",
+      "title": "ConceptMaster: Multi-Concept Video Customization on Diffusion Transformer Models Without Test-Time Tuning",
+      "venue": "arXiv",
+      "published_at": "2025-01",
+      "date_precision": "month",
+      "first_seen_at": "2026-08-31",
+      "source_updated_at": "2026-10-02",
+      "paper_url": "https://arxiv.org/abs/2501.04698",
+      "arxiv_id": "2501.04698",
+      "doi": "",
+      "group": "Core Technology",
+      "category": "Image Generation",
+      "categories": [
+        "Image Generation",
+        "Video"
+      ],
+      "subcategories": [
+        "Diffusion / T2I / Editing",
+        "Video Generation"
+      ],
+      "source_repos": [
+        "wangkai930418/awesome-diffusion-categorized",
+        "AlonzoLeeeooo/awesome-video-generation"
+      ],
+      "source_urls": [
+        "https://github.com/wangkai930418/awesome-diffusion-categorized",
+        "https://github.com/AlonzoLeeeooo/awesome-video-generation"
+      ],
+      "metadata_sources": [
+        "source README",
+        "arXiv identifier"
+      ]
+    },
+    {
+      "id": "df18355ce4f1bdb3",
+      "title": "BlobGEN-Vid: Compositional Text-to-Video Generation with Blob Video Representations",
+      "venue": "CVPR 2025",
+      "published_at": "2025-01",
+      "date_precision": "month",
+      "first_seen_at": "2026-08-31",
+      "source_updated_at": "2026-10-02",
+      "paper_url": "https://arxiv.org/abs/2501.07647",
+      "arxiv_id": "2501.07647",
+      "doi": "",
+      "group": "Core Technology",
+      "category": "Image Generation",
+      "categories": [
+        "Image Generation",
+        "Video",
+        "Vision"
+      ],
+      "subcategories": [
+        "Diffusion / T2I / Editing",
+        "Video Generation",
+        "CVPR 2025 Proceedings"
+      ],
+      "source_repos": [
+        "wangkai930418/awesome-diffusion-categorized",
+        "AlonzoLeeeooo/awesome-video-generation",
+        "52CV/CVPR-2025-Papers"
+      ],
+      "source_urls": [
+        "https://github.com/wangkai930418/awesome-diffusion-categorized",
+        "https://github.com/AlonzoLeeeooo/awesome-video-generation",
+        "https://github.com/52CV/CVPR-2025-Papers"
+      ],
+      "metadata_sources": [
+        "source README",
+        "arXiv identifier"
+      ]
+    },
+    {
       "id": "48c925583b128470",
       "title": "VideoAuteur: Towards Long Narrative Video Generation",
       "venue": "arXiv",
@@ -438765,43 +438938,6 @@
         "https://github.com/OpenEnvision/Awesome-Multimodal-Modeling",
         "https://github.com/BradyFU/Awesome-Multimodal-Large-Language-Models",
         "https://github.com/metame-ai/awesome-audio-plaza"
-      ],
-      "metadata_sources": [
-        "source README",
-        "arXiv identifier"
-      ]
-    },
-    {
-      "id": "aa9d59a2c9287ba9",
-      "title": "TransPixar: Advancing Text-to-Video Generation with Transparency",
-      "venue": "CVPR 2025",
-      "published_at": "2025-01",
-      "date_precision": "month",
-      "first_seen_at": "2026-08-31",
-      "source_updated_at": "2026-10-01",
-      "paper_url": "https://arxiv.org/abs/2501.03006",
-      "arxiv_id": "2501.03006",
-      "doi": "",
-      "group": "Core Technology",
-      "category": "Image Generation",
-      "categories": [
-        "Image Generation",
-        "Video"
-      ],
-      "subcategories": [
-        "Diffusion / T2I / Editing",
-        "Video Generation",
-        "Post-training & Alignment"
-      ],
-      "source_repos": [
-        "wangkai930418/awesome-diffusion-categorized",
-        "AlonzoLeeeooo/awesome-video-generation",
-        "people-robots/Awesome-Video-Generation-Post-Training"
-      ],
-      "source_urls": [
-        "https://github.com/wangkai930418/awesome-diffusion-categorized",
-        "https://github.com/AlonzoLeeeooo/awesome-video-generation",
-        "https://github.com/people-robots/Awesome-Video-Generation-Post-Training"
       ],
       "metadata_sources": [
         "source README",
@@ -439726,44 +439862,6 @@
       ]
     },
     {
-      "id": "9b1cf3110e7b6ab2",
-      "title": "X-Dyna: Expressive Dynamic Human Image Animation",
-      "venue": "CVPR 2025",
-      "published_at": "2025-01",
-      "date_precision": "month",
-      "first_seen_at": "2026-08-31",
-      "source_updated_at": "2026-09-24",
-      "paper_url": "https://arxiv.org/abs/2501.10021",
-      "arxiv_id": "2501.10021",
-      "doi": "",
-      "group": "Core Technology",
-      "category": "Image Generation",
-      "categories": [
-        "Image Generation",
-        "Video",
-        "Vision"
-      ],
-      "subcategories": [
-        "Diffusion / T2I / Editing",
-        "Video Generation",
-        "CVPR 2025 Proceedings"
-      ],
-      "source_repos": [
-        "wangkai930418/awesome-diffusion-categorized",
-        "AlonzoLeeeooo/awesome-video-generation",
-        "52CV/CVPR-2025-Papers"
-      ],
-      "source_urls": [
-        "https://github.com/wangkai930418/awesome-diffusion-categorized",
-        "https://github.com/AlonzoLeeeooo/awesome-video-generation",
-        "https://github.com/52CV/CVPR-2025-Papers"
-      ],
-      "metadata_sources": [
-        "source README",
-        "arXiv identifier"
-      ]
-    },
-    {
       "id": "59d9a57b5313f5f0",
       "title": "Visual cognition in multimodal large language models",
       "venue": "www",
@@ -439793,40 +439891,6 @@
       ],
       "metadata_sources": [
         "source README"
-      ]
-    },
-    {
-      "id": "bc67ecd35c925c82",
-      "title": "VideoAnydoor: High-fidelity Video Object Insertion with Precise Motion Control",
-      "venue": "arXiv",
-      "published_at": "2025-01",
-      "date_precision": "month",
-      "first_seen_at": "2026-08-31",
-      "source_updated_at": "2026-09-24",
-      "paper_url": "https://arxiv.org/abs/2501.01427",
-      "arxiv_id": "2501.01427",
-      "doi": "",
-      "group": "Core Technology",
-      "category": "Image Generation",
-      "categories": [
-        "Image Generation",
-        "Video"
-      ],
-      "subcategories": [
-        "Diffusion / T2I / Editing",
-        "Video Generation"
-      ],
-      "source_repos": [
-        "wangkai930418/awesome-diffusion-categorized",
-        "AlonzoLeeeooo/awesome-video-generation"
-      ],
-      "source_urls": [
-        "https://github.com/wangkai930418/awesome-diffusion-categorized",
-        "https://github.com/AlonzoLeeeooo/awesome-video-generation"
-      ],
-      "metadata_sources": [
-        "source README",
-        "arXiv identifier"
       ]
     },
     {
@@ -439893,44 +439957,6 @@
         "https://github.com/OpenEnvision/Awesome-Multimodal-Modeling",
         "https://github.com/AIDC-AI/Awesome-Unified-Multimodal-Models",
         "https://github.com/Purshow/Awesome-Unified-Multimodal"
-      ],
-      "metadata_sources": [
-        "source README",
-        "arXiv identifier"
-      ]
-    },
-    {
-      "id": "bf5dd5540237b7ab",
-      "title": "Through-The-Mask: Mask-based Motion Trajectories for Image-to-Video Generation",
-      "venue": "CVPR 2025",
-      "published_at": "2025-01",
-      "date_precision": "month",
-      "first_seen_at": "2026-08-31",
-      "source_updated_at": "2026-09-24",
-      "paper_url": "https://arxiv.org/abs/2501.03059",
-      "arxiv_id": "2501.03059",
-      "doi": "",
-      "group": "Core Technology",
-      "category": "Image Generation",
-      "categories": [
-        "Image Generation",
-        "Video",
-        "Vision"
-      ],
-      "subcategories": [
-        "Diffusion / T2I / Editing",
-        "Video Generation",
-        "CVPR 2025 Proceedings"
-      ],
-      "source_repos": [
-        "wangkai930418/awesome-diffusion-categorized",
-        "AlonzoLeeeooo/awesome-video-generation",
-        "52CV/CVPR-2025-Papers"
-      ],
-      "source_urls": [
-        "https://github.com/wangkai930418/awesome-diffusion-categorized",
-        "https://github.com/AlonzoLeeeooo/awesome-video-generation",
-        "https://github.com/52CV/CVPR-2025-Papers"
       ],
       "metadata_sources": [
         "source README",
@@ -440235,78 +440261,6 @@
         "https://github.com/AIDC-AI/Awesome-Unified-Multimodal-Models",
         "https://github.com/showlab/Awesome-Unified-Multimodal-Models",
         "https://github.com/Purshow/Awesome-Unified-Multimodal",
-        "https://github.com/52CV/CVPR-2025-Papers"
-      ],
-      "metadata_sources": [
-        "source README",
-        "arXiv identifier"
-      ]
-    },
-    {
-      "id": "5a436d75818c1343",
-      "title": "ConceptMaster: Multi-Concept Video Customization on Diffusion Transformer Models Without Test-Time Tuning",
-      "venue": "arXiv",
-      "published_at": "2025-01",
-      "date_precision": "month",
-      "first_seen_at": "2026-08-31",
-      "source_updated_at": "2026-09-24",
-      "paper_url": "https://arxiv.org/abs/2501.04698",
-      "arxiv_id": "2501.04698",
-      "doi": "",
-      "group": "Core Technology",
-      "category": "Image Generation",
-      "categories": [
-        "Image Generation",
-        "Video"
-      ],
-      "subcategories": [
-        "Diffusion / T2I / Editing",
-        "Video Generation"
-      ],
-      "source_repos": [
-        "wangkai930418/awesome-diffusion-categorized",
-        "AlonzoLeeeooo/awesome-video-generation"
-      ],
-      "source_urls": [
-        "https://github.com/wangkai930418/awesome-diffusion-categorized",
-        "https://github.com/AlonzoLeeeooo/awesome-video-generation"
-      ],
-      "metadata_sources": [
-        "source README",
-        "arXiv identifier"
-      ]
-    },
-    {
-      "id": "df18355ce4f1bdb3",
-      "title": "BlobGEN-Vid: Compositional Text-to-Video Generation with Blob Video Representations",
-      "venue": "CVPR 2025",
-      "published_at": "2025-01",
-      "date_precision": "month",
-      "first_seen_at": "2026-08-31",
-      "source_updated_at": "2026-09-24",
-      "paper_url": "https://arxiv.org/abs/2501.07647",
-      "arxiv_id": "2501.07647",
-      "doi": "",
-      "group": "Core Technology",
-      "category": "Image Generation",
-      "categories": [
-        "Image Generation",
-        "Video",
-        "Vision"
-      ],
-      "subcategories": [
-        "Diffusion / T2I / Editing",
-        "Video Generation",
-        "CVPR 2025 Proceedings"
-      ],
-      "source_repos": [
-        "wangkai930418/awesome-diffusion-categorized",
-        "AlonzoLeeeooo/awesome-video-generation",
-        "52CV/CVPR-2025-Papers"
-      ],
-      "source_urls": [
-        "https://github.com/wangkai930418/awesome-diffusion-categorized",
-        "https://github.com/AlonzoLeeeooo/awesome-video-generation",
         "https://github.com/52CV/CVPR-2025-Papers"
       ],
       "metadata_sources": [
@@ -446977,6 +446931,35 @@
       ]
     },
     {
+      "id": "c83ee2b9cdff4e7e",
+      "title": "Foundation Models for Materials Discovery",
+      "venue": "www",
+      "published_at": "2025",
+      "date_precision": "year",
+      "first_seen_at": "2026-08-29",
+      "source_updated_at": "2026-10-01",
+      "paper_url": "https://www.nature.com/articles/s41524-025-01538-0",
+      "arxiv_id": "",
+      "doi": "",
+      "group": "Cross-disciplinary Applications",
+      "category": "Science & Discovery",
+      "categories": [
+        "Science & Discovery"
+      ],
+      "subcategories": [
+        "General AI4Science"
+      ],
+      "source_repos": [
+        "ai4s-research/awesome-ai-for-science"
+      ],
+      "source_urls": [
+        "https://github.com/ai4s-research/awesome-ai-for-science"
+      ],
+      "metadata_sources": [
+        "source README"
+      ]
+    },
+    {
       "id": "e88e11db773db386",
       "title": "DDGIP: Radiology Report Generation Through Disease Description Graph and Informed Prompting",
       "venue": "acl",
@@ -447122,6 +447105,35 @@
       ]
     },
     {
+      "id": "9f159416d5e933c3",
+      "title": "Architectures, variants, and performance of neural operators: A comparative review",
+      "venue": "www",
+      "published_at": "2025",
+      "date_precision": "year",
+      "first_seen_at": "2026-08-29",
+      "source_updated_at": "2026-10-01",
+      "paper_url": "https://www.sciencedirect.com/science/article/abs/pii/S0925231225011907",
+      "arxiv_id": "",
+      "doi": "",
+      "group": "Cross-disciplinary Applications",
+      "category": "Science & Discovery",
+      "categories": [
+        "Science & Discovery"
+      ],
+      "subcategories": [
+        "General AI4Science"
+      ],
+      "source_repos": [
+        "ai4s-research/awesome-ai-for-science"
+      ],
+      "source_urls": [
+        "https://github.com/ai4s-research/awesome-ai-for-science"
+      ],
+      "metadata_sources": [
+        "source README"
+      ]
+    },
+    {
       "id": "93cfca8908003cb7",
       "title": "ARDGen: Augmentation Regularization for Domain-Generalized Medical Report Generation (Workshop)",
       "venue": "CVPR",
@@ -447145,6 +447157,35 @@
       ],
       "source_urls": [
         "https://github.com/mk-runner/Awesome-Radiology-Report-Generation"
+      ],
+      "metadata_sources": [
+        "source README"
+      ]
+    },
+    {
+      "id": "d076f2776357463c",
+      "title": "AI for Science 2025",
+      "venue": "www",
+      "published_at": "2025",
+      "date_precision": "year",
+      "first_seen_at": "2026-08-29",
+      "source_updated_at": "2026-10-01",
+      "paper_url": "https://www.nature.com/articles/d42473-025-00161-3",
+      "arxiv_id": "",
+      "doi": "",
+      "group": "Cross-disciplinary Applications",
+      "category": "Science & Discovery",
+      "categories": [
+        "Science & Discovery"
+      ],
+      "subcategories": [
+        "General AI4Science"
+      ],
+      "source_repos": [
+        "ai4s-research/awesome-ai-for-science"
+      ],
+      "source_urls": [
+        "https://github.com/ai4s-research/awesome-ai-for-science"
       ],
       "metadata_sources": [
         "source README"
@@ -447652,35 +447693,6 @@
       ]
     },
     {
-      "id": "c83ee2b9cdff4e7e",
-      "title": "Foundation Models for Materials Discovery",
-      "venue": "www",
-      "published_at": "2025",
-      "date_precision": "year",
-      "first_seen_at": "2026-08-29",
-      "source_updated_at": "2026-09-30",
-      "paper_url": "https://www.nature.com/articles/s41524-025-01538-0",
-      "arxiv_id": "",
-      "doi": "",
-      "group": "Cross-disciplinary Applications",
-      "category": "Science & Discovery",
-      "categories": [
-        "Science & Discovery"
-      ],
-      "subcategories": [
-        "General AI4Science"
-      ],
-      "source_repos": [
-        "ai4s-research/awesome-ai-for-science"
-      ],
-      "source_urls": [
-        "https://github.com/ai4s-research/awesome-ai-for-science"
-      ],
-      "metadata_sources": [
-        "source README"
-      ]
-    },
-    {
       "id": "355f6a606da1ecfc",
       "title": "Efficient Additive Attention DLA",
       "venue": "ICCV",
@@ -447791,64 +447803,6 @@
       ],
       "source_urls": [
         "https://github.com/Yuliang-Liu/AWESOME-OCR-LLM"
-      ],
-      "metadata_sources": [
-        "source README"
-      ]
-    },
-    {
-      "id": "9f159416d5e933c3",
-      "title": "Architectures, variants, and performance of neural operators: A comparative review",
-      "venue": "www",
-      "published_at": "2025",
-      "date_precision": "year",
-      "first_seen_at": "2026-08-29",
-      "source_updated_at": "2026-09-30",
-      "paper_url": "https://www.sciencedirect.com/science/article/abs/pii/S0925231225011907",
-      "arxiv_id": "",
-      "doi": "",
-      "group": "Cross-disciplinary Applications",
-      "category": "Science & Discovery",
-      "categories": [
-        "Science & Discovery"
-      ],
-      "subcategories": [
-        "General AI4Science"
-      ],
-      "source_repos": [
-        "ai4s-research/awesome-ai-for-science"
-      ],
-      "source_urls": [
-        "https://github.com/ai4s-research/awesome-ai-for-science"
-      ],
-      "metadata_sources": [
-        "source README"
-      ]
-    },
-    {
-      "id": "d076f2776357463c",
-      "title": "AI for Science 2025",
-      "venue": "www",
-      "published_at": "2025",
-      "date_precision": "year",
-      "first_seen_at": "2026-08-29",
-      "source_updated_at": "2026-09-30",
-      "paper_url": "https://www.nature.com/articles/d42473-025-00161-3",
-      "arxiv_id": "",
-      "doi": "",
-      "group": "Cross-disciplinary Applications",
-      "category": "Science & Discovery",
-      "categories": [
-        "Science & Discovery"
-      ],
-      "subcategories": [
-        "General AI4Science"
-      ],
-      "source_repos": [
-        "ai4s-research/awesome-ai-for-science"
-      ],
-      "source_urls": [
-        "https://github.com/ai4s-research/awesome-ai-for-science"
       ],
       "metadata_sources": [
         "source README"
@@ -455683,6 +455637,35 @@
       ]
     },
     {
+      "id": "c0212d459a30e46a",
+      "title": "VELOCITI: Benchmarking Video-Language Compositional Reasoning with Strict Entailment",
+      "venue": "CVPR",
+      "published_at": "2025",
+      "date_precision": "year",
+      "first_seen_at": "2026-10-02",
+      "source_updated_at": "2025-06-30",
+      "paper_url": "https://openaccess.thecvf.com/content/CVPR2025/html/Saravanan_VELOCITI_Benchmarking_Video-Language_Compositional_Reasoning_with_Strict_Entailment_CVPR_2025_paper.html",
+      "arxiv_id": "",
+      "doi": "",
+      "group": "Core Technology",
+      "category": "Vision",
+      "categories": [
+        "Vision"
+      ],
+      "subcategories": [
+        "CVPR 2025 Proceedings"
+      ],
+      "source_repos": [
+        "52CV/CVPR-2025-Papers"
+      ],
+      "source_urls": [
+        "https://github.com/52CV/CVPR-2025-Papers"
+      ],
+      "metadata_sources": [
+        "source README"
+      ]
+    },
+    {
       "id": "8582b611115d8cdb",
       "title": "VDocRAG: Retrieval-Augmented Generation over Visually-Rich Documents",
       "venue": "CVPR",
@@ -460439,6 +460422,35 @@
       ]
     },
     {
+      "id": "843737f252e9b89e",
+      "title": "T2V-CompBench: A Comprehensive Benchmark for Compositional Text-to-video Generation",
+      "venue": "CVPR",
+      "published_at": "2025",
+      "date_precision": "year",
+      "first_seen_at": "2026-10-02",
+      "source_updated_at": "2025-06-30",
+      "paper_url": "https://openaccess.thecvf.com/content/CVPR2025/html/Sun_T2V-CompBench_A_Comprehensive_Benchmark_for_Compositional_Text-to-video_Generation_CVPR_2025_paper.html",
+      "arxiv_id": "",
+      "doi": "",
+      "group": "Core Technology",
+      "category": "Vision",
+      "categories": [
+        "Vision"
+      ],
+      "subcategories": [
+        "CVPR 2025 Proceedings"
+      ],
+      "source_repos": [
+        "52CV/CVPR-2025-Papers"
+      ],
+      "source_urls": [
+        "https://github.com/52CV/CVPR-2025-Papers"
+      ],
+      "metadata_sources": [
+        "source README"
+      ]
+    },
+    {
       "id": "f862f0e07a4c49db",
       "title": "T2SG: Traffic Topology Scene Graph for Topology Reasoning in Autonomous Driving",
       "venue": "CVPR",
@@ -460990,6 +461002,35 @@
       ]
     },
     {
+      "id": "cb7746c38a98c12f",
+      "title": "StyleMaster: Stylize Your Video with Artistic Generation and Translation",
+      "venue": "CVPR",
+      "published_at": "2025",
+      "date_precision": "year",
+      "first_seen_at": "2026-10-02",
+      "source_updated_at": "2025-06-30",
+      "paper_url": "https://openaccess.thecvf.com/content/CVPR2025/html/Ye_StyleMaster_Stylize_Your_Video_with_Artistic_Generation_and_Translation_CVPR_2025_paper.html",
+      "arxiv_id": "",
+      "doi": "",
+      "group": "Core Technology",
+      "category": "Vision",
+      "categories": [
+        "Vision"
+      ],
+      "subcategories": [
+        "CVPR 2025 Proceedings"
+      ],
+      "source_repos": [
+        "52CV/CVPR-2025-Papers"
+      ],
+      "source_urls": [
+        "https://github.com/52CV/CVPR-2025-Papers"
+      ],
+      "metadata_sources": [
+        "source README"
+      ]
+    },
+    {
       "id": "b5cf0dd91d8b0794",
       "title": "Style-Editor: Text-driven Object-centric Style Editing",
       "venue": "CVPR",
@@ -461056,6 +461097,35 @@
       "first_seen_at": "2026-08-31",
       "source_updated_at": "2025-06-30",
       "paper_url": "https://openaccess.thecvf.com/content/CVPR2025/html/Zhang_Style_Evolving_along_Chain-of-Thought_for_Unknown-Domain_Object_Detection_CVPR_2025_paper.html",
+      "arxiv_id": "",
+      "doi": "",
+      "group": "Core Technology",
+      "category": "Vision",
+      "categories": [
+        "Vision"
+      ],
+      "subcategories": [
+        "CVPR 2025 Proceedings"
+      ],
+      "source_repos": [
+        "52CV/CVPR-2025-Papers"
+      ],
+      "source_urls": [
+        "https://github.com/52CV/CVPR-2025-Papers"
+      ],
+      "metadata_sources": [
+        "source README"
+      ]
+    },
+    {
+      "id": "193d04fe2546a2d8",
+      "title": "Structured 3D Latents for Scalable and Versatile 3D Generation",
+      "venue": "CVPR",
+      "published_at": "2025",
+      "date_precision": "year",
+      "first_seen_at": "2026-10-02",
+      "source_updated_at": "2025-06-30",
+      "paper_url": "https://openaccess.thecvf.com/content/CVPR2025/html/Xiang_Structured_3D_Latents_for_Scalable_and_Versatile_3D_Generation_CVPR_2025_paper.html",
       "arxiv_id": "",
       "doi": "",
       "group": "Core Technology",
@@ -465783,6 +465853,35 @@
       "first_seen_at": "2026-08-31",
       "source_updated_at": "2025-06-30",
       "paper_url": "https://openaccess.thecvf.com/content/CVPR2025/html/Jin_SFDM_Robust_Decomposition_of_Geometry_and_Reflectance_for_Realistic_Face_CVPR_2025_paper.html",
+      "arxiv_id": "",
+      "doi": "",
+      "group": "Core Technology",
+      "category": "Vision",
+      "categories": [
+        "Vision"
+      ],
+      "subcategories": [
+        "CVPR 2025 Proceedings"
+      ],
+      "source_repos": [
+        "52CV/CVPR-2025-Papers"
+      ],
+      "source_urls": [
+        "https://github.com/52CV/CVPR-2025-Papers"
+      ],
+      "metadata_sources": [
+        "source README"
+      ]
+    },
+    {
+      "id": "0050843e51a78285",
+      "title": "SF3D: Stable Fast 3D Mesh Reconstruction with UV-unwrapping and Illumination Disentanglement",
+      "venue": "CVPR",
+      "published_at": "2025",
+      "date_precision": "year",
+      "first_seen_at": "2026-10-02",
+      "source_updated_at": "2025-06-30",
+      "paper_url": "https://openaccess.thecvf.com/content/CVPR2025/html/Boss_SF3D_Stable_Fast_3D_Mesh_Reconstruction_with_UV-unwrapping_and_Illumination_CVPR_2025_paper.html",
       "arxiv_id": "",
       "doi": "",
       "group": "Core Technology",
@@ -473025,6 +473124,64 @@
       ]
     },
     {
+      "id": "34069106f4b8c20b",
+      "title": "OpenING: A Comprehensive Benchmark for Judging Open-ended Interleaved Image-Text Generation",
+      "venue": "CVPR",
+      "published_at": "2025",
+      "date_precision": "year",
+      "first_seen_at": "2026-10-02",
+      "source_updated_at": "2025-06-30",
+      "paper_url": "https://openaccess.thecvf.com/content/CVPR2025/html/Zhou_OpenING_A_Comprehensive_Benchmark_for_Judging_Open-ended_Interleaved_Image-Text_Generation_CVPR_2025_paper.html",
+      "arxiv_id": "",
+      "doi": "",
+      "group": "Core Technology",
+      "category": "Vision",
+      "categories": [
+        "Vision"
+      ],
+      "subcategories": [
+        "CVPR 2025 Proceedings"
+      ],
+      "source_repos": [
+        "52CV/CVPR-2025-Papers"
+      ],
+      "source_urls": [
+        "https://github.com/52CV/CVPR-2025-Papers"
+      ],
+      "metadata_sources": [
+        "source README"
+      ]
+    },
+    {
+      "id": "fb4f5d6d78773a83",
+      "title": "OpenHumanVid: A Large-Scale High-Quality Dataset for Enhancing Human-Centric Video Generation",
+      "venue": "CVPR",
+      "published_at": "2025",
+      "date_precision": "year",
+      "first_seen_at": "2026-10-02",
+      "source_updated_at": "2025-06-30",
+      "paper_url": "https://openaccess.thecvf.com/content/CVPR2025/html/Li_OpenHumanVid_A_Large-Scale_High-Quality_Dataset_for_Enhancing_Human-Centric_Video_Generation_CVPR_2025_paper.html",
+      "arxiv_id": "",
+      "doi": "",
+      "group": "Core Technology",
+      "category": "Vision",
+      "categories": [
+        "Vision"
+      ],
+      "subcategories": [
+        "CVPR 2025 Proceedings"
+      ],
+      "source_repos": [
+        "52CV/CVPR-2025-Papers"
+      ],
+      "source_urls": [
+        "https://github.com/52CV/CVPR-2025-Papers"
+      ],
+      "metadata_sources": [
+        "source README"
+      ]
+    },
+    {
       "id": "8899a3a126efc882",
       "title": "Open-World Objectness Modeling Unifies Novel Object Detection",
       "venue": "CVPR",
@@ -473178,6 +473335,35 @@
       "first_seen_at": "2026-08-31",
       "source_updated_at": "2025-06-30",
       "paper_url": "https://openaccess.thecvf.com/content/CVPR2025/html/Tang_OnlineAnySeg_Online_Zero-Shot_3D_Segmentation_by_Visual_Foundation_Model_Guided_CVPR_2025_paper.html",
+      "arxiv_id": "",
+      "doi": "",
+      "group": "Core Technology",
+      "category": "Vision",
+      "categories": [
+        "Vision"
+      ],
+      "subcategories": [
+        "CVPR 2025 Proceedings"
+      ],
+      "source_repos": [
+        "52CV/CVPR-2025-Papers"
+      ],
+      "source_urls": [
+        "https://github.com/52CV/CVPR-2025-Papers"
+      ],
+      "metadata_sources": [
+        "source README"
+      ]
+    },
+    {
+      "id": "02f21720c86ca985",
+      "title": "Online Video Understanding: OVBench and VideoChat-Online",
+      "venue": "CVPR",
+      "published_at": "2025",
+      "date_precision": "year",
+      "first_seen_at": "2026-10-02",
+      "source_updated_at": "2025-06-30",
+      "paper_url": "https://openaccess.thecvf.com/content/CVPR2025/html/Huang_Online_Video_Understanding_OVBench_and_VideoChat-Online_CVPR_2025_paper.html",
       "arxiv_id": "",
       "doi": "",
       "group": "Core Technology",
@@ -473613,6 +473799,35 @@
       "first_seen_at": "2026-08-31",
       "source_updated_at": "2025-06-30",
       "paper_url": "https://openaccess.thecvf.com/content/CVPR2025/html/Wang_OmniDrive_A_Holistic_Vision-Language_Dataset_for_Autonomous_Driving_with_Counterfactual_CVPR_2025_paper.html",
+      "arxiv_id": "",
+      "doi": "",
+      "group": "Core Technology",
+      "category": "Vision",
+      "categories": [
+        "Vision"
+      ],
+      "subcategories": [
+        "CVPR 2025 Proceedings"
+      ],
+      "source_repos": [
+        "52CV/CVPR-2025-Papers"
+      ],
+      "source_urls": [
+        "https://github.com/52CV/CVPR-2025-Papers"
+      ],
+      "metadata_sources": [
+        "source README"
+      ]
+    },
+    {
+      "id": "362b094dc340a5e8",
+      "title": "OmniDocBench: Benchmarking Diverse PDF Document Parsing with Comprehensive Annotations",
+      "venue": "CVPR",
+      "published_at": "2025",
+      "date_precision": "year",
+      "first_seen_at": "2026-10-02",
+      "source_updated_at": "2025-06-30",
+      "paper_url": "https://openaccess.thecvf.com/content/CVPR2025/html/Ouyang_OmniDocBench_Benchmarking_Diverse_PDF_Document_Parsing_with_Comprehensive_Annotations_CVPR_2025_paper.html",
       "arxiv_id": "",
       "doi": "",
       "group": "Core Technology",
@@ -478738,6 +478953,35 @@
       ]
     },
     {
+      "id": "90b6d33fa5c18d1b",
+      "title": "MIDI: Multi-Instance Diffusion for Single Image to 3D Scene Generation",
+      "venue": "CVPR",
+      "published_at": "2025",
+      "date_precision": "year",
+      "first_seen_at": "2026-10-02",
+      "source_updated_at": "2025-06-30",
+      "paper_url": "https://openaccess.thecvf.com/content/CVPR2025/html/Huang_MIDI_Multi-Instance_Diffusion_for_Single_Image_to_3D_Scene_Generation_CVPR_2025_paper.html",
+      "arxiv_id": "",
+      "doi": "",
+      "group": "Core Technology",
+      "category": "Vision",
+      "categories": [
+        "Vision"
+      ],
+      "subcategories": [
+        "CVPR 2025 Proceedings"
+      ],
+      "source_repos": [
+        "52CV/CVPR-2025-Papers"
+      ],
+      "source_urls": [
+        "https://github.com/52CV/CVPR-2025-Papers"
+      ],
+      "metadata_sources": [
+        "source README"
+      ]
+    },
+    {
       "id": "fee7b2e9db61d3d1",
       "title": "MICAS: Multi-grained In-Context Adaptive Sampling for 3D Point Cloud Processing",
       "venue": "CVPR",
@@ -480370,6 +480614,35 @@
       "first_seen_at": "2026-08-31",
       "source_updated_at": "2025-06-30",
       "paper_url": "https://openaccess.thecvf.com/content/CVPR2025/html/Zhou_LiDAR-RT_Gaussian-based_Ray_Tracing_for_Dynamic_LiDAR_Re-simulation_CVPR_2025_paper.html",
+      "arxiv_id": "",
+      "doi": "",
+      "group": "Core Technology",
+      "category": "Vision",
+      "categories": [
+        "Vision"
+      ],
+      "subcategories": [
+        "CVPR 2025 Proceedings"
+      ],
+      "source_repos": [
+        "52CV/CVPR-2025-Papers"
+      ],
+      "source_urls": [
+        "https://github.com/52CV/CVPR-2025-Papers"
+      ],
+      "metadata_sources": [
+        "source README"
+      ]
+    },
+    {
+      "id": "321d6e55de33a187",
+      "title": "LeviTor: 3D Trajectory Oriented Image-to-Video Synthesis",
+      "venue": "CVPR",
+      "published_at": "2025",
+      "date_precision": "year",
+      "first_seen_at": "2026-10-02",
+      "source_updated_at": "2025-06-30",
+      "paper_url": "https://openaccess.thecvf.com/content/CVPR2025/html/Wang_LeviTor_3D_Trajectory_Oriented_Image-to-Video_Synthesis_CVPR_2025_paper.html",
       "arxiv_id": "",
       "doi": "",
       "group": "Core Technology",
@@ -483001,6 +483274,35 @@
       ]
     },
     {
+      "id": "994b0d004c39ec56",
+      "title": "Is Your World Simulator a Good Story Presenter? A Consecutive Events-Based Benchmark for Future Long Video Generation",
+      "venue": "CVPR",
+      "published_at": "2025",
+      "date_precision": "year",
+      "first_seen_at": "2026-10-02",
+      "source_updated_at": "2025-06-30",
+      "paper_url": "https://openaccess.thecvf.com/content/CVPR2025/html/Wang_Is_Your_World_Simulator_a_Good_Story_Presenter_A_Consecutive_CVPR_2025_paper.html",
+      "arxiv_id": "",
+      "doi": "",
+      "group": "Core Technology",
+      "category": "Vision",
+      "categories": [
+        "Vision"
+      ],
+      "subcategories": [
+        "CVPR 2025 Proceedings"
+      ],
+      "source_repos": [
+        "52CV/CVPR-2025-Papers"
+      ],
+      "source_urls": [
+        "https://github.com/52CV/CVPR-2025-Papers"
+      ],
+      "metadata_sources": [
+        "source README"
+      ]
+    },
+    {
       "id": "66b1531ceada38c7",
       "title": "Is Right' Right? Enhancing Object Orientation Understanding in Multimodal Large Language Models through Egocentric Instruction Tuning",
       "venue": "CVPR",
@@ -483444,6 +483746,35 @@
       "first_seen_at": "2026-08-31",
       "source_updated_at": "2025-06-30",
       "paper_url": "https://openaccess.thecvf.com/content/CVPR2025/html/Roh_Insightful_Instance_Features_for_3D_Instance_Segmentation_CVPR_2025_paper.html",
+      "arxiv_id": "",
+      "doi": "",
+      "group": "Core Technology",
+      "category": "Vision",
+      "categories": [
+        "Vision"
+      ],
+      "subcategories": [
+        "CVPR 2025 Proceedings"
+      ],
+      "source_repos": [
+        "52CV/CVPR-2025-Papers"
+      ],
+      "source_urls": [
+        "https://github.com/52CV/CVPR-2025-Papers"
+      ],
+      "metadata_sources": [
+        "source README"
+      ]
+    },
+    {
+      "id": "46ad01ac284d06cc",
+      "title": "Infinity: Scaling Bitwise AutoRegressive Modeling for High-Resolution Image Synthesis",
+      "venue": "CVPR",
+      "published_at": "2025",
+      "date_precision": "year",
+      "first_seen_at": "2026-10-02",
+      "source_updated_at": "2025-06-30",
+      "paper_url": "https://openaccess.thecvf.com/content/CVPR2025/html/Han_Infinity_Scaling_Bitwise_AutoRegressive_Modeling_for_High-Resolution_Image_Synthesis_CVPR_2025_paper.html",
       "arxiv_id": "",
       "doi": "",
       "group": "Core Technology",
@@ -489418,6 +489749,35 @@
       "first_seen_at": "2026-08-31",
       "source_updated_at": "2025-06-30",
       "paper_url": "https://openaccess.thecvf.com/content/CVPR2025/html/Tang_GAF_Gaussian_Avatar_Reconstruction_from_Monocular_Videos_via_Multi-view_Diffusion_CVPR_2025_paper.html",
+      "arxiv_id": "",
+      "doi": "",
+      "group": "Core Technology",
+      "category": "Vision",
+      "categories": [
+        "Vision"
+      ],
+      "subcategories": [
+        "CVPR 2025 Proceedings"
+      ],
+      "source_repos": [
+        "52CV/CVPR-2025-Papers"
+      ],
+      "source_urls": [
+        "https://github.com/52CV/CVPR-2025-Papers"
+      ],
+      "metadata_sources": [
+        "source README"
+      ]
+    },
+    {
+      "id": "9b4a6afccf3467c2",
+      "title": "G3Flow: Generative 3D Semantic Flow for Pose-aware and Generalizable Object Manipulation",
+      "venue": "CVPR",
+      "published_at": "2025",
+      "date_precision": "year",
+      "first_seen_at": "2026-10-02",
+      "source_updated_at": "2025-06-30",
+      "paper_url": "https://openaccess.thecvf.com/content/CVPR2025/html/Chen_G3Flow_Generative_3D_Semantic_Flow_for_Pose-aware_and_Generalizable_Object_CVPR_2025_paper.html",
       "arxiv_id": "",
       "doi": "",
       "group": "Core Technology",
@@ -510783,6 +511143,35 @@
       ]
     },
     {
+      "id": "9f8eec0772a7fcc2",
+      "title": "Scientific Discovery in the Age of Artificial Intelligence",
+      "venue": "www",
+      "published_at": "",
+      "date_precision": "unknown",
+      "first_seen_at": "2026-08-29",
+      "source_updated_at": "2026-10-01",
+      "paper_url": "https://www.nature.com/articles/s41586-023-06221-2",
+      "arxiv_id": "",
+      "doi": "",
+      "group": "Cross-disciplinary Applications",
+      "category": "Science & Discovery",
+      "categories": [
+        "Science & Discovery"
+      ],
+      "subcategories": [
+        "General AI4Science"
+      ],
+      "source_repos": [
+        "ai4s-research/awesome-ai-for-science"
+      ],
+      "source_urls": [
+        "https://github.com/ai4s-research/awesome-ai-for-science"
+      ],
+      "metadata_sources": [
+        "source README"
+      ]
+    },
+    {
       "id": "c2db6df654cde227",
       "title": "SDORG: Structurally Deconstructed framework for otoscopic report generation with region-aware Multimodal Alignment",
       "venue": "Venue not specified",
@@ -511827,6 +512216,35 @@
       ]
     },
     {
+      "id": "397906beb256eec8",
+      "title": "AlphaFold: Protein Structure Prediction",
+      "venue": "www",
+      "published_at": "",
+      "date_precision": "unknown",
+      "first_seen_at": "2026-08-29",
+      "source_updated_at": "2026-10-01",
+      "paper_url": "https://www.nature.com/articles/s41586-021-03819-2",
+      "arxiv_id": "",
+      "doi": "",
+      "group": "Cross-disciplinary Applications",
+      "category": "Science & Discovery",
+      "categories": [
+        "Science & Discovery"
+      ],
+      "subcategories": [
+        "General AI4Science"
+      ],
+      "source_repos": [
+        "ai4s-research/awesome-ai-for-science"
+      ],
+      "source_urls": [
+        "https://github.com/ai4s-research/awesome-ai-for-science"
+      ],
+      "metadata_sources": [
+        "source README"
+      ]
+    },
+    {
       "id": "a164cdbcb2d06be9",
       "title": "Advancing In-Context Learning for Efficient and Stable Medical Report Generation",
       "venue": "Venue not specified",
@@ -511885,6 +512303,35 @@
       ]
     },
     {
+      "id": "65d57ab1a78fe608",
+      "title": "AI for Materials Discovery",
+      "venue": "www",
+      "published_at": "",
+      "date_precision": "unknown",
+      "first_seen_at": "2026-08-29",
+      "source_updated_at": "2026-10-01",
+      "paper_url": "https://www.nature.com/articles/s41578-023-00540-6",
+      "arxiv_id": "",
+      "doi": "",
+      "group": "Cross-disciplinary Applications",
+      "category": "Science & Discovery",
+      "categories": [
+        "Science & Discovery"
+      ],
+      "subcategories": [
+        "General AI4Science"
+      ],
+      "source_repos": [
+        "ai4s-research/awesome-ai-for-science"
+      ],
+      "source_urls": [
+        "https://github.com/ai4s-research/awesome-ai-for-science"
+      ],
+      "metadata_sources": [
+        "source README"
+      ]
+    },
+    {
       "id": "c07ea68d53ad783a",
       "title": "A Prompt-Guided Vision-Language Framework for Interpretable and Region-Aware Disease Diagnosis in Chest X-rays",
       "venue": "Venue not specified",
@@ -511908,93 +512355,6 @@
       ],
       "source_urls": [
         "https://github.com/mk-runner/Awesome-Radiology-Report-Generation"
-      ],
-      "metadata_sources": [
-        "source README"
-      ]
-    },
-    {
-      "id": "9f8eec0772a7fcc2",
-      "title": "Scientific Discovery in the Age of Artificial Intelligence",
-      "venue": "www",
-      "published_at": "",
-      "date_precision": "unknown",
-      "first_seen_at": "2026-08-29",
-      "source_updated_at": "2026-09-30",
-      "paper_url": "https://www.nature.com/articles/s41586-023-06221-2",
-      "arxiv_id": "",
-      "doi": "",
-      "group": "Cross-disciplinary Applications",
-      "category": "Science & Discovery",
-      "categories": [
-        "Science & Discovery"
-      ],
-      "subcategories": [
-        "General AI4Science"
-      ],
-      "source_repos": [
-        "ai4s-research/awesome-ai-for-science"
-      ],
-      "source_urls": [
-        "https://github.com/ai4s-research/awesome-ai-for-science"
-      ],
-      "metadata_sources": [
-        "source README"
-      ]
-    },
-    {
-      "id": "397906beb256eec8",
-      "title": "AlphaFold: Protein Structure Prediction",
-      "venue": "www",
-      "published_at": "",
-      "date_precision": "unknown",
-      "first_seen_at": "2026-08-29",
-      "source_updated_at": "2026-09-30",
-      "paper_url": "https://www.nature.com/articles/s41586-021-03819-2",
-      "arxiv_id": "",
-      "doi": "",
-      "group": "Cross-disciplinary Applications",
-      "category": "Science & Discovery",
-      "categories": [
-        "Science & Discovery"
-      ],
-      "subcategories": [
-        "General AI4Science"
-      ],
-      "source_repos": [
-        "ai4s-research/awesome-ai-for-science"
-      ],
-      "source_urls": [
-        "https://github.com/ai4s-research/awesome-ai-for-science"
-      ],
-      "metadata_sources": [
-        "source README"
-      ]
-    },
-    {
-      "id": "65d57ab1a78fe608",
-      "title": "AI for Materials Discovery",
-      "venue": "www",
-      "published_at": "",
-      "date_precision": "unknown",
-      "first_seen_at": "2026-08-29",
-      "source_updated_at": "2026-09-30",
-      "paper_url": "https://www.nature.com/articles/s41578-023-00540-6",
-      "arxiv_id": "",
-      "doi": "",
-      "group": "Cross-disciplinary Applications",
-      "category": "Science & Discovery",
-      "categories": [
-        "Science & Discovery"
-      ],
-      "subcategories": [
-        "General AI4Science"
-      ],
-      "source_repos": [
-        "ai4s-research/awesome-ai-for-science"
-      ],
-      "source_urls": [
-        "https://github.com/ai4s-research/awesome-ai-for-science"
       ],
       "metadata_sources": [
         "source README"
