@@ -1,13 +1,13 @@
 # 数据源清单
 
-由 `update_prices.py` 于 2026-10-06T05:39:24 自动生成。
+由 `update_prices.py` 于 2026-10-07T05:10:01 自动生成。
 
 | 数据 Provider | 网页 | 抓取地址 | 许可 | 状态 | 记录数 |
 | --- | --- | --- | --- | --- | --- |
 | 302.AI | https://302.ai/price | `https://price.302.ai/en/pricing_website/` | 公开价格表 | ✅ | 3 |
 | Alibaba Model Studio Wan 官方价格（人工核验） | https://help.aliyun.com/en/model-studio/model-pricing | `https://help.aliyun.com/en/model-studio/model-pricing` | 厂商官方价格页（人工核验快照） | ✅ | 6 |
 | Anthropic 官方文档 | https://platform.claude.com/docs/en/about-claude/pricing | `https://platform.claude.com/docs/en/about-claude/pricing.md` | 厂商官方文档 | ✅ | 40 |
-| AWS Bedrock | https://aws.amazon.com/bedrock/pricing/ | `https://pricing.us-east-1.amazonaws.com/offers/v1.0/aws/AmazonBedrock/` | AWS 公开价格表 | ✅ | 819 |
+| AWS Bedrock | https://aws.amazon.com/bedrock/pricing/ | `https://pricing.us-east-1.amazonaws.com/offers/v1.0/aws/AmazonBedrock/` | AWS 公开价格表 | ✅ | 823 |
 | AWS Bedrock | https://aws.amazon.com/bedrock/pricing/ | `https://pricing.us-east-1.amazonaws.com/offers/v1.0/aws/AmazonBedrockF` | AWS 公开价格表 | ✅ | 275 |
 | Azure AI Foundry | https://azure.microsoft.com/pricing/details/phi-3/ | `https://prices.azure.com/api/retail/prices?$filter=serviceName%20eq%20` | Azure 公开价格表 | ✅ | 175 |
 | Baichuan AI 官方价格 | https://platform.baichuan-ai.com/prices | `https://platform.baichuan-ai.com/prices` | 厂商官方价格页 | ✅ | 1 |
@@ -15,36 +15,36 @@
 | BFL 官方按张价 | https://docs.bfl.ai/pricing | `https://bfl.ai/pricing` | 厂商官方价格页 | ✅ | 8 |
 | Bria 官方按张价 | https://bria.ai/pricing | `https://bria.ai/pricing` | 厂商官方价格页 | ✅ | 2 |
 | Chutes | https://chutes.ai | `https://llm.chutes.ai/v1/models` | 公开 API | ✅ | 14 |
-| Cortecs | https://cortecs.ai | `https://api.cortecs.ai/v1/models` | 公开 API | ✅ | 98 |
+| Cortecs | https://cortecs.ai | `https://api.cortecs.ai/v1/models` | 公开 API | ✅ | 99 |
 | DeepInfra | https://deepinfra.com/models | `https://api.deepinfra.com/models/list` | 公开 API | ✅ | 286 |
 | DeepInfra | https://deepinfra.com/models | `https://api.deepinfra.com/models/list` | 第三方托管价目 | ✅ | 21 |
 | DeepSeek API 官方价格（人工核验） | https://api-docs.deepseek.com/quick_start/pricing/ | `https://api-docs.deepseek.com/quick_start/pricing/` | 厂商官方价格页（人工核验快照） | ✅ | 3 |
-| European Central Bank reference rates | https://data.ecb.europa.eu/key-figures/ecb-interest-rates-and-exchange-rates/exchange-rates | `https://www.ecb.europa.eu/stats/eurofxref/eurofxref-daily.xml` | ECB reference rates | ✅ | 164 |
+| European Central Bank reference rates | https://data.ecb.europa.eu/key-figures/ecb-interest-rates-and-exchange-rates/exchange-rates | `https://www.ecb.europa.eu/stats/eurofxref/eurofxref-daily.xml` | ECB reference rates | ✅ | 165 |
 | Empirio Labs | https://empiriolabs.ai | `https://api.empiriolabs.ai/v1/models` | 公开 API | ✅ | 93 |
 | fal Video API 公开价格（人工核验） | https://fal.ai/models/google/gemini-omni-flash/v1.1/text-to-video/api | `https://fal.ai/models/google/gemini-omni-flash/v1.1/text-to-video/api` | 公开第三方 API 价格页 | ✅ | 4 |
 | Google Gemini API | https://ai.google.dev/gemini-api/docs/pricing | `https://ai.google.dev/gemini-api/docs/pricing` | 官方定价页 | ✅ | 2 |
 | Google Gemini Omni 1.1 Flash 官方价格（人工核验） | https://blog.google/innovation-and-ai/technology/developers-tools/build-with-gemini-omni-1-1-flash/ | `https://blog.google/innovation-and-ai/technology/developers-tools/buil` | 厂商官方价格页（人工核验快照） | ✅ | 4 |
 | Google Gemini API Veo 官方价格（人工核验） | https://ai.google.dev/gemini-api/docs/pricing | `https://ai.google.dev/gemini-api/docs/pricing` | 厂商官方价格页（人工核验快照） | ✅ | 7 |
-| HuggingFace Router | https://huggingface.co/models?inference_provider=all | `https://router.huggingface.co/v1/models` | 公开 API | ✅ | 188 |
+| HuggingFace Router | https://huggingface.co/models?inference_provider=all | `https://router.huggingface.co/v1/models` | 公开 API | ✅ | 190 |
 | iFLYTEK 星火 MaaS 官方价格 | https://maas.xfyun.cn/modelSquare | `https://maas.xfyun.cn/api/v1/gpt-finetune/model/base/list-v2?page=1&si` | 厂商官方公开接口 | ✅ | 2 |
-| LiteLLM | https://github.com/BerriAI/litellm | `https://cdn.jsdelivr.net/gh/BerriAI/litellm@main/model_prices_and_cont` | MIT | ✅ | 3598 |
+| LiteLLM | https://github.com/BerriAI/litellm | `https://cdn.jsdelivr.net/gh/BerriAI/litellm@main/model_prices_and_cont` | MIT | ✅ | 3608 |
 | Luma Agents Ray 3.2 官方价格（人工核验） | https://docs.agents.lumalabs.ai/guides/pricing | `https://docs.agents.lumalabs.ai/guides/pricing` | 厂商官方价格页（人工核验快照） | ✅ | 3 |
 | MiniMax | https://platform.minimaxi.com/docs/guides/pricing-paygo | `https://platform.minimax.cn/docs/guides/pricing-paygo` | 官方定价页 | ✅ | 2 |
 | MiniMax Video 官方按量价格（人工核验） | https://platform.minimax.io/docs/guides/pricing-paygo | `https://platform.minimax.io/docs/guides/pricing-paygo` | 厂商官方价格页（人工核验快照） | ✅ | 5 |
-| models.dev | https://models.dev | `https://models.dev/api.json` | MIT | ✅ | 6830 |
+| models.dev | https://models.dev | `https://models.dev/api.json` | MIT | ✅ | 6850 |
 | Moonshot AI / Kimi 官方文档 | https://platform.moonshot.ai/docs/pricing/chat-k3 | `https://platform.kimi.ai/docs/pricing/chat.md` | 厂商官方文档 | ✅ | 12 |
 | Moonshot AI / Kimi 官方文档 | https://platform.moonshot.ai/docs/pricing/chat-k3 | `https://platform.kimi.ai/docs/pricing/chat.md` | 厂商官方文档 | ✅ | 12 |
 | Moonshot AI / Kimi 官方文档 | https://platform.moonshot.ai/docs/pricing/chat-k3 | `https://platform.kimi.ai/docs/pricing/chat.md` | 厂商官方文档 | ✅ | 12 |
 | Moonshot AI / Kimi 官方文档 | https://platform.moonshot.ai/docs/pricing/chat-k3 | `https://platform.kimi.ai/docs/models.md` | 厂商官方文档 | ✅ | 12 |
-| nano-gpt | https://nano-gpt.com | `https://nano-gpt.com/api/models` | 第三方转售价目 | ✅ | 83 |
+| nano-gpt | https://nano-gpt.com | `https://nano-gpt.com/api/models` | 第三方转售价目 | ✅ | 84 |
 | Novita AI | https://novita.ai/models | `https://api.novita.ai/v3/openai/models` | 公开 API | ✅ | 101 |
 | ofox | https://ofox.ai | `https://api.ofox.ai/v2/models/catalog?include=provider_price&limit=100` | 公开 API | ✅ | 150 |
 | OpenAI 官方文档 | https://platform.openai.com/docs/pricing | `https://developers.openai.com/api/docs/pricing.md` | 厂商官方文档 | ✅ | 252 |
-| OpenRouter | https://openrouter.ai/models | `https://openrouter.ai/api/v1/models` | 公开 API | ✅ | 370 |
+| OpenRouter | https://openrouter.ai/models | `https://openrouter.ai/api/v1/models` | 公开 API | ✅ | 372 |
 | OVHcloud AI Endpoints | https://endpoints.ai.cloud.ovh.net | `https://catalog.endpoints.ai.ovh.net/rest/v2/openrouter` | 公开 API | ✅ | 12 |
 | PixVerse API 官方价格（人工核验） | https://docs.platform.pixverse.ai/pricing-796039m0 | `https://docs.platform.pixverse.ai/pricing-796039m0` | 厂商官方价格页（人工核验快照） | ✅ | 4 |
 | Pruna AI 官方按张价（人工核验） | https://www.pruna.ai/pricing | `https://www.pruna.ai/pricing` | 厂商官方价格页（人工核验快照） | ✅ | 2 |
-| Requesty | https://requesty.ai | `https://router.requesty.ai/v1/models/managed` | 公开 API | ✅ | 143 |
+| Requesty | https://requesty.ai | `https://router.requesty.ai/v1/models/managed` | 公开 API | ✅ | 145 |
 | Runway API Gemini Omni 公开价格（人工核验） | https://docs.dev.runwayml.com/guides/pricing/ | `https://docs.dev.runwayml.com/guides/pricing/` | 公开第三方 API 价格页 | ✅ | 1 |
 | Runway Dev 官方价格（人工核验） | https://docs.dev.runwayml.com/guides/pricing/ | `https://docs.dev.runwayml.com/guides/pricing/` | 厂商官方价格页（人工核验快照） | ✅ | 4 |
 | SenseNova 官方模型列表 | https://www.sensecore.cn/help/docs/model-as-a-service/nova/overview/compatible-mode | `https://www.sensecore.cn/help/docs/model-as-a-service/nova/overview/co` | 厂商官方模型文档 | ✅ | 4 |
@@ -54,7 +54,7 @@
 | 腾讯 TokenHub 官方价格 | https://cloud.tencent.com/document/product/1823/130055 | `https://cloud.tencent.com/document/product/1823/130055` | 厂商官方价格页 | ✅ | 4 |
 | Tinfoil | https://tinfoil.sh | `https://inference.tinfoil.sh/v1/models` | 公开 API | ✅ | 9 |
 | Upstage 官方价格 | https://www.upstage.ai/pricing/api | `https://www.upstage.ai/pricing/api` | 厂商官方价格页 | ✅ | 0 |
-| Vercel AI Gateway | https://vercel.com/ai-gateway/models | `https://ai-gateway.vercel.sh/v1/models` | 公开 API | ✅ | 397 |
+| Vercel AI Gateway | https://vercel.com/ai-gateway/models | `https://ai-gateway.vercel.sh/v1/models` | 公开 API | ✅ | 399 |
 | Vidu API 官方价格（人工核验） | https://platform.vidu.com/docs/pricing | `https://platform.vidu.com/docs/pricing` | 厂商官方价格页（人工核验快照） | ✅ | 9 |
 | 火山方舟官方价格（人工核验） | https://www.volcengine.com/product/doubao | `https://www.volcengine.com/product/doubao` | 厂商官方价格页（人工核验快照） | ✅ | 7 |
 | xAI 官方文档 | https://docs.x.ai/docs/models | `https://docs.x.ai/developers/models.md` | 厂商官方文档 | ✅ | 22 |
@@ -91,16 +91,16 @@ models.dev 的 `google.ts` 里写着 `cost: existing.cost`（价格取自手工�
 - openai_md: 未识别的列头 `pricing`
 - openai_md: 未识别的列头 `price per minute`
 - openai_md: 未识别的列头 `details`
+- openai_md: 未识别的列头 `estimated cost`
+- openai_md: 未识别的列头 `training`
 - openai_md: 未识别的列头 `use case`
 - openai_md: 未识别的列头 `category`
-- openai_md: 未识别的列头 `training`
-- openai_md: 未识别的列头 `estimated cost`
 - openai_md: 跳过表格「Pricing Table data」— 没有可识别的价格列
 - openai_md: 跳过表格「Grouped Pricing Table data」— 没有可识别的价格列
 - anthropic_md: 未识别的列头 `additional input tokens`
-- anthropic_md: 未识别的列头 `tool use system prompt tokens: auto, none`
 - anthropic_md: 未识别的列头 `cache hits and refreshes`
 - anthropic_md: 未识别的列头 `tool use system prompt tokens: any, tool`
+- anthropic_md: 未识别的列头 `tool use system prompt tokens: auto, none`
 - anthropic_md: 跳过表格「Claude Platform on AWS pricing」— 找不到模型/工具名列
 - anthropic_md: 跳过表格「Claude in Microsoft Foundry pricing」— 找不到模型/工具名列
 - anthropic_md: 跳过表格「Prompt caching」— 找不到模型/工具名列
@@ -113,7 +113,6 @@ models.dev 的 `google.ts` 里写着 `cost: existing.cost`（价格取自手工�
 - anthropic_md: 跳过表格「Worked example」— 找不到模型/工具名列
 - xai_md: 跳过表格「Voice Pricing」— 列头可映射但未产出任何记录
 - zhipu_md: 未识别的列头 `cached input storage`
-- moonshot_md: 未识别的列头 `cached input price`
 - moonshot_md: 未识别的列头 `cache write price (ttl 1h)`
 - moonshot_md: 未识别的列头 `cache write price (ttl 5min)`
 - moonshot_md: 未识别的列头 `cached input price`
@@ -122,6 +121,7 @@ models.dev 的 `google.ts` 里写着 `cost: existing.cost`（价格取自手工�
 - moonshot_md: 未识别的列头 `cached input price`
 - moonshot_md: 未识别的列头 `cache write price (ttl 1h)`
 - moonshot_md: 未识别的列头 `cache write price (ttl 5min)`
+- moonshot_md: 未识别的列头 `cached input price`
 - volcengine_official_verified: 价格页无法稳定服务端渲染，当前使用 2026-08-25T00:00:00+10:00 人工核验快照；URL 与原文摘录已保留
 - deepseek_official_verified: 价格页无法稳定服务端渲染，当前使用 2026-08-25T00:00:00+10:00 人工核验快照；URL 与原文摘录已保留
 - google_omni_video_official_verified: 价格页无法稳定服务端渲染，当前使用 2026-08-29T00:00:00+10:00 人工核验快照；URL 与原文摘录已保留
