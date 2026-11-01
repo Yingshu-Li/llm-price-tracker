@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-31T07:00:48+00:00",
+  "generated_at": "2026-11-01T07:34:54+00:00",
   "source_count": 79,
   "paper_count": 17822,
   "page_size": 200,
@@ -65616,7 +65616,7 @@
       "published_at": "2026-06-04",
       "date_precision": "day",
       "first_seen_at": "2026-08-29",
-      "source_updated_at": "2026-10-26",
+      "source_updated_at": "2026-10-31",
       "paper_url": "https://arxiv.org/abs/2606.06749",
       "arxiv_id": "2606.06749",
       "doi": "",
@@ -84669,6 +84669,36 @@
       ]
     },
     {
+      "id": "2e734c836c2b3e4e",
+      "title": "DiscoverPhysics: Benchmarking LLMs for Out-of-the-Box Scientific Thinking",
+      "venue": "arXiv",
+      "published_at": "2026-05-25",
+      "date_precision": "day",
+      "first_seen_at": "2026-08-29",
+      "source_updated_at": "2026-10-31",
+      "paper_url": "https://arxiv.org/abs/2605.26087",
+      "arxiv_id": "2605.26087",
+      "doi": "",
+      "group": "Cross-disciplinary Applications",
+      "category": "Science & Discovery",
+      "categories": [
+        "Science & Discovery"
+      ],
+      "subcategories": [
+        "Scientific LLM Benchmarks"
+      ],
+      "source_repos": [
+        "subinium/Awesome-Scientific-LLM-Benchmarks"
+      ],
+      "source_urls": [
+        "https://github.com/subinium/Awesome-Scientific-LLM-Benchmarks"
+      ],
+      "metadata_sources": [
+        "source README",
+        "Semantic Scholar"
+      ]
+    },
+    {
       "id": "a142c6032b24c36c",
       "title": "JobBench: Aligning Agent Work With Human Will",
       "venue": "arXiv",
@@ -84726,36 +84756,6 @@
       "metadata_sources": [
         "source README",
         "Crossref"
-      ]
-    },
-    {
-      "id": "2e734c836c2b3e4e",
-      "title": "DiscoverPhysics: Benchmarking LLMs for Out-of-the-Box Scientific Thinking",
-      "venue": "arXiv",
-      "published_at": "2026-05-25",
-      "date_precision": "day",
-      "first_seen_at": "2026-08-29",
-      "source_updated_at": "2026-10-26",
-      "paper_url": "https://arxiv.org/abs/2605.26087",
-      "arxiv_id": "2605.26087",
-      "doi": "",
-      "group": "Cross-disciplinary Applications",
-      "category": "Science & Discovery",
-      "categories": [
-        "Science & Discovery"
-      ],
-      "subcategories": [
-        "Scientific LLM Benchmarks"
-      ],
-      "source_repos": [
-        "subinium/Awesome-Scientific-LLM-Benchmarks"
-      ],
-      "source_urls": [
-        "https://github.com/subinium/Awesome-Scientific-LLM-Benchmarks"
-      ],
-      "metadata_sources": [
-        "source README",
-        "Semantic Scholar"
       ]
     },
     {
@@ -85033,6 +85033,36 @@
       ]
     },
     {
+      "id": "e45cb47ddadf7141",
+      "title": "LivePI: More Realistic Benchmarking of Agents Against Indirect Prompt Injection",
+      "venue": "arXiv",
+      "published_at": "2026-05-18",
+      "date_precision": "day",
+      "first_seen_at": "2026-08-30",
+      "source_updated_at": "2026-11-01",
+      "paper_url": "https://arxiv.org/abs/2605.17986",
+      "arxiv_id": "2605.17986",
+      "doi": "",
+      "group": "Cross-disciplinary Applications",
+      "category": "Security & Cybersecurity",
+      "categories": [
+        "Security & Cybersecurity"
+      ],
+      "subcategories": [
+        "AI Security Tools & Agents"
+      ],
+      "source_repos": [
+        "scadastrangelove/awesome-ai-security-tools"
+      ],
+      "source_urls": [
+        "https://github.com/scadastrangelove/awesome-ai-security-tools"
+      ],
+      "metadata_sources": [
+        "source README",
+        "Semantic Scholar"
+      ]
+    },
+    {
       "id": "451458510aeee740",
       "title": "TCM Data Hub: A traditional Chinese medicine data platform powered by YiYuan large language models",
       "venue": "Chi",
@@ -85090,36 +85120,6 @@
       "metadata_sources": [
         "source README",
         "Crossref"
-      ]
-    },
-    {
-      "id": "e45cb47ddadf7141",
-      "title": "LivePI: More Realistic Benchmarking of Agents Against Indirect Prompt Injection",
-      "venue": "arXiv",
-      "published_at": "2026-05-18",
-      "date_precision": "day",
-      "first_seen_at": "2026-08-30",
-      "source_updated_at": "2026-10-28",
-      "paper_url": "https://arxiv.org/abs/2605.17986",
-      "arxiv_id": "2605.17986",
-      "doi": "",
-      "group": "Cross-disciplinary Applications",
-      "category": "Security & Cybersecurity",
-      "categories": [
-        "Security & Cybersecurity"
-      ],
-      "subcategories": [
-        "AI Security Tools & Agents"
-      ],
-      "source_repos": [
-        "scadastrangelove/awesome-ai-security-tools"
-      ],
-      "source_urls": [
-        "https://github.com/scadastrangelove/awesome-ai-security-tools"
-      ],
-      "metadata_sources": [
-        "source README",
-        "Semantic Scholar"
       ]
     },
     {
@@ -108680,6 +108680,36 @@
       ]
     },
     {
+      "id": "47272429a4a9ea87",
+      "title": "PaperMind: Benchmarking Agentic Reasoning and Critique over Scientific Papers in Multimodal LLMs",
+      "venue": "arXiv",
+      "published_at": "2026-04-23",
+      "date_precision": "day",
+      "first_seen_at": "2026-08-29",
+      "source_updated_at": "2026-10-31",
+      "paper_url": "https://arxiv.org/abs/2604.21304",
+      "arxiv_id": "2604.21304",
+      "doi": "",
+      "group": "Cross-disciplinary Applications",
+      "category": "Science & Discovery",
+      "categories": [
+        "Science & Discovery"
+      ],
+      "subcategories": [
+        "Scientific LLM Benchmarks"
+      ],
+      "source_repos": [
+        "subinium/Awesome-Scientific-LLM-Benchmarks"
+      ],
+      "source_urls": [
+        "https://github.com/subinium/Awesome-Scientific-LLM-Benchmarks"
+      ],
+      "metadata_sources": [
+        "source README",
+        "Semantic Scholar"
+      ]
+    },
+    {
       "id": "15001bc483b13986",
       "title": "WorldMark: A Unified Benchmark Suite for Interactive Video World Models",
       "venue": "arXiv",
@@ -108716,36 +108746,6 @@
         "https://github.com/people-robots/Awesome-Video-Generation-Post-Training",
         "https://github.com/JiahuaDong/Awesome-World-Models",
         "https://github.com/NeuraLiying/Awesome-World-Models"
-      ],
-      "metadata_sources": [
-        "source README",
-        "Semantic Scholar"
-      ]
-    },
-    {
-      "id": "47272429a4a9ea87",
-      "title": "PaperMind: Benchmarking Agentic Reasoning and Critique over Scientific Papers in Multimodal LLMs",
-      "venue": "arXiv",
-      "published_at": "2026-04-23",
-      "date_precision": "day",
-      "first_seen_at": "2026-08-29",
-      "source_updated_at": "2026-10-26",
-      "paper_url": "https://arxiv.org/abs/2604.21304",
-      "arxiv_id": "2604.21304",
-      "doi": "",
-      "group": "Cross-disciplinary Applications",
-      "category": "Science & Discovery",
-      "categories": [
-        "Science & Discovery"
-      ],
-      "subcategories": [
-        "Scientific LLM Benchmarks"
-      ],
-      "source_repos": [
-        "subinium/Awesome-Scientific-LLM-Benchmarks"
-      ],
-      "source_urls": [
-        "https://github.com/subinium/Awesome-Scientific-LLM-Benchmarks"
       ],
       "metadata_sources": [
         "source README",
@@ -108963,6 +108963,36 @@
       ]
     },
     {
+      "id": "9887a00b7125ae4f",
+      "title": "PRL-Bench: A Comprehensive Benchmark Evaluating LLMs' Capabilities in Frontier Physics Research",
+      "venue": "arXiv",
+      "published_at": "2026-04-16",
+      "date_precision": "day",
+      "first_seen_at": "2026-08-29",
+      "source_updated_at": "2026-10-31",
+      "paper_url": "https://arxiv.org/abs/2604.15411",
+      "arxiv_id": "2604.15411",
+      "doi": "",
+      "group": "Cross-disciplinary Applications",
+      "category": "Science & Discovery",
+      "categories": [
+        "Science & Discovery"
+      ],
+      "subcategories": [
+        "Scientific LLM Benchmarks"
+      ],
+      "source_repos": [
+        "subinium/Awesome-Scientific-LLM-Benchmarks"
+      ],
+      "source_urls": [
+        "https://github.com/subinium/Awesome-Scientific-LLM-Benchmarks"
+      ],
+      "metadata_sources": [
+        "source README",
+        "Semantic Scholar"
+      ]
+    },
+    {
       "id": "89b55ff5686e54f1",
       "title": "Well Begun is Half Done: Training-Free and Model-Agnostic Semantically Guaranteed User Representation Initialization for Multimodal Recommendation",
       "venue": "SIGIR",
@@ -108986,36 +109016,6 @@
       ],
       "source_urls": [
         "https://github.com/Jinfeng-Xu/Awesome-Multimodal-Recommender-Systems"
-      ],
-      "metadata_sources": [
-        "source README",
-        "Semantic Scholar"
-      ]
-    },
-    {
-      "id": "9887a00b7125ae4f",
-      "title": "PRL-Bench: A Comprehensive Benchmark Evaluating LLMs' Capabilities in Frontier Physics Research",
-      "venue": "arXiv",
-      "published_at": "2026-04-16",
-      "date_precision": "day",
-      "first_seen_at": "2026-08-29",
-      "source_updated_at": "2026-10-26",
-      "paper_url": "https://arxiv.org/abs/2604.15411",
-      "arxiv_id": "2604.15411",
-      "doi": "",
-      "group": "Cross-disciplinary Applications",
-      "category": "Science & Discovery",
-      "categories": [
-        "Science & Discovery"
-      ],
-      "subcategories": [
-        "Scientific LLM Benchmarks"
-      ],
-      "source_repos": [
-        "subinium/Awesome-Scientific-LLM-Benchmarks"
-      ],
-      "source_urls": [
-        "https://github.com/subinium/Awesome-Scientific-LLM-Benchmarks"
       ],
       "metadata_sources": [
         "source README",
@@ -175061,7 +175061,7 @@
       "published_at": "2026-02-13",
       "date_precision": "day",
       "first_seen_at": "2026-08-29",
-      "source_updated_at": "2026-10-26",
+      "source_updated_at": "2026-10-31",
       "paper_url": "https://arxiv.org/abs/2602.12984",
       "arxiv_id": "2602.12984",
       "doi": "",
@@ -175388,6 +175388,36 @@
       ]
     },
     {
+      "id": "67365c1cabb67598",
+      "title": "LABBench2: An Improved Benchmark for AI Systems Performing Biology Research",
+      "venue": "arXiv",
+      "published_at": "2026-02-04",
+      "date_precision": "day",
+      "first_seen_at": "2026-08-29",
+      "source_updated_at": "2026-10-31",
+      "paper_url": "https://arxiv.org/abs/2604.09554",
+      "arxiv_id": "2604.09554",
+      "doi": "",
+      "group": "Cross-disciplinary Applications",
+      "category": "Science & Discovery",
+      "categories": [
+        "Science & Discovery"
+      ],
+      "subcategories": [
+        "Scientific LLM Benchmarks"
+      ],
+      "source_repos": [
+        "subinium/Awesome-Scientific-LLM-Benchmarks"
+      ],
+      "source_urls": [
+        "https://github.com/subinium/Awesome-Scientific-LLM-Benchmarks"
+      ],
+      "metadata_sources": [
+        "source README",
+        "Semantic Scholar"
+      ]
+    },
+    {
       "id": "7345fc287c43225e",
       "title": "ERNIE 5.0 Technical Report",
       "venue": "arXiv",
@@ -175417,36 +175447,6 @@
         "https://github.com/zli12321/Vision-Language-Models-Overview",
         "https://github.com/OpenEnvision/Awesome-Multimodal-Modeling",
         "https://github.com/Yuliang-Liu/AWESOME-OCR-LLM"
-      ],
-      "metadata_sources": [
-        "source README",
-        "Semantic Scholar"
-      ]
-    },
-    {
-      "id": "67365c1cabb67598",
-      "title": "LABBench2: An Improved Benchmark for AI Systems Performing Biology Research",
-      "venue": "arXiv",
-      "published_at": "2026-02-04",
-      "date_precision": "day",
-      "first_seen_at": "2026-08-29",
-      "source_updated_at": "2026-10-26",
-      "paper_url": "https://arxiv.org/abs/2604.09554",
-      "arxiv_id": "2604.09554",
-      "doi": "",
-      "group": "Cross-disciplinary Applications",
-      "category": "Science & Discovery",
-      "categories": [
-        "Science & Discovery"
-      ],
-      "subcategories": [
-        "Scientific LLM Benchmarks"
-      ],
-      "source_repos": [
-        "subinium/Awesome-Scientific-LLM-Benchmarks"
-      ],
-      "source_urls": [
-        "https://github.com/subinium/Awesome-Scientific-LLM-Benchmarks"
       ],
       "metadata_sources": [
         "source README",
@@ -175604,6 +175604,40 @@
       "metadata_sources": [
         "source README",
         "Semantic Scholar"
+      ]
+    },
+    {
+      "id": "72c53924ee682f75",
+      "title": "AIRS-Bench: a Suite of Tasks for Frontier AI Research Science Agents",
+      "venue": "Science",
+      "published_at": "2026-02",
+      "date_precision": "month",
+      "first_seen_at": "2026-08-29",
+      "source_updated_at": "2026-10-31",
+      "paper_url": "https://arxiv.org/abs/2602.06855v1",
+      "arxiv_id": "2602.06855",
+      "doi": "",
+      "group": "Core Technology",
+      "category": "Language",
+      "categories": [
+        "Language",
+        "Science & Discovery"
+      ],
+      "subcategories": [
+        "LLM Agents",
+        "Scientific LLM Benchmarks"
+      ],
+      "source_repos": [
+        "VoltAgent/awesome-ai-agent-papers",
+        "subinium/Awesome-Scientific-LLM-Benchmarks"
+      ],
+      "source_urls": [
+        "https://github.com/VoltAgent/awesome-ai-agent-papers",
+        "https://github.com/subinium/Awesome-Scientific-LLM-Benchmarks"
+      ],
+      "metadata_sources": [
+        "source README",
+        "arXiv identifier"
       ]
     },
     {
@@ -179492,36 +179526,6 @@
       "source_updated_at": "2026-10-28",
       "paper_url": "https://arxiv.org/abs/2602.05877v1",
       "arxiv_id": "2602.05877",
-      "doi": "",
-      "group": "Core Technology",
-      "category": "Language",
-      "categories": [
-        "Language"
-      ],
-      "subcategories": [
-        "LLM Agents"
-      ],
-      "source_repos": [
-        "VoltAgent/awesome-ai-agent-papers"
-      ],
-      "source_urls": [
-        "https://github.com/VoltAgent/awesome-ai-agent-papers"
-      ],
-      "metadata_sources": [
-        "source README",
-        "arXiv identifier"
-      ]
-    },
-    {
-      "id": "72c53924ee682f75",
-      "title": "AIRS-Bench: a Suite of Tasks for Frontier AI Research Science Agents",
-      "venue": "Science",
-      "published_at": "2026-02",
-      "date_precision": "month",
-      "first_seen_at": "2026-08-29",
-      "source_updated_at": "2026-10-28",
-      "paper_url": "https://arxiv.org/abs/2602.06855v1",
-      "arxiv_id": "2602.06855",
       "doi": "",
       "group": "Core Technology",
       "category": "Language",
@@ -198262,7 +198266,7 @@
       "published_at": "2026-01-29",
       "date_precision": "day",
       "first_seen_at": "2026-08-29",
-      "source_updated_at": "2026-10-26",
+      "source_updated_at": "2026-10-31",
       "paper_url": "https://arxiv.org/abs/2601.21165",
       "arxiv_id": "2601.21165",
       "doi": "",
@@ -199461,6 +199465,36 @@
       ]
     },
     {
+      "id": "c4a3be87b3edcd6a",
+      "title": "HeurekaBench: A Benchmarking Framework for AI Co-scientist",
+      "venue": "cell",
+      "published_at": "2026-01-04",
+      "date_precision": "day",
+      "first_seen_at": "2026-08-29",
+      "source_updated_at": "2026-10-31",
+      "paper_url": "https://arxiv.org/abs/2601.01678",
+      "arxiv_id": "2601.01678",
+      "doi": "",
+      "group": "Cross-disciplinary Applications",
+      "category": "Science & Discovery",
+      "categories": [
+        "Science & Discovery"
+      ],
+      "subcategories": [
+        "Scientific LLM Benchmarks"
+      ],
+      "source_repos": [
+        "subinium/Awesome-Scientific-LLM-Benchmarks"
+      ],
+      "source_urls": [
+        "https://github.com/subinium/Awesome-Scientific-LLM-Benchmarks"
+      ],
+      "metadata_sources": [
+        "source README",
+        "Semantic Scholar"
+      ]
+    },
+    {
       "id": "d94fbf1903882680",
       "title": "DrivingGen: A Comprehensive Benchmark for Generative Video World Models in Autonomous Driving",
       "venue": "arXiv",
@@ -199490,36 +199524,6 @@
         "https://github.com/people-robots/Awesome-Video-Generation-Post-Training",
         "https://github.com/NeuraLiying/Awesome-World-Models",
         "https://github.com/JiahuaDong/Awesome-World-Models"
-      ],
-      "metadata_sources": [
-        "source README",
-        "Semantic Scholar"
-      ]
-    },
-    {
-      "id": "c4a3be87b3edcd6a",
-      "title": "HeurekaBench: A Benchmarking Framework for AI Co-scientist",
-      "venue": "cell",
-      "published_at": "2026-01-04",
-      "date_precision": "day",
-      "first_seen_at": "2026-08-29",
-      "source_updated_at": "2026-10-26",
-      "paper_url": "https://arxiv.org/abs/2601.01678",
-      "arxiv_id": "2601.01678",
-      "doi": "",
-      "group": "Cross-disciplinary Applications",
-      "category": "Science & Discovery",
-      "categories": [
-        "Science & Discovery"
-      ],
-      "subcategories": [
-        "Scientific LLM Benchmarks"
-      ],
-      "source_repos": [
-        "subinium/Awesome-Scientific-LLM-Benchmarks"
-      ],
-      "source_urls": [
-        "https://github.com/subinium/Awesome-Scientific-LLM-Benchmarks"
       ],
       "metadata_sources": [
         "source README",
@@ -289876,6 +289880,36 @@
       ]
     },
     {
+      "id": "a57bdb2251045f36",
+      "title": "Towards Robust Mathematical Reasoning",
+      "venue": "arXiv",
+      "published_at": "2025-11-03",
+      "date_precision": "day",
+      "first_seen_at": "2026-08-31",
+      "source_updated_at": "2026-10-31",
+      "paper_url": "https://arxiv.org/abs/2511.01846",
+      "arxiv_id": "2511.01846",
+      "doi": "",
+      "group": "Cross-disciplinary Applications",
+      "category": "Science & Discovery",
+      "categories": [
+        "Science & Discovery"
+      ],
+      "subcategories": [
+        "Scientific LLM Benchmarks"
+      ],
+      "source_repos": [
+        "subinium/Awesome-Scientific-LLM-Benchmarks"
+      ],
+      "source_urls": [
+        "https://github.com/subinium/Awesome-Scientific-LLM-Benchmarks"
+      ],
+      "metadata_sources": [
+        "source README",
+        "Semantic Scholar"
+      ]
+    },
+    {
       "id": "7df8f8a7b4b5a5af",
       "title": "How Far Are Surgeons from Surgical World Models? A Pilot Study on Zero-shot Surgical Video Generation with Expert Assessment",
       "venue": "arXiv",
@@ -289899,36 +289933,6 @@
       ],
       "source_urls": [
         "https://github.com/people-robots/Awesome-Video-Generation-Post-Training"
-      ],
-      "metadata_sources": [
-        "source README",
-        "Semantic Scholar"
-      ]
-    },
-    {
-      "id": "a57bdb2251045f36",
-      "title": "Towards Robust Mathematical Reasoning",
-      "venue": "arXiv",
-      "published_at": "2025-11-03",
-      "date_precision": "day",
-      "first_seen_at": "2026-08-31",
-      "source_updated_at": "2026-10-26",
-      "paper_url": "https://arxiv.org/abs/2511.01846",
-      "arxiv_id": "2511.01846",
-      "doi": "",
-      "group": "Cross-disciplinary Applications",
-      "category": "Science & Discovery",
-      "categories": [
-        "Science & Discovery"
-      ],
-      "subcategories": [
-        "Scientific LLM Benchmarks"
-      ],
-      "source_repos": [
-        "subinium/Awesome-Scientific-LLM-Benchmarks"
-      ],
-      "source_urls": [
-        "https://github.com/subinium/Awesome-Scientific-LLM-Benchmarks"
       ],
       "metadata_sources": [
         "source README",
@@ -307470,7 +307474,7 @@
       "published_at": "2025-10-31",
       "date_precision": "day",
       "first_seen_at": "2026-08-29",
-      "source_updated_at": "2026-10-26",
+      "source_updated_at": "2026-10-31",
       "paper_url": "https://arxiv.org/abs/2510.27598",
       "arxiv_id": "2510.27598",
       "doi": "",
@@ -307678,6 +307682,36 @@
       ]
     },
     {
+      "id": "9a7d088201e4e3dc",
+      "title": "AstaBench: Rigorous Benchmarking of AI Agents with a Scientific Research Suite",
+      "venue": "ICLR 2026",
+      "published_at": "2025-10-24",
+      "date_precision": "day",
+      "first_seen_at": "2026-09-01",
+      "source_updated_at": "2026-10-31",
+      "paper_url": "https://arxiv.org/abs/2510.21652",
+      "arxiv_id": "2510.21652",
+      "doi": "",
+      "group": "Cross-disciplinary Applications",
+      "category": "Science & Discovery",
+      "categories": [
+        "Science & Discovery"
+      ],
+      "subcategories": [
+        "Scientific LLM Benchmarks"
+      ],
+      "source_repos": [
+        "subinium/Awesome-Scientific-LLM-Benchmarks"
+      ],
+      "source_urls": [
+        "https://github.com/subinium/Awesome-Scientific-LLM-Benchmarks"
+      ],
+      "metadata_sources": [
+        "source README",
+        "Semantic Scholar"
+      ]
+    },
+    {
       "id": "6ffabcae0f0dd4e4",
       "title": "Combination of Large Language Model and Retrieval-augmented Generation for Inference of Traditional Chinese Medicine Prescriptions and Syndrome Differentiations: A Study on Sleeping Disorders",
       "venue": "Venue not specified",
@@ -307705,36 +307739,6 @@
       "metadata_sources": [
         "source README",
         "Crossref"
-      ]
-    },
-    {
-      "id": "9a7d088201e4e3dc",
-      "title": "AstaBench: Rigorous Benchmarking of AI Agents with a Scientific Research Suite",
-      "venue": "ICLR 2026",
-      "published_at": "2025-10-24",
-      "date_precision": "day",
-      "first_seen_at": "2026-09-01",
-      "source_updated_at": "2026-10-26",
-      "paper_url": "https://arxiv.org/abs/2510.21652",
-      "arxiv_id": "2510.21652",
-      "doi": "",
-      "group": "Cross-disciplinary Applications",
-      "category": "Science & Discovery",
-      "categories": [
-        "Science & Discovery"
-      ],
-      "subcategories": [
-        "Scientific LLM Benchmarks"
-      ],
-      "source_repos": [
-        "subinium/Awesome-Scientific-LLM-Benchmarks"
-      ],
-      "source_urls": [
-        "https://github.com/subinium/Awesome-Scientific-LLM-Benchmarks"
-      ],
-      "metadata_sources": [
-        "source README",
-        "Semantic Scholar"
       ]
     },
     {
@@ -308455,6 +308459,36 @@
       ]
     },
     {
+      "id": "17187c9c29245034",
+      "title": "MatSciBench: Benchmarking the Reasoning Ability of Large Language Models in Materials Science",
+      "venue": "science",
+      "published_at": "2025-10-14",
+      "date_precision": "day",
+      "first_seen_at": "2026-08-29",
+      "source_updated_at": "2026-10-31",
+      "paper_url": "https://arxiv.org/abs/2510.12171",
+      "arxiv_id": "2510.12171",
+      "doi": "",
+      "group": "Cross-disciplinary Applications",
+      "category": "Science & Discovery",
+      "categories": [
+        "Science & Discovery"
+      ],
+      "subcategories": [
+        "Scientific LLM Benchmarks"
+      ],
+      "source_repos": [
+        "subinium/Awesome-Scientific-LLM-Benchmarks"
+      ],
+      "source_urls": [
+        "https://github.com/subinium/Awesome-Scientific-LLM-Benchmarks"
+      ],
+      "metadata_sources": [
+        "source README",
+        "Semantic Scholar"
+      ]
+    },
+    {
       "id": "52b146d0d22fd576",
       "title": "SeqBench: Benchmarking Sequential Narrative Generation in Text-to-Video Models",
       "venue": "arXiv",
@@ -308478,36 +308512,6 @@
       ],
       "source_urls": [
         "https://github.com/people-robots/Awesome-Video-Generation-Post-Training"
-      ],
-      "metadata_sources": [
-        "source README",
-        "Semantic Scholar"
-      ]
-    },
-    {
-      "id": "17187c9c29245034",
-      "title": "MatSciBench: Benchmarking the Reasoning Ability of Large Language Models in Materials Science",
-      "venue": "science",
-      "published_at": "2025-10-14",
-      "date_precision": "day",
-      "first_seen_at": "2026-08-29",
-      "source_updated_at": "2026-10-26",
-      "paper_url": "https://arxiv.org/abs/2510.12171",
-      "arxiv_id": "2510.12171",
-      "doi": "",
-      "group": "Cross-disciplinary Applications",
-      "category": "Science & Discovery",
-      "categories": [
-        "Science & Discovery"
-      ],
-      "subcategories": [
-        "Scientific LLM Benchmarks"
-      ],
-      "source_repos": [
-        "subinium/Awesome-Scientific-LLM-Benchmarks"
-      ],
-      "source_urls": [
-        "https://github.com/subinium/Awesome-Scientific-LLM-Benchmarks"
       ],
       "metadata_sources": [
         "source README",
@@ -308699,6 +308703,36 @@
       ]
     },
     {
+      "id": "684f7aa2e1234ebe",
+      "title": "NewtonBench: Benchmarking Generalizable Scientific Law Discovery in LLM Agents",
+      "venue": "arXiv",
+      "published_at": "2025-10-08",
+      "date_precision": "day",
+      "first_seen_at": "2026-08-29",
+      "source_updated_at": "2026-10-31",
+      "paper_url": "https://arxiv.org/abs/2510.07172",
+      "arxiv_id": "2510.07172",
+      "doi": "",
+      "group": "Cross-disciplinary Applications",
+      "category": "Science & Discovery",
+      "categories": [
+        "Science & Discovery"
+      ],
+      "subcategories": [
+        "Scientific LLM Benchmarks"
+      ],
+      "source_repos": [
+        "subinium/Awesome-Scientific-LLM-Benchmarks"
+      ],
+      "source_urls": [
+        "https://github.com/subinium/Awesome-Scientific-LLM-Benchmarks"
+      ],
+      "metadata_sources": [
+        "source README",
+        "Semantic Scholar"
+      ]
+    },
+    {
       "id": "2b5eb8d5601c2a71",
       "title": "TalkCuts: A Large-Scale Dataset for Multi-Shot Human Speech Video Generation",
       "venue": "NeurIPS",
@@ -308752,36 +308786,6 @@
       ],
       "source_urls": [
         "https://github.com/people-robots/Awesome-Video-Generation-Post-Training"
-      ],
-      "metadata_sources": [
-        "source README",
-        "Semantic Scholar"
-      ]
-    },
-    {
-      "id": "684f7aa2e1234ebe",
-      "title": "NewtonBench: Benchmarking Generalizable Scientific Law Discovery in LLM Agents",
-      "venue": "arXiv",
-      "published_at": "2025-10-08",
-      "date_precision": "day",
-      "first_seen_at": "2026-08-29",
-      "source_updated_at": "2026-10-26",
-      "paper_url": "https://arxiv.org/abs/2510.07172",
-      "arxiv_id": "2510.07172",
-      "doi": "",
-      "group": "Cross-disciplinary Applications",
-      "category": "Science & Discovery",
-      "categories": [
-        "Science & Discovery"
-      ],
-      "subcategories": [
-        "Scientific LLM Benchmarks"
-      ],
-      "source_repos": [
-        "subinium/Awesome-Scientific-LLM-Benchmarks"
-      ],
-      "source_urls": [
-        "https://github.com/subinium/Awesome-Scientific-LLM-Benchmarks"
       ],
       "metadata_sources": [
         "source README",
@@ -309029,6 +309033,36 @@
       ]
     },
     {
+      "id": "196deef9343fa4b1",
+      "title": "AtomWorld: A Benchmark for Evaluating Spatial Reasoning in Large Language Models on Crystalline Materials",
+      "venue": "arXiv",
+      "published_at": "2025-10-06",
+      "date_precision": "day",
+      "first_seen_at": "2026-08-29",
+      "source_updated_at": "2026-10-31",
+      "paper_url": "https://arxiv.org/abs/2510.04704",
+      "arxiv_id": "2510.04704",
+      "doi": "",
+      "group": "Cross-disciplinary Applications",
+      "category": "Science & Discovery",
+      "categories": [
+        "Science & Discovery"
+      ],
+      "subcategories": [
+        "Scientific LLM Benchmarks"
+      ],
+      "source_repos": [
+        "subinium/Awesome-Scientific-LLM-Benchmarks"
+      ],
+      "source_urls": [
+        "https://github.com/subinium/Awesome-Scientific-LLM-Benchmarks"
+      ],
+      "metadata_sources": [
+        "source README",
+        "Semantic Scholar"
+      ]
+    },
+    {
       "id": "3373031f6089640a",
       "title": "Paper2Video: Automatic Video Generation from Scientific Papers",
       "venue": "arXiv",
@@ -309086,36 +309120,6 @@
       "metadata_sources": [
         "source README",
         "Crossref"
-      ]
-    },
-    {
-      "id": "196deef9343fa4b1",
-      "title": "AtomWorld: A Benchmark for Evaluating Spatial Reasoning in Large Language Models on Crystalline Materials",
-      "venue": "arXiv",
-      "published_at": "2025-10-06",
-      "date_precision": "day",
-      "first_seen_at": "2026-08-29",
-      "source_updated_at": "2026-10-26",
-      "paper_url": "https://arxiv.org/abs/2510.04704",
-      "arxiv_id": "2510.04704",
-      "doi": "",
-      "group": "Cross-disciplinary Applications",
-      "category": "Science & Discovery",
-      "categories": [
-        "Science & Discovery"
-      ],
-      "subcategories": [
-        "Scientific LLM Benchmarks"
-      ],
-      "source_repos": [
-        "subinium/Awesome-Scientific-LLM-Benchmarks"
-      ],
-      "source_urls": [
-        "https://github.com/subinium/Awesome-Scientific-LLM-Benchmarks"
-      ],
-      "metadata_sources": [
-        "source README",
-        "Semantic Scholar"
       ]
     },
     {
@@ -336203,7 +336207,7 @@
       "published_at": "2025-08-25",
       "date_precision": "day",
       "first_seen_at": "2026-08-29",
-      "source_updated_at": "2026-10-26",
+      "source_updated_at": "2026-10-31",
       "paper_url": "https://arxiv.org/abs/2508.18124",
       "arxiv_id": "2508.18124",
       "doi": "",
@@ -336704,7 +336708,8 @@
       ],
       "metadata_sources": [
         "source README",
-        "arXiv"
+        "arXiv",
+        "Semantic Scholar"
       ]
     },
     {
@@ -337209,7 +337214,7 @@
       "published_at": "2025-08-05",
       "date_precision": "day",
       "first_seen_at": "2026-08-29",
-      "source_updated_at": "2026-10-26",
+      "source_updated_at": "2026-10-31",
       "paper_url": "https://arxiv.org/abs/2508.08292",
       "arxiv_id": "2508.08292",
       "doi": "",
@@ -349844,6 +349849,36 @@
       ]
     },
     {
+      "id": "e844ff7d34f53077",
+      "title": "PhysGym: Benchmarking LLMs in Interactive Physics Discovery with Controlled Priors",
+      "venue": "arXiv",
+      "published_at": "2025-07-21",
+      "date_precision": "day",
+      "first_seen_at": "2026-08-29",
+      "source_updated_at": "2026-10-31",
+      "paper_url": "https://arxiv.org/abs/2507.15550",
+      "arxiv_id": "2507.15550",
+      "doi": "",
+      "group": "Cross-disciplinary Applications",
+      "category": "Science & Discovery",
+      "categories": [
+        "Science & Discovery"
+      ],
+      "subcategories": [
+        "Scientific LLM Benchmarks"
+      ],
+      "source_repos": [
+        "subinium/Awesome-Scientific-LLM-Benchmarks"
+      ],
+      "source_urls": [
+        "https://github.com/subinium/Awesome-Scientific-LLM-Benchmarks"
+      ],
+      "metadata_sources": [
+        "source README",
+        "Semantic Scholar"
+      ]
+    },
+    {
       "id": "4fd9be55d2daa226",
       "title": "GR-3 Technical Report",
       "venue": "arXiv",
@@ -349965,36 +350000,6 @@
       "metadata_sources": [
         "source README",
         "arXiv"
-      ]
-    },
-    {
-      "id": "e844ff7d34f53077",
-      "title": "PhysGym: Benchmarking LLMs in Interactive Physics Discovery with Controlled Priors",
-      "venue": "arXiv",
-      "published_at": "2025-07-21",
-      "date_precision": "day",
-      "first_seen_at": "2026-08-29",
-      "source_updated_at": "2026-10-26",
-      "paper_url": "https://arxiv.org/abs/2507.15550",
-      "arxiv_id": "2507.15550",
-      "doi": "",
-      "group": "Cross-disciplinary Applications",
-      "category": "Science & Discovery",
-      "categories": [
-        "Science & Discovery"
-      ],
-      "subcategories": [
-        "Scientific LLM Benchmarks"
-      ],
-      "source_repos": [
-        "subinium/Awesome-Scientific-LLM-Benchmarks"
-      ],
-      "source_urls": [
-        "https://github.com/subinium/Awesome-Scientific-LLM-Benchmarks"
-      ],
-      "metadata_sources": [
-        "source README",
-        "Semantic Scholar"
       ]
     },
     {
@@ -350611,6 +350616,36 @@
       ]
     },
     {
+      "id": "cce9ac870c6641f8",
+      "title": "ABench-Physics: Benchmarking Physical Reasoning in LLMs via High-Difficulty and Dynamic Physics Problems",
+      "venue": "arXiv",
+      "published_at": "2025-07-07",
+      "date_precision": "day",
+      "first_seen_at": "2026-08-29",
+      "source_updated_at": "2026-10-31",
+      "paper_url": "https://arxiv.org/abs/2507.04766",
+      "arxiv_id": "2507.04766",
+      "doi": "",
+      "group": "Cross-disciplinary Applications",
+      "category": "Science & Discovery",
+      "categories": [
+        "Science & Discovery"
+      ],
+      "subcategories": [
+        "Scientific LLM Benchmarks"
+      ],
+      "source_repos": [
+        "subinium/Awesome-Scientific-LLM-Benchmarks"
+      ],
+      "source_urls": [
+        "https://github.com/subinium/Awesome-Scientific-LLM-Benchmarks"
+      ],
+      "metadata_sources": [
+        "source README",
+        "Semantic Scholar"
+      ]
+    },
+    {
       "id": "1b125fd5246b6633",
       "title": "MedGemma Technical Report",
       "venue": "arXiv",
@@ -350673,36 +350708,6 @@
       ],
       "metadata_sources": [
         "source README"
-      ]
-    },
-    {
-      "id": "cce9ac870c6641f8",
-      "title": "ABench-Physics: Benchmarking Physical Reasoning in LLMs via High-Difficulty and Dynamic Physics Problems",
-      "venue": "arXiv",
-      "published_at": "2025-07-07",
-      "date_precision": "day",
-      "first_seen_at": "2026-08-29",
-      "source_updated_at": "2026-10-26",
-      "paper_url": "https://arxiv.org/abs/2507.04766",
-      "arxiv_id": "2507.04766",
-      "doi": "",
-      "group": "Cross-disciplinary Applications",
-      "category": "Science & Discovery",
-      "categories": [
-        "Science & Discovery"
-      ],
-      "subcategories": [
-        "Scientific LLM Benchmarks"
-      ],
-      "source_repos": [
-        "subinium/Awesome-Scientific-LLM-Benchmarks"
-      ],
-      "source_urls": [
-        "https://github.com/subinium/Awesome-Scientific-LLM-Benchmarks"
-      ],
-      "metadata_sources": [
-        "source README",
-        "Semantic Scholar"
       ]
     },
     {
@@ -351126,6 +351131,36 @@
       ]
     },
     {
+      "id": "a9a3522bd79c4daf",
+      "title": "SciArena: An Open Evaluation Platform for Non-Verifiable Scientific Literature-Grounded Tasks",
+      "venue": "science",
+      "published_at": "2025-07-01",
+      "date_precision": "day",
+      "first_seen_at": "2026-08-29",
+      "source_updated_at": "2026-10-31",
+      "paper_url": "https://arxiv.org/abs/2507.01001",
+      "arxiv_id": "2507.01001",
+      "doi": "",
+      "group": "Cross-disciplinary Applications",
+      "category": "Science & Discovery",
+      "categories": [
+        "Science & Discovery"
+      ],
+      "subcategories": [
+        "Scientific LLM Benchmarks"
+      ],
+      "source_repos": [
+        "subinium/Awesome-Scientific-LLM-Benchmarks"
+      ],
+      "source_urls": [
+        "https://github.com/subinium/Awesome-Scientific-LLM-Benchmarks"
+      ],
+      "metadata_sources": [
+        "source README",
+        "Semantic Scholar"
+      ]
+    },
+    {
       "id": "78d7ed300c44dbc3",
       "title": "FixTalk: Taming Identity Leakage for High-Quality Talking Head Generation in Extreme Cases",
       "venue": "IEEE International Conference on Computer Vision",
@@ -351149,36 +351184,6 @@
       ],
       "source_urls": [
         "https://github.com/AlonzoLeeeooo/awesome-video-generation"
-      ],
-      "metadata_sources": [
-        "source README",
-        "Semantic Scholar"
-      ]
-    },
-    {
-      "id": "a9a3522bd79c4daf",
-      "title": "SciArena: An Open Evaluation Platform for Non-Verifiable Scientific Literature-Grounded Tasks",
-      "venue": "science",
-      "published_at": "2025-07-01",
-      "date_precision": "day",
-      "first_seen_at": "2026-08-29",
-      "source_updated_at": "2026-10-26",
-      "paper_url": "https://arxiv.org/abs/2507.01001",
-      "arxiv_id": "2507.01001",
-      "doi": "",
-      "group": "Cross-disciplinary Applications",
-      "category": "Science & Discovery",
-      "categories": [
-        "Science & Discovery"
-      ],
-      "subcategories": [
-        "Scientific LLM Benchmarks"
-      ],
-      "source_repos": [
-        "subinium/Awesome-Scientific-LLM-Benchmarks"
-      ],
-      "source_urls": [
-        "https://github.com/subinium/Awesome-Scientific-LLM-Benchmarks"
       ],
       "metadata_sources": [
         "source README",
@@ -359827,6 +359832,36 @@
       ]
     },
     {
+      "id": "e85d56ddf9ce3002",
+      "title": "RExBench: Can coding agents autonomously implement AI research extensions?",
+      "venue": "arXiv",
+      "published_at": "2025-06-27",
+      "date_precision": "day",
+      "first_seen_at": "2026-08-29",
+      "source_updated_at": "2026-10-31",
+      "paper_url": "https://arxiv.org/abs/2506.22598",
+      "arxiv_id": "2506.22598",
+      "doi": "",
+      "group": "Cross-disciplinary Applications",
+      "category": "Science & Discovery",
+      "categories": [
+        "Science & Discovery"
+      ],
+      "subcategories": [
+        "Scientific LLM Benchmarks"
+      ],
+      "source_repos": [
+        "subinium/Awesome-Scientific-LLM-Benchmarks"
+      ],
+      "source_urls": [
+        "https://github.com/subinium/Awesome-Scientific-LLM-Benchmarks"
+      ],
+      "metadata_sources": [
+        "source README",
+        "Semantic Scholar"
+      ]
+    },
+    {
       "id": "7f6cf47ad2c4c7e8",
       "title": "OutDreamer: Video Outpainting With a Diffusion Transformer",
       "venue": "IEEE Transactions on Image Processing",
@@ -359850,36 +359885,6 @@
       ],
       "source_urls": [
         "https://github.com/AlonzoLeeeooo/awesome-video-generation"
-      ],
-      "metadata_sources": [
-        "source README",
-        "Semantic Scholar"
-      ]
-    },
-    {
-      "id": "e85d56ddf9ce3002",
-      "title": "RExBench: Can coding agents autonomously implement AI research extensions?",
-      "venue": "arXiv",
-      "published_at": "2025-06-27",
-      "date_precision": "day",
-      "first_seen_at": "2026-08-29",
-      "source_updated_at": "2026-10-26",
-      "paper_url": "https://arxiv.org/abs/2506.22598",
-      "arxiv_id": "2506.22598",
-      "doi": "",
-      "group": "Cross-disciplinary Applications",
-      "category": "Science & Discovery",
-      "categories": [
-        "Science & Discovery"
-      ],
-      "subcategories": [
-        "Scientific LLM Benchmarks"
-      ],
-      "source_repos": [
-        "subinium/Awesome-Scientific-LLM-Benchmarks"
-      ],
-      "source_urls": [
-        "https://github.com/subinium/Awesome-Scientific-LLM-Benchmarks"
       ],
       "metadata_sources": [
         "source README",
@@ -360352,7 +360357,7 @@
       "published_at": "2025-06-19",
       "date_precision": "day",
       "first_seen_at": "2026-08-29",
-      "source_updated_at": "2026-10-26",
+      "source_updated_at": "2026-10-31",
       "paper_url": "https://arxiv.org/abs/2506.17335",
       "arxiv_id": "2506.17335",
       "doi": "",
@@ -362015,6 +362020,36 @@
       ]
     },
     {
+      "id": "1b3a5424fd31e61e",
+      "title": "ResearchCodeBench: Benchmarking LLMs on Implementing Novel Machine Learning Research Code",
+      "venue": "arXiv",
+      "published_at": "2025-06-02",
+      "date_precision": "day",
+      "first_seen_at": "2026-08-29",
+      "source_updated_at": "2026-10-31",
+      "paper_url": "https://arxiv.org/abs/2506.02314",
+      "arxiv_id": "2506.02314",
+      "doi": "",
+      "group": "Cross-disciplinary Applications",
+      "category": "Science & Discovery",
+      "categories": [
+        "Science & Discovery"
+      ],
+      "subcategories": [
+        "Scientific LLM Benchmarks"
+      ],
+      "source_repos": [
+        "subinium/Awesome-Scientific-LLM-Benchmarks"
+      ],
+      "source_urls": [
+        "https://github.com/subinium/Awesome-Scientific-LLM-Benchmarks"
+      ],
+      "metadata_sources": [
+        "source README",
+        "Semantic Scholar"
+      ]
+    },
+    {
       "id": "b661867c497ffdab",
       "title": "SmolVLA: A Vision-Language-Action Model for Affordable and Efficient Robotics",
       "venue": "arXiv",
@@ -362044,36 +362079,6 @@
         "https://github.com/zchoi/Awesome-Embodied-Robotics-and-Agent",
         "https://github.com/yueen-ma/Awesome-VLA",
         "https://github.com/jonyzhang2023/awesome-embodied-vla-va-vln"
-      ],
-      "metadata_sources": [
-        "source README",
-        "Semantic Scholar"
-      ]
-    },
-    {
-      "id": "1b3a5424fd31e61e",
-      "title": "ResearchCodeBench: Benchmarking LLMs on Implementing Novel Machine Learning Research Code",
-      "venue": "arXiv",
-      "published_at": "2025-06-02",
-      "date_precision": "day",
-      "first_seen_at": "2026-08-29",
-      "source_updated_at": "2026-10-26",
-      "paper_url": "https://arxiv.org/abs/2506.02314",
-      "arxiv_id": "2506.02314",
-      "doi": "",
-      "group": "Cross-disciplinary Applications",
-      "category": "Science & Discovery",
-      "categories": [
-        "Science & Discovery"
-      ],
-      "subcategories": [
-        "Scientific LLM Benchmarks"
-      ],
-      "source_repos": [
-        "subinium/Awesome-Scientific-LLM-Benchmarks"
-      ],
-      "source_urls": [
-        "https://github.com/subinium/Awesome-Scientific-LLM-Benchmarks"
       ],
       "metadata_sources": [
         "source README",
@@ -376345,6 +376350,36 @@
       ]
     },
     {
+      "id": "7f305275741b286b",
+      "title": "EXP-Bench: Can AI Conduct AI Research Experiments?",
+      "venue": "arXiv",
+      "published_at": "2025-05-30",
+      "date_precision": "day",
+      "first_seen_at": "2026-08-29",
+      "source_updated_at": "2026-10-31",
+      "paper_url": "https://arxiv.org/abs/2505.24785",
+      "arxiv_id": "2505.24785",
+      "doi": "",
+      "group": "Cross-disciplinary Applications",
+      "category": "Science & Discovery",
+      "categories": [
+        "Science & Discovery"
+      ],
+      "subcategories": [
+        "Scientific LLM Benchmarks"
+      ],
+      "source_repos": [
+        "subinium/Awesome-Scientific-LLM-Benchmarks"
+      ],
+      "source_urls": [
+        "https://github.com/subinium/Awesome-Scientific-LLM-Benchmarks"
+      ],
+      "metadata_sources": [
+        "source README",
+        "Semantic Scholar"
+      ]
+    },
+    {
       "id": "cf724c9c079eb42b",
       "title": "AdaHuman: Animatable Detailed 3D Human Generation with Compositional Multiview Diffusion",
       "venue": "arXiv",
@@ -376375,15 +376410,15 @@
       ]
     },
     {
-      "id": "7f305275741b286b",
-      "title": "EXP-Bench: Can AI Conduct AI Research Experiments?",
+      "id": "9804c7468d9c27d5",
+      "title": "MathArena: Evaluating LLMs on Uncontaminated Math Competitions",
       "venue": "arXiv",
-      "published_at": "2025-05-30",
+      "published_at": "2025-05-29",
       "date_precision": "day",
       "first_seen_at": "2026-08-29",
-      "source_updated_at": "2026-10-26",
-      "paper_url": "https://arxiv.org/abs/2505.24785",
-      "arxiv_id": "2505.24785",
+      "source_updated_at": "2026-10-31",
+      "paper_url": "https://arxiv.org/abs/2505.23281",
+      "arxiv_id": "2505.23281",
       "doi": "",
       "group": "Cross-disciplinary Applications",
       "category": "Science & Discovery",
@@ -376522,36 +376557,6 @@
       "source_urls": [
         "https://github.com/lchen1019/awesome-mllm-benchmarks",
         "https://github.com/SIBench/Awesome-Visual-Spatial-Reasoning"
-      ],
-      "metadata_sources": [
-        "source README",
-        "Semantic Scholar"
-      ]
-    },
-    {
-      "id": "9804c7468d9c27d5",
-      "title": "MathArena: Evaluating LLMs on Uncontaminated Math Competitions",
-      "venue": "arXiv",
-      "published_at": "2025-05-29",
-      "date_precision": "day",
-      "first_seen_at": "2026-08-29",
-      "source_updated_at": "2026-10-26",
-      "paper_url": "https://arxiv.org/abs/2505.23281",
-      "arxiv_id": "2505.23281",
-      "doi": "",
-      "group": "Cross-disciplinary Applications",
-      "category": "Science & Discovery",
-      "categories": [
-        "Science & Discovery"
-      ],
-      "subcategories": [
-        "Scientific LLM Benchmarks"
-      ],
-      "source_repos": [
-        "subinium/Awesome-Scientific-LLM-Benchmarks"
-      ],
-      "source_urls": [
-        "https://github.com/subinium/Awesome-Scientific-LLM-Benchmarks"
       ],
       "metadata_sources": [
         "source README",
@@ -376769,6 +376774,36 @@
       ]
     },
     {
+      "id": "fc2a9b4a5aa1ab2b",
+      "title": "Beyond Chemical QA: Evaluating LLM's Chemical Reasoning with Modular Chemical Operations",
+      "venue": "arXiv",
+      "published_at": "2025-05-27",
+      "date_precision": "day",
+      "first_seen_at": "2026-08-29",
+      "source_updated_at": "2026-10-31",
+      "paper_url": "https://arxiv.org/abs/2505.21318",
+      "arxiv_id": "2505.21318",
+      "doi": "",
+      "group": "Cross-disciplinary Applications",
+      "category": "Science & Discovery",
+      "categories": [
+        "Science & Discovery"
+      ],
+      "subcategories": [
+        "Scientific LLM Benchmarks"
+      ],
+      "source_repos": [
+        "subinium/Awesome-Scientific-LLM-Benchmarks"
+      ],
+      "source_urls": [
+        "https://github.com/subinium/Awesome-Scientific-LLM-Benchmarks"
+      ],
+      "metadata_sources": [
+        "source README",
+        "Semantic Scholar"
+      ]
+    },
+    {
       "id": "411e8a66eccb0935",
       "title": "Video-Holmes: Can MLLM Think Like Holmes for Complex Video Reasoning?",
       "venue": "arXiv",
@@ -376822,36 +376857,6 @@
       ],
       "source_urls": [
         "https://github.com/people-robots/Awesome-Video-Generation-Post-Training"
-      ],
-      "metadata_sources": [
-        "source README",
-        "Semantic Scholar"
-      ]
-    },
-    {
-      "id": "fc2a9b4a5aa1ab2b",
-      "title": "Beyond Chemical QA: Evaluating LLM's Chemical Reasoning with Modular Chemical Operations",
-      "venue": "arXiv",
-      "published_at": "2025-05-27",
-      "date_precision": "day",
-      "first_seen_at": "2026-08-29",
-      "source_updated_at": "2026-10-26",
-      "paper_url": "https://arxiv.org/abs/2505.21318",
-      "arxiv_id": "2505.21318",
-      "doi": "",
-      "group": "Cross-disciplinary Applications",
-      "category": "Science & Discovery",
-      "categories": [
-        "Science & Discovery"
-      ],
-      "subcategories": [
-        "Scientific LLM Benchmarks"
-      ],
-      "source_repos": [
-        "subinium/Awesome-Scientific-LLM-Benchmarks"
-      ],
-      "source_urls": [
-        "https://github.com/subinium/Awesome-Scientific-LLM-Benchmarks"
       ],
       "metadata_sources": [
         "source README",
@@ -377039,6 +377044,99 @@
       ]
     },
     {
+      "id": "c2b3733334f1fe2d",
+      "title": "Toward Scientific Reasoning in LLMs: Training from Expert Discussions via Reinforcement Learning",
+      "venue": "arXiv",
+      "published_at": "2025-05-26",
+      "date_precision": "day",
+      "first_seen_at": "2026-08-29",
+      "source_updated_at": "2026-10-31",
+      "paper_url": "https://arxiv.org/abs/2505.19501",
+      "arxiv_id": "2505.19501",
+      "doi": "",
+      "group": "Cross-disciplinary Applications",
+      "category": "Science & Discovery",
+      "categories": [
+        "Science & Discovery"
+      ],
+      "subcategories": [
+        "Scientific LLM Benchmarks"
+      ],
+      "source_repos": [
+        "subinium/Awesome-Scientific-LLM-Benchmarks"
+      ],
+      "source_urls": [
+        "https://github.com/subinium/Awesome-Scientific-LLM-Benchmarks"
+      ],
+      "metadata_sources": [
+        "source README",
+        "Semantic Scholar"
+      ]
+    },
+    {
+      "id": "e2299ccbfe73b941",
+      "title": "MLR-Bench: Evaluating AI Agents on Open-Ended Machine Learning Research",
+      "venue": "NeurIPS 2025",
+      "published_at": "2025-05-26",
+      "date_precision": "day",
+      "first_seen_at": "2026-08-29",
+      "source_updated_at": "2026-10-31",
+      "paper_url": "https://arxiv.org/abs/2505.19955",
+      "arxiv_id": "2505.19955",
+      "doi": "",
+      "group": "Cross-disciplinary Applications",
+      "category": "Science & Discovery",
+      "categories": [
+        "Science & Discovery"
+      ],
+      "subcategories": [
+        "Scientific Agents",
+        "Scientific LLM Benchmarks"
+      ],
+      "source_repos": [
+        "zoedsy/awesome-science-agents",
+        "subinium/Awesome-Scientific-LLM-Benchmarks"
+      ],
+      "source_urls": [
+        "https://github.com/zoedsy/awesome-science-agents",
+        "https://github.com/subinium/Awesome-Scientific-LLM-Benchmarks"
+      ],
+      "metadata_sources": [
+        "source README",
+        "Semantic Scholar"
+      ]
+    },
+    {
+      "id": "0b4cb65092970144",
+      "title": "AstroVisBench: A Code Benchmark for Scientific Computing and Visualization in Astronomy",
+      "venue": "arXiv",
+      "published_at": "2025-05-26",
+      "date_precision": "day",
+      "first_seen_at": "2026-08-29",
+      "source_updated_at": "2026-10-31",
+      "paper_url": "https://arxiv.org/abs/2505.20538",
+      "arxiv_id": "2505.20538",
+      "doi": "",
+      "group": "Cross-disciplinary Applications",
+      "category": "Science & Discovery",
+      "categories": [
+        "Science & Discovery"
+      ],
+      "subcategories": [
+        "Scientific LLM Benchmarks"
+      ],
+      "source_repos": [
+        "subinium/Awesome-Scientific-LLM-Benchmarks"
+      ],
+      "source_urls": [
+        "https://github.com/subinium/Awesome-Scientific-LLM-Benchmarks"
+      ],
+      "metadata_sources": [
+        "source README",
+        "Semantic Scholar"
+      ]
+    },
+    {
       "id": "67ad82b54c0bfc1c",
       "title": "MetaWriter: Personalized Handwritten Text Recognition Using Meta-Learned Prompt Tuning",
       "venue": "CVPR",
@@ -377096,99 +377194,6 @@
       ],
       "source_urls": [
         "https://github.com/people-robots/Awesome-Video-Generation-Post-Training"
-      ],
-      "metadata_sources": [
-        "source README",
-        "Semantic Scholar"
-      ]
-    },
-    {
-      "id": "c2b3733334f1fe2d",
-      "title": "Toward Scientific Reasoning in LLMs: Training from Expert Discussions via Reinforcement Learning",
-      "venue": "arXiv",
-      "published_at": "2025-05-26",
-      "date_precision": "day",
-      "first_seen_at": "2026-08-29",
-      "source_updated_at": "2026-10-26",
-      "paper_url": "https://arxiv.org/abs/2505.19501",
-      "arxiv_id": "2505.19501",
-      "doi": "",
-      "group": "Cross-disciplinary Applications",
-      "category": "Science & Discovery",
-      "categories": [
-        "Science & Discovery"
-      ],
-      "subcategories": [
-        "Scientific LLM Benchmarks"
-      ],
-      "source_repos": [
-        "subinium/Awesome-Scientific-LLM-Benchmarks"
-      ],
-      "source_urls": [
-        "https://github.com/subinium/Awesome-Scientific-LLM-Benchmarks"
-      ],
-      "metadata_sources": [
-        "source README",
-        "Semantic Scholar"
-      ]
-    },
-    {
-      "id": "e2299ccbfe73b941",
-      "title": "MLR-Bench: Evaluating AI Agents on Open-Ended Machine Learning Research",
-      "venue": "NeurIPS 2025",
-      "published_at": "2025-05-26",
-      "date_precision": "day",
-      "first_seen_at": "2026-08-29",
-      "source_updated_at": "2026-10-26",
-      "paper_url": "https://arxiv.org/abs/2505.19955",
-      "arxiv_id": "2505.19955",
-      "doi": "",
-      "group": "Cross-disciplinary Applications",
-      "category": "Science & Discovery",
-      "categories": [
-        "Science & Discovery"
-      ],
-      "subcategories": [
-        "Scientific Agents",
-        "Scientific LLM Benchmarks"
-      ],
-      "source_repos": [
-        "zoedsy/awesome-science-agents",
-        "subinium/Awesome-Scientific-LLM-Benchmarks"
-      ],
-      "source_urls": [
-        "https://github.com/zoedsy/awesome-science-agents",
-        "https://github.com/subinium/Awesome-Scientific-LLM-Benchmarks"
-      ],
-      "metadata_sources": [
-        "source README",
-        "Semantic Scholar"
-      ]
-    },
-    {
-      "id": "0b4cb65092970144",
-      "title": "AstroVisBench: A Code Benchmark for Scientific Computing and Visualization in Astronomy",
-      "venue": "arXiv",
-      "published_at": "2025-05-26",
-      "date_precision": "day",
-      "first_seen_at": "2026-08-29",
-      "source_updated_at": "2026-10-26",
-      "paper_url": "https://arxiv.org/abs/2505.20538",
-      "arxiv_id": "2505.20538",
-      "doi": "",
-      "group": "Cross-disciplinary Applications",
-      "category": "Science & Discovery",
-      "categories": [
-        "Science & Discovery"
-      ],
-      "subcategories": [
-        "Scientific LLM Benchmarks"
-      ],
-      "source_repos": [
-        "subinium/Awesome-Scientific-LLM-Benchmarks"
-      ],
-      "source_urls": [
-        "https://github.com/subinium/Awesome-Scientific-LLM-Benchmarks"
       ],
       "metadata_sources": [
         "source README",
@@ -378828,6 +378833,36 @@
       ]
     },
     {
+      "id": "f1fc9e001070d4ca",
+      "title": "HealthBench: Evaluating Large Language Models Towards Improved Human Health",
+      "venue": "arXiv",
+      "published_at": "2025-05-13",
+      "date_precision": "day",
+      "first_seen_at": "2026-08-29",
+      "source_updated_at": "2026-10-31",
+      "paper_url": "https://arxiv.org/abs/2505.08775",
+      "arxiv_id": "2505.08775",
+      "doi": "",
+      "group": "Cross-disciplinary Applications",
+      "category": "Science & Discovery",
+      "categories": [
+        "Science & Discovery"
+      ],
+      "subcategories": [
+        "Scientific LLM Benchmarks"
+      ],
+      "source_repos": [
+        "subinium/Awesome-Scientific-LLM-Benchmarks"
+      ],
+      "source_urls": [
+        "https://github.com/subinium/Awesome-Scientific-LLM-Benchmarks"
+      ],
+      "metadata_sources": [
+        "source README",
+        "Semantic Scholar"
+      ]
+    },
+    {
       "id": "651a4190ee553792",
       "title": "VCRBench: Exploring Long-form Causal Reasoning Capabilities of Large Video Language Models",
       "venue": "arXiv",
@@ -378854,36 +378889,6 @@
       "source_urls": [
         "https://github.com/lchen1019/awesome-mllm-benchmarks",
         "https://github.com/The-Martyr/Awesome-Multimodal-Reasoning"
-      ],
-      "metadata_sources": [
-        "source README",
-        "Semantic Scholar"
-      ]
-    },
-    {
-      "id": "f1fc9e001070d4ca",
-      "title": "HealthBench: Evaluating Large Language Models Towards Improved Human Health",
-      "venue": "arXiv",
-      "published_at": "2025-05-13",
-      "date_precision": "day",
-      "first_seen_at": "2026-08-29",
-      "source_updated_at": "2026-10-26",
-      "paper_url": "https://arxiv.org/abs/2505.08775",
-      "arxiv_id": "2505.08775",
-      "doi": "",
-      "group": "Cross-disciplinary Applications",
-      "category": "Science & Discovery",
-      "categories": [
-        "Science & Discovery"
-      ],
-      "subcategories": [
-        "Scientific LLM Benchmarks"
-      ],
-      "source_repos": [
-        "subinium/Awesome-Scientific-LLM-Benchmarks"
-      ],
-      "source_urls": [
-        "https://github.com/subinium/Awesome-Scientific-LLM-Benchmarks"
       ],
       "metadata_sources": [
         "source README",
@@ -379170,6 +379175,36 @@
       ]
     },
     {
+      "id": "ca570fdad1dacb46",
+      "title": "BioProBench: A Corpus and Benchmark for Biological Protocol Reasoning in Autonomous Science",
+      "venue": "arXiv",
+      "published_at": "2025-05-11",
+      "date_precision": "day",
+      "first_seen_at": "2026-08-29",
+      "source_updated_at": "2026-10-31",
+      "paper_url": "https://arxiv.org/abs/2505.07889",
+      "arxiv_id": "2505.07889",
+      "doi": "",
+      "group": "Cross-disciplinary Applications",
+      "category": "Science & Discovery",
+      "categories": [
+        "Science & Discovery"
+      ],
+      "subcategories": [
+        "Scientific LLM Benchmarks"
+      ],
+      "source_repos": [
+        "subinium/Awesome-Scientific-LLM-Benchmarks"
+      ],
+      "source_urls": [
+        "https://github.com/subinium/Awesome-Scientific-LLM-Benchmarks"
+      ],
+      "metadata_sources": [
+        "source README",
+        "Semantic Scholar"
+      ]
+    },
+    {
       "id": "a49092e22563e0d4",
       "title": "Seed1.5-VL Technical Report",
       "venue": "arXiv",
@@ -379203,36 +379238,6 @@
       "metadata_sources": [
         "source README",
         "arXiv",
-        "Semantic Scholar"
-      ]
-    },
-    {
-      "id": "ca570fdad1dacb46",
-      "title": "BioProBench: A Corpus and Benchmark for Biological Protocol Reasoning in Autonomous Science",
-      "venue": "arXiv",
-      "published_at": "2025-05-11",
-      "date_precision": "day",
-      "first_seen_at": "2026-08-29",
-      "source_updated_at": "2026-10-26",
-      "paper_url": "https://arxiv.org/abs/2505.07889",
-      "arxiv_id": "2505.07889",
-      "doi": "",
-      "group": "Cross-disciplinary Applications",
-      "category": "Science & Discovery",
-      "categories": [
-        "Science & Discovery"
-      ],
-      "subcategories": [
-        "Scientific LLM Benchmarks"
-      ],
-      "source_repos": [
-        "subinium/Awesome-Scientific-LLM-Benchmarks"
-      ],
-      "source_urls": [
-        "https://github.com/subinium/Awesome-Scientific-LLM-Benchmarks"
-      ],
-      "metadata_sources": [
-        "source README",
         "Semantic Scholar"
       ]
     },
@@ -379490,7 +379495,7 @@
       "published_at": "2025-05-06",
       "date_precision": "day",
       "first_seen_at": "2026-08-29",
-      "source_updated_at": "2026-10-26",
+      "source_updated_at": "2026-10-31",
       "paper_url": "https://arxiv.org/abs/2505.03171",
       "arxiv_id": "2505.03171",
       "doi": "",
@@ -379583,7 +379588,7 @@
       "published_at": "2025-05-05",
       "date_precision": "day",
       "first_seen_at": "2026-08-29",
-      "source_updated_at": "2026-10-26",
+      "source_updated_at": "2026-10-31",
       "paper_url": "https://arxiv.org/abs/2505.02735",
       "arxiv_id": "2505.02735",
       "doi": "",
@@ -380202,6 +380207,42 @@
         "https://github.com/wangkai930418/awesome-diffusion-categorized",
         "https://github.com/AlonzoLeeeooo/awesome-video-generation",
         "https://github.com/people-robots/Awesome-Video-Generation-Post-Training"
+      ],
+      "metadata_sources": [
+        "source README",
+        "arXiv identifier"
+      ]
+    },
+    {
+      "id": "5feb3f539bae39cb",
+      "title": "AI-Researcher: Autonomous Scientific Innovation",
+      "venue": "arXiv",
+      "published_at": "2025-05",
+      "date_precision": "month",
+      "first_seen_at": "2026-08-29",
+      "source_updated_at": "2026-10-31",
+      "paper_url": "https://arxiv.org/abs/2505.18705",
+      "arxiv_id": "2505.18705",
+      "doi": "",
+      "group": "Cross-disciplinary Applications",
+      "category": "Science & Discovery",
+      "categories": [
+        "Science & Discovery"
+      ],
+      "subcategories": [
+        "Scientific Agents",
+        "General AI4Science",
+        "Scientific LLM Benchmarks"
+      ],
+      "source_repos": [
+        "zoedsy/awesome-science-agents",
+        "ai4s-research/awesome-ai-for-science",
+        "subinium/Awesome-Scientific-LLM-Benchmarks"
+      ],
+      "source_urls": [
+        "https://github.com/zoedsy/awesome-science-agents",
+        "https://github.com/ai4s-research/awesome-ai-for-science",
+        "https://github.com/subinium/Awesome-Scientific-LLM-Benchmarks"
       ],
       "metadata_sources": [
         "source README",
@@ -381628,42 +381669,6 @@
       "source_urls": [
         "https://github.com/wangkai930418/awesome-diffusion-categorized",
         "https://github.com/people-robots/Awesome-Video-Generation-Post-Training"
-      ],
-      "metadata_sources": [
-        "source README",
-        "arXiv identifier"
-      ]
-    },
-    {
-      "id": "5feb3f539bae39cb",
-      "title": "AI-Researcher: Autonomous Scientific Innovation",
-      "venue": "arXiv",
-      "published_at": "2025-05",
-      "date_precision": "month",
-      "first_seen_at": "2026-08-29",
-      "source_updated_at": "2026-10-29",
-      "paper_url": "https://arxiv.org/abs/2505.18705",
-      "arxiv_id": "2505.18705",
-      "doi": "",
-      "group": "Cross-disciplinary Applications",
-      "category": "Science & Discovery",
-      "categories": [
-        "Science & Discovery"
-      ],
-      "subcategories": [
-        "Scientific Agents",
-        "General AI4Science",
-        "Scientific LLM Benchmarks"
-      ],
-      "source_repos": [
-        "zoedsy/awesome-science-agents",
-        "ai4s-research/awesome-ai-for-science",
-        "subinium/Awesome-Scientific-LLM-Benchmarks"
-      ],
-      "source_urls": [
-        "https://github.com/zoedsy/awesome-science-agents",
-        "https://github.com/ai4s-research/awesome-ai-for-science",
-        "https://github.com/subinium/Awesome-Scientific-LLM-Benchmarks"
       ],
       "metadata_sources": [
         "source README",
@@ -397593,7 +397598,7 @@
       "published_at": "2025-04-24",
       "date_precision": "day",
       "first_seen_at": "2026-08-29",
-      "source_updated_at": "2026-10-26",
+      "source_updated_at": "2026-10-31",
       "paper_url": "https://arxiv.org/abs/2504.17192",
       "arxiv_id": "2504.17192",
       "doi": "",
@@ -397767,6 +397772,36 @@
       ]
     },
     {
+      "id": "864be406d246e44e",
+      "title": "PHYBench: Holistic Evaluation of Physical Perception and Reasoning in Large Language Models",
+      "venue": "arXiv",
+      "published_at": "2025-04-22",
+      "date_precision": "day",
+      "first_seen_at": "2026-08-31",
+      "source_updated_at": "2026-10-31",
+      "paper_url": "https://arxiv.org/abs/2504.16074",
+      "arxiv_id": "2504.16074",
+      "doi": "",
+      "group": "Cross-disciplinary Applications",
+      "category": "Science & Discovery",
+      "categories": [
+        "Science & Discovery"
+      ],
+      "subcategories": [
+        "Scientific LLM Benchmarks"
+      ],
+      "source_repos": [
+        "subinium/Awesome-Scientific-LLM-Benchmarks"
+      ],
+      "source_urls": [
+        "https://github.com/subinium/Awesome-Scientific-LLM-Benchmarks"
+      ],
+      "metadata_sources": [
+        "source README",
+        "Semantic Scholar"
+      ]
+    },
+    {
       "id": "e7e415a8d04df270",
       "title": "Live: Learning Video LLM with Streaming Speech Transcription at Scale",
       "venue": "arXiv",
@@ -397798,36 +397833,6 @@
         "https://github.com/lchen1019/awesome-mllm-benchmarks",
         "https://github.com/metame-ai/awesome-audio-plaza",
         "https://github.com/52CV/CVPR-2025-Papers"
-      ],
-      "metadata_sources": [
-        "source README",
-        "Semantic Scholar"
-      ]
-    },
-    {
-      "id": "864be406d246e44e",
-      "title": "PHYBench: Holistic Evaluation of Physical Perception and Reasoning in Large Language Models",
-      "venue": "arXiv",
-      "published_at": "2025-04-22",
-      "date_precision": "day",
-      "first_seen_at": "2026-08-31",
-      "source_updated_at": "2026-10-26",
-      "paper_url": "https://arxiv.org/abs/2504.16074",
-      "arxiv_id": "2504.16074",
-      "doi": "",
-      "group": "Cross-disciplinary Applications",
-      "category": "Science & Discovery",
-      "categories": [
-        "Science & Discovery"
-      ],
-      "subcategories": [
-        "Scientific LLM Benchmarks"
-      ],
-      "source_repos": [
-        "subinium/Awesome-Scientific-LLM-Benchmarks"
-      ],
-      "source_urls": [
-        "https://github.com/subinium/Awesome-Scientific-LLM-Benchmarks"
       ],
       "metadata_sources": [
         "source README",
@@ -398390,6 +398395,36 @@
       ]
     },
     {
+      "id": "e2fc489155336b17",
+      "title": "LLM-SRBench: A New Benchmark for Scientific Equation Discovery with Large Language Models",
+      "venue": "science",
+      "published_at": "2025-04-14",
+      "date_precision": "day",
+      "first_seen_at": "2026-08-29",
+      "source_updated_at": "2026-10-31",
+      "paper_url": "https://arxiv.org/abs/2504.10415",
+      "arxiv_id": "2504.10415",
+      "doi": "",
+      "group": "Cross-disciplinary Applications",
+      "category": "Science & Discovery",
+      "categories": [
+        "Science & Discovery"
+      ],
+      "subcategories": [
+        "Scientific LLM Benchmarks"
+      ],
+      "source_repos": [
+        "subinium/Awesome-Scientific-LLM-Benchmarks"
+      ],
+      "source_urls": [
+        "https://github.com/subinium/Awesome-Scientific-LLM-Benchmarks"
+      ],
+      "metadata_sources": [
+        "source README",
+        "Semantic Scholar"
+      ]
+    },
+    {
       "id": "e0f72cf36e92889e",
       "title": "SemiETS: Integrating Spatial and Content Consistencies for Semi-Supervised End-to-end Text Spotting",
       "venue": "CVPR",
@@ -398525,36 +398560,6 @@
       ]
     },
     {
-      "id": "e2fc489155336b17",
-      "title": "LLM-SRBench: A New Benchmark for Scientific Equation Discovery with Large Language Models",
-      "venue": "science",
-      "published_at": "2025-04-14",
-      "date_precision": "day",
-      "first_seen_at": "2026-08-29",
-      "source_updated_at": "2026-10-26",
-      "paper_url": "https://arxiv.org/abs/2504.10415",
-      "arxiv_id": "2504.10415",
-      "doi": "",
-      "group": "Cross-disciplinary Applications",
-      "category": "Science & Discovery",
-      "categories": [
-        "Science & Discovery"
-      ],
-      "subcategories": [
-        "Scientific LLM Benchmarks"
-      ],
-      "source_repos": [
-        "subinium/Awesome-Scientific-LLM-Benchmarks"
-      ],
-      "source_urls": [
-        "https://github.com/subinium/Awesome-Scientific-LLM-Benchmarks"
-      ],
-      "metadata_sources": [
-        "source README",
-        "Semantic Scholar"
-      ]
-    },
-    {
       "id": "d927c779bd9f9cf7",
       "title": "EmbodiedAgent: A Scalable Hierarchical Approach to Overcome Practical Challenge in Multi-Robot Control",
       "venue": "arXiv",
@@ -398591,7 +398596,7 @@
       "published_at": "2025-04-13",
       "date_precision": "day",
       "first_seen_at": "2026-08-31",
-      "source_updated_at": "2026-10-26",
+      "source_updated_at": "2026-10-31",
       "paper_url": "https://arxiv.org/abs/2504.09702",
       "arxiv_id": "2504.09702",
       "doi": "",
@@ -398842,7 +398847,7 @@
       "published_at": "2025-04-08",
       "date_precision": "day",
       "first_seen_at": "2026-08-29",
-      "source_updated_at": "2026-10-26",
+      "source_updated_at": "2026-10-31",
       "paper_url": "https://arxiv.org/abs/2504.06260",
       "arxiv_id": "2504.06260",
       "doi": "",
@@ -399394,6 +399399,39 @@
       ]
     },
     {
+      "id": "8a42458a0e3328cf",
+      "title": "PaperBench: Evaluating AI's Ability to Replicate AI Research",
+      "venue": "arXiv",
+      "published_at": "2025-04-02",
+      "date_precision": "day",
+      "first_seen_at": "2026-08-29",
+      "source_updated_at": "2026-10-31",
+      "paper_url": "https://arxiv.org/abs/2504.01848",
+      "arxiv_id": "2504.01848",
+      "doi": "",
+      "group": "Cross-disciplinary Applications",
+      "category": "Science & Discovery",
+      "categories": [
+        "Science & Discovery"
+      ],
+      "subcategories": [
+        "Scientific Agents",
+        "Scientific LLM Benchmarks"
+      ],
+      "source_repos": [
+        "zoedsy/awesome-science-agents",
+        "subinium/Awesome-Scientific-LLM-Benchmarks"
+      ],
+      "source_urls": [
+        "https://github.com/zoedsy/awesome-science-agents",
+        "https://github.com/subinium/Awesome-Scientific-LLM-Benchmarks"
+      ],
+      "metadata_sources": [
+        "source README",
+        "Semantic Scholar"
+      ]
+    },
+    {
       "id": "559e603be9944ff4",
       "title": "An Illusion of Progress? Assessing the Current State of Web Agents",
       "venue": "arXiv",
@@ -399417,39 +399455,6 @@
       ],
       "source_urls": [
         "https://github.com/lchen1019/awesome-mllm-benchmarks"
-      ],
-      "metadata_sources": [
-        "source README",
-        "Semantic Scholar"
-      ]
-    },
-    {
-      "id": "8a42458a0e3328cf",
-      "title": "PaperBench: Evaluating AI's Ability to Replicate AI Research",
-      "venue": "arXiv",
-      "published_at": "2025-04-02",
-      "date_precision": "day",
-      "first_seen_at": "2026-08-29",
-      "source_updated_at": "2026-10-26",
-      "paper_url": "https://arxiv.org/abs/2504.01848",
-      "arxiv_id": "2504.01848",
-      "doi": "",
-      "group": "Cross-disciplinary Applications",
-      "category": "Science & Discovery",
-      "categories": [
-        "Science & Discovery"
-      ],
-      "subcategories": [
-        "Scientific Agents",
-        "Scientific LLM Benchmarks"
-      ],
-      "source_repos": [
-        "zoedsy/awesome-science-agents",
-        "subinium/Awesome-Scientific-LLM-Benchmarks"
-      ],
-      "source_urls": [
-        "https://github.com/zoedsy/awesome-science-agents",
-        "https://github.com/subinium/Awesome-Scientific-LLM-Benchmarks"
       ],
       "metadata_sources": [
         "source README",
@@ -411759,6 +411764,36 @@
       ]
     },
     {
+      "id": "6507f678ae899bfa",
+      "title": "SciReplicate-Bench: Benchmarking LLMs in Agent-driven Algorithmic Reproduction from Research Papers",
+      "venue": "arXiv",
+      "published_at": "2025-03-31",
+      "date_precision": "day",
+      "first_seen_at": "2026-08-29",
+      "source_updated_at": "2026-10-31",
+      "paper_url": "https://arxiv.org/abs/2504.00255",
+      "arxiv_id": "2504.00255",
+      "doi": "",
+      "group": "Cross-disciplinary Applications",
+      "category": "Science & Discovery",
+      "categories": [
+        "Science & Discovery"
+      ],
+      "subcategories": [
+        "Scientific LLM Benchmarks"
+      ],
+      "source_repos": [
+        "subinium/Awesome-Scientific-LLM-Benchmarks"
+      ],
+      "source_urls": [
+        "https://github.com/subinium/Awesome-Scientific-LLM-Benchmarks"
+      ],
+      "metadata_sources": [
+        "source README",
+        "Semantic Scholar"
+      ]
+    },
+    {
       "id": "0de45ca313712811",
       "title": "HOIGen-1M: A Large-scale Dataset for Human-Object Interaction Video Generation",
       "venue": "CVPR 2025",
@@ -411823,36 +411858,6 @@
       "metadata_sources": [
         "source README",
         "Crossref"
-      ]
-    },
-    {
-      "id": "6507f678ae899bfa",
-      "title": "SciReplicate-Bench: Benchmarking LLMs in Agent-driven Algorithmic Reproduction from Research Papers",
-      "venue": "arXiv",
-      "published_at": "2025-03-31",
-      "date_precision": "day",
-      "first_seen_at": "2026-08-29",
-      "source_updated_at": "2026-10-26",
-      "paper_url": "https://arxiv.org/abs/2504.00255",
-      "arxiv_id": "2504.00255",
-      "doi": "",
-      "group": "Cross-disciplinary Applications",
-      "category": "Science & Discovery",
-      "categories": [
-        "Science & Discovery"
-      ],
-      "subcategories": [
-        "Scientific LLM Benchmarks"
-      ],
-      "source_repos": [
-        "subinium/Awesome-Scientific-LLM-Benchmarks"
-      ],
-      "source_urls": [
-        "https://github.com/subinium/Awesome-Scientific-LLM-Benchmarks"
-      ],
-      "metadata_sources": [
-        "source README",
-        "Semantic Scholar"
       ]
     },
     {
@@ -412106,7 +412111,7 @@
       "published_at": "2025-03-27",
       "date_precision": "day",
       "first_seen_at": "2026-08-29",
-      "source_updated_at": "2026-10-26",
+      "source_updated_at": "2026-10-31",
       "paper_url": "https://arxiv.org/abs/2503.21248",
       "arxiv_id": "2503.21248",
       "doi": "",
@@ -412258,6 +412263,36 @@
       ]
     },
     {
+      "id": "43fcb36718916faf",
+      "title": "Physics: Benchmarking Foundation Models on University-Level Physics Problem Solving",
+      "venue": "arXiv",
+      "published_at": "2025-03-26",
+      "date_precision": "day",
+      "first_seen_at": "2026-08-29",
+      "source_updated_at": "2026-10-31",
+      "paper_url": "https://arxiv.org/abs/2503.21821",
+      "arxiv_id": "2503.21821",
+      "doi": "",
+      "group": "Cross-disciplinary Applications",
+      "category": "Science & Discovery",
+      "categories": [
+        "Science & Discovery"
+      ],
+      "subcategories": [
+        "Scientific LLM Benchmarks"
+      ],
+      "source_repos": [
+        "subinium/Awesome-Scientific-LLM-Benchmarks"
+      ],
+      "source_urls": [
+        "https://github.com/subinium/Awesome-Scientific-LLM-Benchmarks"
+      ],
+      "metadata_sources": [
+        "source README",
+        "Semantic Scholar"
+      ]
+    },
+    {
       "id": "97920fff37c87e4f",
       "title": "Qwen2.5-Omni Technical Report",
       "venue": "arXiv",
@@ -412296,36 +412331,6 @@
         "source README",
         "structured source",
         "arXiv",
-        "Semantic Scholar"
-      ]
-    },
-    {
-      "id": "43fcb36718916faf",
-      "title": "Physics: Benchmarking Foundation Models on University-Level Physics Problem Solving",
-      "venue": "arXiv",
-      "published_at": "2025-03-26",
-      "date_precision": "day",
-      "first_seen_at": "2026-08-29",
-      "source_updated_at": "2026-10-26",
-      "paper_url": "https://arxiv.org/abs/2503.21821",
-      "arxiv_id": "2503.21821",
-      "doi": "",
-      "group": "Cross-disciplinary Applications",
-      "category": "Science & Discovery",
-      "categories": [
-        "Science & Discovery"
-      ],
-      "subcategories": [
-        "Scientific LLM Benchmarks"
-      ],
-      "source_repos": [
-        "subinium/Awesome-Scientific-LLM-Benchmarks"
-      ],
-      "source_urls": [
-        "https://github.com/subinium/Awesome-Scientific-LLM-Benchmarks"
-      ],
-      "metadata_sources": [
-        "source README",
         "Semantic Scholar"
       ]
     },
@@ -417005,6 +417010,36 @@
       ]
     },
     {
+      "id": "1766731164258236",
+      "title": "Defeating Prompt Injections by Design",
+      "venue": "arXiv",
+      "published_at": "2025-03",
+      "date_precision": "month",
+      "first_seen_at": "2026-08-30",
+      "source_updated_at": "2026-11-01",
+      "paper_url": "https://arxiv.org/abs/2503.18813",
+      "arxiv_id": "2503.18813",
+      "doi": "",
+      "group": "Cross-disciplinary Applications",
+      "category": "Security & Cybersecurity",
+      "categories": [
+        "Security & Cybersecurity"
+      ],
+      "subcategories": [
+        "AI Security Tools & Agents"
+      ],
+      "source_repos": [
+        "scadastrangelove/awesome-ai-security-tools"
+      ],
+      "source_urls": [
+        "https://github.com/scadastrangelove/awesome-ai-security-tools"
+      ],
+      "metadata_sources": [
+        "source README",
+        "arXiv identifier"
+      ]
+    },
+    {
       "id": "bbb47e9f6fcf2852",
       "title": "h-Edit: Effective and Flexible Diffusion-Based Editing via Doob's h-Transform",
       "venue": "CVPR 2025",
@@ -418714,36 +418749,6 @@
       "source_urls": [
         "https://github.com/mk-runner/Awesome-Radiology-Report-Generation",
         "https://github.com/AgenticHealthAI/Awesome-AI-Agents-for-Healthcare"
-      ],
-      "metadata_sources": [
-        "source README",
-        "arXiv identifier"
-      ]
-    },
-    {
-      "id": "1766731164258236",
-      "title": "Defeating Prompt Injections by Design",
-      "venue": "arXiv",
-      "published_at": "2025-03",
-      "date_precision": "month",
-      "first_seen_at": "2026-08-30",
-      "source_updated_at": "2026-10-28",
-      "paper_url": "https://arxiv.org/abs/2503.18813",
-      "arxiv_id": "2503.18813",
-      "doi": "",
-      "group": "Cross-disciplinary Applications",
-      "category": "Security & Cybersecurity",
-      "categories": [
-        "Security & Cybersecurity"
-      ],
-      "subcategories": [
-        "AI Security Tools & Agents"
-      ],
-      "source_repos": [
-        "scadastrangelove/awesome-ai-security-tools"
-      ],
-      "source_urls": [
-        "https://github.com/scadastrangelove/awesome-ai-security-tools"
       ],
       "metadata_sources": [
         "source README",
@@ -445834,7 +445839,7 @@
       "published_at": "2025-02-28",
       "date_precision": "day",
       "first_seen_at": "2026-08-29",
-      "source_updated_at": "2026-10-26",
+      "source_updated_at": "2026-10-31",
       "paper_url": "https://arxiv.org/abs/2503.00096",
       "arxiv_id": "2503.00096",
       "doi": "",
@@ -446594,6 +446599,36 @@
       ]
     },
     {
+      "id": "438e7658844f2154",
+      "title": "BioMaze: Benchmarking and Enhancing Large Language Models for Biological Pathway Reasoning",
+      "venue": "arXiv",
+      "published_at": "2025-02-23",
+      "date_precision": "day",
+      "first_seen_at": "2026-08-31",
+      "source_updated_at": "2026-10-31",
+      "paper_url": "https://arxiv.org/abs/2502.16660",
+      "arxiv_id": "2502.16660",
+      "doi": "",
+      "group": "Cross-disciplinary Applications",
+      "category": "Science & Discovery",
+      "categories": [
+        "Science & Discovery"
+      ],
+      "subcategories": [
+        "Scientific LLM Benchmarks"
+      ],
+      "source_repos": [
+        "subinium/Awesome-Scientific-LLM-Benchmarks"
+      ],
+      "source_urls": [
+        "https://github.com/subinium/Awesome-Scientific-LLM-Benchmarks"
+      ],
+      "metadata_sources": [
+        "source README",
+        "Semantic Scholar"
+      ]
+    },
+    {
       "id": "3553ea2d661073b2",
       "title": "Can GPTs Accelerate the Development of Intelligent Diagnosis and Treatment in Traditional Chinese Medicine? A Survey and Empirical Analysis",
       "venue": "Chi",
@@ -446621,36 +446656,6 @@
       "metadata_sources": [
         "source README",
         "Crossref"
-      ]
-    },
-    {
-      "id": "438e7658844f2154",
-      "title": "BioMaze: Benchmarking and Enhancing Large Language Models for Biological Pathway Reasoning",
-      "venue": "arXiv",
-      "published_at": "2025-02-23",
-      "date_precision": "day",
-      "first_seen_at": "2026-08-31",
-      "source_updated_at": "2026-10-26",
-      "paper_url": "https://arxiv.org/abs/2502.16660",
-      "arxiv_id": "2502.16660",
-      "doi": "",
-      "group": "Cross-disciplinary Applications",
-      "category": "Science & Discovery",
-      "categories": [
-        "Science & Discovery"
-      ],
-      "subcategories": [
-        "Scientific LLM Benchmarks"
-      ],
-      "source_repos": [
-        "subinium/Awesome-Scientific-LLM-Benchmarks"
-      ],
-      "source_urls": [
-        "https://github.com/subinium/Awesome-Scientific-LLM-Benchmarks"
-      ],
-      "metadata_sources": [
-        "source README",
-        "Semantic Scholar"
       ]
     },
     {
@@ -446927,6 +446932,40 @@
       ]
     },
     {
+      "id": "50ec6ef16f2f30d0",
+      "title": "SuperGPQA: Scaling LLM Evaluation across 285 Graduate Disciplines",
+      "venue": "arXiv",
+      "published_at": "2025-02-20",
+      "date_precision": "day",
+      "first_seen_at": "2026-08-29",
+      "source_updated_at": "2026-10-31",
+      "paper_url": "https://arxiv.org/abs/2502.14739",
+      "arxiv_id": "2502.14739",
+      "doi": "",
+      "group": "Cross-disciplinary Applications",
+      "category": "Science & Discovery",
+      "categories": [
+        "Science & Discovery",
+        "Language"
+      ],
+      "subcategories": [
+        "Scientific LLM Benchmarks",
+        "Post-training"
+      ],
+      "source_repos": [
+        "subinium/Awesome-Scientific-LLM-Benchmarks",
+        "mbzuai-oryx/Awesome-LLM-Post-training"
+      ],
+      "source_urls": [
+        "https://github.com/subinium/Awesome-Scientific-LLM-Benchmarks",
+        "https://github.com/mbzuai-oryx/Awesome-LLM-Post-training"
+      ],
+      "metadata_sources": [
+        "source README",
+        "Semantic Scholar"
+      ]
+    },
+    {
       "id": "c42dd4f801de5ecc",
       "title": "ChatVLA: Unified Multimodal Understanding and Robot Control with Vision-Language-Action Model",
       "venue": "arXiv",
@@ -446961,40 +447000,6 @@
       ]
     },
     {
-      "id": "50ec6ef16f2f30d0",
-      "title": "SuperGPQA: Scaling LLM Evaluation across 285 Graduate Disciplines",
-      "venue": "arXiv",
-      "published_at": "2025-02-20",
-      "date_precision": "day",
-      "first_seen_at": "2026-08-29",
-      "source_updated_at": "2026-10-26",
-      "paper_url": "https://arxiv.org/abs/2502.14739",
-      "arxiv_id": "2502.14739",
-      "doi": "",
-      "group": "Cross-disciplinary Applications",
-      "category": "Science & Discovery",
-      "categories": [
-        "Science & Discovery",
-        "Language"
-      ],
-      "subcategories": [
-        "Scientific LLM Benchmarks",
-        "Post-training"
-      ],
-      "source_repos": [
-        "subinium/Awesome-Scientific-LLM-Benchmarks",
-        "mbzuai-oryx/Awesome-LLM-Post-training"
-      ],
-      "source_urls": [
-        "https://github.com/subinium/Awesome-Scientific-LLM-Benchmarks",
-        "https://github.com/mbzuai-oryx/Awesome-LLM-Post-training"
-      ],
-      "metadata_sources": [
-        "source README",
-        "Semantic Scholar"
-      ]
-    },
-    {
       "id": "a63c62032aad38ab",
       "title": "Humanoid-VLA: Towards Universal Humanoid Control with Visual Integration",
       "venue": "ECCV",
@@ -447021,6 +447026,36 @@
       "source_urls": [
         "https://github.com/yueen-ma/Awesome-VLA",
         "https://github.com/jonyzhang2023/awesome-embodied-vla-va-vln"
+      ],
+      "metadata_sources": [
+        "source README",
+        "Semantic Scholar"
+      ]
+    },
+    {
+      "id": "8b7fdc1e40c17679",
+      "title": "Theoretical physics benchmark (TPBench)—a dataset and study of AI reasoning capabilities in theoretical physics",
+      "venue": "arXiv",
+      "published_at": "2025-02-19",
+      "date_precision": "day",
+      "first_seen_at": "2026-08-29",
+      "source_updated_at": "2026-10-31",
+      "paper_url": "https://arxiv.org/abs/2502.15815",
+      "arxiv_id": "2502.15815",
+      "doi": "",
+      "group": "Cross-disciplinary Applications",
+      "category": "Science & Discovery",
+      "categories": [
+        "Science & Discovery"
+      ],
+      "subcategories": [
+        "Scientific LLM Benchmarks"
+      ],
+      "source_repos": [
+        "subinium/Awesome-Scientific-LLM-Benchmarks"
+      ],
+      "source_urls": [
+        "https://github.com/subinium/Awesome-Scientific-LLM-Benchmarks"
       ],
       "metadata_sources": [
         "source README",
@@ -447125,36 +447160,6 @@
       "metadata_sources": [
         "source README",
         "Crossref"
-      ]
-    },
-    {
-      "id": "8b7fdc1e40c17679",
-      "title": "Theoretical physics benchmark (TPBench)—a dataset and study of AI reasoning capabilities in theoretical physics",
-      "venue": "arXiv",
-      "published_at": "2025-02-19",
-      "date_precision": "day",
-      "first_seen_at": "2026-08-29",
-      "source_updated_at": "2026-10-26",
-      "paper_url": "https://arxiv.org/abs/2502.15815",
-      "arxiv_id": "2502.15815",
-      "doi": "",
-      "group": "Cross-disciplinary Applications",
-      "category": "Science & Discovery",
-      "categories": [
-        "Science & Discovery"
-      ],
-      "subcategories": [
-        "Scientific LLM Benchmarks"
-      ],
-      "source_repos": [
-        "subinium/Awesome-Scientific-LLM-Benchmarks"
-      ],
-      "source_urls": [
-        "https://github.com/subinium/Awesome-Scientific-LLM-Benchmarks"
-      ],
-      "metadata_sources": [
-        "source README",
-        "Semantic Scholar"
       ]
     },
     {
@@ -447534,7 +447539,7 @@
       "published_at": "2025-02-17",
       "date_precision": "day",
       "first_seen_at": "2026-08-29",
-      "source_updated_at": "2026-10-26",
+      "source_updated_at": "2026-10-31",
       "paper_url": "https://arxiv.org/abs/2502.12054",
       "arxiv_id": "2502.12054",
       "doi": "",
@@ -448804,6 +448809,36 @@
       ]
     },
     {
+      "id": "e976d256375116c7",
+      "title": "AtmosSci-Bench: Evaluating the Recent Advance of Large Language Model for Atmospheric Science",
+      "venue": "science",
+      "published_at": "2025-02-03",
+      "date_precision": "day",
+      "first_seen_at": "2026-08-29",
+      "source_updated_at": "2026-10-31",
+      "paper_url": "https://arxiv.org/abs/2502.01159",
+      "arxiv_id": "2502.01159",
+      "doi": "",
+      "group": "Cross-disciplinary Applications",
+      "category": "Science & Discovery",
+      "categories": [
+        "Science & Discovery"
+      ],
+      "subcategories": [
+        "Scientific LLM Benchmarks"
+      ],
+      "source_repos": [
+        "subinium/Awesome-Scientific-LLM-Benchmarks"
+      ],
+      "source_urls": [
+        "https://github.com/subinium/Awesome-Scientific-LLM-Benchmarks"
+      ],
+      "metadata_sources": [
+        "source README",
+        "Semantic Scholar"
+      ]
+    },
+    {
       "id": "e99c0c699ce88d25",
       "title": "MJ-VIDEO: Fine-Grained Benchmarking and Rewarding Video Preferences in Video Generation",
       "venue": "NeurIPS",
@@ -448827,36 +448862,6 @@
       ],
       "source_urls": [
         "https://github.com/people-robots/Awesome-Video-Generation-Post-Training"
-      ],
-      "metadata_sources": [
-        "source README",
-        "Semantic Scholar"
-      ]
-    },
-    {
-      "id": "e976d256375116c7",
-      "title": "AtmosSci-Bench: Evaluating the Recent Advance of Large Language Model for Atmospheric Science",
-      "venue": "science",
-      "published_at": "2025-02-03",
-      "date_precision": "day",
-      "first_seen_at": "2026-08-29",
-      "source_updated_at": "2026-10-26",
-      "paper_url": "https://arxiv.org/abs/2502.01159",
-      "arxiv_id": "2502.01159",
-      "doi": "",
-      "group": "Cross-disciplinary Applications",
-      "category": "Science & Discovery",
-      "categories": [
-        "Science & Discovery"
-      ],
-      "subcategories": [
-        "Scientific LLM Benchmarks"
-      ],
-      "source_repos": [
-        "subinium/Awesome-Scientific-LLM-Benchmarks"
-      ],
-      "source_urls": [
-        "https://github.com/subinium/Awesome-Scientific-LLM-Benchmarks"
       ],
       "metadata_sources": [
         "source README",
@@ -448990,7 +448995,7 @@
       "published_at": "2025-02-01",
       "date_precision": "day",
       "first_seen_at": "2026-08-29",
-      "source_updated_at": "2026-10-26",
+      "source_updated_at": "2026-10-31",
       "paper_url": "https://arxiv.org/abs/2502.00334",
       "arxiv_id": "2502.00334",
       "doi": "",
@@ -462738,6 +462743,36 @@
       ]
     },
     {
+      "id": "169cd218b2d0b775",
+      "title": "Gravity-Bench-v1: A Benchmark on Gravitational Physics Discovery for Agents",
+      "venue": "arXiv",
+      "published_at": "2025-01-30",
+      "date_precision": "day",
+      "first_seen_at": "2026-08-29",
+      "source_updated_at": "2026-10-31",
+      "paper_url": "https://arxiv.org/abs/2501.18411",
+      "arxiv_id": "2501.18411",
+      "doi": "",
+      "group": "Cross-disciplinary Applications",
+      "category": "Science & Discovery",
+      "categories": [
+        "Science & Discovery"
+      ],
+      "subcategories": [
+        "Scientific LLM Benchmarks"
+      ],
+      "source_repos": [
+        "subinium/Awesome-Scientific-LLM-Benchmarks"
+      ],
+      "source_urls": [
+        "https://github.com/subinium/Awesome-Scientific-LLM-Benchmarks"
+      ],
+      "metadata_sources": [
+        "source README",
+        "Semantic Scholar"
+      ]
+    },
+    {
       "id": "ca0ad80f2cbb0ed0",
       "title": "MedXpertQA: Benchmarking Expert-Level Medical Reasoning and Understanding",
       "venue": "arXiv",
@@ -462765,36 +462800,6 @@
       "source_urls": [
         "https://github.com/lchen1019/awesome-mllm-benchmarks",
         "https://github.com/AgenticHealthAI/Awesome-AI-Agents-for-Healthcare"
-      ],
-      "metadata_sources": [
-        "source README",
-        "Semantic Scholar"
-      ]
-    },
-    {
-      "id": "169cd218b2d0b775",
-      "title": "Gravity-Bench-v1: A Benchmark on Gravitational Physics Discovery for Agents",
-      "venue": "arXiv",
-      "published_at": "2025-01-30",
-      "date_precision": "day",
-      "first_seen_at": "2026-08-29",
-      "source_updated_at": "2026-10-26",
-      "paper_url": "https://arxiv.org/abs/2501.18411",
-      "arxiv_id": "2501.18411",
-      "doi": "",
-      "group": "Cross-disciplinary Applications",
-      "category": "Science & Discovery",
-      "categories": [
-        "Science & Discovery"
-      ],
-      "subcategories": [
-        "Scientific LLM Benchmarks"
-      ],
-      "source_repos": [
-        "subinium/Awesome-Scientific-LLM-Benchmarks"
-      ],
-      "source_urls": [
-        "https://github.com/subinium/Awesome-Scientific-LLM-Benchmarks"
       ],
       "metadata_sources": [
         "source README",
@@ -463501,6 +463506,46 @@
       ]
     },
     {
+      "id": "8aba8a23d84a2646",
+      "title": "Can MLLMs Reason in Multimodality? EMMA: An Enhanced MultiModal ReAsoning Benchmark",
+      "venue": "arXiv",
+      "published_at": "2025-01-09",
+      "date_precision": "day",
+      "first_seen_at": "2026-09-01",
+      "source_updated_at": "2026-10-31",
+      "paper_url": "https://arxiv.org/abs/2501.05444",
+      "arxiv_id": "2501.05444",
+      "doi": "",
+      "group": "Core Technology",
+      "category": "Vision-Language",
+      "categories": [
+        "Vision-Language",
+        "Science & Discovery"
+      ],
+      "subcategories": [
+        "General VLM",
+        "Benchmarks",
+        "Scientific LLM Benchmarks",
+        "Multimodal Reasoning"
+      ],
+      "source_repos": [
+        "zli12321/Vision-Language-Models-Overview",
+        "lchen1019/awesome-mllm-benchmarks",
+        "subinium/Awesome-Scientific-LLM-Benchmarks",
+        "The-Martyr/Awesome-Multimodal-Reasoning"
+      ],
+      "source_urls": [
+        "https://github.com/zli12321/Vision-Language-Models-Overview",
+        "https://github.com/lchen1019/awesome-mllm-benchmarks",
+        "https://github.com/subinium/Awesome-Scientific-LLM-Benchmarks",
+        "https://github.com/The-Martyr/Awesome-Multimodal-Reasoning"
+      ],
+      "metadata_sources": [
+        "source README",
+        "Semantic Scholar"
+      ]
+    },
+    {
       "id": "2ec04f603a00968c",
       "title": "OVO-Bench: How Far is Your Video-LLMs from Real-World Online Video Understanding?",
       "venue": "arXiv",
@@ -463528,46 +463573,6 @@
       "source_urls": [
         "https://github.com/lchen1019/awesome-mllm-benchmarks",
         "https://github.com/52CV/CVPR-2025-Papers"
-      ],
-      "metadata_sources": [
-        "source README",
-        "Semantic Scholar"
-      ]
-    },
-    {
-      "id": "8aba8a23d84a2646",
-      "title": "Can MLLMs Reason in Multimodality? EMMA: An Enhanced MultiModal ReAsoning Benchmark",
-      "venue": "arXiv",
-      "published_at": "2025-01-09",
-      "date_precision": "day",
-      "first_seen_at": "2026-09-01",
-      "source_updated_at": "2026-10-29",
-      "paper_url": "https://arxiv.org/abs/2501.05444",
-      "arxiv_id": "2501.05444",
-      "doi": "",
-      "group": "Core Technology",
-      "category": "Vision-Language",
-      "categories": [
-        "Vision-Language",
-        "Science & Discovery"
-      ],
-      "subcategories": [
-        "General VLM",
-        "Benchmarks",
-        "Scientific LLM Benchmarks",
-        "Multimodal Reasoning"
-      ],
-      "source_repos": [
-        "zli12321/Vision-Language-Models-Overview",
-        "lchen1019/awesome-mllm-benchmarks",
-        "subinium/Awesome-Scientific-LLM-Benchmarks",
-        "The-Martyr/Awesome-Multimodal-Reasoning"
-      ],
-      "source_urls": [
-        "https://github.com/zli12321/Vision-Language-Models-Overview",
-        "https://github.com/lchen1019/awesome-mllm-benchmarks",
-        "https://github.com/subinium/Awesome-Scientific-LLM-Benchmarks",
-        "https://github.com/The-Martyr/Awesome-Multimodal-Reasoning"
       ],
       "metadata_sources": [
         "source README",
