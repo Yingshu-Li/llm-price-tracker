@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-20T08:35:04+00:00",
+  "generated_at": "2026-11-21T08:18:44+00:00",
   "source_count": 79,
   "paper_count": 17978,
   "page_size": 200,
@@ -235,7 +235,8 @@
       ],
       "metadata_sources": [
         "source README",
-        "arXiv"
+        "arXiv",
+        "Semantic Scholar"
       ]
     },
     {
@@ -6305,7 +6306,8 @@
       ],
       "metadata_sources": [
         "source README",
-        "arXiv"
+        "arXiv",
+        "Semantic Scholar"
       ]
     },
     {
@@ -17544,7 +17546,8 @@
       ],
       "metadata_sources": [
         "source README",
-        "arXiv"
+        "arXiv",
+        "Semantic Scholar"
       ]
     },
     {
@@ -31767,7 +31770,8 @@
       ],
       "metadata_sources": [
         "source README",
-        "arXiv"
+        "arXiv",
+        "Semantic Scholar"
       ]
     },
     {
@@ -32217,7 +32221,8 @@
       ],
       "metadata_sources": [
         "source README",
-        "arXiv"
+        "arXiv",
+        "Semantic Scholar"
       ]
     },
     {
@@ -34098,7 +34103,8 @@
       ],
       "metadata_sources": [
         "source README",
-        "arXiv"
+        "arXiv",
+        "Semantic Scholar"
       ]
     },
     {
@@ -53547,7 +53553,8 @@
       ],
       "metadata_sources": [
         "source README",
-        "arXiv"
+        "arXiv",
+        "Semantic Scholar"
       ]
     },
     {
@@ -70663,7 +70670,8 @@
       ],
       "metadata_sources": [
         "structured source",
-        "arXiv"
+        "arXiv",
+        "Semantic Scholar"
       ]
     },
     {
@@ -70693,7 +70701,8 @@
       ],
       "metadata_sources": [
         "structured source",
-        "arXiv"
+        "arXiv",
+        "Semantic Scholar"
       ]
     },
     {
@@ -70906,7 +70915,8 @@
       ],
       "metadata_sources": [
         "source README",
-        "arXiv"
+        "arXiv",
+        "Semantic Scholar"
       ]
     },
     {
@@ -88856,7 +88866,8 @@
       ],
       "metadata_sources": [
         "source README",
-        "arXiv"
+        "arXiv",
+        "Semantic Scholar"
       ]
     },
     {
@@ -111315,7 +111326,8 @@
       ],
       "metadata_sources": [
         "source README",
-        "arXiv"
+        "arXiv",
+        "Semantic Scholar"
       ]
     },
     {
@@ -111631,7 +111643,8 @@
       ],
       "metadata_sources": [
         "source README",
-        "arXiv"
+        "arXiv",
+        "Semantic Scholar"
       ]
     },
     {
@@ -111751,7 +111764,8 @@
       ],
       "metadata_sources": [
         "source README",
-        "arXiv"
+        "arXiv",
+        "Semantic Scholar"
       ]
     },
     {
@@ -136804,7 +136818,8 @@
       ],
       "metadata_sources": [
         "source README",
-        "arXiv"
+        "arXiv",
+        "Semantic Scholar"
       ]
     },
     {
@@ -137020,7 +137035,8 @@
       ],
       "metadata_sources": [
         "source README",
-        "arXiv"
+        "arXiv",
+        "Semantic Scholar"
       ]
     },
     {
@@ -177927,6 +177943,36 @@
       ]
     },
     {
+      "id": "c9a20563f9457560",
+      "title": "Towards Autonomous Mathematics Research",
+      "venue": "arXiv",
+      "published_at": "2026-02-10",
+      "date_precision": "day",
+      "first_seen_at": "2026-08-29",
+      "source_updated_at": "2026-11-20",
+      "paper_url": "https://arxiv.org/abs/2602.10177",
+      "arxiv_id": "2602.10177",
+      "doi": "",
+      "group": "Cross-disciplinary Applications",
+      "category": "Science & Discovery",
+      "categories": [
+        "Science & Discovery"
+      ],
+      "subcategories": [
+        "General AI4Science"
+      ],
+      "source_repos": [
+        "ai4s-research/awesome-ai-for-science"
+      ],
+      "source_urls": [
+        "https://github.com/ai4s-research/awesome-ai-for-science"
+      ],
+      "metadata_sources": [
+        "source README",
+        "Semantic Scholar"
+      ]
+    },
+    {
       "id": "ed65fe366b4991bb",
       "title": "Hand2World: Autoregressive Egocentric Interaction Generation via Free-Space Hand Gestures",
       "venue": "arXiv",
@@ -177950,36 +177996,6 @@
       ],
       "source_urls": [
         "https://github.com/AlonzoLeeeooo/awesome-video-generation"
-      ],
-      "metadata_sources": [
-        "source README",
-        "Semantic Scholar"
-      ]
-    },
-    {
-      "id": "c9a20563f9457560",
-      "title": "Towards Autonomous Mathematics Research",
-      "venue": "arXiv",
-      "published_at": "2026-02-10",
-      "date_precision": "day",
-      "first_seen_at": "2026-08-29",
-      "source_updated_at": "2026-11-19",
-      "paper_url": "https://arxiv.org/abs/2602.10177",
-      "arxiv_id": "2602.10177",
-      "doi": "",
-      "group": "Cross-disciplinary Applications",
-      "category": "Science & Discovery",
-      "categories": [
-        "Science & Discovery"
-      ],
-      "subcategories": [
-        "General AI4Science"
-      ],
-      "source_repos": [
-        "ai4s-research/awesome-ai-for-science"
-      ],
-      "source_urls": [
-        "https://github.com/ai4s-research/awesome-ai-for-science"
       ],
       "metadata_sources": [
         "source README",
@@ -201387,7 +201403,8 @@
       ],
       "metadata_sources": [
         "source README",
-        "arXiv"
+        "arXiv",
+        "Semantic Scholar"
       ]
     },
     {
@@ -201417,7 +201434,8 @@
       ],
       "metadata_sources": [
         "source README",
-        "arXiv"
+        "arXiv",
+        "Semantic Scholar"
       ]
     },
     {
@@ -201565,7 +201583,8 @@
       ],
       "metadata_sources": [
         "source README",
-        "arXiv"
+        "arXiv",
+        "Semantic Scholar"
       ]
     },
     {
@@ -201689,7 +201708,8 @@
       "metadata_sources": [
         "source README",
         "structured source",
-        "arXiv"
+        "arXiv",
+        "Semantic Scholar"
       ]
     },
     {
@@ -201813,7 +201833,8 @@
       ],
       "metadata_sources": [
         "source README",
-        "arXiv"
+        "arXiv",
+        "Semantic Scholar"
       ]
     },
     {
@@ -201903,7 +201924,8 @@
       ],
       "metadata_sources": [
         "source README",
-        "arXiv"
+        "arXiv",
+        "Semantic Scholar"
       ]
     },
     {
@@ -223321,6 +223343,35 @@
       ]
     },
     {
+      "id": "938b1f1d711b58c6",
+      "title": "MoleculeFinder Everyday Molecules",
+      "venue": "Venue not specified",
+      "published_at": "2026",
+      "date_precision": "year",
+      "first_seen_at": "2026-11-03",
+      "source_updated_at": "2026-11-20",
+      "paper_url": "https://doi.org/10.5281/zenodo.23605767",
+      "arxiv_id": "",
+      "doi": "10.5281/zenodo.23605767",
+      "group": "Cross-disciplinary Applications",
+      "category": "Science & Discovery",
+      "categories": [
+        "Science & Discovery"
+      ],
+      "subcategories": [
+        "General AI4Science"
+      ],
+      "source_repos": [
+        "ai4s-research/awesome-ai-for-science"
+      ],
+      "source_urls": [
+        "https://github.com/ai4s-research/awesome-ai-for-science"
+      ],
+      "metadata_sources": [
+        "source README"
+      ]
+    },
+    {
       "id": "cfdbffcd807a76ca",
       "title": "Learning to Generate Rigid Body Interactions with Video Diffusion Models",
       "venue": "ECCV",
@@ -224040,35 +224091,6 @@
       ],
       "source_urls": [
         "https://github.com/Nanboy-Ronan/awesome-medical-imaging-agents"
-      ],
-      "metadata_sources": [
-        "source README"
-      ]
-    },
-    {
-      "id": "938b1f1d711b58c6",
-      "title": "MoleculeFinder Everyday Molecules",
-      "venue": "Venue not specified",
-      "published_at": "2026",
-      "date_precision": "year",
-      "first_seen_at": "2026-11-03",
-      "source_updated_at": "2026-11-19",
-      "paper_url": "https://doi.org/10.5281/zenodo.23605767",
-      "arxiv_id": "",
-      "doi": "10.5281/zenodo.23605767",
-      "group": "Cross-disciplinary Applications",
-      "category": "Science & Discovery",
-      "categories": [
-        "Science & Discovery"
-      ],
-      "subcategories": [
-        "General AI4Science"
-      ],
-      "source_repos": [
-        "ai4s-research/awesome-ai-for-science"
-      ],
-      "source_urls": [
-        "https://github.com/ai4s-research/awesome-ai-for-science"
       ],
       "metadata_sources": [
         "source README"
@@ -269643,7 +269665,8 @@
       ],
       "metadata_sources": [
         "source README",
-        "arXiv"
+        "arXiv",
+        "Semantic Scholar"
       ]
     },
     {
@@ -269883,7 +269906,8 @@
       ],
       "metadata_sources": [
         "source README",
-        "arXiv"
+        "arXiv",
+        "Semantic Scholar"
       ]
     },
     {
@@ -270426,7 +270450,8 @@
       ],
       "metadata_sources": [
         "source README",
-        "arXiv"
+        "arXiv",
+        "Semantic Scholar"
       ]
     },
     {
@@ -292946,7 +292971,8 @@
       ],
       "metadata_sources": [
         "source README",
-        "arXiv"
+        "arXiv",
+        "Semantic Scholar"
       ]
     },
     {
@@ -293113,7 +293139,8 @@
       ],
       "metadata_sources": [
         "source README",
-        "arXiv"
+        "arXiv",
+        "Semantic Scholar"
       ]
     },
     {
@@ -313383,6 +313410,36 @@
       ]
     },
     {
+      "id": "a5fe1204975dc02b",
+      "title": "Paper2Web: Let's Make Your Paper Alive!",
+      "venue": "arXiv",
+      "published_at": "2025-10",
+      "date_precision": "month",
+      "first_seen_at": "2026-08-29",
+      "source_updated_at": "2026-11-20",
+      "paper_url": "https://arxiv.org/abs/2510.15842",
+      "arxiv_id": "2510.15842",
+      "doi": "",
+      "group": "Cross-disciplinary Applications",
+      "category": "Science & Discovery",
+      "categories": [
+        "Science & Discovery"
+      ],
+      "subcategories": [
+        "General AI4Science"
+      ],
+      "source_repos": [
+        "ai4s-research/awesome-ai-for-science"
+      ],
+      "source_urls": [
+        "https://github.com/ai4s-research/awesome-ai-for-science"
+      ],
+      "metadata_sources": [
+        "source README",
+        "arXiv identifier"
+      ]
+    },
+    {
       "id": "426233251ce6c8db",
       "title": "LinVideo: A Post-Training Framework towards O(n) Attention in Efficient Video Generation",
       "venue": "arXiv",
@@ -313576,6 +313633,36 @@
       ]
     },
     {
+      "id": "2f58f740296450ec",
+      "title": "DeepAnalyze: Agentic Large Language Models for Autonomous Data Science",
+      "venue": "Science",
+      "published_at": "2025-10",
+      "date_precision": "month",
+      "first_seen_at": "2026-08-29",
+      "source_updated_at": "2026-11-20",
+      "paper_url": "https://arxiv.org/abs/2510.16872",
+      "arxiv_id": "2510.16872",
+      "doi": "",
+      "group": "Cross-disciplinary Applications",
+      "category": "Science & Discovery",
+      "categories": [
+        "Science & Discovery"
+      ],
+      "subcategories": [
+        "General AI4Science"
+      ],
+      "source_repos": [
+        "ai4s-research/awesome-ai-for-science"
+      ],
+      "source_urls": [
+        "https://github.com/ai4s-research/awesome-ai-for-science"
+      ],
+      "metadata_sources": [
+        "source README",
+        "arXiv identifier"
+      ]
+    },
+    {
       "id": "c5fbe2e082284e64",
       "title": "Zero-Shot Large Language Model Agents for Fully Automated Radiotherapy Treatment Planning",
       "venue": "arXiv",
@@ -313659,36 +313746,6 @@
       ],
       "source_urls": [
         "https://github.com/Nanboy-Ronan/awesome-medical-imaging-agents"
-      ],
-      "metadata_sources": [
-        "source README",
-        "arXiv identifier"
-      ]
-    },
-    {
-      "id": "a5fe1204975dc02b",
-      "title": "Paper2Web: Let's Make Your Paper Alive!",
-      "venue": "arXiv",
-      "published_at": "2025-10",
-      "date_precision": "month",
-      "first_seen_at": "2026-08-29",
-      "source_updated_at": "2026-11-19",
-      "paper_url": "https://arxiv.org/abs/2510.15842",
-      "arxiv_id": "2510.15842",
-      "doi": "",
-      "group": "Cross-disciplinary Applications",
-      "category": "Science & Discovery",
-      "categories": [
-        "Science & Discovery"
-      ],
-      "subcategories": [
-        "General AI4Science"
-      ],
-      "source_repos": [
-        "ai4s-research/awesome-ai-for-science"
-      ],
-      "source_urls": [
-        "https://github.com/ai4s-research/awesome-ai-for-science"
       ],
       "metadata_sources": [
         "source README",
@@ -313909,36 +313966,6 @@
       "metadata_sources": [
         "source README",
         "Crossref"
-      ]
-    },
-    {
-      "id": "2f58f740296450ec",
-      "title": "DeepAnalyze: Agentic Large Language Models for Autonomous Data Science",
-      "venue": "Science",
-      "published_at": "2025-10",
-      "date_precision": "month",
-      "first_seen_at": "2026-08-29",
-      "source_updated_at": "2026-11-19",
-      "paper_url": "https://arxiv.org/abs/2510.16872",
-      "arxiv_id": "2510.16872",
-      "doi": "",
-      "group": "Cross-disciplinary Applications",
-      "category": "Science & Discovery",
-      "categories": [
-        "Science & Discovery"
-      ],
-      "subcategories": [
-        "General AI4Science"
-      ],
-      "source_repos": [
-        "ai4s-research/awesome-ai-for-science"
-      ],
-      "source_urls": [
-        "https://github.com/ai4s-research/awesome-ai-for-science"
-      ],
-      "metadata_sources": [
-        "source README",
-        "arXiv identifier"
       ]
     },
     {
@@ -327472,7 +327499,8 @@
       "metadata_sources": [
         "source README",
         "structured source",
-        "arXiv"
+        "arXiv",
+        "Semantic Scholar"
       ]
     },
     {
@@ -327598,7 +327626,8 @@
       ],
       "metadata_sources": [
         "source README",
-        "arXiv"
+        "arXiv",
+        "Semantic Scholar"
       ]
     },
     {
@@ -327661,7 +327690,8 @@
       ],
       "metadata_sources": [
         "structured source",
-        "arXiv"
+        "arXiv",
+        "Semantic Scholar"
       ]
     },
     {
@@ -328410,6 +328440,40 @@
       ]
     },
     {
+      "id": "609383fdb3bf89a8",
+      "title": "ToolUniverse: An open platform for democratizing AI scientists",
+      "venue": "arXiv",
+      "published_at": "2025-09",
+      "date_precision": "month",
+      "first_seen_at": "2026-08-29",
+      "source_updated_at": "2026-11-20",
+      "paper_url": "https://arxiv.org/abs/2509.23426",
+      "arxiv_id": "2509.23426",
+      "doi": "",
+      "group": "Cross-disciplinary Applications",
+      "category": "Medicine & Healthcare",
+      "categories": [
+        "Medicine & Healthcare",
+        "Science & Discovery"
+      ],
+      "subcategories": [
+        "Medical Agents",
+        "General AI4Science"
+      ],
+      "source_repos": [
+        "AgenticHealthAI/Awesome-AI-Agents-for-Healthcare",
+        "ai4s-research/awesome-ai-for-science"
+      ],
+      "source_urls": [
+        "https://github.com/AgenticHealthAI/Awesome-AI-Agents-for-Healthcare",
+        "https://github.com/ai4s-research/awesome-ai-for-science"
+      ],
+      "metadata_sources": [
+        "source README",
+        "arXiv identifier"
+      ]
+    },
+    {
       "id": "d7a8c58255a5eecd",
       "title": "O-DisCo-Edit: Object Distortion Control for Unified Realistic Video Editing",
       "venue": "arXiv",
@@ -328557,6 +328621,40 @@
       ]
     },
     {
+      "id": "6b4cc99f5b75abea",
+      "title": "Earth-Agent: Unlocking the Full Landscape of Earth Observation with Agents",
+      "venue": "arXiv",
+      "published_at": "2025-09",
+      "date_precision": "month",
+      "first_seen_at": "2026-08-29",
+      "source_updated_at": "2026-11-20",
+      "paper_url": "https://arxiv.org/abs/2509.23141",
+      "arxiv_id": "2509.23141",
+      "doi": "",
+      "group": "Cross-disciplinary Applications",
+      "category": "Science & Discovery",
+      "categories": [
+        "Science & Discovery",
+        "Environment & Earth Science"
+      ],
+      "subcategories": [
+        "General AI4Science",
+        "Remote Sensing Foundation Models"
+      ],
+      "source_repos": [
+        "ai4s-research/awesome-ai-for-science",
+        "Jack-bo1220/Awesome-Remote-Sensing-Foundation-Models"
+      ],
+      "source_urls": [
+        "https://github.com/ai4s-research/awesome-ai-for-science",
+        "https://github.com/Jack-bo1220/Awesome-Remote-Sensing-Foundation-Models"
+      ],
+      "metadata_sources": [
+        "source README",
+        "arXiv identifier"
+      ]
+    },
+    {
       "id": "bdcb69ff29405620",
       "title": "ContextFlow: Training-Free Video Object Editing via Adaptive Context Enrichment",
       "venue": "arXiv",
@@ -328629,40 +328727,6 @@
       "metadata_sources": [
         "source README",
         "structured source",
-        "arXiv identifier"
-      ]
-    },
-    {
-      "id": "609383fdb3bf89a8",
-      "title": "ToolUniverse: An open platform for democratizing AI scientists",
-      "venue": "arXiv",
-      "published_at": "2025-09",
-      "date_precision": "month",
-      "first_seen_at": "2026-08-29",
-      "source_updated_at": "2026-11-19",
-      "paper_url": "https://arxiv.org/abs/2509.23426",
-      "arxiv_id": "2509.23426",
-      "doi": "",
-      "group": "Cross-disciplinary Applications",
-      "category": "Medicine & Healthcare",
-      "categories": [
-        "Medicine & Healthcare",
-        "Science & Discovery"
-      ],
-      "subcategories": [
-        "Medical Agents",
-        "General AI4Science"
-      ],
-      "source_repos": [
-        "AgenticHealthAI/Awesome-AI-Agents-for-Healthcare",
-        "ai4s-research/awesome-ai-for-science"
-      ],
-      "source_urls": [
-        "https://github.com/AgenticHealthAI/Awesome-AI-Agents-for-Healthcare",
-        "https://github.com/ai4s-research/awesome-ai-for-science"
-      ],
-      "metadata_sources": [
-        "source README",
         "arXiv identifier"
       ]
     },
@@ -329041,40 +329105,6 @@
       ],
       "source_urls": [
         "https://github.com/Nanboy-Ronan/awesome-medical-imaging-agents"
-      ],
-      "metadata_sources": [
-        "source README",
-        "arXiv identifier"
-      ]
-    },
-    {
-      "id": "6b4cc99f5b75abea",
-      "title": "Earth-Agent: Unlocking the Full Landscape of Earth Observation with Agents",
-      "venue": "arXiv",
-      "published_at": "2025-09",
-      "date_precision": "month",
-      "first_seen_at": "2026-08-29",
-      "source_updated_at": "2026-11-19",
-      "paper_url": "https://arxiv.org/abs/2509.23141",
-      "arxiv_id": "2509.23141",
-      "doi": "",
-      "group": "Cross-disciplinary Applications",
-      "category": "Science & Discovery",
-      "categories": [
-        "Science & Discovery",
-        "Environment & Earth Science"
-      ],
-      "subcategories": [
-        "General AI4Science",
-        "Remote Sensing Foundation Models"
-      ],
-      "source_repos": [
-        "ai4s-research/awesome-ai-for-science",
-        "Jack-bo1220/Awesome-Remote-Sensing-Foundation-Models"
-      ],
-      "source_urls": [
-        "https://github.com/ai4s-research/awesome-ai-for-science",
-        "https://github.com/Jack-bo1220/Awesome-Remote-Sensing-Foundation-Models"
       ],
       "metadata_sources": [
         "source README",
@@ -340292,7 +340322,8 @@
       ],
       "metadata_sources": [
         "source README",
-        "arXiv"
+        "arXiv",
+        "Semantic Scholar"
       ]
     },
     {
@@ -340803,7 +340834,8 @@
       ],
       "metadata_sources": [
         "source README",
-        "arXiv"
+        "arXiv",
+        "Semantic Scholar"
       ]
     },
     {
@@ -340869,7 +340901,8 @@
       ],
       "metadata_sources": [
         "source README",
-        "arXiv"
+        "arXiv",
+        "Semantic Scholar"
       ]
     },
     {
@@ -341395,7 +341428,8 @@
       ],
       "metadata_sources": [
         "source README",
-        "arXiv"
+        "arXiv",
+        "Semantic Scholar"
       ]
     },
     {
@@ -341798,6 +341832,39 @@
       ]
     },
     {
+      "id": "6e44b4a72ab5eabc",
+      "title": "From AI for Science to Agentic Science: A Survey on Autonomous Scientific Discovery",
+      "venue": "Science",
+      "published_at": "2025-08",
+      "date_precision": "month",
+      "first_seen_at": "2026-08-29",
+      "source_updated_at": "2026-11-20",
+      "paper_url": "https://arxiv.org/abs/2508.14111",
+      "arxiv_id": "2508.14111",
+      "doi": "",
+      "group": "Cross-disciplinary Applications",
+      "category": "Science & Discovery",
+      "categories": [
+        "Science & Discovery"
+      ],
+      "subcategories": [
+        "Scientific Agents",
+        "General AI4Science"
+      ],
+      "source_repos": [
+        "zoedsy/awesome-science-agents",
+        "ai4s-research/awesome-ai-for-science"
+      ],
+      "source_urls": [
+        "https://github.com/zoedsy/awesome-science-agents",
+        "https://github.com/ai4s-research/awesome-ai-for-science"
+      ],
+      "metadata_sources": [
+        "source README",
+        "arXiv identifier"
+      ]
+    },
+    {
       "id": "362c40da4a0953b9",
       "title": "Forecast then Calibrate: Feature Caching as ODE for Efficient Diffusion Transformers",
       "venue": "arXiv",
@@ -341825,6 +341892,36 @@
       "source_urls": [
         "https://github.com/wangkai930418/awesome-diffusion-categorized",
         "https://github.com/AlonzoLeeeooo/awesome-video-generation"
+      ],
+      "metadata_sources": [
+        "source README",
+        "arXiv identifier"
+      ]
+    },
+    {
+      "id": "55b88e77a9e374fb",
+      "title": "A Survey of Scientific Large Language Models: From Data Foundations to Agent Frontiers",
+      "venue": "arXiv",
+      "published_at": "2025-08",
+      "date_precision": "month",
+      "first_seen_at": "2026-08-29",
+      "source_updated_at": "2026-11-20",
+      "paper_url": "https://arxiv.org/abs/2508.21148",
+      "arxiv_id": "2508.21148",
+      "doi": "",
+      "group": "Cross-disciplinary Applications",
+      "category": "Science & Discovery",
+      "categories": [
+        "Science & Discovery"
+      ],
+      "subcategories": [
+        "General AI4Science"
+      ],
+      "source_repos": [
+        "ai4s-research/awesome-ai-for-science"
+      ],
+      "source_urls": [
+        "https://github.com/ai4s-research/awesome-ai-for-science"
       ],
       "metadata_sources": [
         "source README",
@@ -342195,39 +342292,6 @@
       ]
     },
     {
-      "id": "6e44b4a72ab5eabc",
-      "title": "From AI for Science to Agentic Science: A Survey on Autonomous Scientific Discovery",
-      "venue": "Science",
-      "published_at": "2025-08",
-      "date_precision": "month",
-      "first_seen_at": "2026-08-29",
-      "source_updated_at": "2026-11-19",
-      "paper_url": "https://arxiv.org/abs/2508.14111",
-      "arxiv_id": "2508.14111",
-      "doi": "",
-      "group": "Cross-disciplinary Applications",
-      "category": "Science & Discovery",
-      "categories": [
-        "Science & Discovery"
-      ],
-      "subcategories": [
-        "Scientific Agents",
-        "General AI4Science"
-      ],
-      "source_repos": [
-        "zoedsy/awesome-science-agents",
-        "ai4s-research/awesome-ai-for-science"
-      ],
-      "source_urls": [
-        "https://github.com/zoedsy/awesome-science-agents",
-        "https://github.com/ai4s-research/awesome-ai-for-science"
-      ],
-      "metadata_sources": [
-        "source README",
-        "arXiv identifier"
-      ]
-    },
-    {
       "id": "1bc11d8fc6c7e1d4",
       "title": "EndoCogniAgent: Closed-Loop Agentic Reasoning with Self-Consistency Validation for Endoscopic Diagnosis",
       "venue": "arXiv",
@@ -342410,36 +342474,6 @@
       "source_urls": [
         "https://github.com/AgenticHealthAI/Awesome-AI-Agents-for-Healthcare",
         "https://github.com/Nanboy-Ronan/awesome-medical-imaging-agents"
-      ],
-      "metadata_sources": [
-        "source README",
-        "arXiv identifier"
-      ]
-    },
-    {
-      "id": "55b88e77a9e374fb",
-      "title": "A Survey of Scientific Large Language Models: From Data Foundations to Agent Frontiers",
-      "venue": "arXiv",
-      "published_at": "2025-08",
-      "date_precision": "month",
-      "first_seen_at": "2026-08-29",
-      "source_updated_at": "2026-11-19",
-      "paper_url": "https://arxiv.org/abs/2508.21148",
-      "arxiv_id": "2508.21148",
-      "doi": "",
-      "group": "Cross-disciplinary Applications",
-      "category": "Science & Discovery",
-      "categories": [
-        "Science & Discovery"
-      ],
-      "subcategories": [
-        "General AI4Science"
-      ],
-      "source_repos": [
-        "ai4s-research/awesome-ai-for-science"
-      ],
-      "source_urls": [
-        "https://github.com/ai4s-research/awesome-ai-for-science"
       ],
       "metadata_sources": [
         "source README",
@@ -354138,7 +354172,8 @@
       ],
       "metadata_sources": [
         "source README",
-        "arXiv"
+        "arXiv",
+        "Semantic Scholar"
       ]
     },
     {
@@ -354329,7 +354364,8 @@
       "metadata_sources": [
         "structured source",
         "source README",
-        "arXiv"
+        "arXiv",
+        "Semantic Scholar"
       ]
     },
     {
@@ -355563,6 +355599,36 @@
       ]
     },
     {
+      "id": "02bbf8bb6d6a349a",
+      "title": "Autonomous Scientific Discovery Through Hierarchical AI Scientist Systems",
+      "venue": "arXiv",
+      "published_at": "2025-07",
+      "date_precision": "month",
+      "first_seen_at": "2026-08-29",
+      "source_updated_at": "2026-11-20",
+      "paper_url": "https://arxiv.org/abs/2507.15951",
+      "arxiv_id": "2507.15951",
+      "doi": "",
+      "group": "Cross-disciplinary Applications",
+      "category": "Science & Discovery",
+      "categories": [
+        "Science & Discovery"
+      ],
+      "subcategories": [
+        "General AI4Science"
+      ],
+      "source_repos": [
+        "ai4s-research/awesome-ai-for-science"
+      ],
+      "source_urls": [
+        "https://github.com/ai4s-research/awesome-ai-for-science"
+      ],
+      "metadata_sources": [
+        "source README",
+        "arXiv identifier"
+      ]
+    },
+    {
       "id": "a8cfeaa194135338",
       "title": "AnyI2V: Animating Any Conditional Image with Motion Control",
       "venue": "ICCV 2025",
@@ -355590,6 +355656,36 @@
       "source_urls": [
         "https://github.com/wangkai930418/awesome-diffusion-categorized",
         "https://github.com/AlonzoLeeeooo/awesome-video-generation"
+      ],
+      "metadata_sources": [
+        "source README",
+        "arXiv identifier"
+      ]
+    },
+    {
+      "id": "63975a2a20f92624",
+      "title": "AI4Research: A Survey of Artificial Intelligence for Scientific Research",
+      "venue": "arXiv",
+      "published_at": "2025-07",
+      "date_precision": "month",
+      "first_seen_at": "2026-08-29",
+      "source_updated_at": "2026-11-20",
+      "paper_url": "https://arxiv.org/abs/2507.01903",
+      "arxiv_id": "2507.01903",
+      "doi": "",
+      "group": "Cross-disciplinary Applications",
+      "category": "Science & Discovery",
+      "categories": [
+        "Science & Discovery"
+      ],
+      "subcategories": [
+        "General AI4Science"
+      ],
+      "source_repos": [
+        "ai4s-research/awesome-ai-for-science"
+      ],
+      "source_urls": [
+        "https://github.com/ai4s-research/awesome-ai-for-science"
       ],
       "metadata_sources": [
         "source README",
@@ -356042,36 +356138,6 @@
       ]
     },
     {
-      "id": "02bbf8bb6d6a349a",
-      "title": "Autonomous Scientific Discovery Through Hierarchical AI Scientist Systems",
-      "venue": "arXiv",
-      "published_at": "2025-07",
-      "date_precision": "month",
-      "first_seen_at": "2026-08-29",
-      "source_updated_at": "2026-11-19",
-      "paper_url": "https://arxiv.org/abs/2507.15951",
-      "arxiv_id": "2507.15951",
-      "doi": "",
-      "group": "Cross-disciplinary Applications",
-      "category": "Science & Discovery",
-      "categories": [
-        "Science & Discovery"
-      ],
-      "subcategories": [
-        "General AI4Science"
-      ],
-      "source_repos": [
-        "ai4s-research/awesome-ai-for-science"
-      ],
-      "source_urls": [
-        "https://github.com/ai4s-research/awesome-ai-for-science"
-      ],
-      "metadata_sources": [
-        "source README",
-        "arXiv identifier"
-      ]
-    },
-    {
       "id": "231061bf836e27eb",
       "title": "An Autonomous Agent for Auditing and Improving the Reliability of Clinical AI Models",
       "venue": "arXiv",
@@ -356128,36 +356194,6 @@
       "source_urls": [
         "https://github.com/AgenticHealthAI/Awesome-AI-Agents-for-Healthcare",
         "https://github.com/Nanboy-Ronan/awesome-medical-imaging-agents"
-      ],
-      "metadata_sources": [
-        "source README",
-        "arXiv identifier"
-      ]
-    },
-    {
-      "id": "63975a2a20f92624",
-      "title": "AI4Research: A Survey of Artificial Intelligence for Scientific Research",
-      "venue": "arXiv",
-      "published_at": "2025-07",
-      "date_precision": "month",
-      "first_seen_at": "2026-08-29",
-      "source_updated_at": "2026-11-19",
-      "paper_url": "https://arxiv.org/abs/2507.01903",
-      "arxiv_id": "2507.01903",
-      "doi": "",
-      "group": "Cross-disciplinary Applications",
-      "category": "Science & Discovery",
-      "categories": [
-        "Science & Discovery"
-      ],
-      "subcategories": [
-        "General AI4Science"
-      ],
-      "source_repos": [
-        "ai4s-research/awesome-ai-for-science"
-      ],
-      "source_urls": [
-        "https://github.com/ai4s-research/awesome-ai-for-science"
       ],
       "metadata_sources": [
         "source README",
@@ -364036,7 +364072,8 @@
       ],
       "metadata_sources": [
         "source README",
-        "arXiv"
+        "arXiv",
+        "Semantic Scholar"
       ]
     },
     {
@@ -365257,7 +365294,8 @@
       ],
       "metadata_sources": [
         "source README",
-        "arXiv"
+        "arXiv",
+        "Semantic Scholar"
       ]
     },
     {
@@ -365632,7 +365670,8 @@
       ],
       "metadata_sources": [
         "source README",
-        "arXiv"
+        "arXiv",
+        "Semantic Scholar"
       ]
     },
     {
@@ -366102,7 +366141,8 @@
       ],
       "metadata_sources": [
         "source README",
-        "arXiv"
+        "arXiv",
+        "Semantic Scholar"
       ]
     },
     {
@@ -366407,7 +366447,8 @@
       ],
       "metadata_sources": [
         "source README",
-        "arXiv"
+        "arXiv",
+        "Semantic Scholar"
       ]
     },
     {
@@ -366567,6 +366608,36 @@
         "https://github.com/AIDC-AI/Awesome-Unified-Multimodal-Models",
         "https://github.com/showlab/Awesome-Unified-Multimodal-Models",
         "https://github.com/Purshow/Awesome-Unified-Multimodal"
+      ],
+      "metadata_sources": [
+        "source README",
+        "arXiv identifier"
+      ]
+    },
+    {
+      "id": "a179b882761932d3",
+      "title": "MedAgentGym: A Scalable Agentic Training Environment for Code-Centric Reasoning in Biomedical Data Science",
+      "venue": "Science",
+      "published_at": "2025-06",
+      "date_precision": "month",
+      "first_seen_at": "2026-08-29",
+      "source_updated_at": "2026-11-20",
+      "paper_url": "https://arxiv.org/abs/2506.04405",
+      "arxiv_id": "2506.04405",
+      "doi": "",
+      "group": "Cross-disciplinary Applications",
+      "category": "Science & Discovery",
+      "categories": [
+        "Science & Discovery"
+      ],
+      "subcategories": [
+        "General AI4Science"
+      ],
+      "source_repos": [
+        "ai4s-research/awesome-ai-for-science"
+      ],
+      "source_urls": [
+        "https://github.com/ai4s-research/awesome-ai-for-science"
       ],
       "metadata_sources": [
         "source README",
@@ -366913,36 +366984,6 @@
       ],
       "source_urls": [
         "https://github.com/Nanboy-Ronan/awesome-medical-imaging-agents"
-      ],
-      "metadata_sources": [
-        "source README",
-        "arXiv identifier"
-      ]
-    },
-    {
-      "id": "a179b882761932d3",
-      "title": "MedAgentGym: A Scalable Agentic Training Environment for Code-Centric Reasoning in Biomedical Data Science",
-      "venue": "Science",
-      "published_at": "2025-06",
-      "date_precision": "month",
-      "first_seen_at": "2026-08-29",
-      "source_updated_at": "2026-11-19",
-      "paper_url": "https://arxiv.org/abs/2506.04405",
-      "arxiv_id": "2506.04405",
-      "doi": "",
-      "group": "Cross-disciplinary Applications",
-      "category": "Science & Discovery",
-      "categories": [
-        "Science & Discovery"
-      ],
-      "subcategories": [
-        "General AI4Science"
-      ],
-      "source_repos": [
-        "ai4s-research/awesome-ai-for-science"
-      ],
-      "source_urls": [
-        "https://github.com/ai4s-research/awesome-ai-for-science"
       ],
       "metadata_sources": [
         "source README",
@@ -381725,7 +381766,7 @@
       "published_at": "2025-05-22",
       "date_precision": "day",
       "first_seen_at": "2026-08-29",
-      "source_updated_at": "2026-11-19",
+      "source_updated_at": "2026-11-20",
       "paper_url": "https://arxiv.org/abs/2505.16301",
       "arxiv_id": "2505.16301",
       "doi": "",
@@ -383485,7 +383526,8 @@
       ],
       "metadata_sources": [
         "source README",
-        "arXiv"
+        "arXiv",
+        "Semantic Scholar"
       ]
     },
     {
@@ -383525,7 +383567,7 @@
       "published_at": "2025-05-10",
       "date_precision": "day",
       "first_seen_at": "2026-08-29",
-      "source_updated_at": "2026-11-19",
+      "source_updated_at": "2026-11-20",
       "paper_url": "https://arxiv.org/abs/2511.18345",
       "arxiv_id": "2511.18345",
       "doi": "",
@@ -384417,6 +384459,66 @@
       ]
     },
     {
+      "id": "7d6c8226193afb15",
+      "title": "InternAgent: When Agent Becomes the Scientist -- Building Closed-Loop System from Hypothesis to Verification",
+      "venue": "arXiv",
+      "published_at": "2025-05",
+      "date_precision": "month",
+      "first_seen_at": "2026-08-29",
+      "source_updated_at": "2026-11-20",
+      "paper_url": "https://arxiv.org/abs/2505.16938",
+      "arxiv_id": "2505.16938",
+      "doi": "",
+      "group": "Cross-disciplinary Applications",
+      "category": "Science & Discovery",
+      "categories": [
+        "Science & Discovery"
+      ],
+      "subcategories": [
+        "General AI4Science"
+      ],
+      "source_repos": [
+        "ai4s-research/awesome-ai-for-science"
+      ],
+      "source_urls": [
+        "https://github.com/ai4s-research/awesome-ai-for-science"
+      ],
+      "metadata_sources": [
+        "source README",
+        "arXiv identifier"
+      ]
+    },
+    {
+      "id": "1d398579c0d0ef92",
+      "title": "From Automation to Autonomy: A Survey on Large Language Models in Scientific Discovery",
+      "venue": "arXiv",
+      "published_at": "2025-05",
+      "date_precision": "month",
+      "first_seen_at": "2026-08-29",
+      "source_updated_at": "2026-11-20",
+      "paper_url": "https://arxiv.org/abs/2505.13259",
+      "arxiv_id": "2505.13259",
+      "doi": "",
+      "group": "Cross-disciplinary Applications",
+      "category": "Science & Discovery",
+      "categories": [
+        "Science & Discovery"
+      ],
+      "subcategories": [
+        "General AI4Science"
+      ],
+      "source_repos": [
+        "ai4s-research/awesome-ai-for-science"
+      ],
+      "source_urls": [
+        "https://github.com/ai4s-research/awesome-ai-for-science"
+      ],
+      "metadata_sources": [
+        "source README",
+        "arXiv identifier"
+      ]
+    },
+    {
       "id": "a9c18734555c9469",
       "title": "FlexiAct: Towards Flexible Action Control in Heterogeneous Scenarios",
       "venue": "arXiv",
@@ -384481,6 +384583,42 @@
         "https://github.com/wangkai930418/awesome-diffusion-categorized",
         "https://github.com/AlonzoLeeeooo/awesome-video-generation",
         "https://github.com/people-robots/Awesome-Video-Generation-Post-Training"
+      ],
+      "metadata_sources": [
+        "source README",
+        "arXiv identifier"
+      ]
+    },
+    {
+      "id": "5feb3f539bae39cb",
+      "title": "AI-Researcher: Autonomous Scientific Innovation",
+      "venue": "arXiv",
+      "published_at": "2025-05",
+      "date_precision": "month",
+      "first_seen_at": "2026-08-29",
+      "source_updated_at": "2026-11-20",
+      "paper_url": "https://arxiv.org/abs/2505.18705",
+      "arxiv_id": "2505.18705",
+      "doi": "",
+      "group": "Cross-disciplinary Applications",
+      "category": "Science & Discovery",
+      "categories": [
+        "Science & Discovery"
+      ],
+      "subcategories": [
+        "Scientific Agents",
+        "General AI4Science",
+        "Scientific LLM Benchmarks"
+      ],
+      "source_repos": [
+        "zoedsy/awesome-science-agents",
+        "ai4s-research/awesome-ai-for-science",
+        "subinium/Awesome-Scientific-LLM-Benchmarks"
+      ],
+      "source_urls": [
+        "https://github.com/zoedsy/awesome-science-agents",
+        "https://github.com/ai4s-research/awesome-ai-for-science",
+        "https://github.com/subinium/Awesome-Scientific-LLM-Benchmarks"
       ],
       "metadata_sources": [
         "source README",
@@ -384798,66 +384936,6 @@
       ]
     },
     {
-      "id": "7d6c8226193afb15",
-      "title": "InternAgent: When Agent Becomes the Scientist -- Building Closed-Loop System from Hypothesis to Verification",
-      "venue": "arXiv",
-      "published_at": "2025-05",
-      "date_precision": "month",
-      "first_seen_at": "2026-08-29",
-      "source_updated_at": "2026-11-19",
-      "paper_url": "https://arxiv.org/abs/2505.16938",
-      "arxiv_id": "2505.16938",
-      "doi": "",
-      "group": "Cross-disciplinary Applications",
-      "category": "Science & Discovery",
-      "categories": [
-        "Science & Discovery"
-      ],
-      "subcategories": [
-        "General AI4Science"
-      ],
-      "source_repos": [
-        "ai4s-research/awesome-ai-for-science"
-      ],
-      "source_urls": [
-        "https://github.com/ai4s-research/awesome-ai-for-science"
-      ],
-      "metadata_sources": [
-        "source README",
-        "arXiv identifier"
-      ]
-    },
-    {
-      "id": "1d398579c0d0ef92",
-      "title": "From Automation to Autonomy: A Survey on Large Language Models in Scientific Discovery",
-      "venue": "arXiv",
-      "published_at": "2025-05",
-      "date_precision": "month",
-      "first_seen_at": "2026-08-29",
-      "source_updated_at": "2026-11-19",
-      "paper_url": "https://arxiv.org/abs/2505.13259",
-      "arxiv_id": "2505.13259",
-      "doi": "",
-      "group": "Cross-disciplinary Applications",
-      "category": "Science & Discovery",
-      "categories": [
-        "Science & Discovery"
-      ],
-      "subcategories": [
-        "General AI4Science"
-      ],
-      "source_repos": [
-        "ai4s-research/awesome-ai-for-science"
-      ],
-      "source_urls": [
-        "https://github.com/ai4s-research/awesome-ai-for-science"
-      ],
-      "metadata_sources": [
-        "source README",
-        "arXiv identifier"
-      ]
-    },
-    {
       "id": "5e7478968eebe618",
       "title": "FUAS-Agents: Autonomous Multi-Modal LLM Agents for Treatment Planning in Focused Ultrasound Ablation Surgery",
       "venue": "arXiv",
@@ -385141,42 +385219,6 @@
       "source_urls": [
         "https://github.com/AgenticHealthAI/Awesome-AI-Agents-for-Healthcare",
         "https://github.com/Nanboy-Ronan/awesome-medical-imaging-agents"
-      ],
-      "metadata_sources": [
-        "source README",
-        "arXiv identifier"
-      ]
-    },
-    {
-      "id": "5feb3f539bae39cb",
-      "title": "AI-Researcher: Autonomous Scientific Innovation",
-      "venue": "arXiv",
-      "published_at": "2025-05",
-      "date_precision": "month",
-      "first_seen_at": "2026-08-29",
-      "source_updated_at": "2026-11-19",
-      "paper_url": "https://arxiv.org/abs/2505.18705",
-      "arxiv_id": "2505.18705",
-      "doi": "",
-      "group": "Cross-disciplinary Applications",
-      "category": "Science & Discovery",
-      "categories": [
-        "Science & Discovery"
-      ],
-      "subcategories": [
-        "Scientific Agents",
-        "General AI4Science",
-        "Scientific LLM Benchmarks"
-      ],
-      "source_repos": [
-        "zoedsy/awesome-science-agents",
-        "ai4s-research/awesome-ai-for-science",
-        "subinium/Awesome-Scientific-LLM-Benchmarks"
-      ],
-      "source_urls": [
-        "https://github.com/zoedsy/awesome-science-agents",
-        "https://github.com/ai4s-research/awesome-ai-for-science",
-        "https://github.com/subinium/Awesome-Scientific-LLM-Benchmarks"
       ],
       "metadata_sources": [
         "source README",
@@ -401556,9 +401598,39 @@
       "published_at": "2025-04-28",
       "date_precision": "day",
       "first_seen_at": "2026-08-29",
-      "source_updated_at": "2026-11-19",
+      "source_updated_at": "2026-11-20",
       "paper_url": "https://arxiv.org/abs/2504.20117",
       "arxiv_id": "2504.20117",
+      "doi": "",
+      "group": "Cross-disciplinary Applications",
+      "category": "Science & Discovery",
+      "categories": [
+        "Science & Discovery"
+      ],
+      "subcategories": [
+        "General AI4Science"
+      ],
+      "source_repos": [
+        "ai4s-research/awesome-ai-for-science"
+      ],
+      "source_urls": [
+        "https://github.com/ai4s-research/awesome-ai-for-science"
+      ],
+      "metadata_sources": [
+        "source README",
+        "Semantic Scholar"
+      ]
+    },
+    {
+      "id": "cf2eba5dbb435165",
+      "title": "AutoP2C: An LLM-Based Agent Framework for Code Repository Generation from Multimodal Content in Academic Papers",
+      "venue": "arXiv",
+      "published_at": "2025-04-28",
+      "date_precision": "day",
+      "first_seen_at": "2026-08-29",
+      "source_updated_at": "2026-11-20",
+      "paper_url": "https://arxiv.org/abs/2504.20115",
+      "arxiv_id": "2504.20115",
       "doi": "",
       "group": "Cross-disciplinary Applications",
       "category": "Science & Discovery",
@@ -401603,36 +401675,6 @@
       ],
       "source_urls": [
         "https://github.com/tyang816/Awesome-TCM-LLM"
-      ],
-      "metadata_sources": [
-        "source README",
-        "Semantic Scholar"
-      ]
-    },
-    {
-      "id": "cf2eba5dbb435165",
-      "title": "AutoP2C: An LLM-Based Agent Framework for Code Repository Generation from Multimodal Content in Academic Papers",
-      "venue": "arXiv",
-      "published_at": "2025-04-28",
-      "date_precision": "day",
-      "first_seen_at": "2026-08-29",
-      "source_updated_at": "2026-11-19",
-      "paper_url": "https://arxiv.org/abs/2504.20115",
-      "arxiv_id": "2504.20115",
-      "doi": "",
-      "group": "Cross-disciplinary Applications",
-      "category": "Science & Discovery",
-      "categories": [
-        "Science & Discovery"
-      ],
-      "subcategories": [
-        "General AI4Science"
-      ],
-      "source_repos": [
-        "ai4s-research/awesome-ai-for-science"
-      ],
-      "source_urls": [
-        "https://github.com/ai4s-research/awesome-ai-for-science"
       ],
       "metadata_sources": [
         "source README",
@@ -401794,7 +401836,8 @@
       "metadata_sources": [
         "structured source",
         "source README",
-        "arXiv"
+        "arXiv",
+        "Semantic Scholar"
       ]
     },
     {
@@ -402665,6 +402708,35 @@
       ]
     },
     {
+      "id": "7e56de376a7c5ccd",
+      "title": "Scaling Large Language Models for Next-Generation Single-Cell Analysis",
+      "venue": "www",
+      "published_at": "2025-04-14",
+      "date_precision": "day",
+      "first_seen_at": "2026-08-29",
+      "source_updated_at": "2026-11-20",
+      "paper_url": "https://www.biorxiv.org/content/10.1101/2025.04.14.648850v2",
+      "arxiv_id": "",
+      "doi": "",
+      "group": "Cross-disciplinary Applications",
+      "category": "Science & Discovery",
+      "categories": [
+        "Science & Discovery"
+      ],
+      "subcategories": [
+        "General AI4Science"
+      ],
+      "source_repos": [
+        "ai4s-research/awesome-ai-for-science"
+      ],
+      "source_urls": [
+        "https://github.com/ai4s-research/awesome-ai-for-science"
+      ],
+      "metadata_sources": [
+        "source README"
+      ]
+    },
+    {
       "id": "e0f72cf36e92889e",
       "title": "SemiETS: Integrating Spatial and Content Consistencies for Semi-Supervised End-to-end Text Spotting",
       "venue": "CVPR",
@@ -402696,35 +402768,6 @@
       "metadata_sources": [
         "source README",
         "Semantic Scholar"
-      ]
-    },
-    {
-      "id": "7e56de376a7c5ccd",
-      "title": "Scaling Large Language Models for Next-Generation Single-Cell Analysis",
-      "venue": "www",
-      "published_at": "2025-04-14",
-      "date_precision": "day",
-      "first_seen_at": "2026-08-29",
-      "source_updated_at": "2026-11-19",
-      "paper_url": "https://www.biorxiv.org/content/10.1101/2025.04.14.648850v2",
-      "arxiv_id": "",
-      "doi": "",
-      "group": "Cross-disciplinary Applications",
-      "category": "Science & Discovery",
-      "categories": [
-        "Science & Discovery"
-      ],
-      "subcategories": [
-        "General AI4Science"
-      ],
-      "source_repos": [
-        "ai4s-research/awesome-ai-for-science"
-      ],
-      "source_urls": [
-        "https://github.com/ai4s-research/awesome-ai-for-science"
-      ],
-      "metadata_sources": [
-        "source README"
       ]
     },
     {
@@ -403076,7 +403119,8 @@
       ],
       "metadata_sources": [
         "source README",
-        "arXiv"
+        "arXiv",
+        "Semantic Scholar"
       ]
     },
     {
@@ -404090,6 +404134,47 @@
       ]
     },
     {
+      "id": "d418b2d6c4570f72",
+      "title": "The AI Scientist-v2: Workshop-Level Automated Scientific Discovery via Agentic Tree Search",
+      "venue": "arXiv",
+      "published_at": "2025-04",
+      "date_precision": "month",
+      "first_seen_at": "2026-08-29",
+      "source_updated_at": "2026-11-20",
+      "paper_url": "https://arxiv.org/abs/2504.08066",
+      "arxiv_id": "2504.08066",
+      "doi": "10.48550/arXiv.2504.08066",
+      "group": "Core Technology",
+      "category": "Language",
+      "categories": [
+        "Language",
+        "Science & Discovery",
+        "Environment & Earth Science"
+      ],
+      "subcategories": [
+        "LLM Agents",
+        "Scientific Agents",
+        "General AI4Science",
+        "Weather & Climate"
+      ],
+      "source_repos": [
+        "js-lee-AI/awesome-llm-agent-papers",
+        "zoedsy/awesome-science-agents",
+        "ai4s-research/awesome-ai-for-science",
+        "zhengkai15/Awesome-Weather-Forecast"
+      ],
+      "source_urls": [
+        "https://github.com/js-lee-AI/awesome-llm-agent-papers",
+        "https://github.com/zoedsy/awesome-science-agents",
+        "https://github.com/ai4s-research/awesome-ai-for-science",
+        "https://github.com/zhengkai15/Awesome-Weather-Forecast"
+      ],
+      "metadata_sources": [
+        "source README",
+        "arXiv identifier"
+      ]
+    },
+    {
       "id": "afcb000cda889b1f",
       "title": "OmniVDiff: Omni Controllable Video Diffusion for Generation and Understanding",
       "venue": "arXiv",
@@ -404151,6 +404236,36 @@
       "source_urls": [
         "https://github.com/wangkai930418/awesome-diffusion-categorized",
         "https://github.com/AlonzoLeeeooo/awesome-video-generation"
+      ],
+      "metadata_sources": [
+        "source README",
+        "arXiv identifier"
+      ]
+    },
+    {
+      "id": "3828dd9666fb85e1",
+      "title": "Foundation Models for Environmental Science: A Survey",
+      "venue": "Science",
+      "published_at": "2025-04",
+      "date_precision": "month",
+      "first_seen_at": "2026-08-29",
+      "source_updated_at": "2026-11-20",
+      "paper_url": "https://arxiv.org/abs/2504.04280",
+      "arxiv_id": "2504.04280",
+      "doi": "",
+      "group": "Cross-disciplinary Applications",
+      "category": "Science & Discovery",
+      "categories": [
+        "Science & Discovery"
+      ],
+      "subcategories": [
+        "General AI4Science"
+      ],
+      "source_repos": [
+        "ai4s-research/awesome-ai-for-science"
+      ],
+      "source_urls": [
+        "https://github.com/ai4s-research/awesome-ai-for-science"
       ],
       "metadata_sources": [
         "source README",
@@ -404223,47 +404338,6 @@
       "source_urls": [
         "https://github.com/wangkai930418/awesome-diffusion-categorized",
         "https://github.com/AlonzoLeeeooo/awesome-video-generation"
-      ],
-      "metadata_sources": [
-        "source README",
-        "arXiv identifier"
-      ]
-    },
-    {
-      "id": "d418b2d6c4570f72",
-      "title": "The AI Scientist-v2: Workshop-Level Automated Scientific Discovery via Agentic Tree Search",
-      "venue": "arXiv",
-      "published_at": "2025-04",
-      "date_precision": "month",
-      "first_seen_at": "2026-08-29",
-      "source_updated_at": "2026-11-19",
-      "paper_url": "https://arxiv.org/abs/2504.08066",
-      "arxiv_id": "2504.08066",
-      "doi": "10.48550/arXiv.2504.08066",
-      "group": "Core Technology",
-      "category": "Language",
-      "categories": [
-        "Language",
-        "Science & Discovery",
-        "Environment & Earth Science"
-      ],
-      "subcategories": [
-        "LLM Agents",
-        "Scientific Agents",
-        "General AI4Science",
-        "Weather & Climate"
-      ],
-      "source_repos": [
-        "js-lee-AI/awesome-llm-agent-papers",
-        "zoedsy/awesome-science-agents",
-        "ai4s-research/awesome-ai-for-science",
-        "zhengkai15/Awesome-Weather-Forecast"
-      ],
-      "source_urls": [
-        "https://github.com/js-lee-AI/awesome-llm-agent-papers",
-        "https://github.com/zoedsy/awesome-science-agents",
-        "https://github.com/ai4s-research/awesome-ai-for-science",
-        "https://github.com/zhengkai15/Awesome-Weather-Forecast"
       ],
       "metadata_sources": [
         "source README",
@@ -404414,36 +404488,6 @@
       ],
       "source_urls": [
         "https://github.com/Jeryi-Sun/LLM-and-Law"
-      ],
-      "metadata_sources": [
-        "source README",
-        "arXiv identifier"
-      ]
-    },
-    {
-      "id": "3828dd9666fb85e1",
-      "title": "Foundation Models for Environmental Science: A Survey",
-      "venue": "Science",
-      "published_at": "2025-04",
-      "date_precision": "month",
-      "first_seen_at": "2026-08-29",
-      "source_updated_at": "2026-11-19",
-      "paper_url": "https://arxiv.org/abs/2504.04280",
-      "arxiv_id": "2504.04280",
-      "doi": "",
-      "group": "Cross-disciplinary Applications",
-      "category": "Science & Discovery",
-      "categories": [
-        "Science & Discovery"
-      ],
-      "subcategories": [
-        "General AI4Science"
-      ],
-      "source_repos": [
-        "ai4s-research/awesome-ai-for-science"
-      ],
-      "source_urls": [
-        "https://github.com/ai4s-research/awesome-ai-for-science"
       ],
       "metadata_sources": [
         "source README",
@@ -416531,7 +416575,8 @@
       ],
       "metadata_sources": [
         "source README",
-        "arXiv"
+        "arXiv",
+        "Semantic Scholar"
       ]
     },
     {
@@ -416572,7 +416617,8 @@
       "metadata_sources": [
         "source README",
         "structured source",
-        "arXiv"
+        "arXiv",
+        "Semantic Scholar"
       ]
     },
     {
@@ -416662,7 +416708,8 @@
       ],
       "metadata_sources": [
         "source README",
-        "arXiv"
+        "arXiv",
+        "Semantic Scholar"
       ]
     },
     {
@@ -418434,7 +418481,8 @@
       ],
       "metadata_sources": [
         "source README",
-        "arXiv"
+        "arXiv",
+        "Semantic Scholar"
       ]
     },
     {
@@ -419470,7 +419518,8 @@
       ],
       "metadata_sources": [
         "source README",
-        "arXiv"
+        "arXiv",
+        "Semantic Scholar"
       ]
     },
     {
@@ -419535,7 +419584,7 @@
     },
     {
       "id": "b464b4422ea8f201",
-      "title": "Generative Video Bi-flow",
+      "title": "Generative Video Bi-Flow",
       "venue": "IEEE International Conference on Computer Vision",
       "published_at": "2025-03-09",
       "date_precision": "day",
@@ -419560,7 +419609,8 @@
       ],
       "metadata_sources": [
         "source README",
-        "arXiv"
+        "arXiv",
+        "Semantic Scholar"
       ]
     },
     {
@@ -421448,6 +421498,84 @@
       ]
     },
     {
+      "id": "af25495f463847e6",
+      "title": "TxAgent: An AI agent for therapeutic reasoning across a universe of tools",
+      "venue": "arXiv",
+      "published_at": "2025-03",
+      "date_precision": "month",
+      "first_seen_at": "2026-08-29",
+      "source_updated_at": "2026-11-20",
+      "paper_url": "http://arxiv.org/abs/2503.10970v1",
+      "arxiv_id": "2503.10970",
+      "doi": "",
+      "group": "Cross-disciplinary Applications",
+      "category": "Medicine & Healthcare",
+      "categories": [
+        "Medicine & Healthcare",
+        "Science & Discovery"
+      ],
+      "subcategories": [
+        "Medical Agents",
+        "Scientific Agents",
+        "General AI4Science",
+        "Medical Imaging Agents"
+      ],
+      "source_repos": [
+        "AgenticHealthAI/Awesome-AI-Agents-for-Healthcare",
+        "zoedsy/awesome-science-agents",
+        "ai4s-research/awesome-ai-for-science",
+        "Nanboy-Ronan/awesome-medical-imaging-agents"
+      ],
+      "source_urls": [
+        "https://github.com/AgenticHealthAI/Awesome-AI-Agents-for-Healthcare",
+        "https://github.com/zoedsy/awesome-science-agents",
+        "https://github.com/ai4s-research/awesome-ai-for-science",
+        "https://github.com/Nanboy-Ronan/awesome-medical-imaging-agents"
+      ],
+      "metadata_sources": [
+        "source README",
+        "arXiv identifier"
+      ]
+    },
+    {
+      "id": "c52c108efa31f532",
+      "title": "Towards Scientific Intelligence: A Survey of LLM-based Scientific Agents",
+      "venue": "arXiv",
+      "published_at": "2025-03",
+      "date_precision": "month",
+      "first_seen_at": "2026-08-29",
+      "source_updated_at": "2026-11-20",
+      "paper_url": "https://arxiv.org/abs/2503.24047",
+      "arxiv_id": "2503.24047",
+      "doi": "",
+      "group": "Core Technology",
+      "category": "Language",
+      "categories": [
+        "Language",
+        "Science & Discovery",
+        "Humanities & Social Science"
+      ],
+      "subcategories": [
+        "LLM Agents",
+        "General AI4Science",
+        "LLM in Social Science"
+      ],
+      "source_repos": [
+        "js-lee-AI/awesome-llm-agent-papers",
+        "ai4s-research/awesome-ai-for-science",
+        "ValueByte-AI/Awesome-LLM-in-Social-Science"
+      ],
+      "source_urls": [
+        "https://github.com/js-lee-AI/awesome-llm-agent-papers",
+        "https://github.com/ai4s-research/awesome-ai-for-science",
+        "https://github.com/ValueByte-AI/Awesome-LLM-in-Social-Science"
+      ],
+      "metadata_sources": [
+        "source README",
+        "arXiv identifier"
+      ]
+    },
+    {
       "id": "f65592f648487010",
       "title": "The Best of Both Worlds: Integrating Language Models and Diffusion Models for Video Generation",
       "venue": "arXiv",
@@ -421724,6 +421852,40 @@
       ]
     },
     {
+      "id": "87034d7ed3850673",
+      "title": "From Theory to Application: A Practical Introduction to Neural Operators in Scientific Computing",
+      "venue": "arXiv",
+      "published_at": "2025-03",
+      "date_precision": "month",
+      "first_seen_at": "2026-08-29",
+      "source_updated_at": "2026-11-20",
+      "paper_url": "https://arxiv.org/abs/2503.05598",
+      "arxiv_id": "2503.05598",
+      "doi": "",
+      "group": "Cross-disciplinary Applications",
+      "category": "Science & Discovery",
+      "categories": [
+        "Science & Discovery",
+        "Engineering & Manufacturing"
+      ],
+      "subcategories": [
+        "General AI4Science",
+        "AI for CAD"
+      ],
+      "source_repos": [
+        "ai4s-research/awesome-ai-for-science",
+        "gudo7208/awesome-ai4cad"
+      ],
+      "source_urls": [
+        "https://github.com/ai4s-research/awesome-ai-for-science",
+        "https://github.com/gudo7208/awesome-ai4cad"
+      ],
+      "metadata_sources": [
+        "source README",
+        "arXiv identifier"
+      ]
+    },
+    {
       "id": "659511f85377966c",
       "title": "Extrapolating and Decoupling Image-to-Video Generation Models: Motion Modeling is Easier Than You Think",
       "venue": "CVPR 2025",
@@ -421907,77 +422069,29 @@
       ]
     },
     {
-      "id": "af25495f463847e6",
-      "title": "TxAgent: An AI agent for therapeutic reasoning across a universe of tools",
-      "venue": "arXiv",
+      "id": "c6a2d9c442451aae",
+      "title": "Agentic AI for Scientific Discovery: A Survey of Progress, Challenges, and Future Directions",
+      "venue": "science",
       "published_at": "2025-03",
       "date_precision": "month",
       "first_seen_at": "2026-08-29",
-      "source_updated_at": "2026-11-19",
-      "paper_url": "http://arxiv.org/abs/2503.10970v1",
-      "arxiv_id": "2503.10970",
+      "source_updated_at": "2026-11-20",
+      "paper_url": "https://arxiv.org/abs/2503.08979",
+      "arxiv_id": "2503.08979",
       "doi": "",
       "group": "Cross-disciplinary Applications",
-      "category": "Medicine & Healthcare",
+      "category": "Science & Discovery",
       "categories": [
-        "Medicine & Healthcare",
         "Science & Discovery"
       ],
       "subcategories": [
-        "Medical Agents",
-        "Scientific Agents",
-        "General AI4Science",
-        "Medical Imaging Agents"
+        "General AI4Science"
       ],
       "source_repos": [
-        "AgenticHealthAI/Awesome-AI-Agents-for-Healthcare",
-        "zoedsy/awesome-science-agents",
-        "ai4s-research/awesome-ai-for-science",
-        "Nanboy-Ronan/awesome-medical-imaging-agents"
+        "ai4s-research/awesome-ai-for-science"
       ],
       "source_urls": [
-        "https://github.com/AgenticHealthAI/Awesome-AI-Agents-for-Healthcare",
-        "https://github.com/zoedsy/awesome-science-agents",
-        "https://github.com/ai4s-research/awesome-ai-for-science",
-        "https://github.com/Nanboy-Ronan/awesome-medical-imaging-agents"
-      ],
-      "metadata_sources": [
-        "source README",
-        "arXiv identifier"
-      ]
-    },
-    {
-      "id": "c52c108efa31f532",
-      "title": "Towards Scientific Intelligence: A Survey of LLM-based Scientific Agents",
-      "venue": "arXiv",
-      "published_at": "2025-03",
-      "date_precision": "month",
-      "first_seen_at": "2026-08-29",
-      "source_updated_at": "2026-11-19",
-      "paper_url": "https://arxiv.org/abs/2503.24047",
-      "arxiv_id": "2503.24047",
-      "doi": "",
-      "group": "Core Technology",
-      "category": "Language",
-      "categories": [
-        "Language",
-        "Science & Discovery",
-        "Humanities & Social Science"
-      ],
-      "subcategories": [
-        "LLM Agents",
-        "General AI4Science",
-        "LLM in Social Science"
-      ],
-      "source_repos": [
-        "js-lee-AI/awesome-llm-agent-papers",
-        "ai4s-research/awesome-ai-for-science",
-        "ValueByte-AI/Awesome-LLM-in-Social-Science"
-      ],
-      "source_urls": [
-        "https://github.com/js-lee-AI/awesome-llm-agent-papers",
-        "https://github.com/ai4s-research/awesome-ai-for-science",
-        "https://github.com/ValueByte-AI/Awesome-LLM-in-Social-Science"
+        "https://github.com/ai4s-research/awesome-ai-for-science"
       ],
       "metadata_sources": [
         "source README",
@@ -422546,40 +422660,6 @@
       ]
     },
     {
-      "id": "87034d7ed3850673",
-      "title": "From Theory to Application: A Practical Introduction to Neural Operators in Scientific Computing",
-      "venue": "arXiv",
-      "published_at": "2025-03",
-      "date_precision": "month",
-      "first_seen_at": "2026-08-29",
-      "source_updated_at": "2026-11-19",
-      "paper_url": "https://arxiv.org/abs/2503.05598",
-      "arxiv_id": "2503.05598",
-      "doi": "",
-      "group": "Cross-disciplinary Applications",
-      "category": "Science & Discovery",
-      "categories": [
-        "Science & Discovery",
-        "Engineering & Manufacturing"
-      ],
-      "subcategories": [
-        "General AI4Science",
-        "AI for CAD"
-      ],
-      "source_repos": [
-        "ai4s-research/awesome-ai-for-science",
-        "gudo7208/awesome-ai4cad"
-      ],
-      "source_urls": [
-        "https://github.com/ai4s-research/awesome-ai-for-science",
-        "https://github.com/gudo7208/awesome-ai4cad"
-      ],
-      "metadata_sources": [
-        "source README",
-        "arXiv identifier"
-      ]
-    },
-    {
       "id": "32a9c0cb448184ae",
       "title": "From Metaphor to Mechanism",
       "venue": "Chi",
@@ -422637,36 +422717,6 @@
       "source_urls": [
         "https://github.com/wangkai930418/awesome-diffusion-categorized",
         "https://github.com/Yuliang-Liu/AWESOME-OCR-LLM"
-      ],
-      "metadata_sources": [
-        "source README",
-        "arXiv identifier"
-      ]
-    },
-    {
-      "id": "c6a2d9c442451aae",
-      "title": "Agentic AI for Scientific Discovery: A Survey of Progress, Challenges, and Future Directions",
-      "venue": "science",
-      "published_at": "2025-03",
-      "date_precision": "month",
-      "first_seen_at": "2026-08-29",
-      "source_updated_at": "2026-11-19",
-      "paper_url": "https://arxiv.org/abs/2503.08979",
-      "arxiv_id": "2503.08979",
-      "doi": "",
-      "group": "Cross-disciplinary Applications",
-      "category": "Science & Discovery",
-      "categories": [
-        "Science & Discovery"
-      ],
-      "subcategories": [
-        "General AI4Science"
-      ],
-      "source_repos": [
-        "ai4s-research/awesome-ai-for-science"
-      ],
-      "source_urls": [
-        "https://github.com/ai4s-research/awesome-ai-for-science"
       ],
       "metadata_sources": [
         "source README",
@@ -451332,7 +451382,8 @@
       ],
       "metadata_sources": [
         "source README",
-        "arXiv"
+        "arXiv",
+        "Semantic Scholar"
       ]
     },
     {
@@ -452550,7 +452601,8 @@
       ],
       "metadata_sources": [
         "source README",
-        "arXiv"
+        "arXiv",
+        "Semantic Scholar"
       ]
     },
     {
@@ -453617,6 +453669,36 @@
       ]
     },
     {
+      "id": "e8e56b1c8d28423d",
+      "title": "A Survey on AI-assisted Scientific Discovery",
+      "venue": "arXiv",
+      "published_at": "2025-02",
+      "date_precision": "month",
+      "first_seen_at": "2026-08-29",
+      "source_updated_at": "2026-11-20",
+      "paper_url": "https://arxiv.org/abs/2502.05151",
+      "arxiv_id": "2502.05151",
+      "doi": "",
+      "group": "Cross-disciplinary Applications",
+      "category": "Science & Discovery",
+      "categories": [
+        "Science & Discovery"
+      ],
+      "subcategories": [
+        "General AI4Science"
+      ],
+      "source_repos": [
+        "ai4s-research/awesome-ai-for-science"
+      ],
+      "source_urls": [
+        "https://github.com/ai4s-research/awesome-ai-for-science"
+      ],
+      "metadata_sources": [
+        "source README",
+        "arXiv identifier"
+      ]
+    },
+    {
       "id": "e4c448dd1a8f0378",
       "title": "杨乐乐 et al. 2025: 大语言模型在中医药领域的应用展望思考",
       "venue": "Venue not specified",
@@ -454045,36 +454127,6 @@
       "source_urls": [
         "https://github.com/AgenticHealthAI/Awesome-AI-Agents-for-Healthcare",
         "https://github.com/Nanboy-Ronan/awesome-medical-imaging-agents"
-      ],
-      "metadata_sources": [
-        "source README",
-        "arXiv identifier"
-      ]
-    },
-    {
-      "id": "e8e56b1c8d28423d",
-      "title": "A Survey on AI-assisted Scientific Discovery",
-      "venue": "arXiv",
-      "published_at": "2025-02",
-      "date_precision": "month",
-      "first_seen_at": "2026-08-29",
-      "source_updated_at": "2026-11-19",
-      "paper_url": "https://arxiv.org/abs/2502.05151",
-      "arxiv_id": "2502.05151",
-      "doi": "",
-      "group": "Cross-disciplinary Applications",
-      "category": "Science & Discovery",
-      "categories": [
-        "Science & Discovery"
-      ],
-      "subcategories": [
-        "General AI4Science"
-      ],
-      "source_repos": [
-        "ai4s-research/awesome-ai-for-science"
-      ],
-      "source_urls": [
-        "https://github.com/ai4s-research/awesome-ai-for-science"
       ],
       "metadata_sources": [
         "source README",
@@ -476275,6 +476327,64 @@
       ]
     },
     {
+      "id": "c83ee2b9cdff4e7e",
+      "title": "Foundation Models for Materials Discovery",
+      "venue": "www",
+      "published_at": "2025",
+      "date_precision": "year",
+      "first_seen_at": "2026-08-29",
+      "source_updated_at": "2026-11-20",
+      "paper_url": "https://www.nature.com/articles/s41524-025-01538-0",
+      "arxiv_id": "",
+      "doi": "",
+      "group": "Cross-disciplinary Applications",
+      "category": "Science & Discovery",
+      "categories": [
+        "Science & Discovery"
+      ],
+      "subcategories": [
+        "General AI4Science"
+      ],
+      "source_repos": [
+        "ai4s-research/awesome-ai-for-science"
+      ],
+      "source_urls": [
+        "https://github.com/ai4s-research/awesome-ai-for-science"
+      ],
+      "metadata_sources": [
+        "source README"
+      ]
+    },
+    {
+      "id": "9f159416d5e933c3",
+      "title": "Architectures, variants, and performance of neural operators: A comparative review",
+      "venue": "www",
+      "published_at": "2025",
+      "date_precision": "year",
+      "first_seen_at": "2026-08-29",
+      "source_updated_at": "2026-11-20",
+      "paper_url": "https://www.sciencedirect.com/science/article/abs/pii/S0925231225011907",
+      "arxiv_id": "",
+      "doi": "",
+      "group": "Cross-disciplinary Applications",
+      "category": "Science & Discovery",
+      "categories": [
+        "Science & Discovery"
+      ],
+      "subcategories": [
+        "General AI4Science"
+      ],
+      "source_repos": [
+        "ai4s-research/awesome-ai-for-science"
+      ],
+      "source_urls": [
+        "https://github.com/ai4s-research/awesome-ai-for-science"
+      ],
+      "metadata_sources": [
+        "source README"
+      ]
+    },
+    {
       "id": "1948b6db8291efd1",
       "title": "ASDSV: Multimodal Generation Made Efficient with Approximate Speculative Diffusion and Speculative Verification",
       "venue": "neurips",
@@ -476298,6 +476408,35 @@
       ],
       "source_urls": [
         "https://github.com/AlonzoLeeeooo/awesome-video-generation"
+      ],
+      "metadata_sources": [
+        "source README"
+      ]
+    },
+    {
+      "id": "d076f2776357463c",
+      "title": "AI for Science 2025",
+      "venue": "www",
+      "published_at": "2025",
+      "date_precision": "year",
+      "first_seen_at": "2026-08-29",
+      "source_updated_at": "2026-11-20",
+      "paper_url": "https://www.nature.com/articles/d42473-025-00161-3",
+      "arxiv_id": "",
+      "doi": "",
+      "group": "Cross-disciplinary Applications",
+      "category": "Science & Discovery",
+      "categories": [
+        "Science & Discovery"
+      ],
+      "subcategories": [
+        "General AI4Science"
+      ],
+      "source_repos": [
+        "ai4s-research/awesome-ai-for-science"
+      ],
+      "source_urls": [
+        "https://github.com/ai4s-research/awesome-ai-for-science"
       ],
       "metadata_sources": [
         "source README"
@@ -476950,35 +477089,6 @@
       ]
     },
     {
-      "id": "c83ee2b9cdff4e7e",
-      "title": "Foundation Models for Materials Discovery",
-      "venue": "www",
-      "published_at": "2025",
-      "date_precision": "year",
-      "first_seen_at": "2026-08-29",
-      "source_updated_at": "2026-11-19",
-      "paper_url": "https://www.nature.com/articles/s41524-025-01538-0",
-      "arxiv_id": "",
-      "doi": "",
-      "group": "Cross-disciplinary Applications",
-      "category": "Science & Discovery",
-      "categories": [
-        "Science & Discovery"
-      ],
-      "subcategories": [
-        "General AI4Science"
-      ],
-      "source_repos": [
-        "ai4s-research/awesome-ai-for-science"
-      ],
-      "source_urls": [
-        "https://github.com/ai4s-research/awesome-ai-for-science"
-      ],
-      "metadata_sources": [
-        "source README"
-      ]
-    },
-    {
       "id": "355f6a606da1ecfc",
       "title": "Efficient Additive Attention DLA",
       "venue": "ICCV",
@@ -477211,35 +477321,6 @@
       ]
     },
     {
-      "id": "9f159416d5e933c3",
-      "title": "Architectures, variants, and performance of neural operators: A comparative review",
-      "venue": "www",
-      "published_at": "2025",
-      "date_precision": "year",
-      "first_seen_at": "2026-08-29",
-      "source_updated_at": "2026-11-19",
-      "paper_url": "https://www.sciencedirect.com/science/article/abs/pii/S0925231225011907",
-      "arxiv_id": "",
-      "doi": "",
-      "group": "Cross-disciplinary Applications",
-      "category": "Science & Discovery",
-      "categories": [
-        "Science & Discovery"
-      ],
-      "subcategories": [
-        "General AI4Science"
-      ],
-      "source_repos": [
-        "ai4s-research/awesome-ai-for-science"
-      ],
-      "source_urls": [
-        "https://github.com/ai4s-research/awesome-ai-for-science"
-      ],
-      "metadata_sources": [
-        "source README"
-      ]
-    },
-    {
       "id": "cccff4e007ca1356",
       "title": "An Intelligent TCM Diagnosis System with Localized LLMs and Modular Multimodal Reasoning Enhanced by RAG",
       "venue": "Venue not specified",
@@ -477292,35 +477373,6 @@
       ],
       "source_urls": [
         "https://github.com/tyang816/Awesome-TCM-LLM"
-      ],
-      "metadata_sources": [
-        "source README"
-      ]
-    },
-    {
-      "id": "d076f2776357463c",
-      "title": "AI for Science 2025",
-      "venue": "www",
-      "published_at": "2025",
-      "date_precision": "year",
-      "first_seen_at": "2026-08-29",
-      "source_updated_at": "2026-11-19",
-      "paper_url": "https://www.nature.com/articles/d42473-025-00161-3",
-      "arxiv_id": "",
-      "doi": "",
-      "group": "Cross-disciplinary Applications",
-      "category": "Science & Discovery",
-      "categories": [
-        "Science & Discovery"
-      ],
-      "subcategories": [
-        "General AI4Science"
-      ],
-      "source_repos": [
-        "ai4s-research/awesome-ai-for-science"
-      ],
-      "source_urls": [
-        "https://github.com/ai4s-research/awesome-ai-for-science"
       ],
       "metadata_sources": [
         "source README"
@@ -541125,6 +541177,35 @@
       ]
     },
     {
+      "id": "9f8eec0772a7fcc2",
+      "title": "Scientific Discovery in the Age of Artificial Intelligence",
+      "venue": "www",
+      "published_at": "",
+      "date_precision": "unknown",
+      "first_seen_at": "2026-08-29",
+      "source_updated_at": "2026-11-20",
+      "paper_url": "https://www.nature.com/articles/s41586-023-06221-2",
+      "arxiv_id": "",
+      "doi": "",
+      "group": "Cross-disciplinary Applications",
+      "category": "Science & Discovery",
+      "categories": [
+        "Science & Discovery"
+      ],
+      "subcategories": [
+        "General AI4Science"
+      ],
+      "source_repos": [
+        "ai4s-research/awesome-ai-for-science"
+      ],
+      "source_urls": [
+        "https://github.com/ai4s-research/awesome-ai-for-science"
+      ],
+      "metadata_sources": [
+        "source README"
+      ]
+    },
+    {
       "id": "d54340d7281ecf09",
       "title": "Mixture of Distributions Matters",
       "venue": "OpenReview",
@@ -541293,6 +541374,64 @@
       ],
       "source_urls": [
         "https://github.com/AlonzoLeeeooo/awesome-video-generation"
+      ],
+      "metadata_sources": [
+        "source README"
+      ]
+    },
+    {
+      "id": "397906beb256eec8",
+      "title": "AlphaFold: Protein Structure Prediction",
+      "venue": "www",
+      "published_at": "",
+      "date_precision": "unknown",
+      "first_seen_at": "2026-08-29",
+      "source_updated_at": "2026-11-20",
+      "paper_url": "https://www.nature.com/articles/s41586-021-03819-2",
+      "arxiv_id": "",
+      "doi": "",
+      "group": "Cross-disciplinary Applications",
+      "category": "Science & Discovery",
+      "categories": [
+        "Science & Discovery"
+      ],
+      "subcategories": [
+        "General AI4Science"
+      ],
+      "source_repos": [
+        "ai4s-research/awesome-ai-for-science"
+      ],
+      "source_urls": [
+        "https://github.com/ai4s-research/awesome-ai-for-science"
+      ],
+      "metadata_sources": [
+        "source README"
+      ]
+    },
+    {
+      "id": "65d57ab1a78fe608",
+      "title": "AI for Materials Discovery",
+      "venue": "www",
+      "published_at": "",
+      "date_precision": "unknown",
+      "first_seen_at": "2026-08-29",
+      "source_updated_at": "2026-11-20",
+      "paper_url": "https://www.nature.com/articles/s41578-023-00540-6",
+      "arxiv_id": "",
+      "doi": "",
+      "group": "Cross-disciplinary Applications",
+      "category": "Science & Discovery",
+      "categories": [
+        "Science & Discovery"
+      ],
+      "subcategories": [
+        "General AI4Science"
+      ],
+      "source_repos": [
+        "ai4s-research/awesome-ai-for-science"
+      ],
+      "source_urls": [
+        "https://github.com/ai4s-research/awesome-ai-for-science"
       ],
       "metadata_sources": [
         "source README"
@@ -541676,35 +541815,6 @@
       ]
     },
     {
-      "id": "9f8eec0772a7fcc2",
-      "title": "Scientific Discovery in the Age of Artificial Intelligence",
-      "venue": "www",
-      "published_at": "",
-      "date_precision": "unknown",
-      "first_seen_at": "2026-08-29",
-      "source_updated_at": "2026-11-19",
-      "paper_url": "https://www.nature.com/articles/s41586-023-06221-2",
-      "arxiv_id": "",
-      "doi": "",
-      "group": "Cross-disciplinary Applications",
-      "category": "Science & Discovery",
-      "categories": [
-        "Science & Discovery"
-      ],
-      "subcategories": [
-        "General AI4Science"
-      ],
-      "source_repos": [
-        "ai4s-research/awesome-ai-for-science"
-      ],
-      "source_urls": [
-        "https://github.com/ai4s-research/awesome-ai-for-science"
-      ],
-      "metadata_sources": [
-        "source README"
-      ]
-    },
-    {
       "id": "a6e73e80380be686",
       "title": "Pilot Development of a 'Clinical Performance Examination (CPX) Practicing Chatbot' Utilizing Prompt Engineering",
       "venue": "Venue not specified",
@@ -541960,64 +542070,6 @@
       ],
       "source_urls": [
         "https://github.com/tyang816/Awesome-TCM-LLM"
-      ],
-      "metadata_sources": [
-        "source README"
-      ]
-    },
-    {
-      "id": "397906beb256eec8",
-      "title": "AlphaFold: Protein Structure Prediction",
-      "venue": "www",
-      "published_at": "",
-      "date_precision": "unknown",
-      "first_seen_at": "2026-08-29",
-      "source_updated_at": "2026-11-19",
-      "paper_url": "https://www.nature.com/articles/s41586-021-03819-2",
-      "arxiv_id": "",
-      "doi": "",
-      "group": "Cross-disciplinary Applications",
-      "category": "Science & Discovery",
-      "categories": [
-        "Science & Discovery"
-      ],
-      "subcategories": [
-        "General AI4Science"
-      ],
-      "source_repos": [
-        "ai4s-research/awesome-ai-for-science"
-      ],
-      "source_urls": [
-        "https://github.com/ai4s-research/awesome-ai-for-science"
-      ],
-      "metadata_sources": [
-        "source README"
-      ]
-    },
-    {
-      "id": "65d57ab1a78fe608",
-      "title": "AI for Materials Discovery",
-      "venue": "www",
-      "published_at": "",
-      "date_precision": "unknown",
-      "first_seen_at": "2026-08-29",
-      "source_updated_at": "2026-11-19",
-      "paper_url": "https://www.nature.com/articles/s41578-023-00540-6",
-      "arxiv_id": "",
-      "doi": "",
-      "group": "Cross-disciplinary Applications",
-      "category": "Science & Discovery",
-      "categories": [
-        "Science & Discovery"
-      ],
-      "subcategories": [
-        "General AI4Science"
-      ],
-      "source_repos": [
-        "ai4s-research/awesome-ai-for-science"
-      ],
-      "source_urls": [
-        "https://github.com/ai4s-research/awesome-ai-for-science"
       ],
       "metadata_sources": [
         "source README"
